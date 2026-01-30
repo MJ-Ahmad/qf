@@ -1,0 +1,19 @@
+/* css/body/style.css
+   Basic page layout and utilities used by home.html
+*/
+:root{
+  --container:1200px;
+  --muted:#6b7280;
+  --fg:#071025;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;background:#fff;color:var(--fg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+main.site-main{padding:3rem 0}
+h1,h2,h3{margin:0 0 .6rem}
+p{margin:0 0 1rem;color:var(--muted);line-height:1.6}
+
+/* utility */
+.center{display:flex;align-items:center;justify-content:center}
+.text-muted{color:var(--muted)}
