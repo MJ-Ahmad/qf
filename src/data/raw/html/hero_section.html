@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quraner Fariwala — Research • Printing • Distribution of Holy Quran</title>
+
+  <style>
+    /* ---------- Basic reset & variables ---------- */
+    :root{
+      --bg-900: #0f1724;
+      --blue-900: #0b3b66;
+      --blue-600: #2563eb;
+      --emerald-400: #34d399;
+      --slate-300: #cbd5e1;
+      --card-border: rgba(255,255,255,0.08);
+      --radius: 12px;
+      --container-max: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+    img{display:block;max-width:100%;height:auto}
+
+    /* ---------- Section layout ---------- */
+    .hero {
+      position: relative;
+      padding: 6rem 1rem;
+      overflow: hidden;
+      color: #fff;
+      min-height: 520px;
+    }
+
+    /* Background layers */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(135deg, var(--bg-900), var(--blue-900) 50%, var(--bg-900));
+    }
+    .hero__map {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.12;
+      background-image: url('./assets/qf-h.jpg');
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: overlay;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .hero__radial {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(30,64,175,0.28), transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Container */
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px){
+      .grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .hero { padding: 7rem 1rem; }
+    }
+
+    /* Left column */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .75rem;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.12);
+      border: 1px solid rgba(59,130,246,0.12);
+      color: #9ad0ff;
+      font-weight: 600;
+      font-size: .95rem;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow svg{flex:0 0 auto}
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 1.02;
+      margin: 0 0 1rem 0;
+      font-weight: 800;
+    }
+    @media (min-width:768px){ h1{font-size:3rem} }
+    @media (min-width:1024px){ h1{font-size:3.75rem} }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #60a5fa 0%, var(--emerald-400) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lead {
+      color: var(--slate-300);
+      font-size: 1.125rem;
+      max-width: 48rem;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .actions {
+      display:flex;
+      gap: .75rem;
+      flex-wrap:wrap;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.65rem 1rem;
+      border-radius: .6rem;
+      font-weight:700;
+      text-decoration:none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: linear-gradient(90deg,#2563eb,#10b981);
+      box-shadow: 0 6px 18px rgba(16,185,129,0.08);
+    }
+    .btn--muted {
+      background: #0f1724;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Right visualization */
+    .visual {
+      display:none;
+    }
+    @media (min-width:1024px){
+      .visual{display:block}
+      .visual__frame{
+        position:relative;
+        height:400px;
+        width:100%;
+      }
+      .visual__layer {
+        position:absolute;
+        border-radius: 14px;
+        width:90%;
+        height:90%;
+        right:0;
+        top:0;
+        transform: translateZ(0);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+      .visual__layer--top { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(16,185,129,0.08)); right:0; top:0; }
+      .visual__layer--bottom { background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(59,130,246,0.06)); left:0; bottom:0; }
+      .visual__media {
+        position:absolute;
+        inset:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        pointer-events:none;
+      }
+      .visual__media img{max-height:100%;max-width:100%;border-radius:8px}
+    }
+
+    /* Reveal helper */
+    .reveal { opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; will-change: opacity, transform; }
+    .reveal.in-view { opacity:1; transform: none; }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .reveal { transition: none; transform: none; opacity:1; }
+      .hero__map { transition: none; transform: none; }
+    }
+
+    /* Small accessibility tweaks */
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  </style>
+</head>
+<body>
+  <!-- Hero section -->
+  <section class="hero" aria-label="Hero: Connecting Innovation with Social Impact">
+    <!-- Background layers -->
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__map" id="heroMap" aria-hidden="true"></div>
+    <div class="hero__radial" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="grid">
+        <!-- Left content -->
+        <div>
+          <div class="eyebrow reveal" data-reveal>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15 10 23 10 17 15 19 23 12 18 5 23 7 15 1 10 9 10"></polygon>
+            </svg>
+            <span>Unifying Vision &amp; Innovation</span>
+          </div>
+
+          <h1 class="reveal" data-reveal>
+            Research • Printing • Distribution 
+            <span class="gradient-text"> of Holy Quran</span>
+          </h1>
+
+          <p class="lead reveal" data-reveal>
+            Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran.
+          </p>
+
+          <div class="actions reveal" data-reveal>
+            <a class="btn btn--primary" href="/projects" aria-label="Explore Projects">
+              Explore Projects
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a class="btn btn--muted" href="https://github.com/MJ-AHMAD/mj-ahmad.git" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Right visualization placeholder -->
+        <div class="visual" aria-hidden="true">
+          <div class="visual__frame" role="img" aria-label="Cosmic visualization">
+            <div class="visual__layer visual__layer--top" style="z-index:1"></div>
+            <div class="visual__layer visual__layer--bottom" style="z-index:1; left:0; right:auto;"></div>
+            <div class="visual__media" style="z-index:2">
+              <img src="./assets/qf-h.jpg" alt="Cosmic visualization" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // Reveal on scroll (IntersectionObserver)
+      const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => obs.observe(el));
+      } else {
+        // Fallback: show all
+        revealEls.forEach(el => el.classList.add('in-view'));
+      }
+
+      // Subtle parallax for the map background (pointer + scroll)
+      const map = document.getElementById('heroMap');
+      if (map) {
+        let pointerX = 0, pointerY = 0;
+        let targetX = 0, targetY = 0;
+        const damp = 0.08;
+
+        function updateTransform() {
+          targetX += (pointerX - targetX) * damp;
+          targetY += (pointerY - targetY) * damp;
+          // small translate and scale for depth
+          map.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) scale(1.02)`;
+          requestAnimationFrame(updateTransform);
+        }
+        requestAnimationFrame(updateTransform);
+
+        // Pointer movement (desktop)
+        window.addEventListener('pointermove', (e) => {
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          // map movement range: +/- 18px
+          pointerX = (e.clientX / w - 0.5) * 36;
+          pointerY = (e.clientY / h - 0.5) * 36;
+        }, { passive: true });
+
+        // Parallax on scroll (mobile fallback)
+        window.addEventListener('scroll', () => {
+          const scrolled = window.scrollY || window.pageYOffset;
+          // small vertical parallax
+          pointerY = Math.max(-18, Math.min(18, (scrolled / 200) * -6));
+        }, { passive: true });
+      }
+
+      // Accessibility: reduce motion respect
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        // remove transforms and animations
+        document.querySelectorAll('.hero__map, .reveal').forEach(el => {
+          el.style.transition = 'none';
+          el.style.transform = 'none';
+          el.classList.add('in-view');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
