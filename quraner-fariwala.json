@@ -38,6 +38,86 @@
 {
 "Tarteelul Qur’an": {}
 },
+{
+"Modern Science & Quranic Revelations": {
+  "post": {
+    "title": "Modern Science & Quranic Revelations",
+    "english": {
+      "intro": "1400 years ago, the Quran revealed truths that science is only now beginning to understand.",
+      "body": "From the formation of the universe to the development of the human embryo, the Quran describes natural phenomena with a precision that defies the limits of human knowledge at the time of revelation. Today, these verses align strikingly with modern scientific discoveries—offering powerful testimony to the Quran’s divine origin.",
+      "research_focus": [
+        {
+          "topic": "Cosmology & the Big Bang",
+          "reference": "Surah Al-Anbiya (21:30)",
+          "icon": "🌠"
+        },
+        {
+          "topic": "Embryology & Human Development",
+          "reference": "Surah Al-Mu’minun (23:12–14)",
+          "icon": "🧬"
+        },
+        {
+          "topic": "Oceanography & Underwater Barriers",
+          "reference": "Surah Ar-Rahman (55:19–20)",
+          "icon": "🌊"
+        }
+      ],
+      "methodology": "Through rigorous academic methodology, we bring together scholars of Islamic studies and scientific disciplines to illuminate these timeless truths.",
+      "call_to_action": "Explore how divine revelation and modern science converge. Follow Quraner Fariwala for insights, publications, and educational programs that bridge faith and reason.",
+      "hashtags": [
+        "#QuranerFariwala",
+        "#ScientificMiracles",
+        "#QuranAndScience",
+        "#DivineRevelation",
+        "#IslamicResearch",
+        "#Embryology",
+        "#Cosmology",
+        "#Oceanography",
+        "#SurahAlAnbiya",
+        "#SurahAlMuminun",
+        "#SurahArRahman"
+      ]
+    },
+    "bengali": {
+      "title": "আধুনিক বিজ্ঞান ও কুরআনিক প্রকাশনা",
+      "intro": "১৪০০ বছর আগে কুরআনে এমন সব সত্য প্রকাশিত হয়েছে যা আধুনিক বিজ্ঞান এখন আবিষ্কার করছে।",
+      "body": "বিশ্বব্রহ্মাণ্ডের সৃষ্টি থেকে মানব ভ্রূণের বিকাশ পর্যন্ত, কুরআন প্রাকৃতিক ঘটনাবলীকে এমন নিখুঁতভাবে বর্ণনা করেছে যা সেই সময়ে মানব জ্ঞানের সীমার বাইরে ছিল। আজকের বৈজ্ঞানিক আবিষ্কারগুলো এই আয়াতগুলোর সাথে আশ্চর্যজনকভাবে মিল খুঁজে পায়—যা কুরআনের ঐশী উৎসের শক্তিশালী প্রমাণ।",
+      "research_focus": [
+        {
+          "topic": "মহাজাগতিক ইঙ্গিত ও বিগ ব্যাং",
+          "reference": "সূরা আল-আম্বিয়া (২১:৩০)",
+          "icon": "🌠"
+        },
+        {
+          "topic": "ভ্রূণের বিকাশের নিখুঁত বর্ণনা",
+          "reference": "সূরা আল-মু’মিনুন (২৩:১২–১৪)",
+          "icon": "🧬"
+        },
+        {
+          "topic": "মহাসাগরবিদ্যা ও পানির প্রতিবন্ধকতা",
+          "reference": "সূরা আর-রাহমান (৫৫:১৯–২০)",
+          "icon": "🌊"
+        }
+      ],
+      "methodology": "কঠোর একাডেমিক পদ্ধতির মাধ্যমে আমরা ইসলামিক স্টাডিজ ও বিভিন্ন বৈজ্ঞানিক শাখার বিশেষজ্ঞদের একত্রিত করি, যাতে এই চিরন্তন সত্যগুলো আলোকিত হয়।",
+      "call_to_action": "দেখুন কীভাবে ঐশী প্রকাশনা ও আধুনিক বিজ্ঞান একত্রিত হয়। কুরআনের ফেরিওয়ালা-কে অনুসরণ করুন জ্ঞান, প্রকাশনা ও শিক্ষা কর্মসূচির জন্য যা বিশ্বাস ও যুক্তিকে একত্রিত করে।",
+      "hashtags": [
+        "#QuranerFariwala",
+        "#ScientificMiracles",
+        "#QuranAndScience",
+        "#DivineRevelation",
+        "#IslamicResearch",
+        "#Embryology",
+        "#Cosmology",
+        "#Oceanography",
+        "#SurahAlAnbiya",
+        "#SurahAlMuminun",
+        "#SurahArRahman"
+      ]
+    }
+  }
+}
+},
             "operations": {
               "research": {
                 "focus_areas": [
