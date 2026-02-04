@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuranerFariwala</title>
+  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
+  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
+  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
+  <meta name="author" content="MJ-Ahmad"/>
+  <meta name="generator" content="mj.dev"/>
+  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
+  <meta name="creator" content="MJ-AHMAD"/>
+  <meta property="og:title" content="Quraner Fariwala"/>
+  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
+  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
+  <meta property="og:site_name" content="Quraner Fariwala"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:image" content="assets/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Quraner Fariwala"/>
+  <meta property="og:type" content="website"/>
+  <link rel="shortcut icon" href="assets/logo.png"/>
+  <link rel="icon" href="assets/logo.png" sizes="any"/>
+
+  <link rel="stylesheet" href="css/header/style.css">
+  <link rel="stylesheet" href="css/footer/style.css">
+  <link rel="stylesheet" href="css/mission/style.css">
+
+  <style>
+:root{
+  --primary:#004d40;
+  --primary-foreground:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --bg:#ffffff;
+  --card:#fafafa;
+  --radius:12px;
+  --container-width:1200px;
+  --max-width:1100px;
+  --gap:1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:#111;line-height:1.5;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container-width);margin:0 auto;padding:0 1rem}
+.text-center{text-align:center}
+.lead{font-size:1.05rem;color:var(--primary-foreground);opacity:.95;max-width:900px;margin:0.75rem auto}
+.muted{color:var(--muted);margin-top:.5rem}
+
+/* Hero */
+.hero{background:var(--primary);color:var(--primary-foreground);padding:3.5rem 0}
+.hero h1{font-size:2.25rem;line-height:1.05}
+.hero .lead{color:rgba(255,255,255,0.9)}
+
+/* Video */
+.video-section{padding:3rem 0;text-align:center}
+.video-wrapper{max-width:900px;margin:1.25rem auto;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+.video-wrapper iframe{width:100%;height:520px;border:0;display:block}
+
+/* Steps */
+.steps-section{padding:3rem 0;background:linear-gradient(180deg,#fff 0%, #fbfbfb 100%)}
+.steps-section h2{font-size:1.5rem}
+.steps{margin-top:1.5rem;display:flex;flex-direction:column;gap:2.5rem}
+.step{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center}
+.step.reverse{direction:ltr}
+.step.reverse .step-content{order:2}
+.step.reverse .step-media{order:1}
+.step-content{padding:1rem}
+.step-meta{display:flex;align-items:center;gap:.75rem}
+.step-icon{width:44px;height:44px;border-radius:999px;background:var(--primary);color:var(--primary-foreground);display:flex;align-items:center;justify-content:center;font-weight:700}
+.step h3{font-size:1.125rem;margin-top:.5rem}
+.step p{color:#333;margin-top:.5rem}
+.step ul{margin-top:.75rem;list-style:none;padding-left:0;display:grid;gap:.4rem}
+.step ul li{position:relative;padding-left:1.6rem;color:var(--muted)}
+.step ul li::before{content:"";position:absolute;left:0;top:.25rem;width:10px;height:10px;background:var(--accent);border-radius:2px}
+
+/* Step media box: fixed aspect ratio and consistent size */
+.step-media {
+  width: 100%;
+  /* Use aspect-ratio for modern browsers to keep consistent frame */
+  aspect-ratio: 4 / 3; /* পরিবর্তন করে 3/2 বা 16/9 ব্যবহার করতে পারেন */
+  max-width: 640px;    /* ডেক্সটপে প্রতিটি মিডিয়া ব্লকের সর্বোচ্চ প্রস্থ */
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  background: #f7f7f7; /* প্যাডিং ব্যাকগ্রাউন্ড যদি ছবি ছোট হয় */
+}
+
+/* Ensure image fills the frame and preserves quality */
+.step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* cover নিশ্চিত করে ছবির রেজুলেশন ভর করে ফ্রেম */
+  object-position: center;
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  image-rendering: auto;  /* ব্রাউজারকে রেন্ডারিং অপটিমাইজ করতে বলবে */
+}
+
+/* Responsive adjustments */
+@media (min-width: 900px) {
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .step.reverse .step-content { order: 2; }
+  .step.reverse .step-media   { order: 1; }
+  /* Make media a consistent visual size on wide screens */
+  .step-media { max-width: 560px; height: auto; }
+}
+
+@media (max-width: 899px) {
+  .step {
+    display: block;
+  }
+  .step-media { aspect-ratio: 16 / 9; max-width: 100%; }
+}
+
+
+/* CTA */
+.hero-cta{background:var(--primary);color:var(--primary-foreground);padding:2.5rem 0;margin-top:1.5rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.25rem;border-radius:8px;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--primary-foreground);color:var(--primary);box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.btn.outline{background:transparent;border:2px solid rgba(255,255,255,0.18);color:var(--primary-foreground)}
+
+/* Responsive */
+@media (max-width:900px){
+  .video-wrapper iframe{height:320px}
+  .step{grid-template-columns:1fr;gap:1rem}
+  .step.reverse .step-content{order:1}
+  .step.reverse .step-media{order:2}
+  .hero h1{font-size:1.75rem}
+}
+
+  </style>
+</head>
+<body class="__className_c32586">
+  <!-- Theme script (keeps original behavior) -->
+  <div hidden><!--$--><!--/$--></div>
+  <script>
+    ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];
+      function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{
+        let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
+        c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
+      }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}
+      if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}
+    })("class","theme","system",null,["light","dark"],null,true,true)
+  </script>
+
+  <!-- Header -->
+  <header class="site-header" role="banner" aria-label="Site header">
+    <div class="container">
+      <div class="flex header-row items-center justify-between gap-4">
+        <!-- Brand -->
+        <div class="brand_h">
+          <a href="/qf" aria-label="Nexara home">QuranerFariwala</a>
+          <span class="badge_h" aria-hidden="true">A Journey of Light</span>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+
+        <!-- Navigation -->
+        <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
+          <a target="_blank" rel="noopener noreferrer" href="/qf/edu" class="btn" title="Repository (opens in new tab)">
+            <span>Al-Quran Journey</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Projects">
+            <span>Memorize Qur’an</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Documentation">
+            <span>Tajweedul Qur’an</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Community">
+            <span>Tarteelul Qur’an</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="mission-hero" aria-labelledby="mission-heading">
+      <!-- Background image and overlays -->
+      <div class="mission-hero__bg" aria-hidden="true"></div>
+      <div class="mission-hero__overlay" aria-hidden="true"></div>
+      <div class="mission-hero__glow" aria-hidden="true"></div>
+
+      <div class="container">
+        <header1 class="mission-header1">
+          <div class="eyebrow reveal" data-reveal>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <span>Preserve, Publish, Distribute</span>
+          </div>
+
+          <h1 id="mission-heading" class="mission-title reveal" data-reveal>
+            Our Production Process
+          </h1>
+
+          <p class="mission-subtitle reveal" data-reveal>
+            From careful typesetting to final delivery, every step in our process is designed to ensure the highest quality Qur'ans reach those who need them most.
+          </p>
+        </header1>
+      </div>
+    </section>
+
+
+
+<section class="steps-section">
+  <div class="container">
+    <h2>Step-by-Step Production</h2>
+    <p class="muted">Every Qur'an goes through a meticulous 11-step process to ensure exceptional quality and care.</p>
+
+    <div class="steps">
+      <!-- Step 1 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">1</div>
+          </div>
+          <h3>Pre-Press & Design</h3>
+          <p>Sheets are imposed into forms (e.g., 23/36 format) and printed with precise registration. This stage sets the foundation for accurate pagination and folding.</p>
+          <ul>
+            <li>Certified Arabic typography specialists</li>
+            <li>Multi-stage scholarly review process</li>
+            <li>Memorization-optimized page layout</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf/11.jpg"
+            srcset="assets/qf/11.jpg 1x, assets/qf_copy/01@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Printing press used in pre-press and design"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 2 -->
+      <article class="step reverse">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">2</div>
+          </div>
+          <h3>Offset Printing</h3>
+          <p>Using state-of-the-art 4-color offset printing technology, each page is rendered with exceptional clarity on 61 GSM archival-grade paper. This ensures durability for years of daily use while maintaining comfortable page weight.</p>
+          <ul>
+            <li>4-color offset printing technology</li>
+            <li>61 GSM archival-grade paper</li>
+            <li>Crystal-clear text reproduction</li>
+            <li>Consistent ink density throughout</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/01.jpg"
+            srcset="assets/qf_copy/01.jpg 1x, assets/qf_copy/02@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Offset printing press"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 3 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">3</div>
+          </div>
+          <h3>Signature Folding</h3>
+          <p>Printed sheets are folded into signatures and gathered in sequence. Skilled technicians ensure page order and register are perfect before binding.</p>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/2.jpg"
+            srcset="assets/qf_copy/2.jpg 1x, assets/qf_copy/03@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Book binding process"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 4 -->
+      <article class="step reverse">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">4</div>
+          </div>
+          <h3>Quality Control</h3>
+          <p>Every single copy undergoes rigorous quality inspection. Our QC team checks for print clarity, binding integrity, page alignment, and overall finish. Only volumes meeting our exacting standards proceed to packaging.</p>
+          <ul>
+            <li>100% inspection rate</li>
+            <li>Print clarity verification</li>
+            <li>Binding integrity testing</li>
+            <li>Page alignment checks</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/03.jpg"
+            srcset="assets/qf_copy/03.jpg 1x, assets/qf_copy/04@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Quality control inspection"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 5 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">5</div>
+          </div>
+          <h3>Cover Design and Printing</h3>
+          <p>Covers are printed with durable inks and materials, combining traditional ornamentation with modern durability standards.</p>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/04.jpg"
+            srcset="assets/qf_copy/04.jpg 1x, assets/qf_copy/05@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Packaging and slipcases"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 6 -->
+      <article class="step reverse">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">6</div>
+          </div>
+          <h3>Casing In and Binding</h3>
+          <p>Signatures are sewn or glued, then cased into printed covers. Binding techniques preserve page order and allow the Mushaf to open flat while maintaining structural integrity.</p>
+          <ul>
+            <li>Priority to orphan institutions</li>
+            <li>Nationwide distribution network</li>
+            <li>Signed receipt documentation</li>
+            <li>Photo verification at delivery</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/05.jpg"
+            srcset="assets/qf_copy/05.jpg 1x, assets/qf_copy/06@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Distribution trucks and logistics"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 7 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">7</div>
+          </div>
+          <h3>Adhesive Curing & Final Drying</h3>
+          <p>After casing and gluing, Mushafs enter a controlled drying phase to ensure adhesives cure properly and bindings remain secure over time.</p>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/06.jpg"
+            srcset="assets/qf_copy/06.jpg 1x, assets/qf_copy/05@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Packaging and slipcases"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+
+      <!-- Step 8 -->
+      <article class="step reverse">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">8</div>
+          </div>
+          <h3>Final Binding Inspection & Storage</h3>
+          <p>Completed Mushafs undergo a final binding inspection. Approved copies are organized and stored in climate-controlled conditions to preserve quality until distribution.</p>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/07.jpg"
+            srcset="assets/qf_copy/07.jpg 1x, assets/qf_copy/04@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Quality control inspection"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 9 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">9</div>
+          </div>
+          <h3>Packaging</h3>
+          <p>Each Qur'an is carefully placed in a custom slipcase for protection during transport. Volumes are then boxed in batches of 32 for efficient logistics while ensuring each copy arrives in pristine condition.</p>
+          <ul>
+            <li>Individual protective slipcases</li>
+            <li>Batch packaging (32 copies/box)</li>
+            <li>Moisture-resistant materials</li>
+            <li>Labeled for tracking</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/08.jpg"
+            srcset="assets/qf_copy/08.jpg 1x, assets/qf_copy/05@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Packaging and slipcases"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 10 -->
+      <article class="step reverse">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">10</div>
+          </div>
+          <h3>Distribution</h3>
+          <p>Our distribution network ensures equitable delivery to rural madrasas, urban schools, and community centers across Bangladesh. Priority is given to orphaned students and underserved Hifz institutions.</p>
+          <ul>
+            <li>Priority to orphan institutions</li>
+            <li>Nationwide distribution network</li>
+            <li>Signed receipt documentation</li>
+            <li>Photo verification at delivery</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/09.jpg"
+            srcset="assets/qf_copy/09.jpg 1x, assets/qf_copy/06@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Distribution trucks and logistics"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Step 11 -->
+      <article class="step">
+        <div class="step-content">
+          <div class="step-meta">
+            <div class="step-icon">11</div>
+          </div>
+          <h3>Community Delivery</h3>
+          <p>Final distribution places Mushafs into the hands of students, mosques, and community centers. We coordinate with local partners to ensure respectful and effective delivery.</p>
+          <ul>
+            <li>Individual protective slipcases</li>
+            <li>Batch packaging (32 copies/box)</li>
+            <li>Moisture-resistant materials</li>
+            <li>Labeled for tracking</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img
+            src="assets/qf_copy/10.jpg"
+            srcset="assets/qf_copy/10.jpg 1x, assets/qf_copy/05@2x.jpg 2x"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Packaging and slipcases"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+    <section class="cta hero-cta">
+      <div class="container text-center">
+        <h2>Support Quality Qur'an Production</h2>
+        <p class="lead">Your sponsorship enables us to maintain these high standards while ensuring every student receives a beautiful, durable Qur'an.</p>
+        <div class="cta-buttons">
+          <a class="btn primary" href="">Sponsor Now</a>
+          <a class="btn outline" href="">Learn About Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: complete, responsive, accessible -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="grid" role="navigation" aria-label="Footer navigation">
+        <!-- Column 1: Initiatives -->
+        <div class="col" aria-labelledby="footer-initiatives">
+          <h3 id="footer-initiatives">
+            <!-- rocket icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-blue)">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+            <span>Initiatives</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-blue)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Memorize Qur’an</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Tajweedul Qur’an</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-purple)" title="Agripreneurship"></span>
+                <span class="group-hover-font">Tarteelul Qur’an</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Project -->
+        <div class="col" aria-labelledby="footer-project">
+          <h3 id="footer-project">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-purple)">
+              <path d="M10 12.5 8 15l2 2.5"></path>
+              <path d="m14 12.5 2 2.5-2 2.5"></path>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path>
+            </svg>
+            <span>Project</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Hifzul Qur'an</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Wakhful Qur'an</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Printing & Distribution</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Column 3: Resources -->
+        <div class="col" aria-labelledby="footer-resources">
+          <h3 id="footer-resources">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-amber)">
+              <path d="M12 7v14"></path>
+              <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+            </svg>
+            <span>Resources</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Al-Ijazah</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Al-Mokaddamah</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Hokukul Qur’an</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Community -->
+        <div class="col" aria-labelledby="footer-community">
+          <h3 id="footer-community">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Community</span>
+          </h3>
+
+          <ul>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="group-hover-font">Governance</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                  <path d="M10 9H8"></path>
+                  <path d="M16 13H8"></path>
+                  <path d="M16 17H8"></path>
+                </svg>
+                <span class="group-hover-font">Guidelines</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M8 2v4"></path>
+                  <path d="M16 2v4"></path>
+                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                  <path d="M3 10h18"></path>
+                </svg>
+                <span class="group-hover-font">Events</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Support -->
+        <div class="col" aria-labelledby="footer-support">
+          <h3 id="footer-support">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m4.93 4.93 4.24 4.24"></path>
+              <path d="m14.83 9.17 4.24-4.24"></path>
+              <path d="m14.83 14.83 4.24 4.24"></path>
+              <path d="m9.17 14.83-4.24 4.24"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            <span>Support</span>
+          </h3>
+
+          <ul>
+
+            <li>
+              <a class="link" href="/qf/contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span class="group-hover-font">Contact</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                </svg>
+                <span class="group-hover-font">Security</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                <span class="group-hover-font">Investment Overview</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">QF</div>
+          <p class="copyright">
+            © 2026 <b>QuranerFariwala</b> - All rights reserved. This project is open source and available under the
+            <a href="/qf/mit" style="color:var(--accent-blue); font-weight:600; margin-left:.35rem;">MIT License</a>.          
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/qf/privacy" aria-label="Privacy">Privacy</a>
+          <a href="/qf/terms" aria-label="Terms">Terms</a>
+          <a href="/qf/sitemap" aria-label="Sitemap">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="mt-6 badge-row">
+        <div class="badge" role="note" aria-label="Empowering communities">
+          <span style="font-size:.92rem; color:var(--muted);">
+            Empowering communities through
+            <strong style="color:var(--accent-blue); margin:0 .25rem;">Research</strong>,
+            <strong style="color:var(--accent-emerald); margin:0 .25rem;">Printing</strong> &
+            <strong style="color:var(--accent-purple); margin:0 .25rem;">Distribution of Holy Quran</strong> — by
+            <a href="https://MJ-Ahmad.github.io/mj-ahmad" style="color:var(--muted-strong); font-weight:700; margin-left:.35rem;">MJ-Ahmad</a>
+          </span>
+
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" style="margin-left:.6rem; color:var(--accent-amber)">
+            <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+            <circle cx="12" cy="8" r="6"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', function () {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#top') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Lazy load images using IntersectionObserver
+  const images = document.querySelectorAll('img');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          // If you want to use data-src for lazy loading, swap src here
+          // img.src = img.dataset.src;
+          obs.unobserve(img);
+        }
+      });
+    }, { rootMargin: '100px' });
+
+    images.forEach(img => io.observe(img));
+  }
+
+  // Simple keyboard accessibility for video iframe
+  const iframe = document.querySelector('.video-wrapper iframe');
+  if (iframe) {
+    iframe.setAttribute('tabindex', '0');
+  }
+});
+</script>
+  <script src="js/header/script.js"></script>
+  <script src="js/footer/script.js"></script>
+  <script src="js/mission/script.js"></script>
+</body>
+</html>
