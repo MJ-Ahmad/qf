@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuranerFariwala</title>
+  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
+  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
+  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
+  <meta name="author" content="MJ-Ahmad"/>
+  <meta name="generator" content="mj.dev"/>
+  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
+  <meta name="creator" content="MJ-AHMAD"/>
+  <meta property="og:title" content="Quraner Fariwala"/>
+  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
+  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
+  <meta property="og:site_name" content="Quraner Fariwala"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:image" content="assets/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Quraner Fariwala"/>
+  <meta property="og:type" content="website"/>
+  <link rel="shortcut icon" href="assets/logo.png"/>
+  <link rel="icon" href="assets/logo.png" sizes="any"/>
+  <style>
+    /* Reset */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;line-height:1.6;color:#0f172a;background:#f8fafc}
+
+    /* Layout container */
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+
+    /* Utilities */
+    .text-center{text-align:center}
+    .mb-4{margin-bottom:1rem}
+    .mb-6{margin-bottom:1.5rem}
+    .mb-8{margin-bottom:2rem}
+    .mb-12{margin-bottom:3rem}
+    .py-20{padding:5rem 0}
+    .rounded-lg{border-radius:0.5rem}
+    .rounded-xl{border-radius:0.75rem}
+    .rounded-2xl{border-radius:1rem}
+    .shadow-lg{box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+    .shadow-xl{box-shadow:0 12px 40px rgba(2,6,23,0.08)}
+    .overflow-hidden{overflow:hidden}
+    .flex{display:flex}
+    .items-center{align-items:center}
+    .justify-center{justify-content:center}
+    .gap-4{gap:1rem}
+    .muted{color:#475569}
+    .lead{font-size:1.05rem;color:#334155}
+
+    /* Badge */
+    .badge{display:inline-block;padding:.35rem .75rem;border-radius:9999px;font-weight:700;font-size:.9rem}
+    .badge-emerald{background:#d1fae5;color:#065f46}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:.5rem;font-weight:700;text-decoration:none;cursor:pointer;border:0}
+    .btn-primary{background:#059669;color:#fff}
+    .btn-primary:hover{background:#047857}
+    .btn-outline{background:transparent;border:2px solid #059669;color:#065f46}
+    .btn-outline:hover{background:rgba(5,150,105,0.06)}
+
+    /* Section background */
+    .section-quran{background:linear-gradient(90deg,#ecfdf5 0%,#f0fdfa 100%);}
+
+    /* Card */
+    .card{background:#fff;border-radius:.75rem;border:1px solid #e6f6ef;overflow:hidden}
+    .card .grid{display:grid;grid-template-columns:1fr;gap:0}
+    @media(min-width:900px){ .card .grid{grid-template-columns:1fr 1fr} }
+
+    .image-wrap{position:relative;height:320px}
+    @media(min-width:900px){ .image-wrap{height:100%} }
+    .image-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .overlay-gradient{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,120,87,0.85),transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem;color:#fff}
+
+    .p-8{padding:2rem}
+    .p-12{padding:3rem}
+
+    /* Grid lists */
+    .grid-2{display:grid;gap:1.25rem}
+    @media(min-width:900px){ .grid-2{grid-template-columns:repeat(2,1fr)} }
+
+    .feature{background:#fff;padding:1.5rem;border-radius:.75rem;border:1px solid #e6f6ef}
+    .feature .icon{width:56px;height:56px;border-radius:.5rem;background:#d1fae5;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+    .feature h3{color:#065f46;margin-bottom:.5rem}
+    .feature p{color:#475569;margin-bottom:.75rem}
+
+    .info-box{background:#ecfdf5;padding:1rem;border-radius:.5rem;border:1px solid #d1fae5}
+
+    /* Callout (dark) */
+    .callout{background:#065f46;color:#e6fffa;padding:2rem;border-radius:1rem;position:relative;overflow:hidden}
+    .callout .decor{position:absolute;border-radius:50%;background:rgba(4,120,87,0.9);opacity:.45}
+    .callout .decor.top-right{width:220px;height:220px;right:-110px;top:-110px}
+    .callout .decor.bottom-left{width:220px;height:220px;left:-110px;bottom:-110px}
+    .callout h3{font-size:1.5rem;margin-bottom:1rem;text-align:center}
+    .callout p{max-width:900px;margin:0 auto 1rem;text-align:center;color:#d1fae5;line-height:1.6}
+
+    /* Small helpers */
+    ul.checks{list-style:none;padding-left:0}
+    ul.checks li{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.5rem}
+    .check-svg{flex-shrink:0;margin-top:.25rem;color:#065f46}
+
+    /* Accessibility: reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{transition:none!important}
+    }
+  </style>
+  <link rel="stylesheet" href="css/footer/style.css">
+  <link rel="stylesheet" href="css/header/style.css">
+
+</head>
+<body class="__className_c32586">
+  <!-- Theme script (keeps original behavior) -->
+  <div hidden><!--$--><!--/$--></div>
+  <script>
+    ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];
+      function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{
+        let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
+        c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
+      }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}
+      if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}
+    })("class","theme","system",null,["light","dark"],null,true,true)
+  </script>
+
+  <!-- Header -->
+  <header class="site-header" role="banner" aria-label="Site header">
+    <div class="container">
+      <div class="flex header-row items-center justify-between gap-4">
+        <!-- Brand -->
+        <div class="brand_h">
+          <a href="/qf" aria-label="Nexara home">QuranerFariwala</a>
+          <span class="badge_h" aria-hidden="true">A Journey of Light</span>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+
+        <!-- Navigation -->
+        <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
+          <a target="_blank" rel="noopener noreferrer" href="" class="btn" title="Repository (opens in new tab)">
+            <span>Al-Qur'anul Majid</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Projects">
+            <span>Memorize Qur’an</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Documentation">
+            <span>Tajweedul Qur’an</span>
+          </a>
+
+          <a href="" class="btn ghost" title="Community">
+            <span>Tarteelul Qur’an</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="section-quran py-20" aria-labelledby="quran-title">
+      <div class="container">
+        <div class="text-center mb-12">
+          <span class="badge badge-emerald mb-4">Islamic Scholarship</span>
+          <h2 id="quran-title" style="font-size:2rem;line-height:1.1;margin-bottom:1rem">Al-Quran Journey: Depths of Divine Knowledge</h2>
+          <p class="lead muted" style="max-width:900px;margin:0 auto">
+            Embark on a profound scholarly journey into the depths of Quranic wisdom, where ancient divine revelation
+            meets modern scientific understanding and transforms lives through timeless guidance.
+          </p>
+        </div>
+
+        <!-- Main card with image + content -->
+        <div class="card rounded-2xl shadow-xl mb-8">
+          <div class="grid">
+            <div class="image-wrap" aria-hidden="true">
+              <img src="assets\logo\Transparent.png" alt="Al-Quran Journey — decorative image" />
+              <div class="overlay-gradient">
+                <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.5rem">Unveiling Quranic Miracles</h3>
+                <p style="max-width:36rem;color:rgba(255,255,255,.95);margin-bottom:.5rem">
+                  Our research-focused program invites scholars and seekers to explore the miraculous nature of the
+                  Quran through rigorous academic study and spiritual reflection.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-12">
+              <h3 style="font-size:1.25rem;color:#065f46;margin-bottom:1rem">The Imperative of Quranic Research</h3>
+
+              <p class="muted mb-4">
+                The Holy Quran stands as humanity's most profound source of knowledge—a divine text whose depths
+                remain inexhaustible after 1400 years of study. Our mission is to inspire Muslims to dedicate
+                themselves to serious, life-long engagement with this miraculous text, recognizing that superficial
+                understanding fails to capture its transformative power.
+              </p>
+
+              <p class="muted mb-4">
+                Through our scholarly programs, we aim to elevate Quranic literacy beyond basic recitation to deep
+                comprehension, critical analysis, and practical application—revealing how apparent contradictions
+                dissolve into perfect harmony when approached with proper methodological rigor.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two-column features -->
+        <div class="grid-2 mb-8">
+          <!-- Left: Modern Science & Quranic Revelations -->
+          <article class="feature">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+            </div>
+            <h3>Modern Science & Quranic Revelations</h3>
+            <p class="muted">
+              The Quran contains numerous scientific facts that were revealed 1400 years ago, long before modern
+              scientific discoveries confirmed them. Our research explores these remarkable correlations between
+              Quranic verses and contemporary scientific understanding.
+            </p>
+
+            <p class="muted mb-4">
+              From embryology to cosmology, from oceanography to geology, the Quran's descriptions of natural
+              phenomena demonstrate a precision that was impossible for human knowledge at the time of revelation.
+              This convergence of ancient text with modern discovery stands as compelling evidence of the Quran's
+              divine origin.
+            </p>
+
+            <p class="muted mb-4">
+              Our scholarly programs examine these scientific miracles through rigorous academic methodology, bringing
+              together experts in both Islamic studies and various scientific disciplines to illuminate how the Quran
+              anticipated discoveries that humanity would only make centuries later.
+            </p>
+
+            <div class="info-box">
+              <h4 style="color:#065f46;font-weight:700;margin-bottom:.5rem">Research Focus Areas:</h4>
+              <ul class="checks" style="margin-top:.5rem">
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Cosmological references and the Big Bang theory in Surah Al-Anbiya (21:30)</span></li>
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Embryological development described with precision in Surah Al-Mu'minun (23:12-14)</span></li>
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Oceanographic phenomena and underwater barriers in Surah Ar-Rahman (55:19-20)</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Right: Advanced Quranic Research Methodologies -->
+          <article class="feature">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3>Advanced Quranic Research Methodologies</h3>
+            <p class="muted">
+              Our program develops scholars who can navigate the intricate layers of Quranic meaning through mastery
+              of classical and contemporary interpretive methodologies. We emphasize the importance of understanding
+              the Quran's internal coherence, linguistic miracles, and historical context.
+            </p>
+
+            <p class="muted mb-4">
+              Participants learn to engage with primary Arabic sources, apply principles of usul al-tafsir (principles
+              of interpretation), and synthesize insights from various disciplines to uncover the Quran's guidance for
+              contemporary challenges.
+            </p>
+
+            <p class="muted mb-4">
+              Through this scholarly journey, students develop the analytical tools to distinguish authentic
+              interpretations from misrepresentations, recognizing how superficial readings have led to
+              misunderstandings that obscure the Quran's true message of justice, compassion, and intellectual
+              engagement.
+            </p>
+
+            <div class="info-box">
+              <h4 style="color:#065f46;font-weight:700;margin-bottom:.5rem">Research Approaches:</h4>
+              <ul class="checks" style="margin-top:.5rem">
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Thematic analysis across surahs to reveal conceptual unity</span></li>
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Linguistic analysis of Quranic Arabic's unique rhetorical features</span></li>
+                <li><svg class="check-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-9"/></svg><span>Comparative study of classical tafsir traditions and contemporary approaches</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- Next row: Printing & Global Network -->
+        <div class="grid-2 mb-8">
+          <article class="feature">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+              </svg>
+            </div>
+            <h3>Quranic Printing & Distribution Excellence</h3>
+            <p class="muted">
+              Our program includes specialized training in the sacred art and science of Quranic printing, preserving
+              the integrity of the divine text through meticulous attention to detail. We uphold the highest standards
+              of accuracy, clarity, and beauty in Mushaf production.
+            </p>
+
+            <p class="muted mb-4">
+              Participants learn the principles of Quranic orthography, typography, and manuscript preservation,
+              combining traditional calligraphic knowledge with modern printing technologies. This ensures that each
+              copy of the Quran we produce maintains the authenticity of the revelation.
+            </p>
+
+            <p class="muted mb-4">
+              Our distribution initiatives focus on making high-quality copies of the Quran accessible to communities
+              worldwide, particularly in underserved regions. We coordinate with local scholars to ensure proper
+              handling and respectful distribution of the sacred text.
+            </p>
+
+          </article>
+
+          <article class="feature">
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3>Global Quranic Research Network</h3>
+            <p class="muted">
+              We are building an international network of Quranic researchers, scholars, and institutions dedicated to
+              advancing our collective understanding of the Quran's depths. This collaborative approach brings
+              together diverse perspectives and expertise.
+            </p>
+
+            <p class="muted mb-4">
+              Our research initiatives span continents and disciplines, creating opportunities for meaningful dialogue
+              between traditional Islamic scholarship and contemporary academic approaches. This cross-pollination of
+              ideas generates fresh insights into the Quran's timeless wisdom.
+            </p>
+
+            <p class="muted mb-4">
+              Through conferences, publications, and digital platforms, we facilitate the sharing of research findings
+              and methodological innovations. This global community of scholars works together to address
+              misconceptions about the Quran and illuminate its relevance to modern challenges.
+            </p>
+
+          </article>
+        </div>
+
+        <!-- Call to engagement -->
+        <div class="callout mt-8">
+          <div class="decor top-right" aria-hidden="true"></div>
+          <div class="decor bottom-left" aria-hidden="true"></div>
+
+          <div style="position:relative;z-index:2">
+            <h3>The Call to Profound Quranic Engagement</h3>
+            <p>
+              We invite all Muslims to recognize that superficial engagement with the Quran falls short of our
+              responsibility toward divine revelation. True understanding requires dedicated study, critical thinking,
+              and spiritual reflection that transforms knowledge into action.
+            </p>
+
+            <p>
+              Through our comprehensive research programs, we aim to cultivate a generation of scholars and seekers
+              who approach the Quran with both intellectual rigor and spiritual humility—recognizing that its depths
+              can never be fully exhausted, yet committing themselves to the lifelong journey of exploration.
+            </p>
+
+            <div style="display:flex;justify-content:center;margin-top:1rem">
+              <a class="btn btn-primary" href="/qf">Begin Your Scholarly Journey</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: complete, responsive, accessible -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="grid" role="navigation" aria-label="Footer navigation">
+        <!-- Column 1: Initiatives -->
+        <div class="col" aria-labelledby="footer-initiatives">
+          <h3 id="footer-initiatives">
+            <!-- rocket icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-blue)">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+            <span>Initiatives</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-blue)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Memorize Qur’an</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Tajweedul Qur’an</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-purple)" title="Agripreneurship"></span>
+                <span class="group-hover-font">Tarteelul Qur’an</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Project -->
+        <div class="col" aria-labelledby="footer-project">
+          <h3 id="footer-project">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-purple)">
+              <path d="M10 12.5 8 15l2 2.5"></path>
+              <path d="m14 12.5 2 2.5-2 2.5"></path>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path>
+            </svg>
+            <span>Project</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Hifzul Qur'an</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Wakhful Qur'an</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
+                <span class="group-hover-font">Printing & Distribution</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Column 3: Resources -->
+        <div class="col" aria-labelledby="footer-resources">
+          <h3 id="footer-resources">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-amber)">
+              <path d="M12 7v14"></path>
+              <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+            </svg>
+            <span>Resources</span>
+          </h3>
+
+          <ul>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Al-Ijazah</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Al-Mokaddamah</span>
+              </a>
+            </li>
+            <li>
+              <a class="link" href="">
+                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
+                <span class="group-hover-font">Hokukul Qur’an</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Community -->
+        <div class="col" aria-labelledby="footer-community">
+          <h3 id="footer-community">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Community</span>
+          </h3>
+
+          <ul>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="group-hover-font">Governance</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                  <path d="M10 9H8"></path>
+                  <path d="M16 13H8"></path>
+                  <path d="M16 17H8"></path>
+                </svg>
+                <span class="group-hover-font">Guidelines</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
+                  <path d="M8 2v4"></path>
+                  <path d="M16 2v4"></path>
+                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                  <path d="M3 10h18"></path>
+                </svg>
+                <span class="group-hover-font">Events</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Support -->
+        <div class="col" aria-labelledby="footer-support">
+          <h3 id="footer-support">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m4.93 4.93 4.24 4.24"></path>
+              <path d="m14.83 9.17 4.24-4.24"></path>
+              <path d="m14.83 14.83 4.24 4.24"></path>
+              <path d="m9.17 14.83-4.24 4.24"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            <span>Support</span>
+          </h3>
+
+          <ul>
+
+            <li>
+              <a class="link" href="/qf/contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span class="group-hover-font">Contact</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                </svg>
+                <span class="group-hover-font">Security</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="link" href="">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                <span class="group-hover-font">Investment Overview</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">QF</div>
+          <p class="copyright">
+            © 2026 <b>QuranerFariwala</b> - All rights reserved. This project is open source and available under the
+            <a href="/qf/mit" style="color:var(--accent-blue); font-weight:600; margin-left:.35rem;">MIT License</a>.          
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/qf/privacy" aria-label="Privacy">Privacy</a>
+          <a href="/qf/terms" aria-label="Terms">Terms</a>
+          <a href="/qf/sitemap" aria-label="Sitemap">Sitemap</a>
+        </div>
+      </div>
+
+      <div class="mt-6 badge-row">
+        <div class="badge" role="note" aria-label="Empowering communities">
+          <span style="font-size:.92rem; color:var(--muted);">
+            Empowering communities through
+            <strong style="color:var(--accent-blue); margin:0 .25rem;">Research</strong>,
+            <strong style="color:var(--accent-emerald); margin:0 .25rem;">Printing</strong> &
+            <strong style="color:var(--accent-purple); margin:0 .25rem;">Distribution of Holy Quran</strong> — by
+            <a href="https://MJ-Ahmad.github.io/mj-ahmad" style="color:var(--muted-strong); font-weight:700; margin-left:.35rem;">MJ-Ahmad</a>
+          </span>
+
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" style="margin-left:.6rem; color:var(--accent-amber)">
+            <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+            <circle cx="12" cy="8" r="6"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple toast helper
+    function toast(message){
+      const t = document.createElement('div');
+      t.textContent = message;
+      t.style.position = 'fixed';
+      t.style.right = '1rem';
+      t.style.bottom = '1rem';
+      t.style.background = 'rgba(2,6,23,0.9)';
+      t.style.color = '#fff';
+      t.style.padding = '.75rem 1rem';
+      t.style.borderRadius = '.5rem';
+      t.style.boxShadow = '0 8px 24px rgba(2,6,23,0.2)';
+      t.style.zIndex = 9999;
+      t.style.opacity = '1';
+      document.body.appendChild(t);
+      setTimeout(()=>{ t.style.transition = 'opacity .4s'; t.style.opacity = '0'; setTimeout(()=>t.remove(),400); },2000);
+    }
+
+    // Button behaviors (placeholders)
+    document.getElementById('joinResearchBtn')?.addEventListener('click', function(){
+      // In a real site this would navigate or open a signup modal
+      toast('Thank you — research program signup coming soon.');
+      // smooth scroll to callout
+      const callout = document.querySelector('.callout');
+      if(callout) callout.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    document.getElementById('accessResourcesBtn')?.addEventListener('click', function(){
+      toast('Opening scholarly resources (placeholder).');
+      // Example: navigate to resources page
+      // location.href = '/al-quran-resources';
+    });
+
+    // Respect reduced motion preference
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+  <script src="js/header/script.js"></script>
+  <script src="js/footer/script.js"></script>
+</body>
+</html>
