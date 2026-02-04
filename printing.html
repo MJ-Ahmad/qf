@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quraner Fariwala — Production Process</title>
+
+  <!-- Basic responsive CSS -->
+  <style>
+    :root{
+      --bg:#fff; --text:#111; --muted:#6b7280; --accent:#0ea5a4;
+      --container:1100px;
+    }
+    [data-theme="dark"], .dark {
+      --bg:#0b1220; --text:#e6eef6; --muted:#9aa6b2; --accent:#34d399;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+    body{background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+    /* Header */
+    .site-header{border-bottom:1px solid rgba(0,0,0,0.06);background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);position:sticky;top:0;z-index:40}
+    .header-row{display:flex;align-items:center;gap:1rem;padding:.75rem 0}
+    .brand_h a{font-weight:700;color:var(--text);text-decoration:none}
+    .badge_h{display:inline-block;margin-left:.5rem;color:var(--muted);font-size:.85rem}
+
+    /* Nav */
+    .header-nav{display:flex;gap:.5rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;padding:.5rem .75rem;border-radius:8px;text-decoration:none;color:var(--text);background:transparent;border:1px solid rgba(0,0,0,0.06)}
+    .btn.primary{background:var(--accent);color:#fff;border:none}
+    .btn.ghost{background:transparent;opacity:.95}
+    .btn.outline{background:transparent;border:1px solid rgba(0,0,0,0.08)}
+
+    /* Mobile toggle */
+    .mobile-toggle{display:none;background:transparent;border:0;padding:.25rem;border-radius:6px}
+    .mobile-toggle svg{display:block}
+
+    /* Hero */
+    .mission-hero{padding:2.25rem 0}
+    .mission-title{font-size:clamp(1.5rem,3.5vw,2.25rem);margin:.25rem 0}
+    .mission-subtitle{color:var(--muted);max-width:60ch}
+
+    /* Steps */
+    .steps{display:grid;gap:1.5rem}
+    .step{display:flex;gap:1.25rem;align-items:center;padding:1rem;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,0.01),transparent)}
+    .step.reverse{flex-direction:row-reverse}
+    .step-content{flex:1}
+    .step-media{width:320px;flex-shrink:0}
+    .step-media img{width:100%;height:auto;border-radius:8px;display:block;object-fit:cover}
+
+    .step-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:700}
+
+    /* CTA */
+    .hero-cta{padding:2rem 0;text-align:center}
+    .lead{color:var(--muted)}
+
+    /* Footer */
+    .site-footer{border-top:1px solid rgba(0,0,0,0.06);padding:1rem 0;margin-top:2rem;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .header-nav{position:fixed;left:0;right:0;top:64px;background:var(--bg);flex-direction:column;padding:1rem;gap:.5rem;transform:translateY(-120%);transition:transform .22s ease-in-out;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+      .header-nav.open{transform:translateY(0)}
+      .mobile-toggle{display:inline-flex}
+      .steps{grid-auto-rows:auto}
+      .step{flex-direction:column;align-items:flex-start}
+      .step-media{width:100%}
+    }
+
+    /* Utility */
+    .text-center{text-align:center}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body data-theme="light">
+  <!-- Theme script preserved -->
+  <div hidden><!--$--><!--/$--></div>
+  <script>
+    ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];
+      function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{
+        let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
+        c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
+      }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}
+      if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}
+    })("data-theme","theme","system",null,["light","dark"],null,true,true)
+  </script>
+
+  <!-- Header -->
+  <header class="site-header" role="banner" aria-label="Site header">
+    <div class="container">
+      <div class="header-row">
+        <div class="brand_h">
+          <a href="/qf" aria-label="Quraner Fariwala home">QuranerFariwala</a>
+          <span class="badge_h" aria-hidden="true">A Journey of Light</span>
+        </div>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+        </button>
+
+        <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
+          <a target="_blank" rel="noopener noreferrer" href="/qf/edu" class="btn" title="Repository (opens in new tab)"><span>Al-Quran Journey</span></a>
+          <a href="#" class="btn ghost" title="Projects"><span>Memorize Qur’an</span></a>
+          <a href="#" class="btn ghost" title="Documentation"><span>Tajweedul Qur’an</span></a>
+          <a href="#" class="btn ghost" title="Community"><span>Tarteelul Qur’an</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <section class="mission-hero" aria-labelledby="mission-heading">
+      <div class="container">
+        <header class="mission-header1">
+          <div class="eyebrow" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <span>Preserve, Publish, Distribute</span>
+          </div>
+
+          <h1 id="mission-heading" class="mission-title">Our Production Process</h1>
+          <p class="mission-subtitle muted">From careful typesetting to final delivery, every step in our process is designed to ensure the highest quality Qur'ans reach those who need them most.</p>
+        </header>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <h2>Step-by-Step Production</h2>
+        <p class="muted">Every Qur'an goes through a meticulous 11-step process to ensure exceptional quality and care.</p>
+
+        <div class="steps" aria-live="polite">
+          <!-- Step 1 -->
+          <article class="step" aria-labelledby="step1-title">
+            <div class="step-content">
+              <div class="step-meta"><div class="step-icon">1</div></div>
+              <h3 id="step1-title">Pre-Press & Design</h3>
+              <p>Sheets are imposed into forms (e.g., 23/36 format) and printed with precise registration. This stage sets the foundation for accurate pagination and folding.</p>
+              <ul>
+                <li>Certified Arabic typography specialists</li>
+                <li>Multi-stage scholarly review process</li>
+                <li>Memorization-optimized page layout</li>
+              </ul>
+            </div>
+
+            <div class="step-media">
+              <!-- Use absolute paths consistently and provide 1x/2x srcset -->
+              <picture>
+                <source media="(max-width:600px)" srcset="/qf/assets/qf/111-small.jpg 1x, /qf/assets/qf/111-small@2x.jpg 2x">
+                <img
+                  src="/qf/assets/qf/111.jpg"
+                  srcset="/qf/assets/qf/111.jpg 1x, /qf/assets/qf_copy/01@2x.jpg 2x"
+                  sizes="(max-width:900px) 100vw, 320px"
+                  alt="Printing press used in pre-press and design"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='/qf/assets/placeholder.jpg';this.srcset='';"
+                />
+              </picture>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step reverse" aria-labelledby="step2-title">
+            <div class="step-content">
+              <div class="step-meta"><div class="step-icon">2</div></div>
+              <h3 id="step2-title">Offset Printing</h3>
+              <p>Using state-of-the-art 4-color offset printing technology, each page is rendered with exceptional clarity on 61 GSM archival-grade paper.</p>
+              <ul>
+                <li>4-color offset printing technology</li>
+                <li>61 GSM archival-grade paper</li>
+                <li>Crystal-clear text reproduction</li>
+                <li>Consistent ink density throughout</li>
+              </ul>
+            </div>
+
+            <div class="step-media">
+              <img
+                src="/qf/assets/qf_copy/01.jpg"
+                srcset="/qf/assets/qf_copy/01.jpg 1x, /qf/assets/qf_copy/01@2x.jpg 2x"
+                sizes="(max-width:900px) 100vw, 320px"
+                alt="Offset printing press"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='/qf/assets/placeholder.jpg';this.srcset='';"
+              />
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta hero-cta">
+      <div class="container text-center">
+        <h2>Support Quality Qur'an Production</h2>
+        <p class="lead muted">Your sponsorship enables us to maintain these high standards while ensuring every student receives a beautiful, durable Qur'an.</p>
+        <div class="cta-buttons" style="display:flex;gap:.5rem;justify-content:center;margin-top:.75rem">
+          <a class="btn primary" href="#">Sponsor Now</a>
+          <a class="btn outline" href="#">Learn About Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Quraner Fariwala. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for interactivity and accessibility -->
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    (function(){
+      const toggle = document.getElementById('mobileToggle');
+      const nav = document.getElementById('headerNav');
+      toggle.addEventListener('click', function(){
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+      // Close nav on outside click or Escape
+      document.addEventListener('click', (e)=>{
+        if(!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('open')){
+          nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+        }
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && nav.classList.contains('open')){
+          nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+
+    // Simple responsive image pre-check for mobile: if srcset fails, ensure src fallback
+    (function(){
+      // On load, verify images with srcset have loaded; if not, keep src as fallback
+      window.addEventListener('load', function(){
+        document.querySelectorAll('img').forEach(img=>{
+          if(!img.complete || img.naturalWidth === 0){
+            // onerror handler will set placeholder
+            img.dispatchEvent(new Event('error'));
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
