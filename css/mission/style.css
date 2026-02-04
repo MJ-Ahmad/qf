@@ -23,7 +23,7 @@
     img{display:block;max-width:100%;height:auto}
 
     /* Section background (hero-like textured backdrop) */
-    .mission-hero {
+    .mission-hero1 {
       position: relative;
       padding: 4.5rem 1rem;
       overflow: hidden;
@@ -35,7 +35,7 @@
     }
 
     /* Background image layer */
-    .mission-hero__bg {
+    .mission-hero1__bg {
       position: absolute;
       inset: 0;
       z-index: 0;
@@ -48,7 +48,7 @@
     }
 
     /* Soft overlay gradient for legibility */
-    .mission-hero__overlay {
+    .mission-hero1__overlay {
       position: absolute;
       inset: 0;
       z-index: 1;
@@ -57,7 +57,7 @@
     }
 
     /* Decorative radial glow */
-    .mission-hero__glow {
+    .mission-hero1__glow {
       position: absolute;
       z-index: 1;
       left: 10%;
@@ -70,7 +70,7 @@
     }
 
     /* Container */
-    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 1rem; position: relative; z-index: 2; }
+    .container1 { max-width: var(--container-max); margin: 0 auto; padding: 0 1rem; position: relative; z-index: 2; }
 
     /* Header content */
     .mission-header1 { text-align: center; max-width: 980px; margin: 0 auto 2rem; }

@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/footer/style.css">
   <link rel="stylesheet" href="css/body/style.css">
   <link rel="stylesheet" href="css/section/style.css">
+  <link rel="stylesheet" href="css/mission/style.css">
 <style>
      .hero {display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;padding:1.25rem;border-radius:12px;background:#fff;margin:1rem 0;box-shadow:0 8px 24px rgba(2,6,23,0.04)}
     .hero.reverse .hero-image{order:-1}
@@ -91,6 +92,37 @@
   </header>
   <main>
   <!-- Hero Section -->
+    <section class="mission-hero1" aria-labelledby="mission-heading">
+      <!-- Background image and overlays -->
+      <div class="mission-hero1__bg" aria-hidden="true"></div>
+      <div class="mission-hero1__overlay" aria-hidden="true"></div>
+      <div class="mission-hero1__glow" aria-hidden="true"></div>
+
+      <div class="container1">
+        <header1 class="mission-header1">
+          <div class="eyebrow reveal" data-reveal>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <span>Heritage • Scholarship • Access</span>
+          </div>
+
+          <h1 id="mission-heading" class="mission-title reveal" data-reveal>
+            Our Mission — Preserve, Publish, Distribute
+          </h1>
+
+          <p class="mission-subtitle reveal" data-reveal>
+            Quraner Fariwala is Bangladesh’s leading institution for Quranic research, premium printing, and global distribution.
+            We combine classical scholarship with modern production and distribution systems to ensure accurate, accessible, and
+            memorization‑friendly Qurans reach learners, Hifz students, and vulnerable communities worldwide.
+          </p>
+        </header1>
+      </div>
+    </section>
+
+
+
+
    <section class="hero1" aria-labelledby="hero-heading">
     <div class="hero__overlay"></div>
     <div class="hero__content container">
@@ -449,7 +481,19 @@
     </div>
   </footer>
 
+  <script>
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const headerNav = document.getElementById('headerNav');
+    mobileToggle?.addEventListener('click', () => {
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', String(!expanded));
+      headerNav.style.display = expanded ? 'none' : 'flex';
+    });
 
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <!-- Scripts -->
   <script src="js/header/script.js"></script>
   <script src="js/section/script.js"></script>
