@@ -38,142 +38,6 @@
     .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
     @media(max-width:700px){ .hero{grid-template-columns:1fr} .hero-image{height:220px} .hero.reverse .hero-image{order:0} }
 </style>
-
-  <style>
-    /* =========================
-       Base Reset & Typography
-       ========================= */
-    :root{
-      --primary: #004d40;
-      --accent: #0ea5a4;
-      --muted: #6b7280;
-      --bg: #ffffff;
-      --card: #fafafa;
-      --radius: 12px;
-      --container: 1200px;
-      --gap: 1.25rem;
-      --max-media-width: 900px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color-scheme: light;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body { background: var(--bg); color: #111827; line-height: 1.5; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
-    h1, h2, h3 { line-height: 1.05; }
-    .muted { color: var(--muted); }
-    .lead { font-size: 1.05rem; color: rgba(0,0,0,0.85); max-width: 900px; margin: 0.75rem auto; }
-
-    /* =========================
-       Header / Hero
-       ========================= */
-    header.hero5 { background: linear-gradient(180deg, var(--primary), #00332b); color: #fff; padding: 3.5rem 0; }
-    header.hero5 .container { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; text-align: center; }
-    header.hero5 h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; }
-    header.hero5 p { max-width: 900px; color: rgba(255,255,255,0.95); }
-
-    /* =========================
-       Video Section
-       ========================= */
-    .video-section { padding: 2.25rem 0; text-align: center; }
-    .video-wrapper {
-      max-width: var(--max-media-width);
-      margin: 1.25rem auto;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(2,6,23,0.12);
-      background: #000;
-      position: relative;
-    }
-    /* maintain 16:9 */
-    .video-wrapper::before { content: ""; display: block; padding-top: 56.25%; }
-    .video-wrapper video, .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-    .video-fallback {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.36); gap: 1rem; padding: 1rem; text-align: center;
-    }
-    .video-fallback.hidden { display: none; }
-    .video-fallback .btn {
-      background: #fff; color: var(--primary); padding: 0.6rem 1rem; border-radius: 8px; border: none; cursor: pointer; font-weight: 700;
-      box-shadow: 0 8px 24px rgba(2,6,23,0.12);
-    }
-    .video-fallback .btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.22); }
-
-    /* =========================
-       Compact Steps (grid)
-       ========================= */
-    .steps-section { padding: 2.5rem 0; background: linear-gradient(180deg,#fff,#fbfbfb); }
-    .steps { margin-top: 1.5rem; display: grid; gap: 2.25rem; }
-    .step {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      align-items: center;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(2,6,23,0.04);
-    }
-    .step-meta { display:flex; align-items:center; gap: .75rem; }
-    .step-icon { width:44px; height:44px; border-radius:999px; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
-    .step h3 { margin-top: .5rem; font-size: 1.125rem; }
-    .step p { margin-top: .5rem; color: #374151; }
-    .step ul { margin-top: .75rem; list-style: none; display: grid; gap: .4rem; padding-left: 0; color: var(--muted); }
-    .step ul li::before { content: ""; display:inline-block; width:10px; height:10px; background: var(--accent); margin-right: .6rem; vertical-align: middle; border-radius:2px; }
-
-    .step-media { width: 100%; aspect-ratio: 4/3; max-width: 560px; margin: 0 auto; border-radius: 12px; overflow: hidden; background: #f7f7f7; box-shadow: 0 8px 20px rgba(2,6,23,0.06); }
-    .step-media img { width:100%; height:100%; object-fit: cover; display:block; }
-
-    /* =========================
-       Detailed Process Hero Sections
-       ========================= */
-    .process-hero5 { display: grid; gap: 1rem; align-items: center; padding: 2rem 0; }
-    .process-hero5 .hero-image { width: 100%; max-width: 640px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
-    .process-hero5 .hero-image img { width:100%; height:100%; object-fit: cover; display:block; }
-    .process-hero5 .hero-content { padding: 0.5rem 1rem; }
-    .process-hero5 .hero-content h2 { font-size: 1.25rem; margin-bottom: .5rem; color: #0f172a; }
-    .process-hero5 .hero-content p { color: #374151; margin-bottom: .5rem; }
-    .process-hero5 .hero-content ul { margin-top: .5rem; list-style: none; padding-left: 0; color: var(--muted); display: grid; gap: .4rem; }
-    .process-hero.reverse { grid-template-columns: 1fr 1fr; }
-    .process-hero:not(.reverse) { grid-template-columns: 1fr 1fr; }
-
-    /* =========================
-       Specs, CTA, Footer
-       ========================= */
-    .specs { padding: 2.25rem 0; }
-    .spec-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-top: 1rem; }
-    .spec-card { background: var(--card); padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 6px 18px rgba(2,6,23,0.04); }
-    .spec-label { color: var(--muted); }
-    .spec-value { font-weight: 700; margin-top: .4rem; }
-
-    .hero-cta { background: var(--primary); color: #fff; padding: 2.25rem 0; margin-top: 1.5rem; }
-    .cta-buttons { display:flex; gap: 1rem; justify-content:center; margin-top: 1rem; flex-wrap:wrap; }
-    .btn { display:inline-block; padding: .75rem 1.25rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
-    .btn.primary { background: #fff; color: var(--primary); box-shadow: 0 8px 24px rgba(2,6,23,0.08); }
-    .btn.outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.18); }
-
-    footer.site-footer { padding: 1.5rem 0; text-align:center; color: var(--muted); font-size: .95rem; }
-
-    /* =========================
-       Responsive
-       ========================= */
-    @media (min-width: 900px) {
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      .step { grid-template-columns: 1fr 1fr; align-items: center; }
-      .step-media { max-width: 480px; }
-      .process-hero, .process-hero.reverse { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      header.hero h1 { font-size: 2.75rem; }
-    }
-    @media (max-width: 899px) {
-      .steps { grid-template-columns: 1fr; }
-      .step { grid-template-columns: 1fr; }
-      .process-hero, .process-hero.reverse { grid-template-columns: 1fr; }
-      .video-wrapper::before { padding-top: 56.25%; }
-      header.hero5 h1 { font-size: 1.75rem; }
-    }
-  </style>
-
 </head>
 <body class="__className_c32586">
   <!-- Theme script (keeps original behavior) -->
@@ -253,41 +117,143 @@
         </header1>
       </div>
     </section>
-    <!-- Video Section -->
-    <section class="video-section container" aria-labelledby="video-heading">
-      <h2 id="video-heading">Watch Our Process</h2>
 
-      <div class="video-wrapper" aria-hidden="false">
-        <!-- Native video element for autoplay muted loop -->
-        <video
-          id="productionVideo"
-          class="responsive-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="assets/mp4/poster.jpg"
-          aria-label="Production process video"
-        >
-          <source src="assets/mp4/bn.mp4" type="video/mp4" />
-          <source src="assets/mp4/bn.webm" type="video/webm" />
-          <!-- Fallback text -->
-          Your browser does not support the video tag.
-        </video>
 
-        <!-- Fallback overlay if autoplay is blocked -->
-        <div id="videoFallback" class="video-fallback hidden" role="region" aria-label="Video controls fallback">
-          <div>
-            <p class="video-hint">Autoplay was blocked by your browser. Tap to play the video muted or with sound.</p>
-            <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:0.75rem;">
-              <button id="playVideoBtn" class="btn">Play (Muted)</button>
-              <button id="playUnmutedBtn" class="btn secondary">Play with Sound</button>
-            </div>
-          </div>
+<!-- Video section (autoplay, muted, loop, responsive) -->
+<section class="video-section container" aria-labelledby="video-heading">
+  <h2 id="video-heading" class="text-center">Watch Our Process</h2>
+  <p class="muted text-center">See how we bring the Project Ramadhan 2026 vision to life, from printing press to community distribution.</p>
+
+  <div class="video-wrapper" aria-hidden="false">
+    <video
+      id="productionVideo"
+      class="responsive-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/mp4/poster.jpg"
+      aria-label="Production process video"
+    >
+      <source src="assets/mp4/bn.mp4" type="video/mp4" />
+      <source src="assets/mp4/bn.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="videoFallback" class="video-fallback hidden" role="region" aria-label="Video controls fallback">
+      <div>
+        <p class="video-hint">Autoplay was blocked by your browser. Tap to play the video muted or with sound.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:0.75rem;">
+          <button id="playVideoBtn" class="btn">Play (Muted)</button>
+          <button id="playUnmutedBtn" class="btn secondary">Play with Sound</button>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <style>
+    /* Scoped styles for the video section */
+    .video-section { padding: 2rem 0; text-align: center; }
+    .video-wrapper {
+      max-width: 1100px;
+      margin: 1.25rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(2,6,23,0.12);
+      background: #000;
+      position: relative;
+    }
+    .video-wrapper::before { content: ""; display: block; padding-top: 56.25%; } /* 16:9 */
+    .video-wrapper video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .video-fallback {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.36); gap: 1rem; padding: 1rem; text-align: center;
+    }
+    .video-fallback.hidden { display: none; }
+    .video-fallback .btn {
+      background: #fff; color: #004d40; padding: 0.6rem 1rem; border-radius: 8px; border: 0; cursor: pointer; font-weight: 700;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.12);
+    }
+    .video-fallback .btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.22); }
+    .video-hint { color: rgba(255,255,255,0.95); font-size: 0.95rem; max-width: 90%; margin: 0 auto; }
+    .btn { font-family: inherit; }
+    @media (max-width: 700px) {
+      .video-wrapper::before { padding-top: 56.25%; }
+    }
+  </style>
+
+  <script>
+    (function () {
+      const video = document.getElementById('productionVideo');
+      const fallback = document.getElementById('videoFallback');
+      const playBtn = document.getElementById('playVideoBtn');
+      const playUnmutedBtn = document.getElementById('playUnmutedBtn');
+
+      if (!video) return;
+
+      // Ensure muted for autoplay attempts
+      video.muted = true;
+
+      // Try autoplay
+      function tryPlay() {
+        const p = video.play();
+        if (p !== undefined) {
+          p.then(() => {
+            if (fallback) fallback.classList.add('hidden');
+          }).catch(() => {
+            if (fallback) fallback.classList.remove('hidden');
+          });
+        }
+      }
+
+      tryPlay();
+
+      // Fallback controls
+      if (playBtn) {
+        playBtn.addEventListener('click', function () {
+          video.muted = true;
+          video.play().catch(() => {});
+          if (fallback) fallback.classList.add('hidden');
+          this.focus({ preventScroll: true });
+        });
+      }
+
+      if (playUnmutedBtn) {
+        playUnmutedBtn.addEventListener('click', function () {
+          // Some browsers require a user gesture to unmute
+          video.muted = false;
+          video.play().catch(() => {});
+          if (fallback) fallback.classList.add('hidden');
+          this.focus({ preventScroll: true });
+        });
+      }
+
+      // Retry autoplay on first user gesture (mobile)
+      const userGestureHandler = () => {
+        tryPlay();
+        window.removeEventListener('click', userGestureHandler);
+        window.removeEventListener('touchstart', userGestureHandler);
+      };
+      window.addEventListener('click', userGestureHandler, { once: true });
+      window.addEventListener('touchstart', userGestureHandler, { once: true });
+
+      // Keyboard accessibility: toggle play/pause with Space/Enter when focused
+      video.setAttribute('tabindex', '0');
+      video.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          if (video.paused) video.play().catch(() => {});
+          else video.pause();
+        }
+      });
+    })();
+  </script>
+</section>
+
+
+
+
     <section class="hero reverse" aria-labelledby="hero-2">
       <div class="hero-image" aria-hidden="true">
         <img src="assets/qf/111.jpg" alt="Folding printed signatures into correct sequence">
@@ -710,82 +676,6 @@
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <script>
-    /* =========================
-       Page JS: Autoplay fallback, accessibility helpers
-       ========================= */
-    document.addEventListener('DOMContentLoaded', function () {
-      // Footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Video autoplay logic with fallback overlay
-      const video = document.getElementById('productionVideo');
-      const fallback = document.getElementById('videoFallback');
-      const playBtn = document.getElementById('playVideoBtn');
-      const playUnmutedBtn = document.getElementById('playUnmutedBtn');
-
-      if (!video) return;
-
-      // Ensure muted for autoplay attempts (most browsers allow muted autoplay)
-      video.muted = true;
-
-      // Attempt autoplay
-      const tryPlay = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // autoplay succeeded
-            if (fallback) fallback.classList.add('hidden');
-          }).catch(() => {
-            // autoplay blocked — show fallback overlay
-            if (fallback) fallback.classList.remove('hidden');
-          });
-        }
-      };
-
-      tryPlay();
-
-      // Fallback button handlers
-      if (playBtn) {
-        playBtn.addEventListener('click', function () {
-          video.muted = true;
-          video.play().catch(()=>{});
-          if (fallback) fallback.classList.add('hidden');
-          playBtn.focus({preventScroll:true});
-        });
-      }
-      if (playUnmutedBtn) {
-        playUnmutedBtn.addEventListener('click', function () {
-          // Some browsers require a user gesture to unmute
-          video.muted = false;
-          video.play().catch(()=>{});
-          if (fallback) fallback.classList.add('hidden');
-          playUnmutedBtn.focus({preventScroll:true});
-        });
-      }
-
-      // Try again on first user gesture (mobile)
-      const userGestureHandler = () => {
-        tryPlay();
-        window.removeEventListener('click', userGestureHandler);
-        window.removeEventListener('touchstart', userGestureHandler);
-      };
-      window.addEventListener('click', userGestureHandler, { once: true });
-      window.addEventListener('touchstart', userGestureHandler, { once: true });
-
-      // Improve keyboard accessibility: allow space/enter to toggle muted state when focused on video
-      video.setAttribute('tabindex', '0');
-      video.addEventListener('keydown', function (e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          if (video.paused) video.play().catch(()=>{});
-          else video.pause();
-        }
-      });
-    });
-  </script>
   <!-- Scripts -->
   <script src="js/header/script.js"></script>
   <script src="js/section/script.js"></script>
@@ -793,4 +683,3 @@
   <script src="js/footer/script.js"></script>
 </body>
 </html>
-
