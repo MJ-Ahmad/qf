@@ -1,0 +1,913 @@
+{
+  "QuranerFariwala": {
+    "overview": {
+      "title": "Quraner Fariwala",
+      "subtitle": "Research • Printing • Distribution of Holy Quran",
+      "type": "Faith-based Educational & Distribution Institution",
+      "uk_registration_number": "14066998",
+      "description": "Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran. We combine heritage, scholarship, and technology to empower millions of Hifz students, orphans, and underserved learners worldwide.",
+      "mission": "To spread Quranic knowledge through scholarly research, premium printing, and inclusive distribution, ensuring every student has access to memorization-optimized editions of the Holy Quran.",
+      "goals": [
+        "Print and distribute high-quality Qurans globally",
+        "Support educational initiatives and scholarships",
+        "Advance Quranic research methodologies",
+        "Build sustainable infrastructure for long-term impact",
+        "Foster unity and inclusivity across the Ummah"
+      ],
+      "key_features": [
+        "Premium Printing Standards",
+        "Global Distribution Network",
+        "Educational Support Programs",
+        "Advanced Quranic Research",
+        "Transparency & Accountability"
+      ],
+      "taglines": [
+        "A Journey of Light: Global Revival of Qur'anic Access",
+        "Restoration, Dignity, Global Solidarity"
+      ]
+    },
+    "Al-Qur'anul Majid": {},
+    "Memorize Qur’an": {},
+    "Tajweedul Qur’an": {},
+    "Tarteelul Qur’an": {},
+    "Modern Science & Quranic Revelations": {
+      "post": {
+        "title": "Modern Science & Quranic Revelations",
+        "english": {
+          "intro": "1400 years ago, the Quran revealed truths that science is only now beginning to understand.",
+          "body": "From the formation of the universe to the development of the human embryo, the Quran describes natural phenomena with a precision that defies the limits of human knowledge at the time of revelation. Today, these verses align strikingly with modern scientific discoveries—offering powerful testimony to the Quran’s divine origin.",
+          "research_focus": [
+            {
+              "topic": "Cosmology & the Big Bang",
+              "reference": "Surah Al-Anbiya (21:30)",
+              "icon": "🌠"
+            },
+            {
+              "topic": "Embryology & Human Development",
+              "reference": "Surah Al-Mu’minun (23:12–14)",
+              "icon": "🧬"
+            },
+            {
+              "topic": "Oceanography & Underwater Barriers",
+              "reference": "Surah Ar-Rahman (55:19–20)",
+              "icon": "🌊"
+            }
+          ],
+          "methodology": "Through rigorous academic methodology, we bring together scholars of Islamic studies and scientific disciplines to illuminate these timeless truths.",
+          "call_to_action": "Explore how divine revelation and modern science converge. Follow Quraner Fariwala for insights, publications, and educational programs that bridge faith and reason.",
+          "hashtags": [
+            "#QuranerFariwala",
+            "#ScientificMiracles",
+            "#QuranAndScience",
+            "#DivineRevelation",
+            "#IslamicResearch",
+            "#Embryology",
+            "#Cosmology",
+            "#Oceanography",
+            "#SurahAlAnbiya",
+            "#SurahAlMuminun",
+            "#SurahArRahman"
+          ]
+        },
+        "bengali": {
+          "title": "আধুনিক বিজ্ঞান ও কুরআনিক প্রকাশনা",
+          "intro": "১৪০০ বছর আগে কুরআনে এমন সব সত্য প্রকাশিত হয়েছে যা আধুনিক বিজ্ঞান এখন আবিষ্কার করছে।",
+          "body": "বিশ্বব্রহ্মাণ্ডের সৃষ্টি থেকে মানব ভ্রূণের বিকাশ পর্যন্ত, কুরআন প্রাকৃতিক ঘটনাবলীকে এমন নিখুঁতভাবে বর্ণনা করেছে যা সেই সময়ে মানব জ্ঞানের সীমার বাইরে ছিল। আজকের বৈজ্ঞানিক আবিষ্কারগুলো এই আয়াতগুলোর সাথে আশ্চর্যজনকভাবে মিল খুঁজে পায়—যা কুরআনের ঐশী উৎসের শক্তিশালী প্রমাণ।",
+          "research_focus": [
+            {
+              "topic": "মহাজাগতিক ইঙ্গিত ও বিগ ব্যাং",
+              "reference": "সূরা আল-আম্বিয়া (২১:৩০)",
+              "icon": "🌠"
+            },
+            {
+              "topic": "ভ্রূণের বিকাশের নিখুঁত বর্ণনা",
+              "reference": "সূরা আল-মু’মিনুন (২৩:১২–১৪)",
+              "icon": "🧬"
+            },
+            {
+              "topic": "মহাসাগরবিদ্যা ও পানির প্রতিবন্ধকতা",
+              "reference": "সূরা আর-রাহমান (৫৫:১৯–২০)",
+              "icon": "🌊"
+            }
+          ],
+          "methodology": "কঠোর একাডেমিক পদ্ধতির মাধ্যমে আমরা ইসলামিক স্টাডিজ ও বিভিন্ন বৈজ্ঞানিক শাখার বিশেষজ্ঞদের একত্রিত করি, যাতে এই চিরন্তন সত্যগুলো আলোকিত হয়।",
+          "call_to_action": "দেখুন কীভাবে ঐশী প্রকাশনা ও আধুনিক বিজ্ঞান একত্রিত হয়। কুরআনের ফেরিওয়ালা-কে অনুসরণ করুন জ্ঞান, প্রকাশনা ও শিক্ষা কর্মসূচির জন্য যা বিশ্বাস ও যুক্তিকে একত্রিত করে।",
+          "hashtags": [
+            "#QuranerFariwala",
+            "#ScientificMiracles",
+            "#QuranAndScience",
+            "#DivineRevelation",
+            "#IslamicResearch",
+            "#Embryology",
+            "#Cosmology",
+            "#Oceanography",
+            "#SurahAlAnbiya",
+            "#SurahAlMuminun",
+            "#SurahArRahman"
+          ]
+        }
+      }
+    },
+    "mit-licence": {
+      "license": {
+        "name": "MIT License",
+        "author": "MJ Ahmad",
+        "year": 2026,
+        "versions": {
+          "english": {
+            "title": "MIT License",
+            "text": "Copyright (c) 2026 MJ Ahmad\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+          },
+          "bangla": {
+            "title": "MIT লাইসেন্স",
+            "text": "কপিরাইট (c) ২০২৬ MJ Ahmad\n\nএই সফটওয়্যার এবং এর সাথে সম্পর্কিত ডকুমেন্টেশন ফাইলসমূহ (\"সফটওয়্যার\") বিনামূল্যে প্রাপ্ত যে কোনো ব্যক্তিকে অনুমতি দেওয়া হলো, যাতে তারা সফটওয়্যারটি কোনো প্রকার সীমাবদ্ধতা ছাড়াই ব্যবহার করতে পারে। এর মধ্যে অন্তর্ভুক্ত কিন্তু সীমাবদ্ধ নয়— ব্যবহার, কপি, পরিবর্তন, একত্রিতকরণ, প্রকাশ, বিতরণ, সাব-লাইসেন্স প্রদান এবং/অথবা সফটওয়্যার বিক্রি করার অধিকার, এবং যাদের কাছে সফটওয়্যার সরবরাহ করা হয়েছে তাদেরকেও একই কাজ করার অনুমতি দেওয়া হলো, নিম্নলিখিত শর্তসাপেক্ষে:\n\nউপরের কপিরাইট নোটিশ এবং এই অনুমতি নোটিশটি সফটওয়্যারের সকল কপি বা উল্লেখযোগ্য অংশে অন্তর্ভুক্ত থাকতে হবে।\n\nসফটওয়্যারটি \"যেমন আছে\" ভিত্তিতে সরবরাহ করা হচ্ছে, কোনো প্রকার ওয়ারেন্টি ছাড়াই, প্রকাশ্য বা অন্তর্নিহিত। এর মধ্যে অন্তর্ভুক্ত কিন্তু সীমাবদ্ধ নয়— বিক্রয়যোগ্যতা, নির্দিষ্ট উদ্দেশ্যে উপযুক্ততা এবং অধিকার লঙ্ঘন না করার ওয়ারেন্টি। কোনো অবস্থাতেই লেখক বা কপিরাইট ধারকগণ কোনো দাবি, ক্ষতি বা অন্য কোনো দায়বদ্ধতার জন্য দায়ী থাকবেন না, যা চুক্তি, টর্ট বা অন্য কোনো কারণে উদ্ভূত হতে পারে, সফটওয়্যার বা সফটওয়্যার ব্যবহারের সাথে সম্পর্কিত।"
+          }
+        }
+      }
+    },
+    "operations": {
+      "research": {
+        "focus_areas": [
+          "Thematic Quranic studies",
+          "Linguistic analysis of Quranic Arabic",
+          "Comparative tafsir methodologies",
+          "Scientific phenomena in the Quran"
+        ],
+        "methodologies": [
+          "Textual analysis",
+          "Historical context evaluation",
+          "Interdisciplinary approaches"
+        ],
+        "collaborations": "International network of Quranic scholars and institutions"
+      },
+      "printing": {
+        "standards": {
+          "iso_certification": "ISO 9001:2015 for quality management",
+          "eco_friendly": "Use of archival-grade, eco-friendly paper",
+          "durability": "Enhanced binding and protective covers"
+        },
+        "technologies": [
+          "4-colour offset printing",
+          "Digital layout optimization for Hifz students",
+          "Quality inspection protocols"
+        ],
+        "capacity": "Ability to print 100,000+ copies monthly"
+      },
+      "distribution": {
+        "network": "Global partnerships with educational institutions, mosques, and NGOs",
+        "priority_groups": [
+          "Orphaned learners",
+          "Underserved Hifz centres",
+          "Educational institutions in need"
+        ],
+        "logistics": [
+          "Multi-currency donation gateway",
+          "Transparent tracking and reporting",
+          "Impact verification processes"
+        ]
+      }
+    },
+    "donation_information": {
+      "preferred_methods": [
+        "Bank Transfer",
+        "Mobile Banking"
+      ],
+      "donation_purposes": [
+        "Educational Initiatives",
+        "Quranic Research & Distribution",
+        "Community Development Projects",
+        "Medical Support"
+      ],
+      "transparency_policy": "All donations are tracked and reported with complete transparency. Regular updates on fund utilization are provided to donors."
+    },
+    "Activity": {
+      "current_projects": {
+        "Ramadhan-2026": {
+          "title": "Ramadhan-2026: Global Revival of Qur'anic Access",
+          "description": "A campaign to print and distribute 40,000 high-quality Qurans during Ramadhan 2026, prioritizing orphaned learners and underserved Hifz centres across South Asia.",
+          "goals": [
+            "Print 40,000 copies of the Holy Quran",
+            "Distribute to 10,000 prioritized learners",
+            "Engage donors through multi-currency sponsorships"
+          ],
+          "budget": {
+            "total_required_bdt": 16216800,
+            "total_required_usd": 146500,
+            "total_required_gbp": 120000
+          },
+          "sponsorship_options": [
+            "Single Copy Sponsor — 350 BDT / $3.25 / £2.75",
+            "Batch Sponsor (1,000 copies) — 242,920 BDT / $2,200 / £1,800",
+            "Debt Recovery Partner",
+            "Infrastructure Patron",
+            "Global Campaign Ally"
+          ],
+          "transparency_measures": [
+            "Monthly budget dashboards",
+            "Distribution registry with recipient signatures",
+            "Post-campaign impact report"
+          ]
+        }
+      },
+      "upcoming_initiatives": {
+        "Educational_Support_Programs": {
+          "description": "Scholarships and resources for Hifz students and educational institutions.",
+          "focus_areas": [
+            "Student scholarships",
+            "Educational material supply",
+            "Community literacy programs"
+          ]
+        }
+      },
+      "completed_projects": {}
+    },
+    "Documentation": {
+      "research_publications": {},
+      "printing_standards": {},
+      "distribution_network": {}
+    },
+    "marketing_and_campaign_plane": {
+      "target_audiences": [
+        "Individual Donors",
+        "Philanthropic Organizations",
+        "Educational Institutions",
+        "Community Leaders"
+      ],
+      "channels": [
+        "Social Media Campaigns",
+        "Email Newsletters",
+        "Partnership Outreach",
+        "Event Sponsorships"
+      ],
+      "key_messages": [
+        "Empower Quranic Education Globally",
+        "Join Us in Spreading the Light of the Quran",
+        "Your Support Makes a Lasting Impact"
+      ],
+      "timeline": {
+        "campaign_launch": "March 2026",
+        "mid_campaign_update": "Mid Ramadhan 2026",
+        "campaign_closure": "End of Ramadhan 2026"
+      },
+      "Crowdfunding": {},
+      "partnership_outreach": {},
+      "social_media_strategy": {},
+      "email_marketing_plan": {},
+      "event_sponsorships": {},
+      "UI-Pages": {
+        "Main_Pages": {
+          "Home": {
+            "Welcome_Message": {},
+            "Mission_Statement": {},
+            "Latest_News": {},
+            "Call_to_Action": {},
+            "Donation_Banner": {},
+            "Impact_Statistics": {},
+            "Testimonials": {},
+            "Upcoming_Events": {},
+            "Newsletter_Signup": {},
+            "Social_Media_Links": {},
+            "Contact_Information": {},
+            "Footer_Links": {},
+            "Navigation_Menu": {},
+            "Search_Bar": {},
+            "Language_Selection": {},
+            "Accessibility_Options": {},
+            "Featured_Projects": {},
+            "Volunteer_Opportunities": {},
+            "Media_Gallery": {},
+            "Blog_Highlights": {},
+            "Partner_Logos": {},
+            "FAQ_Section": {},
+            "Privacy_Policy_Link": {},
+            "Terms_of_Service_Link": {}
+          },
+          "About_Us": {
+            "History": {},
+            "Team": {},
+            "Advisory_Board": {},
+            "Partners": {
+              "Partner_Logos": {},
+              "Partner_List": {}
+            }
+          },
+          "Our_Mission": {
+            "Mission_Statement": {},
+            "Vision": {},
+            "Core_Values": {}
+          },
+          "Projects": {
+            "Current_Projects": {
+              "Ramadhan-2026": {
+                "Project_Overview": {},
+                "Goals_and_Objectives": {},
+                "Budget_Details": {},
+                "Sponsorship_Options": {},
+                "Transparency_Measures": {},
+                "Donation_Link": {}
+              }
+            },
+            "Upcoming_Initiatives": {},
+            "Completed_Projects": {}
+          },
+          "Get_Involved": {
+            "Volunteer": {
+              "Volunteer_Overview": {},
+              "Volunteer_Requirements": {},
+              "Application_Form": {},
+              "FAQs": {}
+            }
+          },
+          "Donate": {
+            "Donation_Options": {},
+            "Sponsorship_Programs": {},
+            "Impact_of_Donations": {},
+            "Donation_Form": {},
+            "Security_and_Privacy": {},
+            "Tax_Information": {},
+            "Contact_for_Donations": {},
+            "Recurring_Donations": {},
+            "One-Time_Donations": {},
+            "Corporate_Sponsorships": {},
+            "In-Kind_Donations": {},
+            "Donation_Tracking": {},
+            "Thank_You_Messages": {},
+            "Donation_Impact_Reports": {},
+            "Payment_Methods": {},
+            "Currency_Options": {},
+            "Donation_Faqs": {},
+            "Gift_Aid_Information": {},
+            "Donation_Terms_and_Conditions": {},
+            "Contact_Support": {},
+            "Privacy_Policy": {},
+            "Terms_of_Service": {},
+            "Refund_Policy": {},
+            "Security_Measures": {},
+            "Donation_Confirmation": {},
+            "Follow_Up_Communications": {},
+            "Donation_History": {},
+            "Recurring_Donation_Management": {},
+            "Corporate_Donation_Programs": {},
+            "In-Kind_Donation_Guidelines": {},
+            "Donation_Impact_Stories": {}
+          },
+          "Resources": {
+            "Research_Publications": {},
+            "Printing_Standards": {},
+            "Distribution_Network": {}
+          },
+          "Initiatives": {
+            "Ramadhan-2026": {},
+            "Educational_Support_Programs": {}
+          },
+          "Community": {
+            "Testimonials": {},
+            "Impact_Stories": {},
+            "Volunteer_Opportunities": {},
+            "Code_of_Conduct": {},
+            "Contributing": {},
+            "Community_Guidelines": {},
+            "Roadmap": {}
+          },
+          "Tools_&_Features": {
+            "Donation_Tracker": {},
+            "Sponsorship_Options": {},
+            "Impact_Reports": {}
+          },
+          "Support": {
+            "FAQs": {},
+            "Contact_Us": {},
+            "Help_Center": {},
+            "Issues": {},
+            "Support_Resources": {}
+          },
+          "Legal": {
+            "Privacy_Policy": {},
+            "Terms_of_Service": {},
+            "Compliance_Information": {}
+          }
+        },
+        "Resources": {
+          "Research_Publications": {},
+          "Printing_Standards": {},
+          "Distribution_Network": {},
+          "Donation_Information": {},
+          "Financials": {},
+          "Governance": {},
+          "Constitution": {},
+          "Transparency_Report": {},
+          "Impact_Stories": {},
+          "Contact_Information": {}
+        },
+        "Initiatives": {
+          "Ramadhan-2026": {},
+          "Educational_Support_Programs": {},
+          "Community_Initiatives": {},
+          "Global_Outreach_Programs": {}
+        },
+        "Community": {
+          "Testimonials": {},
+          "Impact_Stories": {},
+          "Volunteer_Opportunities": {},
+          "Donor_Recognition": {},
+          "Alumni_Network": {},
+          "Partnership_Programs": {},
+          "Event_Photos_and_Videos": {},
+          "Community_Feedback": {},
+          "Success_Stories": {}
+        },
+        "Tools_&_Features": {
+          "Donation_Tracker": {},
+          "Sponsorship_Options": {},
+          "Impact_Reports": {},
+          "Volunteer_Management_System": {},
+          "Event_Registration_Platform": {},
+          "Resource_Download_Center": {},
+          "Newsletter_Subscription_Service": {},
+          "Social_Media_Integration_Tools": {},
+          "Fundraising_Campaign_Management": {},
+          "Project_Management_Dashboard": {},
+          "Analytics_and_Reporting_Tools": {},
+          "Customizable_User_Profiles": {},
+          "Interactive_Maps_of_Distribution": {},
+          "Live_Chat_Support": {},
+          "Feedback_and_Survey_Forms": {},
+          "Event_Calendar": {},
+          "Donation_Receipt_Generator": {},
+          "Automated_Thank_You_Emails": {},
+          "Fundraising_Goal_Tracker": {},
+          "Social_Sharing_Buttons": {},
+          "Multilingual_Support": {},
+          "Mobile_Friendly_Design": {},
+          "Secure_Payment_Gateway": {},
+          "User_Activity_Tracking": {},
+          "Custom_Donation_Amounts": {},
+          "Recurring_Donation_Options": {}
+        },
+        "Support": {
+          "FAQs": {},
+          "Contact_Us": {},
+          "Help_Center": {}
+        },
+        "Legal": {
+          "Privacy_Policy": {},
+          "Terms_of_Service": {},
+          "Compliance_Information": {},
+          "Data_Protection_Policy": {},
+          "Cookie_Policy": {},
+          "Accessibility_Statement": {},
+          "Intellectual_Property_Rights": {},
+          "Disclaimer": {},
+          "User_Agreement": {},
+          "Refund_Policy": {},
+          "Security_Measures": {},
+          "Third_Party_Links_Policy": {},
+          "Modification_of_Terms": {},
+          "Governing_Law": {},
+          "Contact_for_Legal_Inquiries": {},
+          "Updates_to_Legal_Documents": {},
+          "Legal_Resources": {}
+        },
+        "Grants": {
+          "Gitcoin": "",
+          "AwesomeFoundation": "",
+          "LinuxFoundation": "",
+          "GitHubSponsors": "",
+          "Ko-fi": ""
+        }
+      }
+    },
+    "promotional_materials": {
+      "brochures": {},
+      "flyers": {},
+      "posters": {},
+      "digital_ads": {},
+      "video_content": {},
+      "social_media_graphics": {},
+      "email_templates": {},
+      "press_releases": {},
+      "event_banners": {},
+      "merchandise_designs": {},
+      "infographics": {},
+      "testimonials_and_case_studies": {},
+      "website_content": {},
+      "blog_posts": {},
+      "newsletters": {},
+      "annual_reports": {},
+      "impact_stories": {},
+      "donor_spotlights": {}
+    },
+    "advertising_campaigns": {
+      "online_ads": {},
+      "print_ads": {},
+      "media_partnerships": {},
+      "influencer_collaborations": {},
+      "monitoring_and_evaluation": {},
+      "budget_allocation": {},
+      "risk_management": {},
+      "contingency_plans": {},
+      "reporting_and_feedback": {},
+      "legal_and_compliance": {},
+      "data_protection": {},
+      "intellectual_property": {},
+      "accessibility_considerations": {},
+      "sustainability_strategies": {},
+      "community_engagement": {},
+      "volunteer_programs": {},
+      "media_relations": {},
+      "public_relations": {},
+      "content_creation": {},
+      "graphic_design": {},
+      "video_production": {},
+      "copywriting": {},
+      "translation_services": {},
+      "website_management": {},
+      "seo_optimization": {},
+      "analytics_and_insights": {},
+      "donor_recognition": {},
+      "thank_you_campaigns": {},
+      "follow_up_strategies": {},
+      "long_term_engagement": {},
+      "legacy_giving_programs": {},
+      "annual_fundraising_events": {},
+      "corporate_partnerships": {},
+      "grant_applications": {},
+      "foundation_collaborations": {},
+      "individual_donor_programs": {},
+      "major_gifts_programs": {},
+      "monthly_giving_programs": {},
+      "peer_to_peer_fundraising": {},
+      "matching_gift_campaigns": {},
+      "workplace_giving_programs": {},
+      "community_fundraising_events": {},
+      "school_fundraising_programs": {},
+      "university_fundraising_programs": {},
+      "religious_institution_partnerships": {},
+      "international_donor_outreach": {},
+      "local_community_outreach": {},
+      "alumni_network_engagement": {},
+      "volunteer_engagement_programs": {},
+      "corporate_social_responsibility_partnerships": {},
+      "event_planning_and_management": {},
+      "fundraising_technology_platforms": {}
+    },
+    "influencer_collaborations": {
+      "partnerships": {},
+      "campaign_strategies": {},
+      "performance_metrics": {},
+      "content_guidelines": {},
+      "engagement_plans": {},
+      "outreach_programs": {}
+    },
+    "monitoring_and_evaluation": {
+      "progress_tracking": {},
+      "impact_assessment": {},
+      "feedback_mechanisms": {},
+      "success_indicators": {},
+      "data_collection_methods": {},
+      "reporting_frameworks": {},
+      "adjustment_strategies": {},
+      "lessons_learned": {},
+      "stakeholder_involvement": {},
+      "transparency_measures": {},
+      "communication_plans": {}
+    },
+    "budget_allocation": {},
+    "risk_management": {
+      "risk_identification": {},
+      "mitigation_strategies": {},
+      "contingency_plans": {},
+      "monitoring_processes": {},
+      "response_plans": {},
+      "communication_protocols": {},
+      "review_cycles": {},
+      "stakeholder_roles": {},
+      "documentation_standards": {},
+      "training_programs": {},
+      "audit_mechanisms": {},
+      "compliance_checks": {}
+    },
+    "financials": {
+      "bank_accounts": {
+        "local": {
+          "city-bank ltd": {
+            "bank_name": "The City Bank Ltd",
+            "account_name": "Quraner Fariwala",
+            "account_number": "1301010000896",
+            "swift_code": "MTBAUA2D",
+            "routing_number": "145275358"
+          },
+          "eastern-bank-ltd.": {
+            "name": "Eastern Bank Ltd.",
+            "account_number": "1011070611663",
+            "account_name": "QURANER FARIWALA",
+            "swift_code": "EBLDBDDHOBU",
+            "routing_number": "095275358"
+          },
+          "brac-bank": {
+            "name": "BRAC BANK",
+            "account_number": "2060133490001",
+            "account_name": "QURANER FARIWALA",
+            "swift_code": "BRAKBDDH",
+            "routing_number": "060271103"
+          }
+        },
+        "international": {
+          "the-bankers-bank": {
+            "name": "The Bankers Bank",
+            "account_number": "111869395099",
+            "account_name": "Md Jafor Ahmad",
+            "swift_code": "BBOKUS44",
+            "routing_number": "103913434",
+            "currency": "USD"
+          }
+        },
+        "mobile_banking": {
+          "bkash-merchant": {
+            "name": "Bkash Merchant",
+            "account_number": "01788856628",
+            "account_name": "QURANER FARIWALA",
+            "type": "merchant account"
+          },
+          "bkash-personal": {
+            "name": "Bkash Personal",
+            "account_number": "01920082926",
+            "account_name": "MJ AHMAD",
+            "type": "personal account"
+          },
+          "nagad": {
+            "name": "Nagad",
+            "account_number": "01788856628",
+            "account_name": "Md Jafor Ahmad",
+            "type": "personal account"
+          },
+          "rocket": {
+            "name": "Rocket",
+            "account_number": "01920082926-6",
+            "account_name": "Md Jafor Ahmad",
+            "type": "personal account"
+          }
+        }
+      }
+    },
+    "contingency_plans": {
+      "emergency_response": {},
+      "alternative_strategies": {},
+      "resource_allocation": {},
+      "communication_protocols": {},
+      "continuity_plans": {}
+    },
+    "social_media": {
+      "platforms": [
+        {
+          "name": "facebook",
+          "type": "page",
+          "id": "QuranerFariwalaPage",
+          "url": "https://facebook.com/QuranerFariwalaPage",
+          "owner": "marketing@quranerfariwala.org"
+        },
+        {
+          "name": "facebook",
+          "type": "group",
+          "id": "QuranerFariwalaGroup",
+          "url": "https://facebook.com/groups/QuranerFariwalaGroup",
+          "owner": "community@quranerfariwala.org"
+        },
+        {
+          "name": "linkedin",
+          "type": "organization",
+          "id": "quraner-fariwala",
+          "url": "https://linkedin.com/company/quraner-fariwala",
+          "owner": "partnerships@quranerfariwala.org"
+        },
+        {
+          "name": "whatsapp",
+          "type": "broadcast",
+          "id": "wa-broadcast-001",
+          "url": "",
+          "owner": "community@quranerfariwala.org"
+        },
+        {
+          "name": "x",
+          "type": "profile",
+          "id": "QuranerFariwalaX",
+          "url": "https://x.com/QuranerFariwala",
+          "owner": "social@quranerfariwala.org"
+        },
+        {
+          "name": "instagram",
+          "type": "profile",
+          "id": "quranerfariwala",
+          "url": "https://instagram.com/quranerfariwala",
+          "owner": "social@quranerfariwala.org"
+        }
+      ],
+      "content_calendar": [
+        {
+          "id": "post-2026-ramadhan-01",
+          "platform": "facebook:page",
+          "date": "2026-03-10T09:00:00+06:00",
+          "type": "campaign",
+          "title": "Ramadhan-2026 Launch",
+          "body": "Ramadhan-2026: Join us to print and distribute 40,000 high-quality Qurans. Sponsor a copy today and change a life.",
+          "media": [
+            "/public/images/ramadhan2026-launch.jpg"
+          ],
+          "status": "scheduled",
+          "owner": "marketing@quranerfariwala.org",
+          "approval": {
+            "required": true,
+            "approver": "editor@quranerfariwala.org",
+            "approved": false,
+            "approval_date": null
+          },
+          "next_action": "boost_post",
+          "metrics": {
+            "impressions": 0,
+            "engagement": 0,
+            "donations_link_clicks": 0
+          },
+          "tags": [
+            "campaign",
+            "ramadhan",
+            "donation"
+          ]
+        },
+        {
+          "id": "post-2026-research-01",
+          "platform": "linkedin:organization",
+          "date": "2026-02-20T11:00:00+06:00",
+          "type": "article",
+          "title": "New Research on Quranic Embryology",
+          "body": "We publish a new paper exploring Quranic references to embryology and modern findings. Read the summary and download the paper.",
+          "media": [
+            "/public/documents/research/embryology-summary.pdf"
+          ],
+          "status": "published",
+          "owner": "research@quranerfariwala.org",
+          "approval": {
+            "required": true,
+            "approver": "head_research@quranerfariwala.org",
+            "approved": true,
+            "approval_date": "2026-02-18T10:00:00+06:00"
+          },
+          "metrics": {
+            "views": 1200,
+            "shares": 45,
+            "downloads": 320
+          },
+          "tags": [
+            "research",
+            "embryology",
+            "publication"
+          ]
+        }
+      ],
+      "archive": [],
+      "templates": {
+        "post_template_en": "{title}\n\n{body}\n\nDonate: {donation_link}\n#QuranerFariwala {hashtags}",
+        "post_template_bn": "{title}\n\n{body}\n\nদান করুন: {donation_link}\n#QuranerFariwala {hashtags}"
+      },
+      "content_guidelines": {
+        "tone": "Respectful, scholarly, inclusive",
+        "language_policy": "Use Bengali for local audiences and English for international outreach. Avoid political commentary.",
+        "sensitivity_review": "All religious content must pass ethics review before publishing."
+      }
+    },
+    "repository_structure": {
+      "protocols": {
+        "content_approval.md": "Defines approval workflow, roles, and SLAs for content publishing.",
+        "donation_policy.md": "Donation acceptance, refund, and reporting protocols."
+      },
+      "systems": {
+        "cms_config.json": {
+          "name": "HeadlessCMS",
+          "provider": "ExampleCMS",
+          "scheduling": true,
+          "analytics_integration": true
+        },
+        "analytics_config.json": {
+          "provider": "GoogleAnalytics",
+          "tracking_id": "UA-XXXXXX-1"
+        }
+      },
+      "projects": {
+        "Ramadhan-2026": {
+          "brief.md": "Campaign brief and objectives.",
+          "assets": [
+            "/public/images/ramadhan2026-launch.jpg",
+            "/public/images/ramadhan2026-banner.jpg"
+          ],
+          "timeline.json": {
+            "launch": "2026-03-10",
+            "mid_campaign_update": "2026-03-20",
+            "closure": "2026-04-01"
+          }
+        },
+        "Educational_Support_Programs": {
+          "brief.md": "Scholarship program details and eligibility."
+        }
+      },
+      "practice": {
+        "tone_guide.md": "Brand voice, dos and don'ts.",
+        "content_review_checklist.md": "Checklist for reviewers."
+      },
+      "public": {
+        "images": {},
+        "videos": {},
+        "documents": {}
+      },
+      "metadata": {
+        "hashtags.json": [
+          "#QuranerFariwala",
+          "#Ramadhan2026",
+          "#QuranDistribution"
+        ],
+        "seo_keywords.json": [
+          "Quran distribution",
+          "Quran printing Bangladesh",
+          "Quran research"
+        ]
+      },
+      "ethics": {
+        "religious_content_guidelines.md": "Guidelines for respectful religious content.",
+        "sensitivity_matrix.json": {
+          "high": [
+            "political statements",
+            "controversial interpretations"
+          ],
+          "medium": [
+            "historical debates"
+          ],
+          "low": [
+            "general educational content"
+          ]
+        }
+      },
+      "legal": {
+        "privacy_policy.md": "Data handling and privacy policy.",
+        "terms_of_service.md": "Terms for website and donation platform.",
+        "copyright_notice.md": "Copyright and license information."
+      },
+      "linkage": {
+        "partners.json": [
+          {
+            "name": "Local Mosque Network",
+            "contact": "partners@quranerfariwala.org",
+            "url": ""
+          }
+        ],
+        "external_links.md": "List of partner websites and resources."
+      },
+      "manifest.json": {
+        "name": "quraner-fariwala-repo",
+        "version": "1.0.0",
+        "description": "Repository manifest for Quraner Fariwala content and systems",
+        "author": "MJ Ahmad",
+        "license": "MIT"
+      },
+      "README.md": "# Quraner Fariwala Repository\n\nThis repository contains content, systems configuration, protocols, and assets for Quraner Fariwala. Follow protocols/content_approval.md before publishing any content."
+    },
+    "metadata": {
+      "created_by": "MJ Ahmad",
+      "created_at": "2026-02-01T13:00:00+06:00",
+      "last_updated": "2026-02-01T13:20:00+06:00",
+      "version": "2026.02.01"
+    },
+    "ethics": {
+      "content_review_policy": "All religious and research content must be reviewed by two domain experts and one ethics reviewer before publication.",
+      "privacy_and_consent": "No personal data of beneficiaries will be published without explicit consent."
+    },
+    "legal": {
+      "data_protection": "Comply with applicable data protection laws; store donor PII encrypted.",
+      "copyright": "Content licensed under MIT where applicable; third-party content must include attribution."
+    },
+    "linkage": {
+      "partners": [
+        {
+          "name": "Local Mosque Network",
+          "role": "distribution_partner",
+          "contact": "partners@quranerfariwala.org",
+          "notes": "Regional distribution coordination"
+        }
+      ],
+      "external_resources": [
+        {
+          "title": "Sample Research Paper",
+          "url": "/public/documents/research/sample-paper.pdf"
+        }
+      ]
+    },
+    "manifest": {
+      "name": "quraner-fariwala",
+      "version": "1.0.0",
+      "description": "Main manifest for Quraner Fariwala content repository",
+      "main_contact": "admin@quranerfariwala.org"
+    },
+    "README": {
+      "title": "Quraner Fariwala Content Repository",
+      "summary": "How to use this repository: follow protocols/content_approval.md, place media in public/, update content_calendar in social_media, and keep metadata/hashtags.json updated.",
+      "contribution": "To contribute, open a pull request with content and include approval evidence."
+    }
+  }
+}

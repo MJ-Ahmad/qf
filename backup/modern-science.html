@@ -29,16 +29,7 @@
   <link rel="stylesheet" href="css/body/style.css">
   <link rel="stylesheet" href="css/section/style.css">
   <link rel="stylesheet" href="css/mission/style.css">
-<style>
-     .hero {display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;padding:1.25rem;border-radius:12px;background:#fff;margin:1rem 0;box-shadow:0 8px 24px rgba(2,6,23,0.04)}
-    .hero.reverse .hero-image{order:-1}
-    .hero-content h2{font-size:1.25rem;color:#065f46;margin-bottom:.5rem}
-    .hero-content p{color:#334155}
-    .hero-image{border-radius:10px;overflow:hidden;height:320px;display:flex;align-items:center;justify-content:center}
-    .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
-    @media(max-width:700px){ .hero{grid-template-columns:1fr} .hero-image{height:220px} .hero.reverse .hero-image{order:0} }
-</style>
-
+  <link rel="stylesheet" href="css/mission1/style.css">
 
 </head>
 <body class="__className_c32586">
@@ -73,8 +64,8 @@
 
         <!-- Navigation -->
         <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
-          <a target="_blank" rel="noopener noreferrer" href="/qf" class="btn" title="Repository (opens in new tab)">
-            <span>Home</span>
+          <a target="_blank" rel="noopener noreferrer" href="" class="btn" title="Repository (opens in new tab)">
+            <span>Al-Qur'anul Majid</span>
           </a>
 
           <a href="" class="btn ghost" title="Projects">
@@ -94,219 +85,84 @@
   </header>
   <main>
   <!-- Hero Section -->
-    <section class="mission-hero1" aria-labelledby="mission-heading">
-      <!-- Background image and overlays -->
-      <div class="mission-hero1__bg" aria-hidden="true"></div>
-      <div class="mission-hero1__overlay" aria-hidden="true"></div>
-      <div class="mission-hero1__glow" aria-hidden="true"></div>
+   <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <div class="eyebrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z"></path>
+        </svg>
+        <span>Advanced Quranic Research</span>
+      </div>
+      <h1 id="hero-heading" class="hero__title">
+        Modern Science & Quranic  
+       <span class="gradient-text">Revelations</span>
+      </h1>
+      <p class="hero__lead">
+        1400 years ago, the Quran revealed truths that science is only now beginning to understand. 
+        From embryology to cosmology, oceanography to geology, the Quran’s descriptions of natural phenomena 
+        demonstrate a precision that was impossible for human knowledge at the time of revelation.
+      </p>
+      <div class="hero__actions">
+        <a class="btn" href="">Explore Research</a>
+      </div>
+    </div>
+   </section>
 
-      <div class="container1">
-        <header1 class="mission-header1">
-          <div class="eyebrow reveal" data-reveal>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-              <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
-            <span>Preserve, Publish, Distribute</span>
-          </div>
+<!-- Mission Section -->
+<section id="mission" class="mission mission--solid">
+  <div class="mission__inner">
+    <header class="mission-header">
+      <h2 class="mission-title">Our Research Programs</h2>
+      <p class="mission-subtitle">
+        Through rigorous academic methodology, we bring together scholars of Islamic studies and scientific disciplines 
+        to illuminate timeless truths revealed in the Quran.
+      </p>
+    </header>
 
-          <h1 id="mission-heading" class="mission-title reveal" data-reveal>
-            Our Production Process
-          </h1>
-
-          <p class="mission-subtitle reveal" data-reveal>
-            From careful typesetting to final delivery, every step in our process is designed to ensure the highest quality Qur'ans reach those who need them most.
+    <div class="mission-grid">
+      <!-- Cosmology Card -->
+      <div class="card">
+        <div class="card__icon">🌠</div>
+        <div>
+          <h3 class="card__title">Cosmology & Big Bang</h3>
+          <p class="card__desc">
+            “Do not those who disbelieve see that the heavens and the earth were a closed-up mass, then We opened them out?” 
+            — Surah Al-Anbiya (21:30)
           </p>
-        </header1>
-      </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section container">
-      <div class="video-wrapper" aria-hidden="false">
-        <!-- Native video element for autoplay muted loop -->
-        <video
-          id="productionVideo"
-          class="responsive-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="assets/mp4/poster.jpg"
-          aria-label="Production process video"
-        >
-          <source src="assets/mp4/bn.mp4" type="video/mp4" />
-          <source src="assets/mp4/bn.webm" type="video/webm" />
-          <!-- Fallback text -->
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
-    <section class="hero reverse" aria-labelledby="hero-2">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf/111.jpg" alt="Folding printed signatures into correct sequence">
+        </div>
       </div>
 
-      <div class="hero-content">
-        <h2 id="hero-2">Pre-Press & Design</h2>
-        <p class="lead">Sheets are imposed into forms (e.g., 23/36 format) and printed with precise registration. This stage sets the foundation for accurate pagination and folding.</p>
-          <ul>
-            <li>Certified Arabic typography specialists</li>
-            <li>Multi-stage scholarly review process</li>
-            <li>Memorization-optimized page layout</li>
-          </ul>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-3">
-      <div class="hero-content">
-        <h2 id="hero-3">Offset Printing</h2>
-          <p>Using state-of-the-art 4-color offset printing technology, each page is rendered with exceptional clarity on 61 GSM archival-grade paper. This ensures durability for years of daily use while maintaining comfortable page weight.</p>
-          <ul>
-            <li>4-color offset printing technology</li>
-            <li>61 GSM archival-grade paper</li>
-            <li>Crystal-clear text reproduction</li>
-            <li>Consistent ink density throughout</li>
-          </ul>
+      <!-- Embryology Card -->
+      <div class="card">
+        <div class="card__icon">🧬</div>
+        <div>
+          <h3 class="card__title">Embryology</h3>
+          <p class="card__desc">
+            “We created man from an extract of clay. Then We placed him as a drop in a safe lodging...” 
+            — Surah Al-Mu’minun (23:12–14)
+          </p>
+        </div>
       </div>
 
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/01.jpg" alt="Quality inspector checking page continuity">
+      <!-- Oceanography Card -->
+      <div class="card">
+        <div class="card__icon">🌊</div>
+        <div>
+          <h3 class="card__title">Oceanography</h3>
+          <p class="card__desc">
+            “He has let free the two bodies of flowing water, meeting together: Between them is a barrier which they do not transgress.” 
+            — Surah Ar-Rahman (55:19–20)
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="hero reverse" aria-labelledby="hero-4">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/2.jpg" alt="Printing covers for Mushaf volumes">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-4">Signature Folding</h2>
-        <p>Printed sheets are folded into signatures and gathered in sequence. Skilled technicians ensure page order and register are perfect before binding.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-5">
-      <div class="hero-content">
-        <h2 id="hero-5">Quality Control</h2>
-          <p>Every single copy undergoes rigorous quality inspection. Our QC team checks for print clarity, binding integrity, page alignment, and overall finish. Only volumes meeting our exacting standards proceed to packaging.</p>
-          <ul>
-            <li>100% inspection rate</li>
-            <li>Print clarity verification</li>
-            <li>Binding integrity testing</li>
-            <li>Page alignment checks</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/03.jpg" alt="Workers applying covers to bound Mushaf copies">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-6">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/04.jpg" alt="Drying stage after adhesive application">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-6">Cover Design and Printing</h2>
-        <p>Covers are printed with durable inks and materials, combining traditional ornamentation with modern durability standards.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-7">
-      <div class="hero-content">
-        <h2 id="hero-7">Casing In and Binding</h2>
-        <p class="lead">Signatures are sewn or glued, then cased into printed covers. Binding techniques preserve page order and allow the Mushaf to open flat while maintaining structural integrity.</p>
-          <ul>
-            <li>Priority to orphan institutions</li>
-            <li>Nationwide distribution network</li>
-            <li>Signed receipt documentation</li>
-            <li>Photo verification at delivery</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/05.jpg" alt="Finished Mushafs organized in storage">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/06.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Adhesive Curing & Final Drying</h2>
-        <p>After casing and gluing, Mushafs enter a controlled drying phase to ensure adhesives cure properly and bindings remain secure over time.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-9">
-      <div class="hero-content">
-        <h2 id="hero-9">Final Binding Inspection & Storage</h2>
-        <p>Completed Mushafs undergo a final binding inspection. Approved copies are organized and stored in climate-controlled conditions to preserve quality until distribution.</p>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/07.jpg" alt="Students receiving Mushafs during distribution">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/08.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Packaging</h2>
-          <p>Each Qur'an is carefully placed in a custom slipcase for protection during transport. Volumes are then boxed in batches of 32 for efficient logistics while ensuring each copy arrives in pristine condition.</p>
-          <ul>
-            <li>Individual protective slipcases</li>
-            <li>Batch packaging (32 copies/box)</li>
-            <li>Moisture-resistant materials</li>
-            <li>Labeled for tracking</li>
-          </ul>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-9">
-      <div class="hero-content">
-        <h2 id="hero-9">Distribution</h2>
-          <p>Our distribution network ensures equitable delivery to rural madrasas, urban schools, and community centers across Bangladesh. Priority is given to orphaned students and underserved Hifz institutions.</p>
-          <ul>
-            <li>Priority to orphan institutions</li>
-            <li>Nationwide distribution network</li>
-            <li>Signed receipt documentation</li>
-            <li>Photo verification at delivery</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/09.jpg" alt="Students receiving Mushafs during distribution">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/10.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Community Delivery</h2>
-          <p>Final distribution places Mushafs into the hands of students, mosques, and community centers. We coordinate with local partners to ensure respectful and effective delivery.</p>
-          <ul>
-            <li>Individual protective slipcases</li>
-            <li>Batch packaging (32 copies/box)</li>
-            <li>Moisture-resistant materials</li>
-            <li>Labeled for tracking</li>
-          </ul>
-      </div>
-    </section>
 
 
   </main>
-
 
   <!-- Footer: complete, responsive, accessible -->
   <footer role="contentinfo" aria-label="Site footer">
@@ -396,19 +252,19 @@
 
           <ul>
             <li>
-              <a class="link" href="/qf/edu">
+              <a class="link" href="">
                 <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Research</span>
+                <span class="group-hover-font">Al-Ijazah</span>
               </a>
             </li>
             <li>
-              <a class="link" href="/qf/print">
+              <a class="link" href="">
                 <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Printing</span>
+                <span class="group-hover-font">Al-Mokaddamah</span>
               </a>
             </li>
             <li>
-              <a class="link" href="/qf/edu">
+              <a class="link" href="">
                 <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
                 <span class="group-hover-font">Hokukul Qur’an</span>
               </a>
@@ -484,7 +340,7 @@
           <ul>
 
             <li>
-              <a class="link" href="/qf/contact">
+              <a class="link" href="">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
                   <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -520,15 +376,15 @@
         <div class="brand">
           <div class="brand-badge" aria-hidden="true">QF</div>
           <p class="copyright">
-            © 2026 <b>QuranerFariwala</b> - All rights reserved. This project is open source and available under the
+            © 2026 QuranerFariwala - All rights reserved. This project is open source and available under the
             <a href="/qf/mit" style="color:var(--accent-blue); font-weight:600; margin-left:.35rem;">MIT License</a>.          
           </p>
         </div>
 
         <div class="footer-links">
-          <a href="/qf/privacy" aria-label="Privacy">Privacy</a>
-          <a href="/qf/terms" aria-label="Terms">Terms</a>
-          <a href="/qf/sitemap" aria-label="Sitemap">Sitemap</a>
+          <a href="" aria-label="Privacy">Privacy</a>
+          <a href="" aria-label="Terms">Terms</a>
+          <a href="" aria-label="Sitemap">Sitemap</a>
         </div>
       </div>
 
@@ -551,100 +407,11 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const headerNav = document.getElementById('headerNav');
-    mobileToggle?.addEventListener('click', () => {
-      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', String(!expanded));
-      headerNav.style.display = expanded ? 'none' : 'flex';
-    });
-
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <script>
-    /* =========================
-       Page JS: Autoplay fallback, accessibility helpers
-       ========================= */
-    document.addEventListener('DOMContentLoaded', function () {
-      // Footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Video autoplay logic with fallback overlay
-      const video = document.getElementById('productionVideo');
-      const fallback = document.getElementById('videoFallback');
-      const playBtn = document.getElementById('playVideoBtn');
-      const playUnmutedBtn = document.getElementById('playUnmutedBtn');
-
-      if (!video) return;
-
-      // Ensure muted for autoplay attempts (most browsers allow muted autoplay)
-      video.muted = true;
-
-      // Attempt autoplay
-      const tryPlay = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // autoplay succeeded
-            if (fallback) fallback.classList.add('hidden');
-          }).catch(() => {
-            // autoplay blocked — show fallback overlay
-            if (fallback) fallback.classList.remove('hidden');
-          });
-        }
-      };
-
-      tryPlay();
-
-      // Fallback button handlers
-      if (playBtn) {
-        playBtn.addEventListener('click', function () {
-          video.muted = true;
-          video.play().catch(()=>{});
-          if (fallback) fallback.classList.add('hidden');
-          playBtn.focus({preventScroll:true});
-        });
-      }
-      if (playUnmutedBtn) {
-        playUnmutedBtn.addEventListener('click', function () {
-          // Some browsers require a user gesture to unmute
-          video.muted = false;
-          video.play().catch(()=>{});
-          if (fallback) fallback.classList.add('hidden');
-          playUnmutedBtn.focus({preventScroll:true});
-        });
-      }
-
-      // Try again on first user gesture (mobile)
-      const userGestureHandler = () => {
-        tryPlay();
-        window.removeEventListener('click', userGestureHandler);
-        window.removeEventListener('touchstart', userGestureHandler);
-      };
-      window.addEventListener('click', userGestureHandler, { once: true });
-      window.addEventListener('touchstart', userGestureHandler, { once: true });
-
-      // Improve keyboard accessibility: allow space/enter to toggle muted state when focused on video
-      video.setAttribute('tabindex', '0');
-      video.addEventListener('keydown', function (e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          if (video.paused) video.play().catch(()=>{});
-          else video.pause();
-        }
-      });
-    });
-  </script>
   <!-- Scripts -->
   <script src="js/header/script.js"></script>
   <script src="js/section/script.js"></script>
   <script src="js/body/script.js"></script>
   <script src="js/footer/script.js"></script>
+  <script src="js/mission/script.js"></script>
 </body>
 </html>
-
