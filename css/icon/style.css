@@ -1,0 +1,19 @@
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden; /* ensures rounded crop if image is larger */
+}
+
+/* image inside the circle */
+.icon-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or 'cover' if you want full-bleed crop */
+}

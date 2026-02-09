@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Production Process - Quraner Fariwala</title>
+  <meta name="description" content="Discover our meticulous production process for printing 40,000 premium Qur'ans. From offset printing to quality control and distribution." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Video wrapper and responsive video styles (ensures autoplayed muted video looks good) */
+    .video-wrapper {
+      max-width: 1000px;
+      margin: 1.25rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+      background: #000;
+      position: relative;
+    }
+
+    /* Keep consistent aspect ratio and responsive sizing */
+    .responsive-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
+
+    /* Fallback overlay shown when autoplay is blocked */
+    .video-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .video-fallback.hidden { display: none; }
+
+    .video-fallback .btn {
+      background: #ffffff;
+      color: #004d40;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+    }
+
+    .video-fallback .btn.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    /* Small accessibility hint text */
+    .video-hint {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="container">
+      <h1>Our Production Process</h1>
+      <p class="lead">From careful typesetting to final delivery, every step in our process is designed to ensure the highest quality Qur'ans reach those who need them most.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="video-section container">
+      <h2>Watch Our Process</h2>
+      <p class="muted">See how we bring the Project Ramadhan 2026 vision to life, from printing press to community distribution.</p>
+
+      <div class="video-wrapper" aria-hidden="false">
+        <!-- Use native <video> for autoplay muted loop behavior -->
+        <video
+          id="productionVideo"
+          class="responsive-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="assets/mp4/poster.jpg"
+          aria-label="Production process video"
+        >
+          <source src="../assets/mp4/bn.mp4" type="video/mp4" />
+          <!-- Optional fallback format -->
+          <source src="../assets/mp4/bn.webm" type="video/webm" />
+          আপনার ব্রাউজার ভিডিও ট্যাগ সমর্থন করে না।
+        </video>
+
+        <!-- Fallback overlay: shown only if autoplay is blocked -->
+        <div id="videoFallback" class="video-fallback hidden" role="region" aria-label="Video controls fallback">
+          <div>
+            <p class="video-hint">Autoplay was blocked by your browser. Tap to play the video muted.</p>
+            <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:0.75rem;">
+              <button id="playVideoBtn" class="btn">Play (Muted)</button>
+              <button id="playUnmutedBtn" class="btn secondary">Play with Sound</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <div class="container">
+        <h2>Step-by-Step Production</h2>
+        <p class="muted">Every Qur'an goes through a meticulous 6-step process to ensure exceptional quality and care.</p>
+
+        <div class="steps">
+          <!-- Step 1 -->
+          <article class="step">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">1</div>
+                <span class="step-label">Pre-Press & Design</span>
+              </div>
+              <h3>Pre-Press & Design</h3>
+              <p>Our expert typesetters work with certified Islamic scholars to ensure every letter, diacritical mark, and spacing adheres to traditional Qur'anic calligraphy standards. The layout is optimized for memorization with clear verse markers and spacious design.</p>
+              <ul>
+                <li>Certified Arabic typography specialists</li>
+                <li>Multi-stage scholarly review process</li>
+                <li>Memorization-optimized page layout</li>
+                <li>21cm x 14cm format with 668 pages</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/printing-press.jpg" alt="Printing press used in pre-press and design" />
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step reverse">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">2</div>
+                <span class="step-label">Offset Printing</span>
+              </div>
+              <h3>Offset Printing</h3>
+              <p>Using state-of-the-art 4-color offset printing technology, each page is rendered with exceptional clarity on 61 GSM archival-grade paper. This ensures durability for years of daily use while maintaining comfortable page weight.</p>
+              <ul>
+                <li>4-color offset printing technology</li>
+                <li>61 GSM archival-grade paper</li>
+                <li>Crystal-clear text reproduction</li>
+                <li>Consistent ink density throughout</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/printing-press.jpg" alt="Offset printing press" />
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">3</div>
+                <span class="step-label">Binding & Assembly</span>
+              </div>
+              <h3>Binding & Assembly</h3>
+              <p>Skilled craftsmen carefully bind each volume using durable binding techniques that allow pages to lay flat for comfortable reading. The protective cover is designed to withstand daily handling while maintaining an elegant appearance.</p>
+              <ul>
+                <li>Professional thread binding</li>
+                <li>Lay-flat spine design</li>
+                <li>Durable hardcover protection</li>
+                <li>Gold foil stamping on cover</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/book-binding.jpg" alt="Book binding process" />
+            </div>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="step reverse">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">4</div>
+                <span class="step-label">Quality Control</span>
+              </div>
+              <h3>Quality Control</h3>
+              <p>Every single copy undergoes rigorous quality inspection. Our QC team checks for print clarity, binding integrity, page alignment, and overall finish. Only volumes meeting our exacting standards proceed to packaging.</p>
+              <ul>
+                <li>100% inspection rate</li>
+                <li>Print clarity verification</li>
+                <li>Binding integrity testing</li>
+                <li>Page alignment checks</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/quality-control.jpg" alt="Quality control inspection" />
+            </div>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="step">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">5</div>
+                <span class="step-label">Packaging</span>
+              </div>
+              <h3>Packaging</h3>
+              <p>Each Qur'an is carefully placed in a custom slipcase for protection during transport. Volumes are then boxed in batches of 50 for efficient logistics while ensuring each copy arrives in pristine condition.</p>
+              <ul>
+                <li>Individual protective slipcases</li>
+                <li>Batch packaging (50 copies/box)</li>
+                <li>Moisture-resistant materials</li>
+                <li>Labeled for tracking</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/packaging.jpg" alt="Packaging and slipcases" />
+            </div>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="step reverse">
+            <div class="step-content">
+              <div class="step-meta">
+                <div class="step-icon">6</div>
+                <span class="step-label">Distribution</span>
+              </div>
+              <h3>Distribution</h3>
+              <p>Our distribution network ensures equitable delivery to rural madrasas, urban schools, and community centers across Bangladesh. Priority is given to orphaned students and underserved Hifz institutions.</p>
+              <ul>
+                <li>Priority to orphan institutions</li>
+                <li>Nationwide distribution network</li>
+                <li>Signed receipt documentation</li>
+                <li>Photo verification at delivery</li>
+              </ul>
+            </div>
+            <div class="step-media">
+              <img src="images/distribution.jpg" alt="Distribution trucks and logistics" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="specs container">
+      <h2>Technical Specifications</h2>
+      <p class="muted">Every detail has been carefully considered to create the optimal memorization experience.</p>
+      <div class="spec-grid">
+        <div class="spec-card"><p class="spec-label">Dimensions</p><p class="spec-value">21cm x 14cm</p></div>
+        <div class="spec-card"><p class="spec-label">Pages</p><p class="spec-value">668 pages</p></div>
+        <div class="spec-card"><p class="spec-label">Paper Weight</p><p class="spec-value">61 GSM</p></div>
+        <div class="spec-card"><p class="spec-label">Printing</p><p class="spec-value">4-Color Offset</p></div>
+        <div class="spec-card"><p class="spec-label">Binding</p><p class="spec-value">Hardcover</p></div>
+        <div class="spec-card"><p class="spec-label">Packaging</p><p class="spec-value">Custom Slipcase</p></div>
+      </div>
+    </section>
+
+    <section class="cta hero-cta">
+      <div class="container text-center">
+        <h2>Support Quality Qur'an Production</h2>
+        <p class="lead">Your sponsorship enables us to maintain these high standards while ensuring every student receives a beautiful, durable Qur'an.</p>
+        <div class="cta-buttons">
+          <a class="btn primary" href="#sponsorship">Sponsor Now</a>
+          <a class="btn outline" href="/about.html">Learn About Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; <span id="year"></span> Quraner Fariwala. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Autoplay fallback logic: try autoplay, if blocked show overlay with play buttons
+    document.addEventListener('DOMContentLoaded', function () {
+      const video = document.getElementById('productionVideo');
+      const fallback = document.getElementById('videoFallback');
+      const playBtn = document.getElementById('playVideoBtn');
+      const playUnmutedBtn = document.getElementById('playUnmutedBtn');
+
+      if (!video) return;
+
+      // Try to play automatically
+      const tryPlay = () => {
+        const p = video.play();
+        if (p !== undefined) {
+          p.then(() => {
+            // autoplay succeeded
+            if (fallback) fallback.classList.add('hidden');
+          }).catch(() => {
+            // autoplay blocked — show fallback overlay
+            if (fallback) fallback.classList.remove('hidden');
+          });
+        }
+      };
+
+      // Play muted (most browsers allow autoplay muted)
+      if (video.muted === false) video.muted = true;
+      tryPlay();
+
+      // Play muted on user click
+      if (playBtn) {
+        playBtn.addEventListener('click', function () {
+          video.muted = true;
+          video.play().catch(() => {});
+          if (fallback) fallback.classList.add('hidden');
+        });
+      }
+
+      // Play with sound on user click (some browsers require user gesture)
+      if (playUnmutedBtn) {
+        playUnmutedBtn.addEventListener('click', function () {
+          video.muted = false;
+          video.play().catch(() => {});
+          if (fallback) fallback.classList.add('hidden');
+        });
+      }
+
+      // If user interacts anywhere on page, attempt to play (useful for mobile)
+      const userGestureHandler = () => {
+        tryPlay();
+        window.removeEventListener('click', userGestureHandler);
+        window.removeEventListener('touchstart', userGestureHandler);
+      };
+      window.addEventListener('click', userGestureHandler, { once: true });
+      window.addEventListener('touchstart', userGestureHandler, { once: true });
+    });
+  </script>
+</body>
+</html>

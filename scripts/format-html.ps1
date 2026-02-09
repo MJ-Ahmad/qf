@@ -7,7 +7,7 @@
     Notes       : The script reads the HTML file, applies indentation rules, and saves it back in place.
 #>
 
-$inputFile  = "E:\QuranerFariwala\qf\app\index.html"
+$inputFile  = "E:\QuranerFariwala\qf\app\faq.html"
 
 # Read the HTML content
 $htmlContent = Get-Content $inputFile -Raw

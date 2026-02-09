@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Process Gallery — QuranerFariwala</title>
+  <meta name="description" content="Photographic documentation of the Mushaf production process: pre-press, printing, binding, QC, packaging and distribution." />
+  <meta name="theme-color" content="#065f46" />
+  <style>
+    /* ===== Root & Reset ===== */
+    :root{
+      --primary:#065f46;
+      --accent:#0ea5a4;
+      --muted:#64748b;
+      --bg:#ffffff;
+      --card:#ffffff;
+      --radius:12px;
+      --container:1200px;
+      --gap:1rem;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{background:var(--bg);color:#0f172a;line-height:1.5;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img,video{max-width:100%;display:block}
+
+    /* ===== Layout Utilities ===== */
+    .container{max-width:var(--container);margin:0 auto;padding:1rem}
+    .text-center{text-align:center}
+    .muted{color:var(--muted)}
+    .lead{font-size:1.02rem;color:rgba(0,0,0,0.8);max-width:900px;margin:0.6rem auto}
+
+    /* ===== Header ===== */
+    header.site-header{background:transparent;padding:1rem 0;position:sticky;top:0;z-index:40}
+    .header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand {display:flex;flex-direction:column}
+    .brand a{font-weight:700;color:var(--primary);font-size:1.125rem}
+    .nav {display:flex;gap:.5rem;align-items:center}
+    .nav a{padding:.5rem .75rem;border-radius:8px;background:transparent;border:1px solid rgba(0,0,0,0.06);font-weight:600;color:#0f172a}
+    .mobile-toggle{display:none;background:transparent;border:0;padding:.25rem;border-radius:8px;cursor:pointer}
+
+    /* ===== Page Hero ===== */
+    .page-hero{padding:2rem 0;text-align:center}
+    .page-hero h1{font-size:1.6rem;color:var(--primary);margin-bottom:.5rem}
+    .page-hero p{color:var(--muted);margin:0 auto;max-width:760px}
+
+    /* ===== Gallery ===== */
+    .gallery-wrap{padding:1rem 0}
+    .gallery { display:grid; gap:1rem; margin-top:1rem; }
+    @media (min-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 520px) and (max-width: 899px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 519px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+
+    .gallery-item {
+      background:var(--card);
+      border-radius:.75rem;
+      overflow:hidden;
+      border:1px solid #eef6f3;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:160px;
+      position:relative;
+    }
+    .gallery-item img {
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+      transition: transform .35s ease, filter .35s ease;
+    }
+    .gallery-item:focus-within img,
+    .gallery-item:hover img { transform: scale(1.03); filter:brightness(.95); }
+
+    /* optional caption */
+    .gallery-caption { padding:.75rem; }
+    .gallery-caption h4 { color:var(--primary); margin:0 0 .5rem 0; font-size:1rem; }
+    .gallery-caption p { color:var(--muted); margin:0; font-size:.95rem; }
+
+    /* ===== CTA ===== */
+    .cta-row { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .cta-row h3{color:var(--primary);margin:0 0 .25rem 0}
+    .muted-small{color:var(--muted);font-size:.95rem;margin:0}
+    .cta-actions{display:flex;gap:.75rem}
+    .btn--primary, .btn-outline { display:inline-block;padding:.6rem .9rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:.95rem }
+    .btn--primary { background:var(--primary); color:#fff; border:1px solid rgba(0,0,0,0.04); box-shadow:0 8px 20px rgba(2,6,23,0.06) }
+    .btn-outline { background:transparent; color:var(--primary); border:1px solid var(--primary) }
+
+    @media (max-width:700px) {
+      .gallery-item img { height:160px }
+      .cta-row { flex-direction:column; align-items:flex-start }
+      .cta-actions { width:100%; display:flex; gap:.5rem }
+      .btn--primary, .btn-outline { width:100%; text-align:center }
+      .mobile-toggle{display:block}
+      .nav{display:none}
+      .nav.open{display:flex;flex-direction:column;position:absolute;right:1rem;top:64px;background:#fff;padding:.75rem;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,0.12)}
+    }
+
+    /* ===== Footer (compact) ===== */
+    footer.site-footer { padding:1.25rem 0; background:linear-gradient(180deg,#fbfcfb,#f7faf7); color:#334155; margin-top:2rem; border-top:1px solid rgba(15,23,42,0.04) }
+    .footer-inner { max-width:var(--container); margin:0 auto; padding:1rem; display:grid; gap:1rem }
+    .footer-top { display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start }
+    .links-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45rem}
+    .links-title{font-weight:700;color:var(--primary);margin-bottom:.5rem}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-top:1px solid rgba(15,23,42,0.04);padding-top:1rem;margin-top:.5rem}
+    .policy-links{display:flex;gap:.5rem;align-items:center;color:var(--muted);font-size:.9rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner" aria-label="Site header">
+    <div class="container">
+      <div class="header-row">
+        <div class="brand">
+          <a href="/" aria-label="QuranerFariwala home">QuranerFariwala</a>
+          <div class="brand-tag muted">A Journey of Light</div>
+        </div>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+
+        <nav id="mainNav" class="nav" role="navigation" aria-label="Primary navigation">
+          <a href="/" class="nav-link">Home</a>
+          <a href="#quran-title" class="nav-link">Gallery</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Process Gallery</h1>
+        <p class="lead">Photographic documentation of the Mushaf production process — from pre-press and printing to binding, quality control, packaging and distribution.</p>
+      </div>
+    </section>
+
+    <section class="gallery-wrap">
+      <div class="container" aria-labelledby="quran-title">
+        <h2 id="quran-title" class="section-title" style="margin-bottom:.5rem;color:var(--primary)">Process Gallery</h2>
+
+        <div class="gallery" role="list" aria-label="Production process photos">
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Printed sheet in form">
+            <img src="assets/qf/01.jpg" alt="Printed sheet in form" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Folding signatures">
+            <img src="assets/qf/02.jpg" alt="Folding signatures" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Inspection of folded Mushaf">
+            <img src="assets/qf/03.jpg" alt="Inspection of folded Mushaf" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Cover printing">
+            <img src="assets/qf/04.jpg" alt="Cover printing" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Casing in and binding">
+            <img src="assets/qf/05.jpg" alt="Casing in and binding" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Drying after adhesive application">
+            <img src="assets/qf/06.jpg" alt="Drying after adhesive application" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Storage of finished Mushafs">
+            <img src="assets/qf/07.jpg" alt="Storage of finished Mushafs" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Cartoning for shipment">
+            <img src="assets/qf/08.jpg" alt="Cartoning for shipment" loading="lazy" decoding="async" />
+          </figure>
+
+          <figure class="gallery-item" role="listitem" tabindex="0" aria-label="Distribution to students">
+            <img src="assets/qf/09.jpg" alt="Distribution to students" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+
+        <div class="cta-row" aria-hidden="false">
+          <div>
+            <h3 style="color:var(--primary);margin-bottom:.25rem">Partner with QuranerFariwala</h3>
+            <p class="muted-small">Support research, sponsor print runs, or request distribution for your community.</p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn--primary" href="/contact" aria-label="Contact QuranerFariwala">Contact Us</a>
+            <a class="btn-outline" href="/quote" aria-label="Request a quote">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a class="brand-link" href="/">QuranerFariwala</a>
+          <div class="brand-tag muted">Mushaf Printing and Distribution — Preserving the Qur'an with care</div>
+        </div>
+
+        <nav class="footer-links" role="navigation" aria-label="Footer navigation">
+          <div class="links-col">
+            <div class="links-title">Company</div>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/team">Our Team</a></li>
+              <li><a href="/careers">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="links-col">
+            <div class="links-title">Support</div>
+            <ul>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/sponsorship">Sponsorship</a></li>
+            </ul>
+          </div>
+
+          <div class="links-col">
+            <div class="links-title">Legal</div>
+            <ul>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Use</a></li>
+              <li><a href="/cookie">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="links-col">
+            <div class="links-title">Resources</div>
+            <ul>
+              <li><a href="/downloads">Downloads</a></li>
+              <li><a href="/reports">Annual Reports</a></li>
+              <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="legal">
+          <p class="muted-small">© <span id="footerYear"></span> QuranerFariwala — Mushaf Printing and Distribution. All rights reserved.</p>
+          <p class="muted-small">Registered charity number: <strong>12345678</strong></p>
+        </div>
+
+        <div class="policy-links" aria-label="Legal links">
+          <a href="/privacy">Privacy Policy</a>
+          <span aria-hidden="true">•</span>
+          <a href="/terms">Terms of Use</a>
+          <span aria-hidden="true">•</span>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header mobile toggle, footer year, smooth scroll
+    (function () {
+      // Mobile nav toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mainNav = document.getElementById('mainNav');
+      if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', () => {
+          const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+          mobileToggle.setAttribute('aria-expanded', String(!expanded));
+          mainNav.classList.toggle('open');
+        });
+      }
+
+      // Footer year
+      const fy = document.getElementById('footerYear');
+      if (fy) fy.textContent = new Date().getFullYear();
+
+      // Smooth scroll for internal anchors
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (mainNav && mainNav.classList.contains('open')) {
+              mainNav.classList.remove('open');
+              mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+
+      // Keyboard: allow Enter/Space on gallery items to open image in new tab (simple accessible behavior)
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const img = item.querySelector('img');
+            if (img && img.src) window.open(img.src, '_blank');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
