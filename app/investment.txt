@@ -1,0 +1,24 @@
+1:"$Sreact.fragment"
+2:I[1835,["177","static/chunks/app/layout-d29d2ae690e8511d.js"],"LanguageProvider"]
+3:I[5811,["177","static/chunks/app/layout-d29d2ae690e8511d.js"],"DonationProvider"]
+4:I[9766,[],""]
+5:I[98924,[],""]
+6:I[68955,["177","static/chunks/app/layout-d29d2ae690e8511d.js"],"Analytics"]
+7:I[81959,[],"ClientPageRoot"]
+8:I[79286,["628","static/chunks/628-4755a191f6845f0b.js","420","static/chunks/420-8bfa75bdbfa8193a.js","802","static/chunks/app/investment/page-70442600b4494f6a.js"],"default"]
+b:I[24431,[],"OutletBoundary"]
+d:I[15278,[],"AsyncMetadataOutlet"]
+f:I[24431,[],"ViewportBoundary"]
+11:I[24431,[],"MetadataBoundary"]
+12:"$Sreact.suspense"
+14:I[57150,[],""]
+:HL["/_next/static/css/ffb8e560d9a1fde8.css","style"]
+:HL["/_next/static/css/c9da7dc9b728c8ca.css","style"]
+0:{"P":null,"b":"zF4fXdF3molID-VGpiXrF","p":"","c":["","investment"],"i":false,"f":[[["",{"children":["investment",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ffb8e560d9a1fde8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/c9da7dc9b728c8ca.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"font-sans antialiased","children":[["$","$L2",null,{"children":["$","$L3",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}],["$","$L6",null,{}]]}]}]]}],{"children":["investment",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L7",null,{"Component":"$8","searchParams":{},"params":{},"promises":["$@9","$@a"]}],null,["$","$Lb",null,{"children":["$Lc",["$","$Ld",null,{"promise":"$@e"}]]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lf",null,{"children":"$L10"}],null],["$","$L11",null,{"children":["$","div",null,{"hidden":true,"children":["$","$12",null,{"fallback":null,"children":"$L13"}]}]}]]}],false]],"m":"$undefined","G":["$14",[]],"s":false,"S":true}
+9:{}
+a:"$0:f:0:1:2:children:2:children:1:props:children:0:props:params"
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+c:null
+15:I[80622,[],"IconMark"]
+e:{"metadata":[["$","title","0",{"children":"Quraner Fariwala - Web3 Quranic Platform for Tomorrow's Leaders"}],["$","meta","1",{"name":"description","content":"Next-generation decentralized platform for Quranic learning, research, distribution, and community-driven innovation. Join the future of Islamic education."}],["$","meta","2",{"name":"generator","content":"v0.app"}],["$","link","3",{"rel":"icon","href":"/icon.png","media":"(prefers-color-scheme: light)"}],["$","link","4",{"rel":"icon","href":"/icon.png","media":"(prefers-color-scheme: dark)"}],["$","link","5",{"rel":"icon","href":"/icon.png","type":"image/svg+xml"}],["$","link","6",{"rel":"apple-touch-icon","href":"/icon.png"}],["$","$L15","7",{}]],"error":null,"digest":"$undefined"}
+13:"$e:metadata"
