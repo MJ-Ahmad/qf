@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="theme-dark font-sans antialiased">
+  <header>
+    <div class="nav-inner">
+      <a class="brand" href="donate.html"><img src="assets/logo.png" class="site-logo" width="44" height="44" alt="logo" /> Quraner Fariwala</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="text-align:center;margin-bottom:1rem">Checkout</h2>
+
+    <div style="max-width:720px;margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;border:1px solid var(--border);">
+      <form id="checkout-form">
+        <div style="display:grid;gap:0.75rem;">
+          <label>
+            Full name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Card number (demo)
+            <input type="text" name="card" required />
+          </label>
+          <div style="display:flex;gap:0.5rem;">
+            <input type="text" name="exp" placeholder="MM/YY" required />
+            <input type="text" name="cvc" placeholder="CVC" required />
+          </div>
+
+          <div style="display:flex;gap:0.6rem;">
+            <button type="submit" class="full-btn">Pay now</button>
+            <a href="cart.html" class="full-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;text-align:center;display:inline-flex;align-items:center;justify-content:center">Back to cart</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="qf-toast"></div>
+
+  <script>
+    (function(){
+      const CART_KEY = 'qf_cart_v1';
+      function saveCart(cart){ try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(e){} }
+      function showToast(msg, ms=2000){
+        const container = document.getElementById('qf-toast');
+        const el = document.createElement('div');
+        el.textContent = msg;
+        el.style.background = 'rgba(255,255,255,0.06)';
+        el.style.color = 'var(--fg)';
+        el.style.padding = '0.6rem 0.9rem';
+        el.style.borderRadius = '8px';
+        container.appendChild(el);
+        setTimeout(()=>el.remove(), ms);
+      }
+
+      document.getElementById('checkout-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        if (!confirm('Simulate payment and complete checkout?')) return;
+        // Clear cart and redirect to thank you
+        saveCart([]);
+        showToast('Payment simulated — redirecting...');
+        setTimeout(()=>{ window.location.href = 'thankyou.html'; }, 900);
+      });
+    })();
+  </script>
+</body>
+</html>

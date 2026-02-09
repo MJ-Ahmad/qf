@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quraner Fariwala — Cart</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="theme-dark font-sans antialiased">
+  <header>
+    <div class="nav-inner">
+      <a class="brand" href="/" aria-label="Quraner Fariwala home">
+        <img src="assets/logo.png" alt="Quraner Fariwala logo" class="site-logo" width="44" height="44" />
+        <div style="font-weight:800;line-height:1">Quraner Fariwala</div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="donate.html">Donate</a>
+        <a href="/qfd/contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="donate.html" role="button">Back to Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" role="banner" aria-label="Cart hero">
+    <div class="content">
+      <div class="kicker" aria-hidden="true">Your Cart</div>
+      <h1 id="hero-heading">Review items in your cart</h1>
+      <p class="lead">Remove items, clear the cart, or proceed to checkout.</p>
+    </div>
+  </section>
+
+  <main class="container" role="main">
+    <div class="cart-wrap" aria-live="polite">
+      <section class="cart-list" aria-label="Cart items">
+        <h3 style="margin:0 0 0.75rem 0">Items</h3>
+        <div id="cart-items" class="cart-items" style="min-height:120px"></div>
+      </section>
+
+      <aside class="cart-summary" aria-label="Cart summary">
+        <h3 style="margin:0 0 0.75rem 0">Summary</h3>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+          <div class="small">Subtotal</div>
+          <div id="cart-total" style="font-weight:800;font-size:1.05rem">$0.00</div>
+        </div>
+
+        <div style="margin-top:0.75rem;display:flex;flex-direction:column;gap:0.6rem">
+          <button id="checkout" class="full-btn" aria-label="Checkout">Proceed to Checkout</button>
+          <button id="cart-clear" class="full-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit">Clear Cart</button>
+        </div>
+
+        <div style="margin-top:1rem;font-size:0.92rem;color:var(--muted)">
+          <strong>Note:</strong> This demo simulates checkout and clears the cart after confirmation.
+        </div>
+      </aside>
+    </div>
+
+    <section class="issues-section" aria-label="Contact for issues">
+      <p style="max-width:820px;margin:0 auto;font-size:0.95rem;line-height:1.5;color:inherit">
+        If you encounter any issues or have complaints regarding payments, or notice discrepancies in field activities, please contact:
+        <a href="mailto:mjahmad2024@outlook.com" style="color:var(--primary);font-weight:600;text-decoration:none;margin-left:0.35rem">mjahmad2024@outlook.com</a>
+      </p>
+    </section>
+  </main>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div style="max-width:var(--max-width);margin:0 auto;padding:0 1rem;display:flex;flex-direction:column;gap:0.5rem;align-items:center;">
+      <div style="font-size:0.98rem;color:var(--fg);font-weight:700;">© <span id="site-year"></span> QuranerFariwala — All rights reserved.</div>
+      <div style="font-size:0.95rem;color:var(--muted);">
+        This project is open source and available under the
+        <a href="https://opensource.org/licenses/MIT" style="color:var(--primary);text-decoration:none;font-weight:600;margin-left:0.25rem">MIT License</a>.
+      </div>
+      <div style="margin-top:0.25rem;font-size:0.95rem;color:var(--fg);font-weight:600">
+        With a vision for tomorrow’s leaders — by
+        <a href="mailto:mjahmad2024@outlook.com" style="color:var(--accent);text-decoration:none;margin-left:0.25rem">MJ‑AHMAD</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('site-year').textContent = new Date().getFullYear();</script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
