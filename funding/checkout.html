@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">ق</div>
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+      <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./donate.html">Donate</a>
+      </nav>
+      <div id="header-cart" class="header-cart" role="button" aria-label="Open cart" tabindex="0">
+        <div style="font-weight:800">Cart</div>
+        <div id="header-cart-count" class="cart-count">0</div>
+      </div>
+      <button id="mobile-toggle" aria-expanded="false" aria-label="Toggle menu" style="display:none">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Checkout</h1>
+
+    <!-- Step 1: Donor details -->
+    <section id="donor-section" class="card" style="padding:1rem;margin-top:1rem">
+      <h2>Donor details</h2>
+      <form id="donor-form">
+        <div class="form-row">
+          <label for="donor-name">Name *</label>
+          <input id="donor-name" name="name" required placeholder="Donor Name" />
+        </div>
+
+        <div class="form-row">
+          <label for="donor-company">Company name (optional)</label>
+          <input id="donor-company" name="company" placeholder="Company name (optional)" />
+        </div>
+
+        <div class="form-row">
+          <label for="donor-phone">Phone *</label>
+          <input id="donor-phone" name="phone" required placeholder="+8801XXXXXXXXX" />
+        </div>
+
+        <div class="form-row">
+          <label for="donor-email">Email address *</label>
+          <input id="donor-email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-row">
+          <label for="donor-state">State / District *</label>
+          <input id="donor-state" name="state" required placeholder="Dhaka" />
+        </div>
+
+        <div class="form-row">
+          <label for="donor-country">Country / Region *</label>
+          <select id="donor-country" name="country" required>
+            <option value="">Select a country / region…</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="United States">United States</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div style="display:flex;gap:0.5rem;margin-top:1rem">
+          <button id="btn-next" type="button" class="full-btn">Next: Review donation</button>
+          <a href="./donate.html" class="btn-ghost" style="align-self:center">Back</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Step 2: Summary -->
+    <section id="summary-section" class="card" style="padding:1rem;margin-top:1rem;display:none">
+      <h2>Donation summary</h2>
+      <div id="summary-items" style="margin-top:0.5rem"></div>
+
+      <div style="display:flex;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--card-border);margin-top:0.75rem">
+        <div class="small">Total</div>
+        <div id="summary-total" style="font-weight:800">$0.00</div>
+      </div>
+
+      <div style="margin-top:1rem;display:flex;gap:0.5rem">
+        <button id="btn-process" class="full-btn">Process Payment</button>
+        <button id="btn-edit" class="btn-ghost">Edit details</button>
+      </div>
+
+      <div class="small" style="margin-top:0.75rem;color:var(--muted)">
+        After you click Process Payment we will create an invoice with status <strong>unpaid</strong> and take you to the Payment page with clear instructions.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+
+  <!-- Inline script: create provisional order and navigate to payment -->
+  <script>
+    (function(){
+      const CART_KEY = 'qf_cart_v2';
+      const LAST_ORDER_KEY = 'qf_last_order';
+      function safeParse(v, fallback = null) { try { return JSON.parse(v); } catch { return fallback; } }
+      function formatCurrency(n) { const num = Number(n||0); if(!Number.isFinite(num)) return '$0.00'; return '$'+num.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+      const btnNext = document.getElementById('btn-next');
+      const btnProcess = document.getElementById('btn-process');
+      const btnEdit = document.getElementById('btn-edit');
+      const donorForm = document.getElementById('donor-form');
+      const summarySection = document.getElementById('summary-section');
+      const donorSection = document.getElementById('donor-section');
+      const summaryItems = document.getElementById('summary-items');
+      const summaryTotal = document.getElementById('summary-total');
+
+      function loadCart() { return safeParse(localStorage.getItem(CART_KEY), []) || []; }
+      function buildSummaryHtml(cart) {
+        if (!cart.length) return '<div class="small">Your cart is empty.</div>';
+        return cart.map(it => `<div style="display:flex;justify-content:space-between;padding:6px 0"><div>${(it.title)}</div><div>${formatCurrency(it.price)}</div></div>`).join('');
+      }
+
+      btnNext && btnNext.addEventListener('click', () => {
+        if (!donorForm.checkValidity()) { donorForm.reportValidity(); return; }
+        const cart = loadCart();
+        if (!cart.length) { alert('Your cart is empty. Please add a donation first.'); return; }
+        summaryItems.innerHTML = buildSummaryHtml(cart);
+        const total = cart.reduce((s,i)=>s+Number(i.price||0),0);
+        summaryTotal.textContent = formatCurrency(total);
+        donorSection.style.display = 'none';
+        summarySection.style.display = '';
+      });
+
+      btnEdit && btnEdit.addEventListener('click', () => {
+        summarySection.style.display = 'none';
+        donorSection.style.display = '';
+      });
+
+      btnProcess && btnProcess.addEventListener('click', () => {
+        const name = document.getElementById('donor-name').value.trim();
+        const company = document.getElementById('donor-company').value.trim();
+        const phone = document.getElementById('donor-phone').value.trim();
+        const email = document.getElementById('donor-email').value.trim();
+        const state = document.getElementById('donor-state').value.trim();
+        const country = document.getElementById('donor-country').value;
+        const cart = loadCart();
+        const total = cart.reduce((s,i)=>s+Number(i.price||0),0);
+        const order = {
+          id: 'QF-' + Math.random().toString(36).slice(2,9).toUpperCase(),
+          items: cart,
+          donor: { name, company, phone, email, state, country },
+          total: Number(total),
+          status: 'unpaid',
+          createdAt: new Date().toISOString()
+        };
+        try { localStorage.setItem(LAST_ORDER_KEY, JSON.stringify(order)); } catch(e){ console.warn(e); }
+        location.href = './payment.html';
+      });
+    })();
+  </script>
+</body>
+</html>

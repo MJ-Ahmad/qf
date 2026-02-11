@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donate — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">ق</div>
+        <div>
+          <div class="brand-title">Quraner Fariwala</div>
+          <div class="brand-sub small">Research · Printing · Distribution</div>
+        </div>
+      </a>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./donate.html">Donate</a>
+        <a class="nav-link" href="./tracing.html">Track</a>
+      </nav>
+
+      <div id="header-cart" class="header-cart" role="button" aria-label="Open cart" tabindex="0">
+        <div style="font-weight:800">Cart</div>
+        <div id="header-cart-count" class="cart-count">0</div>
+      </div>
+
+      <button id="mobile-toggle" aria-expanded="false" aria-label="Toggle menu" style="display:none">☰</button>
+      <div id="mobile-menu" class="card" style="display:none"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Donate</h1>
+    <p class="small">Choose a preset donation or enter a custom amount. All donations are processed manually in this demo — follow the payment instructions on the next page.</p>
+
+    <section class="cards" style="margin-top:1rem">
+      <article class="card">
+        <h3>Supporter</h3>
+        <div class="price">$10</div>
+        <p class="small">Covers printing materials</p>
+        <button class="add-to-cart full-btn" data-price="10" data-title="Supporter Donation">Add to cart</button>
+      </article>
+
+      <article class="card">
+        <h3>Standard</h3>
+        <div class="price">$25</div>
+        <p class="small">Helps print multiple Qurans</p>
+        <button class="add-to-cart full-btn" data-price="25" data-title="Standard Donation">Add to cart</button>
+      </article>
+
+      <article class="card">
+        <h3>Sponsor</h3>
+        <div class="price">$100</div>
+        <p class="small">Sponsor a set for distribution</p>
+        <button class="add-to-cart full-btn" data-price="100" data-title="Sponsor Donation">Add to cart</button>
+      </article>
+
+      <article class="card">
+        <h3>Community Pack</h3>
+        <div class="price">$250</div>
+        <p class="small">Support a community distribution</p>
+        <button class="add-to-cart full-btn" data-price="250" data-title="Community Pack Donation">Add to cart</button>
+      </article>
+    </section>
+
+    <section style="margin-top:1.25rem">
+      <h2>Custom donation</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.5rem;max-width:420px">
+        <input id="custom-amount" type="number" min="1" placeholder="Amount (USD)" style="flex:1;padding:0.6rem;border-radius:8px;border:1px solid var(--card-border)" />
+        <button id="custom-add" class="full-btn" disabled aria-disabled="true">Add</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="card" aria-hidden="true" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong>Your Cart</strong>
+      <div><button id="cart-clear" class="btn-ghost small">Clear</button></div>
+    </div>
+    <div id="cart-items" style="margin-top:0.75rem"></div>
+    <div style="display:flex;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--card-border);margin-top:0.75rem">
+      <div class="small">Total</div>
+      <div id="cart-total" style="font-weight:800">$0.00</div>
+    </div>
+    <div style="margin-top:0.75rem;display:flex;gap:0.5rem">
+      <a href="./checkout.html" class="full-btn" style="flex:1;text-align:center">Checkout</a>
+      <a href="./donate.html" class="btn-ghost small" style="align-self:center">Continue</a>
+    </div>
+  </div>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

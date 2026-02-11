@@ -1,0 +1,87 @@
+/* css/style.css
+   Polished, international donation UI
+   Variables, responsive layout, accessible components
+*/
+
+:root{
+  --page-bg:#faf9f7;
+  --panel-bg:#ffffff;
+  --muted:#6b7280;
+  --primary:#0ea5a4;
+  --accent:#06b6d4;
+  --fg:#042028;
+  --card-border:rgba(2,6,23,0.06);
+  --radius:12px;
+  --container:1100px;
+  --shadow-soft:0 6px 18px rgba(2,6,23,0.04);
+  --shadow-card:0 8px 30px rgba(2,6,23,0.04);
+  --gap:1rem;
+  --text-sm:0.9rem;
+  --success:#059669;
+  --warning:#b45309;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--fg);background:var(--page-bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:1.25rem}
+
+/* Header */
+header{background:var(--panel-bg);border-bottom:1px solid var(--card-border);box-shadow:var(--shadow-soft);position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:0.8rem 1rem;max-width:var(--container);margin:0 auto}
+.brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--fg)}
+.logo{width:48px;height:48px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;box-shadow:var(--shadow-soft);object-fit:cover}
+.brand-title{font-weight:800;font-size:1rem}
+.brand-sub{font-size:0.9rem;color:var(--muted)}
+
+/* Nav links */
+.nav-links{display:flex;gap:0.6rem;align-items:center}
+.nav-link{padding:0.45rem 0.8rem;border-radius:8px;color:var(--fg);font-weight:700;text-decoration:none}
+.nav-link:hover{background:rgba(2,6,23,0.02)}
+
+/* Cart */
+.header-cart{display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0.6rem;border-radius:8px;cursor:pointer}
+.cart-count{background:var(--primary);color:#fff;padding:0.12rem 0.45rem;border-radius:999px;font-weight:800;font-size:0.85rem}
+
+/* Hero */
+.hero{padding:2rem 0;display:flex;align-items:center;gap:1.25rem}
+.kicker{display:inline-block;color:var(--primary);background:rgba(14,165,164,0.06);border-radius:999px;padding:0.25rem 0.6rem;font-weight:700;font-size:0.9rem}
+.lead{color:var(--muted);margin-top:0.5rem}
+
+/* Cards and forms */
+.card{background:var(--panel-bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:1rem;color:var(--fg);box-shadow:var(--shadow-card)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.price{font-weight:800;font-size:1.05rem}
+.form-row{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.5rem}
+.form-row input,.form-row select,textarea{padding:0.6rem;border-radius:8px;border:1px solid var(--card-border);font-size:1rem}
+.form-row label{font-size:0.95rem;color:var(--muted)}
+
+/* Buttons */
+.full-btn{display:inline-flex;align-items:center;justify-content:center;padding:0.6rem 0.9rem;border-radius:8px;background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff;border:0;cursor:pointer;font-weight:700;text-decoration:none}
+.btn-ghost{padding:0.5rem 0.75rem;border-radius:8px;background:transparent;border:1px solid var(--card-border);color:var(--fg);cursor:pointer}
+
+/* Modal / cart */
+#cart-modal{position:fixed;right:1rem;top:4rem;width:360px;padding:1rem;z-index:80;border-radius:12px}
+#modal-backdrop{display:none;align-items:center;justify-content:center}
+#modal-backdrop.open{display:flex}
+#qf-toast{position:fixed;top:1rem;right:1rem;z-index:9999;display:flex;flex-direction:column;gap:0.5rem;pointer-events:none}
+#qf-toast>div{pointer-events:auto}
+
+/* Invoice visuals */
+.badge{display:inline-block;padding:0.35rem 0.6rem;border-radius:999px;color:#fff;font-weight:800}
+.badge-paid{background:var(--success)}
+.badge-unpaid{background:var(--warning)}
+
+/* Utilities */
+.small{font-size:var(--text-sm);color:var(--muted)}
+.text-center{text-align:center}
+.hidden{display:none!important}
+
+/* Responsive */
+@media (max-width:768px){
+  .nav{padding:0.6rem}
+  .logo{width:40px;height:40px}
+  .nav-links{display:none}
+  #mobile-toggle{display:inline-flex}
+  .container{padding:0.75rem}
+  #cart-modal{right:0;left:0;margin:0 auto;width:calc(100% - 2rem)}
+}

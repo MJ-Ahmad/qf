@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track Donation — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">ق</div>
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Track Donation</h1>
+    <p class="small">Enter your order ID, email, or phone to check donation status.</p>
+
+    <div style="display:flex;gap:0.5rem;margin-top:0.75rem">
+      <input id="trace-input" placeholder="Order ID or email or phone" style="padding:0.5rem;border-radius:8px;border:1px solid var(--card-border);flex:1" />
+      <button id="trace-btn" class="full-btn">Check</button>
+    </div>
+
+    <div id="trace-result" class="card" style="margin-top:1rem;padding:1rem"></div>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

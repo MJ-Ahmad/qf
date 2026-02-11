@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cart — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">ق</div>
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+      <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./donate.html">Donate</a>
+      </nav>
+      <div id="header-cart" class="header-cart" role="button" aria-label="Open cart" tabindex="0">
+        <div style="font-weight:800">Cart</div>
+        <div id="header-cart-count" class="cart-count">0</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-items" class="card" style="padding:1rem;margin-top:1rem"></div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem">
+      <div class="small">Total</div>
+      <div id="cart-total" style="font-weight:800">$0.00</div>
+    </div>
+
+    <div style="margin-top:1rem;display:flex;gap:0.5rem">
+      <a href="./checkout.html" class="full-btn">Proceed to Checkout</a>
+      <button id="cart-clear" class="btn-ghost">Clear Cart</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

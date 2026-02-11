@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quraner Fariwala — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">ق</div>
+        <div>
+          <div class="brand-title">Quraner Fariwala</div>
+          <div class="brand-sub small">Research · Printing · Distribution</div>
+        </div>
+      </a>
+
+      <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html">Home</a>
+        <a class="nav-link" href="./donate.html">Donate</a>
+        <a class="nav-link" href="./tracing.html">Track</a>
+      </nav>
+
+      <div id="header-cart" class="header-cart" role="button" aria-label="Open cart" tabindex="0">
+        <div style="font-weight:800">Cart</div>
+        <div id="header-cart-count" class="cart-count">0</div>
+      </div>
+
+      <button id="mobile-toggle" aria-expanded="false" aria-label="Toggle menu" style="display:none">☰</button>
+      <div id="mobile-menu" class="card" style="display:none"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="kicker">Ramadan 2026 Campaign</div>
+        <h1>Transform Lives Through Giving</h1>
+        <p class="lead">Join our mission to print and distribute memorization-optimized Qurans worldwide. Your support matters.</p>
+        <div style="margin-top:1rem"><a class="full-btn" href="./donate.html">Donate Now</a></div>
+      </div>
+    </section>
+
+    <section style="margin-top:2rem">
+      <h2>How it works</h2>
+      <div class="card" style="margin-top:0.75rem">
+        <p class="small">Choose an amount, review your donation, follow the manual payment instructions, then confirm payment. We store a receipt locally and provide an invoice you can track by email, phone, or order ID.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div style="font-weight:800">Quraner Fariwala Ltd</div>
+        <div class="small">© 2026 Quraner Fariwala — All rights reserved</div>
+      </div>
+      <div class="small">Contact: <a href="mailto:quranerfariwala@gmail.com">quranerfariwala@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="card" aria-hidden="true" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong>Your Cart</strong>
+      <div><button id="cart-clear" class="btn-ghost small">Clear</button></div>
+    </div>
+    <div id="cart-items" style="margin-top:0.75rem"></div>
+    <div style="display:flex;justify-content:space-between;padding-top:0.75rem;border-top:1px solid var(--card-border);margin-top:0.75rem">
+      <div class="small">Total</div>
+      <div id="cart-total" style="font-weight:800">$0.00</div>
+    </div>
+    <div style="margin-top:0.75rem;display:flex;gap:0.5rem">
+      <a href="./checkout.html" class="full-btn" style="flex:1;text-align:center">Checkout</a>
+      <a href="./donate.html" class="btn-ghost small" style="align-self:center">Continue</a>
+    </div>
+  </div>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
