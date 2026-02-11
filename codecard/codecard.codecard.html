@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Quraner Fariwala</title>
+  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran." />
+  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development" />
+  <meta name="author" content="MJ-Ahmad" />
+  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad" />
+  <meta name="generator" content="mj.dev" />
+  <meta name="creator" content="MJ-AHMAD" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Quraner Fariwala" />
+  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran" />
+  <meta property="og:url" content="https://mj-ahmad.github.io/qf/" />
+  <meta property="og:site_name" content="Quraner Fariwala" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mj-ahmad.github.io/qf/assets/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Quraner Fariwala" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any" />
+  <link rel="shortcut icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="https://mj-ahmad.github.io/qf/css/codecart/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg px-3">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="CodeCraft Logo" height="32" class="me-2">
+        <span>CodeCraft</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="/qf">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://MJ-Ahmad.github.io/mj-ahmad/">Docs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/qf/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero text-center">
+    <h1>Code Cart</h1>
+    <p>
+      $root: "qf/CodeCart/"
+    </p>
+  </section>
+
+  <!-- Content -->
+  <main class="content">
+
+  <!-- Code -->
+  <article class="code-card" aria-labelledby="css-label">
+    <header class="code-header">
+      <div class="code-header-left">
+        <span id="css-label" class="lang-badge">Code</span>
+        <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-css" aria-expanded="true" aria-controls="code-css" title="Toggle CSS code">
+          <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          <span class="visually-hidden">Toggle CSS code</span>
+        </button>
+      </div>
+      <button class="copy-btn" data-target="#code-css" title="Copy CSS code">
+        <i class="bi bi-clipboard" aria-hidden="true"></i>
+        <span class="visually-hidden">Copy CSS code</span>
+      </button>
+    </header>
+    <div id="code-css" class="collapse show">
+      <pre><code>codecard/
+├── assets/
+│   ├── logo.png
+├── js/
+│   ├── script.js
+├── css/
+│   ├── style.css
+└── index.html
+</code></pre>
+    </div>
+  </article>
+
+
+  
+  <!-- JavaScript -->
+  <article class="code-card" aria-labelledby="js-label">
+    <header class="code-header">
+      <div class="code-header-left">
+        <span id="js-label" class="lang-badge">JS</span>
+        <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-js" aria-expanded="true" aria-controls="code-js" title="Toggle JavaScript code">
+          <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          <span class="visually-hidden">Toggle JavaScript code</span>
+        </button>
+      </div>
+      <button class="copy-btn" data-target="#code-js" title="Copy JavaScript code">
+        <i class="bi bi-clipboard" aria-hidden="true"></i>
+        <span class="visually-hidden">Copy JavaScript code</span>
+      </button>
+    </header>
+    <div id="code-js" class="collapse show">
+      <pre><code>    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy functionality with language-aware toast
+    (function(){
+      const toastEl = document.getElementById('copyToast');
+      const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+
+      // Delegate click for copy buttons
+      document.addEventListener('click', async (e) =&gt; {
+        const btn = e.target.closest('.copy-btn');
+        if (!btn) return;
+
+        const targetSelector = btn.getAttribute('data-target');
+        if (!targetSelector) return;
+
+        const target = document.querySelector(targetSelector);
+        if (!target) return;
+
+        // Extract code text
+        const pre = target.querySelector('pre');
+        if (!pre) return;
+        const codeText = pre.innerText.trim();
+
+        try {
+          // Use Clipboard API
+          await navigator.clipboard.writeText(codeText);
+
+          // Determine language label for toast message
+          const header = btn.closest('.code-card').querySelector('.lang-badge');
+          const lang = header ? header.textContent.trim() : 'Code';
+
+          // Update and show toast
+          document.getElementById('copyToastBody').textContent = `✅ ${lang} copied to clipboard`;
+          toast.show();
+        } catch (err) {
+          console.error('Copy failed', err);
+          document.getElementById('copyToastBody').textContent = '⚠️ Copy failed';
+          toast.show();
+        }
+      });
+
+      // Improve collapse toggle icon rotation
+      document.querySelectorAll('.collapse-toggle').forEach(btn =&gt; {
+        const icon = btn.querySelector('i');
+        const target = document.querySelector(btn.getAttribute('data-bs-target'));
+        if (!target) return;
+
+        // Update icon on collapse events
+        target.addEventListener('show.bs.collapse', () =&gt; { icon.classList.remove('bi-chevron-down'); icon.classList.add('bi-chevron-up'); btn.setAttribute('aria-expanded','true'); });
+        target.addEventListener('hide.bs.collapse', () =&gt; { icon.classList.remove('bi-chevron-up'); icon.classList.add('bi-chevron-down'); btn.setAttribute('aria-expanded','false'); });
+      });
+
+    })();</code></pre>
+    </div>
+  </article>
+
+
+
+
+<!-- CSS -->
+  <article class="code-card" aria-labelledby="css-label">
+    <header class="code-header">
+      <div class="code-header-left">
+        <span id="css-label" class="lang-badge">CSS</span>
+        <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-css" aria-expanded="true" aria-controls="code-css" title="Toggle CSS code">
+          <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          <span class="visually-hidden">Toggle CSS code</span>
+        </button>
+      </div>
+      <button class="copy-btn" data-target="#code-css" title="Copy CSS code">
+        <i class="bi bi-clipboard" aria-hidden="true"></i>
+        <span class="visually-hidden">Copy CSS code</span>
+      </button>
+    </header>
+    <div id="code-css" class="collapse show">
+      <pre><code>  :root {
+    --bg: #0f1113;
+    --bg-body: #ffffff;
+    --panel: #1e1e1e;
+    --panel-2: #2b2b2b;
+    --muted: #ffffff;
+    --accent: #0ea5a4;
+    --code-font: "Consolas", "Courier New", monospace;
+    --ui-font: Ginto, ui-serif, system-ui, sans-serif;
+    --radius: 10px;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg-body);
+    color: #0b1220;
+    font-family: var(--ui-font);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Header */
+  header.site-header {
+    background: var(--panel);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #fff;
+  }
+
+  .nav-link {
+    color: var(--muted);
+    transition: color 0.15s ease;
+  }
+  .nav-link:hover { color: #fff; }
+
+  /* Hero */
+  .hero {
+    padding: 56px 16px;
+    text-align: center;
+    background: var(--panel-2);
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .hero p {
+    color: var(--muted);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Content Container */
+  .content {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px 48px;
+  }
+
+  /* Code Card */
+  .code-card {
+    background: var(--panel);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    background: linear-gradient(90deg, var(--panel-2), rgba(255, 255, 255, 0.02));
+  }
+
+  .code-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 64px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .lang-badge small {
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .collapse-toggle,
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 36px;
+    height: 36px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: transparent;
+    color: #dfe7ee;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background 0.15s ease;
+  }
+  .collapse-toggle:hover,
+  .copy-btn:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  pre {
+    margin: 0;
+    padding: 16px;
+    background: #0b0b0b;
+    color: #e6eef6;
+    font-family: var(--code-font);
+    font-size: 14px;
+    overflow: auto;
+    white-space: pre;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    background: var(--panel);
+    color: var(--muted);
+    padding: 28px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  footer .legal a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 12px;
+  }
+  footer .legal a:hover { color: #fff; }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero h1 { font-size: 1.6rem; }
+    .code-header { padding: 8px; }
+    .lang-badge { padding: 6px 8px; font-size: 12px; min-width: 56px; }
+    .collapse-toggle, .copy-btn { width: 36px; height: 36px; padding: 6px; }
+    pre { padding: 12px; font-size: 13px; }
+  }
+
+  /* Focus outline */
+  button:focus {
+    outline: 2px solid rgba(14, 165, 164, 0.18);
+    outline-offset: 2px;
+  }
+
+  /* Navbar toggler icon */
+  .navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    -webkit-mask: url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'&gt;&lt;path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/&gt;&lt;/svg&gt;") center / 100% no-repeat;
+    mask: url("data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'&gt;&lt;path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/&gt;&lt;/svg&gt;") center / 100% no-repeat;
+  }
+</code></pre>
+    </div>
+  </article>
+
+
+
+
+
+
+    <!-- Code Card: HTML Example -->
+    <article class="code-card" aria-labelledby="html-label">
+      <header class="code-header">
+        <div class="code-header-left">
+          <span id="html-label" class="lang-badge" aria-hidden="true">HTML</span>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-html" aria-expanded="true" aria-controls="code-html" title="Toggle code visibility">
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle HTML code</span>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-html" title="Copy code">
+          <i class="bi bi-clipboard" aria-hidden="true"></i>
+          <span class="visually-hidden">Copy HTML code</span>
+        </button>
+      </header>
+
+      <div id="code-html" class="collapse show">
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+  
+  &lt;title&gt;Quraner Fariwala&lt;/title&gt;
+  &lt;meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran." /&gt;
+  &lt;meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development" /&gt;
+  &lt;meta name="author" content="MJ-Ahmad" /&gt;
+  &lt;link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad" /&gt;
+  &lt;meta name="generator" content="mj.dev" /&gt;
+  &lt;meta name="creator" content="MJ-AHMAD" /&gt;
+
+  &lt;!-- Open Graph / Social Sharing --&gt;
+  &lt;meta property="og:title" content="Quraner Fariwala" /&gt;
+  &lt;meta property="og:description" content="Research • Printing • Distribution of Holy Quran" /&gt;
+  &lt;meta property="og:url" content="https://mj-ahmad.github.io/qf" /&gt;
+  &lt;meta property="og:site_name" content="Quraner Fariwala" /&gt;
+  &lt;meta property="og:locale" content="en_US" /&gt;
+  &lt;meta property="og:image" content="assets/logo.png" /&gt;
+  &lt;meta property="og:image:width" content="1200" /&gt;
+  &lt;meta property="og:image:height" content="630" /&gt;
+  &lt;meta property="og:image:alt" content="Quraner Fariwala" /&gt;
+  &lt;meta property="og:type" content="website" /&gt;
+
+  &lt;!-- Favicon --&gt;
+  &lt;link rel="icon" href="../assets/logo.png" sizes="any" /&gt;
+  &lt;link rel="shortcut icon" href="../assets/logo.png" /&gt;
+
+  &lt;!-- Bootstrap CSS --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+  &lt;!-- Bootstrap Icons --&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"&gt;
+
+  &lt;!-- Custom Styles --&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Header --&gt;
+  &lt;header class="site-header"&gt;
+    &lt;nav class="navbar navbar-expand-lg px-3"&gt;
+      &lt;a class="navbar-brand d-flex align-items-center" href="#"&gt;
+        &lt;img src="assets/images/logo.png" alt="CodeCraft Logo" height="32" class="me-2"&gt;
+        &lt;span&gt;CodeCraft&lt;/span&gt;
+      &lt;/a&gt;
+
+      &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation"&gt;
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;div class="collapse navbar-collapse" id="navMain"&gt;
+        &lt;ul class="navbar-nav ms-auto align-items-lg-center"&gt;
+          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/qf"&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="https://MJ-Ahmad.github.io/mj-ahmad/"&gt;Docs&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/qf/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Hero --&gt;
+  &lt;section class="hero text-center"&gt;
+    &lt;h1&gt;Beautiful, Responsive Code Snippets&lt;/h1&gt;
+    &lt;p&gt;
+      Black-themed, accessible, and responsive code blocks with language labels, left-side collapse icons, right-side copy, and toast feedback. Works great on desktop and mobile.
+    &lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Content --&gt;
+  &lt;main class="content"&gt;
+
+    &lt;!-- Code Card: HTML Example --&gt;
+    &lt;article class="code-card" aria-labelledby="html-label"&gt;
+      &lt;header class="code-header"&gt;
+        &lt;div class="code-header-left"&gt;
+          &lt;span id="html-label" class="lang-badge" aria-hidden="true"&gt;HTML&lt;/span&gt;
+          &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-html" aria-expanded="true" aria-controls="code-html" title="Toggle code visibility"&gt;
+            &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+            &lt;span class="visually-hidden"&gt;Toggle HTML code&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;button class="copy-btn" data-target="#code-html" title="Copy code"&gt;
+          &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Copy HTML code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/header&gt;
+
+      &lt;div id="code-html" class="collapse show"&gt;
+        &lt;pre&gt;&lt;code&gt;&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Hello&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+  &lt;!-- CSS --&gt;
+  &lt;article class="code-card" aria-labelledby="css-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="css-label" class="lang-badge"&gt;CSS&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-css" aria-expanded="true" aria-controls="code-css" title="Toggle CSS code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle CSS code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-css" title="Copy CSS code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy CSS code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-css" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- JavaScript --&gt;
+  &lt;article class="code-card" aria-labelledby="js-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="js-label" class="lang-badge"&gt;JS&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-js" aria-expanded="true" aria-controls="code-js" title="Toggle JavaScript code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle JavaScript code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-js" title="Copy JavaScript code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy JavaScript code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-js" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;function greet(name) {
+  console.log("Hello, " + name);
+}
+greet("World");&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- Python --&gt;
+  &lt;article class="code-card" aria-labelledby="py-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="py-label" class="lang-badge"&gt;Python&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-py" aria-expanded="true" aria-controls="code-py" title="Toggle Python code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle Python code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-py" title="Copy Python code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy Python code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-py" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;def add(a, b):
+    return a + b
+
+print(add(5, 10))&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- PowerShell --&gt;
+  &lt;article class="code-card" aria-labelledby="ps-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="ps-label" class="lang-badge"&gt;PowerShell&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-ps" aria-expanded="true" aria-controls="code-ps" title="Toggle PowerShell code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle PowerShell code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-ps" title="Copy PowerShell code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy PowerShell code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-ps" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;Write-Output "Hello PowerShell"&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- Bash --&gt;
+  &lt;article class="code-card" aria-labelledby="bash-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="bash-label" class="lang-badge"&gt;Bash&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-bash" aria-expanded="true" aria-controls="code-bash" title="Toggle Bash code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle Bash code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-bash" title="Copy Bash code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy Bash code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-bash" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;#!/bin/bash
+echo "Hello Bash"&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;!-- Node.js --&gt;
+  &lt;article class="code-card" aria-labelledby="node-label"&gt;
+    &lt;header class="code-header"&gt;
+      &lt;div class="code-header-left"&gt;
+        &lt;span id="node-label" class="lang-badge"&gt;Node.js&lt;/span&gt;
+        &lt;button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-node" aria-expanded="true" aria-controls="code-node" title="Toggle Node.js code"&gt;
+          &lt;i class="bi bi-chevron-down" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="visually-hidden"&gt;Toggle Node.js code&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="copy-btn" data-target="#code-node" title="Copy Node.js code"&gt;
+        &lt;i class="bi bi-clipboard" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;span class="visually-hidden"&gt;Copy Node.js code&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div id="code-node" class="collapse show"&gt;
+      &lt;pre&gt;&lt;code&gt;const http = require('http');
+http.createServer((req, res) =&gt; {
+  res.end("Hello Node.js");
+}).listen(3000);&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;/main&gt;
+
+
+  &lt;!-- Footer --&gt;
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="container d-flex flex-column flex-md-row justify-content-between align-items-center"&gt;
+      &lt;div class="mb-3 mb-md-0"&gt;
+        &lt;strong&gt;MJ-Ahmad CodeCraft&lt;/strong&gt; © &lt;span id="year"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;nav class="legal d-flex gap-3"&gt;
+        &lt;a href="/qf/terms" rel="noopener"&gt;Terms&lt;/a&gt;
+        &lt;a href="/qf/privacy" rel="noopener"&gt;Privacy&lt;/a&gt;
+        &lt;a href="/qf/mit" rel="noopener"&gt;License&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+
+  &lt;!-- Toast Notification --&gt;
+  &lt;div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1200;"&gt;
+    &lt;div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="polite" aria-atomic="true"&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div id="copyToastBody" class="toast-body"&gt;Copied&lt;/div&gt;
+        &lt;button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Bootstrap JS Bundle --&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+  &lt;!-- Custom Script --&gt;
+  &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+    </article>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <strong>MJ-Ahmad CodeCraft</strong> © <span id="year"></span>
+      </div>
+      <nav class="legal d-flex gap-3">
+        <a href="/qf/terms" rel="noopener">Terms</a>
+        <a href="/qf/privacy" rel="noopener">Privacy</a>
+        <a href="/qf/mit" rel="noopener">License</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1200;">
+    <div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="copyToastBody" class="toast-body">Copied</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="https://mj-ahmad.github.io/qf/js/codecart/script.js"></script>
+</body>
+</html>
