@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Payment — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="assets/logo.png" alt="logo" class="logo" />
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Payment instructions</h1>
+
+    <div id="payment-invoice" class="card" style="padding:1rem;margin-top:1rem">
+      <!-- Invoice summary will be rendered here from localStorage -->
+    </div>
+
+    <section class="card" style="margin-top:1rem;padding:1rem">
+      <h2>Payment options</h2>
+
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <!-- Example: Bkash -->
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+          <div>
+            <div style="font-weight:800">Bkash (Personal)</div>
+            <div class="small">Number: <span id="bkash-number">+8801XXXXXXXXX</span></div>
+          </div>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn-ghost" id="copy-bkash">Copy</button>
+          </div>
+        </div>
+
+        <!-- Bank transfer -->
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+          <div>
+            <div style="font-weight:800">Bank transfer</div>
+            <div class="small">Account: <span id="bank-account">0123456789012</span> — <span id="bank-name">Example Bank</span></div>
+            <div class="small">Account name: Quraner Fariwala Ltd</div>
+          </div>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn-ghost" id="copy-bank">Copy</button>
+          </div>
+        </div>
+
+        <!-- Mobile / Other -->
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+          <div>
+            <div style="font-weight:800">Mobile wallet</div>
+            <div class="small">Follow instructions on your wallet app and use reference: <strong id="pay-ref">REF12345</strong></div>
+          </div>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn-ghost" id="copy-ref">Copy ref</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="small" style="margin-top:0.75rem;color:var(--muted)">
+        পেমেন্ট সম্পন্ন করার পর নিচের <strong>Confirm Payment</strong> বাটনে ক্লিক করে পেমেন্ট কনফার্ম করুন। কনফার্ম করলে আপনার ইনভয়েস লোকালভাবে আপডেট হয়ে <strong>paid</strong> দেখাবে এবং আপনি Invoice পেইজে পাঠানো হবেন।
+      </div>
+
+      <div style="margin-top:1rem;display:flex;gap:0.5rem">
+        <button id="confirm-payment" class="full-btn">Confirm Payment</button>
+        <a href="./checkout.html" class="btn-ghost">Edit</a>
+      </div>
+    </section>
+
+    <section style="margin-top:1rem" class="card">
+      <h3>How to confirm</h3>
+      <ol class="small">
+        <li>আপনি পছন্দের পদ্ধতিতে পেমেন্ট করুন (Bkash / Bank / Mobile wallet)।</li>
+        <li>পেমেন্টের রেফারেন্স বা ট্রানজেকশন আইডি নোট করুন।</li>
+        <li>Confirm Payment ক্লিক করে রেফারেন্স দিন (ডেমোতে Confirm বাটনই যথেষ্ট)।</li>
+        <li>Confirm করার পরে Invoice পেইজে গিয়ে পেমেন্ট স্ট্যাটাস দেখুন।</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+
+  <!-- Inline script: render invoice, copy helpers, confirm payment -->
+  <script>
+    (function(){
+      const LAST_ORDER_KEY = 'qf_last_order';
+      function safeParse(v, fallback = null) { try { return JSON.parse(v); } catch { return fallback; } }
+      function formatCurrency(n) { const num = Number(n||0); if(!Number.isFinite(num)) return '$0.00'; return '$'+num.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+      const invoiceEl = document.getElementById('payment-invoice');
+      const bkashNumberEl = document.getElementById('bkash-number');
+      const bankAccountEl = document.getElementById('bank-account');
+      const bankNameEl = document.getElementById('bank-name');
+      const payRefEl = document.getElementById('pay-ref');
+
+      // Example payment details (customize as needed)
+      const BKASH_NUMBER = '+88017XXXXXXXX';
+      const BANK_ACCOUNT = '0123456789012';
+      const BANK_NAME = 'Example Bank';
+      const REF = Math.random().toString(36).slice(2,8).toUpperCase();
+
+      bkashNumberEl.textContent = BKASH_NUMBER;
+      bankAccountEl.textContent = BANK_ACCOUNT;
+      bankNameEl.textContent = BANK_NAME;
+      payRefEl.textContent = REF;
+
+      function loadOrder() {
+        return safeParse(localStorage.getItem(LAST_ORDER_KEY), null);
+      }
+
+      function render() {
+        const order = loadOrder();
+        if (!order) {
+          invoiceEl.innerHTML = '<div class="small">No pending invoice found. Start from Donate page.</div>';
+          return;
+        }
+        const itemsHtml = (order.items || []).map(it => `<div style="display:flex;justify-content:space-between;padding:6px 0"><div>${(it.title)}</div><div>${formatCurrency(it.price)}</div></div>`).join('');
+        invoiceEl.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div><strong>Order ID:</strong> ${order.id}</div>
+              <div class="small">Donor: ${order.donor?.name || ''} • ${order.donor?.phone || ''}</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:800">${formatCurrency(order.total)}</div>
+              <div class="small" style="margin-top:6px">Status: <strong style="color:${order.status==='paid'?'#059669':'#b45309'}">${order.status}</strong></div>
+            </div>
+          </div>
+          <div style="margin-top:12px">${itemsHtml}</div>
+        `;
+      }
+
+      // copy helpers
+      function copyText(t) {
+        navigator.clipboard?.writeText(t).then(()=> {
+          const el = document.getElementById('qf-toast');
+          // use showToast from script.js if available
+          if (typeof showToast === 'function') showToast('Copied to clipboard');
+          else alert('Copied to clipboard');
+        }).catch(()=> alert('Copy failed'));
+      }
+
+      document.getElementById('copy-bkash').addEventListener('click', ()=> copyText(BKASH_NUMBER));
+      document.getElementById('copy-bank').addEventListener('click', ()=> copyText(BANK_ACCOUNT + ' — ' + BANK_NAME));
+      document.getElementById('copy-ref').addEventListener('click', ()=> copyText(REF));
+
+      // Confirm payment: mark order as paid and redirect to invoice
+      document.getElementById('confirm-payment').addEventListener('click', ()=> {
+        const order = loadOrder();
+        if (!order) { alert('No order found'); return; }
+        // In a real flow you'd ask for transaction id; here we mark paid
+        order.status = 'paid';
+        order.paidAt = new Date().toISOString();
+        try { localStorage.setItem(LAST_ORDER_KEY, JSON.stringify(order)); } catch(e){ console.warn(e); }
+        if (typeof showToast === 'function') showToast('Payment confirmed — thank you.');
+        setTimeout(()=> location.href = './invoice.html', 800);
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>

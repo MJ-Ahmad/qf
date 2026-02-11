@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invoice — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="assets/logo.png" alt="logo" class="logo" />
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Invoice</h1>
+    <div id="invoice-content" class="card" style="padding:1rem;margin-top:1rem">
+      <!-- script.js renderInvoicePage will populate this -->
+    </div>
+
+    <div style="margin-top:1rem" class="small">
+      <strong>নোট:</strong> যদি ইনভয়েসের স্ট্যাটাস <em>unpaid</em> থাকে, আপনি Payment পেইজে গিয়ে পেমেন্ট সম্পন্ন করে Confirm করতে পারবেন। Confirm করার পরে স্ট্যাটাস আপডেট হয়ে <em>paid</em> দেখাবে।
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

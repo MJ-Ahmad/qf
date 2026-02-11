@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trace Order — Quraner Fariwala</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="./index.html">
+        <img src="assets/logo.png" alt="logo" class="logo" />
+        <div><div class="brand-title">Quraner Fariwala</div></div>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Trace Order</h1>
+    <p class="small">Enter your order ID, email or phone to check donation status.</p>
+
+    <div style="display:flex;gap:0.5rem;margin-top:0.75rem">
+      <input id="trace-input" placeholder="Order ID or email or phone" style="padding:0.5rem;border-radius:8px;border:1px solid var(--card-border);flex:1" />
+      <button id="trace-btn" class="full-btn">Check</button>
+    </div>
+
+    <div id="trace-result" class="card" style="margin-top:1rem;padding:1rem"></div>
+  </main>
+
+  <footer>
+    <div class="footer-inner small">© 2026 Quraner Fariwala</div>
+  </footer>
+
+  <div id="qf-toast" aria-hidden="true"></div>
+  <script src="js/script.js"></script>
+
+  <!-- Enhance tracing to also check phone -->
+  <script>
+    (function(){
+      const LAST_ORDER_KEY = 'qf_last_order';
+      function safeParse(v, fallback = null) { try { return JSON.parse(v); } catch { return fallback; } }
+
+      document.getElementById('trace-btn').addEventListener('click', () => {
+        const q = (document.getElementById('trace-input').value || '').trim();
+        const out = document.getElementById('trace-result');
+        if (!q) { out.innerHTML = '<div class="small">Enter order id, email or phone</div>'; return; }
+        const order = safeParse(localStorage.getItem(LAST_ORDER_KEY), null);
+        if (!order) { out.innerHTML = '<div class="small">No orders found (demo). In production, query your backend.</div>'; return; }
+
+        const qLower = q.toLowerCase();
+        const matches = (q === order.id) || (qLower === (order.donor?.email || '').toLowerCase()) || (q === (order.donor?.phone || ''));
+
+        if (matches) {
+          out.innerHTML = `<div><strong>Status:</strong> ${order.status}</div>
+                           <div class="small">Order ID: ${order.id}</div>
+                           <div class="small">Donor: ${order.donor?.name || ''} • ${order.donor?.phone || ''}</div>
+                           <div style="margin-top:8px"><a class="full-btn" href="./invoice.html">View Invoice</a></div>`;
+        } else {
+          out.innerHTML = '<div class="small">No matching order found in demo data.</div>';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
