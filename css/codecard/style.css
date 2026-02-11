@@ -1,0 +1,183 @@
+  :root {
+    --bg: #0f1113;
+    --bg-body: #ffffff;
+    --panel: #1e1e1e;
+    --panel-2: #2b2b2b;
+    --muted: #ffffff;
+    --accent: #0ea5a4;
+    --code-font: "Consolas", "Courier New", monospace;
+    --ui-font: Ginto, ui-serif, system-ui, sans-serif;
+    --radius: 10px;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg-body);
+    color: #0b1220;
+    font-family: var(--ui-font);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Header */
+  header.site-header {
+    background: var(--panel);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #fff;
+  }
+
+  .nav-link {
+    color: var(--muted);
+    transition: color 0.15s ease;
+  }
+  .nav-link:hover { color: #fff; }
+
+  /* Hero */
+  .hero {
+    padding: 56px 16px;
+    text-align: center;
+    background: var(--panel-2);
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .hero p {
+    color: var(--muted);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Content Container */
+  .content {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px 48px;
+  }
+
+  /* Code Card */
+  .code-card {
+    background: var(--panel);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    background: linear-gradient(90deg, var(--panel-2), rgba(255, 255, 255, 0.02));
+  }
+
+  .code-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 64px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .lang-badge small {
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .collapse-toggle,
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 36px;
+    height: 36px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: transparent;
+    color: #dfe7ee;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background 0.15s ease;
+  }
+  .collapse-toggle:hover,
+  .copy-btn:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  pre {
+    margin: 0;
+    padding: 16px;
+    background: #0b0b0b;
+    color: #e6eef6;
+    font-family: var(--code-font);
+    font-size: 14px;
+    overflow: auto;
+    white-space: pre;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    background: var(--panel);
+    color: var(--muted);
+    padding: 28px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  footer .legal a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 12px;
+  }
+  footer .legal a:hover { color: #fff; }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .hero h1 { font-size: 1.6rem; }
+    .code-header { padding: 8px; }
+    .lang-badge { padding: 6px 8px; font-size: 12px; min-width: 56px; }
+    .collapse-toggle, .copy-btn { width: 36px; height: 36px; padding: 6px; }
+    pre { padding: 12px; font-size: 13px; }
+  }
+
+  /* Focus outline */
+  button:focus {
+    outline: 2px solid rgba(14, 165, 164, 0.18);
+    outline-offset: 2px;
+  }
+
+  /* Navbar toggler icon */
+  .navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/></svg>") center / 100% no-repeat;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/></svg>") center / 100% no-repeat;
+  }
