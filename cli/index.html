@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reset CSS Style — CLI</title>
+
+  <!-- Preload font for faster first paint -->
+  <link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="wrap" id="app">
+    <section class="panel">
+      <header class="header">
+        <img src="assets/images/logo.svg" alt="Logo" class="logo" onerror="this.style.display='none'">
+        <div>
+          <h1>Reset CSS Style</h1>
+          <p class="lead">Format a minified <code>css/style.css</code> file into a readable, indented file. Overwrites the original file in-place.</p>
+        </div>
+      </header>
+
+      <div class="controls" role="toolbar" aria-label="Script controls">
+        <button id="copyBtn" class="btn copy">📋 Copy Script</button>
+        <button id="downloadBtn" class="btn outline">⬇️ Download .ps1</button>
+        <button id="collapseBtn" class="btn small">Toggle Collapse</button>
+      </div>
+
+      <div class="code-wrap" id="codeWrap" aria-live="polite">
+        <div class="code-toolbar">
+          <div class="code-title">
+            <span class="badge">PowerShell</span>
+            <span class="filename">reset-css-style.ps1</span>
+          </div>
+          <div class="meta">Professional formatting • Line numbers • Copy</div>
+        </div>
+
+        <pre class="code" id="codeBlock" tabindex="0" role="region" aria-label="PowerShell script"></pre>
+
+        <div class="note">
+          Save the script as <strong>reset-css-style.ps1</strong> and run it in PowerShell with appropriate permissions.
+        </div>
+      </div>
+    </section>
+
+    <aside class="meta-panel" aria-labelledby="metaTitle">
+      <h3 id="metaTitle">About</h3>
+      <p>This page displays a PowerShell utility that reformats a minified CSS file into a human-readable, indented file and writes it back in-place (UTF‑8 without BOM).</p>
+
+      <h4>Files</h4>
+      <ul>
+        <li><strong>css/style.css</strong> — UI and code viewer styles (includes @font-face).</li>
+        <li><strong>tools/reset-css-style.ps1</strong> — PowerShell reformatter (in-place).</li>
+        <li><strong>assets/fonts/Inter-Variable.woff2</strong> — optional variable font (place file here).</li>
+      </ul>
+
+      <h4>Notes</h4>
+      <p>Make a backup of <code>css/style.css</code> before running the PowerShell script if you need to preserve the original.</p>
+    </aside>
+  </main>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
