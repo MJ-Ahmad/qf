@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Professional Code Showcase</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1113;
+      --bg-body: #ffffff;
+      --panel:#1e1e1e;
+      --panel-2:#2b2b2b;
+      --muted:#ffffff;
+      --accent:#0ea5a4;
+      --code-font: "Consolas", "Courier New", monospace;
+      --ui-font: Ginto, ui-serif, system-ui, sans-serif;
+      --radius:10px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg-body);
+      color:#0b1220;
+      font-family: var(--ui-font);
+      font-size:14px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Header */
+    header.site-header{
+      background: var(--panel);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .navbar-brand{
+      font-weight:700;
+      letter-spacing:0.2px;
+      color:#fff;
+    }
+    .nav-link{
+      color:var(--muted);
+      transition: color .15s ease;
+    }
+    .nav-link:hover{ color:#fff; }
+
+    /* Hero */
+    .hero{
+      padding:56px 16px;
+      text-align:center;
+      background: #2b2b2b;
+    }
+    .hero h1{
+      font-size:2.2rem;
+      margin-bottom:8px;
+      color:#fff;
+    }
+    .hero p{
+      color:var(--muted);
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    /* Container */
+    .content {
+      max-width:1100px;
+      margin: 32px auto;
+      padding: 0 16px 48px;
+    }
+
+    /* Code block card */
+    .code-card{
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      margin-bottom:20px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .code-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      background: linear-gradient(90deg, var(--panel-2), rgba(255,255,255,0.02));
+    }
+
+    .code-header-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .lang-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:8px;
+      background: rgba(255,255,255,0.02);
+      color:#fff;
+      font-weight:600;
+      font-size:13px;
+      min-width:64px;
+      justify-content:center;
+    }
+
+    .collapse-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      background:transparent;
+      color:#dfe7ee;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .collapse-toggle:hover{
+      background: rgba(255,255,255,0.02);
+    }
+
+    .copy-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:8px;
+      background:transparent;
+      color:#dfe7ee;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .copy-btn:hover{
+      background: rgba(255,255,255,0.02);
+    }
+
+    pre{
+      margin:0;
+      padding:16px;
+      background: #0b0b0b;
+      color:#e6eef6;
+      font-family: var(--code-font);
+      font-size:14px;
+      overflow:auto;
+      white-space:pre;
+    }
+
+    /* small label for language on mobile */
+    .lang-badge small{ color:var(--muted); font-weight:500; }
+
+    /* Footer */
+    footer.site-footer{
+      background: var(--panel);
+      color:var(--muted);
+      padding:28px 16px;
+      border-top:1px solid rgba(255,255,255,0.03);
+    }
+    footer .legal a{ color:var(--muted); text-decoration:none; margin-left:12px; }
+    footer .legal a:hover{ color:#fff; }
+
+    /* Responsive tweaks */
+    @media (max-width:767px){
+      .hero h1{ font-size:1.6rem; }
+      .code-header{ padding:8px; }
+      .lang-badge{ padding:6px 8px; font-size:12px; min-width:56px; }
+      .collapse-toggle, .copy-btn{ width:36px; height:36px; padding:6px; }
+      pre{ padding:12px; font-size:13px; }
+    }
+
+    /* subtle focus outlines */
+    button:focus{ outline: 2px solid rgba(14,165,164,0.18); outline-offset:2px; }
+
+.navbar-toggler-icon{
+  width: 1.5em;
+  height: 1.5em;
+  display:inline-block;
+  vertical-align: middle;
+  background-color: #ffffff; /* icon color */
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/></svg>") center / 100% no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path d='M4 7h22v2H4zM4 14h22v2H4zM4 21h22v2H4z'/></svg>") center / 100% no-repeat;
+  background-repeat: no-repeat;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg px-3">
+      <a class="navbar-brand" href="#">CodeCraft</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Examples</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Beautiful, Responsive Code Snippets</h1>
+    <p>Black-themed, accessible, and responsive code blocks with language labels, left-side collapse icons, right-side copy, and toast feedback. Works great on desktop and mobile.</p>
+  </section>
+
+  <!-- Content -->
+  <main class="content">
+
+    <!-- Reusable code-card template repeated for examples -->
+    <!-- HTML -->
+    <article class="code-card" aria-labelledby="html-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="html-label" class="lang-badge" aria-hidden="true">HTML</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-html" aria-expanded="true" aria-controls="code-html" title="Toggle">
+            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-html" title="Copy">
+          <i class="bi bi-clipboard" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="code-html" class="collapse show">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Hello&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </article>
+
+    <!-- CSS -->
+    <article class="code-card" aria-labelledby="css-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="css-label" class="lang-badge">CSS</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-css" aria-expanded="true" aria-controls="code-css" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-css" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-css" class="collapse show">
+        <pre><code>body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}</code></pre>
+      </div>
+    </article>
+
+    <!-- JavaScript -->
+    <article class="code-card" aria-labelledby="js-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="js-label" class="lang-badge">JS</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-js" aria-expanded="true" aria-controls="code-js" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-js" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-js" class="collapse show">
+        <pre><code>function greet(name) {
+  console.log("Hello, " + name);
+}
+greet("World");</code></pre>
+      </div>
+    </article>
+
+    <!-- Python -->
+    <article class="code-card" aria-labelledby="py-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="py-label" class="lang-badge">Python</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-py" aria-expanded="true" aria-controls="code-py" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-py" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-py" class="collapse show">
+        <pre><code>def add(a, b):
+    return a + b
+
+print(add(5, 10))</code></pre>
+      </div>
+    </article>
+
+    <!-- PowerShell -->
+    <article class="code-card" aria-labelledby="ps-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="ps-label" class="lang-badge">PowerShell</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-ps" aria-expanded="true" aria-controls="code-ps" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-ps" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-ps" class="collapse show">
+        <pre><code>Write-Output "Hello PowerShell"</code></pre>
+      </div>
+    </article>
+
+    <!-- Bash -->
+    <article class="code-card" aria-labelledby="bash-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="bash-label" class="lang-badge">Bash</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-bash" aria-expanded="true" aria-controls="code-bash" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-bash" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-bash" class="collapse show">
+        <pre><code>#!/bin/bash
+echo "Hello Bash"</code></pre>
+      </div>
+    </article>
+
+    <!-- Node.js -->
+    <article class="code-card" aria-labelledby="node-label">
+      <div class="code-header">
+        <div class="code-header-left">
+          <div id="node-label" class="lang-badge">Node.js</div>
+          <button class="collapse-toggle" data-bs-toggle="collapse" data-bs-target="#code-node" aria-expanded="true" aria-controls="code-node" title="Toggle">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <button class="copy-btn" data-target="#code-node" title="Copy">
+          <i class="bi bi-clipboard"></i>
+        </button>
+      </div>
+      <div id="code-node" class="collapse show">
+        <pre><code>const http = require('http');
+http.createServer((req, res) => {
+  res.end("Hello Node.js");
+}).listen(3000);</code></pre>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <strong>CodeCraft</strong> © <span id="year"></span>
+      </div>
+      <div class="legal">
+        <a href="#" rel="noopener">Terms</a>
+        <a href="#" rel="noopener">Privacy</a>
+        <a href="#" rel="noopener">License</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1200">
+    <div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div id="copyToastBody" class="toast-body">Copied</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy functionality with language-aware toast
+    (function(){
+      const toastEl = document.getElementById('copyToast');
+      const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+
+      // Delegate click for copy buttons
+      document.addEventListener('click', async (e) => {
+        const btn = e.target.closest('.copy-btn');
+        if (!btn) return;
+
+        const targetSelector = btn.getAttribute('data-target');
+        if (!targetSelector) return;
+
+        const target = document.querySelector(targetSelector);
+        if (!target) return;
+
+        // Extract code text
+        const pre = target.querySelector('pre');
+        if (!pre) return;
+        const codeText = pre.innerText.trim();
+
+        try {
+          // Use Clipboard API
+          await navigator.clipboard.writeText(codeText);
+
+          // Determine language label for toast message
+          const header = btn.closest('.code-card').querySelector('.lang-badge');
+          const lang = header ? header.textContent.trim() : 'Code';
+
+          // Update and show toast
+          document.getElementById('copyToastBody').textContent = `✅ ${lang} copied to clipboard`;
+          toast.show();
+        } catch (err) {
+          console.error('Copy failed', err);
+          document.getElementById('copyToastBody').textContent = '⚠️ Copy failed';
+          toast.show();
+        }
+      });
+
+      // Improve collapse toggle icon rotation
+      document.querySelectorAll('.collapse-toggle').forEach(btn => {
+        const icon = btn.querySelector('i');
+        const target = document.querySelector(btn.getAttribute('data-bs-target'));
+        if (!target) return;
+
+        // Update icon on collapse events
+        target.addEventListener('show.bs.collapse', () => { icon.classList.remove('bi-chevron-down'); icon.classList.add('bi-chevron-up'); btn.setAttribute('aria-expanded','true'); });
+        target.addEventListener('hide.bs.collapse', () => { icon.classList.remove('bi-chevron-up'); icon.classList.add('bi-chevron-down'); btn.setAttribute('aria-expanded','false'); });
+      });
+
+    })();
+  </script>
+</body>
+</html>
