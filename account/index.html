@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuranerFariwala</title>
+  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
+  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
+  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
+  <meta name="author" content="MJ-Ahmad"/>
+  <meta name="generator" content="mj.dev"/>
+  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
+  <meta name="creator" content="MJ-AHMAD"/>
+  <meta property="og:title" content="Quraner Fariwala"/>
+  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
+  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
+  <meta property="og:site_name" content="Quraner Fariwala"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:image" content="https://mj-ahmad.github.io/qf/assets/logo.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Quraner Fariwala"/>
+  <meta property="og:type" content="website"/>
+  <link rel="shortcut icon" href="https://mj-ahmad.github.io/qf/assets/logo.png"/>
+  <link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any"/>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 5px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .logo{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:700;font-size:18px;box-shadow:0 4px 14px rgba(31,111,235,0.18);overflow:hidden;}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    h2 {
+      margin: 0;
+      font-size: 1.2em;
+      display: inline-block;
+    }
+    .ledger-section {
+      margin: 20px auto;
+      max-width: 900px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .section-header span {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
+      margin-left: 10px;
+    }
+    .account {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-left: 4px solid #2c3e50;
+      background: #fafafa;
+    }
+    .account strong {
+      display: block;
+      font-size: 1.05em;
+      margin-bottom: 5px;
+      color: #34495e;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 40px;
+    }
+    .hidden {
+      display: none;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: rgba(17,24,39,0.95);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.3);
+      font-size: 14px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .22s ease, transform .22s ease;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Footer legal links */
+    .footer-legal {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #dbe7ff;
+    }
+    .footer-legal a {
+      color: #dbe7ff;
+      text-decoration: underline;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-hidden="true">
+    <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo">
+  </div>
+  <h1>QuranerFariwala</h1>
+</header>
+
+<section class="ledger-section">
+  <div class="section-header" onclick="toggleSection('banks')">
+    <h2>🏛️ Accounts</h2>
+    <div>
+      <button class="icon-btn" onclick="toggleSection('banks');event.stopPropagation()">➖</button>
+      <button class="icon-btn" onclick="copySection('banks');event.stopPropagation()" title="Copy Accounts">📋</button>
+    </div>
+  </div>
+  <div id="banks">
+    <div class="account">
+      <strong>City Bank — Motijheel Branch</strong>
+      Account Name: QURANER FARIWALA<br>
+      Account Number: 1502835465001<br>
+      Routing Number: 225271548
+    </div>
+    <div class="account">
+      <strong>Eastern Bank Ltd — Principal Branch</strong>
+      Account Name: QURANER FARIWALA<br>
+      Account Number: 1011070611663<br>
+      Routing Number: 095275358
+    </div>
+    <div class="account">
+      <strong>Mutual Trust Bank — Principal Branch</strong>
+      Account Name: QURANER FARIWALA<br>
+      Account Number: 1301010000896<br>
+      Routing Number: 145275358
+    </div>
+    <div class="account">
+      <strong>BRAC Bank — Bijoynagar Branch</strong>
+      Account Name: QURANER FARIWALA<br>
+      Account Number: 2060133490001<br>
+      Routing Number: 060271103
+    </div>
+  </div>
+</section>
+
+<section class="ledger-section">
+  <div class="section-header" onclick="toggleSection('mobile')">
+    <h2>📱 Channels</h2>
+    <div>
+      <button class="icon-btn" onclick="toggleSection('mobile');event.stopPropagation()">➖</button>
+      <button class="icon-btn" onclick="copySection('mobile');event.stopPropagation()" title="Copy Channels">📋</button>
+    </div>
+  </div>
+  <div id="mobile">
+    <div class="account">
+      <strong>Bkash Merchant</strong>
+      Number: 01788856628<br>
+      Holder: Quraner Fariwala
+    </div>
+    <div class="account">
+      <strong>Bkash Personal</strong>
+      Number: 01920082926<br>
+      Holder: MJ Ahmad
+    </div>
+    <div class="account">
+      <strong>Rocket Account</strong>
+      Number: 01920082926-6<br>
+      Holder: MJ Ahmad
+    </div>
+    <div class="account">
+      <strong>Nagad Account</strong>
+      Number: 01788856628<br>
+      Holder: Quraner Fariwala
+    </div>
+    <p class="note">🔒 Personal channels must be logged in <code>personal-fund-log.md</code>, reviewed by an Ethical Auditor, and used only with public documentation.</p>
+  </div>
+</section>
+
+<section class="ledger-section">
+  <div class="section-header" onclick="toggleSection('contact')">
+    <h2>📬 Contact</h2>
+    <div>
+      <button class="icon-btn" onclick="toggleSection('contact');event.stopPropagation()">➖</button>
+      <button class="icon-btn" onclick="copySection('contact');event.stopPropagation()" title="Copy Contact">📋</button>
+    </div>
+  </div>
+  <div id="contact">
+    <div class="account">
+      <strong>Email</strong>
+      quranerfariwala@gmail.com
+    </div>
+    <div class="account">
+      <strong>GitHub</strong>
+      https://mj-ahmad.github.io/mj-ahmad/
+    </div>
+    <div class="account">
+      <strong>GitHub Sponsors Profile</strong>
+      <a href="https://github.com/sponsors/MJ-Ahmad" target="_blank">https://github.com/sponsors/MJ-Ahmad</a>
+    </div>
+  </div>
+</section>
+
+<section class="ledger-section">
+  <div class="section-header" onclick="toggleSection('digital')">
+    <h2>💱 Digital Assets</h2>
+    <div>
+      <button class="icon-btn" onclick="toggleSection('digital');event.stopPropagation()">➖</button>
+      <button class="icon-btn" onclick="copySection('digital');event.stopPropagation()" title="Copy Digital">📋</button>
+    </div>
+  </div>
+  <div id="digital">
+    <div class="account">
+      <strong>ETH Address</strong>
+      0xaD6fE115967c22D1C54Fe6010C3AacCE5E196435
+    </div>
+  </div>
+</section>
+
+<footer>
+  🛡️ Stewardship Statement<br>
+  <em>Every account is a trust. Every transaction is a trace. Every donor is a guardian.</em><br><br>
+  Ledger Closed on 12 February 2026 — Verified by Auditor
+
+  <div class="footer-legal" aria-hidden="false">
+   <p> © 2026 Quraner Fariwala · All rights reserved.</p>
+   <p>
+    <a href="/qf/privacy" title="Privacy Policy">Privacy</a>
+    <a href="/qf/terms" title="Terms of Service">Terms</a>
+    <a href="/qf" title="Legal">Home</a></p>
+  </div>
+</footer>
+
+<!-- Toast element -->
+<div id="copyToast" class="toast" role="status" aria-live="polite" aria-atomic="true">Copied to clipboard</div>
+
+<script>
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.classList.toggle('hidden');
+  }
+
+  // Improved copy function: uses Clipboard API and a toast (no alert)
+  async function copySection(id) {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    // Build clean text (no \n escape sequences inside values)
+    const lines = [];
+    // iterate visible child .account blocks
+    section.querySelectorAll('.account').forEach(acc => {
+      const title = acc.querySelector('strong') ? acc.querySelector('strong').innerText.trim() : '';
+      if (title) lines.push(title);
+      // gather remaining text lines from the account block
+      // use innerText to preserve line breaks as rendered
+      const meta = Array.from(acc.childNodes)
+        .filter(n => n.nodeType === Node.TEXT_NODE || n.nodeType === Node.ELEMENT_NODE && n.tagName !== 'STRONG')
+        .map(n => n.innerText ? n.innerText.trim() : (n.nodeValue ? n.nodeValue.trim() : ''))
+        .join('\n')
+        .split('\n')
+        .map(s => s.trim())
+        .filter(Boolean);
+      meta.forEach(m => lines.push(m));
+      lines.push(''); // blank line between accounts
+    });
+
+    // If there is a note paragraph (like personal channels note), include it
+    const note = section.querySelector('.note');
+    if (note) {
+      lines.push(note.innerText.trim());
+      lines.push('');
+    }
+
+    const text = lines.join('\n').trim();
+
+    // Try Clipboard API first
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('Copied to clipboard');
+    } catch (err) {
+      // Fallback: create a temporary textarea and use execCommand
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        // keep off-screen
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (successful) {
+          showToast('Copied to clipboard');
+        } else {
+          showToast('Copy failed — please copy manually');
+        }
+      } catch (e) {
+        showToast('Copy failed — please copy manually');
+      }
+    }
+  }
+
+  // Toast helper
+  const toastEl = document.getElementById('copyToast');
+  let toastTimer = null;
+  function showToast(message) {
+    toastEl.textContent = message;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastEl.classList.remove('show');
+    }, 2200);
+  }
+</script>
+
+</body>
+</html>
