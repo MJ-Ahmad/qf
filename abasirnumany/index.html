@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Statement Viewer — Abdul Basir Numany</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-2:#06b6d4;
+      --success:#10b981;
+      --danger:#ef4444;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 6px 18px rgba(15,23,42,0.08);
+      --mono: "Courier New", Courier, monospace;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent),#4f46e5);
+      color:#fff;
+      padding:18px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      box-shadow: 0 6px 18px rgba(79,70,229,0.12);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#fff 0%, rgba(255,255,255,0.15) 100%);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:18px;box-shadow: 0 6px 18px rgba(15,23,42,0.06)}
+    header h1{font-size:18px;margin:0;font-weight:600;letter-spacing:0.2px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;font-size:14px}
+    nav a.secondary{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px}
+
+    .wrap{max-width:1100px;margin:28px auto;padding:0 20px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:22px;align-items:start}
+
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);overflow:hidden}
+    .card h2{margin:0 0 12px 0;font-size:18px}
+    .lead{color:var(--muted);font-size:14px;margin-bottom:16px}
+
+    .access{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+    .access input[type="text"]{padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;background:#fbfdff;width:260px;font-size:14px}
+    .access button{padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:700;cursor:pointer;box-shadow: 0 6px 18px rgba(37,99,235,0.12)}
+    .hint{font-size:13px;color:var(--muted)}
+
+    .countdown{display:flex;gap:12px;align-items:center;margin-top:8px;background:linear-gradient(90deg, rgba(37,99,235,0.06), rgba(6,182,212,0.03));padding:12px;border-radius:10px;border:1px solid rgba(37,99,235,0.06);color:var(--accent);font-weight:700}
+
+    table{width:100%;border-collapse:collapse;font-size:14px;margin-top:14px;background:transparent}
+    thead th{text-align:left;padding:12px 10px;background:linear-gradient(90deg,#eef2ff,#f8fafc);color:#0f172a;font-weight:700;border-bottom:2px solid rgba(15,23,42,0.04);font-size:13px}
+    tbody td{padding:12px 10px;border-bottom:1px dashed rgba(15,23,42,0.04);vertical-align:middle}
+    tbody tr:nth-child(even){background:rgba(15,23,42,0.02)}
+    .mono{font-family:var(--mono);color:#0b1220}
+
+    .summary{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .summary .tile{flex:1 1 160px;background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:10px;box-shadow: 0 6px 18px rgba(2,6,23,0.04);border:1px solid rgba(2,6,23,0.03)}
+    .tile .label{font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600}
+    .tile .value{font-size:18px;font-weight:800;color:#0f172a}
+
+    .side{display:flex;flex-direction:column;gap:14px}
+    .info-card{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:var(--shadow)}
+    .info-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(15,23,42,0.04)}
+    .info-row:last-child{border-bottom:0}
+    .info-row .k{color:var(--muted);font-weight:700}
+    .info-row .v{font-weight:700;color:#0f172a}
+
+    footer{margin-top:28px;padding:18px 20px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:980px){.grid{grid-template-columns:1fr; padding-bottom:80px}.access input[type="text"]{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div>
+        <h1>mj.dev Statement Portal</h1>
+        <div style="font-size:12px;color:rgba(255,255,255,0.9);margin-top:4px">Secure viewer • Transaction ledger</div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="https://mj-ahmad.github.io/qf/" class="secondary">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card" aria-labelledby="statementTitle">
+        <h2 id="statementTitle">Statement — Abdul Basir Numany</h2>
+        <div class="access" aria-hidden="false">
+          <input id="credential" type="text" placeholder="Enter email or password" aria-label="Credential input" />
+          <button id="unlockBtn" type="button">Unlock Statement</button>
+        </div>
+
+        <div id="accessMessage" style="display:none;margin-top:8px;font-size:13px;color:var(--danger);font-weight:700"></div>
+
+        <div class="countdown" id="countdown" style="display:none">
+          <div id="countdownLabel">Countdown</div>
+          <div id="countdownTimer" style="margin-left:8px;color:var(--accent-2)"></div>
+        </div>
+
+        <div id="statementArea" style="display:none;margin-top:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+            <div>
+              <div style="font-weight:800;font-size:16px">Abdul Basir Numany</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:4px">Supporter • Creditor — emergency help without formal documentation</div>
+            </div>
+            <div style="text-align:right;color:var(--muted);font-size:13px">
+              <div><strong>Last update</strong></div>
+              <div id="lastUpdate" style="font-weight:700;margin-top:6px">Wednesday, February 25, 2026 2:39:56 PM</div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px;margin-bottom:6px">Transaction History</h3>
+          <table aria-describedby="transactionsDesc" class="mono">
+            <thead>
+              <tr>
+                <th>Date & Time</th>
+                <th>Amount (Tk)</th>
+                <th>Method</th>
+                <th>Details</th>
+                <th>Trx ID</th>
+              </tr>
+            </thead>
+            <tbody id="txBody"></tbody>
+          </table>
+
+          <div class="summary" aria-hidden="false" style="margin-top:12px">
+            <div class="tile">
+              <div class="label">Total Nagad</div>
+              <div class="value" id="totalNagad">Tk. 0</div>
+            </div>
+            <div class="tile">
+              <div class="label">Total Bkash</div>
+              <div class="value" id="totalBkash">Tk. 0</div>
+            </div>
+            <div class="tile">
+              <div class="label">Total Cash</div>
+              <div class="value" id="totalCash">Tk. 0</div>
+            </div>
+            <div class="tile">
+              <div class="label">Grand Total</div>
+              <div class="value" id="grandTotal">Tk. 0</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px">
+            <h4 style="margin:0 0 8px 0">Remarks</h4>
+            <div style="color:var(--muted);font-size:14px">-</div>
+            <div style="color:var(--muted);font-size:14px;margin-top:6px">-</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="info-card card">
+          <h3 style="margin:0 0 8px 0">Contact Info</h3>
+          <div class="info-row"><div class="k">Full name</div><div class="v">Abdul Basir Numany</div></div>
+          <div class="info-row"><div class="k">Date of birth</div><div class="v">11 Nov 1985</div></div>
+          <div class="info-row"><div class="k">Nationality</div><div class="v">Bangladeshi</div></div>
+          <div class="info-row"><div class="k">Email</div><div class="v" id="maskedEmail">..........@gmail.com</div></div>
+          <div class="info-row"><div class="k">Phone</div><div class="v">+880-1712-295195</div></div>
+          <div class="info-row"><div class="k">Address</div><div class="v">Rridoy More, Muktagacha, Mymensingh</div></div>
+          <div style="margin-top:10px;font-size:13px;color:var(--muted)"><strong>Social</strong></div>
+          <div style="margin-top:6px;font-size:13px"><a href="https://facebook.com/abdul.basir.numany.2025" target="_blank" rel="noopener" style="color:var(--accent)">Facebook</a> · <a href="https://linkedin.com/in/" target="_blank" rel="noopener" style="color:var(--accent)">LinkedIn</a></div>
+        </div>
+
+        <div class="info-card card">
+          <h3 style="margin:0 0 8px 0">Quick Actions</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <button id="copySummary" style="padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);background:#fff;cursor:pointer">Copy Summary</button>
+            <button id="downloadCsv" style="padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);background:#fff;cursor:pointer">Download CSV</button>
+            <button id="printBtn" style="padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);background:#fff;cursor:pointer">Print Statement</button>
+          </div>
+        </div>
+
+        <div class="info-card card">
+          <h3 style="margin:0 0 8px 0">Notes</h3>
+          <div style="color:var(--muted);font-size:13px">This viewer is a client-side demonstration. Access control is implemented in JavaScript for convenience only and is not secure for production use.</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div style="max-width:1100px;margin:0 auto;padding:8px 20px;color:var(--muted)">
+        &copy; 2026 mj.dev • Statement Viewer • All rights reserved
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // --- Data (from user-provided statement) ---
+    const transactions = [
+      {dt:"2025-10-15 21:53", amount:2000, method:"Nagad", details:"8801826742829", trx:"74H0CFHW"},
+      {dt:"2025-10-16 20:56", amount:2000, method:"Nagad", details:"8801826742829", trx:"74H5R6C5"},
+      {dt:"2025-10-17 21:29", amount:1000, method:"Nagad", details:"8801826742829", trx:"74HABO3Y"},
+      {dt:"2025-10-28 23:00", amount:1000, method:"Cash", details:"-", trx:"-"},
+      {dt:"2025-10-29 12:03", amount:20000, method:"Bkash", details:"Bank to bKash", trx:"CJT4OETN40"},
+      {dt:"2025-11-20 06:19", amount:500, method:"Bkash", details:"8801742610792", trx:"CKK4CZTNYG"},
+      {dt:"2025-11-27 09:49", amount:500, method:"Nagad", details:"8801826742829", trx:"74MKUTEC"},
+      {dt:"2025-12-16 19:50", amount:510, method:"Nagad", details:"8801826742829", trx:"74P7WJQ1"},
+      {dt:"2025-12-21 19:10", amount:8000, method:"Nagad", details:"Bank to Nagad", trx:"74PVWB9V"},
+      {dt:"2026-01-16 23:31", amount:2000, method:"Bkash", details:"Bank to bKash", trx:"DAG17CWVM7"},
+      {dt:"2026-01-17 20:54", amount:2040, method:"Bkash", details:"Bank to bKash", trx:"DAH688QTQE"},
+      {dt:"2026-01-31 21:06", amount:2030, method:"Bkash", details:"Bank to bKash", trx:"DAV0NNY3Q6"},
+      {dt:"2026-02-06 22:07", amount:1500, method:"Bkash", details:"Bank to bKash", trx:"DB69UGWY1B"}
+    ];
+
+    // --- Access control (client-side demo) ---
+    // Added password "1712295195" to the valid credentials set
+    const validCredentials = new Set(["ABasir","abasir@gmail.com","password123","1712295195"]);
+    const unlockBtn = document.getElementById('unlockBtn');
+    const credentialInput = document.getElementById('credential');
+    const statementArea = document.getElementById('statementArea');
+    const accessMessage = document.getElementById('accessMessage');
+    const countdownWrap = document.getElementById('countdown');
+
+    unlockBtn.addEventListener('click', tryUnlock);
+    credentialInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') tryUnlock(); });
+
+    function tryUnlock(){
+      const val = credentialInput.value.trim();
+      if(!val){
+        showAccess("Please enter an email or password to continue.");
+        return;
+      }
+      if(validCredentials.has(val)){
+        accessMessage.style.display = 'none';
+        revealStatement();
+      } else {
+        showAccess("Access Denied — incorrect email or password.");
+      }
+    }
+
+    function showAccess(msg){
+      accessMessage.style.display = 'block';
+      accessMessage.textContent = msg;
+      statementArea.style.display = 'none';
+      countdownWrap.style.display = 'none';
+    }
+
+    // --- Populate table and totals ---
+    function formatNumber(n){
+      return n.toLocaleString('en-US');
+    }
+
+    function renderTransactions(){
+      const tbody = document.getElementById('txBody');
+      tbody.innerHTML = '';
+      let totals = {Nagad:0,Bkash:0,Cash:0};
+      transactions.forEach(tx=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class="mono">${tx.dt}</td>
+                        <td class="mono">Tk. ${formatNumber(tx.amount)}</td>
+                        <td>${tx.method}</td>
+                        <td class="mono">${tx.details}</td>
+                        <td class="mono">${tx.trx}</td>`;
+        tbody.appendChild(tr);
+        if(tx.method === 'Nagad') totals.Nagad += tx.amount;
+        else if(tx.method === 'Bkash') totals.Bkash += tx.amount;
+        else if(tx.method === 'Cash') totals.Cash += tx.amount;
+      });
+      const grand = totals.Nagad + totals.Bkash + totals.Cash;
+      document.getElementById('totalNagad').textContent = `Tk. ${formatNumber(totals.Nagad)}`;
+      document.getElementById('totalBkash').textContent = `Tk. ${formatNumber(totals.Bkash)}`;
+      document.getElementById('totalCash').textContent = `Tk. ${formatNumber(totals.Cash)}`;
+      document.getElementById('grandTotal').textContent = `Tk. ${formatNumber(grand)}`;
+    }
+
+    // --- Reveal statement and start countdown ---
+    function revealStatement(){
+      renderTransactions();
+      statementArea.style.display = 'block';
+      countdownWrap.style.display = 'flex';
+      startCountdown();
+      statementArea.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // --- Countdown (configurable target) ---
+    let countdownTarget = new Date("March 1, 2026 00:00:00");
+    const countdownTimer = document.getElementById('countdownTimer');
+    const countdownLabel = document.getElementById('countdownLabel');
+
+    function startCountdown(){
+      updateCountdown();
+      if(window._countdownInterval) clearInterval(window._countdownInterval);
+      window._countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+    function updateCountdown(){
+      const now = new Date();
+      const diff = countdownTarget - now;
+      if(diff <= 0){
+        countdownTimer.textContent = "00d 00h 00m 00s";
+        countdownLabel.textContent = "Countdown Finished";
+        clearInterval(window._countdownInterval);
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((diff % (1000*60)) / 1000);
+      countdownTimer.textContent = `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+      countdownLabel.textContent = "Countdown to next update";
+    }
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    // --- Quick actions: copy summary, download CSV, print ---
+    document.getElementById('copySummary').addEventListener('click', ()=>{
+      const summary = [
+        "Statement — Abdul Basir Numany",
+        "Total Nagad: " + document.getElementById('totalNagad').textContent,
+        "Total Bkash: " + document.getElementById('totalBkash').textContent,
+        "Total Cash: " + document.getElementById('totalCash').textContent,
+        "Grand Total: " + document.getElementById('grandTotal').textContent
+      ].join('\n');
+      navigator.clipboard?.writeText(summary).then(()=>{ alert('Summary copied to clipboard.'); }).catch(()=>{ alert('Unable to copy.'); });
+    });
+
+    document.getElementById('downloadCsv').addEventListener('click', ()=>{
+      const headers = ['Date & Time','Amount (Tk)','Method','Details','Trx ID'];
+      const rows = transactions.map(t => [t.dt, t.amount, t.method, t.details, t.trx]);
+      const csv = [headers, ...rows].map(r => r.map(cell => `"${String(cell).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'statement_abdul_basir.csv';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('printBtn').addEventListener('click', ()=>{ window.print(); });
+
+    (function init(){
+      countdownWrap.style.display = 'none';
+    })();
+  </script>
+</body>
+</html>
