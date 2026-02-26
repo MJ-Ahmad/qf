@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contract Dashboard - Qari Emdadullah</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- LOCK SCREEN -->
+  <div id="lockScreen" class="min-h-screen flex items-center justify-center p-6 bg-gray-50">
+    <div class="w-full max-w-md bg-white rounded-xl shadow p-6">
+      <div class="text-center">
+        <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo" class="mx-auto h-14 w-14 rounded" />
+        <h2 id="lockTitle" class="mt-4 text-2xl font-semibold text-blue-900">🔐 Password required</h2>
+        <p id="lockSubtitle" class="mt-2 text-sm text-gray-600">This page is protected. Enter the correct password to view content.</p>
+      </div>
+
+      <div class="mt-6">
+        <label for="passwordInput" class="sr-only">Password</label>
+        <input id="passwordInput" type="password" placeholder="Enter password" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button id="unlockBtn" onclick="unlock()" class="mt-4 w-full bg-blue-700 text-white rounded px-4 py-2 hover:bg-blue-800">Unlock</button>
+        <p id="lockMsg" class="mt-3 text-sm text-red-600" aria-live="polite"></p>
+        <p class="mt-4 text-xs text-gray-500">If you need to change the password or have any questions, contact: <strong>quranerfariwala@gmail.com</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP (hidden until unlocked) -->
+  <div id="app" class="hidden min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-3">
+            <a href="#" class="flex items-center">
+              <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo" class="h-10 w-10 rounded" />
+              <span id="brand" class="ml-3 font-semibold text-lg text-blue-900">Contracts Portal</span>
+            </a>
+          </div>
+
+          <!-- Desktop nav -->
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#" class="text-gray-700 hover:text-blue-700" data-i18n="nav_home">Home</a>
+            <a href="contract.html" class="text-gray-700 hover:text-blue-700" data-i18n="nav_contract">Contract</a>
+            <a href="#" class="text-gray-700 hover:text-blue-700" data-i18n="nav_about">About</a>
+            <a href="#" class="text-gray-700 hover:text-blue-700" data-i18n="nav_contact">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <!-- Language toggle -->
+            <div class="flex items-center gap-2">
+              <button id="langEn" class="px-2 py-1 text-sm rounded border bg-white" onclick="setLang('en')">EN</button>
+              <button id="langBn" class="px-2 py-1 text-sm rounded border bg-white" onclick="setLang('bn')">বাংলা</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+              <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMenu()">
+                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#" class="block text-gray-700 hover:text-blue-700" data-i18n="nav_home">Home</a>
+          <a href="contract.html" class="block text-gray-700 hover:text-blue-700" data-i18n="nav_contract">Contract</a>
+          <a href="#" class="block text-gray-700 hover:text-blue-700" data-i18n="nav_about">About</a>
+          <a href="#" class="block text-gray-700 hover:text-blue-700" data-i18n="nav_contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page body -->
+    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+
+      <!-- 01. Investor info with photo -->
+      <section class="bg-white rounded-lg shadow p-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+        <div class="flex items-center gap-4 md:col-span-1">
+          <img id="investorPhoto" src="https://mj-ahmad.github.io/mj-ahmad/docs/assets/logo1.jpg" alt="Investor Photo" class="h-24 w-24 rounded-full object-cover border" />
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 class="text-lg font-semibold text-blue-900" data-i18n="info_title">Investor Information</h2>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-800">
+            <div><strong data-i18n="label_fullname">Full name</strong> : <span id="fullName">Qari Emdadullah</span></div>
+            <div><strong data-i18n="label_role">Role</strong> : <span id="role">Investor</span></div>
+            <div class="sm:col-span-2"><strong data-i18n="label_address">Address</strong> : <span id="address">11/11/b KM Das Lane, Wari, Sutrapur, Dhaka-1203</span></div>
+            <div><strong data-i18n="label_email">Email</strong> : <a id="emailLink" href="mailto:hizbullahsalem@gmail.com" class="text-blue-700">hizbullahsalem@gmail.com</a></div>
+            <div><strong data-i18n="label_phone">Phone</strong> : <a id="phoneLink" href="tel:+8801820096806" class="text-blue-700">+880-1820-096806</a></div>
+            <div class="sm:col-span-2"><strong data-i18n="label_agreement">Agreement</strong> : <span id="agreementText">Short-term investment: 2 months from Sep 08, 2025</span></div>
+            <div><strong data-i18n="label_payment">Payment</strong> : <span id="paymentText">Tk. 13,000 (Cash) on 8 Sept 2025 21:00:00</span></div>
+            <div><strong data-i18n="label_earliest">Earliest delivery due</strong> : <span id="earliestText">23 Oct 2025 21:00:00</span></div>
+            <div><strong data-i18n="label_maximum">Maximum delivery due</strong> : <span id="maximumText">7 Nov 2025 21:00:00</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03. Time row: Bangladesh Time (en-US) | After Maximum due elapsed -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 class="text-sm text-gray-600">⏰ Bangladesh Time (en-US)</h3>
+            <p id="bdClock" class="mt-1 text-lg font-medium mono">--</p>
+          </div>
+
+          <div class="text-left md:text-right">
+            <h3 class="text-sm text-gray-600">After Maximum due</h3>
+            <p id="afterMax" class="mt-1 text-lg font-medium text-red-700 mono">0 months 0 weeks 0 d 0h 0m 0s</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. Estimated potential target time countdown -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 class="text-lg font-semibold text-blue-900">🎯 Estimated target to complete transaction</h3>
+        <p class="mt-2 text-sm text-gray-700">Target: <strong id="targetText">11 Apr 2026 11:00 AM (Asia/Dhaka)</strong></p>
+        <p class="mt-3 text-sm text-gray-600">Countdown:</p>
+        <p id="targetCountdown" class="mt-1 text-xl font-medium mono">-- days --:--:--</p>
+      </section>
+
+      <!-- 05. Compensation Calculator + note -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 class="text-lg font-semibold text-blue-900" data-i18n="comp_title">Compensation (Determined)</h3>
+
+        <p id="compNote" class="mt-2 text-sm text-gray-700">
+          MJ Ahmad has unilaterally determined the penalty for this agreement. Live status and calculations are shown below (penalty shown in currency).
+        </p>
+
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-sm text-gray-600" data-i18n="label_principal">Principal (Tk)</label>
+            <input id="principal" type="number" value="13000" class="mt-1 w-full border rounded px-2 py-1" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600" data-i18n="label_rate">Daily Penalty (Tk/day)</label>
+            <input id="rate" type="number" value="100" class="mt-1 w-full border rounded px-2 py-1" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600" data-i18n="label_elapsed">Elapsed after maximum due</label>
+            <p id="elapsedSinceMax" class="mt-1 mono text-gray-800">0 months 0 weeks 0 d 0h 0m 0s</p>
+          </div>
+        </div>
+
+        <div class="mt-4 text-sm text-gray-800 space-y-1">
+          <div><strong data-i18n="label_principal_display">Principal:</strong> <span id="displayPrincipal">Tk. 13,000.00</span></div>
+          <div><strong data-i18n="label_comp_display">Calculated penalty:</strong> <span id="displayComp">Tk. 0.00</span></div>
+          <div class="text-lg font-semibold"><strong data-i18n="label_owed_display">Total owed (Principal + penalty):</strong> <span id="displayOwed">Tk. 13,000.00</span></div>
+        </div>
+
+        <p class="mt-4 text-xs text-gray-600" data-i18n="comp_legal_note">
+          This is a unilateral determination by MJ Ahmad. If the investor is not satisfied, they retain full rights to pursue legal remedies. Any objections to MJ Ahmad's determination are expressly disclaimed.
+        </p>
+      </section>
+
+      <!-- 06. Agreement (bilingual handled by script) -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 id="agreementTitle" class="text-lg font-semibold text-blue-900">📜 Agreement</h3>
+
+        <div class="mt-3 text-sm text-gray-800 space-y-2">
+          <p><strong id="agreementNoLabel">Agreement No:</strong> <span id="agreementNoValue">BGS-QF-2025-09-08</span></p>
+          <p><strong id="agreementDateLabel">Date:</strong> <span id="agreementDateValue">08 September 2025</span></p>
+
+          <p id="agreementSummary" class="text-sm text-gray-800">
+            This page summarizes the key terms, responsibilities and remedies. For the full stamped agreement, use the link below:
+          </p>
+
+          <p>📜 <a id="viewContractLink" href="contract.html" class="text-blue-700 underline">View Contract Agreement</a></p>
+
+          <blockquote id="mjMessage" class="italic text-gray-700 mt-2">
+            “MJ Ahmad remains deeply grateful yet ashamed, and commits with sincerity that every moment of delay will be accounted for until the investor’s rightful benefit is fulfilled.”
+          </blockquote>
+
+          <p id="legalNote" class="mt-3 text-sm text-gray-600">
+            <strong>Legal & professional note:</strong> This presentation is for informational and record-keeping purposes and is not a substitute for legal advice. For enforceability, interpretation, or court‑grade documentation consult a qualified attorney in the relevant jurisdiction. Parties retain all rights to pursue remedies under applicable national and international law.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07. Footer content (centered on mobile) -->
+      <section class="bg-white rounded-lg shadow p-4">
+    <footer class="bg-white border-t">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div class="text-sm text-gray-600">© 2026 Quraner Fariwala. All rights reserved.</div>
+<div class="text-sm text-gray-600">Empowering communities through Research, Printing & Distribution of Holy Quran — by MJ-Ahmad</div>
+      </div>
+    </footer>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPT: language, times, password, mj message, agreement/footer bilingual -->
+  <script>
+    // --- Password unlock (client-side demo only) ---
+    function unlock(){
+      const pass = document.getElementById('passwordInput').value;
+      const msg = document.getElementById('lockMsg');
+      if(pass === "1820096806"){
+        document.getElementById('lockScreen').classList.add('hidden');
+        document.getElementById('app').classList.remove('hidden');
+        msg.textContent = "";
+      } else {
+        msg.textContent = "❌ Incorrect password — try again.";
+      }
+    }
+
+    // --- Mobile menu toggle ---
+    function toggleMenu(){
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('menuBtn');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    }
+
+    // --- Bilingual content for Agreement, MJ message, Footer ---
+    const bilingualContent = {
+      en: {
+        agreementTitle: "📜 Agreement",
+        agreementNoLabel: "Agreement No:",
+        agreementNoValue: "BGS-QF-2025-09-08",
+        agreementDateLabel: "Date:",
+        agreementDateValue: "08 September 2025",
+        agreementSummary: "This page summarizes the key terms, responsibilities and remedies. For the full stamped agreement, use the link below:",
+        viewContractText: "View Contract Agreement",
+        mjMessage: "“MJ Ahmad remains deeply grateful yet ashamed, and commits with sincerity that every moment of delay will be accounted for until the investor’s rightful benefit is fulfilled.”",
+        legalNote: "Legal & professional note: This presentation is for informational and record-keeping purposes and is not a substitute for legal advice. For enforceability, interpretation, or court‑grade documentation consult a qualified attorney in the relevant jurisdiction. Parties retain all rights to pursue remedies under applicable national and international law.",
+        footerCopyright: "© 2026 Quraner Fariwala. All rights reserved.",
+        footerTerms: "Terms of Service",
+        footerPrivacy: "Privacy Policy",
+        footerLegal: "Legal Disclaimer",
+        compNote: "MJ Ahmad has unilaterally determined the penalty for this agreement. Live status and calculations are shown below (penalty shown in currency)."
+      },
+      bn: {
+        agreementTitle: "📜 চুক্তি",
+        agreementNoLabel: "চুক্তি নম্বর:",
+        agreementNoValue: "BGS-QF-2025-09-08",
+        agreementDateLabel: "তারিখ:",
+        agreementDateValue: "08 সেপ্টেম্বর 2025",
+        agreementSummary: "এই পৃষ্ঠা মূল শর্তাবলী, দায়িত্ব এবং প্রতিকার সংক্ষেপ করে। পূর্ণ স্ট্যাম্পড চুক্তি দেখতে নিচের লিঙ্কটি ব্যবহার করুন:",
+        viewContractText: "চুক্তিপত্র দেখুন",
+        mjMessage: "“এমজে আহমাদ গভীর কৃতজ্ঞতা ও লজ্জা অনুভব করেন এবং আন্তরিকতার সঙ্গে প্রতিশ্রুতি দেন যে প্রতিটি বিলম্বের মুহূর্ত বিনিয়োগকারীর ন্যায্য সুবিধা পূরণ না হওয়া পর্যন্ত হিসাব করা হবে।”",
+        legalNote: "আইনি ও পেশাদারী নোট: এই উপস্থাপনাটি তথ্যগত ও রেকর্ড-রক্ষার উদ্দেশ্যে প্রস্তুত করা হয়েছে এবং এটি আইনি পরামর্শের বিকল্প নয়। প্রযোজ্য কর্তৃপক্ষের আদালত-গ্রেড ডকুমেন্টেশন বা ব্যাখ্যার জন্য যোগ্য আইনজীবীর পরামর্শ নিন। পক্ষগুলি প্রযোজ্য জাতীয় ও আন্তর্জাতিক আইনের অধীনে প্রতিকার অনুসরণ করার সব অধিকার সংরক্ষণ করে।",
+        footerCopyright: "© 2026 Quraner Fariwala. সর্বস্বত্ব সংরক্ষিত।",
+        footerTerms: "সেবা শর্তাবলী",
+        footerPrivacy: "গোপনীয়তা নীতি",
+        footerLegal: "আইনি অস্বীকার",
+        compNote: "এই চুক্তিতে MJ Ahmad এককভাবে জরিমানা নির্ধারণ করেছেন। নিচে লাইভ স্ট্যাটাস ও হিসাব প্রদর্শিত হবে (জরিমানা পয়সা পর্যন্ত দেখানো হবে)।"
+      }
+    };
+
+    function setAgreementAndFooterLang(lang){
+      const content = bilingualContent[lang] || bilingualContent.en;
+      const setText = (id, text) => {
+        const el = document.getElementById(id);
+        if(el) el.textContent = text;
+      };
+
+      // Agreement
+      setText('agreementTitle', content.agreementTitle);
+      setText('agreementNoLabel', content.agreementNoLabel);
+      setText('agreementNoValue', content.agreementNoValue);
+      setText('agreementDateLabel', content.agreementDateLabel);
+      setText('agreementDateValue', content.agreementDateValue);
+      setText('agreementSummary', content.agreementSummary);
+      const viewLink = document.getElementById('viewContractLink');
+      if(viewLink) viewLink.textContent = content.viewContractText;
+
+      // MJ message & legal note
+      setText('mjMessage', content.mjMessage);
+      setText('legalNote', content.legalNote);
+
+      // Footer
+      setText('footerCopyright', content.footerCopyright);
+      setText('footerTerms', content.footerTerms);
+      setText('footerPrivacy', content.footerPrivacy);
+      setText('footerLegal', content.footerLegal);
+
+      // Compensation note
+      const compNote = document.getElementById('compNote');
+      if(compNote) compNote.textContent = content.compNote;
+
+      // Set document language attribute
+      document.documentElement.lang = (lang === 'bn') ? 'bn' : 'en';
+    }
+
+    // --- MJ message helper (safe) ---
+    const mjMessages = {
+      en: {
+        quote: "“MJ Ahmad remains deeply grateful yet ashamed, and commits with sincerity that every moment of delay will be accounted for until the investor’s rightful benefit is fulfilled.”",
+        aria: "MJ Ahmad message in English"
+      },
+      bn: {
+        quote: "“এমজে আহমাদ গভীর কৃতজ্ঞতা ও লজ্জা অনুভব করেন এবং আন্তরিকতার সঙ্গে প্রতিশ্রুতি দেন যে প্রতিটি বিলম্বের মুহূর্ত বিনিয়োগকারীর ন্যায্য সুবিধা পূরণ না হওয়া পর্যন্ত হিসাব করা হবে।”",
+        aria: "বাংলা ভাষায় এমজে আহমাদের বার্তা"
+      }
+    };
+
+    function setMJMessage(lang){
+      const msgEl = document.getElementById('mjMessage');
+      if(!msgEl) return;
+      const entry = mjMessages[lang] || mjMessages['en'];
+      msgEl.textContent = entry.quote;
+      msgEl.setAttribute('aria-label', entry.aria);
+    }
+
+    // --- Time & countdown logic ---
+    const tz = 'Asia/Dhaka';
+    const maxDue = new Date("2025-11-07T21:00:00+06:00");
+    const earliestDue = new Date("2025-10-23T21:00:00+06:00");
+    const targetDate = new Date("2026-04-11T11:00:00+06:00");
+
+    function formatEnUSDate(d){
+      try {
+        return d.toLocaleString('en-US', { timeZone: tz, month: 'short', day: '2-digit', year: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+      } catch(e){
+        return d.toString();
+      }
+    }
+
+    function updateTimes(){
+      const now = new Date();
+
+      // Bangladesh time in en-US format
+      const bdClock = document.getElementById('bdClock');
+      if(bdClock) bdClock.textContent = formatEnUSDate(now);
+
+      // After maximum due elapsed
+      const afterMaxEl = document.getElementById('afterMax');
+      if(afterMaxEl){
+        if(now > maxDue){
+          let ms = now - maxDue;
+          const seconds = Math.floor(ms/1000);
+          const minutes = Math.floor(seconds/60);
+          const hours = Math.floor(minutes/60);
+          const days = Math.floor(hours/24);
+
+          const months = Math.floor(days/30);
+          const weeks = Math.floor((days % 30) / 7);
+          const remDays = days % 7;
+          const remHours = hours % 24;
+          const remMinutes = minutes % 60;
+          const remSeconds = seconds % 60;
+
+          afterMaxEl.textContent = `${months} months ${weeks} weeks ${remDays} d ${remHours}h ${remMinutes}m ${remSeconds}s`;
+        } else {
+          afterMaxEl.textContent = '0 months 0 weeks 0 d 0h 0m 0s';
+        }
+      }
+
+      // Target countdown
+      const targetEl = document.getElementById('targetCountdown');
+      if(targetEl){
+        let diff = targetDate - now;
+        if(diff <= 0){
+          targetEl.textContent = (document.documentElement.lang === 'bn') ? 'লক্ষ্য সময় পৌঁছেছে' : 'Target time reached';
+        } else {
+          const sec = Math.floor(diff/1000) % 60;
+          const min = Math.floor(diff/1000/60) % 60;
+          const hr = Math.floor(diff/1000/60/60) % 24;
+          const days = Math.floor(diff/1000/60/60/24);
+          targetEl.textContent = `${days} days ${String(hr).padStart(2,'0')}:${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+        }
+      }
+
+      // Elapsed since maximum due for compensation
+      const elapsedComp = document.getElementById('elapsedSinceMax');
+      if(elapsedComp){
+        if(now > maxDue){
+          let ms = now - maxDue;
+          const seconds = Math.floor(ms/1000);
+          const minutes = Math.floor(seconds/60);
+          const hours = Math.floor(minutes/60);
+          const days = Math.floor(hours/24);
+
+          const months = Math.floor(days/30);
+          const weeks = Math.floor((days % 30) / 7);
+          const remDays = days % 7;
+          const remHours = hours % 24;
+          const remMinutes = minutes % 60;
+          const remSeconds = seconds % 60;
+
+          elapsedComp.textContent = `${months} months ${weeks} weeks ${remDays} d ${remHours}h ${remMinutes}m ${remSeconds}s`;
+        } else {
+          elapsedComp.textContent = '0 months 0 weeks 0 d 0h 0m 0s';
+        }
+      }
+
+      // Compensation calculation
+      const principalInput = document.getElementById('principal');
+      const rateInput = document.getElementById('rate');
+      const displayPrincipal = document.getElementById('displayPrincipal');
+      const displayComp = document.getElementById('displayComp');
+      const displayOwed = document.getElementById('displayOwed');
+
+      const principal = parseFloat(principalInput?.value) || 0;
+      const rate = parseFloat(rateInput?.value) || 0;
+
+      let compensation = 0;
+      if(now > maxDue){
+        const daysLate = Math.floor((now - maxDue) / (1000*60*60*24));
+        compensation = daysLate * rate;
+      }
+
+      if(displayPrincipal) displayPrincipal.textContent = `Tk. ${principal.toFixed(2)}`;
+      if(displayComp) displayComp.textContent = `Tk. ${compensation.toFixed(2)}`;
+      if(displayOwed) displayOwed.textContent = `Tk. ${(principal + compensation).toFixed(2)}`;
+    }
+
+    // Update every second
+    setInterval(updateTimes, 1000);
+    updateTimes();
+
+    // Enter key to unlock
+    document.getElementById('passwordInput').addEventListener('keydown', function(e){
+      if(e.key === 'Enter') unlock();
+    });
+
+    // Language switcher integration
+    function setLang(lang){
+      // update UI strings for nav and labels (data-i18n)
+      const i18nMap = {
+        en: {
+          nav_home: "Home", nav_contract: "Contract", nav_about: "About", nav_contact: "Contact",
+          info_title: "Investor Information", label_fullname: "Full name", label_role: "Role",
+          label_address: "Address", label_email: "Email", label_phone: "Phone", label_agreement: "Agreement",
+          label_payment: "Payment", label_earliest: "Earliest delivery due", label_maximum: "Maximum delivery due",
+          comp_title: "Compensation (Determined)", label_principal: "Principal (Tk)", label_rate: "Daily Penalty (Tk/day)",
+          label_elapsed: "Elapsed after maximum due", label_principal_display: "Principal:", label_comp_display: "Calculated penalty:",
+          label_owed_display: "Total owed (Principal + penalty):", comp_legal_note: bilingualContent.en.compNote
+        },
+        bn: {
+          nav_home: "হোম", nav_contract: "চুক্তি", nav_about: "সম্পর্কে", nav_contact: "যোগাযোগ",
+          info_title: "বিনিয়োগকারীর তথ্য", label_fullname: "পূর্ণ নাম", label_role: "ভূমিকা",
+          label_address: "ঠিকানা", label_email: "ইমেইল", label_phone: "ফোন", label_agreement: "চুক্তি",
+          label_payment: "পেমেন্ট", label_earliest: "Earliest delivery due", label_maximum: "Maximum delivery due",
+          comp_title: "ক্ষতিপূরণ (নির্ধারিত)", label_principal: "মূলধন (Tk)", label_rate: "দৈনিক জরিমানা (Tk/দিন)",
+          label_elapsed: "সর্বোচ্চ সময় অতিক্রমের পর সময়", label_principal_display: "মূলধন:", label_comp_display: "হিসাবকৃত জরিমানা:",
+          label_owed_display: "মোট বকেয়া (মূলধন + জরিমানা):", comp_legal_note: bilingualContent.bn.compNote
+        }
+      };
+
+      const map = i18nMap[lang] || i18nMap.en;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(map[key]) el.textContent = map[key];
+      });
+
+      // Agreement & footer bilingual content
+      setAgreementAndFooterLang(lang);
+      // MJ message
+      setMJMessage(lang);
+
+      // highlight selected language button
+      document.getElementById('langEn').classList.toggle('bg-blue-100', lang === 'en');
+      document.getElementById('langBn').classList.toggle('bg-blue-100', lang === 'bn');
+
+      // set document language attribute
+      document.documentElement.lang = (lang === 'bn') ? 'bn' : 'en';
+    }
+
+    // Initialize language to English
+    setLang('en');
+  </script>
+</body>
+</html>
