@@ -1,0 +1,9 @@
+{
+  "Timeline": [
+    { "Step": "1", "Description": "Document all creditors and investors with name, phone, amount, date.", "Status": "Completed" },
+    { "Step": "2", "Description": "Prepare fundraising proposal in English, Bengali, Arabic for Ramadan donors.", "Status": "Completed" },
+    { "Step": "3", "Description": "Finalize donor outreach strategy with timeline and responsibilities.", "Status": "In Progress" },
+    { "Step": "4", "Description": "Conduct first donor meeting and record feedback.", "Status": "In Progress" },
+    { "Step": "5", "Description": "Update governance documents with fundraising outcomes.", "Status": "In Progress" }
+  ]
+}
