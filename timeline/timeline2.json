@@ -1,0 +1,9 @@
+{
+  "Timeline": [
+    { "Step": "1", "Description": "Draft donation post in Bengali", "Status": "Completed", "Date": "2026-03-14" },
+    { "Step": "2", "Description": "Draft donation post in English", "Status": "In Progress", "Date": "2026-03-15" },
+    { "Step": "3", "Description": "Draft donation post in Arabic", "Status": "Pending", "Date": "2026-03-16" },
+    { "Step": "4", "Description": "Setup paid boosting campaign", "Status": "Pending", "Date": "2026-03-17" },
+    { "Step": "5", "Description": "Target audience setup", "Status": "Pending", "Date": "2026-03-18" }
+  ]
+}

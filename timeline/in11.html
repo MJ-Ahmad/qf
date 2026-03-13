@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <title>QuranerFariwala Recovery Timelines</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f9; margin:0; padding:20px; }
+    h1 { text-align:center; color:#2c3e50; }
+    .clock { text-align:center; font-size:18px; color:#2980b9; margin-bottom:20px; }
+    .section { max-width:900px; margin:20px auto; background:white; padding:20px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .progress-bar { margin-top:10px; height:25px; background:#ddd; border-radius:12px; overflow:hidden; cursor:pointer; }
+    .progress-fill { height:100%; background:#27ae60; text-align:center; color:white; line-height:25px; font-weight:bold; }
+    .click-hint { margin-top:8px; font-size:14px; color:#34495e; text-align:center; cursor:pointer; }
+    .timeline { position:relative; max-width:900px; margin:20px auto; display:none; }
+    .timeline::after { content:''; position:absolute; width:6px; background-color:#2c3e50; top:0; bottom:0; left:50%; margin-left:-3px; }
+    .container { padding:10px 40px; position:relative; background-color:inherit; width:50%; }
+    .container.left { left:0; } .container.right { left:50%; }
+    .content { padding:20px; background-color:white; position:relative; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .date { font-weight:bold; color:#2980b9; margin-bottom:10px; }
+    .status { font-size:14px; margin-top:10px; }
+    .completed { color:green; } .progress { color:orange; } .pending { color:red; }
+  </style>
+</head>
+<body>
+  <h1>QuranerFariwala Recovery Timelines</h1>
+
+  <!-- রিয়েল টাইম ঢাকা ক্লক -->
+  <div class="clock" id="clock">🕒 Dhaka Time Loading...</div>
+
+  <!-- Timeline 1: Overall Progress -->
+  <div class="section">
+    <h2>Timeline 1: Overall Progress</h2>
+    <div class="progress-bar" onclick="showTimeline('timeline1')">
+      <div id="overall-bar" class="progress-fill">0%</div>
+    </div>
+    <div class="click-hint" onclick="showTimeline('timeline1')">📌 বিস্তারিত তথ্য দেখতে এখানে ক্লিক করুন</div>
+  </div>
+  <div id="timeline1" class="timeline"></div>
+
+  <!-- Timeline 2: Facebook Donation Boosting -->
+  <div class="section">
+    <h2>Timeline 2: Facebook Donation Boosting</h2>
+    <div class="progress-bar" onclick="showTimeline('timeline2')">
+      <div class="progress-fill" style="width:0%;">0%</div>
+    </div>
+    <div class="click-hint" onclick="showTimeline('timeline2')">📌 বিস্তারিত তথ্য দেখতে এখানে ক্লিক করুন</div>
+  </div>
+  <div id="timeline2" class="timeline"></div>
+
+  <!-- Timeline 3: Facebook Monetization -->
+  <div class="section">
+    <h2>Timeline 3: Facebook Monetization $10/day</h2>
+    <div class="progress-bar" onclick="showTimeline('timeline3')">
+      <div class="progress-fill" style="width:0%;">0%</div>
+    </div>
+    <div class="click-hint" onclick="showTimeline('timeline3')">📌 বিস্তারিত তথ্য দেখতে এখানে ক্লিক করুন</div>
+  </div>
+  <div id="timeline3" class="timeline"></div>
+
+  <script>
+    // Show timeline on click
+    function showTimeline(id){
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Real-time Dhaka clock with ISO 8601 format
+    function updateClock(){
+      const now = new Date();
+      const dhakaFormatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Dhaka',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      const parts = dhakaFormatter.formatToParts(now);
+      const lookup = {};
+      parts.forEach(p => lookup[p.type] = p.value);
+      const isoString = `${lookup.year}-${lookup.month}-${lookup.day}T${lookup.hour}:${lookup.minute}:${lookup.second}+06:00`;
+      document.getElementById("clock").textContent = "🕒 Dhaka Time: " + isoString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Load multiple timelines
+    function loadTimeline(jsonUrl, targetId){
+      fetch(jsonUrl)
+        .then(response => response.json())
+        .then(data => {
+          const timeline = document.getElementById(targetId);
+          let side = "left";
+          timeline.innerHTML = ""; // clear before load
+          data.Timeline.forEach(step => {
+            const container = document.createElement("div");
+            container.className = "container " + side;
+            side = (side === "left") ? "right" : "left";
+
+            const content = document.createElement("div");
+            content.className = "content";
+
+            const date = document.createElement("div");
+            date.className = "date";
+            date.textContent = "Step " + step.Step + " (" + step.Date + ")";
+
+            const headline = document.createElement("h2");
+            headline.textContent = step.Description;
+
+            const status = document.createElement("div");
+            status.className = "status";
+            if (step.Status === "Completed") status.classList.add("completed");
+            else if (step.Status === "In Progress") status.classList.add("progress");
+            else status.classList.add("pending");
+            status.textContent = "Status: " + step.Status;
+
+            content.appendChild(date);
+            content.appendChild(headline);
+            content.appendChild(status);
+            container.appendChild(content);
+            timeline.appendChild(container);
+          });
+        })
+        .catch(err => {
+          console.error("Failed to load " + jsonUrl, err);
+        });
+    }
+
+    // Load all three timelines
+    loadTimeline("https://mj-ahmad.github.io/qf/timeline/timeline1.json", "timeline1");
+    loadTimeline("https://mj-ahmad.github.io/qf/timeline/timeline2.json", "timeline2");
+    loadTimeline("https://mj-ahmad.github.io/qf/timeline/timeline3.json", "timeline3");
+  </script>
+</body>
+</html>

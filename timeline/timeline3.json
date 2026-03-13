@@ -1,0 +1,9 @@
+{
+  "Timeline": [
+    { "Step": "1", "Description": "Enable monetization ID", "Status": "Completed", "Date": "2026-03-14" },
+    { "Step": "2", "Description": "Setup content schedule", "Status": "In Progress", "Date": "2026-03-15" },
+    { "Step": "3", "Description": "Daily video upload", "Status": "Pending", "Date": "2026-03-16" },
+    { "Step": "4", "Description": "Ad placement optimization", "Status": "Pending", "Date": "2026-03-17" },
+    { "Step": "5", "Description": "Revenue tracking", "Status": "Pending", "Date": "2026-03-18" }
+  ]
+}
