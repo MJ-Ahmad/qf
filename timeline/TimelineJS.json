@@ -1,0 +1,34 @@
+{
+  "title": {
+    "text": {
+      "headline": "MJ Dev Ecosystem Roadmap",
+      "text": "2025–2050 long-term stewardship plan"
+    }
+  },
+  "events": [
+    {
+      "start_date": { "year": "2025" },
+      "text": { "headline": "Initial Setup", "text": "mj directory, VSCode, Git init, .NET console project" }
+    },
+    {
+      "start_date": { "year": "2026" },
+      "text": { "headline": "PowerShell Functions", "text": "Add custom functions in $PROFILE for reporting" }
+    },
+    {
+      "start_date": { "year": "2027" },
+      "text": { "headline": "Foundation Expansion", "text": "Add tests, ML.NET models, datasets, bilingual docs" }
+    },
+    {
+      "start_date": { "year": "2035" },
+      "text": { "headline": "Governance Phase", "text": "Constitutional charters, stewardship docs" }
+    },
+    {
+      "start_date": { "year": "2042" },
+      "text": { "headline": "Automation Phase", "text": "AI agents, intelligent scripts, stewardship automation" }
+    },
+    {
+      "start_date": { "year": "2050" },
+      "text": { "headline": "Legacy Phase", "text": "Universal accessibility, inheritable ecosystem, archives" }
+    }
+  ]
+}
