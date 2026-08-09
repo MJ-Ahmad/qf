@@ -1,0 +1,49 @@
+{
+  "project": "Quraner Fariwala Emergency Fundraising",
+  "goal_bdt": 100000,
+  "raised_bdt": 88000,
+  "remaining_bdt": 12000,
+  "donations_count": 145,
+  "deadline": "2026-08-10T23:59:00",
+  "days_left": 1,
+  "accounts": {
+    "City Bank": {
+      "branch": "Motijheel",
+      "account_name": "QURANER FARIWALA",
+      "account_number": "1502835465001",
+      "routing_number": "225271548"
+    },
+    "Eastern Bank": {
+      "branch": "Principal",
+      "account_name": "QURANER FARIWALA",
+      "account_number": "1011070611663",
+      "routing_number": "095275358"
+    },
+    "Mutual Trust Bank": {
+      "branch": "Principal",
+      "account_name": "QURANER FARIWALA",
+      "account_number": "1301010000896",
+      "routing_number": "145275358"
+    },
+    "BRAC Bank": {
+      "branch": "Bijoynagar",
+      "account_name": "QURANER FARIWALA",
+      "account_number": "2060133490001",
+      "routing_number": "060271103"
+    }
+  },
+  "channels": {
+    "Bkash Merchant": "01788856628",
+    "Bkash Personal": "01920082926",
+    "Rocket": "01920082926-6",
+    "Nagad": "01788856628"
+  },
+  "digital_assets": {
+    "ETH": "0xaD6fE115967c22D1C54Fe6010C3AacCE5E196435",
+    "Plisio": "https://plisio.net/donate/ekrlBT3P",
+    "GooglePaymentProfile": {
+      "ProfileID": "9144-9525-7409",
+      "MerchantID": "705364158201166517"
+    }
+  }
+}
