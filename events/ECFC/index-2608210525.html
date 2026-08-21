@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quraner Fariwala – Emergency Fundraising</title>
+  <style>
+    :root{
+      --brand:#004080;
+      --accent:#27ae60;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --danger:#e74c3c;
+      --glass: rgba(255,255,255,0.85);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background:linear-gradient(180deg,#f3f6fb 0%,var(--bg) 100%);
+      color:#0f172a;
+      line-height:1.45;
+    }
+    header{
+      background:var(--brand);
+      color:#fff;
+      padding:20px 16px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:20px}
+    header p{margin:6px 0 0;font-size:13px;opacity:0.95}
+    .wrap{max-width:980px;margin:18px auto;padding:16px}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(12,20,40,0.06);
+      margin-bottom:16px;
+    }
+    .lead{color:var(--muted);font-size:15px;margin-top:8px}
+    .title{color:var(--brand);font-weight:600;margin:0 0 8px;font-size:18px}
+    .progress{
+      height:18px;background:#e6eef6;border-radius:999px;overflow:hidden;margin:14px 0;
+      display:flex;align-items:center;
+    }
+    .progress > .bar{
+      height:100%;
+      background:linear-gradient(90deg,var(--accent),#2ecc71);
+      width:0%;
+      transition:width 600ms ease;
+    }
+    .kpis{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .kpi{
+      flex:1 1 140px;background:linear-gradient(180deg,#fff,var(--glass));
+      border-radius:10px;padding:10px;border:1px solid rgba(2,6,23,0.04);
+      text-align:center;
+    }
+    .kpi .num{font-weight:700;font-size:18px;color:#0b1220}
+    .kpi .label{font-size:12px;color:var(--muted);margin-top:6px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;
+      text-decoration:none;color:#fff;background:var(--brand);font-weight:600;border:none;cursor:pointer;
+      box-shadow:0 6px 14px rgba(2,6,23,0.08);
+    }
+    .btn.secondary{background:#0f172a;color:#fff;opacity:0.95}
+    .small{font-size:13px;color:var(--muted)}
+    /* account page */
+    #accountPage{display:none;margin-top:12px}
+    .ledger-section{margin-bottom:12px;border-radius:10px;padding:12px;border:1px solid rgba(2,6,23,0.04);background:#fff}
+    .section-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .section-header h2{margin:0;font-size:16px}
+    .account{margin-top:10px;font-size:14px;color:#0b1220;line-height:1.5}
+    .account strong{display:block;color:#0b1220;margin-bottom:6px}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    .icon-btn{background:transparent;border:1px solid rgba(2,6,23,0.06);padding:6px 8px;border-radius:8px;cursor:pointer}
+    /* floating icons */
+    .floating-right{position:fixed;right:14px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:60}
+    .floating-left{position:fixed;left:14px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:60}
+    .fab{width:48px;height:48px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:20px}
+    .fab.wh{background:#25D366}
+    .fab.mail{background:#0066cc}
+    /* toast */
+    .toast {
+      position:fixed;
+      right:18px;
+      bottom:86px;
+      background:rgba(15,23,42,0.95);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      box-shadow:0 8px 24px rgba(2,6,23,0.2);
+      font-size:14px;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .22s ease, transform .22s ease;
+      z-index:120;
+    }
+    .toast.show{opacity:1;transform:translateY(0)}
+    /* responsive */
+    @media (max-width:640px){
+      .kpis{flex-direction:column}
+      .btn{width:100%;justify-content:center}
+      header h1{font-size:18px}
+      .wrap{padding:12px}
+      .card{padding:14px}
+    }
+    /* countdown */
+    .countdown{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+    .countdown .unit{background:#f1f5f9;padding:8px 10px;border-radius:8px;text-align:center;min-width:64px}
+    .unit .value{font-weight:700;font-size:16px}
+    .unit .label{font-size:12px;color:var(--muted);margin-top:4px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quraner Fariwala – Emergency Fundraising</h1>
+    <p>Research • Printing • Distribution of Holy Qur’an</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card" id="hero">
+      <div class="title">Emergency Purpose: Collecting BDT 100,000/-</div>
+      <div class="lead">We are facing institutional challenges. To sustain our activities, we urgently need your support.</div>
+
+      <div class="progress" aria-hidden="true">
+        <div class="bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <div class="kpis" aria-live="polite">
+        <div class="kpi">
+          <div class="num" id="raisedDisplay">৳88,000</div>
+          <div class="label">Raised</div>
+        </div>
+        <div class="kpi">
+          <div class="num" id="donorsDisplay">145</div>
+          <div class="label">Donors</div>
+        </div>
+        <div class="kpi">
+          <div class="num" id="remainingDisplay">৳12,000</div>
+          <div class="label">To go</div>
+        </div>
+        <div class="kpi">
+          <div class="num" id="percentDisplay">88%</div>
+          <div class="label">Progress</div>
+        </div>
+      </div>
+
+      <div class="countdown" aria-hidden="false" id="countdown">
+        <div class="unit"><div class="value" id="days">0</div><div class="label">Days</div></div>
+        <div class="unit"><div class="value" id="hours">00</div><div class="label">Hours</div></div>
+        <div class="unit"><div class="value" id="minutes">00</div><div class="label">Minutes</div></div>
+        <div class="unit"><div class="value" id="seconds">00</div><div class="label">Seconds</div></div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn" id="supportBtn">Support Now</button>
+        <a class="btn secondary" href="https://github.com/sponsors/MJ-Ahmad" target="_blank" rel="noopener">Sponsor on GitHub</a>
+      </div>
+
+      <div class="small" style="margin-top:12px">
+        Deadline: <strong id="deadlineText">2026-08-22 23:59:00 (Local)</strong>
+      </div>
+    </section>
+
+    <section id="accountPage" class="card" aria-hidden="true">
+      <header style="display:flex;align-items:center;gap:12px">
+        <div style="width:56px;height:56px;border-radius:8px;background:#eef6ff;display:flex;align-items:center;justify-content:center">
+          <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo" style="height:40px">
+        </div>
+        <div>
+          <h2 style="margin:0">QuranerFariwala</h2>
+          <div class="small">Research • Printing • Distribution of Holy Qur’an</div>
+        </div>
+      </header>
+
+      <div style="margin-top:12px">
+        <div class="ledger-section">
+          <div class="section-header" onclick="toggleSection('banks')">
+            <h2>🏛️ Accounts</h2>
+            <div>
+              <button class="icon-btn" onclick="copySection('banks', this);event.stopPropagation()">📋 Copy</button>
+            </div>
+          </div>
+          <div id="banks">
+            <div class="account">
+              <strong>City Bank — Motijheel Branch</strong>
+              Account Name: QURANER FARIWALA<br>
+              Account Number: 1502835465001<br>
+              Routing Number: 225271548
+            </div>
+            <div class="account">
+              <strong>Eastern Bank Ltd — Principal Branch</strong>
+              Account Name: QURANER FARIWALA<br>
+              Account Number: 1011070611663<br>
+              Routing Number: 095275358
+            </div>
+            <div class="account">
+              <strong>Mutual Trust Bank — Principal Branch</strong>
+              Account Name: QURANER FARIWALA<br>
+              Account Number: 1301010000896<br>
+              Routing Number: 145275358
+            </div>
+            <div class="account">
+              <strong>BRAC Bank — Bijoynagar Branch</strong>
+              Account Name: QURANER FARIWALA<br>
+              Account Number: 2060133490001<br>
+              Routing Number: 060271103
+            </div>
+          </div>
+        </div>
+
+        <div class="ledger-section">
+          <div class="section-header" onclick="toggleSection('mobile')">
+            <h2>📱 Channels</h2>
+            <div>
+              <button class="icon-btn" onclick="copySection('mobile', this);event.stopPropagation()">📋 Copy</button>
+            </div>
+          </div>
+          <div id="mobile">
+            <div class="account"><strong>Bkash Merchant</strong><br>Number: 01788856628<br>Holder: Quraner Fariwala</div>
+            <div class="account"><strong>Bkash Personal</strong><br>Number: 01920082926<br>Holder: MJ Ahmad</div>
+            <div class="account"><strong>Rocket Account</strong><br>Number: 01920082926-6<br>Holder: MJ Ahmad</div>
+            <div class="account"><strong>Nagad Account</strong><br>Number: 01788856628<br>Holder: Quraner Fariwala</div>
+            <p class="note">🔒 Personal channels must be logged in <code>personal-fund-log.md</code>, reviewed by an Ethical Auditor, and used only with public documentation.</p>
+          </div>
+        </div>
+
+        <div class="ledger-section">
+          <div class="section-header" onclick="toggleSection('contact')">
+            <h2>📬 Contact</h2>
+            <div>
+              <button class="icon-btn" onclick="copySection('contact', this);event.stopPropagation()">📋 Copy</button>
+            </div>
+          </div>
+          <div id="contact">
+            <div class="account"><strong>Email</strong><br>quranerfariwala@gmail.com</div>
+            <div class="account"><strong>GitHub</strong><br><a href="https://mj-ahmad.github.io/mj-ahmad/" target="_blank" rel="noopener">https://mj-ahmad.github.io/mj-ahmad/</a></div>
+            <div class="account"><strong>GitHub Sponsors Profile</strong><br><a href="https://github.com/sponsors/MJ-Ahmad" target="_blank" rel="noopener">Sponsor Here</a></div>
+          </div>
+        </div>
+
+        <div class="ledger-section">
+          <div class="section-header" onclick="toggleSection('digital')">
+            <h2>💱 Digital Assets</h2>
+            <div>
+              <button class="icon-btn" onclick="copySection('digital', this);event.stopPropagation()">📋 Copy</button>
+            </div>
+          </div>
+          <div id="digital">
+            <div class="account"><strong>ETH Address</strong><br>0xaD6fE115967c22D1C54Fe6010C3AacCE5E196435</div>
+            <div class="account"><strong>Plisio</strong><br><a href="https://plisio.net/donate/ekrlBT3P" target="_blank" rel="noopener">Plisio Donate Link</a></div>
+            <div class="account"><strong>Google Pay / Merchant</strong><br>Profile ID: 9144-9525-7409<br>Merchant ID: 705364158201166517</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="floating-right" aria-hidden="false">
+    <a class="fab wh" href="https://wa.me/8801788856628" title="Message on WhatsApp" target="_blank" rel="noopener">💬</a>
+    <a class="fab mail" href="mailto:quranerfariwala@gmail.com" title="Send email">✉️</a>
+  </div>
+
+  <div class="floating-left" aria-hidden="true">
+    <a class="fab" style="background:#333;color:#fff" href="https://mj-ahmad.github.io/qf-f/" title="Open campaign" target="_blank" rel="noopener">🌐</a>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // funding data
+    const funding = {
+      goal_bdt: 100000,
+      raised_bdt: 88000,
+      remaining_bdt: 12000,
+      donations_count: 145,
+      deadline: "2026-08-22T23:59:00"
+    };
+
+    // UI refs
+    const raisedDisplay = document.getElementById('raisedDisplay');
+    const donorsDisplay = document.getElementById('donorsDisplay');
+    const remainingDisplay = document.getElementById('remainingDisplay');
+    const percentDisplay = document.getElementById('percentDisplay');
+    const progressBar = document.getElementById('progressBar');
+    const deadlineText = document.getElementById('deadlineText');
+
+    function formatBDT(n){
+      return '৳' + n.toLocaleString('en-US');
+    }
+
+    function updateProgress(){
+      const percent = Math.min(100, Math.round((funding.raised_bdt / funding.goal_bdt) * 100));
+      raisedDisplay.textContent = formatBDT(funding.raised_bdt);
+      donorsDisplay.textContent = funding.donations_count;
+      remainingDisplay.textContent = formatBDT(Math.max(0, funding.goal_bdt - funding.raised_bdt));
+      percentDisplay.textContent = percent + '%';
+      progressBar.style.width = percent + '%';
+      progressBar.setAttribute('aria-valuenow', percent);
+      deadlineText.textContent = funding.deadline.replace('T',' ');
+    }
+
+    updateProgress();
+
+    // Countdown
+    const deadline = new Date(funding.deadline);
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    function updateCountdown(){
+      const now = new Date();
+      let diff = Math.max(0, deadline - now);
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const minutes = Math.floor(diff / (1000*60));
+      diff -= minutes * (1000*60);
+      const seconds = Math.floor(diff / 1000);
+
+      daysEl.textContent = days;
+      hoursEl.textContent = String(hours).padStart(2,'0');
+      minutesEl.textContent = String(minutes).padStart(2,'0');
+      secondsEl.textContent = String(seconds).padStart(2,'0');
+
+      if (deadline - new Date() <= 0) {
+        document.getElementById('countdown').innerHTML = '<div class="small">Campaign ended</div>';
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Show account page or redirect
+    const supportBtn = document.getElementById('supportBtn');
+    supportBtn.addEventListener('click', function(){
+      const accountPage = document.getElementById('accountPage');
+      const isVisible = accountPage.style.display === 'block';
+      accountPage.style.display = isVisible ? 'none' : 'block';
+      accountPage.setAttribute('aria-hidden', isVisible ? 'true' : 'false');
+      if(!isVisible){
+        accountPage.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+
+    // Toggle sections
+    function toggleSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+    // Initialize sections collapsed on mobile
+    ['banks','mobile','contact','digital'].forEach(id=>{
+      if(window.innerWidth < 700){
+        const el = document.getElementById(id);
+        if(el) el.style.display = 'none';
+      }
+    });
+
+    // Toast helper
+    const toastEl = document.getElementById('toast');
+    let toastTimer = null;
+    function showToast(message){
+      clearTimeout(toastTimer);
+      toastEl.textContent = message;
+      toastEl.classList.add('show');
+      toastTimer = setTimeout(()=> {
+        toastEl.classList.remove('show');
+      }, 2200);
+    }
+
+    // Robust clipboard copy with fallback
+    async function copyTextToClipboard(text){
+      // Try navigator.clipboard first
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        try{
+          await navigator.clipboard.writeText(text);
+          return true;
+        }catch(e){
+          // fall through to textarea fallback
+        }
+      }
+      // Fallback: textarea method
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        // Avoid scrolling to bottom
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        ta.style.top = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand && document.execCommand('copy');
+        document.body.removeChild(ta);
+        return !!ok;
+      }catch(e){
+        return false;
+      }
+    }
+
+    // Copy section content
+    async function copySection(id, btn){
+      const el = document.getElementById(id);
+      if(!el) return;
+      // Build plain text from .account elements and links
+      const parts = [];
+      el.querySelectorAll('.account').forEach(a=>{
+        // prefer innerText for readable text
+        parts.push(a.innerText.trim());
+      });
+      // include links (if any)
+      el.querySelectorAll('a').forEach(a=>{
+        const href = a.href;
+        if(href && !href.startsWith('javascript:')){
+          parts.push(href);
+        }
+      });
+      const text = parts.join('\n\n');
+      const success = await copyTextToClipboard(text);
+      if(success){
+        // temporary button feedback
+        const original = btn.innerText;
+        btn.innerText = 'Copied';
+        btn.disabled = true;
+        showToast('Copied to clipboard');
+        setTimeout(()=>{ btn.innerText = original; btn.disabled = false; }, 1400);
+      } else {
+        // fallback: show toast with instruction (no alert)
+        showToast('Copy failed — please select and copy manually');
+      }
+    }
+
+    // Accessibility: allow keyboard toggle and ESC to close account page
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        const accountPage = document.getElementById('accountPage');
+        if(accountPage.style.display === 'block'){
+          accountPage.style.display = 'none';
+          accountPage.setAttribute('aria-hidden','true');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

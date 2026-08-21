@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quraner Fariwala – Emergency Fundraising</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 5px 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .donation-block {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .progress-bar {
+      display: flex;
+      height: 25px;
+      margin: 15px 0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar div {
+      height: 100%;
+    }
+    .progress-red { background: #e74c3c; width: 20%; }
+    .progress-orange { background: #f39c12; width: 30%; }
+    .progress-green { background: #27ae60; width: 20%; }
+    .progress-blue { background: #2980b9; width: 10%; }
+    .progress-purple { background: #8e44ad; width: 5%; }
+    .stats {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .donate-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #004080;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .donate-btn:hover {
+      background: #0066cc;
+    }
+    .languages {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .languages h3 {
+      margin-bottom: 10px;
+    }
+    .languages p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Quraner Fariwala – Emergency Fundraising</h1>
+  <p>Help us continue printing and distributing the Holy Qur’an</p>
+</header>
+
+<div class="container">
+  <h2>Emergency Purpose: Collecting BDT 100,000/-</h2>
+  <p>
+    We urgently need your support to sustain our institutional activities of printing and distributing the Holy Qur’an.  
+  </p>
+  <a href="#" class="read-more">Read More</a>
+
+  <div class="donation-block">
+    <h3>$200 raised of $1000 goal</h3>
+    <div class="progress-bar">
+      <div class="progress-red"></div>
+      <div class="progress-orange"></div>
+      <div class="progress-green"></div>
+      <div class="progress-blue"></div>
+      <div class="progress-purple"></div>
+    </div>
+    <div class="stats">
+      <p>25 donations &nbsp;&nbsp; $800 to go</p>
+    </div>
+    <a href="cart.html" class="donate-btn">Donate / Support Now</a>
+  </div>
+
+  <div class="languages">
+    <h3>বাংলা</h3>
+    <p>আমাদের প্রাতিষ্ঠানিক কার্যক্রমের ধারাবাহিকতা বজায় রাখতে জরুরি ভিত্তিতে অর্থনৈতিক সহযোগিতা প্রয়োজন।</p>
+
+    <h3>العربية</h3>
+    <p>نحن بحاجة ماسة إلى دعمكم لمواصلة أنشطة المؤسسة في طباعة وتوزيع القرآن الكريم.</p>
+  </div>
+</div>
+
+<script>
+  // Example JS for dynamic updates (can be extended)
+  let raised = 200;
+  let goal = 1000;
+  let donations = 25;
+
+  function updateStats() {
+    document.querySelector('.donation-block h3').innerText = 
+      `$${raised} raised of $${goal} goal`;
+    document.querySelector('.stats p').innerText = 
+      `${donations} donations    $${goal - raised} to go`;
+  }
+
+  updateStats();
+</script>
+
+</body>
+</html>

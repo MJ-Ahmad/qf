@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quraner Fariwala – Emergency Fundraising</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
+    header { background:#004080; color:#fff; padding:20px; text-align:center; }
+    .container { max-width:800px; margin:20px auto; padding:20px; background:#fff; border-radius:8px; }
+    h2 { color:#004080; }
+    .progress { background:#ddd; border-radius:5px; overflow:hidden; height:25px; margin:15px 0; }
+    .progress-bar { background:#27ae60; height:100%; width:88%; }
+    .stats { font-size:16px; margin-top:10px; }
+    .donate-btn { display:inline-block; margin-top:20px; padding:12px 24px; background:#004080; color:#fff; border-radius:5px; text-decoration:none; font-weight:bold; cursor:pointer; }
+    .donate-btn:hover { background:#0066cc; }
+    .floating-icons { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
+    .floating-icons a { background:#004080; color:#fff; padding:10px; border-radius:50%; text-align:center; text-decoration:none; font-size:20px; }
+    .account-page { display:none; margin-top:30px; }
+    .ledger-section { margin-bottom:20px; border:1px solid #ddd; border-radius:5px; padding:10px; }
+    .section-header { display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+    .account { margin:5px 0; }
+    .icon-btn { background:none; border:none; cursor:pointer; font-size:16px; }
+    .note { font-size:14px; color:#555; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Quraner Fariwala – Emergency Fundraising</h1>
+  <p>Research • Printing • Distribution of Holy Qur’an</p>
+</header>
+
+<div class="container">
+  <h2>Emergency Purpose: Collecting BDT 100,000/-</h2>
+  <p>We are facing institutional challenges. To sustain our activities, we urgently need your support.</p>
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+  <div class="stats">
+    <p><strong>৳88,000 raised</strong> of ৳100,000 goal</p>
+    <p>145 donors &nbsp; | &nbsp; ৳12,000 to go</p>
+    <p><strong>Deadline: 2026-08-22</strong></p>
+  </div>
+
+  <!-- Support Now button -->
+  <button class="donate-btn" onclick="showAccounts()">Support Now</button>
+
+  <!-- Account Page Content -->
+  <div id="accountPage" class="account-page">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo" style="height:60px;">
+      </div>
+      <h1>QuranerFariwala</h1>
+    </header>
+
+    <section class="ledger-section">
+      <div class="section-header" onclick="toggleSection('banks')">
+        <h2>🏛️ Accounts</h2>
+      </div>
+      <div id="banks">
+        <div class="account"><strong>City Bank — Motijheel Branch</strong><br>Account Name: QURANER FARIWALA<br>Account Number: 1502835465001<br>Routing Number: 225271548</div>
+        <div class="account"><strong>Eastern Bank Ltd — Principal Branch</strong><br>Account Name: QURANER FARIWALA<br>Account Number: 1011070611663<br>Routing Number: 095275358</div>
+        <div class="account"><strong>Mutual Trust Bank — Principal Branch</strong><br>Account Name: QURANER FARIWALA<br>Account Number: 1301010000896<br>Routing Number: 145275358</div>
+        <div class="account"><strong>BRAC Bank — Bijoynagar Branch</strong><br>Account Name: QURANER FARIWALA<br>Account Number: 2060133490001<br>Routing Number: 060271103</div>
+      </div>
+    </section>
+
+    <section class="ledger-section">
+      <div class="section-header" onclick="toggleSection('mobile')">
+        <h2>📱 Channels</h2>
+      </div>
+      <div id="mobile">
+        <div class="account"><strong>Bkash Merchant</strong><br>Number: 01788856628<br>Holder: Quraner Fariwala</div>
+        <div class="account"><strong>Bkash Personal</strong><br>Number: 01920082926<br>Holder: MJ Ahmad</div>
+        <div class="account"><strong>Rocket Account</strong><br>Number: 01920082926-6<br>Holder: MJ Ahmad</div>
+        <div class="account"><strong>Nagad Account</strong><br>Number: 01788856628<br>Holder: Quraner Fariwala</div>
+        <p class="note">🔒 Personal channels must be logged in <code>personal-fund-log.md</code>, reviewed by an Ethical Auditor.</p>
+      </div>
+    </section>
+
+    <section class="ledger-section">
+      <div class="section-header" onclick="toggleSection('contact')">
+        <h2>📬 Contact</h2>
+      </div>
+      <div id="contact">
+        <div class="account"><strong>Email</strong><br>quranerfariwala@gmail.com</div>
+        <div class="account"><strong>GitHub</strong><br>https://mj-ahmad.github.io/mj-ahmad/</div>
+        <div class="account"><strong>GitHub Sponsors Profile</strong><br><a href="https://github.com/sponsors/MJ-Ahmad" target="_blank">Sponsor Here</a></div>
+      </div>
+    </section>
+
+    <section class="ledger-section">
+      <div class="section-header" onclick="toggleSection('digital')">
+        <h2>💱 Digital Assets</h2>
+      </div>
+      <div id="digital">
+        <div class="account"><strong>ETH Address</strong><br>0xaD6fE115967c22D1C54Fe6010C3AacCE5E196435</div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="floating-icons">
+  <a href="mailto:quranerfariwala@gmail.com">✉️</a>
+  <a href="https://wa.me/8801788856628">💬</a>
+</div>
+
+<script>
+  function showAccounts() {
+    document.getElementById('accountPage').style.display = 'block';
+    window.scrollTo(0, document.getElementById('accountPage').offsetTop);
+  }
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+</body>
+</html>
