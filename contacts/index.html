@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contract Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!--
+    All text, links, images, dates and numbers come from data.json.
+    Binding attributes used below:
+      data-bind="path"          -> sets the element text
+      data-bind-href="path"     -> sets href   (data-prefix="mailto:" adds a prefix)
+      data-bind-src / -alt / -placeholder / -aria-label similarly
+  -->
+
+  <!-- LOCK SCREEN -->
+  <div id="lockScreen" class="min-h-screen flex items-center justify-center p-6 bg-gray-50">
+    <div id="lockCard" class="invisible w-full max-w-md bg-white rounded-xl shadow p-6">
+      <div class="text-center">
+        <img data-bind-src="site.logo" data-bind-alt="site.logoAlt" alt="" class="mx-auto h-14 w-14 rounded" />
+        <h2 data-bind="lockScreen.title" class="mt-4 text-2xl font-semibold text-blue-900"></h2>
+        <p data-bind="lockScreen.subtitle" class="mt-2 text-sm text-gray-600"></p>
+      </div>
+
+      <div class="mt-6">
+        <label for="passwordInput" data-bind="lockScreen.passwordLabel" class="sr-only"></label>
+        <input id="passwordInput" type="password" data-bind-placeholder="lockScreen.placeholder" autocomplete="current-password" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button id="unlockBtn" onclick="unlock()" data-bind="lockScreen.button" class="mt-4 w-full bg-blue-700 text-white rounded px-4 py-2 hover:bg-blue-800"></button>
+        <p id="lockMsg" class="mt-3 text-sm text-red-600" aria-live="polite"></p>
+        <p class="mt-4 text-xs text-gray-500"><span data-bind="lockScreen.contactNote"></span> <strong data-bind="lockScreen.contactEmail"></strong></p>
+      </div>
+    </div>
+
+    <!-- Shown only if data.json cannot be loaded -->
+    <div id="loadError" class="hidden w-full max-w-md bg-white rounded-xl shadow p-6 text-sm text-red-700" role="alert"></div>
+  </div>
+
+  <!-- MAIN APP (hidden until unlocked) -->
+  <div id="app" class="hidden min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-3">
+            <a href="#" class="flex items-center">
+              <img data-bind-src="site.logo" data-bind-alt="site.logoAlt" alt="" class="h-10 w-10 rounded" />
+              <span data-bind="site.brand" class="ml-3 font-semibold text-lg text-blue-900"></span>
+            </a>
+          </div>
+
+          <!-- Desktop nav (filled from data.json) -->
+          <nav id="navDesktop" class="hidden md:flex items-center gap-6 text-sm"></nav>
+
+          <div class="flex items-center gap-3">
+            <!-- Language toggle -->
+            <div class="flex items-center gap-2">
+              <button id="langEn" class="px-2 py-1 text-sm rounded border bg-white" onclick="setLang('en')">EN</button>
+              <button id="langBn" class="px-2 py-1 text-sm rounded border bg-white" onclick="setLang('bn')">বাংলা</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+              <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMenu()">
+                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu (filled from data.json) -->
+      <div id="mobileMenu" class="md:hidden hidden border-t">
+        <div id="navMobile" class="px-4 py-3 space-y-2"></div>
+      </div>
+    </header>
+
+    <!-- Page body -->
+    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+
+      <!-- Investor info with photo -->
+      <section class="bg-white rounded-lg shadow p-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+        <div class="flex items-center gap-4 md:col-span-1">
+          <img data-bind-src="investor.photo" data-bind-alt="investor.photoAlt" alt="" class="h-24 w-24 rounded-full object-cover border" />
+        </div>
+
+        <div class="md:col-span-2">
+          <h2 data-bind="investor.title" class="text-lg font-semibold text-blue-900"></h2>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-800">
+            <div><strong data-bind="investor.labels.fullName"></strong> : <span data-bind="investor.fullName"></span></div>
+            <div><strong data-bind="investor.labels.role"></strong> : <span data-bind="investor.role"></span></div>
+            <div class="sm:col-span-2"><strong data-bind="investor.labels.address"></strong> : <span data-bind="investor.address"></span></div>
+            <div><strong data-bind="investor.labels.email"></strong> : <a data-bind="investor.email" data-bind-href="investor.email" data-prefix="mailto:" class="text-blue-700"></a></div>
+            <div><strong data-bind="investor.labels.phone"></strong> : <a data-bind="investor.phone.display" data-bind-href="investor.phone.tel" data-prefix="tel:" class="text-blue-700"></a></div>
+            <div class="sm:col-span-2"><strong data-bind="investor.labels.agreement"></strong> : <span data-bind="investor.agreementText"></span></div>
+            <div><strong data-bind="investor.labels.payment"></strong> : <span data-bind="investor.paymentText"></span></div>
+            <div><strong data-bind="investor.labels.earliestDue"></strong> : <span id="earliestText"></span></div>
+            <div><strong data-bind="investor.labels.maximumDue"></strong> : <span id="maximumText"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Time row: Bangladesh Time | After Maximum due elapsed -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 data-bind="clock.title" class="text-sm text-gray-600"></h3>
+            <p id="bdClock" class="mt-1 text-lg font-medium mono">--</p>
+          </div>
+
+          <div class="text-left md:text-right">
+            <h3 data-bind="clock.afterMaxTitle" class="text-sm text-gray-600"></h3>
+            <p id="afterMax" class="mt-1 text-lg font-medium text-red-700 mono">--</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estimated target countdown -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 data-bind="target.title" class="text-lg font-semibold text-blue-900"></h3>
+        <p class="mt-2 text-sm text-gray-700"><span data-bind="target.targetLabel"></span> <strong id="targetText"></strong></p>
+        <p data-bind="target.countdownLabel" class="mt-3 text-sm text-gray-600"></p>
+        <p id="targetCountdown" class="mt-1 text-xl font-medium mono">--</p>
+      </section>
+
+      <!-- Compensation calculator + note -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 data-bind="compensation.title" class="text-lg font-semibold text-blue-900"></h3>
+
+        <p data-bind="compensation.note" class="mt-2 text-sm text-gray-700"></p>
+
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label for="principal" data-bind="compensation.labels.principal" class="block text-sm text-gray-600"></label>
+            <input id="principal" type="number" class="mt-1 w-full border rounded px-2 py-1" />
+          </div>
+          <div>
+            <label for="rate" data-bind="compensation.labels.rate" class="block text-sm text-gray-600"></label>
+            <input id="rate" type="number" class="mt-1 w-full border rounded px-2 py-1" />
+          </div>
+          <div>
+            <label data-bind="compensation.labels.elapsed" class="block text-sm text-gray-600"></label>
+            <p id="elapsedSinceMax" class="mt-1 mono text-gray-800">--</p>
+          </div>
+        </div>
+
+        <div class="mt-4 text-sm text-gray-800 space-y-1">
+          <div><strong data-bind="compensation.labels.principalDisplay"></strong> <span id="displayPrincipal"></span></div>
+          <div><strong data-bind="compensation.labels.penaltyDisplay"></strong> <span id="displayComp"></span></div>
+          <div class="text-lg font-semibold"><strong data-bind="compensation.labels.owedDisplay"></strong> <span id="displayOwed"></span></div>
+        </div>
+
+        <p data-bind="compensation.legalNote" class="mt-4 text-xs text-gray-600"></p>
+      </section>
+
+      <!-- Agreement -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <h3 data-bind="agreement.title" class="text-lg font-semibold text-blue-900"></h3>
+
+        <div class="mt-3 text-sm text-gray-800 space-y-2">
+          <p><strong data-bind="agreement.numberLabel"></strong> <span data-bind="agreement.number"></span></p>
+          <p><strong data-bind="agreement.dateLabel"></strong> <span data-bind="agreement.date"></span></p>
+
+          <p data-bind="agreement.summary" class="text-sm text-gray-800"></p>
+
+          <p>📜 <a data-bind="agreement.contractLink.text" data-bind-href="agreement.contractLink.href" class="text-blue-700 underline"></a></p>
+
+          <blockquote data-bind="agreement.mjMessage" data-bind-aria-label="agreement.mjMessageAria" class="italic text-gray-700 mt-2"></blockquote>
+
+          <p data-bind="agreement.legalNote" class="mt-3 text-sm text-gray-600"></p>
+        </div>
+      </section>
+
+      <!-- Footer content -->
+      <section class="bg-white rounded-lg shadow p-4">
+        <footer class="bg-white border-t">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div data-bind="footer.copyright" class="text-sm text-gray-600"></div>
+            <div data-bind="footer.tagline" class="text-sm text-gray-600"></div>
+          </div>
+        </footer>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    // ------------------------------------------------------------------
+    // Data loading — everything shown on the page comes from this file
+    // ------------------------------------------------------------------
+    const DATA_URL = 'data.json';
+
+    let DATA = null;          // parsed data.json
+    let LANG = 'en';          // current language
+    let TZ = 'Asia/Dhaka';
+    let maxDue, earliestDue, targetDate;
+    let timerStarted = false;
+
+    // Look up "a.b.c" inside DATA
+    const get = (path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), DATA);
+
+    // Plain value -> as is; {en, bn} object -> current language (falls back to en)
+    const tr = (v) => (v !== null && typeof v === 'object') ? (v[LANG] ?? v.en ?? '') : (v ?? '');
+    const T = (path) => tr(get(path));
+
+    // "{name}" placeholders in format strings
+    const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (_, k) => (k in vars ? vars[k] : ''));
+
+    async function loadData() {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      DATA = await res.json();
+    }
+
+    // ------------------------------------------------------------------
+    // Rendering
+    // ------------------------------------------------------------------
+    const BIND_ATTRS = ['href', 'src', 'alt', 'placeholder', 'aria-label'];
+
+    function applyBindings() {
+      document.querySelectorAll('[data-bind]').forEach(el => {
+        el.textContent = T(el.getAttribute('data-bind'));
+      });
+      BIND_ATTRS.forEach(attr => {
+        document.querySelectorAll('[data-bind-' + attr + ']').forEach(el => {
+          const prefix = el.getAttribute('data-prefix') || '';
+          el.setAttribute(attr, prefix + T(el.getAttribute('data-bind-' + attr)));
+        });
+      });
+      document.title = T('site.title');
+    }
+
+    function renderNav() {
+      const desktop = document.getElementById('navDesktop');
+      const mobile = document.getElementById('navMobile');
+      desktop.textContent = '';
+      mobile.textContent = '';
+      (DATA.nav || []).forEach(item => {
+        const d = document.createElement('a');
+        d.href = item.href;
+        d.textContent = tr(item.label);
+        d.className = 'text-gray-700 hover:text-blue-700';
+        desktop.appendChild(d);
+
+        const m = document.createElement('a');
+        m.href = item.href;
+        m.textContent = tr(item.label);
+        m.className = 'block text-gray-700 hover:text-blue-700';
+        mobile.appendChild(m);
+      });
+    }
+
+    // ------------------------------------------------------------------
+    // Date formatting (Asia/Dhaka, en-US)
+    // ------------------------------------------------------------------
+    function partsOf(d, opts) {
+      const out = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: TZ, ...opts })
+        .formatToParts(d).forEach(p => { out[p.type] = p.value; });
+      return out;
+    }
+
+    // e.g. "23 Oct 2025 21:00:00"
+    function fmt24(d) {
+      try {
+        const p = partsOf(d, { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
+        return `${p.day} ${p.month} ${p.year} ${p.hour}:${p.minute}:${p.second}`;
+      } catch (e) { return String(d); }
+    }
+
+    // e.g. "11 Apr 2026 11:00 AM (Asia/Dhaka)"
+    function fmtTarget(d) {
+      try {
+        const p = partsOf(d, { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+        return `${p.day} ${p.month} ${p.year} ${p.hour}:${p.minute} ${p.dayPeriod} (${TZ})`;
+      } catch (e) { return String(d); }
+    }
+
+    function formatClock(d) {
+      try {
+        return d.toLocaleString(DATA.site.clockLocale || 'en-US', { timeZone: TZ, month: 'short', day: '2-digit', year: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+      } catch (e) { return d.toString(); }
+    }
+
+    // months (30 d) / weeks / days / h / m / s from a millisecond span
+    function formatElapsed(ms) {
+      const seconds = Math.floor(ms / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const totalDays = Math.floor(hours / 24);
+
+      const months = Math.floor(totalDays / 30);
+      const rest = totalDays % 30;
+      const weeks = Math.floor(rest / 7);
+      const days = rest % 7;
+
+      return fill(DATA.formats.elapsed, {
+        months, weeks, days,
+        hours: hours % 24, minutes: minutes % 60, seconds: seconds % 60
+      });
+    }
+
+    // ------------------------------------------------------------------
+    // Live clock, countdown and compensation
+    // ------------------------------------------------------------------
+    const setText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+
+    function updateTimes() {
+      if (!DATA) return;
+      const now = new Date();
+
+      setText('bdClock', formatClock(now));
+
+      const elapsed = formatElapsed(now > maxDue ? now - maxDue : 0);
+      setText('afterMax', elapsed);
+      setText('elapsedSinceMax', elapsed);
+
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        setText('targetCountdown', T('target.reached'));
+      } else {
+        const pad = (n) => String(n).padStart(2, '0');
+        setText('targetCountdown', fill(DATA.formats.countdown, {
+          days: Math.floor(diff / 86400000),
+          hh: pad(Math.floor(diff / 3600000) % 24),
+          mm: pad(Math.floor(diff / 60000) % 60),
+          ss: pad(Math.floor(diff / 1000) % 60)
+        }));
+      }
+
+      // Compensation
+      const principal = parseFloat(document.getElementById('principal').value) || 0;
+      const rate = parseFloat(document.getElementById('rate').value) || 0;
+      const cur = DATA.compensation.currency || 'Tk.';
+
+      let compensation = 0;
+      if (now > maxDue) {
+        compensation = Math.floor((now - maxDue) / 86400000) * rate;
+      }
+
+      setText('displayPrincipal', `${cur} ${principal.toFixed(2)}`);
+      setText('displayComp', `${cur} ${compensation.toFixed(2)}`);
+      setText('displayOwed', `${cur} ${(principal + compensation).toFixed(2)}`);
+    }
+
+    // ------------------------------------------------------------------
+    // Language
+    // ------------------------------------------------------------------
+    function setLang(lang) {
+      if (!DATA) return;
+      LANG = (lang === 'bn') ? 'bn' : 'en';
+      document.documentElement.lang = LANG;
+
+      applyBindings();
+      renderNav();
+
+      document.getElementById('langEn').classList.toggle('bg-blue-100', LANG === 'en');
+      document.getElementById('langBn').classList.toggle('bg-blue-100', LANG === 'bn');
+
+      updateTimes();
+    }
+
+    // ------------------------------------------------------------------
+    // Password unlock (client-side only) — compares SHA-256 with data.json
+    // ------------------------------------------------------------------
+    async function sha256Hex(text) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function unlock() {
+      if (!DATA) return;
+      const msg = document.getElementById('lockMsg');
+      const input = document.getElementById('passwordInput').value;
+
+      let ok = false;
+      try {
+        const hash = await sha256Hex(input);
+        ok = hash === String(DATA.security.passwordSha256 || '').toLowerCase();
+      } catch (e) {
+        msg.textContent = 'Password check needs HTTPS or localhost.';
+        return;
+      }
+
+      if (ok) {
+        document.getElementById('lockScreen').classList.add('hidden');
+        document.getElementById('app').classList.remove('hidden');
+        msg.textContent = '';
+      } else {
+        msg.textContent = T('lockScreen.wrongPassword');
+      }
+    }
+
+    // ------------------------------------------------------------------
+    // Mobile menu toggle
+    // ------------------------------------------------------------------
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('menuBtn');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    }
+
+    // ------------------------------------------------------------------
+    // Start
+    // ------------------------------------------------------------------
+    document.getElementById('passwordInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') unlock();
+    });
+
+    (async function init() {
+      try {
+        await loadData();
+      } catch (err) {
+        document.getElementById('lockCard').classList.add('hidden');
+        const box = document.getElementById('loadError');
+        box.textContent = 'Could not load ' + DATA_URL + ' (' + err.message + '). ' +
+          'Make sure it is in the same folder as this page and that the page is opened through a web server (not by double-clicking the file).';
+        box.classList.remove('hidden');
+        return;
+      }
+
+      TZ = DATA.site.timezone || 'Asia/Dhaka';
+      maxDue = new Date(DATA.dates.maximumDue);
+      earliestDue = new Date(DATA.dates.earliestDue);
+      targetDate = new Date(DATA.dates.target);
+
+      // One-time values (not re-applied on language change so edits to inputs are kept)
+      document.getElementById('principal').value = DATA.compensation.principal;
+      document.getElementById('rate').value = DATA.compensation.dailyPenalty;
+      setText('earliestText', fmt24(earliestDue));
+      setText('maximumText', fmt24(maxDue));
+      setText('targetText', fmtTarget(targetDate));
+
+      setLang(DATA.site.defaultLang || 'en');
+      document.getElementById('lockCard').classList.remove('invisible');
+
+      if (!timerStarted) {
+        timerStarted = true;
+        setInterval(updateTimes, 1000);
+      }
+    })();
+  </script>
+</body>
+</html>

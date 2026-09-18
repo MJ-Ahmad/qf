@@ -1,0 +1,138 @@
+{
+  "_readme": "Edit values only and keep the structure. A plain string is shown in both languages; an object like {\"en\": \"...\", \"bn\": \"...\"} is shown per language. Dates must be ISO-8601 with +06:00.",
+
+  "site": {
+    "title": "Contract Dashboard - Qari Emdadullah",
+    "brand": "Contracts Portal",
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": "Logo",
+    "defaultLang": "en",
+    "timezone": "Asia/Dhaka",
+    "clockLocale": "en-US"
+  },
+
+  "security": {
+    "passwordSha256": "6d0dc31f4857d5215922fba6b35ec7e9151694be4e77ad79d9cce42fd101af2b"
+  },
+
+  "lockScreen": {
+    "title": "🔐 Password required",
+    "subtitle": "This page is protected. Enter the correct password to view content.",
+    "passwordLabel": "Password",
+    "placeholder": "Enter password",
+    "button": "Unlock",
+    "wrongPassword": "❌ Incorrect password — try again.",
+    "contactNote": "If you need to change the password or have any questions, contact:",
+    "contactEmail": "quranerfariwala@gmail.com"
+  },
+
+  "nav": [
+    { "href": "/qf", "label": { "en": "Home", "bn": "হোম" } },
+    { "href": "contract.html", "label": { "en": "Contract", "bn": "চুক্তি" } },
+    { "href": "#", "label": { "en": "About", "bn": "সম্পর্কে" } },
+    { "href": "#", "label": { "en": "Contact", "bn": "যোগাযোগ" } }
+  ],
+
+  "dates": {
+    "earliestDue": "2025-10-23T21:00:00+06:00",
+    "maximumDue": "2025-11-07T21:00:00+06:00",
+    "target": "2026-04-11T11:00:00+06:00"
+  },
+
+  "formats": {
+    "elapsed": "{months} months {weeks} weeks {days} d {hours}h {minutes}m {seconds}s",
+    "countdown": "{days} days {hh}:{mm}:{ss}"
+  },
+
+  "investor": {
+    "photo": "https://mj-ahmad.github.io/qf/docs/contact/creditor/Emdadullah/assets/emdadullahlogo.png",
+    "photoAlt": "Investor Photo",
+    "title": { "en": "Investor Information", "bn": "বিনিয়োগকারীর তথ্য" },
+    "labels": {
+      "fullName": { "en": "Full name", "bn": "পূর্ণ নাম" },
+      "role": { "en": "Role", "bn": "ভূমিকা" },
+      "address": { "en": "Address", "bn": "ঠিকানা" },
+      "email": { "en": "Email", "bn": "ইমেইল" },
+      "phone": { "en": "Phone", "bn": "ফোন" },
+      "agreement": { "en": "Agreement", "bn": "চুক্তি" },
+      "payment": { "en": "Payment", "bn": "পেমেন্ট" },
+      "earliestDue": "Earliest delivery due",
+      "maximumDue": "Maximum delivery due"
+    },
+    "fullName": "Qari Emdadullah",
+    "role": "Investor",
+    "address": "11/11/b KM Das Lane, Wari, Sutrapur, Dhaka-1203",
+    "email": "hizbullahsalem@gmail.com",
+    "phone": { "display": "+880-1820-096806", "tel": "+8801820096806" },
+    "agreementText": "Short-term investment: 2 months from Sep 08, 2025",
+    "paymentText": "Tk. 13,000 (Cash) on 8 Sept 2025 21:00:00"
+  },
+
+  "clock": {
+    "title": "⏰ Bangladesh Time (en-US)",
+    "afterMaxTitle": "After Maximum due"
+  },
+
+  "target": {
+    "title": "🎯 Estimated target to complete transaction",
+    "targetLabel": "Target:",
+    "countdownLabel": "Countdown:",
+    "reached": { "en": "Target time reached", "bn": "লক্ষ্য সময় পৌঁছেছে" }
+  },
+
+  "compensation": {
+    "title": { "en": "Compensation (Determined)", "bn": "ক্ষতিপূরণ (নির্ধারিত)" },
+    "note": {
+      "en": "MJ Ahmad has unilaterally determined the penalty for this agreement. Live status and calculations are shown below (penalty shown in currency).",
+      "bn": "এই চুক্তিতে MJ Ahmad এককভাবে জরিমানা নির্ধারণ করেছেন। নিচে লাইভ স্ট্যাটাস ও হিসাব প্রদর্শিত হবে (জরিমানা পয়সা পর্যন্ত দেখানো হবে)।"
+    },
+    "legalNote": "This is a unilateral determination by MJ Ahmad. If the investor is not satisfied, they retain full rights to pursue legal remedies. Any objections to MJ Ahmad's determination are expressly disclaimed.",
+    "currency": "Tk.",
+    "principal": 13000,
+    "dailyPenalty": 100,
+    "labels": {
+      "principal": { "en": "Principal (Tk)", "bn": "মূলধন (Tk)" },
+      "rate": { "en": "Daily Penalty (Tk/day)", "bn": "দৈনিক জরিমানা (Tk/দিন)" },
+      "elapsed": { "en": "Elapsed after maximum due", "bn": "সর্বোচ্চ সময় অতিক্রমের পর সময়" },
+      "principalDisplay": { "en": "Principal:", "bn": "মূলধন:" },
+      "penaltyDisplay": { "en": "Calculated penalty:", "bn": "হিসাবকৃত জরিমানা:" },
+      "owedDisplay": { "en": "Total owed (Principal + penalty):", "bn": "মোট বকেয়া (মূলধন + জরিমানা):" }
+    }
+  },
+
+  "agreement": {
+    "title": { "en": "📜 Agreement", "bn": "📜 চুক্তি" },
+    "numberLabel": { "en": "Agreement No:", "bn": "চুক্তি নম্বর:" },
+    "number": "BGS-QF-2025-09-08",
+    "dateLabel": { "en": "Date:", "bn": "তারিখ:" },
+    "date": { "en": "08 September 2025", "bn": "08 সেপ্টেম্বর 2025" },
+    "summary": {
+      "en": "This page summarizes the key terms, responsibilities and remedies. For the full stamped agreement, use the link below:",
+      "bn": "এই পৃষ্ঠা মূল শর্তাবলী, দায়িত্ব এবং প্রতিকার সংক্ষেপ করে। পূর্ণ স্ট্যাম্পড চুক্তি দেখতে নিচের লিঙ্কটি ব্যবহার করুন:"
+    },
+    "contractLink": {
+      "href": "contract.html",
+      "text": { "en": "View Contract Agreement", "bn": "চুক্তিপত্র দেখুন" }
+    },
+    "mjMessage": {
+      "en": "“MJ Ahmad remains deeply grateful yet ashamed, and commits with sincerity that every moment of delay will be accounted for until the investor’s rightful benefit is fulfilled.”",
+      "bn": "“এমজে আহমাদ গভীর কৃতজ্ঞতা ও লজ্জা অনুভব করেন এবং আন্তরিকতার সঙ্গে প্রতিশ্রুতি দেন যে প্রতিটি বিলম্বের মুহূর্ত বিনিয়োগকারীর ন্যায্য সুবিধা পূরণ না হওয়া পর্যন্ত হিসাব করা হবে।”"
+    },
+    "mjMessageAria": {
+      "en": "MJ Ahmad message in English",
+      "bn": "বাংলা ভাষায় এমজে আহমাদের বার্তা"
+    },
+    "legalNote": {
+      "en": "Legal & professional note: This presentation is for informational and record-keeping purposes and is not a substitute for legal advice. For enforceability, interpretation, or court‑grade documentation consult a qualified attorney in the relevant jurisdiction. Parties retain all rights to pursue remedies under applicable national and international law.",
+      "bn": "আইনি ও পেশাদারী নোট: এই উপস্থাপনাটি তথ্যগত ও রেকর্ড-রক্ষার উদ্দেশ্যে প্রস্তুত করা হয়েছে এবং এটি আইনি পরামর্শের বিকল্প নয়। প্রযোজ্য কর্তৃপক্ষের আদালত-গ্রেড ডকুমেন্টেশন বা ব্যাখ্যার জন্য যোগ্য আইনজীবীর পরামর্শ নিন। পক্ষগুলি প্রযোজ্য জাতীয় ও আন্তর্জাতিক আইনের অধীনে প্রতিকার অনুসরণ করার সব অধিকার সংরক্ষণ করে।"
+    }
+  },
+
+  "footer": {
+    "copyright": {
+      "en": "© 2026 Quraner Fariwala. All rights reserved.",
+      "bn": "© 2026 Quraner Fariwala. সর্বস্বত্ব সংরক্ষিত।"
+    },
+    "tagline": "Empowering communities through Research, Printing & Distribution of Holy Quran — by MJ-Ahmad"
+  }
+}
