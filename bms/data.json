@@ -1,0 +1,55 @@
+{
+  "system": {
+    "title": {
+      "en": "Bangladesh Management System",
+      "bn": "বাংলাদেশ ম্যানেজমেন্ট সিস্টেম",
+      "ar": "نظام إدارة بنغلاديش"
+    },
+    "roles": [
+      {
+        "role": {
+          "en": "National Head",
+          "bn": "কেন্দ্রীয় প্রধান",
+          "ar": "الرئيس الوطني"
+        },
+        "name": "MJ Ahmad",
+        "division": "Central",
+        "password": "Central12345",
+        "children": [
+          {
+            "role": {
+              "en": "Divisional Head",
+              "bn": "বিভাগীয় প্রধান",
+              "ar": "رئيس القسم"
+            },
+            "name": "Division Officer Dhaka",
+            "division": "Dhaka Division",
+            "password": "Dhaka12345",
+            "children": [
+              {
+                "role": {
+                  "en": "District Coordinator",
+                  "bn": "জেলা প্রধান",
+                  "ar": "منسق المقاطعة"
+                },
+                "name": "District Officer Dhaka",
+                "district": "Dhaka District",
+                "password": "DhakaDistrict12345"
+              },
+              {
+                "role": {
+                  "en": "District Coordinator",
+                  "bn": "জেলা প্রধান",
+                  "ar": "منسق المقاطعة"
+                },
+                "name": "District Officer Gazipur",
+                "district": "Gazipur District",
+                "password": "Gazipur12345"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

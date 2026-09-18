@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bangladesh Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="system-title"></h1>
+  </header>
+
+  <main>
+    <div id="login-section">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter Name">
+      <input type="password" id="password" placeholder="Enter Password">
+      <button onclick="login()">Login</button>
+      <p id="login-message"></p>
+    </div>
+
+    <div id="dashboard" style="display:none;">
+      <h2>Dashboard</h2>
+      <div id="role-info"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
