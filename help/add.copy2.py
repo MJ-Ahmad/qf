@@ -8,7 +8,6 @@ add.py — "কোরআনের ফেরিওয়ালা" CodeCraft এ 
     python add.py serve      লোকাল সার্ভার চালু করুন (পোর্ট 8000)
     python add.py serve 9000 অন্য পোর্টে চালু করুন
     python add.py list       মেনুর গাছ ও এন্ট্রির সংখ্যা দেখুন
-    python add.py setup      প্রাথমিক মেনু + লোগো বিদ্যমান data.json এ যোগ করুন
     python add.py delete     একটি এন্ট্রি মুছুন
 """
 
@@ -27,15 +26,7 @@ DATA_FILE = os.path.join(BASE_DIR, "data.json")
 
 SITE_TITLE = "কোরআনের ফেরিওয়ালা"
 SITE_TAGLINE = "CodeCraft — স্ক্রিপ্ট, ফাইল ও নির্দেশনার সংগ্রহ"
-ROOT_LABEL = "mj-ahmad"
-LOGO_URL = "https://MJ-Ahmad.github.io/qf/assets/logo.png"
-
-# প্রাথমিক মেনুর গাছ (সাব মেনু থাকলে {"name": …, "children": […]})
-PRESET_MENUS = [
-    "Systems",
-    {"name": "Projects", "children": ["Quraner Fariwala", "MJSovereign"]},
-    "README", "Git", "Python", "Node", "JSON", ".NET", "CLI", "Command", "Scripts",
-]
+DEFAULT_MENUS = ["স্ক্রিপ্ট", "ফাইল", "নির্দেশনা"]
 SEP = " › "
 
 # ফাইলের এক্সটেনশন থেকে ভাষা/লেবেল চেনার তালিকা
@@ -79,16 +70,6 @@ def children_of(tree, path):
     return lst
 
 
-def merge_nodes(dst, src):
-    """src এর মেনু dst এ যোগ করে; যা আগে থেকে আছে তা অক্ষত থাকে।"""
-    for n in src:
-        cur = find_node(dst, n["name"])
-        if cur is None:
-            dst.append({"name": n["name"], "children": []})
-            cur = dst[-1]
-        merge_nodes(cur["children"], n["children"])
-
-
 def count_items(items, path):
     return sum(1 for it in items if it["path"][:len(path)] == path)
 
@@ -103,11 +84,9 @@ def normalize(data):
     if "tagline" not in site:
         site["tagline"] = site.pop("subtitle", SITE_TAGLINE)
     site.pop("subtitle", None)
-    if site.get("logo") in (None, "", "logo.png"):
-        site["logo"] = LOGO_URL
-    site.setdefault("root_label", ROOT_LABEL)
+    site.setdefault("logo", "logo.png")
 
-    data["menus"] = norm_nodes(data.get("menus") or PRESET_MENUS)
+    data["menus"] = norm_nodes(data.get("menus") or DEFAULT_MENUS)
     data.setdefault("items", [])
     for it in data["items"]:
         if not isinstance(it.get("path"), list) or not it["path"]:
@@ -168,11 +147,11 @@ def ask_multiline(prompt):
 def choose_path(data):
     """মেনু → সাব মেনু → সাব-সাব মেনু… ধাপে ধাপে নেমে গিয়ে পথ বেছে নেয়।"""
     path = []
-    print(f"\nকোন মেনুর আওতায় যোগ করবেন?   ({data['site'].get('root_label', ROOT_LABEL)}/)")
+    print("\nকোন মেনুর আওতায় যোগ করবেন?")
     print("(মেনু বেছে ভেতরে ঢুকুন; দরকার হলে নতুন মেনু/সাব মেনু বানান; শেষে 0 দিয়ে সংরক্ষণ করুন)")
     while True:
         kids = children_of(data["menus"], path)
-        print("\n  📂 " + (SEP.join(path) if path else data["site"].get("root_label", ROOT_LABEL) + "/"))
+        print("\n  📂 " + (SEP.join(path) if path else "মূল মেনু"))
         for i, n in enumerate(kids, 1):
             total = count_items(data["items"], path + [n["name"]])
             sub = f", {len(n['children'])}টি সাব মেনু" if n["children"] else ""
@@ -312,18 +291,6 @@ def cmd_add():
     print("\nদেখতে চালান:  python add.py serve")
 
 
-def cmd_setup():
-    """প্রাথমিক মেনু, লোগো ও রুট-নাম বিদ্যমান data.json এ যোগ করে (কিছু মোছে না)।"""
-    data = load_data()
-    merge_nodes(data["menus"], norm_nodes(PRESET_MENUS))
-    data["site"]["logo"] = LOGO_URL
-    data["site"]["root_label"] = ROOT_LABEL
-    save_data(data)
-    print("✔ প্রাথমিক মেনু, লোগো ও রুট-নাম সেট হয়েছে। আগের এন্ট্রি অক্ষত আছে।")
-    print()
-    cmd_list()
-
-
 def print_tree(nodes, items, path, depth):
     for n in nodes:
         p = path + [n["name"]]
@@ -333,7 +300,7 @@ def print_tree(nodes, items, path, depth):
 
 def cmd_list():
     data = load_data()
-    print(f"{data['site'].get('root_label', ROOT_LABEL)}/  — সব এন্ট্রি: {len(data['items'])}টি\n")
+    print(f"সব এন্ট্রি: {len(data['items'])}টি\n")
     print_tree(data["menus"], data["items"], [], 0)
 
 
@@ -396,8 +363,6 @@ def main():
             cmd_add()
         elif cmd == "list":
             cmd_list()
-        elif cmd == "setup":
-            cmd_setup()
         elif cmd == "delete":
             cmd_delete()
         elif cmd == "serve":

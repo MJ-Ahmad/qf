@@ -303,7 +303,7 @@
     "markdown": "#4a5568", "text": "#4a5568"
   };
 
-  var state = { data: null, root: null, map: {}, path: [], expanded: {}, query: "", menuQuery: "", rootLabel: "সব" };
+  var state = { data: null, root: null, map: {}, path: [], expanded: {}, query: "", menuQuery: "" };
   var $ = function (id) { return document.getElementById(id); };
   var el = {
     logo: $("logo"), title: $("siteTitle"), tag: $("siteTag"),
@@ -396,7 +396,6 @@
     el.title.textContent = title;
     el.tag.textContent = site.tagline || site.subtitle || "CodeCraft";
     document.title = title + " — CodeCraft";
-    state.rootLabel = site.root_label || "সব";
     setLogo(site.logo);
     buildTree(state.data);
     applyHash();
@@ -443,7 +442,7 @@
     // "সব" — মূল সারি
     var top = document.createElement("ul");
     top.className = "tree";
-    top.appendChild(makeRow(state.root, state.rootLabel, true));
+    top.appendChild(makeRow(state.root, "সব", true));
     el.tree.appendChild(top);
 
     var any = false;
@@ -528,7 +527,7 @@
 
     // breadcrumb
     el.crumbs.innerHTML = "";
-    var segs = [{ name: state.rootLabel, path: [] }];
+    var segs = [{ name: "সব", path: [] }];
     state.path.forEach(function (name, i) { segs.push({ name: name, path: state.path.slice(0, i + 1) }); });
     segs.forEach(function (s, i) {
       if (i > 0) { var sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; el.crumbs.appendChild(sep); }
@@ -542,7 +541,7 @@
     });
 
     // title
-    el.pageTitle.textContent = isRoot ? state.rootLabel : node.name;
+    el.pageTitle.textContent = isRoot ? "সব এন্ট্রি" : node.name;
 
     // sub-menu tiles
     el.tilesWrap.innerHTML = "";

@@ -1,0 +1,86 @@
+{
+  "site": {
+    "title": "কোরআনের ফেরিওয়ালা",
+    "tagline": "CodeCraft — স্ক্রিপ্ট, ফাইল ও নির্দেশনার সংগ্রহ",
+    "logo": "logo.png"
+  },
+  "menus": [
+    {
+      "name": "Termux",
+      "children": [
+        { "name": "সেটআপ", "children": [] },
+        { "name": "সার্ভার", "children": [] }
+      ]
+    },
+    {
+      "name": "স্ক্রিপ্ট",
+      "children": [
+        {
+          "name": "Python",
+          "children": [
+            { "name": "ফাইল প্রসেসিং", "children": [] }
+          ]
+        },
+        { "name": "Node", "children": [] }
+      ]
+    },
+    {
+      "name": "ফাইল",
+      "children": [
+        { "name": "JSON", "children": [] }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "sample-termux-setup",
+      "path": ["Termux", "সেটআপ"],
+      "title": "Termux এ Python, Git ও Node ইনস্টল",
+      "description": "নতুন Termux-এ প্রথমবার প্রয়োজনীয় টুল বসানোর কমান্ড।\nশেষ কমান্ডটি ফোনের স্টোরেজে অ্যাক্সেস দেয়।",
+      "language": "Bash",
+      "filename": "termux-setup.sh",
+      "code": "pkg update && pkg upgrade -y\npkg install python git nodejs -y\ntermux-setup-storage",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-local-server",
+      "path": ["Termux", "সার্ভার"],
+      "title": "লোকাল সার্ভার চালু করা",
+      "description": "প্রজেক্ট ফোল্ডারে গিয়ে চালান, তারপর ব্রাউজারে http://localhost:8000 খুলুন।",
+      "language": "Bash",
+      "filename": "serve.sh",
+      "code": "cd ~/mj/projects/qf\npython -m http.server 8000",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-python-count",
+      "path": ["স্ক্রিপ্ট", "Python", "ফাইল প্রসেসিং"],
+      "title": "টেক্সট ফাইলের লাইন গোনা",
+      "description": "একটি টেক্সট ফাইলে কতগুলো লাইন আছে তা গুনে দেখায়।",
+      "language": "Python",
+      "filename": "count_lines.py",
+      "code": "import sys\n\npath = sys.argv[1]\nwith open(path, encoding=\"utf-8\") as f:\n    print(sum(1 for _ in f), \"লাইন\")",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-node-server",
+      "path": ["স্ক্রিপ্ট", "Node"],
+      "title": "Node.js দিয়ে ছোট সার্ভার",
+      "description": "কোনো প্যাকেজ ছাড়াই localhost:3000 এ একটি সার্ভার চালু করে।",
+      "language": "Node",
+      "filename": "server.js",
+      "code": "const http = require('http');\n\nhttp.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });\n  res.end('সার্ভার চলছে!');\n}).listen(3000, () => {\n  console.log('http://localhost:3000');\n});",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-json-config",
+      "path": ["ফাইল", "JSON"],
+      "title": "প্রজেক্টের কনফিগ ফাইল",
+      "description": "যেকোনো প্রজেক্টে ব্যবহারের জন্য একটি সাধারণ config.json কাঠামো।",
+      "language": "JSON",
+      "filename": "config.json",
+      "code": "{\n  \"name\": \"my-project\",\n  \"version\": \"1.0.0\",\n  \"debug\": false\n}",
+      "created": "2026-09-21"
+    }
+  ]
+}
