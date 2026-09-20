@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeCraft</title>
+<style>
+  :root {
+    --bg: #eef1f5;
+    --surface: #ffffff;
+    --ink: #1b2433;
+    --muted: #5d6b82;
+    --line: #d9dfe8;
+    --accent: #3b4cca;
+    --accent-ink: #ffffff;
+    --code-bg: #14202e;
+    --code-bar: #1d2d40;
+    --code-ink: #dbe6f3;
+    --code-muted: #8fa3bd;
+    --ok: #2bb673;
+    --font-ui: "Noto Sans Bengali", "Hind Siliguri", "Kalpurush", "Nirmala UI", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-code: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d141d;
+      --surface: #142030;
+      --ink: #e6edf6;
+      --muted: #93a4bb;
+      --line: #25354a;
+      --accent: #8b98ff;
+      --accent-ink: #0d141d;
+      --code-bg: #0a111a;
+      --code-bar: #17263a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d141d;
+    --surface: #142030;
+    --ink: #e6edf6;
+    --muted: #93a4bb;
+    --line: #25354a;
+    --accent: #8b98ff;
+    --accent-ink: #0d141d;
+    --code-bg: #0a111a;
+    --code-bar: #17263a;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .side { position: sticky; top: 24px; align-self: start; }
+  .brand { margin: 0 0 4px; font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; }
+  .tagline { margin: 0 0 20px; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+  .menu { display: flex; flex-direction: column; gap: 4px; }
+  .menu button {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; text-align: left;
+    padding: 9px 12px;
+    border: 1px solid transparent; border-radius: 8px;
+    background: transparent; color: var(--ink);
+    font: inherit; font-size: 0.95rem; cursor: pointer;
+  }
+  .menu button:hover { background: var(--surface); }
+  .menu button[aria-current="true"] {
+    background: var(--accent); color: var(--accent-ink); font-weight: 600;
+  }
+  .menu .count { font-size: 0.8rem; opacity: 0.75; font-variant-numeric: tabular-nums; }
+
+  .theme-btn {
+    margin-top: 20px;
+    padding: 7px 12px;
+    border: 1px solid var(--line); border-radius: 8px;
+    background: transparent; color: var(--muted);
+    font: inherit; font-size: 0.85rem; cursor: pointer;
+  }
+  .theme-btn:hover { color: var(--ink); border-color: var(--muted); }
+
+  /* ---------- Main ---------- */
+  .search {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--line); border-radius: 10px;
+    background: var(--surface); color: var(--ink);
+    font: inherit; font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .search::placeholder { color: var(--muted); }
+
+  .list { display: flex; flex-direction: column; gap: 24px; }
+
+  .entry {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 0;
+  }
+  .entry-menu { font-size: 0.82rem; color: var(--accent); font-weight: 600; margin: 0 0 2px; }
+  .entry h2 { margin: 0 0 6px; font-size: 1.25rem; line-height: 1.4; }
+  .entry .desc { margin: 0 0 16px; color: var(--muted); white-space: pre-wrap; max-width: 70ch; }
+
+  /* ---------- Code box: label left, copy right ---------- */
+  .codebox { border-radius: 8px; overflow: hidden; background: var(--code-bg); }
+  .codebar {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 8px 8px 8px 14px;
+    background: var(--code-bar);
+  }
+  .label { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .lang {
+    flex: none;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--tag, #3b4cca);
+    color: #fff;
+    font-family: var(--font-code); font-size: 0.78rem; font-weight: 600;
+  }
+  .fname {
+    color: var(--code-muted);
+    font-family: var(--font-code); font-size: 0.82rem;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .copy {
+    flex: none;
+    min-width: 76px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 6px;
+    background: transparent; color: var(--code-ink);
+    font: inherit; font-size: 0.85rem; cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .copy:hover { background: rgba(255,255,255,0.08); }
+  .copy.done { border-color: var(--ok); color: var(--ok); }
+
+  pre {
+    margin: 0;
+    padding: 16px 18px;
+    overflow: auto;
+    color: var(--code-ink);
+    font-family: var(--font-code); font-size: 0.88rem; line-height: 1.65;
+    tab-size: 2;
+  }
+  pre code { font: inherit; white-space: pre; }
+  .collapsed pre { max-height: 300px; overflow: hidden; }
+  .more {
+    display: block; width: 100%;
+    padding: 8px;
+    border: 0; border-top: 1px solid rgba(255,255,255,0.08);
+    background: var(--code-bar); color: var(--code-muted);
+    font: inherit; font-size: 0.85rem; cursor: pointer;
+  }
+  .more:hover { color: var(--code-ink); }
+
+  .notice {
+    padding: 20px;
+    border: 1px dashed var(--line); border-radius: 12px;
+    color: var(--muted);
+  }
+  .notice code { font-family: var(--font-code); background: var(--surface); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
+  .notice strong { color: var(--ink); }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 760px) {
+    .shell { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 16px; }
+    .side { position: static; }
+    .tagline { margin-bottom: 12px; }
+    .menu { flex-direction: row; overflow-x: auto; padding-bottom: 6px; gap: 8px; }
+    .menu button {
+      width: auto; flex: none; gap: 8px;
+      border-color: var(--line); background: var(--surface);
+    }
+    .theme-btn { display: none; }
+    .entry { padding: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .copy { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <h1 class="brand" id="brand">CodeCraft</h1>
+    <p class="tagline" id="tagline"></p>
+    <nav class="menu" id="menu" aria-label="মেনু"></nav>
+    <button class="theme-btn" id="themeBtn" type="button">থিম বদলান</button>
+  </aside>
+
+  <main>
+    <input class="search" id="search" type="search" placeholder="শিরোনাম, বিবরণ বা কোড খুঁজুন…" aria-label="খুঁজুন">
+    <div class="list" id="list"></div>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DATA_URL = "data.json";
+  var LANG_COLORS = {
+    "html": "#e34c26", "css": "#2965f1", "json": "#8a6d00", "python": "#3776ab",
+    "node": "#3c873a", "javascript": "#b58900", "typescript": "#3178c6",
+    "bash": "#2f855a", "shell": "#2f855a", "php": "#777bb4", "java": "#c2571a",
+    "c": "#5a6a7d", "c++": "#00599c", "c#": "#68217a", "go": "#00a7c4",
+    "rust": "#b7410e", "sql": "#c05621", "yaml": "#a3293d", "xml": "#7a5c99",
+    "markdown": "#4a5568", "text": "#4a5568"
+  };
+  var COLLAPSE_LINES = 18;
+
+  var state = { data: null, menu: "সব", query: "" };
+  var el = {
+    brand: document.getElementById("brand"),
+    tagline: document.getElementById("tagline"),
+    menu: document.getElementById("menu"),
+    list: document.getElementById("list"),
+    search: document.getElementById("search"),
+    theme: document.getElementById("themeBtn")
+  };
+
+  /* ---------- Load ---------- */
+  fetch(DATA_URL, { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      state.data = data;
+      init();
+    })
+    .catch(showLoadError);
+
+  function showLoadError(err) {
+    el.list.innerHTML = "";
+    var box = document.createElement("div");
+    box.className = "notice";
+    var onFile = location.protocol === "file:";
+    box.innerHTML = onFile
+      ? "<strong>data.json লোড করা যায়নি।</strong><br>ব্রাউজার সরাসরি ফাইল খুলে JSON পড়তে দেয় না। ফোল্ডারে টার্মিনাল খুলে চালান: <code>python add_codecraft.py serve</code> — তারপর <code>http://localhost:8000</code> খুলুন।"
+      : "<strong>data.json লোড করা যায়নি।</strong><br>ফাইলটি index.html এর পাশেই আছে কি না এবং JSON ঠিক আছে কি না দেখুন।";
+    el.list.appendChild(box);
+    console.error("CodeCraft:", err);
+  }
+
+  /* ---------- Init ---------- */
+  function init() {
+    var site = state.data.site || {};
+    el.brand.textContent = site.title || "CodeCraft";
+    el.tagline.textContent = site.subtitle || "";
+    document.title = site.title || "CodeCraft";
+    renderMenu();
+    render();
+  }
+
+  function items() { return state.data.items || []; }
+
+  function menuNames() {
+    var names = (state.data.menus || []).slice();
+    items().forEach(function (it) {
+      if (it.menu && names.indexOf(it.menu) === -1) names.push(it.menu);
+    });
+    return names;
+  }
+
+  /* ---------- Menu ---------- */
+  function renderMenu() {
+    el.menu.innerHTML = "";
+    addMenuButton("সব", items().length);
+    menuNames().forEach(function (name) {
+      var n = items().filter(function (it) { return it.menu === name; }).length;
+      if (n > 0) addMenuButton(name, n);
+    });
+  }
+
+  function addMenuButton(name, count) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-current", String(state.menu === name));
+    var label = document.createElement("span");
+    label.textContent = name;
+    var c = document.createElement("span");
+    c.className = "count";
+    c.textContent = String(count);
+    b.appendChild(label);
+    b.appendChild(c);
+    b.addEventListener("click", function () {
+      state.menu = name;
+      renderMenu();
+      render();
+    });
+    el.menu.appendChild(b);
+  }
+
+  /* ---------- Render entries ---------- */
+  function matches(it) {
+    if (state.menu !== "সব" && it.menu !== state.menu) return false;
+    if (!state.query) return true;
+    var hay = [it.title, it.description, it.filename, it.language, it.code].join("\n").toLowerCase();
+    return hay.indexOf(state.query) !== -1;
+  }
+
+  function render() {
+    el.list.innerHTML = "";
+    var shown = items().filter(matches);
+    if (shown.length === 0) {
+      var e = document.createElement("div");
+      e.className = "notice";
+      e.textContent = items().length === 0
+        ? "এখনও কিছু যোগ হয়নি। add_codecraft.py চালিয়ে প্রথম এন্ট্রি যোগ করুন।"
+        : "কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন বা মেনু বদলান।";
+      el.list.appendChild(e);
+      return;
+    }
+    shown.slice().reverse().forEach(function (it) { el.list.appendChild(card(it)); });
+  }
+
+  function card(it) {
+    var art = document.createElement("article");
+    art.className = "entry";
+
+    if (it.menu) {
+      var m = document.createElement("p");
+      m.className = "entry-menu";
+      m.textContent = it.menu;
+      art.appendChild(m);
+    }
+
+    var h = document.createElement("h2");
+    h.textContent = it.title || "(শিরোনাম নেই)";
+    art.appendChild(h);
+
+    if (it.description) {
+      var d = document.createElement("p");
+      d.className = "desc";
+      d.textContent = it.description;
+      art.appendChild(d);
+    }
+
+    if (it.code) art.appendChild(codeBox(it));
+    return art;
+  }
+
+  function codeBox(it) {
+    var box = document.createElement("div");
+    box.className = "codebox";
+
+    /* bar: label on the left, copy on the right */
+    var bar = document.createElement("div");
+    bar.className = "codebar";
+
+    var label = document.createElement("div");
+    label.className = "label";
+    var lang = document.createElement("span");
+    lang.className = "lang";
+    lang.textContent = it.language || "Text";
+    lang.style.setProperty("--tag", LANG_COLORS[(it.language || "").toLowerCase()] || "#3b4cca");
+    label.appendChild(lang);
+    if (it.filename) {
+      var f = document.createElement("span");
+      f.className = "fname";
+      f.textContent = it.filename;
+      f.title = it.filename;
+      label.appendChild(f);
+    }
+
+    var copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "copy";
+    copy.textContent = "কপি";
+    copy.addEventListener("click", function () { copyText(it.code, copy); });
+
+    bar.appendChild(label);
+    bar.appendChild(copy);
+    box.appendChild(bar);
+
+    var pre = document.createElement("pre");
+    var code = document.createElement("code");
+    code.textContent = it.code;
+    pre.appendChild(code);
+    pre.tabIndex = 0;
+    box.appendChild(pre);
+
+    /* long code: collapse with a toggle */
+    if (it.code.split("\n").length > COLLAPSE_LINES) {
+      box.classList.add("collapsed");
+      var more = document.createElement("button");
+      more.type = "button";
+      more.className = "more";
+      more.textContent = "পুরোটা দেখুন";
+      more.addEventListener("click", function () {
+        var isCollapsed = box.classList.toggle("collapsed");
+        more.textContent = isCollapsed ? "পুরোটা দেখুন" : "ছোট করুন";
+      });
+      box.appendChild(more);
+    }
+    return box;
+  }
+
+  /* ---------- Copy ---------- */
+  function copyText(text, btn) {
+    function done(ok) {
+      btn.textContent = ok ? "কপি হয়েছে" : "ব্যর্থ";
+      btn.classList.toggle("done", ok);
+      setTimeout(function () {
+        btn.textContent = "কপি";
+        btn.classList.remove("done");
+      }, 1600);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
+    } else {
+      done(fallback(text));
+    }
+  }
+
+  function fallback(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  /* ---------- Search & theme ---------- */
+  el.search.addEventListener("input", function () {
+    state.query = el.search.value.trim().toLowerCase();
+    if (state.data) render();
+  });
+
+  el.theme.addEventListener("click", function () {
+    var root = document.documentElement;
+    var cur = root.getAttribute("data-theme");
+    var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var isDark = cur ? cur === "dark" : systemDark;
+    var next = isDark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("codecraft-theme", next); } catch (e) {}
+  });
+
+  try {
+    var saved = localStorage.getItem("codecraft-theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

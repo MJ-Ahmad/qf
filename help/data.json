@@ -1,0 +1,49 @@
+{
+  "site": {
+    "title": "CodeCraft",
+    "subtitle": "আমার স্ক্রিপ্ট, ফাইল ও নির্দেশনার সংগ্রহ"
+  },
+  "menus": ["স্ক্রিপ্ট", "ফাইল", "নির্দেশনা"],
+  "items": [
+    {
+      "id": "sample-python-hello",
+      "menu": "স্ক্রিপ্ট",
+      "title": "প্রথম Python স্ক্রিপ্ট",
+      "description": "স্ক্রিন-এ একটি বার্তা ছাপানোর সবচেয়ে সহজ উদাহরণ।\nচালাতে: python hello.py",
+      "language": "Python",
+      "filename": "hello.py",
+      "code": "name = input(\"আপনার নাম: \")\nprint(f\"স্বাগতম, {name}!\")",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-node-server",
+      "menu": "স্ক্রিপ্ট",
+      "title": "Node.js দিয়ে ছোট সার্ভার",
+      "description": "কোনো প্যাকেজ ছাড়াই localhost:3000 এ একটি সার্ভার চালু করে।",
+      "language": "Node",
+      "filename": "server.js",
+      "code": "const http = require('http');\n\nhttp.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });\n  res.end('সার্ভার চলছে!');\n}).listen(3000, () => {\n  console.log('http://localhost:3000');\n});",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-json-config",
+      "menu": "ফাইল",
+      "title": "প্রজেক্টের কনফিগ ফাইল",
+      "description": "যেকোনো প্রজেক্টে ব্যবহারের জন্য একটি সাধারণ config.json কাঠামো।",
+      "language": "JSON",
+      "filename": "config.json",
+      "code": "{\n  \"name\": \"my-project\",\n  \"version\": \"1.0.0\",\n  \"debug\": false\n}",
+      "created": "2026-09-21"
+    },
+    {
+      "id": "sample-git-guide",
+      "menu": "নির্দেশনা",
+      "title": "Git দিয়ে প্রথম কমিট",
+      "description": "নতুন ফোল্ডারকে Git রিপোজিটরি বানিয়ে প্রথম কমিট করার ধাপ।",
+      "language": "Bash",
+      "filename": "git-first-commit.sh",
+      "code": "git init\ngit add .\ngit commit -m \"প্রথম কমিট\"",
+      "created": "2026-09-21"
+    }
+  ]
+}
