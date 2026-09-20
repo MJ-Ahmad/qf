@@ -1,0 +1,31 @@
+{
+  "_readme": "শুধু মান বদলান, কাঠামো নয়। {\"bn\":…, \"en\":…} মানে ভাষাভেদে আলাদা লেখা; সাধারণ স্ট্রিং দুই ভাষাতেই একই দেখায়। লেখার ভেতরে {total} {paid} {due} {date} {time} {email} নিজে থেকে বসে যায়। পরিশোধিত, বাকি ও শতাংশ হিসাব হয় investment.total এবং ledger.entries (countsAsPaid: true) থেকে, আলাদা করে লিখতে হয় না।",
+
+  "site": {
+    "title": {
+      "bn": "হাফেজ আল আমিনের বিনিয়োগ প্রোফাইল",
+      "en": "Investor profile of Hafez Al Amin"
+    },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "homeUrl": "/qf",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka",
+    "currencySymbol": "৳",
+    "currencyWord": { "bn": "টাকা", "en": "Tk." },
+    "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" }
+  },
+
+  "security": {
+    "passwordSha256": "b446ac390294fae2f8a54c5f111769d84cf2755b1de5486338a92aa37dd8f1bf"
+  },
+
+  "lockScreen": {
+    "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
+    "title": { "bn": "পাসওয়ার্ড প্রয়োজন", "en": "Password required" },
+    "profileFor": {
+      "bn": "হাফেজ আল আমিনের ব্যক্তিগত বিনিয়োগ প্রোফাইল",
+      "en": "Personal investment profile of Hafez Al Amin"
+    },
+    "subtitle": {
