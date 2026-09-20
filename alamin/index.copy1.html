@@ -163,8 +163,6 @@
     .entry.paid .entry-amt { color: var(--emerald); }
     .entry-when { color: var(--muted); font-size: .9rem; }
     .entry-note { margin-top: 2px; font-size: .95rem; }
-    .entry-ref { margin-top: 2px; font-size: .9rem; color: var(--muted); }
-    .entry-ref b { font-weight: 600; color: var(--ink); letter-spacing: .05em; user-select: all; }
     .badge { display: inline-block; margin-top: 6px; padding: 0 10px; border-radius: 999px; font-size: .8rem; background: rgba(19, 107, 85, .1); color: var(--emerald); }
 
     .info { margin-top: 14px; display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
@@ -462,7 +460,6 @@
       const t = e.timeLabel ? tr(e.timeLabel) : (hasTime(e.date) ? fmtTime(d) : '');
       return fmtDate(d) + (t ? ', ' + t : '');
     };
-    const refsOf = (e) => [].concat(e.references || e.reference || []);
     const entryAmount = (e) => (e.amountFrom ? get(e.amountFrom) : e.amount);
 
     function totals() {
@@ -578,7 +575,6 @@
             h('span', { class: 'entry-amt' }, (paid ? '+ ' : '') + money(entryAmount(e)))),
           h('p', { class: 'entry-when' }, whenText(e)),
           h('p', { class: 'entry-note' }, fill(tr(e.note), vars())),
-          ...refsOf(e).map(r => h('p', { class: 'entry-ref' }, tr(r.label) + ': ', h('b', {}, r.value))),
           paid ? h('span', { class: 'badge' }, T('ui.counted')) : null));
       });
     }
@@ -668,8 +664,7 @@
         h('tbody', {}, ...DATA.ledger.entries.filter(e => e.countsAsPaid).map(e =>
           h('tr', {},
             h('td', {}, whenText(e)),
-            h('td', {}, h('b', {}, tr(e.title)), h('small', {}, fill(tr(e.note), vars())),
-              ...refsOf(e).map(r => h('small', {}, tr(r.label) + ': ' + r.value))),
+            h('td', {}, h('b', {}, tr(e.title)), h('small', {}, fill(tr(e.note), vars()))),
             h('td', { class: 'num' }, money(entryAmount(e)))))),
         h('tfoot', {},
           sumRow(T('ui.tiles.total'), money(t.total), 'total'),
@@ -792,3 +787,4 @@
   </script>
 </body>
 </html>
+

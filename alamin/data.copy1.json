@@ -123,27 +123,12 @@
       {
         "type": "cash",
         "date": "2026-09-13T21:40:00+06:00",
-        "title": { "bn": "ক্যাশ পরিশোধ", "en": "Cash payment" },
+        "title": { "bn": "নগদ পরিশোধ", "en": "Cash payment" },
         "note": {
-          "bn": "মোঃ জাফর আহমদের হাতে ক্যাশ প্রদান",
+          "bn": "মোঃ জাফর আহমদের হাতে নগদ প্রদান",
           "en": "Handed in cash to Md. Jafar Ahmad"
         },
         "amount": 5000,
-        "countsAsPaid": true
-      },
-      {
-        "type": "nagad",
-        "date": "2026-09-20T18:03:00+06:00",
-        "title": { "bn": "নগদ (Nagad) এর মাধ্যমে পরিশোধ", "en": "Payment via Nagad" },
-        "note": {
-          "bn": "কোরআনের ফেরিওয়ালার প্রাতিষ্ঠানিক নগদ নম্বরে মোবাইল ব্যাংকিংয়ের মাধ্যমে পরিশোধ",
-          "en": "Paid by mobile banking to the institutional Nagad number of Quraner Fariwala"
-        },
-        "references": [
-          { "label": { "bn": "প্রাপক নগদ নম্বর", "en": "Receiving Nagad number" }, "value": "01788856628" },
-          { "label": { "bn": "ট্রানজ্যাকশন আইডি", "en": "Transaction ID" }, "value": "760TXARM" }
-        ],
-        "amount": 2000,
         "countsAsPaid": true
       }
     ]
@@ -236,8 +221,8 @@
       {
         "title": { "bn": "পরিশোধ ও সমন্বয়", "en": "Payment and adjustment" },
         "text": {
-          "bn": "নিচের সারণিতে উল্লিখিত পরিশোধসমূহ এবং পূর্বে দেওয়া ঋণ বিনিয়োগের পরিশোধ হিসেবে গণ্য হবে।",
-          "en": "The payments and the earlier loan listed in the table below count as payment toward the investment."
+          "bn": "নিচের সারণিতে উল্লিখিত নগদ প্রদান এবং পূর্বে দেওয়া ঋণ বিনিয়োগের পরিশোধ হিসেবে গণ্য হবে।",
+          "en": "The cash payment and the earlier loan listed in the table below count as payment toward the investment."
         }
       },
       {
