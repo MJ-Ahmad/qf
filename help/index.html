@@ -3,214 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CodeCraft</title>
+<title>কোরআনের ফেরিওয়ালা — CodeCraft</title>
 <style>
   :root {
-    --bg: #eef1f5;
+    --hh: 64px;
+    --bg: #f2f5f1;
     --surface: #ffffff;
-    --ink: #1b2433;
-    --muted: #5d6b82;
-    --line: #d9dfe8;
-    --accent: #3b4cca;
+    --ink: #16241f;
+    --muted: #5a6b64;
+    --line: #dae2dc;
+    --hover: #e6ede8;
+    --accent: #0f6b56;
     --accent-ink: #ffffff;
-    --code-bg: #14202e;
-    --code-bar: #1d2d40;
-    --code-ink: #dbe6f3;
-    --code-muted: #8fa3bd;
-    --ok: #2bb673;
+    --gold: #d4a94a;
+    --head-bg: #0c4a3d;
+    --head-ink: #ffffff;
+    --head-muted: #b5d3c8;
+    --code-bg: #0f1d19;
+    --code-bar: #172b25;
+    --code-ink: #dbeae4;
+    --code-muted: #8fb0a4;
+    --ok: #3ddc97;
     --font-ui: "Noto Sans Bengali", "Hind Siliguri", "Kalpurush", "Nirmala UI", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-code: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0d141d;
-      --surface: #142030;
-      --ink: #e6edf6;
-      --muted: #93a4bb;
-      --line: #25354a;
-      --accent: #8b98ff;
-      --accent-ink: #0d141d;
-      --code-bg: #0a111a;
-      --code-bar: #17263a;
+      --bg: #0b1310; --surface: #111f1a; --ink: #e5efe9; --muted: #92a89e;
+      --line: #22352d; --hover: #1a2c25; --accent: #4fc3a1; --accent-ink: #062018;
+      --head-bg: #08322a; --code-bg: #080f0d; --code-bar: #12231e;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0d141d;
-    --surface: #142030;
-    --ink: #e6edf6;
-    --muted: #93a4bb;
-    --line: #25354a;
-    --accent: #8b98ff;
-    --accent-ink: #0d141d;
-    --code-bg: #0a111a;
-    --code-bar: #17263a;
+    --bg: #0b1310; --surface: #111f1a; --ink: #e5efe9; --muted: #92a89e;
+    --line: #22352d; --hover: #1a2c25; --accent: #4fc3a1; --accent-ink: #062018;
+    --head-bg: #08322a; --code-bg: #080f0d; --code-bar: #12231e;
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--hh) + 12px); }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-ui);
-    line-height: 1.7;
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font-ui); line-height: 1.7;
     -webkit-text-size-adjust: 100%;
   }
+  button { font-family: inherit; }
 
+  /* ---------- Header ---------- */
+  .top {
+    position: sticky; top: 0; z-index: 30;
+    height: var(--hh);
+    background: var(--head-bg); color: var(--head-ink);
+    border-bottom: 3px solid var(--gold);
+  }
+  .top-in {
+    max-width: 1240px; height: 100%; margin: 0 auto; padding: 0 16px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; color: inherit; text-decoration: none; margin-right: auto; }
+  .logo { flex: none; width: 42px; height: 42px; border-radius: 10px; overflow: hidden; display: grid; place-items: center; }
+  .logo img, .logo svg { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .brand-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+  .brand-text b { font-size: 1.3rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-text small { color: var(--head-muted); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .hbtn {
+    flex: none; padding: 7px 13px;
+    border: 1px solid rgba(255,255,255,0.28); border-radius: 8px;
+    background: transparent; color: var(--head-ink);
+    font-size: 0.88rem; cursor: pointer;
+  }
+  .hbtn:hover { background: rgba(255,255,255,0.1); }
+  #navBtn { display: none; }
+
+  /* ---------- Layout ---------- */
   .shell {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 24px 16px 64px;
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 32px;
+    max-width: 1240px; margin: 0 auto; padding: 20px 16px 72px;
+    display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 28px;
   }
 
-  /* ---------- Sidebar ---------- */
-  .side { position: sticky; top: 24px; align-self: start; }
-  .brand { margin: 0 0 4px; font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; }
-  .tagline { margin: 0 0 20px; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
-
-  .menu { display: flex; flex-direction: column; gap: 4px; }
-  .menu button {
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; text-align: left;
-    padding: 9px 12px;
-    border: 1px solid transparent; border-radius: 8px;
-    background: transparent; color: var(--ink);
-    font: inherit; font-size: 0.95rem; cursor: pointer;
+  /* ---------- Sidebar / menu tree ---------- */
+  .side {
+    position: sticky; top: calc(var(--hh) + 16px);
+    align-self: start;
+    max-height: calc(100vh - var(--hh) - 32px);
+    overflow-y: auto;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px;
   }
-  .menu button:hover { background: var(--surface); }
-  .menu button[aria-current="true"] {
-    background: var(--accent); color: var(--accent-ink); font-weight: 600;
-  }
-  .menu .count { font-size: 0.8rem; opacity: 0.75; font-variant-numeric: tabular-nums; }
-
-  .theme-btn {
-    margin-top: 20px;
-    padding: 7px 12px;
+  .side-title { margin: 2px 4px 8px; font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  .msearch {
+    width: 100%; margin-bottom: 10px; padding: 8px 12px;
     border: 1px solid var(--line); border-radius: 8px;
-    background: transparent; color: var(--muted);
-    font: inherit; font-size: 0.85rem; cursor: pointer;
+    background: var(--bg); color: var(--ink); font: inherit; font-size: 0.92rem;
   }
-  .theme-btn:hover { color: var(--ink); border-color: var(--muted); }
+  .msearch::placeholder { color: var(--muted); }
+
+  .tree, .tree ul { list-style: none; margin: 0; padding: 0; }
+  .tree ul { margin-left: 13px; padding-left: 6px; border-left: 1px solid var(--line); }
+  .row { display: flex; align-items: center; border-radius: 8px; }
+  .row:hover { background: var(--hover); }
+  .chev {
+    flex: none; width: 30px; height: 34px; border: 0; background: transparent;
+    color: var(--muted); cursor: pointer; border-radius: 6px;
+    display: grid; place-items: center;
+  }
+  .chev::before {
+    content: ""; width: 6px; height: 6px;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg); transition: transform .15s;
+  }
+  .chev[aria-expanded="true"]::before { transform: rotate(45deg); }
+  .spacer { flex: none; width: 30px; }
+  .lab {
+    flex: 1; min-width: 0; text-align: left; padding: 6px 4px;
+    border: 0; background: transparent; color: var(--ink);
+    font-size: 0.94rem; cursor: pointer; overflow-wrap: anywhere;
+  }
+  .cnt { flex: none; padding: 0 9px; font-size: 0.78rem; color: var(--muted); }
+  .row.onpath .lab { font-weight: 600; }
+  .row.dim .lab { color: var(--muted); }
+  .row.active { background: var(--accent); }
+  .row.active .lab, .row.active .cnt, .row.active .chev { color: var(--accent-ink); }
+  .row.active .lab { font-weight: 700; }
+  .none { margin: 8px 4px; font-size: 0.9rem; color: var(--muted); }
 
   /* ---------- Main ---------- */
+  .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-bottom: 6px; font-size: 0.88rem; }
+  .crumbs button, .trail button {
+    padding: 0; border: 0; background: none; color: var(--muted); font-size: inherit; cursor: pointer;
+  }
+  .crumbs button:hover, .trail button:hover { color: var(--accent); text-decoration: underline; }
+  .crumbs .sep, .trail .sep { color: var(--muted); opacity: .6; }
+  .crumbs .here { color: var(--ink); font-weight: 600; }
+
+  .head-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .head-row h2 { margin: 0; font-size: 1.5rem; line-height: 1.35; }
+  .head-row .meta { color: var(--muted); font-size: 0.9rem; }
+
+  .tiles-title { margin: 0 0 8px; font-size: 0.88rem; color: var(--muted); font-weight: 600; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin-bottom: 22px; }
+  .tile {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    padding: 11px 14px; text-align: left;
+    border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 10px;
+    background: var(--surface); color: var(--ink); font-size: 0.95rem; cursor: pointer;
+  }
+  .tile:hover { border-color: var(--accent); border-left-color: var(--accent); }
+  .tile small { color: var(--muted); }
+
   .search {
-    width: 100%;
-    padding: 12px 16px;
+    width: 100%; margin-bottom: 18px; padding: 12px 16px;
     border: 1px solid var(--line); border-radius: 10px;
-    background: var(--surface); color: var(--ink);
-    font: inherit; font-size: 1rem;
-    margin-bottom: 20px;
+    background: var(--surface); color: var(--ink); font: inherit; font-size: 1rem;
   }
   .search::placeholder { color: var(--muted); }
 
-  .list { display: flex; flex-direction: column; gap: 24px; }
-
+  .list { display: flex; flex-direction: column; gap: 22px; }
   .entry {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 20px;
-    min-width: 0;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px; min-width: 0;
   }
-  .entry-menu { font-size: 0.82rem; color: var(--accent); font-weight: 600; margin: 0 0 2px; }
-  .entry h2 { margin: 0 0 6px; font-size: 1.25rem; line-height: 1.4; }
+  .trail { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 4px; font-size: 0.82rem; }
+  .trail button { color: var(--accent); font-weight: 600; }
+  .entry h3 { margin: 0 0 6px; font-size: 1.2rem; line-height: 1.4; }
   .entry .desc { margin: 0 0 16px; color: var(--muted); white-space: pre-wrap; max-width: 70ch; }
 
   /* ---------- Code box: label left, copy right ---------- */
   .codebox { border-radius: 8px; overflow: hidden; background: var(--code-bg); }
   .codebar {
     display: flex; justify-content: space-between; align-items: center; gap: 12px;
-    padding: 8px 8px 8px 14px;
-    background: var(--code-bar);
+    padding: 8px 8px 8px 14px; background: var(--code-bar);
   }
   .label { display: flex; align-items: center; gap: 10px; min-width: 0; }
   .lang {
-    flex: none;
-    padding: 2px 10px;
-    border-radius: 999px;
-    background: var(--tag, #3b4cca);
-    color: #fff;
+    flex: none; padding: 2px 10px; border-radius: 999px;
+    background: var(--tag, #0f6b56); color: #fff;
     font-family: var(--font-code); font-size: 0.78rem; font-weight: 600;
   }
   .fname {
-    color: var(--code-muted);
-    font-family: var(--font-code); font-size: 0.82rem;
+    color: var(--code-muted); font-family: var(--font-code); font-size: 0.82rem;
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .copy {
-    flex: none;
-    min-width: 76px;
-    padding: 6px 14px;
-    border: 1px solid rgba(255,255,255,0.18); border-radius: 6px;
-    background: transparent; color: var(--code-ink);
-    font: inherit; font-size: 0.85rem; cursor: pointer;
+    flex: none; min-width: 84px; padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
+    background: transparent; color: var(--code-ink); font-size: 0.85rem; cursor: pointer;
     transition: background .15s, border-color .15s, color .15s;
   }
   .copy:hover { background: rgba(255,255,255,0.08); }
   .copy.done { border-color: var(--ok); color: var(--ok); }
-
   pre {
-    margin: 0;
-    padding: 16px 18px;
-    overflow: auto;
-    color: var(--code-ink);
-    font-family: var(--font-code); font-size: 0.88rem; line-height: 1.65;
-    tab-size: 2;
+    margin: 0; padding: 16px 18px; overflow: auto; color: var(--code-ink);
+    font-family: var(--font-code); font-size: 0.88rem; line-height: 1.65; tab-size: 2;
   }
   pre code { font: inherit; white-space: pre; }
   .collapsed pre { max-height: 300px; overflow: hidden; }
   .more {
-    display: block; width: 100%;
-    padding: 8px;
+    display: block; width: 100%; padding: 8px;
     border: 0; border-top: 1px solid rgba(255,255,255,0.08);
-    background: var(--code-bar); color: var(--code-muted);
-    font: inherit; font-size: 0.85rem; cursor: pointer;
+    background: var(--code-bar); color: var(--code-muted); font-size: 0.85rem; cursor: pointer;
   }
   .more:hover { color: var(--code-ink); }
 
   .notice {
-    padding: 20px;
-    border: 1px dashed var(--line); border-radius: 12px;
-    color: var(--muted);
+    padding: 20px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted);
   }
   .notice code { font-family: var(--font-code); background: var(--surface); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
   .notice strong { color: var(--ink); }
+  .notice button {
+    margin-top: 10px; padding: 7px 14px; border: 1px solid var(--accent); border-radius: 8px;
+    background: transparent; color: var(--accent); cursor: pointer; font-size: 0.9rem;
+  }
 
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
-  /* ---------- Mobile ---------- */
-  @media (max-width: 760px) {
-    .shell { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 16px; }
-    .side { position: static; }
-    .tagline { margin-bottom: 12px; }
-    .menu { flex-direction: row; overflow-x: auto; padding-bottom: 6px; gap: 8px; }
-    .menu button {
-      width: auto; flex: none; gap: 8px;
-      border-color: var(--line); background: var(--surface);
+  /* ---------- Mobile: menu becomes a slide-in drawer ---------- */
+  .scrim { display: none; }
+  @media (max-width: 800px) {
+    :root { --hh: 58px; }
+    .logo { width: 38px; height: 38px; }
+    .brand-text b { font-size: 1.1rem; }
+    .brand-text small { display: none; }
+    #navBtn { display: inline-block; }
+    #themeBtn { display: none; }
+    .shell { grid-template-columns: minmax(0, 1fr); padding-top: 14px; }
+    .side {
+      position: fixed; z-index: 50; top: 0; left: 0; bottom: 0;
+      width: min(86vw, 330px); max-height: none; border-radius: 0 12px 12px 0;
+      align-self: stretch; height: 100vh; height: 100dvh;
+      padding-top: 16px;
+      transform: translateX(-102%); transition: transform .22s ease;
     }
-    .theme-btn { display: none; }
+    body.nav-open .side { transform: none; }
+    body.nav-open .scrim {
+      display: block; position: fixed; inset: 0; z-index: 40; background: rgba(0,0,0,0.45);
+    }
     .entry { padding: 16px; }
+    .head-row h2 { font-size: 1.3rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .copy { transition: none; }
+    .side, .chev::before, .copy { transition: none; }
   }
 </style>
 </head>
 <body>
+
+<header class="top">
+  <div class="top-in">
+    <button class="hbtn" id="navBtn" type="button" aria-label="মেনু খুলুন">☰ মেনু</button>
+    <a class="brand" href="#/">
+      <span class="logo" id="logo">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <defs><mask id="cm"><rect width="40" height="40" fill="#fff"/><circle cx="25" cy="17" r="9" fill="#000"/></mask></defs>
+          <rect width="40" height="40" rx="10" fill="#d4a94a"/>
+          <circle cx="19" cy="21" r="11" fill="#0c4a3d" mask="url(#cm)"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b id="siteTitle">কোরআনের ফেরিওয়ালা</b>
+        <small id="siteTag">CodeCraft</small>
+      </span>
+    </a>
+    <button class="hbtn" id="themeBtn" type="button">থিম বদলান</button>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+
 <div class="shell">
-  <aside class="side">
-    <h1 class="brand" id="brand">CodeCraft</h1>
-    <p class="tagline" id="tagline"></p>
-    <nav class="menu" id="menu" aria-label="মেনু"></nav>
-    <button class="theme-btn" id="themeBtn" type="button">থিম বদলান</button>
+  <aside class="side" id="side" aria-label="মেনু">
+    <p class="side-title">মেনু</p>
+    <input class="msearch" id="msearch" type="search" placeholder="মেনু খুঁজুন…" aria-label="মেনু খুঁজুন">
+    <nav id="tree"></nav>
   </aside>
 
-  <main>
-    <input class="search" id="search" type="search" placeholder="শিরোনাম, বিবরণ বা কোড খুঁজুন…" aria-label="খুঁজুন">
+  <main id="main">
+    <div class="crumbs" id="crumbs"></div>
+    <div class="head-row"><h2 id="pageTitle"></h2><span class="meta" id="pageMeta"></span></div>
+    <div id="tilesWrap"></div>
+    <input class="search" id="search" type="search" placeholder="এই মেনুর ভেতরে শিরোনাম, বিবরণ বা কোড খুঁজুন…" aria-label="খুঁজুন">
     <div class="list" id="list"></div>
   </main>
 </div>
@@ -220,6 +292,8 @@
   "use strict";
 
   var DATA_URL = "data.json";
+  var DEFAULT_TITLE = "কোরআনের ফেরিওয়ালা";
+  var COLLAPSE_LINES = 18;
   var LANG_COLORS = {
     "html": "#e34c26", "css": "#2965f1", "json": "#8a6d00", "python": "#3776ab",
     "node": "#3c873a", "javascript": "#b58900", "typescript": "#3178c6",
@@ -228,126 +302,321 @@
     "rust": "#b7410e", "sql": "#c05621", "yaml": "#a3293d", "xml": "#7a5c99",
     "markdown": "#4a5568", "text": "#4a5568"
   };
-  var COLLAPSE_LINES = 18;
 
-  var state = { data: null, menu: "সব", query: "" };
+  var state = { data: null, root: null, map: {}, path: [], expanded: {}, query: "", menuQuery: "" };
+  var $ = function (id) { return document.getElementById(id); };
   var el = {
-    brand: document.getElementById("brand"),
-    tagline: document.getElementById("tagline"),
-    menu: document.getElementById("menu"),
-    list: document.getElementById("list"),
-    search: document.getElementById("search"),
-    theme: document.getElementById("themeBtn")
+    logo: $("logo"), title: $("siteTitle"), tag: $("siteTag"),
+    tree: $("tree"), msearch: $("msearch"), crumbs: $("crumbs"),
+    pageTitle: $("pageTitle"), pageMeta: $("pageMeta"),
+    tilesWrap: $("tilesWrap"), search: $("search"), list: $("list"),
+    navBtn: $("navBtn"), scrim: $("scrim"), theme: $("themeBtn")
   };
 
-  /* ---------- Load ---------- */
+  /* ---------- helpers ---------- */
+  var BN = "০১২৩৪৫৬৭৮৯";
+  function bn(n) { return String(n).replace(/\d/g, function (d) { return BN[d]; }); }
+  function keyOf(path) { return path.map(encodeURIComponent).join("/"); }
+  function isPrefix(prefix, path) {
+    if (prefix.length > path.length) return false;
+    for (var i = 0; i < prefix.length; i++) if (prefix[i] !== path[i]) return false;
+    return true;
+  }
+  function itemPath(it) {
+    if (Array.isArray(it.path) && it.path.length) return it.path;
+    return it.menu ? [it.menu] : [];   // পুরোনো data.json এর সাথে সামঞ্জস্য
+  }
+  function isMobile() { return window.matchMedia("(max-width: 800px)").matches; }
+  function closeDrawer() { document.body.classList.remove("nav-open"); }
+
+  /* ---------- load ---------- */
   fetch(DATA_URL, { cache: "no-store" })
-    .then(function (r) {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r.json();
-    })
-    .then(function (data) {
-      state.data = data;
-      init();
-    })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (data) { state.data = data; init(); })
     .catch(showLoadError);
 
   function showLoadError(err) {
     el.list.innerHTML = "";
     var box = document.createElement("div");
     box.className = "notice";
-    var onFile = location.protocol === "file:";
-    box.innerHTML = onFile
-      ? "<strong>data.json লোড করা যায়নি।</strong><br>ব্রাউজার সরাসরি ফাইল খুলে JSON পড়তে দেয় না। ফোল্ডারে টার্মিনাল খুলে চালান: <code>python add_codecraft.py serve</code> — তারপর <code>http://localhost:8000</code> খুলুন।"
+    box.innerHTML = location.protocol === "file:"
+      ? "<strong>data.json লোড করা যায়নি।</strong><br>ব্রাউজার সরাসরি ফাইল খুলে JSON পড়তে দেয় না। প্রজেক্ট ফোল্ডারে টার্মিনালে চালান: <code>python add.py serve</code> — তারপর <code>http://localhost:8000</code> খুলুন।"
       : "<strong>data.json লোড করা যায়নি।</strong><br>ফাইলটি index.html এর পাশেই আছে কি না এবং JSON ঠিক আছে কি না দেখুন।";
     el.list.appendChild(box);
     console.error("CodeCraft:", err);
   }
 
-  /* ---------- Init ---------- */
+  /* ---------- tree building ---------- */
+  function buildTree(data) {
+    var root = { name: "", path: [], key: "", children: [], count: 0 };
+    var map = { "": root };
+
+    function ensure(path) {
+      var cur = root;
+      for (var i = 0; i < path.length; i++) {
+        var name = path[i];
+        var next = cur.children.filter(function (c) { return c.name === name; })[0];
+        if (!next) {
+          var p = path.slice(0, i + 1);
+          next = { name: name, path: p, key: keyOf(p), children: [], count: 0 };
+          cur.children.push(next);
+          map[next.key] = next;
+        }
+        cur = next;
+      }
+      return cur;
+    }
+    function addMenus(list, base) {
+      (list || []).forEach(function (m) {
+        var name = typeof m === "string" ? m : m.name;
+        var p = base.concat([name]);
+        ensure(p);
+        if (m && typeof m === "object") addMenus(m.children, p);
+      });
+    }
+    addMenus(data.menus, []);
+
+    (data.items || []).forEach(function (it) {
+      it._path = itemPath(it);
+      ensure(it._path);
+      root.count++;
+      for (var i = 1; i <= it._path.length; i++) map[keyOf(it._path.slice(0, i))].count++;
+    });
+    state.root = root;
+    state.map = map;
+  }
+
+  function items() { return (state.data && state.data.items) || []; }
+  function currentNode() { return state.map[keyOf(state.path)] || state.root; }
+
+  /* ---------- init ---------- */
   function init() {
     var site = state.data.site || {};
-    el.brand.textContent = site.title || "CodeCraft";
-    el.tagline.textContent = site.subtitle || "";
-    document.title = site.title || "CodeCraft";
-    renderMenu();
-    render();
+    var title = site.title && site.title !== "CodeCraft" ? site.title : DEFAULT_TITLE;
+    el.title.textContent = title;
+    el.tag.textContent = site.tagline || site.subtitle || "CodeCraft";
+    document.title = title + " — CodeCraft";
+    setLogo(site.logo);
+    buildTree(state.data);
+    applyHash();
   }
 
-  function items() { return state.data.items || []; }
+  function setLogo(src) {
+    if (!src) return;
+    var img = new Image();
+    img.alt = "";
+    img.onload = function () { el.logo.innerHTML = ""; el.logo.appendChild(img); };
+    img.src = src;   // না পেলে ডিফল্ট লোগোই থাকবে
+  }
 
-  function menuNames() {
-    var names = (state.data.menus || []).slice();
-    items().forEach(function (it) {
-      if (it.menu && names.indexOf(it.menu) === -1) names.push(it.menu);
+  /* ---------- navigation ---------- */
+  function navigate(path) {
+    var h = "#/" + keyOf(path);
+    if (location.hash === h) applyHash(); else location.hash = h;
+  }
+
+  function applyHash() {
+    var raw = location.hash.replace(/^#\/?/, "");
+    var path = [];
+    try { path = raw ? raw.split("/").map(decodeURIComponent) : []; } catch (e) { path = []; }
+    if (!state.map[keyOf(path)]) path = [];
+    state.path = path;
+    for (var i = 1; i <= path.length; i++) state.expanded[keyOf(path.slice(0, i))] = true;
+    renderAll();
+    window.scrollTo({ top: 0 });
+  }
+  window.addEventListener("hashchange", function () { if (state.data) applyHash(); });
+
+  /* ---------- render: all ---------- */
+  function renderAll() { renderTree(); renderMain(); }
+
+  /* ---------- render: sidebar tree ---------- */
+  function renderTree() {
+    el.tree.innerHTML = "";
+    var q = state.menuQuery.trim().toLowerCase();
+    var curKey = keyOf(state.path);
+
+    function matches(n) { return n.name.toLowerCase().indexOf(q) !== -1; }
+    function visible(n) { return !q || matches(n) || n.children.some(visible); }
+
+    // "সব" — মূল সারি
+    var top = document.createElement("ul");
+    top.className = "tree";
+    top.appendChild(makeRow(state.root, "সব", true));
+    el.tree.appendChild(top);
+
+    var any = false;
+    function build(nodes, parentUl, forceAll) {
+      nodes.forEach(function (n) {
+        if (!(forceAll || visible(n))) return;
+        any = true;
+        var li = makeRow(n, n.name, false);
+        parentUl.appendChild(li);
+        var hasKids = n.children.length > 0;
+        var open = q ? hasKids : !!state.expanded[n.key];
+        if (hasKids && open) {
+          var ul = document.createElement("ul");
+          build(n.children, ul, q && matches(n));
+          li.appendChild(ul);
+        }
+      });
+    }
+    build(state.root.children, top, false);
+
+    if (q && !any) {
+      var p = document.createElement("p");
+      p.className = "none";
+      p.textContent = "কোনো মেনু পাওয়া যায়নি।";
+      el.tree.appendChild(p);
+    }
+
+    function makeRow(n, label, isRoot) {
+      var li = document.createElement("li");
+      var row = document.createElement("div");
+      row.className = "row";
+      var active = n.key === curKey;
+      if (active) row.classList.add("active");
+      else if (!isRoot && isPrefix(n.path, state.path)) row.classList.add("onpath");
+      if (n.count === 0 && !isRoot) row.classList.add("dim");
+
+      var hasKids = n.children.length > 0;
+      if (hasKids && !isRoot) {
+        var chev = document.createElement("button");
+        chev.type = "button";
+        chev.className = "chev";
+        var open = q ? true : !!state.expanded[n.key];
+        chev.setAttribute("aria-expanded", String(open));
+        chev.setAttribute("aria-label", n.name + " — সাব মেনু খুলুন/বন্ধ করুন");
+        chev.addEventListener("click", function () {
+          state.expanded[n.key] = !state.expanded[n.key];
+          renderTree();
+        });
+        row.appendChild(chev);
+      } else {
+        var sp = document.createElement("span");
+        sp.className = "spacer";
+        row.appendChild(sp);
+      }
+
+      var lab = document.createElement("button");
+      lab.type = "button";
+      lab.className = "lab";
+      lab.textContent = label;
+      if (active) lab.setAttribute("aria-current", "true");
+      lab.addEventListener("click", function () {
+        if (hasKids && !isRoot) state.expanded[n.key] = true;
+        navigate(n.path);
+        if (isMobile() && (!hasKids || isRoot)) closeDrawer();   // মোবাইলে শেষ ধাপে ড্রয়ার বন্ধ
+      });
+      row.appendChild(lab);
+
+      var cnt = document.createElement("span");
+      cnt.className = "cnt";
+      cnt.textContent = bn(n.count);
+      row.appendChild(cnt);
+
+      li.appendChild(row);
+      return li;
+    }
+  }
+
+  /* ---------- render: main ---------- */
+  function renderMain() {
+    var node = currentNode();
+    var isRoot = state.path.length === 0;
+
+    // breadcrumb
+    el.crumbs.innerHTML = "";
+    var segs = [{ name: "সব", path: [] }];
+    state.path.forEach(function (name, i) { segs.push({ name: name, path: state.path.slice(0, i + 1) }); });
+    segs.forEach(function (s, i) {
+      if (i > 0) { var sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; el.crumbs.appendChild(sep); }
+      if (i === segs.length - 1 && i > 0) {
+        var here = document.createElement("span"); here.className = "here"; here.textContent = s.name; el.crumbs.appendChild(here);
+      } else {
+        var b = document.createElement("button"); b.type = "button"; b.textContent = s.name;
+        b.addEventListener("click", function () { navigate(s.path); });
+        el.crumbs.appendChild(b);
+      }
     });
-    return names;
-  }
 
-  /* ---------- Menu ---------- */
-  function renderMenu() {
-    el.menu.innerHTML = "";
-    addMenuButton("সব", items().length);
-    menuNames().forEach(function (name) {
-      var n = items().filter(function (it) { return it.menu === name; }).length;
-      if (n > 0) addMenuButton(name, n);
-    });
-  }
+    // title
+    el.pageTitle.textContent = isRoot ? "সব এন্ট্রি" : node.name;
 
-  function addMenuButton(name, count) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.setAttribute("aria-current", String(state.menu === name));
-    var label = document.createElement("span");
-    label.textContent = name;
-    var c = document.createElement("span");
-    c.className = "count";
-    c.textContent = String(count);
-    b.appendChild(label);
-    b.appendChild(c);
-    b.addEventListener("click", function () {
-      state.menu = name;
-      renderMenu();
-      render();
-    });
-    el.menu.appendChild(b);
-  }
+    // sub-menu tiles
+    el.tilesWrap.innerHTML = "";
+    if (node.children.length && !state.query) {
+      var t = document.createElement("p");
+      t.className = "tiles-title";
+      t.textContent = isRoot ? "মেনু বেছে নিন" : "সাব মেনু";
+      var grid = document.createElement("div");
+      grid.className = "tiles";
+      node.children.forEach(function (c) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "tile";
+        var n = document.createElement("span"); n.textContent = c.name;
+        var k = document.createElement("small"); k.textContent = bn(c.count);
+        b.appendChild(n); b.appendChild(k);
+        b.addEventListener("click", function () { navigate(c.path); });
+        grid.appendChild(b);
+      });
+      el.tilesWrap.appendChild(t);
+      el.tilesWrap.appendChild(grid);
+    }
 
-  /* ---------- Render entries ---------- */
-  function matches(it) {
-    if (state.menu !== "সব" && it.menu !== state.menu) return false;
-    if (!state.query) return true;
-    var hay = [it.title, it.description, it.filename, it.language, it.code].join("\n").toLowerCase();
-    return hay.indexOf(state.query) !== -1;
-  }
-
-  function render() {
+    // entries
+    var shown = items().filter(function (it) { return isPrefix(state.path, it._path) && matchQuery(it); });
+    el.pageMeta.textContent = bn(shown.length) + " টি এন্ট্রি" + (state.query ? " (খোঁজার ফলাফল)" : "");
     el.list.innerHTML = "";
-    var shown = items().filter(matches);
-    if (shown.length === 0) {
+
+    if (!shown.length) {
       var e = document.createElement("div");
       e.className = "notice";
-      e.textContent = items().length === 0
-        ? "এখনও কিছু যোগ হয়নি। add_codecraft.py চালিয়ে প্রথম এন্ট্রি যোগ করুন।"
-        : "কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন বা মেনু বদলান।";
+      if (state.query) {
+        e.textContent = "এই মেনুতে কিছু পাওয়া যায়নি।";
+        if (!isRoot) {
+          e.appendChild(document.createElement("br"));
+          var all = document.createElement("button");
+          all.type = "button"; all.textContent = "সব মেনুতে খুঁজুন";
+          all.addEventListener("click", function () { navigate([]); });
+          e.appendChild(all);
+        }
+      } else {
+        e.innerHTML = items().length === 0
+          ? "এখনও কিছু যোগ হয়নি। <code>python add.py</code> চালিয়ে প্রথম এন্ট্রি যোগ করুন।"
+          : "এই মেনুতে এখনও কিছু নেই। <code>python add.py</code> চালিয়ে যোগ করুন।";
+      }
       el.list.appendChild(e);
       return;
     }
     shown.slice().reverse().forEach(function (it) { el.list.appendChild(card(it)); });
   }
 
+  function matchQuery(it) {
+    if (!state.query) return true;
+    var hay = [it.title, it.description, it.filename, it.language, it.code, it._path.join(" ")].join("\n").toLowerCase();
+    return hay.indexOf(state.query) !== -1;
+  }
+
+  /* ---------- card ---------- */
   function card(it) {
     var art = document.createElement("article");
     art.className = "entry";
 
-    if (it.menu) {
-      var m = document.createElement("p");
-      m.className = "entry-menu";
-      m.textContent = it.menu;
-      art.appendChild(m);
+    if (it._path.length) {
+      var trail = document.createElement("div");
+      trail.className = "trail";
+      it._path.forEach(function (name, i) {
+        if (i > 0) { var s = document.createElement("span"); s.className = "sep"; s.textContent = "›"; trail.appendChild(s); }
+        var b = document.createElement("button");
+        b.type = "button"; b.textContent = name;
+        b.addEventListener("click", function () { navigate(it._path.slice(0, i + 1)); });
+        trail.appendChild(b);
+      });
+      art.appendChild(trail);
     }
 
-    var h = document.createElement("h2");
+    var h = document.createElement("h3");
     h.textContent = it.title || "(শিরোনাম নেই)";
     art.appendChild(h);
 
@@ -357,7 +626,6 @@
       d.textContent = it.description;
       art.appendChild(d);
     }
-
     if (it.code) art.appendChild(codeBox(it));
     return art;
   }
@@ -366,7 +634,6 @@
     var box = document.createElement("div");
     box.className = "codebox";
 
-    /* bar: label on the left, copy on the right */
     var bar = document.createElement("div");
     bar.className = "codebar";
 
@@ -375,7 +642,7 @@
     var lang = document.createElement("span");
     lang.className = "lang";
     lang.textContent = it.language || "Text";
-    lang.style.setProperty("--tag", LANG_COLORS[(it.language || "").toLowerCase()] || "#3b4cca");
+    lang.style.setProperty("--tag", LANG_COLORS[(it.language || "").toLowerCase()] || "#0f6b56");
     label.appendChild(lang);
     if (it.filename) {
       var f = document.createElement("span");
@@ -402,7 +669,6 @@
     pre.tabIndex = 0;
     box.appendChild(pre);
 
-    /* long code: collapse with a toggle */
     if (it.code.split("\n").length > COLLAPSE_LINES) {
       box.classList.add("collapsed");
       var more = document.createElement("button");
@@ -410,23 +676,20 @@
       more.className = "more";
       more.textContent = "পুরোটা দেখুন";
       more.addEventListener("click", function () {
-        var isCollapsed = box.classList.toggle("collapsed");
-        more.textContent = isCollapsed ? "পুরোটা দেখুন" : "ছোট করুন";
+        var c = box.classList.toggle("collapsed");
+        more.textContent = c ? "পুরোটা দেখুন" : "ছোট করুন";
       });
       box.appendChild(more);
     }
     return box;
   }
 
-  /* ---------- Copy ---------- */
+  /* ---------- copy ---------- */
   function copyText(text, btn) {
     function done(ok) {
       btn.textContent = ok ? "কপি হয়েছে" : "ব্যর্থ";
       btn.classList.toggle("done", ok);
-      setTimeout(function () {
-        btn.textContent = "কপি";
-        btn.classList.remove("done");
-      }, 1600);
+      setTimeout(function () { btn.textContent = "কপি"; btn.classList.remove("done"); }, 1600);
     }
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallback(text)); });
@@ -434,13 +697,11 @@
       done(fallback(text));
     }
   }
-
   function fallback(text) {
     var ta = document.createElement("textarea");
     ta.value = text;
     ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
+    ta.style.cssText = "position:fixed;opacity:0";
     document.body.appendChild(ta);
     ta.select();
     var ok = false;
@@ -449,22 +710,27 @@
     return ok;
   }
 
-  /* ---------- Search & theme ---------- */
+  /* ---------- events ---------- */
   el.search.addEventListener("input", function () {
     state.query = el.search.value.trim().toLowerCase();
-    if (state.data) render();
+    if (state.data) renderMain();
   });
+  el.msearch.addEventListener("input", function () {
+    state.menuQuery = el.msearch.value;
+    if (state.data) renderTree();
+  });
+  el.navBtn.addEventListener("click", function () { document.body.classList.toggle("nav-open"); });
+  el.scrim.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
 
   el.theme.addEventListener("click", function () {
     var root = document.documentElement;
     var cur = root.getAttribute("data-theme");
     var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var isDark = cur ? cur === "dark" : systemDark;
-    var next = isDark ? "light" : "dark";
+    var next = (cur ? cur === "dark" : systemDark) ? "light" : "dark";
     root.setAttribute("data-theme", next);
     try { localStorage.setItem("codecraft-theme", next); } catch (e) {}
   });
-
   try {
     var saved = localStorage.getItem("codecraft-theme");
     if (saved) document.documentElement.setAttribute("data-theme", saved);

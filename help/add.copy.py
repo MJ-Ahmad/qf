@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-add.py — "কোরআনের ফেরিওয়ালা" CodeCraft এ নতুন এন্ট্রি যোগ করার স্ক্রিপ্ট
+add_codecraft.py — CodeCraft এ নতুন এন্ট্রি যোগ করার স্ক্রিপ্ট
 
-ব্যবহার (index.html ও data.json এর ফোল্ডারে চালান):
-    python add.py            নতুন এন্ট্রি যোগ করুন
-    python add.py serve      লোকাল সার্ভার চালু করুন (পোর্ট 8000)
-    python add.py serve 9000 অন্য পোর্টে চালু করুন
-    python add.py list       মেনুর গাছ ও এন্ট্রির সংখ্যা দেখুন
-    python add.py delete     একটি এন্ট্রি মুছুন
+ব্যবহার:
+    python add_codecraft.py           নতুন এন্ট্রি যোগ করুন
+    python add_codecraft.py serve     ব্রাউজারে দেখার জন্য লোকাল সার্ভার চালু করুন (পোর্ট 8000)
+    python add_codecraft.py serve 9000
+    python add_codecraft.py list      সব এন্ট্রির তালিকা দেখুন
+    python add_codecraft.py delete    একটি এন্ট্রি মুছুন
 """
 
 import json
 import os
 import re
-import shutil
-import subprocess
 import sys
 import time
 import urllib.parse
@@ -24,10 +22,7 @@ import urllib.request
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "data.json")
 
-SITE_TITLE = "কোরআনের ফেরিওয়ালা"
-SITE_TAGLINE = "CodeCraft — স্ক্রিপ্ট, ফাইল ও নির্দেশনার সংগ্রহ"
 DEFAULT_MENUS = ["স্ক্রিপ্ট", "ফাইল", "নির্দেশনা"]
-SEP = " › "
 
 # ফাইলের এক্সটেনশন থেকে ভাষা/লেবেল চেনার তালিকা
 EXT_LANG = {
@@ -42,65 +37,23 @@ EXT_LANG = {
 }
 
 
-# ------------------------------------------------------------ menu tree ----
-def norm_nodes(lst):
-    """মেনু তালিকাকে {name, children} গাছে বদলায় (পুরোনো ফরম্যাটও চলে)।"""
-    out = []
-    for m in lst or []:
-        if isinstance(m, str):
-            out.append({"name": m, "children": []})
-        elif isinstance(m, dict) and m.get("name"):
-            out.append({"name": m["name"], "children": norm_nodes(m.get("children"))})
-    return out
-
-
-def find_node(nodes, name):
-    return next((n for n in nodes if n["name"] == name), None)
-
-
-def children_of(tree, path):
-    """path এর ভেতরের সন্তান-তালিকা ফেরত দেয় (না থাকলে তৈরি করে)।"""
-    lst = tree
-    for name in path:
-        node = find_node(lst, name)
-        if node is None:
-            node = {"name": name, "children": []}
-            lst.append(node)
-        lst = node["children"]
-    return lst
-
-
-def count_items(items, path):
-    return sum(1 for it in items if it["path"][:len(path)] == path)
-
-
-# ------------------------------------------------------------ data file ----
-def normalize(data):
-    """পুরোনো data.json (একস্তরের menu) নতুন গাছ-কাঠামোতে বদলায়।"""
-    site = data.setdefault("site", {})
-    if site.get("title") in (None, "", "CodeCraft"):
-        site["title"] = SITE_TITLE
-        site["tagline"] = SITE_TAGLINE
-    if "tagline" not in site:
-        site["tagline"] = site.pop("subtitle", SITE_TAGLINE)
-    site.pop("subtitle", None)
-    site.setdefault("logo", "logo.png")
-
-    data["menus"] = norm_nodes(data.get("menus") or DEFAULT_MENUS)
-    data.setdefault("items", [])
-    for it in data["items"]:
-        if not isinstance(it.get("path"), list) or not it["path"]:
-            it["path"] = [it["menu"]] if it.get("menu") else []
-        it.pop("menu", None)
-        children_of(data["menus"], it["path"])   # মেনুর গাছে না থাকলে যোগ করে
-    return data
-
-
+# ---------------------------------------------------------------- data file --
 def load_data():
     if not os.path.exists(DATA_FILE):
-        return normalize({"site": {}, "menus": [], "items": []})
+        return {
+            "site": {
+                "title": "CodeCraft",
+                "subtitle": "আমার স্ক্রিপ্ট, ফাইল ও নির্দেশনার সংগ্রহ",
+            },
+            "menus": list(DEFAULT_MENUS),
+            "items": [],
+        }
     with open(DATA_FILE, "r", encoding="utf-8") as f:
-        return normalize(json.load(f))
+        data = json.load(f)
+    data.setdefault("site", {"title": "CodeCraft", "subtitle": ""})
+    data.setdefault("menus", list(DEFAULT_MENUS))
+    data.setdefault("items", [])
+    return data
 
 
 def save_data(data):
@@ -108,10 +61,18 @@ def save_data(data):
     with open(tmp, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    os.replace(tmp, DATA_FILE)   # আধা-লেখা ফাইলে ডাটা নষ্ট হওয়া ঠেকায়
+    os.replace(tmp, DATA_FILE)  # আধা-লেখা ফাইল থেকে ডাটা নষ্ট হওয়া ঠেকায়
 
 
-# ---------------------------------------------------------------- input ----
+def all_menus(data):
+    menus = list(data["menus"])
+    for it in data["items"]:
+        if it.get("menu") and it["menu"] not in menus:
+            menus.append(it["menu"])
+    return menus
+
+
+# ------------------------------------------------------------------- input --
 def ask(prompt, required=True, default=None):
     while True:
         suffix = f" [{default}]" if default else ""
@@ -144,42 +105,29 @@ def ask_multiline(prompt):
     return "\n".join(lines)
 
 
-def choose_path(data):
-    """মেনু → সাব মেনু → সাব-সাব মেনু… ধাপে ধাপে নেমে গিয়ে পথ বেছে নেয়।"""
-    path = []
+def choose_menu(data):
+    menus = all_menus(data)
     print("\nকোন মেনুর আওতায় যোগ করবেন?")
-    print("(মেনু বেছে ভেতরে ঢুকুন; দরকার হলে নতুন মেনু/সাব মেনু বানান; শেষে 0 দিয়ে সংরক্ষণ করুন)")
+    for i, name in enumerate(menus, 1):
+        print(f"  {i}. {name}")
+    custom_no = len(menus) + 1
+    print(f"  {custom_no}. ➕ কাস্টম মেনু (নিজে লিখবো)")
     while True:
-        kids = children_of(data["menus"], path)
-        print("\n  📂 " + (SEP.join(path) if path else "মূল মেনু"))
-        for i, n in enumerate(kids, 1):
-            total = count_items(data["items"], path + [n["name"]])
-            sub = f", {len(n['children'])}টি সাব মেনু" if n["children"] else ""
-            print(f"   {i}. {n['name']}  ({total}টি এন্ট্রি{sub})")
-        new_no = len(kids) + 1
-        print(f"   {new_no}. ➕ নতুন {'সাব মেনু' if path else 'মেনু'} তৈরি করুন")
-        if path:
-            print(f"   0. ✔ এখানেই সংরক্ষণ করুন  ({SEP.join(path)})")
-
-        raw = ask("নম্বর লিখুন (অথবা সরাসরি নাম লিখুন)")
-        if raw == "0" and path:
-            return path
+        raw = ask("নম্বর লিখুন (অথবা সরাসরি মেনুর নাম লিখুন)")
         if raw.isdigit():
             n = int(raw)
-            if 1 <= n <= len(kids):
-                path = path + [kids[n - 1]["name"]]
-            elif n == new_no:
-                path = path + [ask("নতুন নাম")]
-            else:
-                print("  ⚠ ভুল নম্বর।")
-                continue
+            if 1 <= n <= len(menus):
+                return menus[n - 1]
+            if n == custom_no:
+                return ask("নতুন মেনুর নাম")
+            print("  ⚠ ভুল নম্বর।")
         else:
-            path = path + [raw]   # সরাসরি নাম: থাকলে ঢুকবে, না থাকলে নতুন হবে
-        children_of(data["menus"], path)   # নতুন হলে গাছে যোগ হয় (সেভ হবে শেষে)
+            return raw  # সরাসরি নাম লিখলে সেটাই মেনু
 
 
-# -------------------------------------------------------- file / source ----
+# ------------------------------------------------------------ file / source --
 def to_raw_github(url):
+    """github.com/…/blob/… লিংককে raw লিংকে বদলায়।"""
     m = re.match(r"^https?://github\.com/([^/]+)/([^/]+)/blob/(.+)$", url)
     if m:
         return f"https://raw.githubusercontent.com/{m.group(1)}/{m.group(2)}/{m.group(3)}"
@@ -239,17 +187,18 @@ def read_pasted_code():
 
 
 def guess_language(filename):
-    return EXT_LANG.get(os.path.splitext(filename)[1].lower(), "Text")
+    ext = os.path.splitext(filename)[1].lower()
+    return EXT_LANG.get(ext, "Text")
 
 
-# ------------------------------------------------------------- commands ----
+# ---------------------------------------------------------------- commands --
 def cmd_add():
     data = load_data()
-    print("=" * 50)
-    print(f"  {SITE_TITLE} — CodeCraft এ নতুন এন্ট্রি")
-    print("=" * 50)
+    print("=" * 46)
+    print("  CodeCraft — নতুন এন্ট্রি যোগ করুন")
+    print("=" * 46)
 
-    path = choose_path(data)
+    menu = choose_menu(data)
     title = ask("\nহেডলাইন (শিরোনাম)")
     description = ask_multiline("\nবিবরণ")
 
@@ -270,38 +219,39 @@ def cmd_add():
         if result:
             code, filename = result
 
-    language = ask("ভাষা/লেবেল (HTML, JSON, Python, Node…)", default=guess_language(filename or ""))
+    language = ask("ভাষা/লেবেল (HTML, JSON, Python, Node…)",
+                   default=guess_language(filename or ""))
 
-    data["items"].append({
-        "id": str(time.time_ns() // 1_000_000),
-        "path": path,
+    item = {
+        "id": f"{int(time.time())}-{len(data['items']) + 1}",
+        "menu": menu,
         "title": title,
         "description": description,
         "language": language,
         "filename": filename or "",
         "code": code,
         "created": time.strftime("%Y-%m-%d"),
-    })
+    }
+
+    if menu not in data["menus"]:
+        data["menus"].append(menu)
+    data["items"].append(item)
     save_data(data)
 
     print("\n✔ যোগ হয়েছে!")
-    print(f"  মেনু    : {SEP.join(path)}")
-    print(f"  হেডলাইন : {title}")
-    print(f"  ভাষা    : {language}   ফাইল: {filename or '—'}   ({len(code.splitlines())} লাইন)")
-    print("\nদেখতে চালান:  python add.py serve")
-
-
-def print_tree(nodes, items, path, depth):
-    for n in nodes:
-        p = path + [n["name"]]
-        print("   " + "    " * depth + f"├─ {n['name']}  ({count_items(items, p)})")
-        print_tree(n["children"], items, p, depth + 1)
+    print(f"  মেনু     : {menu}")
+    print(f"  হেডলাইন  : {title}")
+    print(f"  ভাষা     : {language}   ফাইল: {filename or '—'}   ({len(code.splitlines())} লাইন)")
+    print("\nদেখতে চালান:  python add_codecraft.py serve")
 
 
 def cmd_list():
     data = load_data()
-    print(f"সব এন্ট্রি: {len(data['items'])}টি\n")
-    print_tree(data["menus"], data["items"], [], 0)
+    if not data["items"]:
+        print("এখনও কোনো এন্ট্রি নেই।")
+        return
+    for i, it in enumerate(data["items"], 1):
+        print(f"{i:>3}. [{it['menu']}] {it['title']}  ({it.get('language', '')} {it.get('filename', '')})")
 
 
 def cmd_delete():
@@ -309,8 +259,7 @@ def cmd_delete():
     if not data["items"]:
         print("মোছার মতো কোনো এন্ট্রি নেই।")
         return
-    for i, it in enumerate(data["items"], 1):
-        print(f"{i:>3}. [{SEP.join(it['path'])}] {it['title']}  ({it.get('language', '')} {it.get('filename', '')})")
+    cmd_list()
     raw = ask("\nকোন নম্বরটি মুছবেন? (বাতিল করতে খালি রাখুন)", required=False)
     if not raw.isdigit() or not (1 <= int(raw) <= len(data["items"])):
         print("বাতিল করা হলো।")
@@ -321,36 +270,28 @@ def cmd_delete():
         return
     data["items"].pop(int(raw) - 1)
     save_data(data)
-    print("✔ মুছে ফেলা হয়েছে। (মেনুটি থেকে যাবে; দরকার হলে data.json থেকে মুছুন)")
-
-
-def open_in_browser(url):
-    """Termux হলে termux-open-url, নয়তো ডিফল্ট ব্রাউজার।"""
-    try:
-        if shutil.which("termux-open-url"):
-            subprocess.Popen(["termux-open-url", url])
-        else:
-            import webbrowser
-            webbrowser.open(url)
-    except Exception:
-        pass   # খুলতে না পারলে ব্যবহারকারী নিজেই লিংক খুলবেন
+    print("✔ মুছে ফেলা হয়েছে।")
 
 
 def cmd_serve(port):
     import functools
     import http.server
     import socketserver
+    import webbrowser
 
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=BASE_DIR)
     socketserver.TCPServer.allow_reuse_address = True
     try:
         with socketserver.TCPServer(("127.0.0.1", port), handler) as httpd:
             url = f"http://localhost:{port}/index.html"
-            print(f"{SITE_TITLE} চালু: {url}   (বন্ধ করতে Ctrl+C)")
-            open_in_browser(url)
+            print(f"CodeCraft চালু: {url}   (বন্ধ করতে Ctrl+C)")
+            try:
+                webbrowser.open(url)
+            except Exception:
+                pass
             httpd.serve_forever()
     except OSError as e:
-        print(f"সার্ভার চালু করা যায়নি: {e}\nঅন্য পোর্ট দিন, যেমন: python add.py serve 9000")
+        print(f"সার্ভার চালু করা যায়নি: {e}\nঅন্য পোর্ট দিন, যেমন: python add_codecraft.py serve 9000")
     except KeyboardInterrupt:
         print("\nসার্ভার বন্ধ করা হলো।")
 
