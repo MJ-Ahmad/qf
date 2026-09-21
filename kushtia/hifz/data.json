@@ -1,11 +1,15 @@
 {
-  "_readme": "শুধু মান বদলান, কাঠামো নয়। upazilas এর প্রতিটি ঘরে সংখ্যা বসান: madrasa, students, ustad হলো নিবন্ধিত সংখ্যা; sabakDone/sabakTotal হলো নির্ধারিত সময়ে সবক সম্পন্ন ও মোট শিক্ষার্থী; mashqDone/mashqTotal হলো মাশক জমা ও জমা দেওয়ার কথা ছিল এমন সংখ্যা। শতাংশ পাতা নিজে হিসাব করে। head ঘরে উপজেলা দায়িত্বশীলের নাম লিখুন। schedule এ কর্মসূচি যোগ করুন: {\"when\":\"তারিখ বা সময়\",\"title\":\"বিষয়\"}। asOf ঘরে তথ্য হালনাগাদের তারিখ লিখুন।",
+  "_readme": "শুধু মান বদলান, কাঠামো নয়। {\"bn\":…, \"en\":…} মানে ভাষাভেদে আলাদা লেখা; সাধারণ স্ট্রিং দুই ভাষাতেই একই দেখায়। upazilas এর প্রতিটি ঘরে সংখ্যা বসান: madrasa, students, ustad হলো নিবন্ধিত সংখ্যা; sabakDone/sabakTotal হলো নির্ধারিত সময়ে সবক সম্পন্ন ও মোট শিক্ষার্থী; mashqDone/mashqTotal হলো মাশক জমা ও জমা দেওয়ার কথা ছিল এমন সংখ্যা। শতাংশ পাতা নিজে হিসাব করে। head ঘরে উপজেলা দায়িত্বশীলের নাম লিখুন। schedule এ কর্মসূচি যোগ করুন: {\"when\":{\"bn\":\"…\",\"en\":\"…\"},\"title\":{\"bn\":\"…\",\"en\":\"…\"}}। asOf ঘরে তথ্য হালনাগাদের তারিখ লিখুন।",
 
   "site": {
-    "title": "হিফজ ব্যবস্থাপনা, কুষ্টিয়া জেলা",
-    "brand": "কোরআনের ফেরিওয়ালা",
-    "department": "হিফজুল কোরআন বিভাগ",
-    "profileUrl": "../"
+    "title": { "bn": "হিফজ ব্যবস্থাপনা, কুষ্টিয়া জেলা", "en": "Hifz Management, Kushtia District" },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "department": { "bn": "হিফজুল কোরআন বিভাগ", "en": "Hifzul Quran Department" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "profileUrl": "../",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka"
   },
 
   "security": {
@@ -13,42 +17,83 @@
   },
 
   "lockScreen": {
-    "greeting": "আসসালামু আলাইকুম",
-    "title": "হিফজ ব্যবস্থাপনা",
-    "profileFor": "প্রধান দায়িত্বশীলের ড্যাশবোর্ড, কুষ্টিয়া জেলা",
-    "subtitle": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।",
-    "placeholder": "পাসওয়ার্ড লিখুন",
-    "button": "খুলুন",
-    "wrongPassword": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।",
-    "contactNote": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:",
+    "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
+    "title": { "bn": "হিফজ ব্যবস্থাপনা", "en": "Hifz Management" },
+    "profileFor": { "bn": "প্রধান দায়িত্বশীলের ড্যাশবোর্ড, কুষ্টিয়া জেলা", "en": "Dashboard of the District Head, Kushtia" },
+    "subtitle": { "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।", "en": "This page is protected. Enter the correct password to view it." },
+    "placeholder": { "bn": "পাসওয়ার্ড লিখুন", "en": "Enter password" },
+    "button": { "bn": "খুলুন", "en": "Unlock" },
+    "wrongPassword": { "bn": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।", "en": "Incorrect password. Please try again." },
+    "contactNote": { "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:", "en": "To change the password or for any questions, contact:" },
     "contactEmail": "quranerfariwala@gmail.com"
   },
 
   "official": {
-    "name": "হাফেজ আল আমিন",
-    "monogram": "আ",
-    "role": "প্রধান দায়িত্বশীল, কুষ্টিয়া জেলা",
+    "name": { "bn": "হাফেজ আল আমিন", "en": "Hafez Al Amin" },
+    "monogram": { "bn": "আ", "en": "A" },
+    "role": { "bn": "প্রধান দায়িত্বশীল, কুষ্টিয়া জেলা", "en": "District Head, Kushtia" },
     "asOf": ""
   },
 
+  "ui": {
+    "back": { "bn": "বিনিয়োগ প্রোফাইলে যান", "en": "Go to investor profile" },
+    "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" },
+    "tabs": { "ov": { "bn": "সারসংক্ষেপ", "en": "Overview" }, "up": { "bn": "উপজেলা পর্যবেক্ষণ", "en": "Upazila monitoring" }, "st": { "bn": "দায়িত্ব কাঠামো", "en": "Responsibility structure" } },
+    "asOf": { "bn": "তথ্য হালনাগাদ: {d}", "en": "Data updated: {d}" },
+    "logout": { "bn": "বের হন", "en": "Sign out" },
+    "footer": { "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।", "en": "© 2026 Quraner Fariwala. All rights reserved." },
+    "loadError": { "bn": "তথ্য ফাইল (data.json) লোড করা যায়নি। পাতাটি ওয়েব সার্ভার থেকে খুলুন এবং data.json একই ফোল্ডারে আছে কি না দেখুন।", "en": "Could not load the data file (data.json). Open this page from a web server and make sure data.json is in the same folder." },
+    "ovTitle": { "bn": "জেলার সারসংক্ষেপ", "en": "District overview" },
+    "kpi": {
+      "madrasa": { "bn": "নিবন্ধিত মাদ্রাসা", "en": "Registered madrasas" },
+      "students": { "bn": "নিবন্ধিত হিফজ শিক্ষার্থী", "en": "Registered Hifz students" },
+      "ustad": { "bn": "নিযুক্ত হিফজ উস্তাদ", "en": "Hifz ustads appointed" },
+      "sabak": { "bn": "সবক সম্পন্নের হার", "en": "Sabak completion rate" },
+      "mashq": { "bn": "মাশক জমার হার", "en": "Mashq submission rate" }
+    },
+    "attnTitle": { "bn": "মনোযোগ প্রয়োজন", "en": "Needs attention" },
+    "attnNone": { "bn": "এই মুহূর্তে কোনো বিষয় মনোযোগের অপেক্ষায় নেই।", "en": "Nothing needs attention right now." },
+    "noHead": { "bn": "দায়িত্বশীল নির্ধারিত হয়নি: {n}", "en": "No responsible person assigned: {n}" },
+    "noMad": { "bn": "নিবন্ধিত মাদ্রাসা নেই: {n}", "en": "No registered madrasa: {n}" },
+    "lowMashq": { "bn": "মাশক জমার হার ৭৫% এর নিচে: {n}", "en": "Mashq submission below 75%: {n}" },
+    "schedTitle": { "bn": "প্রশিক্ষণ ও পরিদর্শন", "en": "Training and visits" },
+    "schedEmpty": { "bn": "কোনো প্রশিক্ষণ বা পরিদর্শন কর্মসূচি এখনো যুক্ত করা হয়নি।", "en": "No training or visit has been added yet." },
+    "upTitle": { "bn": "উপজেলাভিত্তিক পর্যবেক্ষণ", "en": "Monitoring by upazila" },
+    "th": {
+      "upazila": { "bn": "উপজেলা", "en": "Upazila" }, "head": { "bn": "দায়িত্বশীল", "en": "In charge" },
+      "madrasa": { "bn": "মাদ্রাসা", "en": "Madrasas" }, "students": { "bn": "শিক্ষার্থী", "en": "Students" },
+      "ustad": { "bn": "উস্তাদ", "en": "Ustads" }, "sabak": { "bn": "সবক", "en": "Sabak" }, "mashq": { "bn": "মাশক", "en": "Mashq" }
+    },
+    "headNone": { "bn": "নির্ধারিত হয়নি", "en": "Not assigned" },
+    "avgStudents": { "bn": "প্রতি মাদ্রাসায় গড়ে {n} জন শিক্ষার্থী।", "en": "On average {n} students per madrasa." },
+    "avgUstad": { "bn": " প্রতি উস্তাদের অধীনে গড়ে {n} জন।", "en": " On average {n} students per ustad." },
+    "noUstad": { "bn": " হিফজ উস্তাদ এখনো নিবন্ধিত হয়নি।", "en": " No Hifz ustad has been registered yet." },
+    "lowNote": { "bn": " মাশক জমার হার কম, তাই এই উপজেলায় অগ্রাধিকার দিয়ে পরিদর্শন করা প্রয়োজন।", "en": " Mashq submission is low, so this upazila should be visited as a priority." },
+    "noData": { "bn": "এই উপজেলায় এখনো মাদ্রাসা বা শিক্ষার্থী নিবন্ধিত হয়নি। নিবন্ধন হলে এখানে বিশ্লেষণ দেখা যাবে।", "en": "No madrasa or student has been registered in this upazila yet. The analysis will appear here once they are." },
+    "stTitle": { "bn": "দায়িত্বশীল কাঠামো", "en": "Responsibility structure" },
+    "stIntro": { "bn": "প্রত্যেক স্তরের নিজস্ব পাসওয়ার্ডভিত্তিক ড্যাশবোর্ড থাকবে। একজন দায়িত্বশীল কেবল নিজের এলাকা ও তার নিচের স্তরের তথ্য দেখতে ও নিয়ন্ত্রণ করতে পারবেন।", "en": "Every level has its own password-protected dashboard. A responsible person can see and control only their own area and the levels below it." },
+    "area": { "bn": "এলাকা", "en": "Area" }, "sees": { "bn": "দেখবেন", "en": "Sees" }, "controls": { "bn": "নিয়ন্ত্রণ", "en": "Controls" },
+    "you": { "bn": "আপনি", "en": "you" }
+  },
+
   "levels": [
-    { "title": "কেন্দ্রীয় প্রধান দায়িত্বশীল", "area": "সারা বাংলাদেশ", "sees": "সব বিভাগের সার্বিক চিত্র", "controls": "হিফজ শিক্ষাক্রম নির্ধারণ, বিভাগীয় দায়িত্বশীল নিয়োগ, নীতিমালা অনুমোদন" },
-    { "title": "বিভাগীয় দায়িত্বশীল", "area": "বিভাগ", "sees": "জেলাভিত্তিক তুলনা ও অগ্রগতি", "controls": "জেলা দায়িত্বশীলদের কাজ যাচাই, বিভাগীয় প্রশিক্ষণ পরিকল্পনা" },
-    { "title": "জেলা প্রধান দায়িত্বশীল", "area": "জেলা (কুষ্টিয়ার ৬ উপজেলা)", "sees": "উপজেলা, মাদ্রাসা, উস্তাদ ও শিক্ষার্থীর পূর্ণ চিত্র", "controls": "উপজেলা দায়িত্বশীল নিয়োগ, পরিদর্শন, প্রশিক্ষণ, প্রতিবেদন অনুমোদন", "me": true },
-    { "title": "উপজেলা দায়িত্বশীল", "area": "উপজেলা", "sees": "ইউনিয়ন ও মাদ্রাসাভিত্তিক অবস্থা", "controls": "ইউনিয়ন দায়িত্বশীলদের কাজ তদারকি, মাসিক বৈঠক" },
-    { "title": "ইউনিয়ন দায়িত্বশীল", "area": "ইউনিয়ন", "sees": "গ্রামভিত্তিক মাদ্রাসা ও উপস্থিতি", "controls": "নিয়মিত পরিদর্শন, দুর্বল মাদ্রাসা চিহ্নিতকরণ" },
-    { "title": "গ্রাম দায়িত্বশীল", "area": "গ্রাম", "sees": "গ্রামের মাদ্রাসা ও শিক্ষার্থী", "controls": "স্থানীয় সহযোগিতা, অভিভাবকদের সাথে যোগাযোগ" },
-    { "title": "মাদ্রাসা পরিচালক", "area": "নিজ মাদ্রাসা", "sees": "পুরো মাদ্রাসার হিফজ বিভাগ", "controls": "প্রধান উস্তাদ তদারকি, মাসিক প্রতিবেদন প্রদান" },
-    { "title": "হিফজ বিভাগের প্রধান উস্তাদ", "area": "নিজ হিফজ বিভাগ", "sees": "প্রতিটি শিক্ষার্থীর সবক, সাবকী, মানযিল ও মাশক", "controls": "দৈনিক তথ্য ইনপুট, মাশকের মান যাচাই" }
+    { "title": { "bn": "কেন্দ্রীয় প্রধান দায়িত্বশীল", "en": "Central Head" }, "area": { "bn": "সারা বাংলাদেশ", "en": "All of Bangladesh" }, "sees": { "bn": "সব বিভাগের সার্বিক চিত্র", "en": "Overall picture of every division" }, "controls": { "bn": "হিফজ শিক্ষাক্রম নির্ধারণ, বিভাগীয় দায়িত্বশীল নিয়োগ, নীতিমালা অনুমোদন", "en": "Sets the Hifz curriculum, appoints division heads, approves policy" } },
+    { "title": { "bn": "বিভাগীয় দায়িত্বশীল", "en": "Division Head" }, "area": { "bn": "বিভাগ", "en": "Division" }, "sees": { "bn": "জেলাভিত্তিক তুলনা ও অগ্রগতি", "en": "District comparison and progress" }, "controls": { "bn": "জেলা দায়িত্বশীলদের কাজ যাচাই, বিভাগীয় প্রশিক্ষণ পরিকল্পনা", "en": "Reviews district heads' work, plans division training" } },
+    { "title": { "bn": "জেলা প্রধান দায়িত্বশীল", "en": "District Head" }, "area": { "bn": "জেলা (কুষ্টিয়ার ৬ উপজেলা)", "en": "District (6 upazilas of Kushtia)" }, "sees": { "bn": "উপজেলা, মাদ্রাসা, উস্তাদ ও শিক্ষার্থীর পূর্ণ চিত্র", "en": "Full picture of upazilas, madrasas, ustads and students" }, "controls": { "bn": "উপজেলা দায়িত্বশীল নিয়োগ, পরিদর্শন, প্রশিক্ষণ, প্রতিবেদন অনুমোদন", "en": "Appoints upazila heads, inspects, trains, approves reports" }, "me": true },
+    { "title": { "bn": "উপজেলা দায়িত্বশীল", "en": "Upazila Head" }, "area": { "bn": "উপজেলা", "en": "Upazila" }, "sees": { "bn": "ইউনিয়ন ও মাদ্রাসাভিত্তিক অবস্থা", "en": "Status by union and madrasa" }, "controls": { "bn": "ইউনিয়ন দায়িত্বশীলদের কাজ তদারকি, মাসিক বৈঠক", "en": "Supervises union heads, holds monthly meetings" } },
+    { "title": { "bn": "ইউনিয়ন দায়িত্বশীল", "en": "Union Head" }, "area": { "bn": "ইউনিয়ন", "en": "Union" }, "sees": { "bn": "গ্রামভিত্তিক মাদ্রাসা ও উপস্থিতি", "en": "Madrasas and attendance by village" }, "controls": { "bn": "নিয়মিত পরিদর্শন, দুর্বল মাদ্রাসা চিহ্নিতকরণ", "en": "Regular visits, identifies weak madrasas" } },
+    { "title": { "bn": "গ্রাম দায়িত্বশীল", "en": "Village Head" }, "area": { "bn": "গ্রাম", "en": "Village" }, "sees": { "bn": "গ্রামের মাদ্রাসা ও শিক্ষার্থী", "en": "Madrasas and students of the village" }, "controls": { "bn": "স্থানীয় সহযোগিতা, অভিভাবকদের সাথে যোগাযোগ", "en": "Local support, contact with guardians" } },
+    { "title": { "bn": "মাদ্রাসা পরিচালক", "en": "Madrasa Director" }, "area": { "bn": "নিজ মাদ্রাসা", "en": "Own madrasa" }, "sees": { "bn": "পুরো মাদ্রাসার হিফজ বিভাগ", "en": "The whole madrasa's Hifz department" }, "controls": { "bn": "প্রধান উস্তাদ তদারকি, মাসিক প্রতিবেদন প্রদান", "en": "Supervises the head ustad, submits monthly reports" } },
+    { "title": { "bn": "হিফজ বিভাগের প্রধান উস্তাদ", "en": "Head Ustad, Hifz Department" }, "area": { "bn": "নিজ হিফজ বিভাগ", "en": "Own Hifz department" }, "sees": { "bn": "প্রতিটি শিক্ষার্থীর সবক, সাবকী, মানযিল ও মাশক", "en": "Every student's sabak, sabki, manzil and mashq" }, "controls": { "bn": "দৈনিক তথ্য ইনপুট, মাশকের মান যাচাই", "en": "Enters daily data, checks the quality of mashq" } }
   ],
 
   "upazilas": [
-    { "name": "কুষ্টিয়া সদর", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
-    { "name": "কুমারখালী", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
-    { "name": "খোকসা", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
-    { "name": "মিরপুর", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
-    { "name": "ভেড়ামারা", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
-    { "name": "দৌলতপুর", "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 }
+    { "name": { "bn": "কুষ্টিয়া সদর", "en": "Kushtia Sadar" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
+    { "name": { "bn": "কুমারখালী", "en": "Kumarkhali" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
+    { "name": { "bn": "খোকসা", "en": "Khoksa" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
+    { "name": { "bn": "মিরপুর", "en": "Mirpur" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
+    { "name": { "bn": "ভেড়ামারা", "en": "Bheramara" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 },
+    { "name": { "bn": "দৌলতপুর", "en": "Daulatpur" }, "head": "", "madrasa": 0, "students": 0, "ustad": 0, "sabakDone": 0, "sabakTotal": 0, "mashqDone": 0, "mashqTotal": 0 }
   ],
 
   "schedule": []
