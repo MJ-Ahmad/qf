@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="utf-8" />
@@ -31,7 +31,6 @@
       --lattice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23ead9a6' stroke-opacity='.12' stroke-width='1.2'%3E%3Crect x='16' y='16' width='40' height='40'/%3E%3Crect x='16' y='16' width='40' height='40' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E");
     }
 
-
     * { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
     body {
@@ -49,7 +48,6 @@
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
-
     /* ---------- language switch (always visible) ---------- */
     .langbar {
       position: fixed; top: 12px; right: 12px; z-index: 90; display: flex; gap: 2px; padding: 3px;
@@ -60,7 +58,6 @@
       padding: 3px 12px; font-size: .9rem; cursor: pointer;
     }
     .langbar button[aria-pressed="true"] { background: var(--gold-soft); color: var(--night); font-weight: 600; }
-
 
     /* ---------- lock screen ---------- */
     #lockScreen {
@@ -95,7 +92,6 @@
       padding: 20px; color: #7a1f1f; font-size: .95rem;
     }
 
-
     /* ---------- hero ---------- */
     .hero { position: relative; overflow: hidden; color: #fff; padding: 18px 20px 46px; background: linear-gradient(180deg, var(--night), #0e4a3e); }
     .hero::before { content: ""; position: absolute; inset: 0; background-image: var(--lattice); pointer-events: none; }
@@ -113,14 +109,12 @@
     .roles { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
     .roles li { border: 1px solid rgba(234, 217, 166, .55); color: var(--gold-soft); padding: 3px 14px; border-radius: 999px; font-size: .92rem; }
 
-
     /* ---------- main ---------- */
     main { max-width: 860px; margin: 0 auto; padding: 0 18px 56px; }
     .clockline { padding: 14px 0 2px; text-align: center; color: var(--muted); font-size: .9rem; }
     .sec { margin-top: 34px; }
     .sec > h2 { display: flex; align-items: center; gap: 14px; font-family: var(--serif); font-weight: 400; font-size: 1.65rem; line-height: 1.3; color: var(--night); }
     .sec > h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
-
 
     .sheet { margin-top: 14px; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 4px; padding: 22px 18px 18px; }
     .figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -142,7 +136,6 @@
     .barcap .k-paid b { color: var(--emerald); }
     .barcap .k-due b { color: var(--lapis); }
 
-
     .ret-top { display: flex; align-items: center; gap: 18px; }
     .qty { position: relative; flex: none; width: 108px; height: 108px; display: grid; place-items: center; text-align: center; background: var(--gold); clip-path: var(--star); }
     .qty::after { content: ""; position: absolute; inset: 5px; background: var(--night); clip-path: var(--star); }
@@ -156,7 +149,6 @@
     .ret-grid dt { color: var(--muted); font-size: .82rem; line-height: 1.45; }
     .ret-grid dd { font-weight: 500; overflow-wrap: anywhere; }
     .ret-grid .sub { display: block; font-weight: 400; font-size: .85rem; color: var(--lapis); }
-
 
     .ledger { position: relative; margin-top: 18px; padding-left: 36px; }
     .ledger::before { content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--gold), var(--gold-soft)); }
@@ -175,7 +167,6 @@
     .entry-ref b { font-weight: 600; color: var(--ink); letter-spacing: .05em; user-select: all; }
     .badge { display: inline-block; margin-top: 6px; padding: 0 10px; border-radius: 999px; font-size: .8rem; background: rgba(19, 107, 85, .1); color: var(--emerald); }
 
-
     .info { margin-top: 14px; display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
     .info > div { padding: 11px 0; border-bottom: 1px solid var(--line); }
     .info dt { color: var(--muted); font-size: .85rem; }
@@ -185,7 +176,6 @@
       .info { grid-template-columns: 1fr 1fr; column-gap: 36px; }
       .info .wide { grid-column: 1 / -1; }
     }
-
 
     .cta { position: relative; overflow: hidden; margin-top: 40px; padding: 28px 22px 30px; background: var(--night); color: #fff; border-radius: 4px; }
     .cta::before { content: ""; position: absolute; inset: 0; background-image: var(--lattice); pointer-events: none; }
@@ -198,14 +188,12 @@
     .foot { padding: 22px 18px; text-align: center; background: var(--night); color: #cfe0d8; font-size: .88rem; }
     .foot p + p { margin-top: 2px; opacity: .85; }
 
-
     /* ---------- agreement viewer ---------- */
     .cv { position: fixed; inset: 0; z-index: 70; display: none; overflow-y: auto; background: radial-gradient(120% 70% at 50% 0%, #0c3a30 0%, #04170f 75%); -webkit-overflow-scrolling: touch; }
     .cv.open { display: block; animation: fade .5s ease both; }
     .cv-bar { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; padding: 10px 12px; padding-right: 130px; background: rgba(4, 23, 15, .96); }
     .tb { border: 1px solid rgba(234, 217, 166, .45); background: rgba(255, 255, 255, .08); color: var(--gold-soft); border-radius: 4px; padding: 6px 14px; font: 500 .95rem var(--sans); cursor: pointer; }
     .tb:hover { background: rgba(255, 255, 255, .16); }
-
 
     .paper {
       position: relative; width: calc(100% - 24px); max-width: 780px; margin: 16px auto 48px; padding: 38px 22px 34px;
@@ -217,7 +205,6 @@
     .paper::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(184, 137, 45, .4); pointer-events: none; }
     @media (min-width: 700px) { .paper { padding: 58px 60px 50px; } }
 
-
     .reveal { opacity: 0; animation: rise .8s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--i) * .16s + .55s); }
     @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
     @keyframes paper-in { from { opacity: 0; transform: translateY(46px) scale(.96); } to { opacity: 1; transform: none; } }
@@ -228,7 +215,6 @@
       55% { opacity: .95; }
       100% { opacity: .9; transform: scale(1) rotate(-8deg); }
     }
-
 
     .invocation { text-align: center; font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 2rem; line-height: 1.8; color: var(--night); }
     .orn svg { display: block; width: 240px; max-width: 100%; height: 20px; margin: 4px auto 0; overflow: visible; }
@@ -278,13 +264,11 @@
     .c-note { margin-top: 24px; text-align: center; font-size: .85rem; color: #6b5c30; }
     .paper, .seal { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-
     @media (prefers-reduced-motion: reduce) {
       .cv.open, .paper, .reveal, .orn path { animation: none !important; opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; }
       .seal { animation: none !important; opacity: .9 !important; transform: rotate(-8deg) !important; }
       .bar-paid { transition: none; }
     }
-
 
     @media print {
       body { background: #fff; }
@@ -295,12 +279,9 @@
       .seal { animation: none !important; opacity: .9 !important; transform: rotate(-8deg) !important; }
       @page { margin: 12mm; }
     }
-    .switch { display: flex; width: fit-content; margin-top: 14px; padding: 6px 16px; border: 1px solid var(--gold-soft); border-radius: 999px; background: rgba(234, 217, 166, .12); color: var(--gold-soft); text-decoration: none; font-weight: 600; font-size: .95rem; }
-    .switch:hover { background: var(--gold-soft); color: var(--night); }
   </style>
 </head>
 <body>
-
 
   <!--
     Everything shown on this page comes from data.json.
@@ -309,12 +290,10 @@
       data-prefix="tel:"        optional prefix for the attribute value
   -->
 
-
   <div class="langbar" role="group" aria-label="Language">
     <button id="langBn" type="button" onclick="setLang('bn')" aria-pressed="true">বাংলা</button>
     <button id="langEn" type="button" onclick="setLang('en')" aria-pressed="false">EN</button>
   </div>
-
 
   <!-- LOCK SCREEN -->
   <div id="lockScreen">
@@ -325,7 +304,6 @@
       <p class="lock-for" data-bind="lockScreen.profileFor"></p>
       <p class="lock-sub" data-bind="lockScreen.subtitle"></p>
 
-
       <label for="passwordInput" class="sr-only" data-bind="lockScreen.passwordLabel"></label>
       <input id="passwordInput" type="password" autocomplete="current-password" data-bind-placeholder="lockScreen.placeholder" />
       <button id="unlockBtn" type="button" class="btn btn-solid" onclick="unlock()" data-bind="lockScreen.button"></button>
@@ -335,7 +313,6 @@
     <div id="loadError" class="hidden" role="alert"></div>
   </div>
 
-
   <!-- PROFILE (shown after unlock) -->
   <div id="app" class="hidden">
     <header class="hero">
@@ -344,8 +321,6 @@
           <img data-bind-src="site.logo" data-bind-alt="site.logoAlt" alt="" />
           <span data-bind="site.brand"></span>
         </a>
-        <a class="switch" href="hifz/" data-bind="ui.switchHifz"></a>
-
 
         <div class="identity">
           <div class="avatar"><div class="avatar-in" id="avatarInner"></div></div>
@@ -356,10 +331,8 @@
       </div>
     </header>
 
-
     <main>
       <p class="clockline"><span data-bind="site.clockLabel"></span>: <time id="clock"></time></p>
-
 
       <section class="sec">
         <h2 data-bind="ui.summaryTitle"></h2>
@@ -379,7 +352,6 @@
         </div>
       </section>
 
-
       <section class="sec">
         <h2 data-bind="ui.returns.title"></h2>
         <div class="sheet">
@@ -394,12 +366,10 @@
         </div>
       </section>
 
-
       <section class="sec">
         <h2 data-bind="ui.ledgerTitle"></h2>
         <ol class="ledger" id="ledger"></ol>
       </section>
-
 
       <section class="sec">
         <h2 data-bind="ui.infoTitle"></h2>
@@ -414,7 +384,6 @@
         </dl>
       </section>
 
-
       <section class="cta">
         <h2 data-bind="ui.agreementTitle"></h2>
         <p data-bind="ui.agreementText"></p>
@@ -423,17 +392,14 @@
         </button>
       </section>
 
-
       <p class="note" data-bind="ui.recordNote"></p>
     </main>
-
 
     <footer class="foot">
       <p data-bind="footer.copyright"></p>
       <p data-bind="footer.tagline"></p>
     </footer>
   </div>
-
 
   <!-- AGREEMENT VIEWER -->
   <div id="contractView" class="cv" role="dialog" aria-modal="true" data-bind-aria-label="contract.title">
@@ -443,7 +409,6 @@
     </div>
     <article class="paper" id="paper"></article>
   </div>
-
 
   <script>
     // ------------------------------------------------------------------
@@ -457,14 +422,12 @@
     let lastFocus = null;
     let clockTimer = null;
 
-
     const $ = (id) => document.getElementById(id);
     const get = (path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), DATA);
     // plain value: same in every language. {bn, en} object: current language.
     const tr = (v) => (v !== null && typeof v === 'object') ? (v[LANG] ?? v.en ?? v.bn ?? '') : (v ?? '');
     const T = (path) => tr(get(path));
     const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (_, k) => (k in vars ? vars[k] : ''));
-
 
     // ------------------------------------------------------------------
     // Formatting (Bengali digits in Bengali mode)
@@ -502,7 +465,6 @@
     const refsOf = (e) => [].concat(e.references || e.reference || []);
     const entryAmount = (e) => (e.amountFrom ? get(e.amountFrom) : e.amount);
 
-
     function totals() {
       const total = Number(DATA.investment.total) || 0;
       const paid = DATA.ledger.entries.filter(e => e.countsAsPaid).reduce((s, e) => s + (Number(entryAmount(e)) || 0), 0);
@@ -510,7 +472,6 @@
       const pct = total > 0 ? Math.min((paid / total) * 100, 100) : 0;
       return { total, paid, due, pct };
     }
-
 
     // agreement date + N months (day is clamped to the month length)
     function addMonths(dateStr, n) {
@@ -533,7 +494,6 @@
       return Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day)) / 86400000;
     };
 
-
     function vars() {
       const t = totals(), R = DATA.returns;
       return {
@@ -549,7 +509,6 @@
     }
     const TT = (path) => fill(T(path), vars());
 
-
     // Small DOM helper (all data goes in as text, never as HTML)
     function h(tag, attrs, ...kids) {
       const el = document.createElement(tag);
@@ -564,12 +523,10 @@
       return el;
     }
 
-
     // ------------------------------------------------------------------
     // Rendering
     // ------------------------------------------------------------------
     const BIND_ATTRS = ['href', 'src', 'alt', 'placeholder', 'aria-label'];
-
 
     function applyBindings() {
       document.querySelectorAll('[data-bind]').forEach(el => { el.textContent = TT(el.getAttribute('data-bind')); });
@@ -582,19 +539,16 @@
       document.title = TT('site.title');
     }
 
-
     function renderHero() {
       const av = $('avatarInner');
       av.textContent = '';
       if (DATA.investor.photo) av.append(h('img', { src: DATA.investor.photo, alt: T('investor.name') }));
       else av.append(h('span', { class: 'monogram' }, T('investor.monogram')));
 
-
       const ul = $('roles');
       ul.textContent = '';
       (DATA.investor.roles || []).forEach(r => ul.append(h('li', {}, tr(r))));
     }
-
 
     function renderSummary() {
       const t = totals();
@@ -606,13 +560,11 @@
       $('bar').setAttribute('aria-valuenow', String(Math.round(t.pct)));
     }
 
-
     function animateBar() {
       const bar = $('barPaid');
       bar.style.width = '0%';
       requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = totals().pct + '%'; }));
     }
-
 
     function renderLedger() {
       const ol = $('ledger');
@@ -631,7 +583,6 @@
       });
     }
 
-
     function updateCountdown() {
       const el = $('retCountdown');
       if (!el) return;
@@ -640,7 +591,6 @@
       const n = Math.abs(left);
       el.textContent = fill(T('ui.returns.countdown.' + key), { days: nfmt(n), s: plural(n) });
     }
-
 
     function renderReturns() {
       const R = DATA.returns, v = vars(), L = (k) => fill(T('ui.returns.' + k), v);
@@ -658,7 +608,6 @@
       updateCountdown();
     }
 
-
     // Static ornament (no data in it)
     const ORN_SVG =
       '<svg viewBox="0 0 300 24" aria-hidden="true" focusable="false">' +
@@ -666,31 +615,25 @@
       '<polygon points="150.00,2.00 152.93,4.93 157.07,4.93 157.07,9.07 160.00,12.00 157.07,14.93 157.07,19.07 152.93,19.07 150.00,22.00 147.07,19.07 142.93,19.07 142.93,14.93 140.00,12.00 142.93,9.07 142.93,4.93 147.07,4.93"/>' +
       '</svg>';
 
-
     function renderContract() {
       const C = DATA.contract, inv = DATA.investor, fo = DATA.founder, L = DATA.ui.labels;
       const v = vars(), t = totals();
       const paper = $('paper');
       paper.textContent = '';
 
-
       let i = 0;                                    // order of the reveal sequence
       const R = (el) => { el.classList.add('reveal'); el.style.setProperty('--i', i++); return el; };
       const row = (dt, dd) => [h('dt', {}, dt), h('dd', {}, dd)];
 
-
       if (C.invocation) paper.append(R(h('p', { class: 'invocation', lang: 'ar', dir: 'rtl' }, C.invocation)));
-
 
       const orn = h('div', { class: 'orn' });
       orn.innerHTML = ORN_SVG;
       paper.append(R(orn));
 
-
       paper.append(R(h('div', { class: 'c-brand' }, h('img', { src: DATA.site.logo, alt: '' }), h('span', {}, T('site.brand')))));
       paper.append(R(h('div', { class: 'c-title' }, h('h2', {}, T('contract.title')), h('p', {}, T('contract.subtitle')))));
       paper.append(R(h('p', { class: 'c-date' }, h('b', {}, T('contract.dateLabel') + ': '), v.date + ', ' + v.time)));
-
 
       paper.append(R(h('h3', { class: 'c-h' }, T('contract.partiesTitle'))));
       paper.append(R(h('div', { class: 'parties' },
@@ -709,16 +652,13 @@
             ...row(tr(L.position), T('investor.position')),
             ...row(tr(L.address), T('investor.address')))))));
 
-
       paper.append(R(h('p', { class: 'recital' }, fill(T('contract.recital'), v))));
-
 
       paper.append(R(h('h3', { class: 'c-h' }, T('contract.clausesTitle'))));
       paper.append(h('ol', { class: 'clauses' }, ...C.clauses.map((c, idx) =>
         R(h('li', {},
           h('span', { class: 'cn' }, nfmt(idx + 1)),
           h('div', {}, h('h4', {}, tr(c.title)), h('p', {}, fill(tr(c.text), v))))))));
-
 
       paper.append(R(h('h3', { class: 'c-h' }, T('contract.paymentsTitle'))));
       const sumRow = (label, val, cls) => h('tr', { class: 'sum ' + cls }, h('td', { colspan: '2' }, label), h('td', { class: 'num' }, val));
@@ -736,7 +676,6 @@
           sumRow(T('ui.tiles.paid'), money(t.paid), 'paid'),
           sumRow(T('ui.tiles.due'), money(t.due), 'due')))));
 
-
       const sign = (label, name, role) => h('div', { class: 'sign' },
         h('div', { class: 'line' }), h('small', {}, label),
         name ? h('b', {}, name) : null, role ? h('small', {}, role) : null);
@@ -745,15 +684,12 @@
         sign(T('contract.signatures.line'), T('investor.name'), T('contract.secondParty')),
         sign(T('contract.signatures.witness'), '', ''))));
 
-
       const seal = h('div', { class: 'seal', 'aria-hidden': 'true' }, h('div', {}, h('b', {}, T('site.brand')), h('i', {}, '✦')));
       seal.style.setProperty('--i', i++);
       paper.append(seal);
 
-
       paper.append(R(h('p', { class: 'c-note' }, T('contract.note'))));
     }
-
 
     function openContract() {
       lastFocus = document.activeElement;
@@ -767,7 +703,6 @@
       $('cvClose').focus();
     }
 
-
     function closeContract() {
       $('contractView').classList.remove('open');
       CV_OPEN = false;
@@ -775,7 +710,6 @@
       document.body.classList.remove('noscroll');
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
-
 
     // ------------------------------------------------------------------
     // Clock, language
@@ -786,7 +720,6 @@
       $('clock').textContent = fmtDate(now) + ', ' + fmtTime(now, true);
       updateCountdown();
     }
-
 
     function setLang(lang) {
       if (!DATA) return;
@@ -803,7 +736,6 @@
       tickClock();
     }
 
-
     // ------------------------------------------------------------------
     // Password (client-side only): SHA-256 of the input vs data.json
     // ------------------------------------------------------------------
@@ -811,7 +743,6 @@
       const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
       return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
     }
-
 
     async function unlock() {
       if (!DATA) return;
@@ -826,7 +757,6 @@
       }
       if (!ok) { msg.textContent = T('lockScreen.wrongPassword'); return; }
 
-
       msg.textContent = '';
       $('passwordInput').value = '';
       $('lockScreen').classList.add('hidden');
@@ -835,13 +765,11 @@
       animateBar();
     }
 
-
     // ------------------------------------------------------------------
     // Start
     // ------------------------------------------------------------------
     $('passwordInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && CV_OPEN) closeContract(); });
-
 
     (async function init() {
       try {

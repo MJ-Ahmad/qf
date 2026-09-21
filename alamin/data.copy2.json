@@ -1,7 +1,6 @@
 {
   "_readme": "শুধু মান বদলান, কাঠামো নয়। {\"bn\":…, \"en\":…} মানে ভাষাভেদে আলাদা লেখা; সাধারণ স্ট্রিং দুই ভাষাতেই একই দেখায়। লেখার ভেতরে {total} {paid} {due} {date} {time} {email} নিজে থেকে বসে যায়। পরিশোধিত, বাকি ও শতাংশ হিসাব হয় investment.total এবং ledger.entries (countsAsPaid: true) থেকে, আলাদা করে লিখতে হয় না।",
 
-
   "site": {
     "title": {
       "bn": "হাফেজ আল আমিনের বিনিয়োগ প্রোফাইল",
@@ -18,11 +17,9 @@
     "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" }
   },
 
-
   "security": {
     "passwordSha256": "b446ac390294fae2f8a54c5f111769d84cf2755b1de5486338a92aa37dd8f1bf"
   },
-
 
   "lockScreen": {
     "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
@@ -49,7 +46,6 @@
     "contactEmail": "quranerfariwala@gmail.com"
   },
 
-
   "investor": {
     "photo": "",
     "monogram": { "bn": "আ", "en": "A" },
@@ -73,7 +69,6 @@
     }
   },
 
-
   "founder": {
     "name": { "bn": "মোঃ জাফর আহমদ", "en": "Md. Jafar Ahmad" },
     "title": {
@@ -82,13 +77,11 @@
     }
   },
 
-
   "investment": {
     "total": 19200,
     "agreementDate": "2026-09-13",
     "agreementTimeLabel": { "bn": "আসরের নামাজের পর", "en": "after the Asr prayer" }
   },
-
 
   "returns": {
     "quantity": 64,
@@ -101,7 +94,6 @@
       "en": "Printed by Quraner Fariwala for Hifz students"
     }
   },
-
 
   "ledger": {
     "entries": [
@@ -157,7 +149,6 @@
     ]
   },
 
-
   "ui": {
     "summaryTitle": { "bn": "বিনিয়োগের সারসংক্ষেপ", "en": "Investment summary" },
     "tiles": {
@@ -203,11 +194,9 @@
         "past": { "bn": "নির্ধারিত সময়ের {days} দিন পার হয়েছে", "en": "{days} day{s} past the due date" }
       }
     },
-    "switchHifz": { "bn": "হিফজ ব্যবস্থাপনায় যান", "en": "Switch to Hifz Management" },
     "close": { "bn": "বন্ধ করুন", "en": "Close" },
     "print": { "bn": "প্রিন্ট / PDF", "en": "Print / PDF" }
   },
-
 
   "contract": {
     "invocation": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
@@ -281,7 +270,6 @@
       "en": "This document is for information and record-keeping. For legal effect or interpretation, consult a qualified lawyer."
     }
   },
-
 
   "footer": {
     "copyright": {
