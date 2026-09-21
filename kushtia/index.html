@@ -1,192 +1,866 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0a3a31">
-<title>হিফজ ব্যবস্থাপনা, কুষ্টিয়া জেলা</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
-<style>
-:root{--night:#0a3a31;--em:#136b55;--gold:#b8892d;--gsoft:#ead9a6;--bg:#f1f5f0;--card:#fff;--ink:#15221d;--muted:#586a62;--line:#d5ddd3;--warn:#a12b2b;--serif:'Tiro Bangla',Georgia,serif;--sans:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;--star:polygon(50% 0,64.6% 14.6%,85.4% 14.6%,85.4% 35.4%,100% 50%,85.4% 64.6%,85.4% 85.4%,64.6% 85.4%,50% 100%,35.4% 85.4%,14.6% 85.4%,14.6% 64.6%,0 50%,14.6% 35.4%,14.6% 14.6%,35.4% 14.6%)}
-@media(prefers-color-scheme:dark){:root{--bg:#0c1a16;--card:#12261f;--ink:#e6efe9;--muted:#9db1a7;--line:#244036;--warn:#f0a29a}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
-.hidden{display:none!important}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-#lock{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(120% 90% at 50% 0,#12604e,var(--night) 62%)}
-.lc{width:100%;max-width:420px;background:var(--card);border-top:4px solid var(--gold);border-radius:4px;padding:28px 22px;text-align:center}
-.lc .g{margin:0;font:1.1rem var(--serif);color:var(--gold)}
-.lc h1{margin:0;font:400 1.9rem/1.3 var(--serif);color:var(--em)}
-.lc p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
-.lc input{width:100%;margin-top:16px;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
-.btn{width:100%;margin-top:12px;padding:12px;border:0;border-radius:4px;background:var(--em);color:#fff;font:600 1.05rem var(--sans);cursor:pointer}
-#msg{min-height:1.7em;margin-top:8px;color:var(--warn);font-size:.92rem}
-.ct{margin-top:10px!important;padding-top:12px;border-top:1px solid var(--line);font-size:.82rem!important}
-.hero{background:linear-gradient(180deg,var(--night),#0e4a3e);color:#fff;padding:18px 18px 28px;border-bottom:4px solid var(--gold)}
-.hin{max-width:960px;margin:0 auto}
-.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--gsoft);font-weight:600;font-size:.95rem}
-.top a{color:var(--gsoft);text-decoration:none;border:1px solid var(--gsoft);border-radius:999px;padding:2px 14px}
-.who{display:flex;gap:16px;align-items:center;margin-top:18px}
-.av{width:84px;height:84px;flex:none;background:var(--gold);clip-path:var(--star);display:grid;place-items:center}
-.av i{width:76px;height:76px;background:var(--em);clip-path:var(--star);display:grid;place-items:center;font:normal 2.2rem var(--serif);color:var(--gsoft)}
-.who h1{margin:0;font:400 clamp(1.8rem,6vw,2.6rem)/1.25 var(--serif)}
-.pill{display:inline-block;margin-top:4px;border:1px solid rgba(234,217,166,.55);color:var(--gsoft);padding:1px 12px;border-radius:999px;font-size:.9rem}
-nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto}
-nav div{max-width:960px;margin:0 auto;display:flex}
-nav button{flex:1 0 auto;padding:12px 16px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font:600 1rem var(--sans);cursor:pointer;white-space:nowrap}
-nav button[aria-selected="true"]{color:var(--em);border-color:var(--gold)}
-main{max-width:960px;margin:0 auto;padding:4px 16px 48px}
-h2{font:400 1.4rem/1.3 var(--serif);margin:28px 0 10px;display:flex;gap:12px;align-items:center}
-h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
-.asof{color:var(--muted);font-size:.88rem;margin-top:14px}
-.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.k{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 14px;border-radius:4px}
-.k small{color:var(--muted);display:block;font-size:.85rem;line-height:1.4}
-.k b{font:400 1.9rem/1.3 var(--serif)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:640px}
-th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
-th{color:var(--muted);font-weight:500;font-size:.85rem}
-tr.row{cursor:pointer}tr.row:hover td,tr.row.on td{background:rgba(184,137,45,.12)}
-.bar{display:inline-block;width:60px;height:8px;background:var(--line);border-radius:4px;vertical-align:middle;margin-right:8px;overflow:hidden}
-.bar s{display:block;height:100%;background:var(--em)}.bar.lo s{background:var(--warn)}
-.dim{color:var(--muted)}
-.det{padding:14px 16px;background:var(--card);border-left:4px solid var(--gold);margin-top:12px;border-radius:0 4px 4px 0}
-.al{padding:10px 14px;border-left:4px solid var(--warn);background:var(--card);margin-bottom:8px;border-radius:0 4px 4px 0}
-.al b{color:var(--warn)}
-.empty{padding:14px 16px;background:var(--card);border:1px dashed var(--line);border-radius:4px;color:var(--muted)}
-.tl{display:grid;gap:10px}
-.lv{display:grid;grid-template-columns:38px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:4px}
-.lv.me{border:2px solid var(--gold)}
-.no{width:34px;height:34px;background:var(--em);clip-path:var(--star);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:600}
-.lv.me .no{background:var(--gold)}
-.lv h3{margin:0;font:600 1.05rem var(--sans)}
-.lv p{margin:2px 0 0;font-size:.9rem;color:var(--muted)}.lv p b{color:var(--ink);font-weight:500}
-.out{margin-top:20px;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 14px;border-radius:4px;cursor:pointer;font:inherit}
-footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 32px}
-#err{max-width:420px;background:var(--card);border-top:4px solid var(--warn);padding:20px;color:var(--warn)}
-</style>
+  <meta charset="utf-8" />
+  <title>বিনিয়োগ প্রোফাইল</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#0a3a31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --night: #0a3a31;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-deep: #83600f;
+      --gold-soft: #ead9a6;
+      --lapis: #25417f;
+      --bg: #f1f5f0;
+      --white: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --parch: #f7eed4;
+      --parch-line: #d9c48a;
+      --serif: 'Tiro Bangla', 'Noto Serif Bengali', Georgia, serif;
+      --sans: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      /* eight-pointed star (Rub el Hizb) used for the avatar, timeline nodes and clause numbers */
+      --star: polygon(50.00% 0.00%,64.64% 14.64%,85.36% 14.64%,85.36% 35.36%,100.00% 50.00%,85.36% 64.64%,85.36% 85.36%,64.64% 85.36%,50.00% 100.00%,35.36% 85.36%,14.64% 85.36%,14.64% 64.64%,0.00% 50.00%,14.64% 35.36%,14.64% 14.64%,35.36% 14.64%);
+      --lattice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23ead9a6' stroke-opacity='.12' stroke-width='1.2'%3E%3Crect x='16' y='16' width='40' height='40'/%3E%3Crect x='16' y='16' width='40' height='40' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--sans); font-size: 16px; line-height: 1.7;
+    }
+    body.noscroll { overflow: hidden; }
+    h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--emerald); }
+    img { max-width: 100%; }
+    button { font-family: inherit; }
+    .hidden { display: none !important; }
+    .invisible { visibility: hidden; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+
+    /* ---------- language switch (always visible) ---------- */
+    .langbar {
+      position: fixed; top: 12px; right: 12px; z-index: 90; display: flex; gap: 2px; padding: 3px;
+      background: rgba(10, 58, 49, .92); border: 1px solid rgba(234, 217, 166, .5); border-radius: 999px;
+    }
+    .langbar button {
+      border: 0; background: transparent; color: var(--gold-soft); border-radius: 999px;
+      padding: 3px 12px; font-size: .9rem; cursor: pointer;
+    }
+    .langbar button[aria-pressed="true"] { background: var(--gold-soft); color: var(--night); font-weight: 600; }
+
+
+    /* ---------- lock screen ---------- */
+    #lockScreen {
+      position: relative; min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 72px 20px 32px;
+      background: radial-gradient(120% 90% at 50% 0%, #12604e 0%, var(--night) 62%);
+    }
+    #lockScreen::before { content: ""; position: absolute; inset: 0; background-image: var(--lattice); pointer-events: none; }
+    .lock-card {
+      position: relative; width: 100%; max-width: 420px; text-align: center; background: var(--white);
+      border-top: 4px solid var(--gold); border-radius: 4px; padding: 30px 24px 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+    }
+    .lock-logo { width: 56px; height: 56px; border-radius: 8px; }
+    .lock-greet { margin-top: 10px; font-family: var(--serif); color: var(--gold-deep); font-size: 1.1rem; }
+    .lock-card h1 { font-family: var(--serif); font-weight: 400; font-size: 1.9rem; line-height: 1.3; color: var(--night); }
+    .lock-for { margin-top: 6px; font-weight: 600; }
+    .lock-sub { margin-top: 4px; color: var(--muted); font-size: .95rem; }
+    .lock-card input {
+      width: 100%; margin-top: 18px; padding: 11px 14px; font: inherit; border: 1px solid #b9c4bb; border-radius: 4px; background: #fbfdfb;
+    }
+    .lock-card input:focus { border-color: var(--emerald); outline: 3px solid rgba(19, 107, 85, .25); outline-offset: 0; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: 4px;
+      padding: 12px 22px; font: 600 1.05rem var(--sans); cursor: pointer;
+    }
+    .btn-solid { width: 100%; margin-top: 12px; background: var(--emerald); color: #fff; }
+    .btn-solid:hover { background: var(--night); }
+    #lockMsg { min-height: 1.7em; margin-top: 10px; color: #a12b2b; font-size: .95rem; }
+    .lock-contact { margin-top: 10px; font-size: .82rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+    #loadError {
+      position: relative; max-width: 420px; background: #fff; border-top: 4px solid #a12b2b; border-radius: 4px;
+      padding: 20px; color: #7a1f1f; font-size: .95rem;
+    }
+
+
+    /* ---------- hero ---------- */
+    .hero { position: relative; overflow: hidden; color: #fff; padding: 18px 20px 46px; background: linear-gradient(180deg, var(--night), #0e4a3e); }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: var(--lattice); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .brandrow { display: inline-flex; align-items: center; gap: 10px; max-width: calc(100% - 130px); color: var(--gold-soft); text-decoration: none; font-weight: 600; line-height: 1.3; }
+    .brandrow img { width: 36px; height: 36px; border-radius: 6px; background: #fff; flex: none; }
+    .identity { margin-top: 26px; text-align: center; }
+    .avatar { width: 136px; height: 136px; margin: 0 auto; background: var(--gold); clip-path: var(--star); display: grid; place-items: center; }
+    .avatar-in { width: calc(100% - 10px); height: calc(100% - 10px); background: var(--emerald); clip-path: var(--star); display: grid; place-items: center; overflow: hidden; }
+    .avatar-in img { width: 100%; height: 100%; object-fit: cover; }
+    .monogram { font-family: var(--serif); font-size: 3.4rem; line-height: 1; color: var(--gold-soft); }
+    .name { margin-top: 18px; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 9vw, 3.8rem); line-height: 1.2; }
+    .formal { margin-top: 2px; color: var(--gold-soft); letter-spacing: .14em; font-size: .95rem; }
+    .roles { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .roles li { border: 1px solid rgba(234, 217, 166, .55); color: var(--gold-soft); padding: 3px 14px; border-radius: 999px; font-size: .92rem; }
+
+
+    /* ---------- main ---------- */
+    main { max-width: 860px; margin: 0 auto; padding: 0 18px 56px; }
+    .clockline { padding: 14px 0 2px; text-align: center; color: var(--muted); font-size: .9rem; }
+    .sec { margin-top: 34px; }
+    .sec > h2 { display: flex; align-items: center; gap: 14px; font-family: var(--serif); font-weight: 400; font-size: 1.65rem; line-height: 1.3; color: var(--night); }
+    .sec > h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+
+
+    .sheet { margin-top: 14px; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 4px; padding: 22px 18px 18px; }
+    .figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .fig { border-top: 3px solid var(--line); padding-top: 8px; min-width: 0; }
+    .fig small { display: block; color: var(--muted); font-size: .85rem; line-height: 1.4; }
+    .fig strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(1.15rem, 4.6vw, 1.9rem); line-height: 1.35; overflow-wrap: anywhere; }
+    .fig.total { border-color: var(--gold); }
+    .fig.paid { border-color: var(--emerald); }
+    .fig.paid strong { color: var(--emerald); }
+    .fig.due { border-color: var(--lapis); }
+    .fig.due strong { color: var(--lapis); }
+    .bar {
+      display: flex; height: 16px; margin-top: 20px; overflow: hidden; border-radius: 2px;
+      background: repeating-linear-gradient(135deg, rgba(37, 65, 127, .3) 0 6px, rgba(37, 65, 127, .13) 6px 12px);
+    }
+    .bar-paid { width: 0; background: var(--emerald); transition: width 1.5s cubic-bezier(.2, .7, .2, 1); }
+    .barcap { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; font-size: .9rem; color: var(--muted); }
+    .barcap b { font-weight: 600; }
+    .barcap .k-paid b { color: var(--emerald); }
+    .barcap .k-due b { color: var(--lapis); }
+
+
+    .ret-top { display: flex; align-items: center; gap: 18px; }
+    .qty { position: relative; flex: none; width: 108px; height: 108px; display: grid; place-items: center; text-align: center; background: var(--gold); clip-path: var(--star); }
+    .qty::after { content: ""; position: absolute; inset: 5px; background: var(--night); clip-path: var(--star); }
+    .qty > div { position: relative; z-index: 1; }
+    .qty b { display: block; font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1.1; color: var(--gold-soft); }
+    .qty small { display: block; font-size: .78rem; line-height: 1.2; color: #fff; }
+    .ret-text h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.35; color: var(--night); }
+    .ret-text p { margin-top: 2px; color: var(--muted); font-size: .95rem; line-height: 1.6; }
+    .ret-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; margin-top: 18px; border-top: 1px solid var(--line); }
+    .ret-grid > div { padding: 10px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+    .ret-grid dt { color: var(--muted); font-size: .82rem; line-height: 1.45; }
+    .ret-grid dd { font-weight: 500; overflow-wrap: anywhere; }
+    .ret-grid .sub { display: block; font-weight: 400; font-size: .85rem; color: var(--lapis); }
+
+
+    .ledger { position: relative; margin-top: 18px; padding-left: 36px; }
+    .ledger::before { content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--gold), var(--gold-soft)); }
+    .entry { position: relative; padding-bottom: 24px; }
+    .entry:last-child { padding-bottom: 0; }
+    .node { position: absolute; left: -36px; top: 1px; width: 24px; height: 24px; background: var(--gold); clip-path: var(--star); }
+    .node::after { content: ""; position: absolute; inset: 4px; background: var(--bg); clip-path: var(--star); }
+    .entry.paid .node::after { background: var(--emerald); }
+    .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .entry-head h4 { font-size: 1.08rem; font-weight: 600; }
+    .entry-amt { font-family: var(--serif); font-size: 1.2rem; white-space: nowrap; color: var(--gold-deep); }
+    .entry.paid .entry-amt { color: var(--emerald); }
+    .entry-when { color: var(--muted); font-size: .9rem; }
+    .entry-note { margin-top: 2px; font-size: .95rem; }
+    .entry-ref { margin-top: 2px; font-size: .9rem; color: var(--muted); }
+    .entry-ref b { font-weight: 600; color: var(--ink); letter-spacing: .05em; user-select: all; }
+    .badge { display: inline-block; margin-top: 6px; padding: 0 10px; border-radius: 999px; font-size: .8rem; background: rgba(19, 107, 85, .1); color: var(--emerald); }
+
+
+    .info { margin-top: 14px; display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
+    .info > div { padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .info dt { color: var(--muted); font-size: .85rem; }
+    .info dd { font-size: 1.05rem; font-weight: 500; overflow-wrap: anywhere; }
+    .info .dim { color: var(--muted); font-weight: 400; font-size: .9rem; letter-spacing: .06em; }
+    @media (min-width: 640px) {
+      .info { grid-template-columns: 1fr 1fr; column-gap: 36px; }
+      .info .wide { grid-column: 1 / -1; }
+    }
+
+
+    .cta { position: relative; overflow: hidden; margin-top: 40px; padding: 28px 22px 30px; background: var(--night); color: #fff; border-radius: 4px; }
+    .cta::before { content: ""; position: absolute; inset: 0; background-image: var(--lattice); pointer-events: none; }
+    .cta > * { position: relative; }
+    .cta h2 { font-family: var(--serif); font-weight: 400; font-size: 1.65rem; line-height: 1.3; color: var(--gold-soft); }
+    .cta p { margin-top: 8px; max-width: 62ch; color: #dbe8e2; }
+    .btn-gold { margin-top: 18px; background: var(--gold-soft); color: var(--night); }
+    .btn-gold:hover { background: #fff; }
+    .note { margin-top: 22px; font-size: .88rem; color: var(--muted); }
+    .foot { padding: 22px 18px; text-align: center; background: var(--night); color: #cfe0d8; font-size: .88rem; }
+    .foot p + p { margin-top: 2px; opacity: .85; }
+
+
+    /* ---------- agreement viewer ---------- */
+    .cv { position: fixed; inset: 0; z-index: 70; display: none; overflow-y: auto; background: radial-gradient(120% 70% at 50% 0%, #0c3a30 0%, #04170f 75%); -webkit-overflow-scrolling: touch; }
+    .cv.open { display: block; animation: fade .5s ease both; }
+    .cv-bar { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; padding: 10px 12px; padding-right: 130px; background: rgba(4, 23, 15, .96); }
+    .tb { border: 1px solid rgba(234, 217, 166, .45); background: rgba(255, 255, 255, .08); color: var(--gold-soft); border-radius: 4px; padding: 6px 14px; font: 500 .95rem var(--sans); cursor: pointer; }
+    .tb:hover { background: rgba(255, 255, 255, .16); }
+
+
+    .paper {
+      position: relative; width: calc(100% - 24px); max-width: 780px; margin: 16px auto 48px; padding: 38px 22px 34px;
+      color: #2b2414; border: 1px solid var(--parch-line); box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+      background: radial-gradient(circle at 18% 8%, rgba(255, 255, 255, .6), transparent 55%), var(--parch);
+      animation: paper-in 1s cubic-bezier(.2, .7, .2, 1) both;
+    }
+    .paper::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--gold); pointer-events: none; }
+    .paper::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(184, 137, 45, .4); pointer-events: none; }
+    @media (min-width: 700px) { .paper { padding: 58px 60px 50px; } }
+
+
+    .reveal { opacity: 0; animation: rise .8s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--i) * .16s + .55s); }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes paper-in { from { opacity: 0; transform: translateY(46px) scale(.96); } to { opacity: 1; transform: none; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes stamp {
+      0% { opacity: 0; transform: scale(2.4) rotate(-26deg); }
+      55% { opacity: .95; }
+      100% { opacity: .9; transform: scale(1) rotate(-8deg); }
+    }
+
+
+    .invocation { text-align: center; font-family: 'Amiri', 'Noto Naskh Arabic', serif; font-size: 2rem; line-height: 1.8; color: var(--night); }
+    .orn svg { display: block; width: 240px; max-width: 100%; height: 20px; margin: 4px auto 0; overflow: visible; }
+    .orn path { fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.4s ease forwards; animation-delay: calc(var(--i) * .16s + .7s); }
+    .orn polygon { fill: var(--gold); }
+    .c-brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; color: var(--gold-deep); font-weight: 600; }
+    .c-brand img { width: 30px; height: 30px; border-radius: 5px; background: #fff; }
+    .c-title { margin-top: 10px; text-align: center; }
+    .c-title h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.3; color: var(--night); }
+    .c-title p { color: #7b6a3c; }
+    .c-date { margin-top: 12px; text-align: center; }
+    .c-h { margin-top: 26px; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--night); border-bottom: 1px solid var(--parch-line); padding-bottom: 4px; }
+    .parties { display: grid; gap: 14px; margin-top: 14px; }
+    @media (min-width: 640px) { .parties { grid-template-columns: 1fr 1fr; } }
+    .party { border: 1px solid var(--parch-line); background: rgba(255, 255, 255, .38); padding: 14px 16px; }
+    .party h4 { margin-bottom: 4px; font-family: var(--serif); font-weight: 400; font-size: 1.05rem; color: var(--gold-deep); }
+    .pname { font-size: 1.15rem; font-weight: 600; }
+    .prole { font-size: .92rem; color: #5b4d27; }
+    .party dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin-top: 8px; font-size: .92rem; }
+    .party dt { color: #7b6a3c; }
+    .party dd { overflow-wrap: anywhere; }
+    .recital { margin-top: 20px; }
+    .clauses { display: grid; gap: 16px; margin-top: 16px; }
+    .clauses li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+    .cn { width: 36px; height: 36px; display: grid; place-items: center; background: var(--gold); clip-path: var(--star); font-weight: 600; font-size: .85rem; color: #2b2414; }
+    .clauses h4 { font-family: var(--serif); font-weight: 400; font-size: 1.12rem; color: var(--night); }
+    table.pay { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: .95rem; }
+    .pay th { text-align: left; padding: 6px; border-bottom: 2px solid var(--gold); color: var(--gold-deep); font-weight: 600; }
+    .pay td { padding: 8px 6px; border-bottom: 1px solid var(--parch-line); vertical-align: top; }
+    .pay .num { text-align: right; white-space: nowrap; }
+    .pay small { display: block; color: #6b5c30; }
+    .pay tr.sum td { font-weight: 600; }
+    .pay tr.due td { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--lapis); border-bottom: 3px double var(--gold); }
+    .signs { display: grid; gap: 26px; margin-top: 38px; }
+    @media (min-width: 640px) { .signs { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
+    .sign .line { height: 44px; border-bottom: 1px solid #2b2414; }
+    .sign small { display: block; color: #7b6a3c; line-height: 1.4; }
+    .sign b { display: block; margin-top: 4px; line-height: 1.4; }
+    .seal {
+      position: relative; width: 122px; height: 122px; margin: 28px auto 0; display: grid; place-items: center; padding: 12px;
+      text-align: center; border: 3px double var(--emerald); border-radius: 50%; color: var(--emerald);
+      font-family: var(--serif); line-height: 1.2; opacity: 0; transform: rotate(-8deg);
+      animation: stamp .55s cubic-bezier(.3, 1.5, .5, 1) forwards; animation-delay: calc(var(--i) * .16s + .55s);
+    }
+    .seal::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--emerald); border-radius: 50%; }
+    .seal i { display: block; font-style: normal; font-size: .9rem; }
+    .c-note { margin-top: 24px; text-align: center; font-size: .85rem; color: #6b5c30; }
+    .paper, .seal { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+
+    @media (prefers-reduced-motion: reduce) {
+      .cv.open, .paper, .reveal, .orn path { animation: none !important; opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; }
+      .seal { animation: none !important; opacity: .9 !important; transform: rotate(-8deg) !important; }
+      .bar-paid { transition: none; }
+    }
+
+
+    @media print {
+      body { background: #fff; }
+      #lockScreen, #app, .langbar, .cv-bar { display: none !important; }
+      .cv { position: static; display: block; overflow: visible; background: none; animation: none; }
+      .paper { width: auto; max-width: none; margin: 0; box-shadow: none; }
+      .cv.open, .paper, .reveal, .orn path { animation: none !important; opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; }
+      .seal { animation: none !important; opacity: .9 !important; transform: rotate(-8deg) !important; }
+      @page { margin: 12mm; }
+    }
+    .switch { display: flex; width: fit-content; margin-top: 14px; padding: 6px 16px; border: 1px solid var(--gold-soft); border-radius: 999px; background: rgba(234, 217, 166, .12); color: var(--gold-soft); text-decoration: none; font-weight: 600; font-size: .95rem; }
+    .switch:hover { background: var(--gold-soft); color: var(--night); }
+  </style>
 </head>
 <body>
-<section id="lock">
-  <div class="lc hidden" id="lc">
-    <p class="g" id="lGreet"></p><h1 id="lTitle"></h1>
-    <p><b id="lFor"></b></p><p id="lSub"></p>
-    <input id="pw" type="password" autocomplete="current-password">
-    <button class="btn" id="go"></button>
-    <div id="msg" role="alert"></div>
-    <p class="ct"><span id="lNote"></span> <b id="lMail"></b></p>
+
+
+  <!--
+    Everything shown on this page comes from data.json.
+      data-bind="path"          sets the element text
+      data-bind-href / -src / -alt / -placeholder / -aria-label   set that attribute
+      data-prefix="tel:"        optional prefix for the attribute value
+  -->
+
+
+  <div class="langbar" role="group" aria-label="Language">
+    <button id="langBn" type="button" onclick="setLang('bn')" aria-pressed="true">বাংলা</button>
+    <button id="langEn" type="button" onclick="setLang('en')" aria-pressed="false">EN</button>
   </div>
-  <div id="err" class="hidden" role="alert"></div>
-</section>
 
-<div id="app" class="hidden">
-  <header class="hero"><div class="hin">
-    <div class="top"><span id="brand"></span><a id="back" href="../"></a></div>
-    <div class="who"><div class="av"><i id="mono"></i></div>
-      <div><h1 id="oName"></h1><span class="pill" id="oRole"></span></div></div>
-  </div></header>
-  <nav><div role="tablist">
-    <button role="tab" data-t="ov" aria-selected="true">সারসংক্ষেপ</button>
-    <button role="tab" data-t="up" aria-selected="false">উপজেলা পর্যবেক্ষণ</button>
-    <button role="tab" data-t="st" aria-selected="false">দায়িত্ব কাঠামো</button>
-  </div></nav>
-  <main>
-    <div class="asof" id="asof"></div>
-    <section id="ov"></section><section id="up" class="hidden"></section><section id="st" class="hidden"></section>
-    <button class="out" id="out">বের হন</button>
-  </main>
-  <footer id="foot"></footer>
-</div>
 
-<script>
-let D=null,sel=0;
-const $=id=>document.getElementById(id);
-const bn=n=>Number(n).toLocaleString('bn-BD');
-const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const pct=(a,b)=>b>0?Math.round(a/b*100):null;
-const sum=k=>D.upazilas.reduce((a,u)=>a+(+u[k]||0),0);
-const fmt=v=>v==null?'<span class="dim">—</span>':bn(v)+'%';
-const bar=v=>v==null?'<span class="dim">—</span>':`<span class="bar ${v<75?'lo':''}"><s style="width:${v}%"></s></span>${bn(v)}%`;
-const list=a=>a.map(u=>u.name).join('، ');
+  <!-- LOCK SCREEN -->
+  <div id="lockScreen">
+    <div id="lockCard" class="lock-card invisible">
+      <img class="lock-logo" data-bind-src="site.logo" data-bind-alt="site.logoAlt" alt="" />
+      <p class="lock-greet" data-bind="lockScreen.greeting"></p>
+      <h1 data-bind="lockScreen.title"></h1>
+      <p class="lock-for" data-bind="lockScreen.profileFor"></p>
+      <p class="lock-sub" data-bind="lockScreen.subtitle"></p>
 
-function ov(){
-  const U=D.upazilas,sp=pct(sum('sabakDone'),sum('sabakTotal')),mp=pct(sum('mashqDone'),sum('mashqTotal'));
-  const noHead=U.filter(u=>!u.head),noMad=U.filter(u=>!(+u.madrasa)),
-        low=U.filter(u=>{const p=pct(u.mashqDone,u.mashqTotal);return p!=null&&p<75});
-  const al=[];
-  if(noHead.length)al.push(`<b>দায়িত্বশীল নির্ধারিত হয়নি:</b> ${list(noHead)}`);
-  if(noMad.length)al.push(`<b>নিবন্ধিত মাদ্রাসা নেই:</b> ${list(noMad)}`);
-  if(low.length)al.push(`<b>মাশক জমার হার ৭৫% এর নিচে:</b> ${list(low)}`);
-  $('ov').innerHTML=`
-  <h2>জেলার সারসংক্ষেপ</h2>
-  <div class="kpi">
-    <div class="k"><small>নিবন্ধিত মাদ্রাসা</small><b>${bn(sum('madrasa'))}</b></div>
-    <div class="k"><small>নিবন্ধিত হিফজ শিক্ষার্থী</small><b>${bn(sum('students'))}</b></div>
-    <div class="k"><small>নিযুক্ত হিফজ উস্তাদ</small><b>${bn(sum('ustad'))}</b></div>
-    <div class="k"><small>সবক সম্পন্নের হার</small><b>${fmt(sp)}</b></div>
-    <div class="k"><small>মাশক জমার হার</small><b>${fmt(mp)}</b></div>
+
+      <label for="passwordInput" class="sr-only" data-bind="lockScreen.passwordLabel"></label>
+      <input id="passwordInput" type="password" autocomplete="current-password" data-bind-placeholder="lockScreen.placeholder" />
+      <button id="unlockBtn" type="button" class="btn btn-solid" onclick="unlock()" data-bind="lockScreen.button"></button>
+      <p id="lockMsg" role="alert"></p>
+      <p class="lock-contact"><span data-bind="lockScreen.contactNote"></span> <strong data-bind="lockScreen.contactEmail"></strong></p>
+    </div>
+    <div id="loadError" class="hidden" role="alert"></div>
   </div>
-  <h2>মনোযোগ প্রয়োজন</h2>
-  ${al.length?al.map(t=>`<div class="al">${t}</div>`).join(''):'<div class="empty">এই মুহূর্তে কোনো বিষয় মনোযোগের অপেক্ষায় নেই।</div>'}
-  <h2>প্রশিক্ষণ ও পরিদর্শন</h2>
-  ${D.schedule.length?`<div class="card"><table style="min-width:0">${D.schedule.map(s=>`<tr><td>${esc(s.when)}</td><td>${esc(s.title)}</td></tr>`).join('')}</table></div>`:'<div class="empty">কোনো প্রশিক্ষণ বা পরিদর্শন কর্মসূচি এখনো যুক্ত করা হয়নি।</div>'}`;
-}
-function up(){
-  const U=D.upazilas,u=U[sel],sp=pct(u.sabakDone,u.sabakTotal),mp=pct(u.mashqDone,u.mashqTotal);
-  let d;
-  if(+u.madrasa&&+u.students){d=`প্রতি মাদ্রাসায় গড়ে ${bn(Math.round(u.students/u.madrasa))} জন শিক্ষার্থী।`+(+u.ustad?` প্রতি উস্তাদের অধীনে গড়ে ${bn(Math.round(u.students/u.ustad))} জন।`:' হিফজ উস্তাদ এখনো নিবন্ধিত হয়নি।')+(mp!=null&&mp<75?' মাশক জমার হার কম, তাই এই উপজেলায় অগ্রাধিকার দিয়ে পরিদর্শন করা প্রয়োজন।':'')}
-  else d='এই উপজেলায় এখনো মাদ্রাসা বা শিক্ষার্থী নিবন্ধিত হয়নি। মাদ্রাসা নিবন্ধন হলে এখানে বিশ্লেষণ দেখা যাবে।';
-  $('up').innerHTML=`
-  <h2>উপজেলাভিত্তিক পর্যবেক্ষণ</h2>
-  <div class="card"><table>
-    <tr><th>উপজেলা</th><th>দায়িত্বশীল</th><th>মাদ্রাসা</th><th>শিক্ষার্থী</th><th>উস্তাদ</th><th>সবক</th><th>মাশক</th></tr>
-    ${U.map((x,i)=>`<tr class="row ${i===sel?'on':''}" data-i="${i}" tabindex="0"><td><b>${esc(x.name)}</b></td><td>${x.head?esc(x.head):'<span class="dim">নির্ধারিত হয়নি</span>'}</td><td>${bn(x.madrasa)}</td><td>${bn(x.students)}</td><td>${bn(x.ustad)}</td><td>${bar(pct(x.sabakDone,x.sabakTotal))}</td><td>${bar(pct(x.mashqDone,x.mashqTotal))}</td></tr>`).join('')}
-  </table></div>
-  <div class="det"><b>${esc(u.name)}</b><br>${d}</div>`;
-  document.querySelectorAll('#up .row').forEach(e=>{const f=()=>{sel=+e.dataset.i;up()};e.onclick=f;e.onkeydown=k=>{if(k.key==='Enter')f()}});
-}
-function st(){
-  $('st').innerHTML=`<h2>দায়িত্বশীল কাঠামো</h2>
-  <p class="dim" style="margin:0 0 12px">প্রত্যেক স্তরের নিজস্ব পাসওয়ার্ডভিত্তিক ড্যাশবোর্ড থাকবে। একজন দায়িত্বশীল কেবল নিজের এলাকা ও তার নিচের স্তরের তথ্য দেখতে ও নিয়ন্ত্রণ করতে পারবেন।</p>
-  <div class="tl">${D.levels.map((l,i)=>`<div class="lv ${l.me?'me':''}"><div class="no">${bn(i+1)}</div><div><h3>${esc(l.title)}${l.me?' (আপনি)':''}</h3><p><b>এলাকা:</b> ${esc(l.area)}</p><p><b>দেখবেন:</b> ${esc(l.sees)}</p><p><b>নিয়ন্ত্রণ:</b> ${esc(l.controls)}</p></div></div>`).join('')}</div>`;
-}
-function show(t){
-  ['ov','up','st'].forEach(id=>$(id).classList.toggle('hidden',id!==t));
-  document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
-}
-async function sha256Hex(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
-async function unlock(){
-  $('msg').textContent='';
-  let ok=false;
-  try{ok=(await sha256Hex($('pw').value.trim()))===String(D.security.passwordSha256).toLowerCase()}catch(e){}
-  if(!ok){$('msg').textContent=D.lockScreen.wrongPassword;$('pw').select();return}
-  $('pw').value='';$('lock').classList.add('hidden');$('app').classList.remove('hidden');
-  ov();up();st();window.scrollTo(0,0);
-}
-function lock(){$('app').classList.add('hidden');$('lock').classList.remove('hidden');$('pw').focus()}
-async function init(){
-  try{
-    const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;D=await r.json();
-  }catch(e){$('err').textContent='তথ্য ফাইল (data.json) লোড করা যায়নি। পাতাটি ওয়েব সার্ভার থেকে খুলুন এবং data.json একই ফোল্ডারে আছে কি না দেখুন।';$('err').classList.remove('hidden');return}
-  const L=D.lockScreen,O=D.official;
-  document.title=D.site.title;
-  $('lGreet').textContent=L.greeting;$('lTitle').textContent=L.title;$('lFor').textContent=L.profileFor;$('lSub').textContent=L.subtitle;
-  $('pw').placeholder=L.placeholder;$('pw').setAttribute('aria-label',L.placeholder);$('go').textContent=L.button;
-  $('lNote').textContent=L.contactNote;$('lMail').textContent=L.contactEmail;
-  $('brand').textContent=D.site.brand+' · '+D.site.department;
-  $('back').textContent='বিনিয়োগ প্রোফাইলে যান';$('back').href=D.site.profileUrl;
-  $('mono').textContent=O.monogram;$('oName').textContent=O.name;$('oRole').textContent=O.role;
-  $('asof').textContent=O.asOf?'তথ্য হালনাগাদ: '+O.asOf:'';
-  $('foot').textContent='© '+bn(2026)+' '+D.site.brand+'। সর্বস্বত্ব সংরক্ষিত।';
-  $('lc').classList.remove('hidden');$('pw').focus();
-}
-$('go').onclick=unlock;
-$('pw').onkeydown=e=>{if(e.key==='Enter')unlock()};
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));
-$('out').onclick=lock;
-init();
-</script>
+
+
+  <!-- PROFILE (shown after unlock) -->
+  <div id="app" class="hidden">
+    <header class="hero">
+      <div class="hero-inner">
+        <a class="brandrow" data-bind-href="site.homeUrl">
+          <img data-bind-src="site.logo" data-bind-alt="site.logoAlt" alt="" />
+          <span data-bind="site.brand"></span>
+        </a>
+        <a class="switch" href="hifz/" data-bind="ui.switchHifz"></a>
+
+
+        <div class="identity">
+          <div class="avatar"><div class="avatar-in" id="avatarInner"></div></div>
+          <h1 class="name" data-bind="investor.name"></h1>
+          <p class="formal" data-bind="investor.formalName"></p>
+          <ul class="roles" id="roles"></ul>
+        </div>
+      </div>
+    </header>
+
+
+    <main>
+      <p class="clockline"><span data-bind="site.clockLabel"></span>: <time id="clock"></time></p>
+
+
+      <section class="sec">
+        <h2 data-bind="ui.summaryTitle"></h2>
+        <div class="sheet">
+          <div class="figures">
+            <div class="fig total"><small data-bind="ui.tiles.total"></small><strong id="figTotal"></strong></div>
+            <div class="fig paid"><small data-bind="ui.tiles.paid"></small><strong id="figPaid"></strong></div>
+            <div class="fig due"><small data-bind="ui.tiles.due"></small><strong id="figDue"></strong></div>
+          </div>
+          <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="bar-paid" id="barPaid"></div>
+          </div>
+          <div class="barcap">
+            <span class="k-paid"><b id="pctPaid"></b> <span data-bind="ui.tiles.paid"></span></span>
+            <span class="k-due"><b id="pctDue"></b> <span data-bind="ui.tiles.due"></span></span>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="sec">
+        <h2 data-bind="ui.returns.title"></h2>
+        <div class="sheet">
+          <div class="ret-top">
+            <div class="qty"><div><b id="retQty"></b><small data-bind="ui.returns.copies"></small></div></div>
+            <div class="ret-text">
+              <h3 data-bind="returns.headline"></h3>
+              <p data-bind="returns.description"></p>
+            </div>
+          </div>
+          <dl class="ret-grid" id="retGrid"></dl>
+        </div>
+      </section>
+
+
+      <section class="sec">
+        <h2 data-bind="ui.ledgerTitle"></h2>
+        <ol class="ledger" id="ledger"></ol>
+      </section>
+
+
+      <section class="sec">
+        <h2 data-bind="ui.infoTitle"></h2>
+        <dl class="info">
+          <div class="wide"><dt data-bind="ui.labels.name"></dt><dd><span data-bind="investor.name"></span> <span class="dim" data-bind="investor.formalName"></span></dd></div>
+          <div><dt data-bind="ui.labels.father"></dt><dd data-bind="investor.father"></dd></div>
+          <div><dt data-bind="ui.labels.mother"></dt><dd data-bind="investor.mother"></dd></div>
+          <div><dt data-bind="ui.labels.nid"></dt><dd data-bind="investor.nid"></dd></div>
+          <div><dt data-bind="ui.labels.phone"></dt><dd><a data-bind="investor.phone.display" data-bind-href="investor.phone.tel" data-prefix="tel:"></a></dd></div>
+          <div class="wide"><dt data-bind="ui.labels.position"></dt><dd data-bind="investor.position"></dd></div>
+          <div class="wide"><dt data-bind="ui.labels.address"></dt><dd data-bind="investor.address"></dd></div>
+        </dl>
+      </section>
+
+
+      <section class="cta">
+        <h2 data-bind="ui.agreementTitle"></h2>
+        <p data-bind="ui.agreementText"></p>
+        <button type="button" class="btn btn-gold" onclick="openContract()">
+          <span aria-hidden="true">📜</span><span data-bind="ui.viewContract"></span>
+        </button>
+      </section>
+
+
+      <p class="note" data-bind="ui.recordNote"></p>
+    </main>
+
+
+    <footer class="foot">
+      <p data-bind="footer.copyright"></p>
+      <p data-bind="footer.tagline"></p>
+    </footer>
+  </div>
+
+
+  <!-- AGREEMENT VIEWER -->
+  <div id="contractView" class="cv" role="dialog" aria-modal="true" data-bind-aria-label="contract.title">
+    <div class="cv-bar">
+      <button id="cvClose" type="button" class="tb" onclick="closeContract()"><span aria-hidden="true">✕ </span><span data-bind="ui.close"></span></button>
+      <button type="button" class="tb" onclick="window.print()"><span aria-hidden="true">🖨 </span><span data-bind="ui.print"></span></button>
+    </div>
+    <article class="paper" id="paper"></article>
+  </div>
+
+
+  <script>
+    // ------------------------------------------------------------------
+    // Data
+    // ------------------------------------------------------------------
+    const DATA_URL = 'data.json';
+    let DATA = null;
+    let LANG = 'bn';
+    let TZ = 'Asia/Dhaka';
+    let CV_OPEN = false;
+    let lastFocus = null;
+    let clockTimer = null;
+
+
+    const $ = (id) => document.getElementById(id);
+    const get = (path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), DATA);
+    // plain value: same in every language. {bn, en} object: current language.
+    const tr = (v) => (v !== null && typeof v === 'object') ? (v[LANG] ?? v.en ?? v.bn ?? '') : (v ?? '');
+    const T = (path) => tr(get(path));
+    const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (_, k) => (k in vars ? vars[k] : ''));
+
+
+    // ------------------------------------------------------------------
+    // Formatting (Bengali digits in Bengali mode)
+    // ------------------------------------------------------------------
+    const LOC = () => LANG === 'bn'
+      ? { num: 'bn-BD', date: 'bn-BD', time: 'bn-BD' }
+      : { num: 'en-US', date: 'en-GB', time: 'en-US' };
+    const nfmt = (n) => new Intl.NumberFormat(LOC().num, { maximumFractionDigits: 2 }).format(n);
+    const money = (n) => `${DATA.site.currencySymbol} ${nfmt(n)}`;
+    const moneyWords = (n) => {
+      const w = tr(DATA.site.currencyWord);
+      return LANG === 'bn' ? `${nfmt(n)} ${w}` : `${w} ${nfmt(n)}`;
+    };
+    const hasTime = (s) => String(s).includes('T');
+    const when = (s) => new Date(hasTime(s) ? s : s + 'T12:00:00+06:00');
+    const fmtDate = (d) => new Intl.DateTimeFormat(LOC().date, { timeZone: TZ, day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+    // Bengali reads time as "রাত ৯:৪০"; English as "9:40 PM"
+    const bnPeriod = (h) => h >= 4 && h < 6 ? 'ভোর' : h >= 6 && h < 12 ? 'সকাল' : h >= 12 && h < 15 ? 'দুপুর' : h >= 15 && h < 18 ? 'বিকাল' : h >= 18 && h < 20 ? 'সন্ধ্যা' : 'রাত';
+    function fmtTime(d, withSeconds) {
+      if (LANG === 'bn') {
+        const p = {};
+        new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'numeric', minute: 'numeric', second: 'numeric', hourCycle: 'h23' })
+          .formatToParts(d).forEach(x => { p[x.type] = x.value; });
+        const hr = Number(p.hour) % 24;
+        const two = new Intl.NumberFormat('bn-BD', { minimumIntegerDigits: 2, useGrouping: false });
+        return `${bnPeriod(hr)} ${nfmt(hr % 12 || 12)}:${two.format(Number(p.minute))}` + (withSeconds ? ':' + two.format(Number(p.second)) : '');
+      }
+      return new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'numeric', minute: '2-digit', ...(withSeconds ? { second: '2-digit' } : {}), hour12: true }).format(d);
+    }
+    const whenText = (e) => {
+      const d = when(e.date);
+      const t = e.timeLabel ? tr(e.timeLabel) : (hasTime(e.date) ? fmtTime(d) : '');
+      return fmtDate(d) + (t ? ', ' + t : '');
+    };
+    const refsOf = (e) => [].concat(e.references || e.reference || []);
+    const entryAmount = (e) => (e.amountFrom ? get(e.amountFrom) : e.amount);
+
+
+    function totals() {
+      const total = Number(DATA.investment.total) || 0;
+      const paid = DATA.ledger.entries.filter(e => e.countsAsPaid).reduce((s, e) => s + (Number(entryAmount(e)) || 0), 0);
+      const due = Math.max(total - paid, 0);
+      const pct = total > 0 ? Math.min((paid / total) * 100, 100) : 0;
+      return { total, paid, due, pct };
+    }
+
+
+    // agreement date + N months (day is clamped to the month length)
+    function addMonths(dateStr, n) {
+      const [y, m, d] = dateStr.slice(0, 10).split('-').map(Number);
+      const idx = (m - 1) + n;
+      const ny = y + Math.floor(idx / 12), nm = ((idx % 12) + 12) % 12;
+      const last = new Date(Date.UTC(ny, nm + 1, 0)).getUTCDate();
+      return `${ny}-${String(nm + 1).padStart(2, '0')}-${String(Math.min(d, last)).padStart(2, '0')}`;
+    }
+    const plural = (n) => (LANG === 'en' && n !== 1 ? 's' : '');
+    const dueDate = () => when(addMonths(DATA.investment.agreementDate, Number(DATA.returns.termMonths) || 0));
+    const termText = () => {
+      const n = Number(DATA.returns.termMonths) || 0;
+      return fill(T('ui.returns.termText'), { n: nfmt(n), s: plural(n) });
+    };
+    // whole calendar days (Dhaka) from today until the given date
+    const dayNo = (d) => {
+      const p = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: TZ, year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(d).forEach(x => { p[x.type] = x.value; });
+      return Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day)) / 86400000;
+    };
+
+
+    function vars() {
+      const t = totals(), R = DATA.returns;
+      return {
+        total: moneyWords(t.total), paid: moneyWords(t.paid), due: moneyWords(t.due),
+        date: fmtDate(when(DATA.investment.agreementDate)),
+        time: tr(DATA.investment.agreementTimeLabel),
+        email: DATA.lockScreen.contactEmail,
+        qty: nfmt(R.quantity), term: termText(), delivery: fmtDate(dueDate()),
+        retail: moneyWords(R.retailPrice), wholesale: moneyWords(R.wholesalePrice),
+        retailTotal: moneyWords(R.quantity * R.retailPrice),
+        wholesaleTotal: moneyWords(R.quantity * R.wholesalePrice)
+      };
+    }
+    const TT = (path) => fill(T(path), vars());
+
+
+    // Small DOM helper (all data goes in as text, never as HTML)
+    function h(tag, attrs, ...kids) {
+      const el = document.createElement(tag);
+      Object.entries(attrs || {}).forEach(([k, v]) => {
+        if (v === false || v == null) return;
+        if (k === 'class') el.className = v; else el.setAttribute(k, v === true ? '' : v);
+      });
+      kids.flat().forEach(k => {
+        if (k == null || k === false) return;
+        el.append(k instanceof Node ? k : document.createTextNode(String(k)));
+      });
+      return el;
+    }
+
+
+    // ------------------------------------------------------------------
+    // Rendering
+    // ------------------------------------------------------------------
+    const BIND_ATTRS = ['href', 'src', 'alt', 'placeholder', 'aria-label'];
+
+
+    function applyBindings() {
+      document.querySelectorAll('[data-bind]').forEach(el => { el.textContent = TT(el.getAttribute('data-bind')); });
+      BIND_ATTRS.forEach(attr => {
+        document.querySelectorAll('[data-bind-' + attr + ']').forEach(el => {
+          const prefix = el.getAttribute('data-prefix') || '';
+          el.setAttribute(attr, prefix + TT(el.getAttribute('data-bind-' + attr)));
+        });
+      });
+      document.title = TT('site.title');
+    }
+
+
+    function renderHero() {
+      const av = $('avatarInner');
+      av.textContent = '';
+      if (DATA.investor.photo) av.append(h('img', { src: DATA.investor.photo, alt: T('investor.name') }));
+      else av.append(h('span', { class: 'monogram' }, T('investor.monogram')));
+
+
+      const ul = $('roles');
+      ul.textContent = '';
+      (DATA.investor.roles || []).forEach(r => ul.append(h('li', {}, tr(r))));
+    }
+
+
+    function renderSummary() {
+      const t = totals();
+      $('figTotal').textContent = money(t.total);
+      $('figPaid').textContent = money(t.paid);
+      $('figDue').textContent = money(t.due);
+      $('pctPaid').textContent = nfmt(t.pct) + '%';
+      $('pctDue').textContent = nfmt(100 - t.pct) + '%';
+      $('bar').setAttribute('aria-valuenow', String(Math.round(t.pct)));
+    }
+
+
+    function animateBar() {
+      const bar = $('barPaid');
+      bar.style.width = '0%';
+      requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = totals().pct + '%'; }));
+    }
+
+
+    function renderLedger() {
+      const ol = $('ledger');
+      ol.textContent = '';
+      DATA.ledger.entries.forEach(e => {
+        const paid = !!e.countsAsPaid;
+        ol.append(h('li', { class: 'entry kind-' + e.type + (paid ? ' paid' : '') },
+          h('span', { class: 'node', 'aria-hidden': 'true' }),
+          h('div', { class: 'entry-head' },
+            h('h4', {}, tr(e.title)),
+            h('span', { class: 'entry-amt' }, (paid ? '+ ' : '') + money(entryAmount(e)))),
+          h('p', { class: 'entry-when' }, whenText(e)),
+          h('p', { class: 'entry-note' }, fill(tr(e.note), vars())),
+          ...refsOf(e).map(r => h('p', { class: 'entry-ref' }, tr(r.label) + ': ', h('b', {}, r.value))),
+          paid ? h('span', { class: 'badge' }, T('ui.counted')) : null));
+      });
+    }
+
+
+    function updateCountdown() {
+      const el = $('retCountdown');
+      if (!el) return;
+      const left = dayNo(dueDate()) - dayNo(new Date());
+      const key = left > 0 ? 'future' : left === 0 ? 'today' : 'past';
+      const n = Math.abs(left);
+      el.textContent = fill(T('ui.returns.countdown.' + key), { days: nfmt(n), s: plural(n) });
+    }
+
+
+    function renderReturns() {
+      const R = DATA.returns, v = vars(), L = (k) => fill(T('ui.returns.' + k), v);
+      $('retQty').textContent = nfmt(R.quantity);
+      const item = (label, value, extra) => h('div', {}, h('dt', {}, label), h('dd', {}, value, extra || null));
+      const grid = $('retGrid');
+      grid.textContent = '';
+      grid.append(
+        item(L('term'), v.term),
+        item(L('delivery'), v.delivery, h('span', { class: 'sub', id: 'retCountdown' })),
+        item(L('retail'), money(R.retailPrice)),
+        item(L('wholesale'), money(R.wholesalePrice)),
+        item(L('retailTotal'), money(R.quantity * R.retailPrice)),
+        item(L('wholesaleTotal'), money(R.quantity * R.wholesalePrice)));
+      updateCountdown();
+    }
+
+
+    // Static ornament (no data in it)
+    const ORN_SVG =
+      '<svg viewBox="0 0 300 24" aria-hidden="true" focusable="false">' +
+      '<path d="M4 12H132" pathLength="1"/><path d="M168 12H296" pathLength="1"/>' +
+      '<polygon points="150.00,2.00 152.93,4.93 157.07,4.93 157.07,9.07 160.00,12.00 157.07,14.93 157.07,19.07 152.93,19.07 150.00,22.00 147.07,19.07 142.93,19.07 142.93,14.93 140.00,12.00 142.93,9.07 142.93,4.93 147.07,4.93"/>' +
+      '</svg>';
+
+
+    function renderContract() {
+      const C = DATA.contract, inv = DATA.investor, fo = DATA.founder, L = DATA.ui.labels;
+      const v = vars(), t = totals();
+      const paper = $('paper');
+      paper.textContent = '';
+
+
+      let i = 0;                                    // order of the reveal sequence
+      const R = (el) => { el.classList.add('reveal'); el.style.setProperty('--i', i++); return el; };
+      const row = (dt, dd) => [h('dt', {}, dt), h('dd', {}, dd)];
+
+
+      if (C.invocation) paper.append(R(h('p', { class: 'invocation', lang: 'ar', dir: 'rtl' }, C.invocation)));
+
+
+      const orn = h('div', { class: 'orn' });
+      orn.innerHTML = ORN_SVG;
+      paper.append(R(orn));
+
+
+      paper.append(R(h('div', { class: 'c-brand' }, h('img', { src: DATA.site.logo, alt: '' }), h('span', {}, T('site.brand')))));
+      paper.append(R(h('div', { class: 'c-title' }, h('h2', {}, T('contract.title')), h('p', {}, T('contract.subtitle')))));
+      paper.append(R(h('p', { class: 'c-date' }, h('b', {}, T('contract.dateLabel') + ': '), v.date + ', ' + v.time)));
+
+
+      paper.append(R(h('h3', { class: 'c-h' }, T('contract.partiesTitle'))));
+      paper.append(R(h('div', { class: 'parties' },
+        h('div', { class: 'party' },
+          h('h4', {}, T('contract.firstParty')),
+          h('p', { class: 'pname' }, T('founder.name')),
+          h('p', { class: 'prole' }, T('founder.title'))),
+        h('div', { class: 'party' },
+          h('h4', {}, T('contract.secondParty')),
+          h('p', { class: 'pname' }, T('investor.name') + ' (' + inv.formalName + ')'),
+          h('dl', {},
+            ...row(tr(L.father), T('investor.father')),
+            ...row(tr(L.mother), T('investor.mother')),
+            ...row(tr(L.nid), inv.nid),
+            ...row(tr(L.phone), inv.phone.display),
+            ...row(tr(L.position), T('investor.position')),
+            ...row(tr(L.address), T('investor.address')))))));
+
+
+      paper.append(R(h('p', { class: 'recital' }, fill(T('contract.recital'), v))));
+
+
+      paper.append(R(h('h3', { class: 'c-h' }, T('contract.clausesTitle'))));
+      paper.append(h('ol', { class: 'clauses' }, ...C.clauses.map((c, idx) =>
+        R(h('li', {},
+          h('span', { class: 'cn' }, nfmt(idx + 1)),
+          h('div', {}, h('h4', {}, tr(c.title)), h('p', {}, fill(tr(c.text), v))))))));
+
+
+      paper.append(R(h('h3', { class: 'c-h' }, T('contract.paymentsTitle'))));
+      const sumRow = (label, val, cls) => h('tr', { class: 'sum ' + cls }, h('td', { colspan: '2' }, label), h('td', { class: 'num' }, val));
+      paper.append(R(h('table', { class: 'pay' },
+        h('thead', {}, h('tr', {},
+          h('th', {}, T('contract.table.date')), h('th', {}, T('contract.table.detail')), h('th', { class: 'num' }, T('contract.table.amount')))),
+        h('tbody', {}, ...DATA.ledger.entries.filter(e => e.countsAsPaid).map(e =>
+          h('tr', {},
+            h('td', {}, whenText(e)),
+            h('td', {}, h('b', {}, tr(e.title)), h('small', {}, fill(tr(e.note), vars())),
+              ...refsOf(e).map(r => h('small', {}, tr(r.label) + ': ' + r.value))),
+            h('td', { class: 'num' }, money(entryAmount(e)))))),
+        h('tfoot', {},
+          sumRow(T('ui.tiles.total'), money(t.total), 'total'),
+          sumRow(T('ui.tiles.paid'), money(t.paid), 'paid'),
+          sumRow(T('ui.tiles.due'), money(t.due), 'due')))));
+
+
+      const sign = (label, name, role) => h('div', { class: 'sign' },
+        h('div', { class: 'line' }), h('small', {}, label),
+        name ? h('b', {}, name) : null, role ? h('small', {}, role) : null);
+      paper.append(R(h('div', { class: 'signs' },
+        sign(T('contract.signatures.line'), T('founder.name'), T('contract.firstParty')),
+        sign(T('contract.signatures.line'), T('investor.name'), T('contract.secondParty')),
+        sign(T('contract.signatures.witness'), '', ''))));
+
+
+      const seal = h('div', { class: 'seal', 'aria-hidden': 'true' }, h('div', {}, h('b', {}, T('site.brand')), h('i', {}, '✦')));
+      seal.style.setProperty('--i', i++);
+      paper.append(seal);
+
+
+      paper.append(R(h('p', { class: 'c-note' }, T('contract.note'))));
+    }
+
+
+    function openContract() {
+      lastFocus = document.activeElement;
+      renderContract();
+      const cv = $('contractView');
+      cv.scrollTop = 0;
+      cv.classList.add('open');
+      CV_OPEN = true;
+      $('app').inert = true;
+      document.body.classList.add('noscroll');
+      $('cvClose').focus();
+    }
+
+
+    function closeContract() {
+      $('contractView').classList.remove('open');
+      CV_OPEN = false;
+      $('app').inert = false;
+      document.body.classList.remove('noscroll');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+
+    // ------------------------------------------------------------------
+    // Clock, language
+    // ------------------------------------------------------------------
+    function tickClock() {
+      if (!DATA) return;
+      const now = new Date();
+      $('clock').textContent = fmtDate(now) + ', ' + fmtTime(now, true);
+      updateCountdown();
+    }
+
+
+    function setLang(lang) {
+      if (!DATA) return;
+      LANG = lang === 'en' ? 'en' : 'bn';
+      document.documentElement.lang = LANG;
+      $('langBn').setAttribute('aria-pressed', String(LANG === 'bn'));
+      $('langEn').setAttribute('aria-pressed', String(LANG === 'en'));
+      applyBindings();
+      renderHero();
+      renderSummary();
+      renderReturns();
+      renderLedger();
+      if (CV_OPEN) renderContract();
+      tickClock();
+    }
+
+
+    // ------------------------------------------------------------------
+    // Password (client-side only): SHA-256 of the input vs data.json
+    // ------------------------------------------------------------------
+    async function sha256Hex(text) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+
+    async function unlock() {
+      if (!DATA) return;
+      const msg = $('lockMsg');
+      let ok = false;
+      try {
+        const hash = await sha256Hex($('passwordInput').value);
+        ok = hash === String(DATA.security.passwordSha256 || '').toLowerCase();
+      } catch (e) {
+        msg.textContent = 'Password check needs HTTPS or localhost.';
+        return;
+      }
+      if (!ok) { msg.textContent = T('lockScreen.wrongPassword'); return; }
+
+
+      msg.textContent = '';
+      $('passwordInput').value = '';
+      $('lockScreen').classList.add('hidden');
+      $('app').classList.remove('hidden');
+      window.scrollTo(0, 0);
+      animateBar();
+    }
+
+
+    // ------------------------------------------------------------------
+    // Start
+    // ------------------------------------------------------------------
+    $('passwordInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && CV_OPEN) closeContract(); });
+
+
+    (async function init() {
+      try {
+        const res = await fetch(DATA_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        DATA = await res.json();
+      } catch (err) {
+        $('lockCard').classList.add('hidden');
+        const box = $('loadError');
+        box.textContent = 'Could not load ' + DATA_URL + ' (' + err.message + '). ' +
+          'Keep it in the same folder as this page and open the page through a web server, not by double-clicking the file.';
+        box.classList.remove('hidden');
+        return;
+      }
+      TZ = DATA.site.timezone || 'Asia/Dhaka';
+      setLang(DATA.site.defaultLang || 'bn');
+      $('lockCard').classList.remove('invisible');
+      clockTimer = setInterval(tickClock, 1000);
+    })();
+  </script>
 </body>
 </html>
