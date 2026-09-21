@@ -1,0 +1,296 @@
+{
+  "_readme": "শুধু মান বদলান, কাঠামো নয়। {\"bn\":…, \"en\":…} মানে ভাষাভেদে আলাদা লেখা; সাধারণ স্ট্রিং দুই ভাষাতেই একই দেখায়। লেখার ভেতরে {total} {paid} {due} {date} {time} {email} নিজে থেকে বসে যায়। পরিশোধিত, বাকি ও শতাংশ হিসাব হয় investment.total এবং ledger.entries (countsAsPaid: true) থেকে, আলাদা করে লিখতে হয় না।",
+
+
+  "site": {
+    "title": {
+      "bn": "হাফেজ আল আমিনের বিনিয়োগ প্রোফাইল",
+      "en": "Investor profile of Hafez Al Amin"
+    },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "homeUrl": "/qf",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka",
+    "currencySymbol": "৳",
+    "currencyWord": { "bn": "টাকা", "en": "Tk." },
+    "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" }
+  },
+
+
+  "security": {
+    "passwordSha256": "b446ac390294fae2f8a54c5f111769d84cf2755b1de5486338a92aa37dd8f1bf"
+  },
+
+
+  "lockScreen": {
+    "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
+    "title": { "bn": "পাসওয়ার্ড প্রয়োজন", "en": "Password required" },
+    "profileFor": {
+      "bn": "হাফেজ আল আমিনের ব্যক্তিগত বিনিয়োগ প্রোফাইল",
+      "en": "Personal investment profile of Hafez Al Amin"
+    },
+    "subtitle": {
+      "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।",
+      "en": "This page is protected. Enter the correct password to view it."
+    },
+    "passwordLabel": { "bn": "পাসওয়ার্ড", "en": "Password" },
+    "placeholder": { "bn": "পাসওয়ার্ড লিখুন", "en": "Enter password" },
+    "button": { "bn": "খুলুন", "en": "Unlock" },
+    "wrongPassword": {
+      "bn": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।",
+      "en": "Incorrect password. Please try again."
+    },
+    "contactNote": {
+      "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:",
+      "en": "To change the password or for any questions, contact:"
+    },
+    "contactEmail": "quranerfariwala@gmail.com"
+  },
+
+
+  "investor": {
+    "photo": "",
+    "monogram": { "bn": "আ", "en": "A" },
+    "name": { "bn": "হাফেজ আল আমিন", "en": "Hafez Al Amin" },
+    "formalName": "MD AL AMIN",
+    "roles": [
+      { "bn": "প্রধান দায়িত্বশীল, কুষ্টিয়া জেলা", "en": "District head, Kushtia" },
+      { "bn": "বিনিয়োগকারী", "en": "Investor" }
+    ],
+    "position": {
+      "bn": "প্রধান দায়িত্বশীল (কুষ্টিয়া জেলা), কোরআনের ফেরিওয়ালা",
+      "en": "District head (Kushtia), Quraner Fariwala"
+    },
+    "father": { "bn": "মোঃ রফিকুল ইসলাম", "en": "Md. Rafiqul Islam" },
+    "mother": { "bn": "হাবিবা খাতুন", "en": "Habiba Khatun" },
+    "nid": "9164051816",
+    "phone": { "display": "+880 1611-509535", "tel": "+8801611509535" },
+    "address": {
+      "bn": "গ্রাম: জোতমোড়া, ডাকঘর: যদুবয়রা - ৭০১০, থানা: কুমারখালী, জেলা: কুষ্টিয়া",
+      "en": "Village: Jotmora, Post office: Jadubayra - 7010, Thana: Kumarkhali, District: Kushtia"
+    }
+  },
+
+
+  "founder": {
+    "name": { "bn": "মোঃ জাফর আহমদ", "en": "Md. Jafar Ahmad" },
+    "title": {
+      "bn": "প্রতিষ্ঠাতা পরিচালক, কোরআনের ফেরিওয়ালা",
+      "en": "Founder Director, Quraner Fariwala"
+    }
+  },
+
+
+  "investment": {
+    "total": 19200,
+    "agreementDate": "2026-09-13",
+    "agreementTimeLabel": { "bn": "আসরের নামাজের পর", "en": "after the Asr prayer" }
+  },
+
+
+  "returns": {
+    "quantity": 64,
+    "termMonths": 1,
+    "retailPrice": 500,
+    "wholesalePrice": 450,
+    "headline": { "bn": "{qty} কপি কোরআন মাজীদ", "en": "{qty} copies of the Quran Majid" },
+    "description": {
+      "bn": "কোরআনের ফেরিওয়ালা থেকে হিফজ শিক্ষার্থীদের জন্য মুদ্রিত",
+      "en": "Printed by Quraner Fariwala for Hifz students"
+    }
+  },
+
+
+  "ledger": {
+    "entries": [
+      {
+        "type": "loan",
+        "date": "2025-08-25",
+        "title": { "bn": "ঋণ", "en": "Loan" },
+        "note": {
+          "bn": "কোরআনের ফেরিওয়ালাতে দেওয়া ঋণ, বিনিয়োগের পরিশোধ হিসেবে গণ্য",
+          "en": "Loan to Quraner Fariwala, counted as part of the payment"
+        },
+        "amount": 1000,
+        "countsAsPaid": true
+      },
+      {
+        "type": "agreement",
+        "date": "2026-09-13",
+        "timeLabel": { "bn": "আসরের নামাজের পর", "en": "after the Asr prayer" },
+        "title": { "bn": "মৌখিক সিদ্ধান্ত", "en": "Oral decision" },
+        "note": {
+          "bn": "মোঃ জাফর আহমদের সাথে আলোচনায় {term} মেয়াদে বিনিয়োগ এবং বিনিময়ে {qty} কপি কোরআন মাজীদ নির্ধারিত হয়",
+          "en": "Agreed with Md. Jafar Ahmad: an investment for {term}, in return for {qty} copies of the Quran Majid"
+        },
+        "amountFrom": "investment.total",
+        "countsAsPaid": false
+      },
+      {
+        "type": "cash",
+        "date": "2026-09-13T21:40:00+06:00",
+        "title": { "bn": "ক্যাশ পরিশোধ", "en": "Cash payment" },
+        "note": {
+          "bn": "মোঃ জাফর আহমদের হাতে ক্যাশ প্রদান",
+          "en": "Handed in cash to Md. Jafar Ahmad"
+        },
+        "amount": 5000,
+        "countsAsPaid": true
+      },
+      {
+        "type": "nagad",
+        "date": "2026-09-20T18:03:00+06:00",
+        "title": { "bn": "নগদ (Nagad) এর মাধ্যমে পরিশোধ", "en": "Payment via Nagad" },
+        "note": {
+          "bn": "কোরআনের ফেরিওয়ালার প্রাতিষ্ঠানিক নগদ নম্বরে মোবাইল ব্যাংকিংয়ের মাধ্যমে পরিশোধ",
+          "en": "Paid by mobile banking to the institutional Nagad number of Quraner Fariwala"
+        },
+        "references": [
+          { "label": { "bn": "প্রাপক নগদ নম্বর", "en": "Receiving Nagad number" }, "value": "01788856628" },
+          { "label": { "bn": "ট্রানজ্যাকশন আইডি", "en": "Transaction ID" }, "value": "760TXARM" }
+        ],
+        "amount": 2000,
+        "countsAsPaid": true
+      }
+    ]
+  },
+
+
+  "ui": {
+    "summaryTitle": { "bn": "বিনিয়োগের সারসংক্ষেপ", "en": "Investment summary" },
+    "tiles": {
+      "total": { "bn": "মোট বিনিয়োগ", "en": "Total investment" },
+      "paid": { "bn": "পরিশোধিত", "en": "Paid" },
+      "due": { "bn": "বাকি", "en": "Remaining" }
+    },
+    "ledgerTitle": { "bn": "লেনদেনের ধারাবাহিকতা", "en": "Transaction timeline" },
+    "counted": { "bn": "পরিশোধে গণ্য", "en": "Counted as paid" },
+    "infoTitle": { "bn": "ব্যক্তিগত তথ্য", "en": "Personal information" },
+    "labels": {
+      "name": { "bn": "নাম", "en": "Name" },
+      "father": { "bn": "পিতা", "en": "Father" },
+      "mother": { "bn": "মাতা", "en": "Mother" },
+      "nid": { "bn": "এনআইডি নম্বর", "en": "NID number" },
+      "phone": { "bn": "মোবাইল", "en": "Mobile" },
+      "address": { "bn": "ঠিকানা", "en": "Address" },
+      "position": { "bn": "দায়িত্ব", "en": "Position" }
+    },
+    "agreementTitle": { "bn": "চুক্তি ও সিদ্ধান্ত", "en": "Agreement and decision" },
+    "agreementText": {
+      "bn": "{date} তারিখে {time} মোঃ জাফর আহমদের সাথে মৌখিক আলোচনার মাধ্যমে প্রাথমিক পর্যায়ে {total} বিনিয়োগের সিদ্ধান্ত হয়েছে। {term} পর বিনিয়োগকারী {qty} কপি কোরআন মাজীদ পাবেন। চুক্তিনামায় পক্ষ, পরিশোধ ও বাকির পূর্ণ বিবরণ আছে।",
+      "en": "On {date}, {time}, it was decided in oral discussion with Md. Jafar Ahmad that {total} will be invested at the initial stage. After {term} the investor will receive {qty} copies of the Quran Majid. The agreement sets out the parties, payments and balance in full."
+    },
+    "viewContract": { "bn": "চুক্তিনামা দেখুন", "en": "View agreement" },
+    "recordNote": {
+      "bn": "এই পাতার তথ্য মৌখিক সিদ্ধান্ত ও লেনদেনের রেকর্ড হিসেবে সংরক্ষিত। কোনো তথ্যে ভুল বা আপত্তি থাকলে জানান: {email}",
+      "en": "The information on this page is kept as a record of the oral decision and the transactions. If you find a mistake or have an objection, write to: {email}"
+    },
+    "returns": {
+      "title": { "bn": "বিনিয়োগের বিনিময়ে প্রাপ্তি", "en": "Received in return" },
+      "copies": { "bn": "কপি", "en": "copies" },
+      "termText": { "bn": "{n} মাস", "en": "{n} month{s}" },
+      "term": { "bn": "মেয়াদ", "en": "Term" },
+      "delivery": { "bn": "ডেলিভারির সময়", "en": "Delivery due" },
+      "retail": { "bn": "প্রতি কপি, খুচরা মূল্য", "en": "Per copy, retail price" },
+      "wholesale": { "bn": "প্রতি কপি, পাইকারি মূল্য", "en": "Per copy, wholesale price" },
+      "retailTotal": { "bn": "{qty} কপির খুচরা মূল্য", "en": "Retail value of {qty} copies" },
+      "wholesaleTotal": { "bn": "{qty} কপির পাইকারি মূল্য", "en": "Wholesale value of {qty} copies" },
+      "countdown": {
+        "future": { "bn": "আর {days} দিন বাকি", "en": "{days} day{s} to go" },
+        "today": { "bn": "নির্ধারিত দিন আজই", "en": "Due today" },
+        "past": { "bn": "নির্ধারিত সময়ের {days} দিন পার হয়েছে", "en": "{days} day{s} past the due date" }
+      }
+    },
+    "switchHifz": { "bn": "হিফজ ব্যবস্থাপনায় যান", "en": "Switch to Hifz Management" },
+    "close": { "bn": "বন্ধ করুন", "en": "Close" },
+    "print": { "bn": "প্রিন্ট / PDF", "en": "Print / PDF" }
+  },
+
+
+  "contract": {
+    "invocation": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+    "title": { "bn": "বিনিয়োগ চুক্তিনামা", "en": "Investment Agreement" },
+    "subtitle": { "bn": "মৌখিক সিদ্ধান্তের লিখিত রেকর্ড", "en": "Written record of an oral decision" },
+    "dateLabel": { "bn": "সিদ্ধান্তের তারিখ", "en": "Date of decision" },
+    "partiesTitle": { "bn": "চুক্তিবদ্ধ পক্ষ", "en": "The parties" },
+    "firstParty": { "bn": "প্রথম পক্ষ", "en": "First party" },
+    "secondParty": { "bn": "দ্বিতীয় পক্ষ (বিনিয়োগকারী)", "en": "Second party (investor)" },
+    "recital": {
+      "bn": "{date} তারিখে {time} উভয় পক্ষের মধ্যে মৌখিক আলোচনার মাধ্যমে নিচের সিদ্ধান্ত গৃহীত হয়েছে। সেই সিদ্ধান্ত এই নথিতে লিপিবদ্ধ করা হলো।",
+      "en": "On {date}, {time}, the following was decided between the two parties in oral discussion. That decision is recorded in this document."
+    },
+    "clausesTitle": { "bn": "লিপিবদ্ধ সিদ্ধান্ত", "en": "Terms recorded" },
+    "clauses": [
+      {
+        "title": { "bn": "বিনিয়োগের পরিমাণ", "en": "Investment amount" },
+        "text": {
+          "bn": "দ্বিতীয় পক্ষ প্রাথমিক পর্যায়ে মোট {total} বিনিয়োগ করবেন।",
+          "en": "The second party will invest a total of {total} at the initial stage."
+        }
+      },
+      {
+        "title": { "bn": "মেয়াদ ও বিনিময়", "en": "Term and return" },
+        "text": {
+          "bn": "বিনিয়োগের মেয়াদ {term}, চুক্তির তারিখ থেকে গণনা করে {delivery} পর্যন্ত। মেয়াদ শেষে প্রথম পক্ষ কোরআনের ফেরিওয়ালার পক্ষ থেকে দ্বিতীয় পক্ষকে {qty} কপি কোরআন মাজীদ প্রদান করবেন। এই কোরআন মাজীদ কোরআনের ফেরিওয়ালা থেকে হিফজ শিক্ষার্থীদের জন্য মুদ্রিত।",
+          "en": "The investment term is {term}, counted from the date of the agreement up to {delivery}. At the end of the term the first party, on behalf of Quraner Fariwala, will give the second party {qty} copies of the Quran Majid, printed by Quraner Fariwala for Hifz students."
+        }
+      },
+      {
+        "title": { "bn": "বাজারমূল্য", "en": "Market value" },
+        "text": {
+          "bn": "উল্লিখিত কোরআন মাজীদের বাজারমূল্য প্রতি কপি খুচরা {retail} এবং পাইকারি {wholesale}। সেই হিসাবে {qty} কপির মূল্য খুচরায় {retailTotal} এবং পাইকারিতে {wholesaleTotal}।",
+          "en": "The market price of these copies is {retail} each at retail and {wholesale} each at wholesale. On that basis {qty} copies are worth {retailTotal} at retail and {wholesaleTotal} at wholesale."
+        }
+      },
+      {
+        "title": { "bn": "পরিশোধ ও সমন্বয়", "en": "Payment and adjustment" },
+        "text": {
+          "bn": "নিচের সারণিতে উল্লিখিত পরিশোধসমূহ এবং পূর্বে দেওয়া ঋণ বিনিয়োগের পরিশোধ হিসেবে গণ্য হবে।",
+          "en": "The payments and the earlier loan listed in the table below count as payment toward the investment."
+        }
+      },
+      {
+        "title": { "bn": "বর্তমান হিসাব", "en": "Current position" },
+        "text": {
+          "bn": "উপরের হিসাব অনুযায়ী মোট পরিশোধিত {paid} এবং বাকি {due}।",
+          "en": "On the above, the total paid is {paid} and the balance remaining is {due}."
+        }
+      },
+      {
+        "title": { "bn": "অন্যান্য শর্ত", "en": "Other terms" },
+        "text": {
+          "bn": "এই নথিতে যা লিপিবদ্ধ হয়েছে তার বাইরের কোনো শর্ত, যেমন বাকি টাকা পরিশোধের সময়, এখানে উল্লেখ নেই। উভয় পক্ষ সম্মত হয়ে লিখিতভাবে যুক্ত করলে তা এই চুক্তিনামার অংশ হবে।",
+          "en": "Terms beyond those recorded here, such as the time for paying the remaining balance, are not set out in this document. They become part of this agreement only if both parties agree and add them in writing."
+        }
+      }
+    ],
+    "paymentsTitle": { "bn": "পরিশোধের বিবরণ", "en": "Payment record" },
+    "table": {
+      "date": { "bn": "তারিখ", "en": "Date" },
+      "detail": { "bn": "বিবরণ", "en": "Detail" },
+      "amount": { "bn": "পরিমাণ", "en": "Amount" }
+    },
+    "signatures": {
+      "line": { "bn": "স্বাক্ষর", "en": "Signature" },
+      "witness": { "bn": "সাক্ষী", "en": "Witness" }
+    },
+    "note": {
+      "bn": "এই নথি তথ্য ও রেকর্ড সংরক্ষণের জন্য। আইনগত কার্যকারিতা বা ব্যাখ্যার প্রয়োজনে যোগ্য আইনজীবীর পরামর্শ নিন।",
+      "en": "This document is for information and record-keeping. For legal effect or interpretation, consult a qualified lawyer."
+    }
+  },
+
+
+  "footer": {
+    "copyright": {
+      "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।",
+      "en": "© 2026 Quraner Fariwala. All rights reserved."
+    },
+    "tagline": {
+      "bn": "পবিত্র কোরআনের গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে সমাজকে এগিয়ে নেওয়া, এমজে আহমদ",
+      "en": "Empowering communities through Research, Printing & Distribution of Holy Quran, by MJ-Ahmad"
+    }
+  }
+}
