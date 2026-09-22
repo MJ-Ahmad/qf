@@ -1,305 +1,68 @@
 {
+  "_readme": "এই ফাইলটি একটি সাধারণ (জেনেরিক) উদাহরণ। বাস্তবে বিভাগ, উপজেলা, ইউনিয়ন, গ্রাম, মাদ্রাসা পরিচালক ও প্রধান উস্তাদ প্রতিটি স্তরের জন্য একই কাঠামোর আলাদা data.json হবে, যেখানে official ও area এর তথ্য সেই নির্দিষ্ট এলাকার হবে।",
+
   "site": {
-    "name": "হিফজুল কুরআন একাডেমি",
-    "shortName": "হিফজ খানা",
-    "tagline": "মুখস্থ থেকে দক্ষতা — প্রতিটি হাফেজ ছাত্রের জন্য একটি সম্পূর্ণ পথ",
-    "establishedNote": "বাংলাদেশের হিফজুল কুরআন বিভাগসমূহের জন্য নিবেদিত ডিজিটাল সহায়ক ব্যবস্থা",
-    "logoLetter": "হি",
-    "helpline": "০১৭০০-০০০০০০",
-    "email": "info@hifzkhana.example",
-    "address": "মিরপুর, ঢাকা, বাংলাদেশ"
+    "title": { "bn": "হিফজ ব্যবস্থাপনা — উদাহরণ ড্যাশবোর্ড", "en": "Hifz Management — Example Dashboard" },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "department": { "bn": "হিফজুল কোরআন বিভাগ", "en": "Hifzul Quran Department" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "profileUrl": "../central/",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka"
   },
 
-  "topBar": {
-    "notice": "চলতি সবক: পারা ১৮ — সূরা আল-মু'মিনূন | রমাদান বিশেষ সবক-সবকি রুটিন প্রকাশিত হয়েছে",
-    "languages": ["বাংলা", "العربية", "English"]
+  "security": { "passwordSha256": "75997ac5150a539cf77c4bca8e9f4d56ba7c375dc0bc5f7d7835d14221d1443a" },
+
+  "lockScreen": {
+    "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
+    "title": { "bn": "উদাহরণ দায়িত্বশীল ড্যাশবোর্ড", "en": "Example Responsible-Person Dashboard" },
+    "profileFor": { "bn": "যেকোনো স্তরের জন্য নমুনা কাঠামো (বিভাগ, উপজেলা, ইউনিয়ন, গ্রাম, মাদ্রাসা পরিচালক বা প্রধান উস্তাদ)", "en": "Sample structure for any level (division, upazila, union, village, madrasa director, or head ustad)" },
+    "subtitle": { "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।", "en": "This page is protected. Enter the correct password to view it." },
+    "placeholder": { "bn": "পাসওয়ার্ড লিখুন", "en": "Enter password" },
+    "button": { "bn": "খুলুন", "en": "Unlock" },
+    "wrongPassword": { "bn": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।", "en": "Incorrect password. Please try again." },
+    "contactNote": { "bn": "প্রকৃত দায়িত্বশীল নিয়োগের পর এই পাসওয়ার্ড বদলে দেওয়া হবে। প্রশ্ন থাকলে যোগাযোগ করুন:", "en": "This password will be changed once a real person is assigned. For questions, contact:" },
+    "contactEmail": "quranerfariwala@gmail.com"
   },
 
-  "nav": [
-    {
-      "title": "হোম",
-      "href": "#home"
-    },
-    {
-      "title": "হিফজ ড্যাশবোর্ড",
-      "href": "#hifz-dashboard",
-      "children": [
-        { "title": "পারা ভিত্তিক তালিকা", "desc": "৩০ পারা অনুযায়ী পড়া ও মুরাজায়াত ট্র্যাক", "href": "#para-wise" },
-        { "title": "সূরা ভিত্তিক তালিকা", "desc": "১১৪টি সূরার অগ্রগতি ও সবক ইতিহাস", "href": "#surah-wise" },
-        { "title": "আয়াত ভিত্তিক অনুশীলন", "desc": "প্রতিটি আয়াত ধরে ধরে পড়া ও মুখস্থ পরীক্ষা", "href": "#ayat-wise" },
-        { "title": "সবক-সবকি-মঞ্জিল", "desc": "দৈনিক নতুন সবক, গতকালের সবকি ও পুরাতন মঞ্জিলের হিসাব", "href": "#sabaq-system" }
-      ]
-    },
-    {
-      "title": "তা'লিমী বিভাগ",
-      "href": "#taleemi",
-      "children": [
-        { "title": "তাজবীদ শিক্ষা", "desc": "মাখরাজ, সিফাত ও তাজবীদের নিয়মাবলি ধাপে ধাপে", "href": "#tajweed" },
-        { "title": "মুকাদ্দমা (কায়েদা)", "desc": "নূরানী কায়েদা থেকে শুরু করে হিফজপূর্ব প্রস্তুতি", "href": "#muqaddama" },
-        { "title": "রেওয়ায়েত ও কিরাআত", "desc": "হাফস আন আসিম রেওয়ায়েতসহ প্রচলিত রেওয়ায়েতসমূহ", "href": "#riwayat" },
-        { "title": "তারতীল ও লাহন", "desc": "সুন্দর তিলাওয়াতের কণ্ঠশৈলী অনুশীলন", "href": "#tarteel" }
-      ]
-    },
-    {
-      "title": "প্যানেলসমূহ",
-      "href": "#panels",
-      "children": [
-        { "title": "শিক্ষার্থী প্যানেল", "desc": "নিজের অগ্রগতি, রুটিন ও রিপোর্ট দেখুন", "href": "#panel-student" },
-        { "title": "শিক্ষক প্যানেল", "desc": "সবক নেওয়া, মূল্যায়ন ও উপস্থিতি ব্যবস্থাপনা", "href": "#panel-teacher" },
-        { "title": "পরিচালক প্যানেল", "desc": "বিভাগীয় পরিসংখ্যান ও প্রাতিষ্ঠানিক তদারকি", "href": "#panel-director" },
-        { "title": "অভিভাবক প্যানেল", "desc": "সন্তানের অগ্রগতি প্রতিদিন দেখার সুযোগ", "href": "#panel-parent" },
-        { "title": "সাধারণ দর্শক", "desc": "একাডেমি সম্পর্কে জানুন, ভর্তি ও যোগাযোগ", "href": "#panel-public" }
-      ]
-    },
-    { "title": "ফলাফল ও সনদ", "href": "#results" },
-    { "title": "যোগাযোগ", "href": "#contact" }
-  ],
-
-  "hero": {
-    "eyebrowNotUsed": true,
-    "heading": "হিফজের প্রতিটি ধাপ, একটি জায়গায়",
-    "sub": "পারা, সূরা ও আয়াত ধরে অগ্রগতি দেখা থেকে শুরু করে তাজবীদ, মুকাদ্দমা ও রেওয়ায়েতের অনুশীলন — শিক্ষার্থী, শিক্ষক, পরিচালক ও অভিভাবক প্রত্যেকের জন্য আলাদা আলাদা দৃষ্টিকোণ থেকে সাজানো একটি হিফজখানা ব্যবস্থাপনা মঞ্চ।",
-    "primaryCta": { "label": "আমার ড্যাশবোর্ডে যান", "href": "#panels" },
-    "secondaryCta": { "label": "হিফজ পদ্ধতি দেখুন", "href": "#hifz-dashboard" },
-    "ayat": {
-      "arabic": "وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ",
-      "bangla": "আর আমি কুরআনকে করেছি সহজবোধ্য উপদেশ গ্রহণের জন্য; অতএব আছে কি কোনো উপদেশ গ্রহণকারী?",
-      "ref": "সূরা আল-ক্বামার, আয়াত ১৭"
-    }
+  "official": {
+    "name": { "bn": "এখনো নির্ধারিত হয়নি", "en": "Not yet assigned" },
+    "monogram": { "bn": "?", "en": "?" },
+    "role": { "bn": "দায়িত্বশীল (উদাহরণ স্থান)", "en": "Responsible person (example placeholder)" },
+    "asOf": ""
   },
 
-  "stats": [
-    { "number": "৩০", "label": "পারা ভিত্তিক ট্র্যাকিং" },
-    { "number": "১১৪", "label": "সূরার অগ্রগতি রেকর্ড" },
-    { "number": "৫", "label": "স্বতন্ত্র ব্যবহারকারী প্যানেল" },
-    { "number": "২৪/৭", "label": "অভিভাবকের জন্য উন্মুক্ত রিপোর্ট" }
-  ],
-
-  "hifzModules": {
-    "heading": "হিফজুল কুরআন ড্যাশবোর্ড",
-    "sub": "একজন হাফেজ শিক্ষার্থীর প্রতিদিনের পড়াশোনাকে কয়েকটি স্পষ্ট ভাগে সাজানো হয়েছে",
-    "items": [
-      {
-        "id": "para-wise",
-        "title": "পারা ভিত্তিক তালিকা",
-        "desc": "৩০ পারার প্রতিটির সম্পূর্ণ/আংশিক অবস্থা, শেষ মুরাজায়াতের তারিখ এবং দুর্বল স্থান চিহ্নিতকরণ।",
-        "href": "#para-wise",
-        "tag": "সংশোধন ও পুনরাবৃত্তি"
-      },
-      {
-        "id": "surah-wise",
-        "title": "সূরা ভিত্তিক তালিকা",
-        "desc": "১১৪টি সূরা আলাদা আলাদাভাবে দেখা, প্রতিটির আয়াত সংখ্যা, মাক্কী/মাদানী তথ্য ও মুখস্থের হার।",
-        "href": "#surah-wise",
-        "tag": "সূরা রেজিস্ট্রি"
-      },
-      {
-        "id": "ayat-wise",
-        "title": "আয়াত ভিত্তিক অনুশীলন",
-        "desc": "একটি একটি করে আয়াত পড়া, শোনা, নিজে তিলাওয়াত রেকর্ড করে শিক্ষকের কাছে জমা দেওয়ার ব্যবস্থা।",
-        "href": "#ayat-wise",
-        "tag": "লাইন বাই লাইন"
-      },
-      {
-        "id": "sabaq-system",
-        "title": "সবক-সবকি-মঞ্জিল পদ্ধতি",
-        "desc": "দৈনিক নতুন সবক, গতকালের সবকি (পুনরাবৃত্তি) ও দূরবর্তী মঞ্জিলের হিসাব একই জায়গায়।",
-        "href": "#sabaq-system",
-        "tag": "দৈনিক রুটিন"
-      },
-      {
-        "id": "tajweed",
-        "title": "তাজবীদ শিক্ষা",
-        "desc": "মাখরাজুল হুরুফ, সিফাতে হুরুফ, নূন-তানবীনের বিধান ও মাদ্দের প্রকারভেদ ধাপে ধাপে।",
-        "href": "#tajweed",
-        "tag": "উচ্চারণ শুদ্ধতা"
-      },
-      {
-        "id": "muqaddama",
-        "title": "মুকাদ্দমা (কায়েদা)",
-        "desc": "হিফজ শুরুর পূর্বে নূরানী কায়েদা ও প্রাথমিক আরবি হরফ চেনা-পড়ার প্রস্তুতিমূলক পাঠ।",
-        "href": "#muqaddama",
-        "tag": "হিফজ-পূর্ব প্রস্তুতি"
-      },
-      {
-        "id": "riwayat",
-        "title": "রেওয়ায়েত ও কিরাআত",
-        "desc": "হাফস আন আসিম রেওয়ায়েতভিত্তিক পাঠদান এবং প্রচলিত অন্যান্য রেওয়ায়েতের পরিচিতি।",
-        "href": "#riwayat",
-        "tag": "কিরাআত পরিচিতি"
-      },
-      {
-        "id": "tarteel",
-        "title": "তারতীল ও সুর",
-        "desc": "সুন্দর ও প্রাঞ্জল কণ্ঠে তিলাওয়াতের অনুশীলন, বিভিন্ন ক্বারীর তারতীল অনুসরণ।",
-        "href": "#tarteel",
-        "tag": "কণ্ঠশৈলী"
-      }
-    ]
+  "ui": {
+    "back": { "bn": "কেন্দ্রীয় দপ্তরে ফিরে যান", "en": "Back to central office" },
+    "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" },
+    "banner": { "bn": "এই দায়িত্বে এখনো কাউকে নিয়োগ করা হয়নি। দায়িত্বশীল নির্ধারিত হলে এই পাতাটি তার নাম, ছবি ও প্রকৃত তথ্য দিয়ে সক্রিয় হবে — নিচের কাঠামো সেই ড্যাশবোর্ড ঠিক কেমন দেখাবে তার উদাহরণ।", "en": "No one has been assigned to this role yet. Once assigned, this page will go live with that person's name, photo, and real data — the layout below is an example of exactly what that dashboard will look like." },
+    "tabs": { "ov": { "bn": "সারসংক্ষেপ", "en": "Overview" }, "st": { "bn": "দায়িত্ব কাঠামো", "en": "Responsibility structure" } },
+    "logout": { "bn": "বের হন", "en": "Sign out" },
+    "footer": { "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।", "en": "© 2026 Quraner Fariwala. All rights reserved." },
+    "ovTitle": { "bn": "সারসংক্ষেপ (উদাহরণ)", "en": "Overview (example)" },
+    "kpi": {
+      "madrasa": { "bn": "নিবন্ধিত মাদ্রাসা", "en": "Registered madrasas" },
+      "students": { "bn": "নিবন্ধিত হিফজ শিক্ষার্থী", "en": "Registered Hifz students" },
+      "ustad": { "bn": "নিযুক্ত হিফজ উস্তাদ", "en": "Hifz ustads appointed" },
+      "sabak": { "bn": "সবক সম্পন্নের হার", "en": "Sabak completion rate" },
+      "mashq": { "bn": "মাশক জমার হার", "en": "Mashq submission rate" }
+    },
+    "kpiNote": { "bn": "দায়িত্বশীল ও মাদ্রাসা নিবন্ধিত হলে এই সংখ্যাগুলো প্রকৃত তথ্য থেকে হিসাব হবে।", "en": "Once a head and madrasas are registered, these numbers will be calculated from real data." },
+    "stTitle": { "bn": "দায়িত্ব কাঠামো", "en": "Responsibility structure" },
+    "stIntro": { "bn": "প্রত্যেক স্তরের নিজস্ব পাসওয়ার্ডভিত্তিক ড্যাশবোর্ড থাকবে। একজন দায়িত্বশীল কেবল নিজের এলাকা ও তার নিচের স্তরের তথ্য দেখতে ও নিয়ন্ত্রণ করতে পারবেন।", "en": "Every level has its own password-protected dashboard. A responsible person can see and control only their own area and the levels below it." },
+    "area": { "bn": "এলাকা", "en": "Area" }, "sees": { "bn": "দেখবেন", "en": "Sees" }, "controls": { "bn": "নিয়ন্ত্রণ", "en": "Controls" }
   },
 
-  "roleDashboards": [
-    {
-      "id": "panel-student",
-      "title": "শিক্ষার্থী প্যানেল",
-      "icon": "student",
-      "desc": "প্রতিদিনের সবক জমা দিন এবং নিজের হিফজ যাত্রা নিজের চোখে দেখুন।",
-      "links": [
-        { "title": "আজকের সবক জমা দিন", "href": "#" },
-        { "title": "আমার পারা-ভিত্তিক অগ্রগতি", "href": "#para-wise" },
-        { "title": "তাজবীদ অনুশীলন", "href": "#tajweed" },
-        { "title": "সাপ্তাহিক মূল্যায়ন রিপোর্ট", "href": "#" },
-        { "title": "রুটিন ও সময়সূচি", "href": "#" }
-      ]
-    },
-    {
-      "id": "panel-teacher",
-      "title": "শিক্ষক (উস্তাদ) প্যানেল",
-      "icon": "teacher",
-      "desc": "ছাত্রদের সবক শোনা, নম্বর দেওয়া ও উপস্থিতি নথিভুক্ত করার কেন্দ্র।",
-      "links": [
-        { "title": "সবক শোনার তালিকা", "href": "#" },
-        { "title": "ছাত্র মূল্যায়ন ফর্ম", "href": "#" },
-        { "title": "উপস্থিতি ব্যবস্থাপনা", "href": "#" },
-        { "title": "দুর্বল ছাত্র চিহ্নিতকরণ", "href": "#" },
-        { "title": "মাসিক অগ্রগতি প্রতিবেদন", "href": "#" }
-      ]
-    },
-    {
-      "id": "panel-director",
-      "title": "বিভাগীয় পরিচালক প্যানেল",
-      "icon": "director",
-      "desc": "সম্পূর্ণ হিফজুল কুরআন বিভাগের পরিসংখ্যান ও প্রাতিষ্ঠানিক তদারকি।",
-      "links": [
-        { "title": "সার্বিক বিভাগীয় পরিসংখ্যান", "href": "#" },
-        { "title": "শিক্ষক কার্যক্রম পর্যালোচনা", "href": "#" },
-        { "title": "ভর্তি ও বহিষ্কার ব্যবস্থাপনা", "href": "#" },
-        { "title": "পরীক্ষা ও সনদ অনুমোদন", "href": "#results" },
-        { "title": "আর্থিক ও রিসোর্স সারসংক্ষেপ", "href": "#" }
-      ]
-    },
-    {
-      "id": "panel-parent",
-      "title": "অভিভাবক প্যানেল",
-      "icon": "parent",
-      "desc": "সন্তানের দৈনিক সবক ও সামগ্রিক অগ্রগতির স্বচ্ছ প্রতিবেদন।",
-      "links": [
-        { "title": "সন্তানের আজকের সবক", "href": "#" },
-        { "title": "মাসিক অগ্রগতি সারসংক্ষেপ", "href": "#" },
-        { "title": "শিক্ষকের মন্তব্য", "href": "#" },
-        { "title": "ফি ও পরিশোধ তথ্য", "href": "#" },
-        { "title": "উস্তাদের সাথে যোগাযোগ", "href": "#contact" }
-      ]
-    },
-    {
-      "id": "panel-public",
-      "title": "সাধারণ দর্শক",
-      "icon": "public",
-      "desc": "একাডেমি, ভর্তি প্রক্রিয়া ও সাফল্যগাথা সম্পর্কে জানুন।",
-      "links": [
-        { "title": "একাডেমি পরিচিতি", "href": "#home" },
-        { "title": "ভর্তি প্রক্রিয়া", "href": "#" },
-        { "title": "সাফল্যগাথা ও হাফেজ তালিকা", "href": "#results" },
-        { "title": "প্রায়শ জিজ্ঞাসিত প্রশ্ন", "href": "#" },
-        { "title": "যোগাযোগ করুন", "href": "#contact" }
-      ]
-    }
-  ],
-
-  "testimonials": [
-    {
-      "quote": "সবক-সবকি-মঞ্জিলের হিসাব একনজরে দেখতে পারায় আমার ছেলের দুর্বল জায়গাগুলো সহজেই বুঝতে পারি।",
-      "name": "আব্দুর রহমান",
-      "role": "অভিভাবক, মিরপুর"
-    },
-    {
-      "quote": "পারা ভিত্তিক ও সূরা ভিত্তিক আলাদা তালিকা থাকায় প্রতিটি ছাত্রের মূল্যায়ন অনেক নির্ভুল হয়েছে।",
-      "name": "মাওলানা ইউসুফ",
-      "role": "হিফজ শিক্ষক"
-    },
-    {
-      "quote": "একটি ড্যাশবোর্ডেই পুরো বিভাগের চিত্র দেখতে পারায় সিদ্ধান্ত নেওয়া সহজ হয়েছে।",
-      "name": "মুফতি কামাল হোসাইন",
-      "role": "হিফজুল কুরআন বিভাগীয় পরিচালক"
-    }
-  ],
-
-  "cta": {
-    "heading": "আপনার হিফজখানাকে ডিজিটাল ব্যবস্থাপনার আওতায় আনুন",
-    "sub": "শিক্ষার্থী থেকে পরিচালক — প্রত্যেকের জন্য একটি স্বচ্ছ ও সংগঠিত পথ।",
-    "cta": { "label": "এখনই যুক্ত হোন", "href": "#contact" }
-  },
-
-  "footer": {
-    "about": "হিফজুল কুরআন একাডেমি বাংলাদেশের হিফজখানাসমূহের জন্য তৈরি একটি শিক্ষা-ব্যবস্থাপনা মঞ্চ, যেখানে শিক্ষার্থী, শিক্ষক, পরিচালক ও অভিভাবক একসাথে কাজ করতে পারেন।",
-    "columns": [
-      {
-        "title": "হিফজ ড্যাশবোর্ড",
-        "links": [
-          { "title": "পারা ভিত্তিক তালিকা", "href": "#para-wise" },
-          { "title": "সূরা ভিত্তিক তালিকা", "href": "#surah-wise" },
-          { "title": "আয়াত ভিত্তিক অনুশীলন", "href": "#ayat-wise" },
-          { "title": "সবক-সবকি-মঞ্জিল", "href": "#sabaq-system" }
-        ]
-      },
-      {
-        "title": "তা'লিমী বিভাগ",
-        "links": [
-          { "title": "তাজবীদ শিক্ষা", "href": "#tajweed" },
-          { "title": "মুকাদ্দমা (কায়েদা)", "href": "#muqaddama" },
-          { "title": "রেওয়ায়েত ও কিরাআত", "href": "#riwayat" },
-          { "title": "তারতীল ও সুর", "href": "#tarteel" }
-        ]
-      },
-      {
-        "title": "প্যানেলসমূহ",
-        "links": [
-          { "title": "শিক্ষার্থী", "href": "#panel-student" },
-          { "title": "শিক্ষক", "href": "#panel-teacher" },
-          { "title": "পরিচালক", "href": "#panel-director" },
-          { "title": "অভিভাবক", "href": "#panel-parent" }
-        ]
-      },
-      {
-        "title": "প্রতিষ্ঠান",
-        "links": [
-          { "title": "আমাদের সম্পর্কে", "href": "#home" },
-          { "title": "ফলাফল ও সনদ", "href": "#results" },
-          { "title": "যোগাযোগ", "href": "#contact" },
-          { "title": "সাইটম্যাপ", "href": "#sitemap" }
-        ]
-      }
-    ],
-    "legal": [
-      { "title": "গোপনীয়তা নীতি", "href": "#" },
-      { "title": "ব্যবহারের শর্তাবলি", "href": "#" },
-      { "title": "রিফান্ড নীতি", "href": "#" },
-      { "title": "সাইটম্যাপ", "href": "#sitemap" }
-    ],
-    "socials": [
-      { "title": "ফেসবুক", "href": "#" },
-      { "title": "ইউটিউব", "href": "#" },
-      { "title": "টেলিগ্রাম", "href": "#" }
-    ],
-    "copyright": "© ২০২৬ হিফজুল কুরআন একাডেমি বাংলাদেশ। সর্বস্বত্ব সংরক্ষিত।"
-  },
-
-  "sitemap": [
-    {
-      "section": "হিফজ ড্যাশবোর্ড",
-      "pages": ["পারা ভিত্তিক তালিকা", "সূরা ভিত্তিক তালিকা", "আয়াত ভিত্তিক অনুশীলন", "সবক-সবকি-মঞ্জিল"]
-    },
-    {
-      "section": "তা'লিমী বিভাগ",
-      "pages": ["তাজবীদ শিক্ষা", "মুকাদ্দমা (কায়েদা)", "রেওয়ায়েত ও কিরাআত", "তারতীল ও সুর"]
-    },
-    {
-      "section": "প্যানেলসমূহ",
-      "pages": ["শিক্ষার্থী প্যানেল", "শিক্ষক প্যানেল", "পরিচালক প্যানেল", "অভিভাবক প্যানেল", "সাধারণ দর্শক"]
-    },
-    {
-      "section": "প্রতিষ্ঠান",
-      "pages": ["একাডেমি পরিচিতি", "ফলাফল ও সনদ", "যোগাযোগ", "গোপনীয়তা নীতি", "ব্যবহারের শর্তাবলি"]
-    }
+  "levels": [
+    { "title": { "bn": "কেন্দ্রীয় প্রধান দায়িত্বশীল", "en": "Central Head" }, "area": { "bn": "সারা বাংলাদেশ", "en": "All of Bangladesh" }, "sees": { "bn": "সব বিভাগ ও জেলার সার্বিক চিত্র", "en": "Overall picture of every division and district" }, "controls": { "bn": "শিক্ষাক্রম নির্ধারণ, বিভাগীয় দায়িত্বশীল নিয়োগ, নীতিমালা অনুমোদন", "en": "Sets curriculum, appoints division heads, approves policy" } },
+    { "title": { "bn": "বিভাগীয় দায়িত্বশীল", "en": "Division Head" }, "area": { "bn": "বিভাগ", "en": "Division" }, "sees": { "bn": "জেলাভিত্তিক তুলনা ও অগ্রগতি", "en": "District comparison and progress" }, "controls": { "bn": "জেলা দায়িত্বশীলদের কাজ যাচাই, বিভাগীয় প্রশিক্ষণ পরিকল্পনা", "en": "Reviews district heads' work, plans division training" } },
+    { "title": { "bn": "জেলা প্রধান দায়িত্বশীল", "en": "District Head" }, "area": { "bn": "জেলা", "en": "District" }, "sees": { "bn": "উপজেলা, মাদ্রাসা, উস্তাদ ও শিক্ষার্থীর পূর্ণ চিত্র", "en": "Full picture of upazilas, madrasas, ustads and students" }, "controls": { "bn": "উপজেলা দায়িত্বশীল নিয়োগ, পরিদর্শন, প্রশিক্ষণ, প্রতিবেদন অনুমোদন", "en": "Appoints upazila heads, inspects, trains, approves reports" } },
+    { "title": { "bn": "উপজেলা দায়িত্বশীল", "en": "Upazila Head" }, "area": { "bn": "উপজেলা", "en": "Upazila" }, "sees": { "bn": "ইউনিয়ন ও মাদ্রাসাভিত্তিক অবস্থা", "en": "Status by union and madrasa" }, "controls": { "bn": "ইউনিয়ন দায়িত্বশীলদের কাজ তদারকি, মাসিক বৈঠক", "en": "Supervises union heads, holds monthly meetings" } },
+    { "title": { "bn": "ইউনিয়ন দায়িত্বশীল", "en": "Union Head" }, "area": { "bn": "ইউনিয়ন", "en": "Union" }, "sees": { "bn": "গ্রামভিত্তিক মাদ্রাসা ও উপস্থিতি", "en": "Madrasas and attendance by village" }, "controls": { "bn": "নিয়মিত পরিদর্শন, দুর্বল মাদ্রাসা চিহ্নিতকরণ", "en": "Regular visits, identifies weak madrasas" } },
+    { "title": { "bn": "গ্রাম দায়িত্বশীল", "en": "Village Head" }, "area": { "bn": "গ্রাম", "en": "Village" }, "sees": { "bn": "গ্রামের মাদ্রাসা ও শিক্ষার্থী", "en": "Madrasas and students of the village" }, "controls": { "bn": "স্থানীয় সহযোগিতা, অভিভাবকদের সাথে যোগাযোগ", "en": "Local support, contact with guardians" } },
+    { "title": { "bn": "মাদ্রাসা পরিচালক", "en": "Madrasa Director" }, "area": { "bn": "নিজ মাদ্রাসা", "en": "Own madrasa" }, "sees": { "bn": "পুরো মাদ্রাসার হিফজ বিভাগ", "en": "The whole madrasa's Hifz department" }, "controls": { "bn": "প্রধান উস্তাদ তদারকি, মাসিক প্রতিবেদন প্রদান", "en": "Supervises the head ustad, submits monthly reports" } },
+    { "title": { "bn": "হিফজ বিভাগের প্রধান উস্তাদ", "en": "Head Ustad, Hifz Department" }, "area": { "bn": "নিজ হিফজ বিভাগ", "en": "Own Hifz department" }, "sees": { "bn": "প্রতিটি শিক্ষার্থীর সবক, সাবকী, মানযিল ও মাশক", "en": "Every student's sabak, sabki, manzil and mashq" }, "controls": { "bn": "দৈনিক তথ্য ইনপুট, মাশকের মান যাচাই", "en": "Enters daily data, checks the quality of mashq" } }
   ]
 }
+
