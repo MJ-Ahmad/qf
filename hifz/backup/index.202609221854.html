@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>হিফজুল কুরআন একাডেমি — হিফজ খানা ড্যাশবোর্ড</title>
+<meta name="description" content="বাংলাদেশের হিফজুল কুরআন বিভাগের জন্য পারা, সূরা ও আয়াত ভিত্তিক ড্যাশবোর্ড, তাজবীদ, মুকাদ্দমা, রেওয়ায়েত এবং শিক্ষার্থী-শিক্ষক-পরিচালক-অভিভাবক প্যানেল।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&family=Noto+Naskh+Arabic:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">মূল বিষয়বস্তুতে যান</a>
+
+<!-- ===== Top utility bar ===== -->
+<div class="topbar">
+  <div class="container">
+    <div class="notice" id="topbar-notice">লোড হচ্ছে…</div>
+    <div class="langs" id="topbar-langs"></div>
+  </div>
+</div>
+
+<!-- ===== Header / Navigation ===== -->
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark" id="brand-mark">হি</span>
+      <span class="brand-text">
+        <span class="name" id="brand-name">হিফজুল কুরআন একাডেমি</span>
+        <span class="tag" id="brand-tag">লোড হচ্ছে…</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="মেনু খুলুন" aria-expanded="false"></button>
+    <nav class="main-nav" id="mainNav" aria-label="প্রধান মেনু">
+      <ul id="navList"></ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-copy">
+        <h1 id="heroHeading"></h1>
+        <p class="lead" id="heroSub"></p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary" id="heroPrimaryCta" href="#panels"></a>
+          <a class="btn btn--outline" id="heroSecondaryCta" href="#hifz-dashboard"></a>
+        </div>
+      </div>
+      <div class="ayat-card">
+        <p class="arabic" id="heroAyatArabic"></p>
+        <p class="bangla" id="heroAyatBangla"></p>
+        <p class="ref" id="heroAyatRef"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid" id="statsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Hifz Modules ===== -->
+  <section class="section" id="hifz-dashboard">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="modulesHeading"></h2>
+        <p id="modulesSub"></p>
+      </div>
+      <div class="grid" id="modulesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== তা'লিমী বিভাগ anchor (covered by module cards above: tajweed, muqaddama, riwayat, tarteel) ===== -->
+  <div id="taleemi"></div>
+  <div id="para-wise"></div>
+  <div id="surah-wise"></div>
+  <div id="ayat-wise"></div>
+  <div id="sabaq-system"></div>
+  <div id="tajweed"></div>
+  <div id="muqaddama"></div>
+  <div id="riwayat"></div>
+  <div id="tarteel"></div>
+
+  <!-- ===== Role-based Panels ===== -->
+  <section class="section section--paper2" id="panels">
+    <div class="container">
+      <div class="section-head">
+        <h2>প্যানেল অনুযায়ী প্রবেশ</h2>
+        <p>আপনি কে — তা বেছে নিন, আপনার জন্য প্রাসঙ্গিক লিংকগুলো দেখুন।</p>
+      </div>
+      <div class="role-tabs" id="roleTabs" role="tablist"></div>
+      <div id="rolePanels"></div>
+    </div>
+  </section>
+
+  <!-- ===== Results anchor ===== -->
+  <div id="results"></div>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>শিক্ষক ও অভিভাবকদের অভিজ্ঞতা</h2>
+        <p>যারা প্রতিদিন এই ব্যবস্থা ব্যবহার করছেন, তাদের কথা।</p>
+      </div>
+      <div class="testi-grid" id="testiGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA band ===== -->
+  <section class="cta-band">
+    <div class="container">
+      <h2 id="ctaHeading"></h2>
+      <p id="ctaSub"></p>
+      <a class="btn btn--gold" id="ctaButton" href="#contact"></a>
+    </div>
+  </section>
+
+  <!-- ===== Contact anchor ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>যোগাযোগ</h2>
+        <p>যেকোনো প্রয়োজনে সরাসরি যোগাযোগ করুন।</p>
+      </div>
+      <p id="contactInfo" style="font-size:0.95rem;color:#44544c;"></p>
+    </div>
+  </section>
+
+  <!-- ===== Sitemap ===== -->
+  <section class="section section--paper2" id="sitemap">
+    <div class="container">
+      <div class="section-head">
+        <h2>সাইট ম্যাপ</h2>
+        <p>এই ওয়েবসাইটের সকল বিভাগের একটি সম্পূর্ণ তালিকা।</p>
+      </div>
+      <div class="sitemap-grid" id="sitemapGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container footer-top" id="footerTop"></div>
+  <div class="container footer-bottom">
+    <span id="footerCopyright"></span>
+    <span class="footer-legal" id="footerLegal"></span>
+    <span class="footer-socials" id="footerSocials"></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

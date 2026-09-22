@@ -1,161 +1,237 @@
 <!DOCTYPE html>
-<html lang="bn" dir="ltr">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>হিফজুল কুরআন একাডেমি — হিফজ খানা ড্যাশবোর্ড</title>
-<meta name="description" content="বাংলাদেশের হিফজুল কুরআন বিভাগের জন্য পারা, সূরা ও আয়াত ভিত্তিক ড্যাশবোর্ড, তাজবীদ, মুকাদ্দমা, রেওয়ায়েত এবং শিক্ষার্থী-শিক্ষক-পরিচালক-অভিভাবক প্যানেল।">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&family=Noto+Naskh+Arabic:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a3a31">
+<title>Hifz Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0a3a31;--em:#136b55;--gold:#b8892d;--gsoft:#ead9a6;--bg:#f1f5f0;--card:#fff;--ink:#15221d;--muted:#586a62;--line:#d5ddd3;--warn:#a12b2b;--serif:'Tiro Bangla',Georgia,serif;--sans:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;--star:polygon(50% 0,64.6% 14.6%,85.4% 14.6%,85.4% 35.4%,100% 50%,85.4% 64.6%,85.4% 85.4%,64.6% 85.4%,50% 100%,35.4% 85.4%,14.6% 85.4%,14.6% 64.6%,0 50%,14.6% 35.4%,14.6% 14.6%,35.4% 14.6%)}
+@media(prefers-color-scheme:dark){:root{--bg:#0c1a16;--card:#12261f;--ink:#e6efe9;--muted:#9db1a7;--line:#244036;--warn:#f0a29a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.langbar{position:fixed;top:12px;right:12px;z-index:90;display:flex;gap:2px;padding:3px;background:rgba(10,58,49,.92);border:1px solid rgba(234,217,166,.5);border-radius:999px}
+.langbar button{border:0;background:none;color:var(--gsoft);border-radius:999px;padding:3px 12px;font:.9rem var(--sans);cursor:pointer}
+.langbar button[aria-pressed="true"]{background:var(--gsoft);color:var(--night);font-weight:600}
+#lock{min-height:100vh;display:grid;place-items:center;padding:72px 24px 32px;background:radial-gradient(120% 90% at 50% 0,#12604e,var(--night) 62%)}
+.lc{width:100%;max-width:420px;background:var(--card);border-top:4px solid var(--gold);border-radius:4px;padding:28px 22px;text-align:center}
+.lc img{width:56px;height:56px;border-radius:8px;background:#fff}
+.lc .g{margin:8px 0 0;font:1.1rem var(--serif);color:var(--gold)}
+.lc h1{margin:0;font:400 1.9rem/1.3 var(--serif);color:var(--em)}
+.lc p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+.lc input{width:100%;margin-top:16px;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.btn{width:100%;margin-top:12px;padding:12px;border:0;border-radius:4px;background:var(--em);color:#fff;font:600 1.05rem var(--sans);cursor:pointer}
+#msg{min-height:1.7em;margin-top:8px;color:var(--warn);font-size:.92rem}
+.ct{margin-top:10px!important;padding-top:12px;border-top:1px solid var(--line);font-size:.82rem!important}
+.hero{background:linear-gradient(180deg,var(--night),#0e4a3e);color:#fff;padding:18px 18px 26px;border-bottom:4px solid var(--gold)}
+.hin{max-width:960px;margin:0 auto}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-right:120px;color:var(--gsoft);font-weight:600;line-height:1.3}
+.top img{width:40px;height:40px;border-radius:6px;background:#fff;flex:none}
+.top a{color:var(--gsoft);text-decoration:none;border:1px solid var(--gsoft);border-radius:999px;padding:2px 14px;font-size:.9rem;font-weight:500}
+.who{display:flex;gap:16px;align-items:center;margin-top:18px}
+.av{width:84px;height:84px;flex:none;background:var(--gold);clip-path:var(--star);display:grid;place-items:center}
+.av i{width:76px;height:76px;background:var(--em);clip-path:var(--star);display:grid;place-items:center;font:normal 2.2rem var(--serif);color:var(--gsoft)}
+.who h1{margin:0;font:400 clamp(1.8rem,6vw,2.6rem)/1.25 var(--serif)}
+.pill{display:inline-block;margin-top:4px;border:1px solid rgba(234,217,166,.55);color:var(--gsoft);padding:1px 12px;border-radius:999px;font-size:.9rem}
+.clock{margin-top:16px;display:inline-flex;flex-direction:column;border-left:3px solid var(--gold);padding:2px 0 2px 12px}
+.clock small{color:var(--gsoft);font-size:.82rem;line-height:1.4}
+.clock b{font:400 1.5rem/1.3 var(--serif);font-variant-numeric:tabular-nums}
+.clock span{font-size:.9rem;color:var(--gsoft)}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto}
+nav div{max-width:960px;margin:0 auto;display:flex}
+nav button{flex:1 0 auto;padding:12px 16px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font:600 1rem var(--sans);cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{color:var(--em);border-color:var(--gold)}
+main{max-width:960px;margin:0 auto;padding:4px 16px 48px}
+h2{font:400 1.4rem/1.3 var(--serif);margin:28px 0 10px;display:flex;gap:12px;align-items:center}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.asof{color:var(--muted);font-size:.88rem;margin-top:14px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.k{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 14px;border-radius:4px}
+.k small{color:var(--muted);display:block;font-size:.85rem;line-height:1.4}
+.k b{font:400 1.9rem/1.3 var(--serif)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{color:var(--muted);font-weight:500;font-size:.85rem}
+tr.row{cursor:pointer}tr.row:hover td,tr.row.on td{background:rgba(184,137,45,.12)}
+.bar{display:inline-block;width:60px;height:8px;background:var(--line);border-radius:4px;vertical-align:middle;margin-right:8px;overflow:hidden}
+.bar s{display:block;height:100%;background:var(--em)}.bar.lo s{background:var(--warn)}
+.dim{color:var(--muted)}
+.det{padding:14px 16px;background:var(--card);border-left:4px solid var(--gold);margin-top:12px;border-radius:0 4px 4px 0}
+.al{padding:10px 14px;border-left:4px solid var(--warn);background:var(--card);margin-bottom:8px;border-radius:0 4px 4px 0}
+.empty{padding:14px 16px;background:var(--card);border:1px dashed var(--line);border-radius:4px;color:var(--muted)}
+.tl{display:grid;gap:10px}
+.lv{display:grid;grid-template-columns:38px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:4px}
+.lv.me{border:2px solid var(--gold)}
+.no{width:34px;height:34px;background:var(--em);clip-path:var(--star);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:600}
+.lv.me .no{background:var(--gold)}
+.lv h3{margin:0;font:600 1.05rem var(--sans)}
+.lv p{margin:2px 0 0;font-size:.9rem;color:var(--muted)}.lv p b{color:var(--ink);font-weight:500}
+.out{margin-top:20px;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 14px;border-radius:4px;cursor:pointer;font:inherit}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 32px}
+#err{max-width:420px;background:var(--card);border-top:4px solid var(--warn);padding:20px;color:var(--warn)}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">মূল বিষয়বস্তুতে যান</a>
-
-<!-- ===== Top utility bar ===== -->
-<div class="topbar">
-  <div class="container">
-    <div class="notice" id="topbar-notice">লোড হচ্ছে…</div>
-    <div class="langs" id="topbar-langs"></div>
-  </div>
+<div class="langbar" role="group" aria-label="Language">
+  <button id="lBn" type="button" aria-pressed="true">বাংলা</button>
+  <button id="lEn" type="button" aria-pressed="false">EN</button>
 </div>
 
-<!-- ===== Header / Navigation ===== -->
-<header class="site-header">
-  <div class="container header-row">
-    <a class="brand" href="#home">
-      <span class="brand-mark" id="brand-mark">হি</span>
-      <span class="brand-text">
-        <span class="name" id="brand-name">হিফজুল কুরআন একাডেমি</span>
-        <span class="tag" id="brand-tag">লোড হচ্ছে…</span>
-      </span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="মেনু খুলুন" aria-expanded="false"></button>
-    <nav class="main-nav" id="mainNav" aria-label="প্রধান মেনু">
-      <ul id="navList"></ul>
-    </nav>
+<section id="lock">
+  <div class="lc hidden" id="lc">
+    <img id="lLogo" alt="">
+    <p class="g" id="lGreet"></p><h1 id="lTitle"></h1>
+    <p><b id="lFor"></b></p><p id="lSub"></p>
+    <input id="pw" type="password" autocomplete="current-password">
+    <button class="btn" id="go" type="button"></button>
+    <div id="msg" role="alert"></div>
+    <p class="ct"><span id="lNote"></span> <b id="lMail"></b></p>
   </div>
-</header>
+  <div id="err" class="hidden" role="alert"></div>
+</section>
 
-<main id="main">
+<div id="app" class="hidden">
+  <header class="hero"><div class="hin">
+    <div class="top"><img id="hLogo" alt=""><span id="brand"></span><a id="back" href="../"></a></div>
+    <div class="who"><div class="av"><i id="mono"></i></div>
+      <div><h1 id="oName"></h1><span class="pill" id="oRole"></span></div></div>
+    <div class="clock" aria-live="off"><small id="cLabel"></small><b id="cTime"></b><span id="cDate"></span></div>
+  </div></header>
+  <nav><div role="tablist">
+    <button role="tab" data-t="ov" aria-selected="true"></button>
+    <button role="tab" data-t="up" aria-selected="false"></button>
+    <button role="tab" data-t="st" aria-selected="false"></button>
+  </div></nav>
+  <main>
+    <div class="asof" id="asof"></div>
+    <section id="ov"></section><section id="up" class="hidden"></section><section id="st" class="hidden"></section>
+    <button class="out" id="out" type="button"></button>
+  </main>
+  <footer id="foot"></footer>
+</div>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-copy">
-        <h1 id="heroHeading"></h1>
-        <p class="lead" id="heroSub"></p>
-        <div class="hero-ctas">
-          <a class="btn btn--primary" id="heroPrimaryCta" href="#panels"></a>
-          <a class="btn btn--outline" id="heroSecondaryCta" href="#hifz-dashboard"></a>
-        </div>
-      </div>
-      <div class="ayat-card">
-        <p class="arabic" id="heroAyatArabic"></p>
-        <p class="bangla" id="heroAyatBangla"></p>
-        <p class="ref" id="heroAyatRef"></p>
-      </div>
-    </div>
-  </section>
+<script>
+let D=null,lang='bn',sel=0,unlocked=false,tab='ov',tf=null,df=null;
+const $=id=>document.getElementById(id);
+const T=v=>v==null?'':typeof v==='object'?(v[lang]??v.bn??''):v;
+const fill=(s,o)=>T(s).replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const U=k=>k.split('.').reduce((a,p)=>a[p],D.ui);
+const nf=n=>Number(n).toLocaleString(lang==='bn'?'bn-BD':'en-US');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct=(a,b)=>b>0?Math.round(a/b*100):null;
+const sum=k=>D.upazilas.reduce((a,u)=>a+(+u[k]||0),0);
+const fmt=v=>v==null?'<span class="dim">—</span>':nf(v)+'%';
+const bar=v=>v==null?'<span class="dim">—</span>':`<span class="bar ${v<75?'lo':''}"><s style="width:${v}%"></s></span>${nf(v)}%`;
+const names=a=>a.map(u=>T(u.name)).join(lang==='bn'?'، ':', ');
 
-  <!-- ===== Stats ===== -->
-  <section class="stats-strip">
-    <div class="container">
-      <div class="stats-grid" id="statsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== Hifz Modules ===== -->
-  <section class="section" id="hifz-dashboard">
-    <div class="container">
-      <div class="section-head">
-        <h2 id="modulesHeading"></h2>
-        <p id="modulesSub"></p>
-      </div>
-      <div class="grid" id="modulesGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== তা'লিমী বিভাগ anchor (covered by module cards above: tajweed, muqaddama, riwayat, tarteel) ===== -->
-  <div id="taleemi"></div>
-  <div id="para-wise"></div>
-  <div id="surah-wise"></div>
-  <div id="ayat-wise"></div>
-  <div id="sabaq-system"></div>
-  <div id="tajweed"></div>
-  <div id="muqaddama"></div>
-  <div id="riwayat"></div>
-  <div id="tarteel"></div>
-
-  <!-- ===== Role-based Panels ===== -->
-  <section class="section section--paper2" id="panels">
-    <div class="container">
-      <div class="section-head">
-        <h2>প্যানেল অনুযায়ী প্রবেশ</h2>
-        <p>আপনি কে — তা বেছে নিন, আপনার জন্য প্রাসঙ্গিক লিংকগুলো দেখুন।</p>
-      </div>
-      <div class="role-tabs" id="roleTabs" role="tablist"></div>
-      <div id="rolePanels"></div>
-    </div>
-  </section>
-
-  <!-- ===== Results anchor ===== -->
-  <div id="results"></div>
-
-  <!-- ===== Testimonials ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>শিক্ষক ও অভিভাবকদের অভিজ্ঞতা</h2>
-        <p>যারা প্রতিদিন এই ব্যবস্থা ব্যবহার করছেন, তাদের কথা।</p>
-      </div>
-      <div class="testi-grid" id="testiGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== CTA band ===== -->
-  <section class="cta-band">
-    <div class="container">
-      <h2 id="ctaHeading"></h2>
-      <p id="ctaSub"></p>
-      <a class="btn btn--gold" id="ctaButton" href="#contact"></a>
-    </div>
-  </section>
-
-  <!-- ===== Contact anchor ===== -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>যোগাযোগ</h2>
-        <p>যেকোনো প্রয়োজনে সরাসরি যোগাযোগ করুন।</p>
-      </div>
-      <p id="contactInfo" style="font-size:0.95rem;color:#44544c;"></p>
-    </div>
-  </section>
-
-  <!-- ===== Sitemap ===== -->
-  <section class="section section--paper2" id="sitemap">
-    <div class="container">
-      <div class="section-head">
-        <h2>সাইট ম্যাপ</h2>
-        <p>এই ওয়েবসাইটের সকল বিভাগের একটি সম্পূর্ণ তালিকা।</p>
-      </div>
-      <div class="sitemap-grid" id="sitemapGrid"></div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ===== Footer ===== -->
-<footer class="site-footer">
-  <div class="container footer-top" id="footerTop"></div>
-  <div class="container footer-bottom">
-    <span id="footerCopyright"></span>
-    <span class="footer-legal" id="footerLegal"></span>
-    <span class="footer-socials" id="footerSocials"></span>
+function ov(){
+  const R=D.upazilas,sp=pct(sum('sabakDone'),sum('sabakTotal')),mp=pct(sum('mashqDone'),sum('mashqTotal'));
+  const nh=R.filter(u=>!u.head),nm=R.filter(u=>!(+u.madrasa)),lo=R.filter(u=>{const p=pct(u.mashqDone,u.mashqTotal);return p!=null&&p<75});
+  const al=[];
+  if(nh.length)al.push(fill(U('noHead'),{n:names(nh)}));
+  if(nm.length)al.push(fill(U('noMad'),{n:names(nm)}));
+  if(lo.length)al.push(fill(U('lowMashq'),{n:names(lo)}));
+  const K=U('kpi');
+  $('ov').innerHTML=`
+  <h2>${T(U('ovTitle'))}</h2>
+  <div class="kpi">
+    <div class="k"><small>${T(K.madrasa)}</small><b>${nf(sum('madrasa'))}</b></div>
+    <div class="k"><small>${T(K.students)}</small><b>${nf(sum('students'))}</b></div>
+    <div class="k"><small>${T(K.ustad)}</small><b>${nf(sum('ustad'))}</b></div>
+    <div class="k"><small>${T(K.sabak)}</small><b>${fmt(sp)}</b></div>
+    <div class="k"><small>${T(K.mashq)}</small><b>${fmt(mp)}</b></div>
   </div>
-</footer>
-
-<script src="app.js"></script>
+  <h2>${T(U('attnTitle'))}</h2>
+  ${al.length?al.map(t=>`<div class="al">${esc(t)}</div>`).join(''):`<div class="empty">${T(U('attnNone'))}</div>`}
+  <h2>${T(U('schedTitle'))}</h2>
+  ${D.schedule.length?`<div class="card"><table style="min-width:0">${D.schedule.map(s=>`<tr><td>${esc(T(s.when))}</td><td>${esc(T(s.title))}</td></tr>`).join('')}</table></div>`:`<div class="empty">${T(U('schedEmpty'))}</div>`}`;
+}
+function up(){
+  const R=D.upazilas,u=R[sel],mp=pct(u.mashqDone,u.mashqTotal),H=U('th');
+  let d;
+  if(+u.madrasa&&+u.students){
+    d=fill(U('avgStudents'),{n:nf(Math.round(u.students/u.madrasa))})+(+u.ustad?fill(U('avgUstad'),{n:nf(Math.round(u.students/u.ustad))}):T(U('noUstad')))+(mp!=null&&mp<75?T(U('lowNote')):'');
+  }else d=T(U('noData'));
+  $('up').innerHTML=`
+  <h2>${T(U('upTitle'))}</h2>
+  <div class="card"><table>
+    <tr><th>${T(H.upazila)}</th><th>${T(H.head)}</th><th>${T(H.madrasa)}</th><th>${T(H.students)}</th><th>${T(H.ustad)}</th><th>${T(H.sabak)}</th><th>${T(H.mashq)}</th></tr>
+    ${R.map((x,i)=>`<tr class="row ${i===sel?'on':''}" data-i="${i}" tabindex="0"><td><b>${esc(T(x.name))}</b></td><td>${x.head?esc(T(x.head)):`<span class="dim">${T(U('headNone'))}</span>`}</td><td>${nf(x.madrasa)}</td><td>${nf(x.students)}</td><td>${nf(x.ustad)}</td><td>${bar(pct(x.sabakDone,x.sabakTotal))}</td><td>${bar(pct(x.mashqDone,x.mashqTotal))}</td></tr>`).join('')}
+  </table></div>
+  <div class="det"><b>${esc(T(u.name))}</b><br>${d}</div>`;
+  document.querySelectorAll('#up .row').forEach(e=>{const f=()=>{sel=+e.dataset.i;up()};e.onclick=f;e.onkeydown=k=>{if(k.key==='Enter')f()}});
+}
+function st(){
+  $('st').innerHTML=`<h2>${T(U('stTitle'))}</h2>
+  <p class="dim" style="margin:0 0 12px">${T(U('stIntro'))}</p>
+  <div class="tl">${D.levels.map((l,i)=>`<div class="lv ${l.me?'me':''}"><div class="no">${nf(i+1)}</div><div><h3>${esc(T(l.title))}${l.me?' ('+T(U('you'))+')':''}</h3><p><b>${T(U('area'))}:</b> ${esc(T(l.area))}</p><p><b>${T(U('sees'))}:</b> ${esc(T(l.sees))}</p><p><b>${T(U('controls'))}:</b> ${esc(T(l.controls))}</p></div></div>`).join('')}</div>`;
+}
+function show(t){
+  tab=t;
+  ['ov','up','st'].forEach(id=>$(id).classList.toggle('hidden',id!==t));
+  document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
+}
+function clock(){
+  if(!tf)return;
+  const d=new Date();
+  $('cTime').textContent=tf.format(d);$('cDate').textContent=df.format(d);
+}
+function labels(){
+  const L=D.lockScreen,O=D.official,S=D.site;
+  document.documentElement.lang=lang;document.title=T(S.title);
+  $('lBn').setAttribute('aria-pressed',lang==='bn');$('lEn').setAttribute('aria-pressed',lang==='en');
+  $('lLogo').src=S.logo;$('lLogo').alt=T(S.logoAlt);
+  $('lGreet').textContent=T(L.greeting);$('lTitle').textContent=T(L.title);$('lFor').textContent=T(L.profileFor);$('lSub').textContent=T(L.subtitle);
+  $('pw').placeholder=T(L.placeholder);$('pw').setAttribute('aria-label',T(L.placeholder));$('go').textContent=T(L.button);
+  $('lNote').textContent=T(L.contactNote);$('lMail').textContent=L.contactEmail;
+  $('hLogo').src=S.logo;$('hLogo').alt=T(S.logoAlt);
+  $('brand').textContent=T(S.brand)+' · '+T(S.department);
+  $('back').textContent=T(U('back'));$('back').href=S.profileUrl;
+  $('mono').textContent=T(O.monogram);$('oName').textContent=T(O.name);$('oRole').textContent=T(O.role);
+  $('cLabel').textContent=T(U('clockLabel'));
+  const loc=lang==='bn'?'bn-BD':'en-GB',z=S.timezone||'Asia/Dhaka';
+  tf=new Intl.DateTimeFormat(loc,{timeZone:z,hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true});
+  df=new Intl.DateTimeFormat(loc,{timeZone:z,weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  document.querySelectorAll('nav button').forEach(b=>b.textContent=T(U('tabs.'+b.dataset.t)));
+  $('asof').textContent=O.asOf?fill(U('asOf'),{d:O.asOf}):'';
+  $('out').textContent=T(U('logout'));$('foot').textContent=T(U('footer'));
+  if(unlocked){ov();up();st()}
+  clock();
+}
+function setLang(l){lang=l;try{localStorage.setItem('hifzLang',l)}catch(e){}labels()}
+async function sha256Hex(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+  $('msg').textContent='';
+  let ok=false;
+  try{ok=(await sha256Hex($('pw').value.trim()))===String(D.security.passwordSha256).toLowerCase()}catch(e){}
+  if(!ok){$('msg').textContent=T(D.lockScreen.wrongPassword);$('pw').select();return}
+  unlocked=true;$('pw').value='';$('lock').classList.add('hidden');$('app').classList.remove('hidden');
+  ov();up();st();show(tab);clock();window.scrollTo(0,0);
+}
+function lock(){unlocked=false;$('msg').textContent='';$('app').classList.add('hidden');$('lock').classList.remove('hidden');$('pw').focus()}
+async function init(){
+  let saved=null;try{saved=localStorage.getItem('hifzLang')}catch(e){}
+  try{
+    const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;D=await r.json();
+  }catch(e){
+    $('err').textContent='data.json লোড করা যায়নি / Could not load data.json. Open this page from a web server with data.json in the same folder.';
+    $('err').classList.remove('hidden');return;
+  }
+  lang=saved==='en'||saved==='bn'?saved:(D.site.defaultLang||'bn');
+  labels();$('lc').classList.remove('hidden');$('pw').focus();
+  setInterval(clock,1000);
+}
+$('lBn').onclick=()=>setLang('bn');$('lEn').onclick=()=>setLang('en');
+$('go').onclick=unlock;
+$('pw').onkeydown=e=>{if(e.key==='Enter')unlock()};
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));
+$('out').onclick=lock;
+init();
+</script>
 </body>
 </html>
