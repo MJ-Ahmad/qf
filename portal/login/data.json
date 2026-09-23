@@ -1,0 +1,99 @@
+{
+  "_readme": "শুধু মান বদলান, কাঠামো নয়। divisions এর districtsAssigned ঘরে যতগুলো জেলায় দায়িত্বশীল ও ড্যাশবোর্ড চালু হয়েছে তার সংখ্যা বসান; districtsTotal বাংলাদেশের প্রকৃত জেলা সংখ্যা, পরিবর্তন করবেন না। link ঘরে সেই বিভাগের সক্রিয় জেলা ড্যাশবোর্ডের ঠিকানা দিন, না থাকলে টেমপ্লেট ঠিকানা রাখুন। schedule ও kpi অংশ hifz/data.json এর মতোই কাজ করে। পাসওয়ার্ড বদলাতে নতুন পাসওয়ার্ডের SHA-256 হ্যাশ বসান security.passwordSha256 ঘরে। ⚠️ সতর্কতা: এই লক-স্ক্রিন কেবল সাধারণ দর্শকদের আটকানোর একটি UI স্তর — data.json ফাইলটি এমনিতেই পাবলিকলি fetch করা যায় (পাসওয়ার্ড না দিয়েও), তাই এখানে প্রকৃত ব্যক্তিগত/আর্থিক তথ্য রাখা উচিত নয়। প্রকৃত নিরাপত্তার জন্য ব্যাকএন্ড + সার্ভার-সাইড অথেনটিকেশন প্রয়োজন (SYSTEM-DESIGN.md এর Phase ৩ দেখুন)।",
+
+  "site": {
+    "title": { "bn": "হিফজ ব্যবস্থাপনা — কেন্দ্রীয় দপ্তর", "en": "Hifz Management — Central Office" },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "department": { "bn": "হিফজুল কোরআন বিভাগ, কেন্দ্রীয় দপ্তর", "en": "Hifzul Quran Department, Central Office" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "profileUrl": "../../",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka"
+  },
+
+  "security": { "passwordSha256": "75997ac5150a539cf77c4bca8e9f4d56ba7c375dc0bc5f7d7835d14221d1443a", "_passwordHint": "ডেমো পাসওয়ার্ড: quranerfariwala — প্রোডাকশনে ব্যবহারের আগে অবশ্যই বদলান" },
+
+  "lockScreen": {
+    "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
+    "title": { "bn": "হিফজ ব্যবস্থাপনা — কেন্দ্রীয় দপ্তর", "en": "Hifz Management — Central Office" },
+    "profileFor": { "bn": "কেন্দ্রীয় প্রধান দায়িত্বশীলের ড্যাশবোর্ড", "en": "Dashboard of the Central Head" },
+    "subtitle": { "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।", "en": "This page is protected. Enter the correct password to view it." },
+    "placeholder": { "bn": "পাসওয়ার্ড লিখুন", "en": "Enter password" },
+    "button": { "bn": "খুলুন", "en": "Unlock" },
+    "wrongPassword": { "bn": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।", "en": "Incorrect password. Please try again." },
+    "contactNote": { "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:", "en": "To change the password or for any questions, contact:" },
+    "contactEmail": "quranerfariwala@gmail.com"
+  },
+
+  "official": {
+    "name": { "bn": "মোঃ জাফর আহমদ", "en": "Md. Zafar Ahmed" },
+    "monogram": { "bn": "জা", "en": "Z" },
+    "role": { "bn": "পরিচালক ও কেন্দ্রীয় প্রধান দায়িত্বশীল, কোরআনের ফেরিওয়ালা", "en": "Director & Central Head, Quraner Fariwala" },
+    "asOf": ""
+  },
+
+  "ui": {
+    "back": { "bn": "হোমপেজে ফিরুন", "en": "Back to homepage" },
+    "clockLabel": { "bn": "বাংলাদেশ সময়", "en": "Bangladesh time" },
+    "tabs": {
+      "ov": { "bn": "সারসংক্ষেপ", "en": "Overview" },
+      "dv": { "bn": "বিভাগ ও জেলা", "en": "Divisions & districts" },
+      "st": { "bn": "দায়িত্ব কাঠামো", "en": "Responsibility structure" }
+    },
+    "asOf": { "bn": "তথ্য হালনাগাদ: {d}", "en": "Data updated: {d}" },
+    "logout": { "bn": "বের হন", "en": "Sign out" },
+    "footer": { "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।", "en": "© 2026 Quraner Fariwala. All rights reserved." },
+    "loadError": { "bn": "তথ্য ফাইল লোড করা যায়নি।", "en": "Could not load the data file." },
+    "ovTitle": { "bn": "জাতীয় সারসংক্ষেপ", "en": "National overview" },
+    "kpi": {
+      "districts": { "bn": "সক্রিয় জেলা দপ্তর", "en": "Active district offices" },
+      "madrasa": { "bn": "নিবন্ধিত মাদ্রাসা", "en": "Registered madrasas" },
+      "students": { "bn": "নিবন্ধিত হিফজ শিক্ষার্থী", "en": "Registered Hifz students" },
+      "ustad": { "bn": "নিযুক্ত হিফজ উস্তাদ", "en": "Hifz ustads appointed" }
+    },
+    "attnTitle": { "bn": "মনোযোগ প্রয়োজন", "en": "Needs attention" },
+    "attnNone": { "bn": "এই মুহূর্তে কোনো বিষয় মনোযোগের অপেক্ষায় নেই।", "en": "Nothing needs attention right now." },
+    "noDistricts": { "bn": "এখনো দায়িত্বশীল ও ড্যাশবোর্ড চালু হয়নি এমন বিভাগ: {n}", "en": "Divisions with no active district head or dashboard yet: {n}" },
+    "schedTitle": { "bn": "কেন্দ্রীয় কর্মসূচি", "en": "Central programme" },
+    "schedEmpty": { "bn": "কোনো কর্মসূচি এখনো যুক্ত করা হয়নি।", "en": "No programme has been added yet." },
+    "dvTitle": { "bn": "বিভাগ ও জেলাভিত্তিক অবস্থা", "en": "Status by division and district" },
+    "dvNote": { "bn": "প্রতিটি জেলার নিজস্ব প্রধান দায়িত্বশীল ও পাসওয়ার্ডভিত্তিক ড্যাশবোর্ড থাকবে। এখনো নিয়োগ না হওয়া জেলাগুলোর জন্য নিচের \"উদাহরণ দেখুন\" লিংকে সেই ড্যাশবোর্ড কেমন হবে তার কাঠামো দেখা যাবে।", "en": "Every district will have its own head and password-protected dashboard. For districts not yet assigned, \"View example\" below shows the structure such a dashboard will have." },
+    "th": {
+      "division": { "bn": "বিভাগ", "en": "Division" },
+      "districts": { "bn": "জেলা (মোট)", "en": "Districts (total)" },
+      "assigned": { "bn": "দায়িত্বশীল নিয়োগ", "en": "Heads assigned" },
+      "dashboard": { "bn": "ড্যাশবোর্ড", "en": "Dashboard" }
+    },
+    "viewActive": { "bn": "কুষ্টিয়া জেলা দেখুন", "en": "View Kushtia district" },
+    "viewExample": { "bn": "উদাহরণ দেখুন", "en": "View example" },
+    "stTitle": { "bn": "দায়িত্বশীল কাঠামো", "en": "Responsibility structure" },
+    "stIntro": { "bn": "প্রত্যেক স্তরের নিজস্ব পাসওয়ার্ডভিত্তিক ড্যাশবোর্ড থাকবে। একজন দায়িত্বশীল কেবল নিজের এলাকা ও তার নিচের স্তরের তথ্য দেখতে ও নিয়ন্ত্রণ করতে পারবেন।", "en": "Every level has its own password-protected dashboard. A responsible person can see and control only their own area and the levels below it." },
+    "area": { "bn": "এলাকা", "en": "Area" }, "sees": { "bn": "দেখবেন", "en": "Sees" }, "controls": { "bn": "নিয়ন্ত্রণ", "en": "Controls" },
+    "you": { "bn": "আপনি", "en": "you" }
+  },
+
+  "levels": [
+    { "title": { "bn": "কেন্দ্রীয় প্রধান দায়িত্বশীল", "en": "Central Head" }, "area": { "bn": "সারা বাংলাদেশ", "en": "All of Bangladesh" }, "sees": { "bn": "সব বিভাগ ও জেলার সার্বিক চিত্র", "en": "Overall picture of every division and district" }, "controls": { "bn": "হিফজ শিক্ষাক্রম নির্ধারণ, বিভাগীয় দায়িত্বশীল নিয়োগ, নীতিমালা অনুমোদন", "en": "Sets the Hifz curriculum, appoints division heads, approves policy" }, "me": true },
+    { "title": { "bn": "বিভাগীয় দায়িত্বশীল", "en": "Division Head" }, "area": { "bn": "বিভাগ", "en": "Division" }, "sees": { "bn": "জেলাভিত্তিক তুলনা ও অগ্রগতি", "en": "District comparison and progress" }, "controls": { "bn": "জেলা দায়িত্বশীলদের কাজ যাচাই, বিভাগীয় প্রশিক্ষণ পরিকল্পনা", "en": "Reviews district heads' work, plans division training" } },
+    { "title": { "bn": "জেলা প্রধান দায়িত্বশীল", "en": "District Head" }, "area": { "bn": "জেলা", "en": "District" }, "sees": { "bn": "উপজেলা, মাদ্রাসা, উস্তাদ ও শিক্ষার্থীর পূর্ণ চিত্র", "en": "Full picture of upazilas, madrasas, ustads and students" }, "controls": { "bn": "উপজেলা দায়িত্বশীল নিয়োগ, পরিদর্শন, প্রশিক্ষণ, প্রতিবেদন অনুমোদন", "en": "Appoints upazila heads, inspects, trains, approves reports" } },
+    { "title": { "bn": "উপজেলা দায়িত্বশীল", "en": "Upazila Head" }, "area": { "bn": "উপজেলা", "en": "Upazila" }, "sees": { "bn": "ইউনিয়ন ও মাদ্রাসাভিত্তিক অবস্থা", "en": "Status by union and madrasa" }, "controls": { "bn": "ইউনিয়ন দায়িত্বশীলদের কাজ তদারকি, মাসিক বৈঠক", "en": "Supervises union heads, holds monthly meetings" } },
+    { "title": { "bn": "ইউনিয়ন দায়িত্বশীল", "en": "Union Head" }, "area": { "bn": "ইউনিয়ন", "en": "Union" }, "sees": { "bn": "গ্রামভিত্তিক মাদ্রাসা ও উপস্থিতি", "en": "Madrasas and attendance by village" }, "controls": { "bn": "নিয়মিত পরিদর্শন, দুর্বল মাদ্রাসা চিহ্নিতকরণ", "en": "Regular visits, identifies weak madrasas" } },
+    { "title": { "bn": "গ্রাম দায়িত্বশীল", "en": "Village Head" }, "area": { "bn": "গ্রাম", "en": "Village" }, "sees": { "bn": "গ্রামের মাদ্রাসা ও শিক্ষার্থী", "en": "Madrasas and students of the village" }, "controls": { "bn": "স্থানীয় সহযোগিতা, অভিভাবকদের সাথে যোগাযোগ", "en": "Local support, contact with guardians" } },
+    { "title": { "bn": "মাদ্রাসা পরিচালক", "en": "Madrasa Director" }, "area": { "bn": "নিজ মাদ্রাসা", "en": "Own madrasa" }, "sees": { "bn": "পুরো মাদ্রাসার হিফজ বিভাগ", "en": "The whole madrasa's Hifz department" }, "controls": { "bn": "প্রধান উস্তাদ তদারকি, মাসিক প্রতিবেদন প্রদান", "en": "Supervises the head ustad, submits monthly reports" } },
+    { "title": { "bn": "হিফজ বিভাগের প্রধান উস্তাদ", "en": "Head Ustad, Hifz Department" }, "area": { "bn": "নিজ হিফজ বিভাগ", "en": "Own Hifz department" }, "sees": { "bn": "প্রতিটি শিক্ষার্থীর সবক, সাবকী, মানযিল ও মাশক", "en": "Every student's sabak, sabki, manzil and mashq" }, "controls": { "bn": "দৈনিক তথ্য ইনপুট, মাশকের মান যাচাই", "en": "Enters daily data, checks the quality of mashq" } }
+  ],
+
+  "divisions": [
+    { "name": { "bn": "ঢাকা", "en": "Dhaka" }, "districtsTotal": 13, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "চট্টগ্রাম", "en": "Chattogram" }, "districtsTotal": 11, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "খুলনা", "en": "Khulna" }, "districtsTotal": 10, "districtsAssigned": 1, "link": "../hifz/" },
+    { "name": { "bn": "রাজশাহী", "en": "Rajshahi" }, "districtsTotal": 8, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "রংপুর", "en": "Rangpur" }, "districtsTotal": 8, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "বরিশাল", "en": "Barishal" }, "districtsTotal": 6, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "সিলেট", "en": "Sylhet" }, "districtsTotal": 4, "districtsAssigned": 0, "link": "../template/" },
+    { "name": { "bn": "ময়মনসিংহ", "en": "Mymensingh" }, "districtsTotal": 4, "districtsAssigned": 0, "link": "../template/" }
+  ],
+
+  "schedule": []
+}

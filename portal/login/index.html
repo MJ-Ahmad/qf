@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a3a31">
+<title>Hifz Management — Central</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#16241E;--em:#3F6B52;--gold:#A9812F;--gsoft:#E4D6A8;--bg:#EDE7D3;--card:#F4EFDE;--ink:#16241E;--muted:rgba(22,36,30,.68);--line:rgba(22,36,30,.18);--warn:#7A2E2E;--serif:'Noto Serif Bengali',Georgia,serif;--sans:'Noto Sans Bengali',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#141d19;--card:#1c2822;--ink:#EDE7D3;--muted:#a8b3ac;--line:#31413a;--warn:#e3a89f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.langbar{position:fixed;top:12px;right:12px;z-index:90;display:flex;gap:2px;padding:3px;background:rgba(10,58,49,.92);border:1px solid rgba(234,217,166,.5);border-radius:999px}
+.langbar button{border:0;background:none;color:var(--gsoft);border-radius:999px;padding:3px 12px;font:.9rem var(--sans);cursor:pointer}
+.langbar button[aria-pressed="true"]{background:var(--gsoft);color:var(--night);font-weight:600}
+#lock{min-height:100vh;display:grid;place-items:center;padding:72px 24px 32px;background:radial-gradient(120% 90% at 50% 0,#12604e,var(--night) 62%)}
+.lc{width:100%;max-width:420px;background:var(--card);border-top:4px solid var(--gold);border-radius:4px;padding:28px 22px;text-align:center}
+.lc img{width:56px;height:56px;border-radius:50%;background:#fff;border:1.5px solid var(--gold);padding:4px}
+.lc .g{margin:8px 0 0;font:1.1rem var(--serif);color:var(--gold)}
+.lc h1{margin:0;font:400 1.9rem/1.3 var(--serif);color:var(--em)}
+.lc p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+.lc input{width:100%;margin-top:16px;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.btn{width:100%;margin-top:12px;padding:12px;border:0;border-radius:4px;background:var(--em);color:#fff;font:600 1.05rem var(--sans);cursor:pointer}
+#msg{min-height:1.7em;margin-top:8px;color:var(--warn);font-size:.92rem}
+.ct{margin-top:10px!important;padding-top:12px;border-top:1px solid var(--line);font-size:.82rem!important}
+.hero{background:linear-gradient(180deg,var(--night),#0e4a3e);color:#fff;padding:18px 18px 26px;border-bottom:4px solid var(--gold)}
+.hin{max-width:960px;margin:0 auto}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-right:120px;color:var(--gsoft);font-weight:600;line-height:1.3}
+.top img{width:40px;height:40px;border-radius:50%;background:#fff;flex:none;border:1.5px solid var(--gold);padding:2px}
+.ornament{height:14px;background-image:radial-gradient(circle, var(--gold) 1.3px, transparent 1.5px);background-size:16px 100%;background-position:center;background-repeat:repeat-x;opacity:.6}
+.top a{color:var(--gsoft);text-decoration:none;border:1px solid var(--gsoft);border-radius:999px;padding:2px 14px;font-size:.9rem;font-weight:500}
+.who{display:flex;gap:16px;align-items:center;margin-top:18px}
+.av{width:84px;height:84px;flex:none;border-radius:50%;border:1.5px solid var(--gold);padding:5px;background:rgba(237,231,211,.08);display:grid;place-items:center}
+.av i{width:100%;height:100%;border-radius:50%;background:var(--em);box-shadow:inset 0 0 0 3px rgba(20,32,27,.35);display:grid;place-items:center;font:normal 2rem var(--serif);color:var(--gsoft)}
+.who h1{margin:0;font:400 clamp(1.8rem,6vw,2.6rem)/1.25 var(--serif)}
+.pill{display:inline-block;margin-top:4px;border:1px solid rgba(234,217,166,.55);color:var(--gsoft);padding:1px 12px;border-radius:999px;font-size:.9rem}
+.clock{margin-top:16px;display:inline-flex;flex-direction:column;border-left:3px solid var(--gold);padding:2px 0 2px 12px}
+.clock small{color:var(--gsoft);font-size:.82rem;line-height:1.4}
+.clock b{font:400 1.5rem/1.3 var(--serif);font-variant-numeric:tabular-nums}
+.clock span{font-size:.9rem;color:var(--gsoft)}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);overflow-x:auto}
+nav div{max-width:960px;margin:0 auto;display:flex}
+nav button{flex:1 0 auto;padding:12px 16px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font:600 1rem var(--sans);cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{color:var(--em);border-color:var(--gold)}
+main{max-width:960px;margin:0 auto;padding:4px 16px 48px}
+h2{font:400 1.4rem/1.3 var(--serif);margin:28px 0 10px;display:flex;gap:12px;align-items:center}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.asof{color:var(--muted);font-size:.88rem;margin-top:14px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.k{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);padding:10px 14px;border-radius:4px}
+.k small{color:var(--muted);display:block;font-size:.85rem;line-height:1.4}
+.k b{font:400 1.9rem/1.3 var(--serif)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{color:var(--muted);font-weight:500;font-size:.85rem}
+.dim{color:var(--muted)}
+.al{padding:10px 14px;border-left:4px solid var(--warn);background:var(--card);margin-bottom:8px;border-radius:0 4px 4px 0}
+.empty{padding:14px 16px;background:var(--card);border:1px dashed var(--line);border-radius:4px;color:var(--muted)}
+.link{color:var(--em);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--em)}
+.tl{display:grid;gap:10px}
+.lv{display:grid;grid-template-columns:38px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:4px}
+.lv.me{border:2px solid var(--gold)}
+.no{width:34px;height:34px;border-radius:50%;background:var(--em);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:600;font-family:var(--serif)}
+.lv.me .no{background:var(--gold)}
+.lv h3{margin:0;font:600 1.05rem var(--sans)}
+.lv p{margin:2px 0 0;font-size:.9rem;color:var(--muted)}.lv p b{color:var(--ink);font-weight:500}
+.out{margin-top:20px;background:none;border:1px solid var(--line);color:var(--muted);padding:6px 14px;border-radius:4px;cursor:pointer;font:inherit}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 32px}
+#err{max-width:420px;background:var(--card);border-top:4px solid var(--warn);padding:20px;color:var(--warn)}
+</style>
+</head>
+<body>
+<div class="langbar" role="group" aria-label="Language">
+  <button id="lBn" type="button" aria-pressed="true">বাংলা</button>
+  <button id="lEn" type="button" aria-pressed="false">EN</button>
+</div>
+
+<section id="lock">
+  <div class="lc hidden" id="lc">
+    <img id="lLogo" alt="">
+    <p class="g" id="lGreet"></p><h1 id="lTitle"></h1>
+    <p><b id="lFor"></b></p><p id="lSub"></p>
+    <input id="pw" type="password" autocomplete="current-password">
+    <button class="btn" id="go" type="button"></button>
+    <div id="msg" role="alert"></div>
+    <p class="ct"><span id="lNote"></span> <b id="lMail"></b></p>
+  </div>
+  <div id="err" class="hidden" role="alert"></div>
+</section>
+
+<div id="app" class="hidden">
+  <header class="hero"><div class="hin">
+    <div class="top"><img id="hLogo" alt=""><span id="brand"></span><a id="back" href="../"></a></div>
+    <div class="who"><div class="av"><i id="mono"></i></div>
+      <div><h1 id="oName"></h1><span class="pill" id="oRole"></span></div></div>
+    <div class="clock" aria-live="off"><small id="cLabel"></small><b id="cTime"></b><span id="cDate"></span></div>
+  </div></header>
+  <div class="ornament" aria-hidden="true"></div>
+  <nav><div role="tablist">
+    <button role="tab" data-t="ov" aria-selected="true"></button>
+    <button role="tab" data-t="dv" aria-selected="false"></button>
+    <button role="tab" data-t="st" aria-selected="false"></button>
+  </div></nav>
+  <main>
+    <div class="asof" id="asof"></div>
+    <section id="ov"></section><section id="dv" class="hidden"></section><section id="st" class="hidden"></section>
+    <button class="out" id="out" type="button"></button>
+  </main>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+let D=null,lang='bn',unlocked=false,tab='ov',tf=null,df=null;
+const $=id=>document.getElementById(id);
+const T=v=>v==null?'':typeof v==='object'?(v[lang]??v.bn??''):v;
+const fill=(s,o)=>T(s).replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const U=k=>k.split('.').reduce((a,p)=>a[p],D.ui);
+const nf=n=>Number(n).toLocaleString(lang==='bn'?'bn-BD':'en-US');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const names=a=>a.map(x=>T(x.name)).join(lang==='bn'?'، ':', ');
+
+function ov(){
+  const Dv=D.divisions;
+  const madrasa=0,students=0,ustad=0; // কেন্দ্রীয় দপ্তরে এখনো জেলাভিত্তিক তথ্য সংযুক্ত হয়নি
+  const activeDistricts=Dv.reduce((a,d)=>a+(+d.districtsAssigned||0),0);
+  const notStarted=Dv.filter(d=>!(+d.districtsAssigned));
+  const K=U('kpi');
+  $('ov').innerHTML=`
+  <h2>${T(U('ovTitle'))}</h2>
+  <div class="kpi">
+    <div class="k"><small>${T(K.districts)}</small><b>${nf(activeDistricts)}</b></div>
+    <div class="k"><small>${T(K.madrasa)}</small><b>${nf(madrasa)}</b></div>
+    <div class="k"><small>${T(K.students)}</small><b>${nf(students)}</b></div>
+    <div class="k"><small>${T(K.ustad)}</small><b>${nf(ustad)}</b></div>
+  </div>
+  <h2>${T(U('attnTitle'))}</h2>
+  ${notStarted.length?`<div class="al">${esc(fill(U('noDistricts'),{n:names(notStarted)}))}</div>`:`<div class="empty">${T(U('attnNone'))}</div>`}
+  <h2>${T(U('schedTitle'))}</h2>
+  ${D.schedule.length?`<div class="card"><table style="min-width:0">${D.schedule.map(s=>`<tr><td>${esc(T(s.when))}</td><td>${esc(T(s.title))}</td></tr>`).join('')}</table></div>`:`<div class="empty">${T(U('schedEmpty'))}</div>`}`;
+}
+function dv(){
+  const H=U('th');
+  $('dv').innerHTML=`
+  <h2>${T(U('dvTitle'))}</h2>
+  <p class="dim" style="margin:0 0 12px">${T(U('dvNote'))}</p>
+  <div class="card"><table>
+    <tr><th>${T(H.division)}</th><th>${T(H.districts)}</th><th>${T(H.assigned)}</th><th>${T(H.dashboard)}</th></tr>
+    ${D.divisions.map(x=>`<tr><td><b>${esc(T(x.name))}</b></td><td>${nf(x.districtsTotal)}</td><td>${x.districtsAssigned?nf(x.districtsAssigned):`<span class="dim">০ / ${nf(x.districtsTotal)}</span>`}</td><td><a class="link" href="${x.link}" target="_blank" rel="noopener">${x.districtsAssigned?T(U('viewActive')):T(U('viewExample'))}</a></td></tr>`).join('')}
+  </table></div>`;
+}
+function st(){
+  $('st').innerHTML=`<h2>${T(U('stTitle'))}</h2>
+  <p class="dim" style="margin:0 0 12px">${T(U('stIntro'))}</p>
+  <div class="tl">${D.levels.map((l,i)=>`<div class="lv ${l.me?'me':''}"><div class="no">${nf(i+1)}</div><div><h3>${esc(T(l.title))}${l.me?' ('+T(U('you'))+')':''}</h3><p><b>${T(U('area'))}:</b> ${esc(T(l.area))}</p><p><b>${T(U('sees'))}:</b> ${esc(T(l.sees))}</p><p><b>${T(U('controls'))}:</b> ${esc(T(l.controls))}</p></div></div>`).join('')}</div>`;
+}
+function show(t){
+  tab=t;
+  ['ov','dv','st'].forEach(id=>$(id).classList.toggle('hidden',id!==t));
+  document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
+}
+function clock(){ if(!tf)return; const d=new Date(); $('cTime').textContent=tf.format(d); $('cDate').textContent=df.format(d); }
+function labels(){
+  const L=D.lockScreen,O=D.official,S=D.site;
+  document.documentElement.lang=lang;document.title=T(S.title);
+  $('lBn').setAttribute('aria-pressed',lang==='bn');$('lEn').setAttribute('aria-pressed',lang==='en');
+  $('lLogo').src=S.logo;$('lLogo').alt=T(S.logoAlt);
+  $('lGreet').textContent=T(L.greeting);$('lTitle').textContent=T(L.title);$('lFor').textContent=T(L.profileFor);$('lSub').textContent=T(L.subtitle);
+  $('pw').placeholder=T(L.placeholder);$('pw').setAttribute('aria-label',T(L.placeholder));$('go').textContent=T(L.button);
+  $('lNote').textContent=T(L.contactNote);$('lMail').textContent=L.contactEmail;
+  $('hLogo').src=S.logo;$('hLogo').alt=T(S.logoAlt);
+  $('brand').textContent=T(S.brand)+' · '+T(S.department);
+  $('back').textContent=T(U('back'));$('back').href=S.profileUrl;
+  $('mono').textContent=T(O.monogram);$('oName').textContent=T(O.name);$('oRole').textContent=T(O.role);
+  $('cLabel').textContent=T(U('clockLabel'));
+  const loc=lang==='bn'?'bn-BD':'en-GB',z=S.timezone||'Asia/Dhaka';
+  tf=new Intl.DateTimeFormat(loc,{timeZone:z,hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true});
+  df=new Intl.DateTimeFormat(loc,{timeZone:z,weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  document.querySelectorAll('nav button').forEach(b=>b.textContent=T(U('tabs.'+b.dataset.t)));
+  $('asof').textContent=O.asOf?fill(U('asOf'),{d:O.asOf}):'';
+  $('out').textContent=T(U('logout'));$('foot').textContent=T(U('footer'));
+  if(unlocked){ov();dv();st()}
+  clock();
+}
+function setLang(l){lang=l;try{localStorage.setItem('hifzLangCentral',l)}catch(e){}labels()}
+async function sha256Hex(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function unlock(){
+  $('msg').textContent='';
+  let ok=false;
+  try{ok=(await sha256Hex($('pw').value.trim()))===String(D.security.passwordSha256).toLowerCase()}catch(e){}
+  if(!ok){$('msg').textContent=T(D.lockScreen.wrongPassword);$('pw').select();return}
+  unlocked=true;$('pw').value='';$('lock').classList.add('hidden');$('app').classList.remove('hidden');
+  ov();dv();st();show(tab);clock();window.scrollTo(0,0);
+}
+function lock(){unlocked=false;$('msg').textContent='';$('app').classList.add('hidden');$('lock').classList.remove('hidden');$('pw').focus()}
+async function init(){
+  let saved=null;try{saved=localStorage.getItem('hifzLangCentral')}catch(e){}
+  try{ const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;D=await r.json(); }
+  catch(e){ $('err').textContent='data.json লোড করা যায়নি / Could not load data.json.'; $('err').classList.remove('hidden'); return; }
+  lang=saved==='en'||saved==='bn'?saved:(D.site.defaultLang||'bn');
+  labels();$('lc').classList.remove('hidden');$('pw').focus();
+  setInterval(clock,1000);
+}
+$('lBn').onclick=()=>setLang('bn');$('lEn').onclick=()=>setLang('en');
+$('go').onclick=unlock;
+$('pw').onkeydown=e=>{if(e.key==='Enter')unlock()};
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.t));
+$('out').onclick=lock;
+init();
+</script>
+</body>
+</html>
