@@ -1,195 +1,854 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta name="generator" content="mj.dev"/>
-  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
-  <meta name="creator" content="MJ-AHMAD"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:site_name" content="Quraner Fariwala"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:image" content="assets/logo.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="Quraner Fariwala"/>
-  <meta property="og:type" content="website"/>
-  <link rel="shortcut icon" href="assets/logo.png"/>
-  <link rel="icon" href="assets/logo.png" sizes="any"/>
-  <link rel="stylesheet" href="css/icon/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — গোপনীয়তা নীতি, ডেটা সংগ্রহ, সুরক্ষা, কুকি ও ব্যবহারকারীর অধিকার নিয়ে নথি।"
+  >
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="গোপনীয়তা নীতি — কোরআনের ফেরিওয়ালা"
+    data-en="Privacy Policy — QuranerFariwala"
+  >
+    গোপনীয়তা নীতি — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.8;
-      margin: 40px;
-      background-color: #f9f9f9;
-      color: #333;
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
     }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      object-fit: contain;
     }
-    h1, h2 {
-      color: #2c3e50;
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
     }
-    .intro {
-      text-align: center;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .last-updated {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    ul.toc {
-      list-style-type: none;
-      padding: 0;
-    }
-    ul.toc li {
-      margin: 5px 0;
-    }
-    ul.toc a {
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
       text-decoration: none;
-      color: #0078d7;
-      font-weight: 500;
     }
-    ul.toc a:hover {
-      text-decoration: underline;
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
     }
-    footer {
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 4.5rem 1rem 3.5rem;
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.9)
+        ),
+        url("assets/header_resized/01.jpg")
+        center / cover no-repeat;
     }
-    .footer-links {
-      margin-top: 10px;
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      padding: 0.45rem;
+      border-radius: 15px;
+      background: var(--white);
     }
-    .footer-links a {
-      margin: 0 10px;
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.1rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.3rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .policy-box {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 8px 24px rgba(2, 35, 27, 0.04);
+    }
+
+    .policy-box h2 {
+      margin: 0 0 0.7rem;
+      color: var(--night);
+      font-size: 1.35rem;
+    }
+
+    .policy-box h3 {
+      margin: 1.1rem 0 0.4rem;
+      color: var(--night);
+      font-size: 1.05rem;
+    }
+
+    .policy-box p,
+    .policy-box li {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .policy-box ul {
+      margin: 0.6rem 0 0.8rem;
+      padding-left: 1.2rem;
+    }
+
+    .policy-box li {
+      margin: 0.25rem 0;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
       text-decoration: none;
-      color: #0078d7;
-      font-weight: 500;
     }
-    .footer-links a:hover {
-      text-decoration: underline;
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 950px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-     <div class="icon-circle">
-      <img src="assets/logo/badge.png" alt="Quraner Fariwala logo" class="icon-logo" width="64" height="64" loading="lazy" />
-     </div>
-    <h1>Privacy Policy</h1>
-    <p class="intro"><b>Quraner Fariwala</b> values your privacy and is committed to protecting your personal information. This policy provides a clear understanding of how we collect, use, and safeguard your data.</p>
-    <p class="last-updated">Last updated: 1st February 2026 | Version 2.1</p>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
 
-    <h2>Table of Contents</h2>
-    <ul class="toc">
-      <li><a href="#info-collect">1. Information We Collect</a></li>
-      <li><a href="#info-use">2. How We Use Information</a></li>
-      <li><a href="#info-share">3. Information Sharing</a></li>
-      <li><a href="#data-security">4. Data Security</a></li>
-      <li><a href="#your-rights">5. Your Rights</a></li>
-      <li><a href="#cookies">6. Cookies & Tracking</a></li>
-      <li><a href="#children">7. Children's Privacy</a></li>
-      <li><a href="#changes">8. Changes to This Policy</a></li>
-      <li><a href="#contact">9. Contact Us</a></li>
-    </ul>
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
 
-    <h2 id="info-collect">1. Information We Collect</h2>
-    <p><strong>Personal Information:</strong> Name, email, contact details, profile information for Quraner Fariwala initiatives, payment details (processed securely), communication preferences, and feedback.</p>
-    <p><strong>Usage Information:</strong> Pages visited, features used, device details, browser type, IP address, general location, and interactions with competitions and community features.</p>
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
 
-    <h2 id="info-use">2. How We Use Information</h2>
-    <ul>
-      <li>Provide and improve Quraner Fariwala’s services</li>
-      <li>Facilitate participation in Qur’an competitions and initiatives</li>
-      <li>Send important updates and communications</li>
-      <li>Analyze usage patterns to enhance user experience</li>
-      <li>Prevent fraud and ensure platform security</li>
-      <li>Comply with legal obligations</li>
-    </ul>
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
 
-    <h2 id="info-share">3. Information Sharing</h2>
-    <p>We do <strong>not</strong> sell your personal information. Information may be shared only in these limited circumstances:</p>
-    <ul>
-      <li>With your explicit consent</li>
-      <li>To comply with legal requirements</li>
-      <li>With trusted service providers who assist our operations</li>
-      <li>In case of business transfer or merger</li>
-      <li>To protect our rights and prevent fraud</li>
-    </ul>
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
 
-    <h2 id="data-security">4. Data Security</h2>
-    <ul>
-      <li>Encryption of data in transit and at rest</li>
-      <li>Regular security audits and updates</li>
-      <li>Access controls and authentication systems</li>
-      <li>Secure data centers and backup systems</li>
-      <li>Employee training on data protection</li>
-    </ul>
+        <a href="/qf/ds.html">
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
 
-    <h2 id="your-rights">5. Your Rights</h2>
-    <ul>
-      <li>Access your personal information</li>
-      <li>Correct inaccurate data</li>
-      <li>Delete your account and data</li>
-      <li>Export your data</li>
-      <li>Opt-out of marketing communications</li>
-      <li>Object to certain data processing</li>
-    </ul>
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
 
-    <h2 id="cookies">6. Cookies & Tracking</h2>
-    <p><b>Quraner Fariwala</b> uses cookies and similar technologies to improve user experience. Cookies help remember preferences, track usage, and personalize services. You can manage or disable cookies through your browser settings.</p>
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
 
-    <h2 id="children">7. Children's Privacy</h2>
-    <p>Children under 13 may only participate with parental or guardian consent. We do not knowingly collect personal data from children without proper authorization.</p>
+        <a href="/qf/portal/">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+            হিফজ পোর্টাল
+          </span>
+        </a>
+      </nav>
 
-    <h2 id="changes">8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised “Last updated” date. Significant changes will be communicated directly to registered users.</p>
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
 
-    <h2 id="contact">9. Contact Us</h2>
-    <p>For privacy-related questions or requests, contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:mjahmad2024@outlook.com">mjahmad2024@outlook.com</a></li>
-      <li>Founder: <a href="https://MJ-Ahmad.github.io/mj-ahmad/"><b>MJ Ahmad</b></a></li>
-      <li>Response Time: Within 5 business days</li>
-    </ul>
-
-    <footer>
-      &copy; 2026 <a href="/qf"><b>Quraner Fariwala</b></a> — Privacy Policy  
-      <div class="footer-links">
-        <a href="/qf">Home</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy</a>
-        <a href="#">Sitemap</a>
-        <a href="https://MJ-Ahmad.github.io/mj-ahmad/">Documentary</a>
-        <a href="#">Support</a>
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
       </div>
-    </footer>
-  </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="72"
+        height="72"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="গোপনীয়তা ও নিরাপত্তা"
+        data-en="Privacy and Security"
+      >
+        গোপনীয়তা ও নিরাপত্তা
+      </p>
+
+      <h1
+        data-bn="গোপনীয়তা নীতি"
+        data-en="Privacy Policy"
+      >
+        গোপনীয়তা নীতি
+      </h1>
+
+      <p
+        data-bn="আমাদের ওয়েবসাইটে ব্যবহারকারীর তথ্যের সংগ্রহ, প্রক্রিয়াকরণ, সুরক্ষা ও ব্যবহার সম্পর্কে স্পষ্ট নীতি।"
+        data-en="A clear policy about how we collect, process, protect, and use user information on our website."
+      >
+        আমাদের ওয়েবসাইটে ব্যবহারকারীর তথ্যের সংগ্রহ, প্রক্রিয়াকরণ, সুরক্ষা
+        ও ব্যবহার সম্পর্কে স্পষ্ট নীতি।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="আমাদের গোপনীয়তা নীতি"
+            data-en="Our Privacy Policy"
+          >
+            আমাদের গোপনীয়তা নীতি
+          </h2>
+
+          <p
+            data-bn="আপনার ডেটা কীভাবে সংগ্রহ, ব্যবহার, সুরক্ষিত ও শেয়ার করা হয়, তা বুঝতে পারা গুরুত্বপূর্ণ।"
+            data-en="It is important to understand how your data is collected, used, protected, and shared."
+          >
+            আপনার ডেটা কীভাবে সংগ্রহ, ব্যবহার, সুরক্ষিত ও শেয়ার করা হয়, তা
+            বুঝতে পারা গুরুত্বপূর্ণ।
+          </p>
+        </div>
+
+        <div class="policy-box">
+          <h2
+            data-bn="১. আমাদের উদ্দেশ্য"
+            data-en="1. Our Purpose"
+          >
+            ১. আমাদের উদ্দেশ্য
+          </h2>
+
+          <p
+            data-bn="আমরা আমাদের ওয়েবসাইটের মাধ্যমে কোরআন গবেষণা, মুদ্রণ, বিতরণ, হিফজ শিক্ষা, অনুদান ও সহযোগিতার তথ্য প্রদান করি। কোনো ব্যক্তিগত তথ্য ভিজিটরদের কাছ থেকে সংগ্রহ করা হয়, শুধুমাত্র সেবা প্রদান, যোগাযোগ ও নিরাপত্তার উদ্দেশ্যে।"
+            data-en="We provide information about Quranic research, printing, distribution, Hifz education, donations, and partnership opportunities through our website. We collect personal information only to the extent necessary to provide services, communicate with users, and maintain security."
+          >
+            আমরা আমাদের ওয়েবসাইটের মাধ্যমে কোরআন গবেষণা, মুদ্রণ, বিতরণ, হিফজ
+            শিক্ষা, অনুদান ও সহযোগিতার তথ্য প্রদান করি। কোনো ব্যক্তিগত তথ্য
+            ভিজিটরদের কাছ থেকে সংগ্রহ করা হয়, শুধুমাত্র সেবা প্রদান, যোগাযোগ ও
+            নিরাপত্তার উদ্দেশ্যে।
+          </p>
+
+          <h3
+            data-bn="২. তথ্য সংগ্রহ"
+            data-en="2. Information Collection"
+          >
+            ২. তথ্য সংগ্রহ
+          </h3>
+
+          <p
+            data-bn="আমরা তাই-ই ইনফরমেশন, ই-মেইল, ফোন নম্বর, নাম, মেসেজ, অনুদান সংক্রান্ত তথ্য, ইত্যাদি সংগ্রহ করতে পারি, যখন এগুলো সেবা প্রদান বা যোগাযোগের উদ্দেশ্যে পাঠানো হয়।"
+            data-en="We may collect names, email addresses, phone numbers, messages, donation-related information, and similar details when they are voluntarily provided for service delivery or communication."
+          >
+            আমরা তাই-ই ইনফরমেশন, ই-মেইল, ফোন নম্বর, নাম, মেসেজ, অনুদান
+            সংক্রান্ত তথ্য, ইত্যাদি সংগ্রহ করতে পারি, যখন এগুলো সেবা প্রদান বা
+            যোগাযোগের উদ্দেশ্যে পাঠানো হয়।
+          </p>
+
+          <h3
+            data-bn="৩. তথ্য ব্যবহার"
+            data-en="3. Information Use"
+          >
+            ৩. তথ্য ব্যবহার
+          </h3>
+
+          <p
+            data-bn="আমরা সংগ্রহ করা তথ্য ব্যবহার করি: (ক) সেবার জন্য যোগাযোগ, (খ) কাজে লাগানো প্রয়োজনীয় তথ্য প্রদান, (গ) ব্যবহারকারীর অনুরোধ অনুযায়ী সহযোগিতা, (ঘ) নিরাপত্তা ও সেবার মান উন্নত করা।"
+            data-en="We use collected information to: (a) respond to service requests, (b) provide necessary information and follow-up, (c) support collaboration requests, and (d) maintain security and improve service quality."
+          >
+            আমরা সংগ্রহ করা তথ্য ব্যবহার করি: (ক) সেবার জন্য যোগাযোগ, (খ) কাজে
+            লাগানো প্রয়োজনীয় তথ্য প্রদান, (গ) ব্যবহারকারীর অনুরোধ অনুযায়ী
+            সহযোগিতা, (ঘ) নিরাপত্তা ও সেবার মান উন্নত করা।
+          </p>
+
+          <h3
+            data-bn="৪. তথ্য শেয়ার"
+            data-en="4. Information Sharing"
+          >
+            ৪. তথ্য শেয়ার
+          </h3>
+
+          <p
+            data-bn="আমরা ব্যক্তি বা প্রতিষ্ঠানকে আপনার তথ্য বিক্রি বা ভাড়া দিই না। তবে, আমাদের সেবা পরিবেশন করতে বা আইনি বাধ্যবাধকতা পূরণ করতে প্রয়োজন হলে কিছু তথ্য তৃতীয় পক্ষের কাছে যেতে পারে।"
+            data-en="We do not sell or rent personal information to any person or organization. However, some information may be shared with third parties when required to provide the service or to comply with legal obligations."
+          >
+            আমরা ব্যক্তি বা প্রতিষ্ঠানকে আপনার তথ্য বিক্রি বা ভাড়া দিই না। তবে,
+            আমাদের সেবা পরিবেশন করতে বা আইনি বাধ্যবাধকতা পূরণ করতে প্রয়োজন হলে
+            কিছু তথ্য তৃতীয় পক্ষের কাছে যেতে পারে।
+          </p>
+
+          <h3
+            data-bn="৫. কুকি ও অনুরূপ প্রযুক্তি"
+            data-en="5. Cookies and Similar Technologies"
+          >
+            ৫. কুকি ও অনুরূপ প্রযুক্তি
+          </h3>
+
+          <p
+            data-bn="আমাদের ওয়েবসাইটে কুকি ব্যবহার হতে পারে, যাতে ভাষা পছন্দ, সেশন তথ্য ও ব্যবহারকারীর অভিজ্ঞতা উন্নত হয়। আপনি চাইলে ব্রাউজারের সেটিংস থেকে কুকি অস্বীকার করতে পারেন।"
+            data-en="Our website may use cookies to improve language preferences, session information, and overall user experience. You may disable cookies through your browser settings if desired."
+          >
+            আমাদের ওয়েবসাইটে কুকি ব্যবহার হতে পারে, যাতে ভাষা পছন্দ, সেশন
+            তথ্য ও ব্যবহারকারীর অভিজ্ঞতা উন্নত হয়। আপনি চাইলে ব্রাউজারের সেটিংস
+            থেকে কুকি অস্বীকার করতে পারেন।
+          </p>
+
+          <h3
+            data-bn="৬. সুরক্ষা ব্যবস্থা"
+            data-en="6. Security Measures"
+          >
+            ৬. সুরক্ষা ব্যবস্থা
+          </h3>
+
+          <p
+            data-bn="আমরা যথাসাধ্য চেষ্টা করি ডেটা সুরক্ষিত রাখতে। তবে, ইন্টারনেটে তথ্য আদান-প্রদান সবসময় সম্পূর্ণ নিরাপদ নয়। তাই, তথ্য পাঠানোর সময় ব্যবহারকারীর নিজস্ব ঝুঁকি বিবেচনা করা উচিত।"
+            data-en="We take reasonable steps to protect data, but internet-based data transmission is not always completely secure. Users should therefore consider their own risk when sending information online."
+          >
+            আমরা যথাসাধ্য চেষ্টা করি ডেটা সুরক্ষিত রাখতে। তবে, ইন্টারনেটে তথ্য
+            আদান-প্রদান সবসময় সম্পূর্ণ নিরাপদ নয়। তাই, তথ্য পাঠানোর সময়
+            ব্যবহারকারীর নিজস্ব ঝুঁকি বিবেচনা করা উচিত।
+          </p>
+
+          <h3
+            data-bn="৭. আপনার অধিকার"
+            data-en="7. Your Rights"
+          >
+            ৭. আপনার অধিকার
+          </h3>
+
+          <p
+            data-bn="আপনি চাইলে আমাদের কাছে আপনার ব্যক্তিগত তথ্য সংশোধন, আপডেট, সরিয়ে দেওয়া বা প্রশ্ন করার অধিকার রাখেন। আপনি আমাদের যোগাযোগের মাধ্যমে এই অধিকার প্রয়োগ করতে পারেন।"
+            data-en="You may request to access, update, correct, or delete your personal information. You can exercise these rights through our contact channel."
+          >
+            আপনি চাইলে আমাদের কাছে আপনার ব্যক্তিগত তথ্য সংশোধন, আপডেট,
+            সরিয়ে দেওয়া বা প্রশ্ন করার অধিকার রাখেন। আপনি আমাদের যোগাযোগের
+            মাধ্যমে এই অধিকার প্রয়োগ করতে পারেন।
+          </p>
+
+          <h3
+            data-bn="৮. নীতি পরিবর্তন"
+            data-en="8. Policy Changes"
+          >
+            ৮. নীতি পরিবর্তন
+          </h3>
+
+          <p
+            data-bn="আমাদের এই নীতি সময়ে সময়ে পরিবর্তন হতে পারে। নতুন নীতি প্রকাশিত হলে তা কার্যকর হবে।"
+            data-en="This policy may be updated from time to time. Any updated policy will become effective when published."
+          >
+            আমাদের এই নীতি সময়ে সময়ে পরিবর্তন হতে পারে। নতুন নীতি প্রকাশিত হলে
+            তা কার্যকর হবে।
+          </p>
+
+          <h3
+            data-bn="৯. আমাদের সঙ্গে যোগাযোগ"
+            data-en="9. Contact Us"
+          >
+            ৯. আমাদের সঙ্গে যোগাযোগ
+          </h3>
+
+          <p
+            data-bn="আপনি যদি এই নীতির বিষয়ে কোনো প্রশ্ন বা concern-এ থাকেন, তাহলে আমাদের যোগাযোগ পৃষ্ঠায় লিখে পাঠিয়ে দিন।"
+            data-en="If you have any questions or concerns about this policy, please contact us through our contact page."
+          >
+            আপনি যদি এই নীতির বিষয়ে কোনো প্রশ্ন বা concern-এ থাকেন, তাহলে আমাদের
+            যোগাযোগ পৃষ্ঠায় লিখে পাঠিয়ে দিন।
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">
+            হিফজ শিক্ষা
+          </h2>
+
+          <a href="/qf/portal/">
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+              হিফজ পোর্টাল
+            </span>
+          </a>
+
+          <a href="/qf/portal/">
+            <span
+              data-bn="শিক্ষার্থী ব্যবস্থাপনা"
+              data-en="Student Management"
+            >
+              শিক্ষার্থী ব্যবস্থাপনা
+            </span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">
+              সাধারণ জিজ্ঞাসা
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/donate/">
+            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
+              সাইটম্যাপ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent =
+      new Date().getFullYear();
+  </script>
+
+  <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

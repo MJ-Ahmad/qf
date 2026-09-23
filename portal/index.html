@@ -1,0 +1,1489 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — হিফজ শিক্ষা ব্যবস্থাপনা পোর্টাল। শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য সমন্বিত প্ল্যাটফর্ম।"
+  >
+
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="হিফজ ব্যবস্থাপনা পোর্টাল — কোরআনের ফেরিওয়ালা"
+    data-en="Hifz Management Portal — QuranerFariwala"
+  >
+    হিফজ ব্যবস্থাপনা পোর্টাল — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link rel="icon" href="/qf/assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--night);
+      background: var(--card);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.74),
+          rgba(6, 37, 31, 0.92)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      margin-bottom: 0.9rem;
+      padding: 0.42rem 0.8rem;
+      border: 1px solid rgba(234, 217, 166, 0.35);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font: 400 clamp(2.2rem, 5vw, 3.8rem)/1.25 var(--serif);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 0 1.5rem;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.7rem 1.35rem;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .button.secondary {
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .portal-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .portal-card {
+      width: min(100%, 390px);
+      padding: 1.6rem;
+      border: 1px solid rgba(234, 217, 166, 0.35);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 18px 40px rgba(2,35,27,0.2);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .portal-card img {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 1rem;
+      padding: 0.6rem;
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .portal-card h2 {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font: 400 1.65rem/1.4 var(--serif);
+    }
+
+    .portal-card p {
+      margin: 0;
+      color: #dbe9e1;
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.75rem, 4vw, 2.5rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .role-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.04);
+    }
+
+    .role-icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.8rem;
+      place-items: center;
+      border-radius: 12px;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 1.35rem;
+    }
+
+    .role-card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font-size: 1.15rem;
+    }
+
+    .role-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .module-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    .module-card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font-size: 1.15rem;
+    }
+
+    .module-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .module-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .module-card li {
+      margin: 0.25rem 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      counter-reset: steps;
+    }
+
+    .step {
+      position: relative;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    .step::before {
+      counter-increment: steps;
+      content: counter(steps);
+      display: grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.7rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      color: var(--night);
+      font-weight: 700;
+    }
+
+    .step h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .notice {
+      max-width: 850px;
+      margin: 1.5rem auto 0;
+      padding: 1.4rem;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      color: var(--white);
+      background: var(--night);
+      text-align: center;
+    }
+
+    .notice h2 {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      font: 400 1.7rem/1.4 var(--serif);
+    }
+
+    .notice p {
+      margin: 0 0 1rem;
+      color: #dbe9e1;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 1000px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .role-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .role-grid,
+      .steps,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
+
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
+
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
+
+        <a href="/qf/ds.html">
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
+
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/portal/index.html"
+          aria-current="page"
+        >
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+            হিফজ পোর্টাল
+          </span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div
+            class="hero-badge"
+            data-bn="হিফজ শিক্ষা ব্যবস্থাপনা"
+            data-en="Hifz Education Management"
+          >
+            হিফজ শিক্ষা ব্যবস্থাপনা
+          </div>
+
+          <h1
+            data-bn="হিফজ ব্যবস্থাপনা পোর্টাল"
+            data-en="Hifz Management Portal"
+          >
+            হিফজ ব্যবস্থাপনা পোর্টাল
+          </h1>
+
+          <p
+            data-bn="শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য একটি সমন্বিত, স্বচ্ছ ও দায়িত্বশীল হিফজ শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।"
+            data-en="An integrated, transparent, and responsible Hifz education management platform for students, teachers, madrasa directors, and central administration."
+          >
+            শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য
+            একটি সমন্বিত, স্বচ্ছ ও দায়িত্বশীল হিফজ শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="button"
+              href="/qf/portal/login/"
+            >
+              <span
+                data-bn="পোর্টালে প্রবেশ করুন"
+                data-en="Enter Portal"
+              >
+                পোর্টালে প্রবেশ করুন
+              </span>
+            </a>
+
+            <a
+              class="button secondary"
+              href="/qf/contact.html"
+            >
+              <span
+                data-bn="সহায়তা নিন"
+                data-en="Get Support"
+              >
+                সহায়তা নিন
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="portal-visual">
+          <div class="portal-card">
+            <img
+              src="/qf/assets/logo.png"
+              alt="হিফজ ব্যবস্থাপনা পোর্টাল"
+              width="92"
+              height="92"
+            >
+
+            <h2
+              data-bn="শিখুন • অনুশীলন করুন • অগ্রসর হোন"
+              data-en="Learn • Practice • Progress"
+            >
+              শিখুন • অনুশীলন করুন • অগ্রসর হোন
+            </h2>
+
+            <p
+              data-bn="হিফজ শিক্ষার প্রতিটি ধাপকে পরিকল্পিত ও পরিমাপযোগ্য করার লক্ষ্য।"
+              data-en="Our goal is to make every stage of Hifz education structured and measurable."
+            >
+              হিফজ শিক্ষার প্রতিটি ধাপকে পরিকল্পিত ও পরিমাপযোগ্য করার লক্ষ্য।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="কারা এই পোর্টাল ব্যবহার করবেন?"
+            data-en="Who Uses This Portal?"
+          >
+            কারা এই পোর্টাল ব্যবহার করবেন?
+          </h2>
+
+          <p
+            data-bn="প্রতিটি ব্যবহারকারীর জন্য আলাদা ভূমিকা ও প্রয়োজন অনুযায়ী ব্যবস্থাপনা সুবিধা রাখা হয়েছে।"
+            data-en="The portal provides role-based access and management features for each type of user."
+          >
+            প্রতিটি ব্যবহারকারীর জন্য আলাদা ভূমিকা ও প্রয়োজন অনুযায়ী
+            ব্যবস্থাপনা সুবিধা রাখা হয়েছে।
+          </p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card">
+            <div class="role-icon">◉</div>
+
+            <h3
+              data-bn="শিক্ষার্থী"
+              data-en="Student"
+            >
+              শিক্ষার্থী
+            </h3>
+
+            <p
+              data-bn="নিজের সাবাক, সবকি, মানজিল, উপস্থিতি ও অগ্রগতি দেখতে পারবে।"
+              data-en="Students can view their sabaq, sabqi, manzil, attendance, and progress."
+            >
+              নিজের সাবাক, সবকি, মানজিল, উপস্থিতি ও অগ্রগতি দেখতে পারবে।
+            </p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-icon">✦</div>
+
+            <h3
+              data-bn="শিক্ষক"
+              data-en="Teacher"
+            >
+              শিক্ষক
+            </h3>
+
+            <p
+              data-bn="দৈনিক পাঠ, শুনানি, ভুল, রিভিশন ও শিক্ষার্থীর মূল্যায়ন পরিচালনা করতে পারবেন।"
+              data-en="Teachers can manage daily lessons, recitation checks, mistakes, revision, and student assessment."
+            >
+              দৈনিক পাঠ, শুনানি, ভুল, রিভিশন ও শিক্ষার্থীর মূল্যায়ন পরিচালনা করতে পারবেন।
+            </p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-icon">▣</div>
+
+            <h3
+              data-bn="মাদ্রাসা পরিচালক"
+              data-en="Madrasa Director"
+            >
+              মাদ্রাসা পরিচালক
+            </h3>
+
+            <p
+              data-bn="মাদ্রাসা, শিক্ষক, শিক্ষার্থী, ব্যাচ ও সামগ্রিক অগ্রগতি পর্যবেক্ষণ করতে পারবেন।"
+              data-en="Directors can oversee madrasas, teachers, students, batches, and overall progress."
+            >
+              মাদ্রাসা, শিক্ষক, শিক্ষার্থী, ব্যাচ ও সামগ্রিক অগ্রগতি পর্যবেক্ষণ করতে পারবেন।
+            </p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-icon">◎</div>
+
+            <h3
+              data-bn="কেন্দ্রীয় ব্যবস্থাপনা"
+              data-en="Central Administration"
+            >
+              কেন্দ্রীয় ব্যবস্থাপনা
+            </h3>
+
+            <p
+              data-bn="জেলা, মাদ্রাসা, ব্যবহারকারী, রিপোর্ট ও সামগ্রিক সিস্টেম পরিচালনা করতে পারবে।"
+              data-en="Central administrators can manage districts, madrasas, users, reports, and the overall system."
+            >
+              জেলা, মাদ্রাসা, ব্যবহারকারী, রিপোর্ট ও সামগ্রিক সিস্টেম পরিচালনা করতে পারবে।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="প্রধান ব্যবস্থাপনা মডিউল"
+            data-en="Core Management Modules"
+          >
+            প্রধান ব্যবস্থাপনা মডিউল
+          </h2>
+
+          <p
+            data-bn="হিফজ শিক্ষার দৈনিক কার্যক্রম ও দীর্ঘমেয়াদি অগ্রগতি একটি কাঠামোর মধ্যে আনার জন্য এই মডিউলগুলো পরিকল্পিত।"
+            data-en="These modules are designed to organize daily activities and long-term progress within one structured system."
+          >
+            হিফজ শিক্ষার দৈনিক কার্যক্রম ও দীর্ঘমেয়াদি অগ্রগতি একটি কাঠামোর মধ্যে
+            আনার জন্য এই মডিউলগুলো পরিকল্পিত।
+          </p>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3
+              data-bn="শিক্ষার্থী নিবন্ধন"
+              data-en="Student Registration"
+            >
+              শিক্ষার্থী নিবন্ধন
+            </h3>
+
+            <p
+              data-bn="শিক্ষার্থীর মৌলিক তথ্য, অভিভাবক, ভর্তি তারিখ ও শিক্ষাগত অবস্থার রেকর্ড।"
+              data-en="Records for student details, guardians, admission dates, and educational status."
+            >
+              শিক্ষার্থীর মৌলিক তথ্য, অভিভাবক, ভর্তি তারিখ ও শিক্ষাগত অবস্থার রেকর্ড।
+            </p>
+
+            <ul>
+              <li data-bn="প্রোফাইল" data-en="Profile">প্রোফাইল</li>
+              <li data-bn="অভিভাবক তথ্য" data-en="Guardian information">অভিভাবক তথ্য</li>
+              <li data-bn="ভর্তি ইতিহাস" data-en="Admission history">ভর্তি ইতিহাস</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <h3
+              data-bn="দৈনিক হিফজ রেকর্ড"
+              data-en="Daily Hifz Record"
+            >
+              দৈনিক হিফজ রেকর্ড
+            </h3>
+
+            <p
+              data-bn="সাবাক, সবকি, মানজিল, শুনানি ও দৈনিক শিক্ষার ফলাফল সংরক্ষণ।"
+              data-en="Records for sabaq, sabqi, manzil, recitation checks, and daily learning outcomes."
+            >
+              সাবাক, সবকি, মানজিল, শুনানি ও দৈনিক শিক্ষার ফলাফল সংরক্ষণ।
+            </p>
+
+            <ul>
+              <li data-bn="আজকের পাঠ" data-en="Today's lesson">আজকের পাঠ</li>
+              <li data-bn="ভুলের তালিকা" data-en="Mistake list">ভুলের তালিকা</li>
+              <li data-bn="শিক্ষকের মন্তব্য" data-en="Teacher notes">শিক্ষকের মন্তব্য</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <h3
+              data-bn="অগ্রগতি ও রিপোর্ট"
+              data-en="Progress and Reports"
+            >
+              অগ্রগতি ও রিপোর্ট
+            </h3>
+
+            <p
+              data-bn="শিক্ষার্থী, ব্যাচ, মাদ্রাসা ও জেলা পর্যায়ে অগ্রগতি পর্যালোচনার সুবিধা।"
+              data-en="Progress review across students, batches, madrasas, and districts."
+            >
+              শিক্ষার্থী, ব্যাচ, মাদ্রাসা ও জেলা পর্যায়ে অগ্রগতি পর্যালোচনার সুবিধা।
+            </p>
+
+            <ul>
+              <li data-bn="সাপ্তাহিক রিপোর্ট" data-en="Weekly reports">সাপ্তাহিক রিপোর্ট</li>
+              <li data-bn="মাসিক রিপোর্ট" data-en="Monthly reports">মাসিক রিপোর্ট</li>
+              <li data-bn="অগ্রগতি তুলনা" data-en="Progress comparison">অগ্রগতি তুলনা</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <h3
+              data-bn="উপস্থিতি ব্যবস্থাপনা"
+              data-en="Attendance Management"
+            >
+              উপস্থিতি ব্যবস্থাপনা
+            </h3>
+
+            <p
+              data-bn="দৈনিক উপস্থিতি, অনুপস্থিতি, ছুটি ও নিয়মিততার রেকর্ড রাখা।"
+              data-en="Records for daily attendance, absence, leave, and regularity."
+            >
+              দৈনিক উপস্থিতি, অনুপস্থিতি, ছুটি ও নিয়মিততার রেকর্ড রাখা।
+            </p>
+
+            <ul>
+              <li data-bn="দৈনিক উপস্থিতি" data-en="Daily attendance">দৈনিক উপস্থিতি</li>
+              <li data-bn="ছুটির রেকর্ড" data-en="Leave records">ছুটির রেকর্ড</li>
+              <li data-bn="নিয়মিততা বিশ্লেষণ" data-en="Regularity analysis">নিয়মিততা বিশ্লেষণ</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <h3
+              data-bn="পরীক্ষা ও মূল্যায়ন"
+              data-en="Exams and Assessment"
+            >
+              পরীক্ষা ও মূল্যায়ন
+            </h3>
+
+            <p
+              data-bn="মৌখিক পরীক্ষা, তাজবিদ, স্মরণশক্তি ও সামগ্রিক মূল্যায়নের রেকর্ড।"
+              data-en="Records for oral exams, tajweed, retention, and overall assessment."
+            >
+              মৌখিক পরীক্ষা, তাজবিদ, স্মরণশক্তি ও সামগ্রিক মূল্যায়নের রেকর্ড।
+            </p>
+
+            <ul>
+              <li data-bn="পরীক্ষার ফলাফল" data-en="Exam results">পরীক্ষার ফলাফল</li>
+              <li data-bn="শিক্ষকের মূল্যায়ন" data-en="Teacher assessment">শিক্ষকের মূল্যায়ন</li>
+              <li data-bn="উন্নয়ন পরিকল্পনা" data-en="Improvement plan">উন্নয়ন পরিকল্পনা</li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <h3
+              data-bn="নোটিশ ও যোগাযোগ"
+              data-en="Notices and Communication"
+            >
+              নোটিশ ও যোগাযোগ
+            </h3>
+
+            <p
+              data-bn="মাদ্রাসা, শিক্ষক, শিক্ষার্থী ও অভিভাবকদের জন্য গুরুত্বপূর্ণ নোটিশ ও বার্তা।"
+              data-en="Important notices and messages for madrasas, teachers, students, and guardians."
+            >
+              মাদ্রাসা, শিক্ষক, শিক্ষার্থী ও অভিভাবকদের জন্য গুরুত্বপূর্ণ নোটিশ ও বার্তা।
+            </p>
+
+            <ul>
+              <li data-bn="সাধারণ নোটিশ" data-en="General notices">সাধারণ নোটিশ</li>
+              <li data-bn="শ্রেণি বার্তা" data-en="Class messages">শ্রেণি বার্তা</li>
+              <li data-bn="জরুরি ঘোষণা" data-en="Urgent announcements">জরুরি ঘোষণা</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="ব্যবহার শুরু করার ধাপ"
+            data-en="How to Get Started"
+          >
+            ব্যবহার শুরু করার ধাপ
+          </h2>
+
+          <p
+            data-bn="পোর্টাল ব্যবহারের প্রাথমিক ধাপগুলো সহজ ও কাঠামোবদ্ধ।"
+            data-en="The initial steps for using the portal are simple and structured."
+          >
+            পোর্টাল ব্যবহারের প্রাথমিক ধাপগুলো সহজ ও কাঠামোবদ্ধ।
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3
+              data-bn="অ্যাকাউন্ট গ্রহণ"
+              data-en="Get an Account"
+            >
+              অ্যাকাউন্ট গ্রহণ
+            </h3>
+
+            <p
+              data-bn="প্রতিষ্ঠানের দায়িত্বশীল ব্যক্তির মাধ্যমে ব্যবহারকারী অ্যাকাউন্ট তৈরি করা হবে।"
+              data-en="A user account will be created through the responsible person of the institution."
+            >
+              প্রতিষ্ঠানের দায়িত্বশীল ব্যক্তির মাধ্যমে ব্যবহারকারী অ্যাকাউন্ট তৈরি করা হবে।
+            </p>
+          </article>
+
+          <article class="step">
+            <h3
+              data-bn="ভূমিকা নির্বাচন"
+              data-en="Choose a Role"
+            >
+              ভূমিকা নির্বাচন
+            </h3>
+
+            <p
+              data-bn="শিক্ষার্থী, শিক্ষক, পরিচালক বা কেন্দ্রীয় প্রশাসনের উপযুক্ত ভূমিকা নির্ধারণ করা হবে।"
+              data-en="The appropriate role will be assigned: student, teacher, director, or central administrator."
+            >
+              শিক্ষার্থী, শিক্ষক, পরিচালক বা কেন্দ্রীয় প্রশাসনের উপযুক্ত ভূমিকা নির্ধারণ করা হবে।
+            </p>
+          </article>
+
+          <article class="step">
+            <h3
+              data-bn="তথ্য সংযুক্তি"
+              data-en="Add Records"
+            >
+              তথ্য সংযুক্তি
+            </h3>
+
+            <p
+              data-bn="শিক্ষার্থী, শিক্ষক, মাদ্রাসা ও দৈনিক পাঠের তথ্য সংযুক্ত করা হবে।"
+              data-en="Student, teacher, madrasa, and daily lesson records will be added."
+            >
+              শিক্ষার্থী, শিক্ষক, মাদ্রাসা ও দৈনিক পাঠের তথ্য সংযুক্ত করা হবে।
+            </p>
+          </article>
+
+          <article class="step">
+            <h3
+              data-bn="পর্যবেক্ষণ"
+              data-en="Monitor Progress"
+            >
+              পর্যবেক্ষণ
+            </h3>
+
+            <p
+              data-bn="রিপোর্ট, মন্তব্য ও অগ্রগতির তথ্য নিয়মিত পর্যবেক্ষণ করা হবে।"
+              data-en="Reports, notes, and progress information will be reviewed regularly."
+            >
+              রিপোর্ট, মন্তব্য ও অগ্রগতির তথ্য নিয়মিত পর্যবেক্ষণ করা হবে।
+            </p>
+          </article>
+        </div>
+
+        <div class="notice">
+          <h2
+            data-bn="পোর্টালে প্রবেশের জন্য প্রস্তুত?"
+            data-en="Ready to enter the portal?"
+          >
+            পোর্টালে প্রবেশের জন্য প্রস্তুত?
+          </h2>
+
+          <p
+            data-bn="আপনার অনুমোদিত অ্যাকাউন্ট থাকলে লগইন পেজে প্রবেশ করুন। অ্যাকাউন্ট বা সহায়তা প্রয়োজন হলে আমাদের সঙ্গে যোগাযোগ করুন।"
+            data-en="If you have an approved account, continue to the login page. Contact us if you need an account or support."
+          >
+            আপনার অনুমোদিত অ্যাকাউন্ট থাকলে লগইন পেজে প্রবেশ করুন। অ্যাকাউন্ট বা
+            সহায়তা প্রয়োজন হলে আমাদের সঙ্গে যোগাযোগ করুন।
+          </p>
+
+          <a
+            class="button"
+            href="/qf/portal/login/"
+          >
+            <span
+              data-bn="লগইন পেজে যান"
+              data-en="Go to Login"
+            >
+              লগইন পেজে যান
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+          >
+            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">
+            প্রকল্প
+          </h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">
+              গবেষণা
+            </span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">
+              মুদ্রণ
+            </span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">
+              বিতরণ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">
+            হিফজ শিক্ষা
+          </h2>
+
+          <a href="/qf/portal/index.html">
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+              হিফজ পোর্টাল
+            </span>
+          </a>
+
+          <a href="/qf/portal/login/">
+            <span data-bn="লগইন" data-en="Login">
+              লগইন
+            </span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">
+              সাধারণ জিজ্ঞাসা
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">
+            সহায়তা
+          </h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
+              সাইটম্যাপ
+            </span>
+          </a>
+
+          <a href="/qf/home/index.html">
+            <span data-bn="হোম পেজ" data-en="Home">
+              হোম পেজ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">
+            আইনি
+          </h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const defaultLanguage = 'bn';
+
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+
+      function getStoredLanguage() {
+        try {
+          const storedLanguage = localStorage.getItem('qf-lang');
+
+          return storedLanguage === 'en' ||
+            storedLanguage === 'bn'
+            ? storedLanguage
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
+        }
+      }
+
+      function saveLanguage(language) {
+        try {
+          localStorage.setItem('qf-lang', language);
+        } catch (error) {
+          console.warn(
+            'Language preference could not be saved.',
+            error
+          );
+        }
+      }
+
+      function applyLanguage(language) {
+        const selectedLanguage =
+          language === 'en' ? 'en' : 'bn';
+
+        document
+          .querySelectorAll('[data-bn][data-en]')
+          .forEach(function (element) {
+            const translatedText =
+              selectedLanguage === 'en'
+                ? element.getAttribute('data-en')
+                : element.getAttribute('data-bn');
+
+            if (translatedText !== null) {
+              element.textContent = translatedText;
+            }
+          });
+
+        document
+          .querySelectorAll(
+            '[data-bn-placeholder][data-en-placeholder]'
+          )
+          .forEach(function (element) {
+            const placeholder =
+              selectedLanguage === 'en'
+                ? element.getAttribute('data-en-placeholder')
+                : element.getAttribute('data-bn-placeholder');
+
+            if (placeholder !== null) {
+              element.setAttribute(
+                'placeholder',
+                placeholder
+              );
+            }
+          });
+
+        document.documentElement.lang =
+          selectedLanguage;
+
+        document.documentElement.dataset.lang =
+          selectedLanguage;
+
+        document
+          .querySelectorAll('[data-lang-button]')
+          .forEach(function (button) {
+            const isActive =
+              button.getAttribute('data-lang-button') ===
+              selectedLanguage;
+
+            button.setAttribute(
+              'aria-pressed',
+              String(isActive)
+            );
+          });
+
+        saveLanguage(selectedLanguage);
+      }
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener(
+          'click',
+          function () {
+            const isOpen =
+              mainNav.classList.toggle('open');
+
+            menuToggle.setAttribute(
+              'aria-expanded',
+              String(isOpen)
+            );
+          }
+        );
+      }
+
+EventListener(
+        'DOMContentLoaded',
+        function () {
+          applyLanguage(getStoredLanguage());
+
+          document
+            .querySelectorAll('[data-lang-button]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  applyLanguage(
+                    button.getAttribute(
+                      'data-lang-button'
+                    )
+                  );
+                }
+              );
+            });
+
+          const footerYear =
+            document.getElementById('footerYear');
+
+          if (footerYear) {
+            footerYear.textContent =
+              new Date().getFullYear();
+          }
+
+          if (
+            window.matchMedia &&
+            window.matchMedia
+          ) {
+            document.documentElement.style.scrollBehavior =
+              'auto';
+          }
+        }
+      );
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

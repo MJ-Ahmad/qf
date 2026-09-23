@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষা ব্যবস্থাপনার উদ্যোগ।"
+  >
+
+  <meta
+    name="author"
+    content="MJ-Ahmad"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0a3a31"
+  >
+
+  <title>কোরআনের ফেরিওয়ালা — QuranerFariwala</title>
+
+  <link
+    rel="icon"
+    href="https://mj-ahmad.github.io/qf/assets/logo.png"
+    type="image/png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font: 16px/1.7 var(--sans);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        color 160ms ease,
+        background 160ms ease;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.portal-link {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 5rem 1.25rem 4rem;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(
+          100% 100% at 50% 0%,
+          #12604e,
+          var(--night) 72%
+        );
+    }
+
+    .hero-logo {
+      width: 76px;
+      height: 76px;
+      margin-bottom: 1rem;
+      padding: 0.45rem;
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .epigraph {
+      margin: 0;
+      color: var(--gold-soft);
+      font: italic 1.35rem/1.8 var(--serif);
+    }
+
+    .epigraph-ref {
+      margin: 0.15rem 0 1.4rem;
+      color: rgba(234, 217, 166, 0.78);
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 6vw, 3.2rem)/1.35 var(--serif);
+    }
+
+    .hero-lead {
+      max-width: 700px;
+      margin: 0 auto 1.7rem;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        transform 160ms ease,
+        filter 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .ledger {
+      padding: 1.65rem 0;
+      color: var(--gold-soft);
+      background: var(--night-deep);
+    }
+
+    .ledger-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .ledger-item strong {
+      display: block;
+      color: var(--gold);
+      font: 400 2rem/1.3 var(--serif);
+    }
+
+    .ledger-item span {
+      font-size: 0.9rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--bordered {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.45rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.2rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 10px;
+      background: var(--card);
+      box-shadow: 0 8px 24px rgba(2, 35, 27, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 0.55rem;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      flex: 1;
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .card-link {
+      color: var(--emerald);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card-link:hover {
+      color: var(--gold);
+    }
+
+    .portal-section {
+      padding: 4rem 0;
+    }
+
+    .portal-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 2.6rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      text-align: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          160deg,
+          var(--night),
+          #0e4a3e
+        );
+      box-shadow: 0 14px 34px rgba(2, 35, 27, 0.14);
+    }
+
+    .portal-box h2 {
+      margin: 0;
+      font: 400 1.8rem/1.4 var(--serif);
+    }
+
+    .portal-title-en {
+      margin-top: 0.25rem;
+      color: var(--gold-soft);
+      font-size: 0.92rem;
+    }
+
+    .portal-box p {
+      max-width: 570px;
+      margin: 1rem auto 1.4rem;
+      color: #e8f1ec;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 0.8rem;
+      color: var(--gold-soft);
+      font-size: 0.98rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.48rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.16);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+      text-decoration: none;
+    }
+
+    .footer-legal a:hover {
+      color: var(--gold);
+    }
+
+    .error-message {
+      max-width: 680px;
+      margin: 1rem auto;
+      padding: 1rem;
+      border: 1px solid #b42318;
+      border-radius: 8px;
+      color: #b42318;
+      background: #fff1f0;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .header-row {
+        padding-block: 0.7rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .wrap {
+        width: min(100% - 28px, 560px);
+      }
+
+      .hero {
+        padding: 3.7rem 1rem 3.2rem;
+      }
+
+      .ledger-grid,
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .brand-name {
+        font-size: 1rem;
+      }
+
+      .main-nav a {
+        padding-inline: 0.5rem;
+        font-size: 0.86rem;
+      }
+
+      .ledger-grid,
+      .cards,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          id="logo1"
+          src="https://mj-ahmad.github.io/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a id="navResearch" href="#research">
+          গবেষণা
+        </a>
+
+        <a id="navPrinting" href="/qf/pr.html">
+          মুদ্রণ
+        </a>
+
+        <a id="navDistribution" href="/qf/ds.html">
+          বিতরণ
+        </a>
+
+        <a
+          id="navPortal"
+          class="portal-link"
+          href="/qf/portal/"
+        >
+          পোর্টাল
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          id="lBn"
+          type="button"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          id="lEn"
+          type="button"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        id="logo2"
+        class="hero-logo"
+        src="https://mj-ahmad.github.io/qf/assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="76"
+        height="76"
+      >
+
+      <p
+        id="epigraph"
+        class="epigraph"
+      >
+        اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ
+      </p>
+
+      <p
+        id="epigraphRef"
+        class="epigraph-ref"
+      >
+        সূরা আল-আলাক, আয়াত ১
+      </p>
+
+      <h1 id="heroTitle">
+        কোরআনের ফেরিওয়ালা
+      </h1>
+
+      <p
+        id="heroLead"
+        class="hero-lead"
+      >
+        গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে বাংলাদেশের প্রতিটি প্রান্তে
+        পবিত্র কোরআন পৌঁছে দেওয়ার নিরবচ্ছিন্ন যাত্রা।
+      </p>
+
+      <a
+        id="heroCta"
+        class="button"
+        href="/qf/portal/"
+      >
+        পোর্টালে প্রবেশ →
+      </a>
+    </section>
+
+    <section class="ledger">
+      <div
+        id="ledgerStrip"
+        class="wrap ledger-grid"
+      >
+        <div class="ledger-item">
+          <strong>৫০,০০০+</strong>
+          <span>বিতরণকৃত কোরআন</span>
+        </div>
+
+        <div class="ledger-item">
+          <strong>১২,০০০+</strong>
+          <span>হিফজ শিক্ষার্থী</span>
+        </div>
+
+        <div class="ledger-item">
+          <strong>৩০০+</strong>
+          <span>অংশগ্রহণকারী মাদ্রাসা</span>
+        </div>
+
+        <div class="ledger-item">
+          <strong>৬৪</strong>
+          <span>জেলায় উপস্থিতি</span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="research"
+      class="section"
+    >
+      <div class="wrap">
+        <div class="section-heading">
+          <h2 id="chaptersHead">
+            আমাদের কার্যক্রম
+          </h2>
+
+          <p>
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div
+          id="chapters"
+          class="cards"
+        >
+          <article class="card">
+            <h3>গবেষণা</h3>
+            <p>
+              কোরআনের গভীরতা অনুধাবনে প্রাচীন জ্ঞান ও আধুনিক
+              বিশ্লেষণের মেলবন্ধন।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/edu.html"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>মুদ্রণ</h3>
+            <p>
+              প্রি-প্রেস থেকে বাঁধাই পর্যন্ত প্রতিটি ধাপে
+              নিখুঁততা বজায় রাখা।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/pr.html"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>বিতরণ</h3>
+            <p>
+              মাদ্রাসা, এতিমখানা ও সুবিধাবঞ্চিত শিক্ষার্থীদের
+              কাছে কোরআন পৌঁছে দেওয়া।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/ds.html"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="support"
+      class="section section--bordered"
+    >
+      <div class="wrap">
+        <div class="section-heading">
+          <h2 id="supportHead">
+            সহযোগিতার খাত
+          </h2>
+
+          <p id="supportLead">
+            অনুদান, বিনিয়োগ বা ঋণ—যেভাবেই সহায়তা করতে চান।
+          </p>
+        </div>
+
+        <div
+          id="supportGrid"
+          class="cards"
+        >
+          <article class="card">
+            <h3>অনুদান</h3>
+            <p>
+              বিনামূল্যে কোরআন বিতরণ তহবিলে সরাসরি সহায়তা।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/donate/"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>বিনিয়োগ</h3>
+            <p>
+              মুদ্রণ প্রকল্পে স্বল্প বা দীর্ঘমেয়াদি অংশগ্রহণ।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/funding/"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>ঋণ প্রদান</h3>
+            <p>
+              নির্দিষ্ট মেয়াদে ঋণের মাধ্যমে কার্যক্রম সচল রাখা।
+            </p>
+            <a
+              class="card-link"
+              href="/qf/fund/"
+            >
+              বিস্তারিত দেখুন →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="wrap">
+        <div class="portal-box">
+          <h2 id="portalTitle">
+            হিফজ ব্যবস্থাপনা পোর্টাল
+          </h2>
+
+          <div
+            id="portalTitleEn"
+            class="portal-title-en"
+          >
+            Hifz Management Portal
+          </div>
+
+          <p id="portalDesc">
+            কেন্দ্রীয় পর্যায় থেকে মাদ্রাসা পর্যন্ত—
+            শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য ভূমিকা-ভিত্তিক ড্যাশবোর্ড।
+          </p>
+
+          <a
+            id="portalCta"
+            class="button"
+            href="/qf/portal/"
+          >
+            পোর্টালে যান →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              id="logo3"
+              src="https://mj-ahmad.github.io/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p id="footerNote">
+            এই প্রকল্প উন্মুক্ত-উৎস এবং MIT লাইসেন্সের অধীনে পরিচালিত।
+          </p>
+        </div>
+
+        <div
+          id="footerCols"
+          style="display: contents"
+        >
+          <div class="footer-col">
+            <h3>প্রকল্প</h3>
+            <a href="/qf/edu.html">গবেষণা</a>
+            <a href="/qf/pr.html">মুদ্রণ</a>
+            <a href="/qf/ds.html">বিতরণ</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>সহযোগিতা</h3>
+            <a href="/qf/donate/">অনুদান</a>
+            <a href="/qf/funding/">বিনিয়োগ</a>
+            <a href="/qf/fund/">ঋণ প্রদান</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>সহায়তা</h3>
+            <a href="/qf/contact.html">যোগাযোগ</a>
+            <a href="/qf/faq.html">প্রায়শই জিজ্ঞাসিত প্রশ্ন</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>আইনি</h3>
+            <a href="/qf/privacy.html">গোপনীয়তা</a>
+            <a href="/qf/terms.html">শর্তাবলী</a>
+            <a href="/qf/sitemap.html">সাইটম্যাপ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p id="footerCredit">
+          © ২০২৬ কোরআনের ফেরিওয়ালা —
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener"
+          >
+            MJ-Ahmad
+          </a>
+        </p>
+
+        <div
+          id="footerLegal"
+          class="footer-legal"
+        >
+          <a href="/qf/privacy.html">গোপনীয়তা</a>
+          <span aria-hidden="true"> · </span>
+          <a href="/qf/terms.html">শর্তাবলী</a>
+          <span aria-hidden="true"> · </span>
+          <a href="/qf/sitemap.html">সাইটম্যাপ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let siteData = null;
+    let currentLanguage = 'bn';
+
+    const $ = function (id) {
+      return document.getElementById(id);
+    };
+
+    function translate(value) {
+      if (value === null || value === undefined) {
+        return '';
+      }
+
+      if (typeof value === 'object') {
+        return value[currentLanguage]
+          ?? value.bn
+          ?? value.en
+          ?? '';
+      }
+
+      return String(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(
+        /[&<>"]/g,
+        function (character) {
+          return {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;'
+          }[character];
+        }
+      );
+    }
+
+    function validLink(value, fallback) {
+      const link = String(value || '').trim();
+
+      if (
+        link.startsWith('/') ||
+        link.startsWith('./') ||
+        link.startsWith('../') ||
+        link.startsWith('https://') ||
+        link.startsWith('http://') ||
+        link.startsWith('mailto:') ||
+        link.startsWith('tel:') ||
+        link.startsWith('#')
+      ) {
+        return link;
+      }
+
+      return fallback || '#';
+    }
+
+    function setLink(element, link, fallback) {
+      if (!element) return;
+
+      element.href = validLink(link, fallback);
+    }
+
+    function renderNavigation() {
+      $('navResearch').textContent =
+        translate(siteData.nav.research);
+
+      $('navPrinting').textContent =
+        translate(siteData.nav.printing);
+
+      $('navDistribution').textContent =
+        translate(siteData.nav.distribution);
+
+      $('navPortal').textContent =
+        translate(siteData.nav.portal);
+
+      setLink(
+        $('navResearch'),
+        '#research',
+        '#research'
+      );
+
+      setLink(
+        $('navPrinting'),
+        '/qf/pr.html',
+        '/qf/pr.html'
+      );
+
+      setLink(
+        $('navDistribution'),
+        '/qf/ds.html',
+        '/qf/ds.html'
+      );
+
+      setLink(
+        $('navPortal'),
+        siteData.portal.cta.link,
+        '/qf/portal/'
+      );
+    }
+
+    function renderImages() {
+      [
+        'logo1',
+        'logo2',
+        'logo3'
+      ].forEach(function (id) {
+        const image = $(id);
+
+        if (!image) return;
+
+        image.src = siteData.site.logo;
+        image.alt = translate(siteData.site.logoAlt);
+      });
+    }
+
+    function renderHero() {
+      $('epigraph').textContent =
+        siteData.hero.epigraph;
+
+      $('epigraphRef').textContent =
+        translate(siteData.hero.epigraphRef);
+
+      $('heroTitle').textContent =
+        translate(siteData.hero.title);
+
+      $('heroLead').textContent =
+        translate(siteData.hero.lead);
+
+      $('heroCta').textContent =
+        translate(siteData.hero.cta) + ' →';
+
+      setLink(
+        $('heroCta'),
+        siteData.hero.cta.link,
+        '/qf/portal/'
+      );
+    }
+
+    function renderLedger() {
+      $('ledgerStrip').innerHTML =
+        siteData.ledger.map(function (item) {
+          const value =
+            currentLanguage === 'en'
+              ? item.valueEn
+              : item.value;
+
+          return `
+            <div class="ledger-item">
+              <strong>${escapeHtml(value)}</strong>
+              <span>${escapeHtml(translate(item.label))}</span>
+            </div>
+          `;
+        }).join('');
+    }
+
+    function renderChapters() {
+      $('chaptersHead').textContent =
+        translate(siteData.chaptersHead);
+
+      $('chapters').innerHTML =
+        siteData.chapters.map(function (item) {
+          return `
+            <article class="card">
+              <h3>${escapeHtml(translate(item.title))}</h3>
+              <p>${escapeHtml(translate(item.text))}</p>
+              <a
+                class="card-link"
+                href="${escapeHtml(validLink(item.link))}"
+              >
+                ${escapeHtml(translate(siteData.ui.learnMore))} →
+              </a>
+            </article>
+          `;
+        }).join('');
+    }
+
+    function renderSupport() {
+      $('supportHead').textContent =
+        translate(siteData.supportHead);
+
+      $('supportLead').textContent =
+        translate(siteData.supportLead);
+
+      $('supportGrid').innerHTML =
+        siteData.ledgerEntries.map(function (item) {
+          return `
+            <article class="card">
+              <h3>${escapeHtml(translate(item.title))}</h3>
+              <p>${escapeHtml(translate(item.note))}</p>
+              <a
+                class="card-link"
+                href="${escapeHtml(validLink(item.link))}"
+              >
+                ${escapeHtml(translate(siteData.ui.learnMore))} →
+              </a>
+            </article>
+          `;
+        }).join('');
+    }
+
+    function renderPortal() {
+      $('portalTitle').textContent =
+        translate(siteData.portal.title);
+
+      $('portalTitleEn').textContent =
+        currentLanguage === 'bn'
+          ? siteData.portal.title.en
+          : '';
+
+      $('portalDesc').textContent =
+        translate(siteData.portal.desc);
+
+      $('portalCta').textContent =
+        translate(siteData.portal.cta) + ' →';
+
+      setLink(
+        $('portalCta'),
+        siteData.portal.cta.link,
+        '/qf/portal/'
+      );
+    }
+
+    function renderFooter() {
+      $('footerNote').textContent =
+        translate(siteData.footer.note);
+
+      $('footerCredit').innerHTML = `
+        © ${new Date().getFullYear()}
+        ${escapeHtml(
+          currentLanguage === 'bn'
+            ? 'কোরআনের ফেরিওয়ালা'
+            : 'QuranerFariwala'
+        )}
+        —
+        <a
+          href="${escapeHtml(
+            validLink(
+              siteData.footer.creditLink,
+              'https://github.com/MJ-Ahmad'
+            )
+          )}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ${escapeHtml(siteData.footer.credit)}
+        </a>
+      `;
+
+      $('footerCols').innerHTML =
+        siteData.footer.columns.map(function (column) {
+          const links = column.links.map(function (item) {
+            return `
+              <a href="${escapeHtml(validLink(item.link))}">
+                ${escapeHtml(translate(item.label))}
+              </a>
+            `;
+          }).join('');
+
+          return `
+            <div class="footer-col">
+              <h3>${escapeHtml(translate(column.heading))}</h3>
+              ${links}
+            </div>
+          `;
+        }).join('');
+
+      $('footerLegal').innerHTML =
+        siteData.footer.legal.map(function (item, index) {
+          const separator =
+            index < siteData.footer.legal.length - 1
+              ? '<span aria-hidden="true"> · </span>'
+              : '';
+
+          return `
+            <a href="${escapeHtml(validLink(item.link))}">
+              ${escapeHtml(translate(item.label))}
+            </a>
+            ${separator}
+          `;
+        }).join('');
+    }
+
+    function renderPage() {
+      document.documentElement.lang =
+        currentLanguage;
+
+      document.title =
+        translate(siteData.site.title);
+
+      $('lBn').setAttribute(
+        'aria-pressed',
+        String(currentLanguage === 'bn')
+      );
+
+      $('lEn').setAttribute(
+        'aria-pressed',
+        String(currentLanguage === 'en')
+      );
+
+      renderImages();
+      renderNavigation();
+      renderHero();
+      renderLedger();
+      renderChapters();
+      renderSupport();
+      renderPortal();
+      renderFooter();
+    }
+
+    function setLanguage(language) {
+      currentLanguage =
+        language === 'en' ? 'en' : 'bn';
+
+      try {
+        localStorage.setItem(
+          'qfLang',
+          currentLanguage
+        );
+      } catch (error) {
+        console.warn(
+          'Language preference could not be saved.',
+          error
+        );
+      }
+
+      renderPage();
+    }
+
+    async function initialize() {
+      try {
+        const response = await fetch(
+          '../data.json',
+          {
+            cache: 'no-store'
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            'data.json could not be loaded: ' +
+            response.status
+          );
+        }
+
+        siteData = await response.json();
+
+        try {
+          const savedLanguage =
+            localStorage.getItem('qfLang');
+
+          if (
+            savedLanguage === 'bn' ||
+            savedLanguage === 'en'
+          ) {
+            currentLanguage = savedLanguage;
+          }
+        } catch (error) {
+          console.warn(
+            'Language preference could not be read.',
+            error
+          );
+        }
+
+        renderPage();
+      } catch (error) {
+        console.error(error);
+
+        document.body.insertAdjacentHTML(
+          'afterbegin',
+          `
+            <div class="error-message">
+              ডাটা লোড করা যায়নি।
+              অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।
+            </div>
+          `
+        );
+      }
+    }
+
+    $('lBn').addEventListener(
+      'click',
+      function () {
+        setLanguage('bn');
+      }
+    );
+
+    $('lEn').addEventListener(
+      'click',
+      function () {
+        setLanguage('en');
+      }
+    );
+
+    initialize();
+  </script>
+</body>
+</html>

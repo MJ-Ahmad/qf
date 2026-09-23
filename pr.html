@@ -1,685 +1,1365 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta name="generator" content="mj.dev"/>
-  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
-  <meta name="creator" content="MJ-AHMAD"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:site_name" content="Quraner Fariwala"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:image" content="assets/logo.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="Quraner Fariwala"/>
-  <meta property="og:type" content="website"/>
-  <link rel="shortcut icon" href="assets/logo.png"/>
-  <link rel="icon" href="assets/logo.png" sizes="any"/>
+  <meta charset="utf-8">
 
-  <link rel="stylesheet" href="css/header/style.css">
-  <link rel="stylesheet" href="css/footer/style.css">
-  <link rel="stylesheet" href="css/body/style.css">
-  <link rel="stylesheet" href="css/section/style.css">
-  <link rel="stylesheet" href="css/mission/style.css">
-<style>
-     .hero {display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:center;padding:1.25rem;border-radius:12px;background:#fff;margin:1rem 0;box-shadow:0 8px 24px rgba(2,6,23,0.04)}
-    .hero.reverse .hero-image{order:-1}
-    .hero-content h2{font-size:1.25rem;color:#065f46;margin-bottom:.5rem}
-    .hero-content p{color:#334155}
-    .hero-image{border-radius:10px;overflow:hidden;height:320px;display:flex;align-items:center;justify-content:center}
-    .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
-    @media(max-width:700px){ .hero{grid-template-columns:1fr} .hero-image{height:220px} .hero.reverse .hero-image{order:0} }
-</style>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালার মুদ্রণ প্রক্রিয়া—প্রি-প্রেস, টাইপসেটিং, মুদ্রণ, বাঁধাই, মান নিয়ন্ত্রণ ও সরবরাহ।"
+  >
+
+  <meta
+    name="author"
+    content="MJ-Ahmad"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0a3a31"
+  >
+
+  <title
+    data-bn="মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা"
+    data-en="Printing Process — QuranerFariwala"
+  >
+    মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link
+    rel="icon"
+    href="assets/logo.png"
+    type="image/png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.88)
+        ),
+        url("assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      padding: 0.45rem;
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.25rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.35rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(2, 35, 27, 0.05);
+    }
+
+    .process-card.reverse .process-image {
+      order: -1;
+    }
+
+    .process-content {
+      padding: 0.6rem;
+    }
+
+    .process-content h2 {
+      margin: 0 0 0.7rem;
+      color: var(--night);
+      font-size: 1.45rem;
+    }
+
+    .process-content p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .process-content ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .process-content li {
+      margin: 0.25rem 0;
+    }
+
+    .process-image {
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #dfe8e1;
+    }
+
+    .process-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .standards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .standard-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      text-align: center;
+    }
+
+    .standard-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--night);
+      font-size: 1.1rem;
+    }
+
+    .standard-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .cta {
+      padding: 3.5rem 1rem;
+      color: var(--white);
+      text-align: center;
+      background: var(--night);
+    }
+
+    .cta h2 {
+      margin: 0 0 0.5rem;
+      font: 400 1.85rem/1.4 var(--serif);
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
+      color: #dbe9e1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 900px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .process-card {
+        grid-template-columns: 1fr;
+      }
+
+      .process-card.reverse .process-image {
+        order: 0;
+      }
+
+      .standards {
+        grid-template-columns: 1fr;
+      }
+
+      .process-image,
+      .process-image img {
+        min-height: 220px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+    }
+  </style>
 </head>
-<body class="__className_c32586">
-  <!-- Theme script (keeps original behavior) -->
-  <div hidden><!--$--><!--/$--></div>
-  <script>
-    ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];
-      function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{
-        let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
-        c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
-      }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}
-      if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}
-    })("class","theme","system",null,["light","dark"],null,true,true)
-  </script>
 
-  <!-- Header -->
-  <header class="site-header" role="banner" aria-label="Site header">
-    <div class="container">
-      <div class="flex header-row items-center justify-between gap-4">
-        <!-- Brand -->
-        <div class="brand_h">
-          <a href="/qf" aria-label="Nexara home">QuranerFariwala</a>
-          <span class="badge_h" aria-hidden="true">A Journey of Light</span>
-        </div>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
 
-        <!-- Mobile toggle -->
-        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Toggle navigation">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block">
-            <path d="M3 6h18M3 12h18M3 18h18"></path>
-          </svg>
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span
+            data-bn="হোম"
+            data-en="Home"
+          >হোম</span>
+        </a>
+
+        <a href="/qf/edu.html">
+          <span
+            data-bn="গবেষণা"
+            data-en="Research"
+          >গবেষণা</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/pr.html"
+          aria-current="page"
+        >
+          <span
+            data-bn="মুদ্রণ"
+            data-en="Printing"
+          >মুদ্রণ</span>
+        </a>
+
+        <a href="/qf/ds.html">
+          <span
+            data-bn="বিতরণ"
+            data-en="Distribution"
+          >বিতরণ</span>
+        </a>
+
+        <a href="/qf/faq.html">
+          <span
+            data-bn="জিজ্ঞাসা"
+            data-en="FAQ"
+          >জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/contact.html">
+          <span
+            data-bn="যোগাযোগ"
+            data-en="Contact"
+          >যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/portal/">
+          <span
+            data-bn="হিফজ পোর্টাল"
+            data-en="Hifz Portal"
+          >হিফজ পোর্টাল</span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
         </button>
 
-        <!-- Navigation -->
-        <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
-          <a target="_blank" rel="noopener noreferrer" href="/qf" class="btn" title="Repository (opens in new tab)">
-            <span>Home</span>
-          </a>
-
-          <a href="/qf/edu" class="btn ghost" title="Projects">
-            <span>Research</span>
-          </a>
-
-          <a href="/qf/pr" class="btn ghost" title="Documentation">
-            <span>Printing</span>
-          </a>
-
-          <a href="/qf/dis" class="btn ghost" title="Community">
-            <span>Distribution</span>
-          </a>
-        </nav>
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
       </div>
     </div>
   </header>
-  <main>
-  <!-- Hero Section -->
-    <section class="mission-hero1" aria-labelledby="mission-heading">
-      <!-- Background image and overlays -->
-      <div class="mission-hero1__bg" aria-hidden="true"></div>
-      <div class="mission-hero1__overlay" aria-hidden="true"></div>
-      <div class="mission-hero1__glow" aria-hidden="true"></div>
 
-      <div class="container1">
-        <header1 class="mission-header1">
-          <div class="eyebrow reveal" data-reveal>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-              <path d="M12 2l2.6 6.6L21 10l-5 3.6L17 21l-5-3.2L7 21l1-7.4L3 10l6.4-1.4L12 2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
-            <span>Preserve, Publish, Distribute</span>
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="72"
+        height="72"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="সংরক্ষণ · প্রকাশনা · বিতরণ"
+        data-en="Preserve · Publish · Distribute"
+      >
+        সংরক্ষণ · প্রকাশনা · বিতরণ
+      </p>
+
+      <h1
+        data-bn="আমাদের মুদ্রণ প্রক্রিয়া"
+        data-en="Our Printing Process"
+      >
+        আমাদের মুদ্রণ প্রক্রিয়া
+      </h1>
+
+      <p
+        data-bn="নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান, পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।"
+        data-en="From careful typesetting to final delivery, every stage is designed around quality, readability, durability, and respect."
+      >
+        নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান,
+        পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="প্রি-প্রেস ও নকশা"
+            data-en="Pre-Press and Design"
+          >
+            প্রি-প্রেস ও নকশা
+          </h2>
+
+          <p
+            data-bn="মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।"
+            data-en="Before printing, page imposition, Arabic typography, pagination, and memorization-friendly layouts are carefully reviewed."
+          >
+            মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং
+            হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।
+          </p>
+        </div>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="প্রি-প্রেস ও ডিজাইন"
+              data-en="Pre-Press and Design"
+            >
+              প্রি-প্রেস ও ডিজাইন
+            </h2>
+
+            <p
+              data-bn="প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা যাচাই করে প্রস্তুত করা হয়।"
+              data-en="Each page is prepared after reviewing layout, text continuity, and print readiness."
+            >
+              প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা
+              যাচাই করে প্রস্তুত করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস"
+                data-en="Arabic typography and page imposition"
+              >
+                আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস
+              </li>
+
+              <li
+                data-bn="মাল্টি-স্টেজ প্রুফরিডিং"
+                data-en="Multi-stage proofreading"
+              >
+                মাল্টি-স্টেজ প্রুফরিডিং
+              </li>
+
+              <li
+                data-bn="হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস"
+                data-en="Memorization-friendly page layout"
+              >
+                হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস
+              </li>
+            </ul>
           </div>
 
-          <h1 id="mission-heading" class="mission-title reveal" data-reveal>
-            Our Production Process
-          </h1>
+          <div class="process-image">
+            <img
+              src="assets/qf/111.jpg"
+              alt="মুদ্রণের আগে কোরআনের পৃষ্ঠা প্রস্তুত করা হচ্ছে"
+              data-bn-alt="মুদ্রণের আগে কোরআনের পৃষ্ঠা প্রস্তুত করা হচ্ছে"
+              data-en-alt="Quran pages being prepared before printing"
+              loading="lazy"
+            >
+          </div>
+        </article>
 
-          <p class="mission-subtitle reveal" data-reveal>
-            From careful typesetting to final delivery, every step in our process is designed to ensure the highest quality Qur'ans reach those who need them most.
-          </p>
-        </header1>
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="অফসেট মুদ্রণ"
+              data-en="Offset Printing"
+            >
+              অফসেট মুদ্রণ
+            </h2>
+
+            <p
+              data-bn="পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।"
+              data-en="Clear text, consistent ink density, and durable paper are used to produce readable and lasting copies."
+            >
+              পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে
+              পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="উন্নত অফসেট মুদ্রণ প্রযুক্তি"
+                data-en="Modern offset printing technology"
+              >
+                উন্নত অফসেট মুদ্রণ প্রযুক্তি
+              </li>
+
+              <li
+                data-bn="উচ্চমানের archival-grade কাগজ"
+                data-en="High-quality archival-grade paper"
+              >
+                উচ্চমানের archival-grade কাগজ
+              </li>
+
+              <li
+                data-bn="সমান ও পরিষ্কার ink reproduction"
+                data-en="Consistent and clear ink reproduction"
+              >
+                সমান ও পরিষ্কার ink reproduction
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/01.jpg"
+              alt="কোরআনের পৃষ্ঠা মুদ্রণ"
+              data-bn-alt="কোরআনের পৃষ্ঠা মুদ্রণ"
+              data-en-alt="Printing Quran pages"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস"
+              data-en="Signature Folding and Gathering"
+            >
+              স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস
+            </h2>
+
+            <p
+              data-bn="মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে পৃষ্ঠা বিন্যাস সঠিক থাকে।"
+              data-en="Printed sheets are folded and gathered in sequence to preserve correct pagination."
+            >
+              মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে
+              পৃষ্ঠা বিন্যাস সঠিক থাকে।
+            </p>
+
+            <ul>
+              <li
+                data-bn="পৃষ্ঠা ক্রম যাচাই"
+                data-en="Page-order verification"
+              >
+                পৃষ্ঠা ক্রম যাচাই
+              </li>
+
+              <li
+                data-bn="ভাঁজের সঠিকতা পরীক্ষা"
+                data-en="Folding accuracy checks"
+              >
+                ভাঁজের সঠিকতা পরীক্ষা
+              </li>
+
+              <li
+                data-bn="বাঁধাইয়ের আগে পুনরায় পরিদর্শন"
+                data-en="Final review before binding"
+              >
+                বাঁধাইয়ের আগে পুনরায় পরিদর্শন
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/2.jpg"
+              alt="মুদ্রিত পৃষ্ঠা ভাঁজ ও সাজানো হচ্ছে"
+              data-bn-alt="মুদ্রিত পৃষ্ঠা ভাঁজ ও সাজানো হচ্ছে"
+              data-en-alt="Printed pages being folded and gathered"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="মান নিয়ন্ত্রণ"
+              data-en="Quality Control"
+            >
+              মান নিয়ন্ত্রণ
+            </h2>
+
+            <p
+              data-bn="প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত finish পরীক্ষা করা হয়।"
+              data-en="Every copy is checked for print clarity, page order, binding integrity, and final finish."
+            >
+              প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত
+              finish পরীক্ষা করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="মুদ্রণ স্বচ্ছতা যাচাই"
+                data-en="Print clarity verification"
+              >
+                মুদ্রণ স্বচ্ছতা যাচাই
+              </li>
+
+              <li
+                data-bn="পৃষ্ঠা alignment পরীক্ষা"
+                data-en="Page alignment checks"
+              >
+                পৃষ্ঠা alignment পরীক্ষা
+              </li>
+
+              <li
+                data-bn="বাঁধাইয়ের স্থায়িত্ব পরীক্ষা"
+                data-en="Binding integrity testing"
+              >
+                বাঁধাইয়ের স্থায়িত্ব পরীক্ষা
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/03.jpg"
+              alt="কোরআনের কপির মান নিয়ন্ত্রণ"
+              data-bn-alt="কোরআনের কপির মান নিয়ন্ত্রণ"
+              data-en-alt="Quality inspection of Quran copies"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="মলাট নকশা ও মুদ্রণ"
+              data-en="Cover Design and Printing"
+            >
+              মলাট নকশা ও মুদ্রণ
+            </h2>
+
+            <p
+              data-bn="ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত করা হয়।"
+              data-en="Covers are prepared by combining traditional ornamentation with modern durability standards."
+            >
+              ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত
+              করা হয়।
+            </p>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/04.jpg"
+              alt="কোরআনের মলাট প্রস্তুত করা হচ্ছে"
+              data-bn-alt="কোরআনের মলাট প্রস্তুত করা হচ্ছে"
+              data-en-alt="Quran covers being prepared"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="বাঁধাই ও casing"
+              data-en="Casing In and Binding"
+            >
+              বাঁধাই ও casing
+            </h2>
+
+            <p
+              data-bn="ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়, যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।"
+              data-en="Folded signatures are sewn or glued and then placed into printed covers for long-term use."
+            >
+              ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়,
+              যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।
+            </p>
+
+            <ul>
+              <li
+                data-bn="মজবুত বাঁধাই পদ্ধতি"
+                data-en="Durable binding methods"
+              >
+                মজবুত বাঁধাই পদ্ধতি
+              </li>
+
+              <li
+                data-bn="পৃষ্ঠা ক্রম সংরক্ষণ"
+                data-en="Preservation of page order"
+              >
+                পৃষ্ঠা ক্রম সংরক্ষণ
+              </li>
+
+              <li
+                data-bn="সহজে খোলার উপযোগী binding"
+                data-en="Easy-opening binding"
+              >
+                সহজে খোলার উপযোগী binding
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/05.jpg"
+              alt="কোরআনের কপি বাঁধাই করা হচ্ছে"
+              data-bn-alt="কোরআনের কপি বাঁধাই করা হচ্ছে"
+              data-en-alt="Quran copies being bound"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="শুকানো ও চূড়ান্ত পরিদর্শন"
+              data-en="Drying and Final Inspection"
+            >
+              শুকানো ও চূড়ান্ত পরিদর্শন
+            </h2>
+
+            <p
+              data-bn="আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি চূড়ান্তভাবে পরিদর্শন করা হয়।"
+              data-en="After adhesives and binding have stabilized, every copy receives a final inspection."
+            >
+              আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি
+              চূড়ান্তভাবে পরিদর্শন করা হয়।
+            </p>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/06.jpg"
+              alt="বাঁধাইয়ের পর কোরআনের কপি শুকানো হচ্ছে"
+              data-bn-alt="বাঁধাইয়ের পর কোরআনের কপি শুকানো হচ্ছে"
+              data-en-alt="Quran copies drying after binding"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="প্যাকেজিং ও সংরক্ষণ"
+              data-en="Packaging and Storage"
+            >
+              প্যাকেজিং ও সংরক্ষণ
+            </h2>
+
+            <p
+              data-bn="পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয় এবং যথাযথভাবে সংরক্ষণ করা হয়।"
+              data-en="Each copy is carefully packaged for safe transport and stored appropriately before distribution."
+            >
+              পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয়
+              এবং যথাযথভাবে সংরক্ষণ করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="সুরক্ষামূলক প্যাকেজিং"
+                data-en="Protective packaging"
+              >
+                সুরক্ষামূলক প্যাকেজিং
+              </li>
+
+              <li
+                data-bn="ব্যাচভিত্তিক সংরক্ষণ"
+                data-en="Batch-based storage"
+              >
+                ব্যাচভিত্তিক সংরক্ষণ
+              </li>
+
+              <li
+                data-bn="সরবরাহের আগে inventory যাচাই"
+                data-en="Inventory verification before delivery"
+              >
+                সরবরাহের আগে inventory যাচাই
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="assets/qf_copy/07.jpg"
+              alt="সম্পূর্ণ কোরআনের কপি সংরক্ষণ করা হয়েছে"
+              data-bn-alt="সম্পূর্ণ কোরআনের কপি সংরক্ষণ করা হয়েছে"
+              data-en-alt="Finished Quran copies in storage"
+              loading="lazy"
+            >
+          </div>
+        </article>
       </div>
     </section>
 
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="আমাদের মানের অগ্রাধিকার"
+            data-en="Our Quality Priorities"
+          >
+            আমাদের মানের অগ্রাধিকার
+          </h2>
 
-<!-- Video section (autoplay, muted, loop, responsive) -->
-<section class="video-section container" aria-labelledby="video-heading">
-  <h2 id="video-heading" class="text-center">Watch Our Process</h2>
-  <p class="muted text-center">See how we Process from printing press to community distribution.</p>
+          <p
+            data-bn="প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার চেষ্টা করা হয়।"
+            data-en="At every stage, we work to maintain accuracy, readability, and long-term durability."
+          >
+            প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার
+            চেষ্টা করা হয়।
+          </p>
+        </div>
 
-  <div class="video-wrapper" aria-hidden="false">
-    <video
-      id="productionVideo"
-      class="responsive-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="assets/mp4/poster.jpg"
-      aria-label="Production process video"
-    >
-      <source src="assets/mp4/bn.mp4" type="video/mp4" />
-      <source src="assets/mp4/bn.webm" type="video/webm" />
-      Your browser does not support the video tag.
-    </video>
+        <div class="standards">
+          <article class="standard-card">
+            <strong
+              data-bn="নির্ভুলতা"
+              data-en="Accuracy"
+            >
+              নির্ভুলতা
+            </strong>
 
-    <div id="videoFallback" class="video-fallback hidden" role="region" aria-label="Video controls fallback">
-      <div>
-        <p class="video-hint">Autoplay was blocked by your browser. Tap to play the video muted or with sound.</p>
-        <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:0.75rem;">
-          <button id="playVideoBtn" class="btn">Play (Muted)</button>
-          <button id="playUnmutedBtn" class="btn secondary">Play with Sound</button>
+            <p
+              data-bn="পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।"
+              data-en="Page order, text continuity, and layout verification."
+            >
+              পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।
+            </p>
+          </article>
+
+          <article class="standard-card">
+            <strong
+              data-bn="পাঠযোগ্যতা"
+              data-en="Readability"
+            >
+              পাঠযোগ্যতা
+            </strong>
+
+            <p
+              data-bn="পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।"
+              data-en="Clear text, consistent ink density, and user-friendly design."
+            >
+              পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।
+            </p>
+          </article>
+
+          <article class="standard-card">
+            <strong
+              data-bn="স্থায়িত্ব"
+              data-en="Durability"
+            >
+              স্থায়িত্ব
+            </strong>
+
+            <p
+              data-bn="দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।"
+              data-en="Binding designed for daily use and long-term preservation."
+            >
+              দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </div>
-
-  <style>
-    /* Scoped styles for the video section */
-    .video-section { padding: 2rem 0; text-align: center; }
-    .video-wrapper {
-      max-width: 1100px;
-      margin: 1.25rem auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(2,6,23,0.12);
-      background: #000;
-      position: relative;
-    }
-    .video-wrapper::before { content: ""; display: block; padding-top: 56.25%; } /* 16:9 */
-    .video-wrapper video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .video-fallback {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.36); gap: 1rem; padding: 1rem; text-align: center;
-    }
-    .video-fallback.hidden { display: none; }
-    .video-fallback .btn {
-      background: #fff; color: #004d40; padding: 0.6rem 1rem; border-radius: 8px; border: 0; cursor: pointer; font-weight: 700;
-      box-shadow: 0 8px 24px rgba(2,6,23,0.12);
-    }
-    .video-fallback .btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.22); }
-    .video-hint { color: rgba(255,255,255,0.95); font-size: 0.95rem; max-width: 90%; margin: 0 auto; }
-    .btn { font-family: inherit; }
-    @media (max-width: 700px) {
-      .video-wrapper::before { padding-top: 56.25%; }
-    }
-  </style>
-
-  <script>
-    (function () {
-      const video = document.getElementById('productionVideo');
-      const fallback = document.getElementById('videoFallback');
-      const playBtn = document.getElementById('playVideoBtn');
-      const playUnmutedBtn = document.getElementById('playUnmutedBtn');
-
-      if (!video) return;
-
-      // Ensure muted for autoplay attempts
-      video.muted = true;
-
-      // Try autoplay
-      function tryPlay() {
-        const p = video.play();
-        if (p !== undefined) {
-          p.then(() => {
-            if (fallback) fallback.classList.add('hidden');
-          }).catch(() => {
-            if (fallback) fallback.classList.remove('hidden');
-          });
-        }
-      }
-
-      tryPlay();
-
-      // Fallback controls
-      if (playBtn) {
-        playBtn.addEventListener('click', function () {
-          video.muted = true;
-          video.play().catch(() => {});
-          if (fallback) fallback.classList.add('hidden');
-          this.focus({ preventScroll: true });
-        });
-      }
-
-      if (playUnmutedBtn) {
-        playUnmutedBtn.addEventListener('click', function () {
-          // Some browsers require a user gesture to unmute
-          video.muted = false;
-          video.play().catch(() => {});
-          if (fallback) fallback.classList.add('hidden');
-          this.focus({ preventScroll: true });
-        });
-      }
-
-      // Retry autoplay on first user gesture (mobile)
-      const userGestureHandler = () => {
-        tryPlay();
-        window.removeEventListener('click', userGestureHandler);
-        window.removeEventListener('touchstart', userGestureHandler);
-      };
-      window.addEventListener('click', userGestureHandler, { once: true });
-      window.addEventListener('touchstart', userGestureHandler, { once: true });
-
-      // Keyboard accessibility: toggle play/pause with Space/Enter when focused
-      video.setAttribute('tabindex', '0');
-      video.addEventListener('keydown', function (e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          if (video.paused) video.play().catch(() => {});
-          else video.pause();
-        }
-      });
-    })();
-  </script>
-</section>
-
-
-
-
-    <section class="hero reverse" aria-labelledby="hero-2">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf/111.jpg" alt="Folding printed signatures into correct sequence">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-2">Pre-Press & Design</h2>
-        <p class="lead">Sheets are imposed into forms (e.g., 23/36 format) and printed with precise registration. This stage sets the foundation for accurate pagination and folding.</p>
-          <ul>
-            <li>Certified Arabic typography specialists</li>
-            <li>Multi-stage scholarly review process</li>
-            <li>Memorization-optimized page layout</li>
-          </ul>
-      </div>
     </section>
 
-    <section class="hero" aria-labelledby="hero-3">
-      <div class="hero-content">
-        <h2 id="hero-3">Offset Printing</h2>
-          <p>Using state-of-the-art 4-color offset printing technology, each page is rendered with exceptional clarity on 61 GSM archival-grade paper. This ensures durability for years of daily use while maintaining comfortable page weight.</p>
-          <ul>
-            <li>4-color offset printing technology</li>
-            <li>61 GSM archival-grade paper</li>
-            <li>Crystal-clear text reproduction</li>
-            <li>Consistent ink density throughout</li>
-          </ul>
-      </div>
+    <section class="cta">
+      <div class="container">
+        <h2
+          data-bn="কোরআন বিতরণ উদ্যোগে যুক্ত হোন"
+          data-en="Join the Quran Distribution Initiative"
+        >
+          কোরআন বিতরণ উদ্যোগে যুক্ত হোন
+        </h2>
 
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/01.jpg" alt="Quality inspector checking page continuity">
-      </div>
-    </section>
+        <p
+          data-bn="মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে যোগাযোগ করুন।"
+          data-en="Contact us to learn about printing, distribution, donations, or partnership opportunities."
+        >
+          মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে
+          যোগাযোগ করুন।
+        </p>
 
-    <section class="hero reverse" aria-labelledby="hero-4">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/2.jpg" alt="Printing covers for Mushaf volumes">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-4">Signature Folding</h2>
-        <p>Printed sheets are folded into signatures and gathered in sequence. Skilled technicians ensure page order and register are perfect before binding.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-5">
-      <div class="hero-content">
-        <h2 id="hero-5">Quality Control</h2>
-          <p>Every single copy undergoes rigorous quality inspection. Our QC team checks for print clarity, binding integrity, page alignment, and overall finish. Only volumes meeting our exacting standards proceed to packaging.</p>
-          <ul>
-            <li>100% inspection rate</li>
-            <li>Print clarity verification</li>
-            <li>Binding integrity testing</li>
-            <li>Page alignment checks</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/03.jpg" alt="Workers applying covers to bound Mushaf copies">
+        <a
+          class="button"
+          href="/qf/contact.html"
+        >
+          <span
+            data-bn="যোগাযোগ করুন"
+            data-en="Contact Us"
+          >
+            যোগাযোগ করুন
+          </span>
+          &nbsp; →
+        </a>
       </div>
     </section>
-
-    <section class="hero reverse" aria-labelledby="hero-6">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/04.jpg" alt="Drying stage after adhesive application">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-6">Cover Design and Printing</h2>
-        <p>Covers are printed with durable inks and materials, combining traditional ornamentation with modern durability standards.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-7">
-      <div class="hero-content">
-        <h2 id="hero-7">Casing In and Binding</h2>
-        <p class="lead">Signatures are sewn or glued, then cased into printed covers. Binding techniques preserve page order and allow the Mushaf to open flat while maintaining structural integrity.</p>
-          <ul>
-            <li>Priority to orphan institutions</li>
-            <li>Nationwide distribution network</li>
-            <li>Signed receipt documentation</li>
-            <li>Photo verification at delivery</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/05.jpg" alt="Finished Mushafs organized in storage">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/06.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Adhesive Curing & Final Drying</h2>
-        <p>After casing and gluing, Mushafs enter a controlled drying phase to ensure adhesives cure properly and bindings remain secure over time.</p>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-9">
-      <div class="hero-content">
-        <h2 id="hero-9">Final Binding Inspection & Storage</h2>
-        <p>Completed Mushafs undergo a final binding inspection. Approved copies are organized and stored in climate-controlled conditions to preserve quality until distribution.</p>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/07.jpg" alt="Students receiving Mushafs during distribution">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/08.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Packaging</h2>
-          <p>Each Qur'an is carefully placed in a custom slipcase for protection during transport. Volumes are then boxed in batches of 32 for efficient logistics while ensuring each copy arrives in pristine condition.</p>
-          <ul>
-            <li>Individual protective slipcases</li>
-            <li>Batch packaging (32 copies/box)</li>
-            <li>Moisture-resistant materials</li>
-            <li>Labeled for tracking</li>
-          </ul>
-      </div>
-    </section>
-
-    <section class="hero" aria-labelledby="hero-9">
-      <div class="hero-content">
-        <h2 id="hero-9">Distribution</h2>
-          <p>Our distribution network ensures equitable delivery to rural madrasas, urban schools, and community centers across Bangladesh. Priority is given to orphaned students and underserved Hifz institutions.</p>
-          <ul>
-            <li>Priority to orphan institutions</li>
-            <li>Nationwide distribution network</li>
-            <li>Signed receipt documentation</li>
-            <li>Photo verification at delivery</li>
-          </ul>
-      </div>
-
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/09.jpg" alt="Students receiving Mushafs during distribution">
-      </div>
-    </section>
-
-    <section class="hero reverse" aria-labelledby="hero-8">
-      <div class="hero-image" aria-hidden="true">
-        <img src="assets/qf_copy/10.jpg" alt="Packing Mushafs into cartons for shipment">
-      </div>
-
-      <div class="hero-content">
-        <h2 id="hero-8">Community Delivery</h2>
-          <p>Final distribution places Mushafs into the hands of students, mosques, and community centers. We coordinate with local partners to ensure respectful and effective delivery.</p>
-          <ul>
-            <li>Individual protective slipcases</li>
-            <li>Batch packaging (32 copies/box)</li>
-            <li>Moisture-resistant materials</li>
-            <li>Labeled for tracking</li>
-          </ul>
-      </div>
-    </section>
-
-
   </main>
 
-
-  <!-- Footer: complete, responsive, accessible -->
-  <footer role="contentinfo" aria-label="Site footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="grid" role="navigation" aria-label="Footer navigation">
-        <!-- Column 1: Initiatives -->
-        <div class="col" aria-labelledby="footer-initiatives">
-          <h3 id="footer-initiatives">
-            <!-- rocket icon -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-blue)">
-              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-            </svg>
-            <span>Initiatives</span>
-          </h3>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
 
-          <ul>
-            <li>
-              <a class="link" href="/qf/edu">
-                <span class="dot" style="background:var(--accent-blue)" title="Hifzul Qur’an"></span>
-                <span class="group-hover-font">Research</span>
-              </a>
-            </li>
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
 
-            <li>
-              <a class="link" href="/qf/pr">
-                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Printing</span>
-              </a>
-            </li>
-
-            <li>
-              <a class="link" href="/qf/dis">
-                <span class="dot" style="background:var(--accent-purple)" title="Agripreneurship"></span>
-                <span class="group-hover-font">Distribution</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 2: Project -->
-        <div class="col" aria-labelledby="footer-project">
-          <h3 id="footer-project">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-purple)">
-              <path d="M10 12.5 8 15l2 2.5"></path>
-              <path d="m14 12.5 2 2.5-2 2.5"></path>
-              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path>
-            </svg>
-            <span>Project</span>
-          </h3>
-
-          <ul>
-            <li>
-              <a class="link" href="">
-                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
-                <span class="group-hover-font">Hifzul Qur'an</span>
-              </a>
-            </li>
-            <li>
-              <a class="link" href="">
-                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
-                <span class="group-hover-font">Wakhful Qur'an</span>
-              </a>
-            </li>
-            <li>
-              <a class="link" href="">
-                <span class="dot" style="background:var(--accent-emerald)" title="Hifzul Qur’an"></span>
-                <span class="group-hover-font">Printing & Distribution</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-
-        <!-- Column 3: Resources -->
-        <div class="col" aria-labelledby="footer-resources">
-          <h3 id="footer-resources">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-amber)">
-              <path d="M12 7v14"></path>
-              <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
-            </svg>
-            <span>Resources</span>
-          </h3>
-
-          <ul>
-            <li>
-              <a class="link" href="/qf/edu">
-                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Memorize Qur’an</span>
-              </a>
-            </li>
-            <li>
-              <a class="link" href="/qf/pr">
-                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Tajweedul Qur’an</span>
-              </a>
-            </li>
-            <li>
-              <a class="link" href="/qf/edu">
-                <span class="dot" style="background:var(--accent-emerald)" title="Spoken English"></span>
-                <span class="group-hover-font">Tarteelul Qur’an</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Community -->
-        <div class="col" aria-labelledby="footer-community">
-          <h3 id="footer-community">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            <span>Community</span>
-          </h3>
-
-          <ul>
-
-            <li>
-              <a class="link" href="">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
-                  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
-                  <circle cx="12" cy="12" r="3"></circle>
-                </svg>
-                <span class="group-hover-font">Governance</span>
-              </a>
-            </li>
-
-            <li>
-              <a class="link" href="">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
-                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                  <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  <path d="M10 9H8"></path>
-                  <path d="M16 13H8"></path>
-                  <path d="M16 17H8"></path>
-                </svg>
-                <span class="group-hover-font">Guidelines</span>
-              </a>
-            </li>
-
-            <li>
-              <a class="link" href="">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-green)">
-                  <path d="M8 2v4"></path>
-                  <path d="M16 2v4"></path>
-                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                  <path d="M3 10h18"></path>
-                </svg>
-                <span class="group-hover-font">Events</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 5: Support -->
-        <div class="col" aria-labelledby="footer-support">
-          <h3 id="footer-support">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m4.93 4.93 4.24 4.24"></path>
-              <path d="m14.83 9.17 4.24-4.24"></path>
-              <path d="m14.83 14.83 4.24 4.24"></path>
-              <path d="m9.17 14.83-4.24 4.24"></path>
-              <circle cx="12" cy="12" r="4"></circle>
-            </svg>
-            <span>Support</span>
-          </h3>
-
-          <ul>
-
-            <li>
-              <a class="link" href="/qf/contact">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
-                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
-                <span class="group-hover-font">Contact</span>
-              </a>
-            </li>
-
-            <li>
-              <a class="link" href="">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                </svg>
-                <span class="group-hover-font">Security</span>
-              </a>
-            </li>
-
-            <li>
-              <a class="link" href="">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-rose)">
-                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                  <polyline points="16 7 22 7 22 13"></polyline>
-                </svg>
-                <span class="group-hover-font">Investment</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Footer bottom -->
-      <div class="footer-bottom">
-        <div class="brand">
-          <div class="brand-badge" aria-hidden="true">QF</div>
-          <p class="copyright">
-            © 2026 <b>QuranerFariwala</b> - All rights reserved. This project is open source and available under the
-            <a href="/qf/mit" style="color:var(--accent-blue); font-weight:600; margin-left:.35rem;">MIT License</a>.          
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
-        <div class="footer-links">
-          <a href="/qf/privacy" aria-label="Privacy">Privacy</a>
-          <a href="/qf/terms" aria-label="Terms">Terms</a>
-          <a href="/qf/sitemap" aria-label="Sitemap">Sitemap</a>
+        <div class="footer-col">
+          <h3
+            data-bn="প্রকল্প"
+            data-en="Project"
+          >
+            প্রকল্প
+          </h3>
+
+          <a href="/qf/edu.html">
+            <span
+              data-bn="গবেষণা"
+              data-en="Research"
+            >গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span
+              data-bn="মুদ্রণ"
+              data-en="Printing"
+            >মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span
+              data-bn="বিতরণ"
+              data-en="Distribution"
+            >বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="হিফজ শিক্ষা"
+            data-en="Hifz Education"
+          >
+            হিফজ শিক্ষা
+          </h3>
+
+          <a href="/qf/portal/">
+            <span
+              data-bn="হিফজ পোর্টাল"
+              data-en="Hifz Portal"
+            >হিফজ পোর্টাল</span>
+          </a>
+
+          <a href="/qf/portal/">
+            <span
+              data-bn="শিক্ষার্থী ব্যবস্থাপনা"
+              data-en="Student Management"
+            >শিক্ষার্থী ব্যবস্থাপনা</span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span
+              data-bn="সাধারণ জিজ্ঞাসা"
+              data-en="FAQ"
+            >সাধারণ জিজ্ঞাসা</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="সহায়তা"
+            data-en="Support"
+          >
+            সহায়তা
+          </h3>
+
+          <a href="/qf/contact.html">
+            <span
+              data-bn="যোগাযোগ"
+              data-en="Contact"
+            >যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/donate/">
+            <span
+              data-bn="অনুদান"
+              data-en="Donate"
+            >অনুদান</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span
+              data-bn="সাইটম্যাপ"
+              data-en="Sitemap"
+            >সাইটম্যাপ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="আইনি"
+            data-en="Legal"
+          >
+            আইনি
+          </h3>
+
+          <a href="/qf/privacy.html">
+            <span
+              data-bn="গোপনীয়তা"
+              data-en="Privacy"
+            >গোপনীয়তা</span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span
+              data-bn="শর্তাবলী"
+              data-en="Terms"
+            >শর্তাবলী</span>
+          </a>
+
+          <a href="https://github.com/MJ-Ahmad">
+            <span
+              data-bn="উন্মুক্ত উৎস"
+              data-en="Open Source"
+            >উন্মুক্ত উৎস</span>
+          </a>
         </div>
       </div>
 
-      <div class="mt-6 badge-row">
-        <div class="badge" role="note" aria-label="Empowering communities">
-          <span style="font-size:.92rem; color:var(--muted);">
-            Empowering communities through
-            <strong style="color:var(--accent-blue); margin:0 .25rem;">Research</strong>,
-            <strong style="color:var(--accent-emerald); margin:0 .25rem;">Printing</strong> &
-            <strong style="color:var(--accent-purple); margin:0 .25rem;">Distribution of Holy Quran</strong> — by
-            <a href="https://MJ-Ahmad.github.io/mj-ahmad" style="color:var(--muted-strong); font-weight:700; margin-left:.35rem;">MJ-Ahmad</a>
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
           </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
 
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" style="margin-left:.6rem; color:var(--accent-amber)">
-            <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-            <circle cx="12" cy="8" r="6"></circle>
-          </svg>
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span
+              data-bn="গোপনীয়তা"
+              data-en="Privacy"
+            >গোপনীয়তা</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span
+              data-bn="শর্তাবলী"
+              data-en="Terms"
+            >শর্তাবলী</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span
+              data-bn="যোগাযোগ"
+              data-en="Contact"
+            >যোগাযোগ</span>
+          </a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile nav toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const headerNav = document.getElementById('headerNav');
-    mobileToggle?.addEventListener('click', () => {
-      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', String(!expanded));
-      headerNav.style.display = expanded ? 'none' : 'flex';
-    });
-
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('footerYear').textContent =
+      new Date().getFullYear();
   </script>
-  <!-- Scripts -->
-  <script src="js/header/script.js"></script>
-  <script src="js/section/script.js"></script>
-  <script src="js/body/script.js"></script>
-  <script src="js/footer/script.js"></script>
+
+  <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

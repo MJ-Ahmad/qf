@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা হিফজ ব্যবস্থাপনা পোর্টালে প্রবেশ করুন।"
+  >
+
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="পোর্টালে প্রবেশ — কোরআনের ফেরিওয়ালা"
+    data-en="Portal Login — QuranerFariwala"
+  >
+    পোর্টালে প্রবেশ — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link
+    rel="icon"
+    href="/qf/assets/logo.png"
+    type="image/png"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --danger: #a3322b;
+      --success: #176b4d;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(19, 107, 85, 0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(184, 137, 45, 0.1),
+          transparent 28%
+        ),
+        var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      width: min(1120px, calc(100% - 36px));
+      min-height: 70px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .header-links a:hover {
+      background: var(--background);
+      color: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 3rem 1rem;
+    }
+
+    .login-layout {
+      width: min(980px, 100%);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .intro-panel,
+    .login-panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(2, 35, 27, 0.07);
+    }
+
+    .intro-panel {
+      padding: 2rem;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.78),
+          rgba(6, 37, 31, 0.94)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .intro-logo {
+      width: 82px;
+      height: 82px;
+      margin-bottom: 1.2rem;
+      padding: 0.55rem;
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .intro-panel h1 {
+      margin: 0 0 0.8rem;
+      color: var(--gold-soft);
+      font: 400 clamp(1.8rem, 4vw, 2.5rem)/1.35 var(--serif);
+    }
+
+    .intro-panel p {
+      margin: 0 0 1rem;
+      color: #e0ebe4;
+    }
+
+    .intro-list {
+      margin: 1.3rem 0 0;
+      padding-left: 1.15rem;
+      color: #dbe9e1;
+    }
+
+    .intro-list li {
+      margin: 0.35rem 0;
+    }
+
+    .login-panel {
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+      background: var(--card);
+    }
+
+    .login-panel h2 {
+      margin: 0 0 0.35rem;
+      color: var(--night);
+      font: 400 1.8rem/1.4 var(--serif);
+    }
+
+    .login-subtitle {
+      margin: 0 0 1.4rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .role-selection {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .role-button {
+      min-height: 66px;
+      padding: 0.45rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.78rem/1.35 var(--sans);
+    }
+
+    .role-button:hover,
+    .role-button[aria-pressed="true"] {
+      border-color: var(--emerald);
+      color: var(--night);
+      background: rgba(19, 107, 85, 0.08);
+    }
+
+    .role-icon {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      color: var(--night);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--card);
+      font: inherit;
+   0 0 3px rgba(19, 107, 85, 0.12);
+    }
+
+    .password-row {
+      position: relative;
+    }
+
+    .password-row input {
+      padding-right: 5.2rem;
+    }
+
+    .show-password {
+      position: absolute;
+      right: 0.45rem;
+      bottom: 0.45rem;
+      min-height: 36px;
+      border: 0;
+      border-radius: 7px;
+      color: var(--emerald);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.8rem var(--sans);
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .remember {
+      display: inline-flex;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .remember input {
+      accent-color: var(--emerald);
+    }
+
+    .forgot-link {
+      color: var(--emerald);
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 48px;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      cursor: pointer;
+      font: 700 1rem var(--sans);
+    }
+
+    .submit-button:hover {
+      filter: brightness(1.08);
+    }
+
+    .status {
+      min-height: 26px;
+      margin-top: 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .status.error {
+      padding: 0.55rem 0.7rem;
+      color: var(--danger);
+      background: rgba(163, 50, 43, 0.08);
+    }
+
+    .status.success {
+      padding: 0.55rem 0.7rem;
+      color: var(--success);
+      background: rgba(23, 107, 77, 0.08);
+    }
+
+    .security-note {
+      margin: 1.2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .security-note a {
+      color: var(--emerald);
+      text-decoration: none;
+    }
+
+    .security-note a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 1.5rem 0;
+      color: #9fb6ac;
+      background: var(--night-deep);
+      text-align: center;
+      font-size: 0.84rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .site-footer a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    @media (max-width: 820px) {
+      .login-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-panel {
+        text-align: center;
+      }
+
+      .intro-logo {
+        margin-inline: auto;
+      }
+
+      .intro-list {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-row {
+        width: min(100% - 28px, 560px);
+      }
+
+      .header-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .role-selection {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-options {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .main {
+        padding: 1.5rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="header-row">
+        <a
+          class="brand"
+          href="/qf/home/index.html"
+          aria-label="কোরআনের ফেরিওয়ালা হোম"
+        >
+          <img
+            src="/qf/assets/logo.png"
+            alt="কোরআনের ফেরিওয়ালার লোগো"
+            width="38"
+            height="38"
+          >
+
+          <span class="brand-name">
+            কোরআনের ফেরিওয়ালা
+          </span>
+        </a>
+
+        <div class="header-links">
+          <a href="/qf/home/index.html">
+            <span data-bn="হোম" data-en="Home">হোম</span>
+          </a>
+
+          <a href="/qf/portal/index.html">
+            <span data-bn="পোর্টাল" data-en="Portal">পোর্টাল</span>
+          </a>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+        </div>
+
+        <div
+          class="langbar"
+          role="group"
+          aria-label="Language selection"
+        >
+          <button
+            type="button"
+            data-lang-button="bn"
+            aria-pressed="true"
+          >
+            বাংলা
+          </button>
+
+          <button
+            type="button"
+            data-lang-button="en"
+            aria-pressed="falseহিফজ ব্যবস্থাপনা পোর্টাল"
+            data-en="Hifz Management Portal"
+          >
+            হিফজ ব্যবস্থাপনা পোর্টাল
+          </h1>
+
+          <p
+            data-bn="শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য সমন্বিত শিক্ষা ব্যবস্থাপনা।"
+            data-en="Integrated education management for students, teachers, madrasa directors, and central administration."
+          >
+            শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য
+            সমন্বিত শিক্ষা ব্যবস্থাপনা।
+          </p>
+
+          <ul class="intro-list">
+            <li
+              data-bn="দৈনিক সাবাক ও রিভিশন রেকর্ড"
+              data-en="Daily sabaq and revision records"
+            >
+              দৈনিক সাবাক ও রিভিশন রেকর্ড
+            </li>
+
+            <li
+              data-bn="শিক্ষার্থী ও শিক্ষক ব্যবস্থাপনা"
+              data-en="Student and teacher management"
+            >
+              শিক্ষার্থী ও শিক্ষক ব্যবস্থাপনা
+            </li>
+
+            <li
+অগ্রগতি, উপস্থিতি ও মূল্যায়ন"
+              data-en="Progress, attendance, and assessment"
+            >
+              অগ্রগতি, উপস্থিতি ও মূল্যায়ন
+            </li>
+
+            <li
+              data-bn="মাদ্রাসা ও কেন্দ্রীয় রিপোর্ট"
+              data-en="Madrasa and central reports"
+            >
+              মাদ্রাসা ও কেন্দ্রীয় রিপোর্ট
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="login-panel"
+          aria-labelledby="loginTitle"
+        >
+          <h2
+            id="loginTitle"
+            in to the Portal"
+          >
+            পোর্টালে প্রবেশ করুন
+          </h2>
+
+          <p
+            class="login-subtitle"
+            data-bn="আপনার অনুমোদিত অ্যাকাউন্টের তথ্য দিয়ে প্রবেশ করুন।"
+            data-en="Sign in using your approved account credentials."
+          >
+            আপনার অনুমোদিত অ্যাকাউন্টের তথ্য দিয়ে প্রবেশ করুন।
+          </p>
+
+          <div
+            class="role-selection"
+            role="group"
+            aria-label="User role"
+          >
+            <button
+              class="role-button"
+              type="button"
+              data-role="student"
+              aria-pressed="true"
+            >
+              <span class="role-icon">◉</span>
+              <span data-bn="শিক্ষার্থী" data-en="Student">
+                শিক্ষার্থী
+              </span>
+            </button>
+
+            <button
+              class="role-button"
+              type="button"
+              data-role="teacher"
+              aria-pressed="false"
+            >
+              <span class="role-icon">✦</span>
+              <span data-bn="শিক্ষক" data-en="Teacher">
+                শিক্ষক
+              </span>
+            </button>
+
+            <button
+              class="role-button"
+              type="button"
+              data-role="director"
+              aria-pressed="false"
+            >
+              <span class="role-icon">▣</span>
+              <span data-bn="পরিচালক" data-en="Director">
+                পরিচালক
+              </span>
+            </button>
+
+            <button
+              class="role-button"
+              type="button"
+              data-role="admin"
+              aria-pressed="false"
+            >
+              <span class="role-icon">◎</span>
+              <span data-bn="অ্যাডমিন" data-en="Admin">
+                অ্যাডমিন
+              </span>
+            </button>
+          </div>
+
+          <form
+            id="loginForm"
+            action="/qf/portal/"
+            method="post"
+            novalidate
+          >
+            <input
+              type="hidden"
+              id="selectedRole"
+              name="role"
+              value="student"
+            >
+
+            <div class="field">
+              <label for="identifier">
+                <span
+                  data-bn="ইমেইল বা ব্যবহারকারী আইডি"
+                  data-en="Email or User ID"
+                >
+                  ইমেইল বা ব্যবহারকারী আইডি
+                </span>
+              </label>
+
+              <input
+                id="identifier"
+                name="identifier"
+                type="text"
+                autocomplete="username"
+                required
+                placeholder="ইমেইল বা ব্যবহারকারী আইডি"
+                data-bn-placeholder="ইমেইল বা ব্যবহারকারী আইডি"
+                data-en-placeholder="Email or User ID"
+              >
+            </div>
+
+            <div class="field">
+              <label for="password">
+                <span
+                  data-bn="পাসওয়ার্ড"
+                  data-en="Password"
+                >
+                  পাসওয়ার্ড
+                </span>
+              </label>
+
+              <div class="password-row">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  minlength="6"
+                  placeholder="পাসওয়ার্ড লিখুন"
+                  data-bn-placeholder="পাসওয়ার্ড লিখুন"
+                  data-en-placeholder="Enter password"
+                >
+
+                <button
+                  class="show-password"
+                  id="togglePassword"
+                  type="button"
+                  aria-pressed="false"
+                >
+                  <span
+                    data-bn="দেখুন"
+                    data-en="Show"
+                  >
+                    দেখুন
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-options">
+              <label class="remember">
+                <input
+                  type="checkbox"
+                  name="remember"
+                  value="yes"
+                >
+
+                <span
+                  data-bn="এই ডিভাইসে মনে রাখুন"
+                  data-en="Remember this device"
+                >
+                  এই ডিভাইসে মনে রাখুন
+                </span>
+              </label>
+
+              <a
+                class="forgot-link"
+                href="/qf/contact.html"
+              >
+                <span
+                  data-bn="সহায়তা প্রয়োজন?"
+                  data-en="Need help?"
+                >
+                  সহায়তা প্রয়োজন?
+                </span>
+              </a>
+            </div>
+
+            <button
+              class="submit-button"
+              type="submit"
+            >
+              <span
+                data-bn="প্রবেশ করুন"
+                data-en="Sign In"
+              >
+                প্রবেশ করুন
+              </span>
+            </button>
+
+            <div
+              id="statusMessage"
+              class="status"
+              aria-live="polite"
+            ></div>
+          </form>
+
+          <p class="security-note">
+            <span
+              data-bn="অ্যাকাউন্টের সমস্যা হলে"
+              data-en="For account support, please"
+            >
+              অ্যাকাউন্টের সমস্যা হলে
+            </span>
+
+            <a href="/qf/contact.html">
+              <span
+                data-bn="যোগাযোগ করুন"
+                data-en="contact us"
+              >
+                যোগাযোগ করুন
+              </span>
+            </a>
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="footerYear"></span>
+        <span
+          data-bn="কোরআনের ফেরিওয়ালা"
+          data-en="QuranerFariwala"
+        >
+          কোরআনের ফেরিওয়ালা
+        </span>
+        —
+        <a href="/qf/privacy.html">
+          <span
+            data-bn="গোপনীয়তা"
+            data-en="Privacy"
+          >
+            গোপনীয়তা
+          </span>
+        </a>
+        ·
+        <a href="/qf/terms.html">
+          <span
+            data-bn="শর্তাবলী"
+            data-en="Terms"
+          >
+            শর্তাবলী
+          </span>
+        </a>
+      </p>
+    </footer>
+  </div>
+
+
+  <script>
+    (function () {
+      const defaultLanguage = 'bn';
+      let selectedRole = 'student';
+
+      const languageButtons =
+        document.querySelectorAll('[data-lang-button]');
+
+      const roleButtons =
+        document.querySelectorAll('[data-role]');
+
+      const form =
+        document.getElementById('loginForm');
+
+      const statusMessage =
+        document.getElementById('statusMessage');
+
+      const passwordInput =
+        document.getElementById('password');
+
+      const togglePassword =
+        document.getElementById('togglePassword');
+
+      const selectedRoleInput =
+        document.getElementById('selectedRole');
+
+      const footerYear =
+        document.getElementById('footerYear');
+
+      function getLanguage() {
+        try {
+          const savedLanguage =
+            localStorage.getItem('qf-lang');
+
+          return savedLanguage === 'en' ||
+            savedLanguage === 'bn'
+            ? savedLanguage
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
+        }
+      }
+
+      function saveLanguage(language) {
+        try {
+          localStorage.setItem('qf-lang', language);
+        } catch (error) {
+          console.warn(
+            'Language preference could not be saved.',
+            error
+          );
+        }
+      }
+
+      function setLanguage(language) {
+        const currentLanguage =
+          language === 'en' ? 'en' : 'bn';
+
+        document
+          .querySelectorAll('[data-bn][data-en]')
+          .forEach(function (element) {
+            const translatedText =
+              currentLanguage === 'en'
+                ? element.getAttribute('data-en')
+                : element.getAttribute('data-bn');
+
+            if (translatedText !== null) {
+              element.textContent = translatedText;
+            }
+          });
+
+        document
+          .querySelectorAll(
+            '[data-bn-placeholder][data-en-placeholder]'
+          )
+          .forEach(function (element) {
+            const placeholder =
+              currentLanguage === 'en'
+                ? element.getAttribute('data-en-placeholder')
+                : element.getAttribute('data-bn-placeholder');
+
+            if (placeholder !== null) {
+              element.setAttribute(
+                'placeholder',
+                placeholder
+              );
+            }
+          });
+
+        document.documentElement.lang =
+          currentLanguage;
+
+        document.documentElement.dataset.lang =
+          currentLanguage;
+
+        languageButtons.forEach(function (button) {
+          button.setAttribute(
+            'aria-pressed',
+            String(
+              button.getAttribute('data-lang-button') ===
+              currentLanguage
+            )
+          );
+        });
+
+        saveLanguage(currentLanguage);
+      }
+
+      function getText(banglaText, englishText) {
+        return document.documentElement.lang === 'en'
+          ? englishText
+          : banglaText;
+      }
+
+      function setStatus(message, type) {
+        if (!statusMessage) return;
+
+        statusMessage.textContent = message;
+        statusMessage.className = 'status ' + type;
+      }
+
+      languageButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          setLanguage(
+            button.getAttribute('data-lang-button')
+          );
+        });
+      });
+
+      roleButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          selectedRole =
+            button.getAttribute('data-role');
+
+          if (selectedRoleInput) {
+            selectedRoleInput.value = selectedRole;
+          }
+
+          roleButtons.forEach(function (item) {
+            item.setAttribute(
+              'aria-pressed',
+              String(item === button)
+            );
+          });
+        });
+      });
+
+      if (togglePassword && passwordInput) {
+        togglePassword.addEventListener(
+          'click',
+          function () {
+            const isPassword =
+              passwordInput.type === 'password';
+
+            passwordInput.type =
+              isPassword ? 'text' : 'password';
+
+            togglePassword.setAttribute(
+              'aria-pressed',
+              String(isPassword)
+            );
+
+            const label =
+              togglePassword.querySelector('span');
+
+            if (label) {
+              label.textContent = isPassword
+                ? getText('লুকান', 'Hide')
+                : getText('দেখুন', 'Show');
+            }
+          }
+        );
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const identifierElement =
+            document.getElementById('identifier');
+
+          const identifier =
+            identifierElement
+              ? identifierElement.value.trim()
+              : '';
+
+          const password =
+            passwordInput
+              ? passwordInput.value.trim()
+              : '';
+
+          if (!identifier || !password) {
+            setStatus(
+              getText(
+                'দয়া করে ব্যবহারকারী আইডি এবং পাসওয়ার্ড পূরণ করুন।',
+                'Please enter your user ID and password.'
+              ),
+              'error'
+            );
+
+            return;
+          }
+
+          if (password.length < 6) {
+            setStatus(
+              getText(
+                'পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।',
+                'Password must contain at least 6 characters.'
+              ),
+              'error'
+            );
+
+            return;
+          }
+
+          setStatus(
+            getText(
+              'লগইন অনুরোধ প্রস্তুত হয়েছে। প্রকৃত authentication-এর জন্য নিরাপদ backend সংযুক্ত করতে হবে।',
+              'The login request is ready. A secure backend must be connected for real authentication.'
+            ),
+            'success'
+          );
+        });
+      }
+
+      setLanguage(getLanguage());
+
+      if (footerYear) {
+        footerYear.textContent =
+          new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>

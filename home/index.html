@@ -1,173 +1,1238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="গবেষণা • মুদ্রণ • বিতরণ — পবিত্র কোরআনের সেবায় বাংলাদেশের একটি প্রতিষ্ঠান">
-<link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any">
-<title>কোরআনের ফেরিওয়ালা — QuranerFariwala</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
-<style>
-:root{--night:#0a3a31;--em:#136b55;--gold:#b8892d;--gsoft:#ead9a6;--bg:#f1f5f0;--card:#fff;--ink:#15221d;--muted:#586a62;--line:#d5ddd3;--serif:'Tiro Bangla',Georgia,serif;--sans:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif}
-@media(prefers-color-scheme:dark){:root{--bg:#0c1a16;--card:#12261f;--ink:#e6efe9;--muted:#9db1a7;--line:#244036}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-header{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-.head-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{width:34px;height:34px;border-radius:6px}
-.brand-name{font:600 1.15rem var(--sans);color:var(--night)}
-nav{display:flex;gap:6px;flex-wrap:wrap}
-nav a{padding:6px 12px;border-radius:999px;text-decoration:none;font-weight:600;color:var(--em);font-size:.95rem}
-nav a:hover{background:var(--bg)}
-nav a.gold{background:var(--night);color:var(--gsoft)}
-.langbar{display:flex;gap:2px;padding:3px;background:var(--night);border-radius:999px}
-.langbar button{border:0;background:none;color:var(--gsoft);border-radius:999px;padding:3px 12px;font:.85rem var(--sans);cursor:pointer}
-.langbar button[aria-pressed="true"]{background:var(--gsoft);color:var(--night);font-weight:600}
-.hero{text-align:center;padding:56px 18px 40px;background:radial-gradient(120% 90% at 50% 0,#12604e,var(--night) 70%);color:#fff}
-.hero img{width:64px;height:64px;border-radius:12px;background:#fff;padding:6px;margin-bottom:14px}
-.epigraph{font:italic 1.3rem/1.7 var(--serif);color:var(--gsoft);margin:0}
-.epigraph-ref{color:rgba(234,217,166,.75);font-size:.9rem;margin:2px 0 22px}
-.hero h1{font:400 clamp(2rem,6vw,3rem)/1.3 var(--serif);margin:0 0 14px}
-.hero p{max-width:640px;margin:0 auto 26px;color:#e8f1ec;font-size:1.05rem}
-.btn{display:inline-block;padding:12px 30px;border-radius:999px;background:var(--gold);color:#1b1204;font-weight:700;text-decoration:none}
-.ledger{background:var(--night);padding:26px 18px}
-.ledger .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:center}
-.ledger b{display:block;font:400 2rem var(--serif);color:var(--gold)}
-.ledger span{color:var(--gsoft);font-size:.9rem}
-section.pad{padding:52px 18px}
-.section-head{text-align:center;margin-bottom:28px}
-.section-head h2{font:400 1.8rem var(--serif);color:var(--night);margin:0 0 6px}
-.section-head p{color:var(--muted);margin:0}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1080px;margin:0 auto}
-.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:8px;padding:22px}
-.card h3{margin:0 0 8px;font:600 1.15rem var(--sans);color:var(--night)}
-.card p{margin:0 0 12px;color:var(--muted);font-size:.95rem}
-.card a{font-weight:700;color:var(--em);text-decoration:none;font-size:.92rem}
-.support{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.portal-box{max-width:640px;margin:0 auto;text-align:center;background:linear-gradient(180deg,var(--night),#0e4a3e);color:#fff;border-radius:12px;padding:40px 24px;border:1px solid var(--gold)}
-.portal-box h2{font:400 1.6rem var(--serif);margin:0 0 4px}
-.portal-box .en{color:var(--gsoft);font-size:.9rem}
-.portal-box p{color:#e8f1ec;margin:14px 0 22px}
-footer{background:var(--night);color:#cfe0d8;padding:40px 18px 20px}
-.foot-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:24px}
-.foot-brand p{color:#9fb6ac;font-size:.9rem;margin-top:10px}
-.foot-col h4{color:var(--gsoft);font:600 .92rem var(--sans);margin:0 0 10px}
-.foot-col a,.foot-col span{display:block;color:#cfe0d8;text-decoration:none;font-size:.9rem;margin-bottom:8px}
-.foot-col a:hover{color:var(--gold)}
-.soon{opacity:.55;cursor:default}
-.soon-badge{font-size:.72rem;background:rgba(234,217,166,.15);border:1px solid var(--gsoft);color:var(--gsoft);border-radius:999px;padding:0 7px;margin-left:6px}
-.foot-bottom{max-width:1080px;margin:26px auto 0;padding-top:16px;border-top:1px solid rgba(234,217,166,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.85rem;color:#9fb6ac}
-@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — কোরআন গবেষণা, হিফজ শিক্ষা, মুদ্রণ, বিতরণ, অনুদান ও সহযোগিতার মূল ওয়েবসাইট।"
+  >
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="কোরআনের ফেরিওয়ালা — গবেষণা, মুদ্রণ ও বিতরণ"
+    data-en="QuranerFariwala — Research, Printing & Distribution"
+  >
+    কোরআনের ফেরিওয়ালা — গবেষণা, মুদ্রণ ও বিতরণ
+  </title>
+
+  <link rel="icon" href="/qf/assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--night);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.9)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.9rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(234, 217, 166, 0.1);
+      color: var(--gold-soft);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font: 400 clamp(2.2rem, 5vw, 4rem)/1.2 var(--serif);
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 0 1.7rem;
+      color: #e8f1ec;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: 0;
+      background: var(--gold);
+      color: #1b1204;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 620px;
+    }
+
+    .stat-box {
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--white);
+    }
+
+    .stat-box span {
+      color: #dfeae2;
+      font-size: 0.88rem;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: min(100%, 420px);
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 16px 36px rgba(2,35,27,0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .hero-card-badges {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      padding: 0.36rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(6,37,31,0.75);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.75rem, 4vw, 2.6rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .about-image {
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.06);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .about-content {
+      padding: 0.5rem 0;
+    }
+
+    .about-content h3 {
+      margin: 0 0 0.75rem;
+      color: var(--night);
+      font-size: 1.55rem;
+    }
+
+    .about-content p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .check-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 700;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .program-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.04);
+    }
+
+    .program-icon {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--gold-soft);
+      color: var(--night);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .program-card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font-size: 1.22rem;
+    }
+
+    .program-card p {
+      margin: 0 0 0.85rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .program-card a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .impact-strip {
+      padding: 1.4rem;
+      border-radius: 16px;
+      background: var(--night);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .impact-box {
+      text-align: center;
+      padding: 0.8rem;
+    }
+
+    .impact-box strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--gold-soft);
+    }
+
+    .impact-box span {
+      color: #dfeae2;
+      font-size: 0.88rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.04);
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--gold-soft);
+      color: var(--night);
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font-size: 1.15rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .feature-card ul {
+      margin: 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+    }
+
+    .feature-card li {
+      margin: 0.25rem 0;
+    }
+
+    .cta-box {
+      max-width: 900px;
+      margin: 1.8rem auto 0;
+      padding: 2rem 1.4rem;
+      border: 1px solid var(--gold);
+      border-radius: 18px;
+      background: var(--night);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .cta-box h3 {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      font: 400 1.8rem/1.4 var(--serif);
+    }
+
+    .cta-box p {
+      max-width: 760px;
+      margin: 0 auto 1.2rem;
+      color: #dbe9e1;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 950px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .hero-inner,
+      .about-grid,
+      .program-grid,
+      .feature-grid,
+      .impact-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap head-row">
-  <a class="brand" href="."><img id="logo1" alt=""><span class="brand-name">কোরআনের ফেরিওয়ালা</span></a>
-  <nav>
-    <a href="#research">গবেষণা</a><a href="#printing">মুদ্রণ</a><a href="#distribution">বিতরণ</a>
-    <a class="gold" href="portal/">পোর্টাল</a>
-  </nav>
-  <div class="langbar" role="group" aria-label="Language">
-    <button id="lBn" type="button" aria-pressed="true">বাংলা</button>
-    <button id="lEn" type="button" aria-pressed="false">EN</button>
-  </div>
-</div></header>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="/qf/home/index.html" aria-label="কোরআনের ফেরিওয়ালা হোম">
+        <img src="/qf/assets/logo.png" alt="কোরআনের ফেরিওয়ালার লোগো" width="38" height="38">
+        <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
+      </a>
 
-<section class="hero">
-  <img id="logo2" alt="">
-  <p class="epigraph" id="epigraph"></p>
-  <p class="epigraph-ref" id="epigraphRef"></p>
-  <h1 id="heroTitle"></h1>
-  <p id="heroLead"></p>
-  <a class="btn" id="heroCta" href="portal/"></a>
-</section>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
 
-<section class="ledger"><div class="wrap" id="ledgerStrip"></div></section>
+      <nav class="main-nav" aria-label="প্রধান নেভিগেশন">
+        <a class="active" href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
+        <a href="/qf/ds.html">
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
+        <a href="/qf/portal/">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+        </a>
+      </nav>
 
-<section class="pad" id="chaptersSec">
-  <div class="section-head"><h2 id="chaptersHead"></h2></div>
-  <div class="grid3" id="chapters"></div>
-</section>
-
-<section class="pad support">
-  <div class="section-head"><h2 id="supportHead"></h2><p id="supportLead"></p></div>
-  <div class="grid3" id="supportGrid"></div>
-</section>
-
-<section class="pad">
-  <div class="portal-box">
-    <h2 id="portalTitle"></h2><div class="en" id="portalTitleEn"></div>
-    <p id="portalDesc"></p>
-    <a class="btn" id="portalCta" href="portal/"></a>
-  </div>
-</section>
-
-<footer>
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <a class="brand" href="." style="color:#fff"><img id="logo3" alt="" style="width:30px;height:30px"><span class="brand-name" style="color:#fff">কোরআনের ফেরিওয়ালা</span></a>
-      <p id="footerNote"></p>
+      <div class="langbar" role="group" aria-label="Language selection">
+        <button type="button" data-lang-button="bn" aria-pressed="true">বাংলা</button>
+        <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
+      </div>
     </div>
-    <div id="footerCols" style="display:contents"></div>
-  </div>
-  <div class="foot-bottom">
-    <div id="footerCredit"></div>
-    <div id="footerLegal"></div>
-  </div>
-</footer>
+  </header>
 
-<script>
-let D=null,lang='bn';
-const $=id=>document.getElementById(id);
-const T=v=>v==null?'':typeof v==='object'?(v[lang]??v.bn??''):v;
-const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-badge" data-bn="জ্ঞান • গবেষণা • প্রয়োগ" data-en="Knowledge • Research • Practice">
+            জ্ঞান • গবেষণা • প্রয়োগ
+          </div>
 
-function render(){
-  document.documentElement.lang=lang;document.title=T(D.site.title);
-  $('lBn').setAttribute('aria-pressed',lang==='bn');$('lEn').setAttribute('aria-pressed',lang==='en');
-  ['logo1','logo2','logo3'].forEach(id=>{$(id).src=D.site.logo;$(id).alt=T(D.site.logoAlt)});
-  const nav=document.querySelectorAll('header nav a');
-  nav[0].textContent=T(D.nav.research);nav[1].textContent=T(D.nav.printing);nav[2].textContent=T(D.nav.distribution);nav[3].textContent=T(D.nav.portal);
+          <h1
+            data-bn="কোরআনের আলোয় জীবনকে গড়ে তোলা"
+            data-en="Building life in the light of the Quran"
+          >
+            কোরআনের আলোয় জীবনকে গড়ে তোলা
+          </h1>
 
-  $('epigraph').textContent=D.hero.epigraph;
-  $('epigraphRef').textContent=T(D.hero.epigraphRef);
-  $('heroTitle').textContent=T(D.hero.title);
-  $('heroLead').textContent=T(D.hero.lead);
-  $('heroCta').textContent=T(D.hero.cta);
+          <p
+            data-bn="আমরা কোরআন গবেষণা, হিফজ শিক্ষা, ভাষা ও তাফসিরের জ্ঞানকে সমাজের সঙ্গে সংযুক্ত করে চলেছি—যাতে কোরআনের বাণী জীবনে প্রয়োগের মাধ্যমে কল্যাণ ও ন্যায় প্রতিষ্ঠা হয়।"
+            data-en="We connect Quranic research, Hifz education, language, and tafsir with society so that the message of the Quran is reflected in life, justice, and welfare."
+          >
+            আমরা কোরআন গবেষণা, হিফজ শিক্ষা, ভাষা ও তাফসিরের জ্ঞানকে সমাজের সঙ্গে
+            সংযুক্ত করে চলেছি—যাতে কোরআনের বাণী জীবনে প্রয়োগের মাধ্যমে কল্যাণ ও
+            ন্যায় প্রতিষ্ঠা হয়।
+          </p>
 
-  $('ledgerStrip').innerHTML=D.ledger.map(l=>`<div><b>${lang==='bn'?l.value:l.valueEn}</b><span>${esc(T(l.label))}</span></div>`).join('');
+          <div class="hero-actions">
+            <a class="button" href="/qf/edu.html">
+              <span data-bn="গবেষণা জানুন" data-en="Explore Research">গবেষণা জানুন</span>
+            </a>
 
-  $('chaptersHead').textContent=T(D.chaptersHead);
-  $('chapters').innerHTML=D.chapters.map(c=>`<div class="card" id="${c.icon}"><h3>${esc(T(c.title))}</h3><p>${esc(T(c.text))}</p><a href="#${c.icon}">${T(D.ui.learnMore)} →</a></div>`).join('');
+            <a class="button secondary" href="/qf/contact.html">
+              <span data-bn="যোগাযোগ করুন" data-en="Contact Us">যোগাযোগ করুন</span>
+            </a>
+          </div>
 
-  $('supportHead').textContent=T(D.supportHead);
-  $('supportLead').textContent=T(D.supportLead);
-  $('supportGrid').innerHTML=D.ledgerEntries.map(e=>`<div class="card"><h3>${esc(T(e.title))}</h3><p>${esc(T(e.note))}</p><span class="soon-badge">${T(D.footer.soonLabel)}</span></div>`).join('');
+          <div class="hero-stats">
+            <div class="stat-box">
+              <strong data-bn="০৩+" data-en="03+">০৩+</strong>
+              <span data-bn="গবেষণা খাত" data-en="Research focus areas">গবেষণা খাত</span>
+            </div>
 
-  $('portalTitle').textContent=T(D.portal.title);
-  $('portalTitleEn').textContent=lang==='bn'?D.portal.title.en:'';
-  $('portalDesc').textContent=T(D.portal.desc);
-  $('portalCta').textContent=T(D.portal.cta);
+            <div class="stat-box">
+              <strong data-bn="১৫০+" data-en="150+">১৫০+</strong>
+              <span data-bn="কোরআন কপি" data-en="Quran copies distributed">কোরআন কপি</span>
+            </div>
 
-  $('footerNote').textContent=T(D.footer.note);
-  $('footerCredit').textContent='© ২০২৬ কোরআনের ফেরিওয়ালা — '+D.footer.credit;
-  $('footerLegal').textContent=D.footer.legal.map(l=>T(l.label)).join(' · ');
-  $('footerCols').innerHTML=D.footer.columns.map(col=>`<div class="foot-col"><h4>${esc(T(col.heading))}</h4>${col.links.map(l=>l.soon?`<span class="soon">${esc(T(l.label))}<span class="soon-badge">${T(D.footer.soonLabel)}</span></span>`:`<a href="${l.link}">${esc(T(l.label))}</a>`).join('')}</div>`).join('');
-}
-function setLang(l){lang=l;try{localStorage.setItem('qfLang',l)}catch(e){}render()}
-async function init(){
-  let saved=null;try{saved=localStorage.getItem('qfLang')}catch(e){}
-  const r=await fetch('data.json',{cache:'no-store'});D=await r.json();
-  lang=saved==='en'||saved==='bn'?saved:'bn';
-  render();
-}
-$('lBn').onclick=()=>setLang('bn');$('lEn').onclick=()=>setLang('en');
-init();
-</script>
+            <div class="stat-box">
+              <strong data-bn="০১" data-en="01">০১</strong>
+              <span data-bn="দলগত মিশন" data-en="Unified mission">দলগত মিশন</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="/qf/assets/logo/Transparent.png" alt="QuranerFariwala" />
+            <div class="hero-card-badges">
+              <div class="mini-badge">
+                <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+              </div>
+              <div class="mini-badge">
+                <span data-bn="হিফজ" data-en="Hifz">হিফজ</span>
+              </div>
+              <div class="mini-badge">
+                <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-bn="আমাদের মিশন" data-en="Our Mission">আমাদের মিশন</h2>
+          <p
+            data-bn="কোরআনকে শুধু পাঠ বা মুখস্থের মধ্যে না রেখে, অর্থ, নীতি, চরিত্র ও সমাজের কল্যাণে রূপান্তর করার জন্য আমরা কাজ করি।"
+            data-en="We work to transform the Quran from a text of recitation and memorization into a guide for meaning, ethics, character, and social good."
+          >
+            কোরআনকে শুধু পাঠ বা মুখস্থের মধ্যে না রেখে, অর্থ, নীতি, চরিত্র ও সমাজের কল্যাণে
+            রূপান্তর করার জন্য আমরা কাজ করি।
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="/qf/assets/logo.png" alt="QuranerFariwala mission" />
+          </div>
+
+          <div class="about-content">
+            <h3 data-bn="কোরআন জীবনকে সুন্দর করে" data-en="The Quran beautifies life">কোরআন জীবনকে সুন্দর করে</h3>
+
+            <p
+              data-bn="আমাদের লক্ষ্য হলো কোরআনের ভাষা, ব্যাখ্যা, প্রেক্ষাপট ও ব্যবহারিক দিককে একত্রিত করে একটি দায়িত্বশীল এবং সমন্বিত শিক্ষাব্যবস্থা গড়ে তোলা।"
+              data-en="Our goal is to build a responsible and integrated educational system by combining Quranic language, explanation, context, and practical application."
+            >
+              আমাদের লক্ষ্য হলো কোরআনের ভাষা, ব্যাখ্যা, প্রেক্ষাপট ও ব্যবহারিক দিককে একত্রিত
+              করে একটি দায়িত্বশীল এবং সমন্বিত শিক্ষাব্যবস্থা গড়ে তোলা।
+            </p>
+
+            <p
+              data-bn="আমরা বিশ্বাস করি, কোরআনকে সঠিকভাবে বোঝা, সুন্দরভাবে আবৃত্তি করা, সত্যভাবে অনুশীলন করা, এবং বিশ্বকে সেবা করার জন্য ব্যবহার করা—এই চারটি দিক মিলে একটি পূর্ণাঙ্গ দ্বীনি চেতনা গড়ে ওঠে।"
+              data-en="We believe that understanding the Quran correctly, reciting it beautifully, practicing it sincerely, and using it to serve the world together create a complete Islamic vision."
+            >
+              আমরা বিশ্বাস করি, কোরআনকে সঠিকভাবে বোঝা, সুন্দরভাবে আবৃত্তি করা, সত্যভাবে
+              অনুশীলন করা, এবং বিশ্বকে সেবা করার জন্য ব্যবহার করা—এই চারটি দিক মিলে একটি
+              পূর্ণাঙ্গ দ্বীনি চেতনা গড়ে ওঠে।
+            </p>
+
+            <ul class="check-list">
+              <li data-bn="কোরআন গবেষণা ও ভাষাতত্ত্ব" data-en="Quranic research and linguistics">কোরআন গবেষণা ও ভাষাতত্ত্ব</li>
+              <li data-bn="হিফজ ও তাজবিদের সুশৃঙ্খল শিক্ষা" data-en="Structured Hifz and Tajweed education">হিফজ ও তাজবিদের সুশৃঙ্খল শিক্ষা</li>
+              <li data-bn="ব্যবহারিক জ্ঞান ও সমাজসেবামূলক কার্যক্রম" data-en="Practical knowledge and social service">ব্যবহারিক জ্ঞান ও সমাজসেবামূলক কার্যক্রম</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-bn="আমাদের প্রধান কর্মসূচি" data-en="Our Core Programs">আমাদের প্রধান কর্মসূচি</h2>
+          <p
+            data-bn="গবেষণা, শিক্ষা, মুদ্রণ ও বিতরণ—এই চারটি খাতে আমরা আমাদের সেবা ও পরিকল্পনা গড়ে তুলছি।"
+            data-en="We build our services and plans around four core areas: research, education, printing, and distribution."
+          >
+            গবেষণা, শিক্ষা, মুদ্রণ ও বিতরণ—এই চারটি খাতে আমরা আমাদের সেবা ও পরিকল্পনা গড়ে তুলছি।
+          </p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-icon">◌</div>
+            <h3 data-bn="কোরআন গবেষণা" data-en="Quranic Research">কোরআন গবেষণা</h3>
+            <p
+              data-bn="ভাষা, তাফসির, প্রেক্ষাপট, ইতিহাস ও আধুনিক চিন্তার সংযোগে কোরআনের প্রকৃত অর্থ ও প্রয়োগ অনুসন্ধান।"
+              data-en="Researching the real meaning and application of the Quran through language, tafsir, context, history, and modern insight."
+            >
+              ভাষা, তাফসির, প্রেক্ষাপট, ইতিহাস ও আধুনিক চিন্তার সংযোগে কোরআনের প্রকৃত অর্থ ও
+              প্রয়োগ অনুসন্ধান।
+            </p>
+            <a href="/qf/edu.html">
+              <span data-bn="আরও জানুন" data-en="Learn more">আরও জানুন</span>
+            </a>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">✦</div>
+            <h3 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h3>
+            <p
+              data-bn="তাজবিদ, সাবাক, রিভিশন ও অর্থভিত্তিক অধ্যয়নের মাধ্যমে কোরআনের মুখস্থকে স্থায়ী ও কার্যকর করে তোলা।"
+              data-en="Making Quran memorization permanent and meaningful through tajweed, sabaq, revision, and meaning-based learning."
+            >
+              তাজবিদ, সাবাক, রিভিশন ও অর্থভিত্তিক অধ্যয়নের মাধ্যমে কোরআনের মুখস্থকে স্থায়ী ও
+              কার্যকর করে তোলা।
+            </p>
+            <a href="/qf/portal/">
+              <span data-bn="পোর্টাল দেখুন" data-en="Open portal">পোর্টাল দেখুন</span>
+            </a>
+          </article>
+
+          <article class="program-card">
+            <div class="program-icon">▣</div>
+            <h3 data-bn="মুদ্রণ ও বিতরণ" data-en="Printing & Distribution">মুদ্রণ ও বিতরণ</h3>
+            <p
+              data-bn="নির্ভুলতা, মানের নিশ্চয়তা ও সমাজসেবার উদ্দেশ্যে কোরআন মুদ্রণ ও সারা দেশে বিতরণ।"
+              data-en="Printing the Quran with accuracy and quality, then distributing it with a service-driven purpose."
+            >
+              নির্ভুলতা, মানের নিশ্চয়তা ও সমাজসেবার উদ্দেশ্যে কোরআন মুদ্রণ ও সারা দেশে
+              বিতরণ।
+            </p>
+            <a href="/qf/ds.html">
+              <span data-bn="বিতরণ দেখুন" data-en="View distribution">বিতরণ দেখুন</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="impact-strip">
+          <div class="impact-box">
+            <strong data-bn="১৫০+" data-en="150+">১৫০+</strong>
+            <span data-bn="বিতরণকৃত কোরআন" data-en="Quran copies distributed">বিতরণকৃত কোরআন</span>
+          </div>
+          <div class="impact-box">
+            <strong data-bn="৫+" data-en="5+">৫+</strong>
+            <span data-bn="শিক্ষামূলক উদ্যোগ" data-en="Educational initiatives">শিক্ষামূলক উদ্যোগ</span>
+          </div>
+          <div class="impact-box">
+            <strong data-bn="১০০%" data-en="100%">১০০%</strong>
+            <span data-bn="ভিত্তিক মানোন্নয়ন" data-en="Quality-focused process">ভিত্তিক মানোন্নয়ন</span>
+          </div>
+          <div class="impact-box">
+            <strong data-bn="২৪/৭" data-en="24/7">২৪/৭</strong>
+            <span data-bn="সেবা মনোভাব" data-en="Service mindset">সেবা মনোভাব</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-bn="কেন আমরা আলাদা?" data-en="Why We Stand Apart">কেন আমরা আলাদা?</h2>
+          <p
+            data-bn="আমাদের কাজের মূল শক্তি হলো সত্য, পদ্ধতি, দায়িত্ব ও মানুষের কল্যাণের প্রতি আন্তরিকতা।"
+            data-en="Our strength lies in truth, method, responsibility, and sincere care for the well-being of people."
+          >
+            আমাদের কাজের মূল শক্তি হলো সত্য, পদ্ধতি, দায়িত্ব ও মানুষের কল্যাণের প্রতি আন্তরিকতা।
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3 data-bn="সঠিক পাঠ ও বিশুদ্ধতা" data-en="Correct text and purity">সঠিক পাঠ ও বিশুদ্ধতা</h3>
+            <p
+              data-bn="কোরআনের পাঠ ও কপি সম্পর্কে সতর্কতা, যাচাই ও মানসংক্রান্ত নীতি আমাদের অগ্রাধিকার।"
+              data-en="We prioritize vigilance, verification, and standards in recitation and copy quality."
+            >
+              কোরআনের পাঠ ও কপি সম্পর্কে সতর্কতা, যাচাই ও মানসংক্রান্ত নীতি আমাদের অগ্রাধিকার।
+            </p>
+            <ul>
+              <li data-bn="পাঠ যাচাই" data-en="Text verification">পাঠ যাচাই</li>
+              <li data-bn="কপির মান" data-en="Copy quality">কপির মান</li>
+              <li data-bn="সুনির্দিষ্ট পদ্ধতি" data-en="Clear process">সুনির্দিষ্ট পদ্ধতি</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3 data-bn="জ্ঞান ও অনুশীলন" data-en="Knowledge and practice">জ্ঞান ও অনুশীলন</h3>
+            <p
+              data-bn="আমরা কেবল কথা বলি না—জ্ঞানকে অনুশীলন ও কর্মে রূপান্তর করার দিকে মনোযোগ দিই।"
+              data-en="We do not stop at theory; we focus on transforming knowledge into practice and action."
+            >
+              আমরা কেবল কথা বলি না—জ্ঞানকে অনুশীলন ও কর্মে রূপান্তর করার দিকে মনোযোগ দিই।
+            </p>
+            <ul>
+              <li data-bn="অর্থভিত্তিক শিক্ষা" data-en="Meaning-based learning">অর্থভিত্তিক শিক্ষা</li>
+              <li data-bn="আচরণে প্রয়োগ" data-en="Practice in life">আচরণে প্রয়োগ</li>
+              <li data-bn="অভিজ্ঞতামূলক অধ্যয়ন" data-en="Experiential learning">অভিজ্ঞতামূলক অধ্যয়ন</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">★</div>
+            <h3 data-bn="সমাজসেবা" data-en="Social service">সমাজসেবা</h3>
+            <p
+              data-bn="আমাদের কাজের লক্ষ্য কেবল প্রতিষ্ঠানিক উন্নয়ন নয়; বরং মানুষের জীবন ও সমাজের কল্যাণ।"
+              data-en="Our goal is not only institutional growth, but the well-being of people and society."
+            >
+              আমাদের কাজের লক্ষ্য কেবল প্রতিষ্ঠানিক উন্নয়ন নয়; বরং মানুষের জীবন ও সমাজের কল্যাণ।
+            </p>
+            <ul>
+              <li data-bn="সামাজিক দায়িত্ব" data-en="Social responsibility">সামাজিক দায়িত্ব</li>
+              <li data-bn="দরিদ্র ও প্রয়োজনীয়দের সহায়তা" data-en="Support for the needy">দরিদ্র ও প্রয়োজনীয়দের সহায়তা</li>
+              <li data-bn="সমাজে ইতিবাচক প্রভাব" data-en="Positive societal impact">সমাজে ইতিবাচক প্রভাব</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="cta-box">
+          <h3
+            data-bn="কোরআনের ধারায় জীবন গড়তে প্রস্তুত?"
+            data-en="Ready to build life in the path of the Quran?"
+          >
+            কোরআনের ধারায় জীবন গড়তে প্রস্তুত?
+          </h3>
+
+          <p
+            data-bn="আমাদের সঙ্গে যুক্ত হয়ে কোরআন গবেষণা, হিফজ শিক্ষা, অনুদান কিংবা সহযোগিতার বিষয়ে জানতে পারেন।"
+            data-en="Join us to learn more about Quranic research, Hifz education, donations, or partnerships."
+          >
+            আমাদের সঙ্গে যুক্ত হয়ে কোরআন গবেষণা, হিফজ শিক্ষা, অনুদান কিংবা সহযোগিতার বিষয়ে
+            জানতে পারেন।
+          </p>
+
+          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+            <a class="button" href="/qf/contact.html">
+              <span data-bn="যোগাযোগ করুন" data-en="Contact Us">যোগাযোগ করুন</span>
+            </a>
+            <a class="button secondary" href="/qf/faq.html">
+              <span data-bn="এখনই জিজ্ঞাসা করুন" data-en="Ask Now">এখনই জিজ্ঞাসা করুন</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/qf/home/index.html" style="color:#ffffff;">
+            <img src="/qf/assets/logo.png" alt="কোরআনের ফেরিওয়ালার লোগো" width="38" height="38">
+            <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+
+          <a href="/qf/portal/">
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+          </a>
+
+          <a href="/qf/portal/">
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/donate/">
+            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+          </a>
+
+          <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          —
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const defaultLang = 'bn';
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    const setLanguage = function (lang) {
+      const elements = document.querySelectorAll('[data-bn][data-en]');
+      elements.forEach(function (el) {
+        const text = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-bn');
+        if (text) el.textContent = text;
+      });
+
+      const placeholders = document.querySelectorAll('[data-bn-placeholder][data-en-placeholder]');
+      placeholders.forEach(function (el) {
+        const p = lang === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-bn-placeholder');
+        if (p) el.setAttribute('placeholder', p);
+      });
+
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+
+      const buttons = document.querySelectorAll('[data-lang-button]');
+      buttons.forEach(function (button) {
+        const pressed = button.getAttribute('data-lang-button') === lang;
+        button.setAttribute('aria-pressed', String(pressed));
+      });
+
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('qf-lang', lang);
+      }
+    };
+
+    const getStoredLang = function () {
+      try {
+        return localStorage.getItem('qf-lang') || defaultLang;
+      } catch (e) {
+        return defaultLang;
+      }
+    };
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', function () {
+        const isOpen = mainNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const initialLang = getStoredLang();
+      setLanguage(initialLang);
+
+      document.querySelectorAll('[data-lang-button]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const selected = button.getAttribute('data-lang-button');
+          setLanguage(selected);
+        });
+      });
+
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>

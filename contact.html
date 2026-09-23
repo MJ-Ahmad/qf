@@ -1,135 +1,1193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta name="generator" content="mj.dev"/>
-  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
-  <meta name="creator" content="MJ-AHMAD"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:site_name" content="Quraner Fariwala"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:image" content="assets/logo.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="Quraner Fariwala"/>
-  <meta property="og:type" content="website"/>
-  <link rel="shortcut icon" href="assets/logo.png"/>
-  <link rel="icon" href="assets/logo.png" sizes="any"/>
-  <link rel="stylesheet" href="css/contact/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — যোগাযোগ, সহায়তা, অংশীদারিত্ব ও কোরআন বিতরণে সহযোগিতার জন্য যোগাযোগের পৃষ্ঠা।"
+  >
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="যোগাযোগ — কোরআনের ফেরিওয়ালা"
+    data-en="Contact — QuranerFariwala"
+  >
+    যোগাযোগ — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 4.5rem 1rem 3.5rem;
+      text-align: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.9)
+        ),
+        url("assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      padding: 0.45rem;
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.1rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.3rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .info-panel,
+    .form-panel {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.05);
+    }
+
+    .info-panel h2,
+    .form-panel h2 {
+      margin: 0 0 1rem;
+      color: var(--night);
+      font-size: 1.4rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(19, 107, 85, 0.03);
+    }
+
+    .contact-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item h3 {
+      margin: 0 0 0.25rem;
+      color: var(--night);
+      font-size: 1rem;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      margin: 0;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.96rem;
+    }
+
+    .contact-item a:hover {
+      color: var(--emerald);
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .quick-card {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(19, 107, 85, 0.02);
+      text-align: center;
+    }
+
+    .quick-card strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--night);
+      font-size: 1.1rem;
+    }
+
+    .quick-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.35rem;
+      color: var(--night);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--emerald);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(19, 107, 85, 0.1);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.4rem;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .form-status {
+      min-height: 24px;
+      color: var(--emerald);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .map-card {
+      margin-top: 1.2rem;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    .map-card h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.15rem;
+    }
+
+    .map-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 950px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Contact Us</h1>
-      <p>Have questions or want to get in touch? We'd love to hear from you.</p>
-    </header>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
 
-    <!-- Contact Cards -->
-    <section class="cards">
-      <div class="card">
-        <h2>📧 Email Us</h2>
-        <p>For general inquiries:</p>
-        <p class="highlight">quranerfariwala@gmail.com</p>
-        <p>For support:</p>
-        <p class="highlight">support.qfbd@gmail.com</p>
-        <p>For partnerships:</p>
-        <p class="highlight">partnerships.qfbd@gmail.com</p>
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
+
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
+
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
+
+        <a href="/qf/ds.html">
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
+
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/contact.html"
+          aria-current="page"
+        >
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/portal/">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+            হিফজ পোর্টাল
+          </span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="72"
+        height="72"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="সহযোগিতা · সংযোগ · সহায়তা"
+        data-en="Partnership · Connection · Support"
+      >
+        সহযোগিতা · সংযোগ · সহায়তা
+      </p>
+
+      <h1
+        data-bn="যোগাযোগ করুন"
+        data-en="Contact Us"
+      >
+        যোগাযোগ করুন
+      </h1>
+
+      <p
+        data-bn="আপনার প্রশ্ন, সহযোগিতার প্রস্তাব, অনুদান বা হিফজ শিক্ষা সম্পর্কিত কোন প্রয়োজন থাকলে আমাদের সঙ্গে যোগাযোগ করুন।"
+        data-en="If you have a question, a partnership proposal, a donation request, or a need related to Hifz education, please contact us."
+      >
+        আপনার প্রশ্ন, সহযোগিতার প্রস্তাব, অনুদান বা হিফজ শিক্ষা সম্পর্কিত
+        কোন প্রয়োজন থাকলে আমাদের সঙ্গে যোগাযোগ করুন।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="আমাদের সাথে যোগাযোগের উপায়"
+            data-en="Ways to Reach Us"
+          >
+            আমাদের সাথে যোগাযোগের উপায়
+          </h2>
+
+          <p
+            data-bn="আমরা আপনার নোট, অনুপ্রেরণা, প্রস্তাব ও সহযোগিতার জন্য সর্বদা প্রস্তুত।"
+            data-en="We are always ready to hear your notes, ideas, proposals, and opportunities for collaboration."
+          >
+            আমরা আপনার নোট, অনুপ্রেরণা, প্রস্তাব ও সহযোগিতার জন্য সর্বদা প্রস্তুত।
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="info-panel">
+            <h2
+              data-bn="যোগাযোগের তথ্য"
+              data-en="Contact Information"
+            >
+              যোগাযোগের তথ্য
+            </h2>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="contact-icon">✉</div>
+
+                <div>
+                  <h3
+                    data-bn="ইমেইল"
+                    data-en="Email"
+                  >
+                    ইমেইল
+                  </h3>
+
+                  <a href="mailto:quranerfariwala@gmail.com">
+                    quranerfariwala@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">☎</div>
+
+                <div>
+                  <h3
+                    data-bn="ফোন"
+                    data-en="Phone"
+                  >
+                    ফোন
+                  </h3>
+
+                  <a href="tel:+8801788856628">
+                    +880 1788-856628
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">⌂</div>
+
+                <div>
+                  <h3
+                    data-bn="ঠিকানা"
+                    data-en="Address"
+                  >
+                    ঠিকানা
+                  </h3>
+
+                  <p
+                    data-bn="অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ"
+                    data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh"
+                  >
+                    অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">⏰</div>
+
+                <div>
+                  <h3
+                    data-bn="চাকরির সময়"
+                    data-en="Working Hours"
+                  >
+                    কর্মঘণ্টা
+                  </h3>
+
+                  <p
+                    data-bn="রবিবার–বৃহস্পতিবার, সকাল ৯:০০–সকাল ১২:০০"
+                    data-en="Sunday–Thursday, 9:00 AM–12:00 PM"
+                  >
+                    রবিবার–বৃহস্পতিবার, সকাল ৯:০০–সকাল ১২:০০
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-grid">
+              <div class="quick-card">
+                <strong
+                  data-bn="৩"
+                  data-en="3"
+                >
+                  ৩
+                </strong>
+
+                <span
+                  data-bn="প্রথম স্তরের ফ্যাক্ট ফিল্ড"
+                  data-en="Primary response window"
+                >
+                  প্রথম স্তরের ফ্যাক্ট ফিল্ড
+                </span>
+              </div>
+
+              <div class="quick-card">
+                <strong
+                  data-bn="২৪"
+                  data-en="24"
+                >
+                  ২৪
+                </strong>
+
+                <span
+                  data-bn="ইমেইল রেসপন্স"
+                  data-en="Email response"
+                >
+                  ইমেইল রেসপন্স
+                </span>
+              </div>
+
+              <div class="quick-card">
+                <strong
+                  data-bn="৭"
+                  data-en="7"
+                >
+                  ৭
+                </strong>
+
+                <span
+                  data-bn="দৈনিক কাজের দিন"
+                  data-en="Working days"
+                >
+                  দৈনিক কাজের দিন
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-panel">
+            <h2
+              data-bn="মেসেজ পাঠান"
+              data-en="Send a Message"
+            >
+              মেসেজ পাঠান
+            </h2>
+
+            <form id="contactForm" action="#" method="post">
+              <label>
+                <span
+                  data-bn="আপনার নাম"
+                  data-en="Your Name"
+                >
+                  আপনার নাম
+                </span>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="আপনার নাম"
+                  data-bn-placeholder="আপনার নাম"
+                  data-en-placeholder="Your Name"
+                  required
+                >
+              </label>
+
+              <label>
+                <span
+                  data-bn="ইমেইল ঠিকানা"
+                  data-en="Email Address"
+                >
+                  ইমেইল ঠিকানা
+                </span>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="ইমেইল ঠিকানা"
+                  data-bn-placeholder="ইমেইল ঠিকানা"
+                  data-en-placeholder="Email Address"
+                  required
+                >
+              </label>
+
+              <label>
+                <span
+                  data-bn="ফোন নম্বর"
+                  data-en="Phone Number"
+                >
+                  ফোন নম্বর
+                </span>
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="ফোন নম্বর"
+                  data-bn-placeholder="ফোন নম্বর"
+                  data-en-placeholder="Phone Number"
+                >
+              </label>
+
+              <label>
+                <span
+                  data-bn="বিষয়"
+                  data-en="Subject"
+                >
+                  বিষয়
+                </span>
+
+                <select
+                  name="subject"
+                  data-bn-placeholder="বিষয়"
+                  data-en-placeholder="Subject"
+                >
+                  <option
+                    value="donation"
+                    data-bn="দান"
+                    data-en="Donation"
+                  >
+                    দান
+                  </option>
+
+                  <option
+                    value="partnership"
+                    data-bn="সহযোগিতা"
+                    data-en="Partnership"
+                  >
+                    সহযোগিতা
+                  </option>
+
+                  <option
+                    value="support"
+                    data-bn="সহায়তা"
+                    data-en="Support"
+                  >
+                    সহায়তা
+                  </option>
+
+                  <option
+                    value="hifz"
+                    data-bn="হিফজ শিক্ষা"
+                    data-en="Hifz Education"
+                  >
+                    হিফজ শিক্ষা
+                  </option>
+
+                  <option
+                    value="general"
+                    data-bn="সাধারণ inquiry"
+                    data-en="General Inquiry"
+                  >
+                    সাধারণ inquiry
+                  </option>
+                </select>
+              </label>
+
+              <label>
+                <span
+                  data-bn="আপনার বার্তা"
+                  data-en="Message"
+                >
+                  আপনার বার্তা
+                </span>
+
+                <textarea
+                  name="message"
+                  placeholder="আপনার বার্তা লিখুন"
+                  data-bn-placeholder="আপনার বার্তা লিখুন"
+                  data-en-placeholder="Write your message"
+                  required
+                ></textarea>
+              </label>
+
+              <button
+                type="submit"
+                class="button"
+              >
+                <span
+                  data-bn="মেসেজ পাঠান"
+                  data-en="Send Message"
+                >
+                  মেসেজ পাঠান
+                </span>
+              </button>
+
+              <div
+                id="formStatus"
+                class="form-status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <h3
+            data-bn="আমাদের অবস্থান"
+            data-en="Our Location"
+          >
+            আমাদের অবস্থান
+          </h3>
+
+          <p
+            data-bn="অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ"
+            data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh"
+          >
+            অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">
+            হিফজ শিক্ষা
+          </h2>
+
+          <a href="/qf/portal/">
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+              হিফজ পোর্টাল
+            </span>
+          </a>
+
+          <a href="/qf/portal/">
+            <span
+              data-bn="শিক্ষার্থী ব্যবস্থাপনা"
+              data-en="Student Management"
+            >
+              শিক্ষার্থী ব্যবস্থাপনা
+            </span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">
+              সাধারণ জিজ্ঞাসা
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/donate/">
+            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
+              সাইটম্যাপ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>📞 Call Us</h2>
-        <p>Office:</p>
-        <p class="highlight">+880 1788856628</p>
-        <p>Support:</p>
-        <p class="highlight">+880 1920082926</p>
-        <p>Hours of Operation:</p>
-        <p class="highlight">Sunday - Thursday: 9:00 AM - 5:00 PM (GMT+6)</p>
-      </div>
-
-      <div class="card">
-        <h2>📍 Visit Us</h2>
-        <p class="highlight">
-          Azad center<br />
-          55 Purana paltan<br />
-          Dhaka 1000, Bangladesh
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
         </p>
-      </div>
-    </section>
 
-    <!-- Tabs -->
-    <section class="tabs">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="form">Contact Form</button>
-        <button class="tab-btn" data-tab="info">Office Hours & Information</button>
-      </div>
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
 
-      <div id="form" class="tab-content">
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5"></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
+          <span aria-hidden="true"> · </span>
 
-      <div id="info" class="tab-content hidden">
-        <div class="info-block">
-          <h3>Dhaka</h3>
-          <p>Azad center<br />55 Purana paltan<br />Dhaka 1000, Bangladesh</p>
-        </div>
-          <h3>Office Hours</h3>
-          <p>Sunday - Thursday: 9:00 AM - 5:00 PM</p>
-          <p>Friday - Saturday: Closed</p>
-          <small>All times are in Bangladesh Standard Time (GMT+6)</small>
-        </div>
-      </div>
-    </section>
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
 
-    <!-- Social Links -->
-    <footer class="social">
-      <h2>Connect With Us</h2>
-      <p>Follow us on social media to stay updated with our latest initiatives and announcements.</p>
-      <div class="social-links">
-        <a href="https://facebook.com/quranerfariwala037271" target="_blank">Facebook</a>
-        <a href="https://linkedin.com/in/jafor-ahmad" target="_blank">LinkedIn</a>
-        <a href="https://github.com/MJ-Ahmad" target="_blank">GitHub</a>
-      </div>
-    </footer>
+          <span aria-hidden="true"> · </span>
 
-    <!-- Site footer with links and copyright -->
-    <div class="site-footer" aria-label="Site footer">
-      <div class="footer-inner">
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="/qf" class="footer-link">Home</a>
-          <a href="/qf/privacy" class="footer-link">Privacy</a>
-          <a href="/qf/terms" class="footer-link">Terms</a>
-          <a href="sitemap.xml" class="footer-link">Sitemap</a>
-          <a href="https://MJ-Ahmad.github.io/mj-ahmad/" class="footer-link">Documentary</a>
-        </nav>
-        <div class="footer-copy">
-          © <span id="current-year"></span> <b>Quraner Fariwala</b>. All rights reserved.
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
         </div>
       </div>
     </div>
+  </footer>
 
-  <script src="js/contact/script.js"></script>
-
-  <!-- small inline script to set the current year in the footer -->
   <script>
-    (function () {
-      const yearEl = document.getElementById('current-year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
+    document.getElementById('footerYear').textContent =
+      new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const message = form.querySelector('textarea[name="message"]').value.trim();
+
+      if (!name || !email || !message) {
+        formStatus.textContent = document.documentElement.lang === 'en'
+          ? 'Please fill in all required fields.'
+          : 'দয়া করে প্রয়োজনীয় সব ক্ষেত্র পূরণ করুন।';
+        return;
       }
-    })();
+
+      formStatus.textContent = document.documentElement.lang === 'en'
+        ? 'Your message has been sent successfully. We will get back to you soon.'
+        : 'আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সঙ্গে যোগাযোগ করব।';
+
+      form.reset();
+    });
   </script>
+
+  <script src="/qf/js/i18n.js"></script>
 </body>
 </html>
