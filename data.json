@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "QuranerFariwala",
+    "tagline": "A Journey of Light",
+    "hero": {
+      "eyebrow": "Empowering of Hifz students",
+      "title": "Research • Printing • Distribution",
+      "titleAccent": "of Holy Quran",
+      "lead": "Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran. We combine heritage, scholarship, and technology to empower millions of Hifz students, orphans, and underserved learners worldwide."
+    }
+  },
+  "stats": [
+    { "label": "কোরআন বিতরণ", "labelEn": "Quran Distributed", "value": "50,000+" },
+    { "label": "হিফজ শিক্ষার্থী", "labelEn": "Hifz Students", "value": "12,000+" },
+    { "label": "অংশগ্রহণকারী মাদ্রাসা", "labelEn": "Partner Madrasas", "value": "300+" },
+    { "label": "জেলা", "labelEn": "Districts Covered", "value": "64" }
+  ],
+  "programs": [
+    {
+      "title": "Al-Quran Journey",
+      "titleBn": "গবেষণা",
+      "badge": "Research",
+      "desc": "ancient divine revelation meets modern scientific understanding and transforms lives through timeless guidance.",
+      "link": "/qf/edu"
+    },
+    {
+      "title": "Printing Process",
+      "titleBn": "মুদ্রণ",
+      "badge": "Printing",
+      "desc": "From pre-press design to offset printing, binding and quality control — precision at every step.",
+      "link": "/qf/pr"
+    },
+    {
+      "title": "Distribution Network",
+      "titleBn": "বিতরণ",
+      "badge": "Distribution",
+      "desc": "Reaching students, orphans and refugees across Bangladesh — Chittagong, Cox's Bazar, Dhaka, Khulna, Rangpur.",
+      "link": "/qf/ds"
+    }
+  ],
+  "support": [
+    {
+      "type": "donate",
+      "title": "অনুদান দিন",
+      "titleEn": "Donate",
+      "desc": "বিনামূল্যে হিফজ শিক্ষার্থীদের মাঝে কোরআন মাজিদ বিতরণে অনুদান দিন।",
+      "link": "/qf/donate",
+      "color": "var(--accent-rose)"
+    },
+    {
+      "type": "invest",
+      "title": "বিনিয়োগ করুন",
+      "titleEn": "Invest",
+      "desc": "স্বল্প/দীর্ঘমেয়াদী বিনিয়োগের মাধ্যমে কোরআন মুদ্রণ প্রকল্পে অংশ নিন।",
+      "link": "/qf/invest",
+      "color": "var(--accent-emerald)"
+    },
+    {
+      "type": "lend",
+      "title": "ঋণ প্রদান করুন",
+      "titleEn": "Lend",
+      "desc": "নির্দিষ্ট মেয়াদে ঋণ প্রদান করে মুদ্রণ কার্যক্রম সচল রাখতে সহায়তা করুন।",
+      "link": "/qf/lend",
+      "color": "var(--accent-blue)"
+    }
+  ],
+  "portal": {
+    "title": "হিফজ ব্যবস্থাপনা পোর্টাল",
+    "titleEn": "Hifz Management Portal",
+    "desc": "কেন্দ্রীয় দায়িত্বশীল থেকে মাদ্রাসা পর্যায় পর্যন্ত — শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য রোল-ভিত্তিক ড্যাশবোর্ড।",
+    "link": "/qf/portal/login"
+  }
+}
