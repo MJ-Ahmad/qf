@@ -1,359 +1,1449 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta name="generator" content="mj.dev"/>
-  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
-  <meta name="creator" content="MJ-AHMAD"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:site_name" content="Quraner Fariwala"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:image" content="https://mj-ahmad.github.io/qf/assets/logo.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="Quraner Fariwala"/>
-  <meta property="og:type" content="website"/>
-  <link rel="shortcut icon" href="https://mj-ahmad.github.io/qf/assets/logo.png"/>
-  <link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালার অনুমোদিত প্রাতিষ্ঠানিক ব্যাংক ও মোবাইল ব্যাংকিং হিসাব।"
+  >
+
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="প্রাতিষ্ঠানিক হিসাব — কোরআনের ফেরিওয়ালা"
+    data-en="Institutional Accounts — QuranerFariwala"
+  >
+    প্রাতিষ্ঠানিক হিসাব — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link
+    rel="icon"
+    href="/qf/assets/logo.png"
+    type="image/png"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --danger: #8e2f2f;
+      --danger-bg: #fff2f0;
+      --success: #176b4d;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
     }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 5px;
-      text-align: center;
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+        --danger-bg: #321b18;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .header-links a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 4.5rem 1rem 3.5rem;
+      color: #ffffff;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.74),
+          rgba(6, 37, 31, 0.92)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 1rem;
+      padding: 0.5rem;
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.45rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      max-width: 840px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.2rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.05rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.7rem, 4vw, 2.35rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice {
+      max-width: 960px;
+      margin: 0 auto 1.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      color: var(--ink);
+      background: rgba(234, 217, 166, 0.22);
+    }
+
+    .notice strong {
+      color: var(--night);
+    }
+
+    .notice p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .account-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .account-card {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.05);
+    }
+
+    .account-card h3 {
+      margin: 0 0 1rem;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+
+    .account-row {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 0.8rem;
+      align-items: start;
+      padding: 0.55rem 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .account-row:last-of-type {
+      border-bottom: 0;
+    }
+
+    .account-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .account-value {
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .account-actions {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .copy-button {
+      min-height: 38px;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid var(--emerald);
+      border-radius: 999px;
+      color: var(--emerald);
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .copy-button:hover {
+      color: #ffffff;
+      background: var(--emerald);
+    }
+
+    .mobile-card {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--emerald);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.05);
+    }
+
+    .mobile-card h3 {
+      margin: 0 0 0.65rem;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+
+    .mobile-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .mobile-number {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--night);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .how-card {
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--card);
+    }
+
+    .how-number {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.7rem;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-weight: 700;
+    }
+
+    .how-card h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.05rem;
+    }
+
+    .how-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .security-box {
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+      padding: 1.4rem;
+      border: 1px solid var(--danger);
+      border-radius: 12px;
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .security-box h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .security-box p {
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .cta-box {
+      max-width: 820px;
+      margin: 0 auto;
+;
+      border-radius: 15px;
+      color: #ffffff;
+      background: var(--night);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      font: 400 1.75rem/1.4 var(--serif);
+    }
+
+    .cta-box p {
+      margin: 0 0 1rem;
+      color: #dbe9e1;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      min-height: 44px;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
     }
-    .logo{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:700;font-size:18px;box-shadow:0 4px 14px rgba(31,111,235,0.18);overflow:hidden;}
-    .logo img{width:100%;height:100%;object-fit:cover;display:block;}
 
-    h2 {
-      margin: 0;
-      font-size: 1.2em;
-      display: inline-block;
+    .button:hover {
+      filter: brightness(1.08);
     }
-    .ledger-section {
-      margin: 20px auto;
-      max-width: 900px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
     }
-    .section-header {
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      margin-bottom: 10px;
-    }
-    .section-header span {
-      font-weight: bold;
-      color: #2c3e50;
-    }
-    .icon-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1em;
-      margin-left: 10px;
-    }
-    .account {
-      margin-bottom: 15px;
-      padding: 10px;
-      border-left: 4px solid #2c3e50;
-      background: #fafafa;
-    }
-    .account strong {
-      display: block;
-      font-size: 1.05em;
-      margin-bottom: 5px;
-      color: #34495e;
-    }
-    .note {
-      font-size: 0.9em;
-      color: #888;
-      margin-top: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2c3e50;
-      color: #fff;
-      margin-top: 40px;
-    }
-    .hidden {
-      display: none;
+      gap: 1rem;
+      margin-topfb6ac;
+      font-size: 0.84rem;
     }
 
-    /* Toast */
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
     .toast {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: rgba(17,24,39,0.95);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(2,6,23,0.3);
-      font-size: 14px;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity .22s ease, transform .22s ease;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      max-width: 320px;
+      padding: 0.7px);
       pointer-events: none;
-      z-index: 9999;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      font-size: 0.9rem;
     }
+
     .toast.show {
       opacity: 1;
       transform: translateY(0);
-      pointer-events: auto;
     }
 
-    /* Footer legal links */
-    .footer-legal {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #dbe7ff;
-    }
-    .footer-legal a {
-      color: #dbe7ff;
-      text-decoration: underline;
-      margin: 0 8px;
-    }
-  </style>
-</head>
-<body>
+    @media (max-width: 950px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
 
-<header>
-  <div class="logo" aria-hidden="true">
-    <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="Logo">
-  </div>
-  <h1>QuranerFariwala</h1>
-</header>
+      .account-grid {
+        grid-template-columns: 1fr;
+      }
 
-<section class="ledger-section">
-  <div class="section-header" onclick="toggleSection('banks')">
-    <h2>🏛️ Accounts</h2>
-    <div>
-      <button class="icon-btn" onclick="toggleSection('banks');event.stopPropagation()">➖</button>
-      <button class="icon-btn" onclick="copySection('banks');event.stopPropagation()" title="Copy Accounts">📋</button>
-    </div>
-  </div>
-  <div id="banks">
-    <div class="account">
-      <strong>City Bank — Motijheel Branch</strong>
-      Account Name: QURANER FARIWALA<br>
-      Account Number: 1502835465001<br>
-      Routing Number: 225271548
-    </div>
-    <div class="account">
-      <strong>Eastern Bank Ltd — Principal Branch</strong>
-      Account Name: QURANER FARIWALA<br>
-      Account Number: 1011070611663<br>
-      Routing Number: 095275358
-    </div>
-    <div class="account">
-      <strong>Mutual Trust Bank — Principal Branch</strong>
-      Account Name: QURANER FARIWALA<br>
-      Account Number: 1301010000896<br>
-      Routing Number: 145275358
-    </div>
-    <div class="account">
-      <strong>BRAC Bank — Bijoynagar Branch</strong>
-      Account Name: QURANER FARIWALA<br>
-      Account Number: 2060133490001<br>
-      Routing Number: 060271103
-    </div>
-  </div>
-</section>
+      .how-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-<section class="ledger-section">
-  <div class="section-header" onclick="toggleSection('mobile')">
-    <h2>📱 Channels</h2>
-    <div>
-      <button class="icon-btn" onclick="toggleSection('mobile');event.stopPropagation()">➖</button>
-      <button class="icon-btn" onclick="copySection('mobile');event.stopPropagation()" title="Copy Channels">📋</button>
-    </div>
-  </div>
-  <div id="mobile">
-    <div class="account">
-      <strong>Bkash Merchant</strong>
-      Number: 01788856628<br>
-      Holder: Quraner Fariwala
-    </div>
-    <div class="account">
-      <strong>Bkash Personal</strong>
-      Number: 01920082926<br>
-      Holder: MJ Ahmad
-    </div>
-    <div class="account">
-      <strong>Rocket Account</strong>
-      Number: 01920082926-6<br>
-      Holder: MJ Ahmad
-    </div>
-    <div class="account">
-      <strong>Nagad Account</strong>
-      Number: 01788856628<br>
-      Holder: Quraner Fariwala
-    </div>
-    <p class="note">🔒 Personal channels must be logged in <code>personal-fund-log.md</code>, reviewed by an Ethical Auditor, and used only with public documentation.</p>
-  </div>
-</section>
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-<section class="ledger-section">
-  <div class="section-header" onclick="toggleSection('contact')">
-    <h2>📬 Contact</h2>
-    <div>
-      <button class="icon-btn" onclick="toggleSection('contact');event.stopPropagation()">➖</button>
-      <button class="icon-btn" onclick="copySection('contact');event.stopPropagation()" title="Copy Contact">📋</button>
-    </div>
-  </div>
-  <div id="contact">
-    <div class="account">
-      <strong>Email</strong>
-      quranerfariwala@gmail.com
-    </div>
-    <div class="account">
-      <strong>GitHub</strong>
-      https://mj-ahmad.github.io/mj-ahmad/
-    </div>
-    <div class="account">
-      <strong>GitHub Sponsors Profile</strong>
-      <a href="https://github.com/sponsors/MJ-Ahmad" target="_blank">https://github.com/sponsors/MJ-Ahmad</a>
-    </div>
-  </div>
-</section>
-
-<section class="ledger-section">
-  <div class="section-header" onclick="toggleSection('digital')">
-    <h2>💱 Digital Assets</h2>
-    <div>
-      <button class="icon-btn" onclick="toggleSection('digital');event.stopPropagation()">➖</button>
-      <button class="icon-btn" onclick="copySection('digital');event.stopPropagation()" title="Copy Digital">📋</button>
-    </div>
-  </div>
-  <div id="digital">
-    <div class="account">
-      <strong>ETH Address</strong>
-      0xaD6fE115967c22D1C54Fe6010C3AacCE5E196435
-    </div>
-  </div>
-</section>
-
-<footer>
-  🛡️ Stewardship Statement<br>
-  <em>Every account is a trust. Every transaction is a trace. Every donor is a guardian.</em><br><br>
-  Ledger Closed on 12 February 2026 — Verified by Auditor
-
-  <div class="footer-legal" aria-hidden="false">
-   <p> © 2026 Quraner Fariwala · All rights reserved.</p>
-   <p>
-    <a href="/qf/privacy" title="Privacy Policy">Privacy</a>
-    <a href="/qf/terms" title="Terms of Service">Terms</a>
-    <a href="/qf" title="Legal">Home</a></p>
-  </div>
-</footer>
-
-<!-- Toast element -->
-<div id="copyToast" class="toast" role="status" aria-live="polite" aria-atomic="true">Copied to clipboard</div>
-
-<script>
-  function toggleSection(id) {
-    const section = document.getElementById(id);
-    section.classList.toggle('hidden');
-  }
-
-  // Improved copy function: uses Clipboard API and a toast (no alert)
-  async function copySection(id) {
-    const section = document.getElementById(id);
-    if (!section) return;
-
-    // Build clean text (no \n escape sequences inside values)
-    const lines = [];
-    // iterate visible child .account blocks
-    section.querySelectorAll('.account').forEach(acc => {
-      const title = acc.querySelector('strong') ? acc.querySelector('strong').innerText.trim() : '';
-      if (title) lines.push(title);
-      // gather remaining text lines from the account block
-      // use innerText to preserve line breaks as rendered
-      const meta = Array.from(acc.childNodes)
-        .filter(n => n.nodeType === Node.TEXT_NODE || n.nodeType === Node.ELEMENT_NODE && n.tagName !== 'STRONG')
-        .map(n => n.innerText ? n.innerText.trim() : (n.nodeValue ? n.nodeValue.trim() : ''))
-        .join('\n')
-        .split('\n')
-        .map(s => s.trim())
-        .filter(Boolean);
-      meta.forEach(m => lines.push(m));
-      lines.push(''); // blank line between accounts
-    });
-
-    // If there is a note paragraph (like personal channels note), include it
-    const note = section.querySelector('.note');
-    if (note) {
-      lines.push(note.innerText.trim());
-      lines.push('');
-    }
-
-    const text = lines.join('\n').trim();
-
-    // Try Clipboard API first
-    try {
-      await navigator.clipboard.writeText(text);
-      showToast('Copied to clipboard');
-    } catch (err) {
-      // Fallback: create a temporary textarea and use execCommand
-      try {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        // keep off-screen
-        ta.style.position = 'fixed';
-        ta.style.left = '-9999px';
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        const successful = document.execCommand('copy');
-        document.body.removeChild(ta);
-        if (successful) {
-          showToast('Copied to clipboard');
-        } else {
-          showToast('Copy failed — please copy manually');
-        }
-      } catch (e) {
-        showToast('Copy failed — please copy manually');
+      .footer-brand {
+        grid-column: 1 / -1;
       }
     }
-  }
 
-  // Toast helper
-  const toastEl = document.getElementById('copyToast');
-  let toastTimer = null;
-  function showToast(message) {
-    toastEl.textContent = message;
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-      toastEl.classList.remove('show');
-    }, 2200);
-  }
-</script>
+    @media (max-width: 720px) {
+      .account-row {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+      }
 
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .how-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .header header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <div class="header-links">
+        <a href="/qf/home/index.html">
+          <span data-bn </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="/qf/assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="76"
+        height="76"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="অনুমোদিত প্রাতিষ্ঠানিক হিসাব"
+        data-en="Approved Institutional Accounts"
+      >
+        অনুমোদিত প্রাতিষ্ঠানিক হিসাব
+      </p>
+
+      <h মুদ্রণ, বিতরণ ও প্রাতিষ্ঠানিক কার্যক্রমের জন্য প্রকাশিত অনুমোদিত হিসাবসমূহ।"
+        data-en="Approved accounts published for donations, printing, distribution, and institutional operations of QuranerFariwala."
+      >
+        কোরআনের ফেরিওয়ালার অনুদান, মুদ্রণ, বিতরণ ও প্রাতিষ্ঠানিক কার্যক্রমের
+        জন্য প্রকাশিত অনুমোদিত হিসাবসমূহ।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice">
+          <strong
+            data-bn="পেমেন্টের আগে যাচাই করুন"
+            data-en="Verify before payment"
+          >
+            পেমেন্টের এবং সংশ্লিষ্ট mobile number আমাদের অফিসিয়াল যোগাযোগের মাধ্যমে যাচাই করুন। সন্দেহ হলে পেমেন্ট না করে আগে যোগাযোগ করুন।"
+            data-en="Before making a payment, verify the account name, account number, and mobile number through our official contact channel. If you are unsure, contact us before paying."
+          >
+            পেমেন্ট করার আগে account name, account number এবং সংশ্লিষ্ট mobile
+            number আমাদের অফিসিয়াল যোগাযোগের মাধ্যমে যাচাই করুন। সন্দেহ হলে
+            পেমেন্ট না করে আগে যোগাযোগ করুন।
+          </p>
+        </div>
+
+        <div class="section-heading">
+          <h2
+            data-bn="প্রাতিষ্ঠানিক ব্যাংক হিসাব"
+            data-en="Institutional Bank Accounts"
+          >
+            প্রাতিষ্ঠানিক ব্যাংক হিসাব
+          </h2>
+
+          <p
+            data-bn="নিচের ব্যাংক হিসাবগুলো প্রতিষ্ঠানের নামে প্রকাশিত হয়েছে।"
+            data-en="The following bank accounts are published in the institution's name."
+          >
+            নিচের ব্যাংক হিসাবগুলো প্রতিষ্ঠানের নামে প্রকাশিত হয়েছে।
+          </p>
+        </div>
+
+        <div class="account-grid">
+          <article class="account-card">
+            <h3>
+              City Bank — Motijheel Branch
+            </h3>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Name"
+                   data-en="Account Name">
+                Account Name
+              </div>
+
+              <div class="account-value">
+                QURANER FARIWALA
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Number"
+                   data-en="Account Number">
+                Account Number
+              </div>
+
+              <div class="account-value">
+                1502835465001
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Routing Number"
+                   data-en="Routing Number">
+                Routing Number
+              </div>
+
+              <div class="account-value">
+                225271548
+              </div>
+            </div>
+
+            <div class="account-actions">
+              <button
+                class="copy-button"
+                type="button"
+                data-copy="City Bank — Motijheel Branch | Account Name: QURANER FARIWALA | Account Number: 1502835465001 | Routing Number: 225271548"
+              >
+                <span data-bn="তথ্য কপি করুন" data>
+            </div>
+          </article>
+
+          <article class="account-card">
+            <h3>
+              Eastern Bank Ltd — Principal Branch
+            </h3>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Name"
+                   data-en="Account Name">
+                Account Name
+              </div>
+
+              <div class="account-value">
+                QURANER FARIWALA
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Number"
+                   data-en="Account Number">
+                Account Number
+              </div>
+
+              <div class="account-value">
+                1011070611663
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Routing Number"
+                   data-en="Routing Number">
+                Routing Number
+              </div>
+
+              <div class="account-value">
+                095275358
+              </div>
+            </div>
+
+            <div class="account-actions">
+              <button
+                class="copy-button"
+                type="button"
+                data-copy="Eastern Bank Ltd — Principal Branch | Account Name: QURANER FARIWALA | Account Number: 1011070611663 | Routing Number: 095275358"
+              >
+                <span data-bn="তথ্য কপি করুন" data-en="Copy details">
+                  তথ্য কপি করুন
+                </span>
+              </button>
+            </div>
+          </article>
+
+          <article class="account-card">
+            <h3>
+              Mutual Trust Bank — Principal Branch
+            </h3>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Name"
+                   data-en="Account Name">
+                Account Name
+              </div>
+
+              <div class="account-value">
+                QURANER FARIWALA
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Number"
+                   data-en="Account Number">
+                Account Number
+              </div>
+
+              <div class="account-value">
+                1301010000896
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Routing Number"
+                   data-en="Routing Number">
+                Routing Number
+              </div>
+
+              <div class="account-value">
+                145275358
+              </div>
+            </div>
+
+            <div class="account-actions">
+              <button
+                class="copy-button"
+                type="button"
+                data-copy="Mutual Trust Bank — Principal Branch | Account Name: QURANER FARIWALA | Account Number: 1301010000896 | Routing Number: 145275358"
+              >
+                <span data-bn="তথ্য কপি করুন" data-en="Copy details">
+                  তথ্য কপি করুন
+                </span>
+              </buttonAC Bank — Bijoynagar Branch
+            </h3>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Name"
+                   data-en="Account Name">
+                Account Name
+              </div>
+
+              <div class="account-value">
+                QURANER FARIWALA
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Account Number"
+                   data-en="Account Number">
+                Account Number
+              </div>
+
+              <div class="account-value">
+                2060133490001
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div class="account-label"
+                   data-bn="Routing Number"
+                   data-en="Routing Number">
+                Routing Number
+              </div>
+
+              <div class="account-value">
+                060271103
+              </div>
+            </div>
+
+            <div class="account-actions">
+              <button
+                class="copy-button"
+                type="button"
+                data-copy="BRAC Bank — Bijoynagar Branch | Account Name: QURANER FARIWALA | Account Number: 2060133490001 | Routing Number: 060271103"
+              >
+                <span data-bn="তথ্য কপি করুন" data-en="Copy details">
+                  তথ্য কপি করুন
+                </span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="প্রাতিষ্ঠানিক মোবাইল ব্যাংকিং"
+            data-en="Institutional Mobile Banking"
+          >
+            প্রাতিষ্ঠানিক মোবাইল ব্যাংকিং
+          </h2>
+
+          <p
+            data-bn="শুধুমাত্র প্রতিষ্ঠানের নামে প্রকাশিত অনুমোদিত mobile banking channel ব্যবহার করুন।"
+            data-en="Use only the approved mobile banking channels published in the institution's name."
+          >
+            শুধুমাত্র প্রতিষ্ঠানের নামে প্রকাশিত অনুমোদিত mobile banking channel
+            ব্যবহার করুন।
+          </p>
+        </div>
+
+        <div class="account-grid">
+          <article class="mobile-card">
+            <h3>Bkash Merchant</h3>
+
+            <p
+              data-bn="প্রাতিষ্ঠানিক merchant account"
+              data-en="Institutional merchant account"
+            >
+              প্রাতিষ্ঠানিক merchant account
+            </p>
+
+            <span class="mobile-number">
+              01788856628
+            </span>
+
+            <p>
+              <strong
+                data-bn="Holder:"
+                data-en="Holder:"
+              >
+                Holder:
+              </strong>
+              Quraner Fariwala
+            </p>
+
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="Bkash Merchant | Number: 01788856628 | Holder: Quraner Fariwala"
+            >
+              <span data-bn="নম্বর কপি করুন" data-en="Copy number">
+                নম্বর কপি করুন
+              </span>
+            </button>
+          </article>
+
+          <article class="mobile-card">
+            <h3>Nagad</h3>
+
+            <p
+              data-bn="প্রাতিষ্ঠানিক mobile banking account"
+              data-en="Institutional mobile banking account"
+            >
+              প্রাতিষ্ঠানিক mobile banking account
+            </p>
+
+            <span class="mobile-number">
+              01788856628
+            </span>
+
+            <p>
+              <strong
+                data-bn="Holder:"
+                data-en="Holder:"
+              >
+                Holder:
+              </strong>
+              Quraner Fariwala
+            </p>
+
+            <button
+              class="copy-button"
+              type="button"
+              data-copy="Nagad | Number: 01788856628 | Holder: Quraner Fariwala"
+            >
+              <span data-bn="নম্বর কপি করুন" data-en="Copy number">
+                নম্বর কপি করুন
+              </span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="কীভাবে অনুদান করবেন"
+            data-en="How to Donate"
+          >
+            কীভাবে অনুদান করবেন
+          </h2>
+
+          <p
+            data-bn="পেমেন্ট করার পর transaction information সংরক্ষণ করে confirmation পাঠান।"
+            data-en="After payment, save the transaction information and send a confirmation."
+          >
+            পেমেন্ট করার পর transaction information সংরক্ষণ করে confirmation পাঠান।
+          </p>
+        </div>
+
+        <div class="how-grid">
+ an account"
+            >
+              হিসাব নির্বাচন
+            </h3>
+
+            <p
+              data-bn="উপরের অনুমোদিত ব্যাংক বা institutional mobile banking channel বেছে নিন।"
+              data-en="Choose one of the approved bank or institutional mobile banking channels above."
+            >
+              উপরের অনুমোদিত ব্যাংক বা institutional mobile banking channel বেছে নিন।
+            </p>
+          </article>
+
+          <article class="how-card">
+            <div class="how-number">২</div>
+
+            <h3
+              data-bn="পেমেন্ট করুন"
+              data-en="Make payment"
+            >
+              পেমেন্ট করুন
+            </h3>
+
+            <p
+              data-bn="আপনার পছন্দের মাধ্যমে নিরাপদভাবে অনুদানের পরিমাণ পাঠান।"
+              data-en="Send the donation amount securely through your chosen method."
+            >
+              আপনার পছন্দের মাধ্যমে নিরাপদভাবে অনুদানের পরিমাণ পাঠান।
+            </p>
+          </article>
+
+          <article class="how-card">
+            <div class="how-number">৩</div>
+
+            <h3
+              data-bn="তথ্য সংরক্ষণ করুন"
+              data-en="Save details"
+            >
+              তথ্য সংরক্ষণ করুন
+            </h3>
+
+            <p
+              data-bn="Transaction ID, amount, date ও payment method সংরক্ষণ করুন।"
+              data-en="Save the transaction ID, amount, date, and payment method."
+            >
+              Transaction ID, amount, date ও payment method সংরক্ষণ করুন।
+            </p>
+          </article>
+
+          <article class="how-card">
+            <div class="how-number">৪</div>
+
+            <h3
+              data-bn="নিশ্চিত করুন"
+              data-en="Confirm payment"
+            >
+              নিশ্চিত করুন
+            </h3>
+
+            <p
+              data-bn="Confirmation form অথবা email-এর মাধ্যমে payment information পাঠান।"
+              data-en="Send payment information through the confirmation form or email."
+            >
+              Confirmation form অথবা email-এর মাধ্যমে payment information পাঠান।
+            </p>
+          </article>
+        </div>
+
+        <div class="security-box">
+          <h2
+            data-bn="নিরাপত্তা সতর্কতা"
+            data-en="Security Notice"
+          >
+            নিরাপত্তা সতর্কতা
+          </h2>
+
+          <p
+            data-bn="কোরআনের ফেরিওয়ালা কখনো PIN, OTP, password, CVV, card number বা bank login তথ্য চাইবে না। এই ধরনের তথ্য কারও সঙ্গে শেয়ার করবেন না।"
+            data-en="QuranerFariwala will never ask for your PIN, OTP, password, CVV, card number, or bank login details. Never share such information with anyone."
+          >
+            কোরআনের ফেরিওয়ালা কখনো PIN, OTP, password, CVV, card number বা bank
+            login তথ্য চাইবে না। এই ধরনের তথ্য কারও সঙ্গে শেয়ার করবেন না।
+          </p>
+        </div>
+      </div>
+    </section>
+
+2
+            data-bn="অনুদান নিশ্চিত করতে চান?"
+            data-en="Want to confirm a donation?"
+          >
+            অনুদান নিশ্চিত করতে চান?
+          </h2>
+
+          <p
+            data-bn="পেমেন্ট সম্পন্ন করার পর Transaction ID ও payment details আমাদের পাঠান।"
+            data-en="After completing the payment, send us the transaction ID and payment details."
+          >
+            পেমেন্ট সম্পন্ন করার পর Transaction ID ও payment details আমাদের পাঠান।
+          </p>
+
+          <a
+            class="button"
+            href="/qf/contact.html"
+          >
+            <span
+              data-bn="যোগাযোগ পেজে যান"
+              data-en="Go to Contact Page"
+            >
+              যোগাযোগ পেজে যান
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+               <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+          >
+            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="অনুদান" data-en="Donation">
+            অনুদান
+          </h2>
+
+          <a href="/qf/donate/index.html">
+            <span data-bn="অনুদান পেজ" data-en="Donation Page">
+              অনুদান পেজ
+            </span>
+          </a>
+
+          <a href="/qf/account/index.html">
+            <span
+              data-bn="প্রাতিষ্ঠানিক হিসাব"
+              data-en="Institutional Accounts"
+            >
+              প্রাতিষ্ঠানিক হিসাব
+            </span>
+          </a>
+
+          <a href="/qf/contact.html">
+            <span data-bn="পেমেন্ট নিশ্চিতকরণ" data-en="Payment Confirmation">
+              পেমেন্ট নিশ্চিতকরণ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">
+            প্রকল্প
+          </h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">
+            সহায়তা
+          </h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">
+            আইনি
+          </h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div
+    id="copyToast"
+    class="toast"
+    role="status <script>
+    (function () {
+      const defaultLanguage = 'bn';
+
+      function getLanguage() {
+        try {
+          const saved = localStorage.getItem('qf-lang');
+
+          return saved === 'en' || saved === 'bn'
+            ? saved
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
+        }
+      }
+
+      function setLanguage(language) {
+        const selectedLanguage =
+          language === 'en' ? 'en' : 'bn';
+
+        document
+          .querySelectorAll('[data-bn][data-en]')
+          .forEach(function (element) {
+            const text =
+              selectedLanguage === 'en'
+                ? element.getAttribute('data-en')
+                : element.getAttribute('data-bn');
+
+            if (text !== null) {
+              element.textContent = text;
+            }
+          });
+
+        document.documentElement.lang =
+          selectedLanguage;
+
+        document.documentElement.dataset.lang =
+          selectedLanguage;
+
+        document
+          .querySelectorAll('[data-lang-button]')
+          .forEach(function (button) {
+            button.setAttribute(
+              'aria-pressed',
+              String(
+                button.getAttribute('data-lang-button') ===
+                selectedLanguage
+              )
+            );
+          });
+
+        try {
+          localStorage.setItem(
+            'qf-lang',
+            selectedLanguage
+          );
+        } catch (error) {
+          console.warn(
+            'Language preference could not be saved.',
+            error
+          );
+        }
+      }
+
+      function showToast(message) {
+        const toast =
+          document.getElementById('copyToast');
+
+        if (!toast) return;
+
+        toast.textContent = message;
+        toast.classList.add('show');
+
+        window.clearTimeout(
+          showToast.timeout
+        );
+
+        showToast.timeout =
+          window.setTimeout(function () {
+            toast.classList.remove('show');
+          }, 2200);
+      }
+
+      async function copyText(text) {
+        try {
+          await navigator.clipboard.writeText(text);
+
+          showToast(
+            document.documentElement.lang === 'en'
+              ? 'Account details copied.'
+              : 'হিসাবের তথ্য কপি হয়েছে।'
+          );
+        } catch (error) {
+          const textarea =
+            document.createElement('textarea');
+
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+
+          document.body.append =
+            document.execCommand('copy');
+
+          textarea.remove();
+
+          showToast(
+            copied
+              ? document.documentElement.lang === 'en'
+                ? 'Account details copied.'
+                : 'হিসাবের তথ্য কপি হয়েছে।'
+              : document.documentElement.lang === 'en'
+                ? 'Copy failed. Please copy manually.'
+                : 'কপি করা যায়নি। অনুগ্রহ করে নিজে কপি করুন।'
+          );
+        }
+      }
+
+      document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+          setLanguage(getLanguage());
+
+          document
+            .querySelectorAll('[data-lang-button]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  setLanguage(
+                    button.getAttribute(
+                      'data-lang-button'
+                    )
+                  );
+                }
+              );
+            });
+
+          document
+            .querySelectorAll('[data-copy]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  copyText(
+                    button.getAttribute('data-copy')
+                  );
+                }
+              );
+            });
+
+          const year =
+            document.getElementById('footerYear');
+
+          if (year) {
+            year.textContent =
+              new Date().getFullYear();
+          }
+        }
+      );
+    })();
+  </script>
 </body>
 </html>

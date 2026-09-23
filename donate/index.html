@@ -1,639 +1,1736 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <meta name="description" content="Quraner Fariwala is Bangladesh's premier institution dedicated to the research, printing, and global distribution of the Holy Quran"/>
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta name="generator" content="mj.dev"/>
-  <meta name="keywords" content="Quraner Fariwala, Quraner Feriwala, QuranerFariwala, Al-Qur'an, Al-Quranul Majid, Tahfij Qur'an, MJ-AHMAD, Md Jafor Ahmad, Jafor Ahmad Nomani, Bangladesh, education, technology, sustainable development"/>
-  <meta name="creator" content="MJ-AHMAD"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:site_name" content="Quraner Fariwala"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:image" content="../assets/logo.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="Quraner Fariwala"/>
-  <meta property="og:type" content="website"/>
-  <link rel="shortcut icon" href="../assets/logo.png"/>
-  <link rel="icon" href="../assets/logo.png" sizes="any"/>
-<style>
-/* Rewritten, cleaned, and mobile-friendly CSS for header, hero, grid, cart, and toast */
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* ===== Theme variables ===== */
-:root{
-  --bg-0: #071028;
-  --bg-1: #071a2a;
-  --panel: rgba(255,255,255,0.02);
-  --muted: #94a3b8;
-  --primary: #0ea5a4;
-  --accent: #06b6d4;
-  --fg: #e6eef6;
-  --border: rgba(255,255,255,0.06);
-  --success: #10b981;
-  --max-width: 1100px;
-  --radius: 12px;
-  --shadow-strong: 0 18px 48px rgba(2,6,23,0.12);
-  --shadow-soft: 0 8px 24px rgba(2,6,23,0.06);
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা অনুদান পেজ — প্রাতিষ্ঠানিক ব্যাংক ও মোবাইল ব্যাংকিং হিসাব, অনুদান খাত, নিরাপত্তা নির্দেশিকা, ও ম্যানুয়াল কনফার্মেশন ফর্ম।"
+  >
 
-/* ===== Base ===== */
-* { box-sizing: border-box; }
-html,body { height:100%; margin:0; background: linear-gradient(180deg,var(--bg-0) 0%, var(--bg-1) 100%); color:var(--fg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-.container { max-width:var(--max-width); margin:0 auto; padding:1.25rem; }
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
 
-/* ===== Header ===== */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, rgba(7,10,20,0.6), rgba(7,10,20,0.35));
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:0.9rem 1rem;
-}
-.brand { display:flex; align-items:center; gap:0.75rem; color:var(--fg); text-decoration:none; }
-.logo {
-  width:44px; height:44px; border-radius:10px;
-  display:flex; align-items:center; justify-content:center;
-  background: linear-gradient(135deg,var(--primary),var(--accent));
-  font-weight:800; color:#042;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-}
-.nav-links { display:flex; gap:0.5rem; align-items:center; }
-.nav-links a {
-  padding:0.45rem 0.8rem; border-radius:8px; color:var(--fg); text-decoration:none; font-weight:600; font-size:0.95rem;
-}
-.nav-links a:hover { background: rgba(255,255,255,0.02); color:var(--primary); }
-.actions { display:flex; gap:0.6rem; align-items:center; }
-.btn {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  padding:0.55rem 0.9rem; border-radius:8px; border:0; cursor:pointer;
-  background: linear-gradient(90deg,var(--primary),var(--accent)); color:#042; font-weight:700;
-}
-.btn.secondary { background:transparent; border:1px solid var(--border); color:var(--fg); font-weight:600; }
+  <title
+    data-bn="অনুদান — কোরআনের ফেরিওয়ালা"
+    data-en="Donate — QuranerFariwala"
+  >
+    অনুদান — কোরআনের ফেরিওয়ালা
+  </title>
 
-/* Mobile toggle */
-.mobile-toggle {
-  display:none;
-  background:transparent; border:1px solid transparent; padding:0.45rem; border-radius:8px; color:var(--fg); cursor:pointer;
-}
+  <link rel="icon" href="/qf/assets/logo.png" type="image/png">
 
-/* ===== Hero ===== */
-.hero {
-  position:relative;
-  height:52vh;
-  min-height:320px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  border-bottom:1px solid var(--border);
-}
-.hero .overlay { position:absolute; inset:0; background: linear-gradient(90deg, rgba(7,10,20,0.95), rgba(7,10,20,0.85)); }
-.hero .content { position:relative; z-index:2; text-align:center; padding:1rem; max-width:980px; }
-.kicker {
-  display:inline-block; padding:0.36rem 0.8rem; border-radius:999px;
-  background: rgba(6,182,212,0.08); border:1px solid rgba(6,182,212,0.12);
-  color:var(--accent); font-weight:700; margin-bottom:0.6rem;
-}
-h1 { font-size:2.25rem; margin:0 0 0.6rem 0; line-height:1.02; }
-p.lead { color:var(--muted); max-width:760px; margin:0 auto; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
 
-/* ===== Cards grid ===== */
-.grid { display:grid; gap:1rem; }
-.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid var(--border);
-  padding:1rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  display:flex; flex-direction:column; justify-content:space-between;
-}
-.card h3 { margin:0 0 0.5rem 0; font-size:1.05rem; }
-.muted { color:var(--muted); font-size:0.92rem; margin:0; }
-.impact { background: rgba(6,182,212,0.06); border:1px solid rgba(6,182,212,0.08); padding:0.6rem; border-radius:8px; margin-bottom:0.75rem; }
-.price { font-size:1.6rem; font-weight:800; color:var(--primary); margin:0 0 0.6rem 0; }
-.full-btn {
-  width:100%; display:inline-flex; align-items:center; justify-content:center; gap:0.6rem;
-  padding:0.6rem; border-radius:10px; background:var(--primary); color:#042; border:none; cursor:pointer; font-weight:700;
-}
-.space-y-3 { display:flex; flex-direction:column; gap:0.6rem; }
-input[type="number"] { width:100%; padding:0.6rem; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--fg); }
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --danger: #8e2f2f;
+      --danger-bg: #fff2f0;
+      --success: #176b4d;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
 
-/* ===== Cart FAB & modal ===== */
-.cart-fab {
-  position:fixed; right:1rem; bottom:1rem;
-  background: linear-gradient(90deg,var(--primary),var(--accent));
-  color:#042; padding:0.6rem 0.9rem; border-radius:999px; display:flex; align-items:center; gap:0.6rem;
-  box-shadow: 0 10px 30px rgba(2,6,23,0.6); cursor:pointer; z-index:120;
-}
-.cart-count {
-  background:var(--success); color:#042; padding:0.15rem 0.45rem; border-radius:999px; font-weight:800; font-size:0.85rem;
-}
-.cart-modal {
-  position:fixed; right:1rem; bottom:4.6rem; width:320px; max-height:60vh;
-  background: linear-gradient(180deg,#071428,#071a2a); border:1px solid var(--border); border-radius:12px;
-  padding:0.6rem; box-shadow: var(--shadow-strong); overflow:auto; z-index:130; display:none;
-}
-.cart-modal.open { display:block; }
-.cart-item { display:flex; justify-content:space-between; align-items:center; padding:0.5rem; border-bottom:1px dashed rgba(255,255,255,0.03); }
-.cart-footer { padding-top:0.6rem; display:flex; justify-content:space-between; align-items:center; gap:0.5rem; }
-.small { font-size:0.9rem; color:var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+        --danger-bg: #321b18;
+      }
+    }
 
-/* ===== Toast ===== */
-#qf-toast { position:fixed; top:1rem; right:1rem; z-index:200; display:flex; flex-direction:column; gap:0.5rem; }
+    * {
+      box-sizing: border-box;
+    }
 
-/* ===== Responsive adjustments ===== */
-/* Tablet and small laptops: 2 columns */
-@media (max-width: 1024px) {
-  .nav-links { display:none; }
-  .actions { display:none; }
-  .mobile-toggle { display:inline-flex; }
-  .grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Mobile: enforce 2 columns (2x2 layout for 6 cards), larger touch targets */
-@media (max-width: 640px) {
-  .container { padding:1rem; }
-  .grid.cols-3 { grid-template-columns: repeat(2, 1fr); gap:0.75rem; }
-  .card { padding:0.9rem; border-radius:10px; }
-  .card h3 { font-size:1rem; }
-  .muted { font-size:0.88rem; }
-  .price { font-size:1.25rem; }
-  .full-btn { padding:0.7rem; font-size:0.95rem; border-radius:10px; }
-  .card > div[style] { display:flex; align-items:center; gap:0.5rem; }
-  .card .price { flex:1 0 auto; }
-  .card .full-btn { flex:0 0 46%; min-width:120px; }
-  input[type="number"] { padding:0.65rem; font-size:0.95rem; }
-  #custom-add { padding:0.7rem; font-size:0.95rem; }
-  .cart-fab { right:0.75rem; bottom:0.75rem; padding:0.6rem 0.8rem; border-radius:12px; }
-  .cart-fab > div:first-child { display:none; } /* hide text label on small screens */
-  .cart-modal { left:0.75rem; right:0.75rem; bottom:5.2rem; width:auto; max-height:55vh; padding:0.75rem; border-radius:12px; }
-  .hero { height:40vh; min-height:260px; }
-  h1 { font-size:1.6rem; }
-}
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
 
-/* Very small phones */
-@media (max-width: 420px) {
-  .grid.cols-3 { gap:0.5rem; }
-  .card { padding:0.7rem; }
-  .full-btn { padding:0.55rem; font-size:0.9rem; min-width:100px; }
-  .cart-modal { bottom:3.8rem; max-height:50vh; }
-}
-</style>
+    a {
+      color: inherit;
+    }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--night);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.9)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      margin-bottom: 0.9rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(234,217,166,0.4);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      background: rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font: 400 clamp(2.1rem, 5vw, 4rem)/1.2 var(--serif);
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 0 1.7rem;
+      color: #e8f1ec;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.72rem 1.35rem;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .button.secondary {
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .hero-card {
+      padding: 1.4rem;
+      border: 1px solid rgba(234,217,166,0.3);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 18px 40px rgba(2,35,27,0.2);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card img {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 1rem;
+      padding: 0.6rem;
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      font: 400 1.7rem/1.4 var(--serif);
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: #dfeae2;
+      font-size: 0.95rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      max-width: 620px;
+      margin-top: 1.5rem;
+    }
+
+    .metric-box {
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .metric-box strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.6rem;
+      line-height: 1.1;
+    }
+
+    .metric-box span {
+      color: #dfeae2;
+      font-size: 0.85rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.7rem, 4vw, 2.55rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice {
+      max-width: 960px;
+      margin: 0 auto 1.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      background: rgba(234,217,166,0.18);
+    }
+
+    .notice strong {
+      color: var(--night);
+      font-size: 1rem;
+    }
+
+    .notice p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .donation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .donation-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .donation-card h3 {
+      margin: 0;
+      color: var(--night);
+      font-size: 1.18rem;
+    }
+
+    .donation-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .donation-amount {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--emerald);
+    }
+
+    .donation-card button {
+      width: 100%;
+      min-height: 42px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--emerald);
+      color: var(--white);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .donation-card button:hover {
+      filter: brightness(1.05);
+    }
+
+    .donation-card.custom {
+      border-top-color: var(--emerald);
+    }
+
+    .custom-input {
+      width: 100%;
+      min-height: 42px;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--ink);
+      background: var(--card);
+      font: inherit;
+    }
+
+    .custom-input:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(19,107,85,0.12);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .info-card {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.04);
+    }
+
+    .info-card h3 {
+      margin: 0 0 0.7rem;
+      color: var(--night);
+      font-size: 1.22rem;
+    }
+
+    .info-card p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+    }
+
+    .payment-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    .payment-list li {
+      margin: 0.35rem 0;
+    }
+
+    .security-box {
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+      padding: 1.4rem;
+      border: 1px solid var(--danger);
+      border-radius: 12px;
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .security-box h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .security-box p {
+      margin: 0;
+      font-size: 0.94rem;
+    }
+
+    .form-card {
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2,35,27,0.04);
+    }
+
+    .form-card h3 {
+      margin: 0 0 0.6rem;
+      color: var(--night);
+      font-size: 1.4rem;
+    }
+
+    .form-card form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .field label {
+      color: var(--night);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.72rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--card);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(19,107,85,0.12);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .checkbox-row {
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: start;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .checkbox-row input {
+      accent-color: var(--emerald);
+      margin-top: 0.35rem;
+    }
+
+    .submit-btn {
+      min-height: 46px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #1b1204;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      filter: brightness(1.08);
+    }
+
+    .status {
+      min-height: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.error {
+      color: var(--danger);
+      background: var(--danger-bg);
+      border: 1px solid rgba(142, 47, 47, 0.22);
+      border-radius: 8px;
+      padding: 0.6rem 0.7rem;
+    }
+
+    .status.success {
+      color: var(--success);
+      background: rgba(23,107,77,0.08);
+      border: 1px solid rgba(23,107,77,0.18);
+      border-radius: 8px;
+      padding: 0.6rem 0.7rem;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 980px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .hero-inner,
+      .content-grid,
+      .donation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body class="font-sans antialiased">
-<header>
-  <div class="nav-inner">
-    <a class="brand" href="/" aria-label="Quraner Fariwala home">
-      <!-- Logo image: adjust path if your HTML is in a different folder -->
-      <img src="../assets/logo.png"
-           alt="Quraner Fariwala logo"
-           class="site-logo" width="44" height="44" />
-      <div>
-        <div style="font-weight:800;line-height:1">Quraner Fariwala</div>
-      </div>
-    </a>
 
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="/qf" aria-current="page">Home</a>
-      <a href="/qf/donate">Donate</a>
-      <a href="/qf/contact">Contact</a>
-    </nav>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
 
-    <div class="actions">
-      <a class="btn" href="/qf/donate" role="button">Donate</a>
-    </div>
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
 
-    <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--fg)" aria-hidden="true">
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-</header>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
 
-<!-- Mobile menu (hidden by default; script toggles display) -->
-<nav id="mobile-menu" class="card" style="display:none;position:relative;max-width:1100px;margin:0 auto;padding:0.75rem;border-radius:10px;" aria-hidden="true" aria-label="Mobile navigation">
-  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.25rem">
-    <li><a href="/qf" style="display:block;padding:0.6rem;border-radius:8px;color:var(--fg);text-decoration:none">Home</a></li>
-    <li><a href="/qf/donate" style="display:block;padding:0.6rem;border-radius:8px;color:var(--fg);text-decoration:none">Donate</a></li>
-    <li><a href="/qf/contact" style="display:block;padding:0.6rem;border-radius:8px;color:var(--fg);text-decoration:none">Contact</a></li>
-    <li style="border-top:1px solid var(--border);margin-top:0.5rem;padding-top:0.5rem">
-      <a href="/qf/donate" style="display:block;padding:0.6rem;border-radius:8px;color:var(--fg);text-decoration:none;font-weight:700">Donate</a>
-    </li>
-  </ul>
-</nav>
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
 
-<!-- Hero -->
-<section class="hero" role="banner" aria-label="Ramadhan campaign hero">
-  <div class="overlay" aria-hidden="true"></div>
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
 
-  <div class="content" role="region" aria-labelledby="hero-heading">
-    <div class="kicker" aria-hidden="true">Ramadhan-2026 Campaign</div>
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
 
-    <h1 id="hero-heading">
-      Transform Lives Through
-      <span style="background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">
-        Giving
-      </span>
-    </h1>
+        <a href="/qf/ds.html">
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
 
-    <p class="lead">
-      Join our mission to print and distribute <strong>40,000</strong> memorization‑optimized Qurans.
-      Your donation empowers orphans and underserved Hifz students across Bangladesh and South Asia.
-    </p>
-  </div>
-</section>
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
 
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
 
-<main class="container" id="donate" role="main">
-  <section>
-    <h2 style="text-align:center;margin-bottom:1rem">Ways to Support Us</h2>
+        <a href="/qf/portal/index.html">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+            হিফজ পোর্টাল
+          </span>
+        </a>
+      </nav>
 
-    <div class="donate-grid" aria-live="polite">
-      <!-- 1 -->
-      <div class="card">
-        <h3>Single Copy Sponsor</h3>
-        <p class="muted">Sponsor one memorization-optimized Quran for a deserving student</p>
-        <div class="card-row">
-          <div class="price">$3.25</div>
-          <button class="full-btn add-to-cart" data-title="Single Copy Sponsor" data-price="3.25" aria-label="Add Single Copy Sponsor to cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78"></path></svg>
-            Add to Cart
-          </button>
-        </div>
-      </div>
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
 
-      <!-- 2 -->
-      <div class="card">
-        <h3>Batch Sponsor (1,000 Copies)</h3>
-        <p class="muted">Sponsor 1,000 Qurans for institutional distribution</p>
-        <div class="card-row">
-          <div class="price">$2200</div>
-          <button class="full-btn add-to-cart" data-title="Batch Sponsor (1,000 Copies)" data-price="2200" aria-label="Add Batch Sponsor to cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78"></path></svg>
-            Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="card">
-        <h3>Debt Recovery Partner</h3>
-        <p class="muted">Support institutional healing and legacy debt settlement</p>
-        <div class="card-row">
-          <div class="price">$22500</div>
-          <button class="full-btn add-to-cart" data-title="Debt Recovery Partner" data-price="22500" aria-label="Add Debt Recovery Partner to cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78"></path></svg>
-            Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="card">
-        <h3>Infrastructure Patron</h3>
-        <p class="muted">Sponsor team rebuilding, technology, and logistics</p>
-        <div class="card-row">
-          <div class="price">$16000</div>
-          <button class="full-btn add-to-cart" data-title="Infrastructure Patron" data-price="16000" aria-label="Add Infrastructure Patron to cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78"></path></svg>
-            Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="card">
-        <h3>Global Campaign Ally</h3>
-        <p class="muted">Fund outreach, media production, and donor engagement</p>
-        <div class="card-row">
-          <div class="price">$11000</div>
-          <button class="full-btn add-to-cart" data-title="Global Campaign Ally" data-price="11000" aria-label="Add Global Campaign Ally to cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78"></path></svg>
-            Add to Cart
-          </button>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="card">
-        <h3>Custom Donation</h3>
-        <p class="muted">Choose your own amount to support Quraner Fariwala</p>
-        <div class="space-y-3" style="margin-top:0.4rem">
-          <input id="custom-amount" type="number" min="1" placeholder="Enter amount ($)" aria-label="Custom donation amount" />
-          <button id="custom-add" class="full-btn" disabled aria-disabled="true">Add to Cart</button>
-        </div>
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
       </div>
     </div>
-  </section>
-</main>
+  </header>
 
-<!-- Floating cart FAB -->
-<div id="cart-fab" class="cart-fab" role="button" aria-label="Open cart" tabindex="0">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#042" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1" fill="#042"></circle><circle cx="19" cy="21" r="1" fill="#042"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78" stroke="#042"></path></svg>
-  <div style="font-weight:800;color:#042">Cart</div>
-  <div id="cart-count" class="cart-count" aria-hidden="true">0</div>
-</div>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div
+            class="hero-badge"
+            data-bn="সামাজিক দায়িত্ব • অনুদান • কল্যাণ"
+            data-en="Social Responsibility • Donation • Welfare"
+          >
+            সামাজিক দায়িত্ব • অনুদান • কল্যাণ
+          </div>
 
-<!-- Cart modal -->
-<div id="cart-modal" class="cart-modal" role="dialog" aria-label="Shopping cart">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
-    <strong>Your Cart</strong>
-    <button id="cart-clear" style="background:transparent;border:0;color:var(--muted);cursor:pointer">Clear</button>
-  </div>
-  <div id="cart-items" class="cart-items" style="min-height:80px"></div>
-  <div class="cart-footer">
-    <div>
-      <div class="small">Total</div>
-      <div id="cart-total" style="font-weight:800;font-size:1.05rem">$0.00</div>
+          <h1
+            data-bn="কোরআনের আলোয় জীবনকে সমৃদ্ধ করতে সহায়তা করুন"
+            data-en="Help enrich life through the light of the Quran"
+          >
+            কোরআনের আলোয় জীবনকে সমৃদ্ধ করতে সহায়তা করুন
+          </h1>
+
+          <p
+            data-bn="কোরআনের মুদ্রণ, বিতরণ, হিফজ শিক্ষা ও সেবা কার্যক্রমে আপনার অনুদান মানবিকতা ও দ্বীনি দায়িত্বের এক গুরুত্বপূর্ণ অংশ।"
+            data-en="Your donation is a meaningful part of the Quran's printing, distribution, Hifz education, and service work."
+          >
+            কোরআনের মুদ্রণ, বিতরণ, হিফজ শিক্ষা ও সেবা কার্যক্রমে আপনার অনুদান মানবিকতা
+            ও দ্বীনি দায়িত্বের এক গুরুত্বপূর্ণ অংশ।
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#donation">
+              <span data-bn="অনুদান করুন" data-en="Donate Now">অনুদান করুন</span>
+            </a>
+
+            <a class="button secondary" href="/qf/account/index.html">
+              <span data-bn="হিসাব দেখুন" data-en="View Accounts">হিসাব দেখুন</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-box">
+              <strong>১,০০০+</strong>
+              <span data-bn="সেবা-প্রাপ্ত কপি" data-en="Copies served">সেবা-প্রাপ্ত কপি</span>
+            </div>
+
+            <div class="metric-box">
+              <strong>৪+</strong>
+              <span data-bn="গুরুত্বপূর্ণ খাত" data-en="Core areas">গুরুত্বপূর্ণ খাত</span>
+            </div>
+
+            <div class="metric-box">
+              <strong>২৪/৭</strong>
+              <span data-bn="সেবামূলক মনোভাব" data-en="Service mindset">সেবামূলক মনোভাব</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="/qf/assets/logo.png" alt="QuranerFariwala donation" width="92" height="92">
+
+          <h2
+            data-bn="সেবার উদ্দেশ্যে"
+            data-en="For service and hope"
+          >
+            সেবার উদ্দেশ্যে
+          </h2>
+
+          <p
+            data-bn="আমরা কোরআনকে মানুষের জীবনে প্রভাবশালী ও সেবামূলক করার জন্য কাজ করছি।"
+            data-en="We work to make the Quran impactful and service-oriented in people's lives."
+          >
+            আমরা কোরআনকে মানুষের জীবনে প্রভাবশালী ও সেবামূলক করার জন্য কাজ করছি।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice">
+          <strong
+            data-bn="নিরাপত্তা জানানো"
+            data-en="Important notice"
+          >
+            নিরাপত্তা জানানো
+          </strong>
+
+          <p
+            data-bn="প্রতিষ্ঠানের পক্ষ থেকে প্রকাশিত ব্যাংক ও মোবাইল ব্যাংকিং হিসাবই বিকল্প গ্রহণযোগ্য পেমেন্ট মাধ্যম। কোনো ব্যক্তির PIN, OTP, password, CVV বা bank login তথ্য কখনো চাইবে না।"
+            data-en="Only the institution-approved bank and mobile banking accounts are valid for payment. No one should ever ask for PIN, OTP, password, CVV, or bank login credentials."
+          >
+            প্রতিষ্ঠানের পক্ষ থেকে প্রকাশিত ব্যাংক ও মোবাইল ব্যাংকিং হিসাবই বিকল্প গ্রহণযোগ্য
+            পেমেন্ট মাধ্যম। কোনো ব্যক্তির PIN, OTP, password, CVV বা bank login তথ্য
+            কখনো চাইবে না।
+          </p>
+        </div>
+
+        <div class="section-heading">
+          <h2
+            data-bn="কোন খাতে অনুদান করতে চান?"
+            data-en="Which area would you like to support?"
+          >
+            কোন খাতে অনুদান করতে চান?
+          </h2>
+
+          <p
+            data-bn="অবস্থানভেদে প্রতিটি খাতের প্রয়োজন ভিন্ন; আপনি যে খাতেই অনুদান করুন, সেটি সেবা ও পরিকল্পনার অংশ হবে।"
+            data-en="Each area has different needs depending on location and demand; any amount you contribute becomes part of service and planning."
+          >
+            অবস্থানভেদে প্রতিটি খাতের প্রয়োজন ভিন্ন; আপনি যে খাতেই অনুদান করুন, সেটি
+            সেবা ও পরিকল্পনার অংশ হবে।
+          </p>
+        </div>
+
+        <div class="donation-grid" id="donation">
+          <article class="donation-card">
+            <div>
+              <h3 data-bn="কোরআন বিতরণ" data-en="Quran Distribution">কোরআন বিতরণ</h3>
+              <p
+                data-bn="সুবিধাবঞ্চিত ও প্রয়োজনীয় অঞ্চলে কোরআন পৌঁছে দেওয়ার জন্য।"
+                data-en="To distribute the Quran to underserved and needy communities."
+              >
+                সুবিধাবঞ্চিত ও প্রয়োজনীয় অঞ্চলে কোরআন পৌঁছে দেওয়ার জন্য।
+              </p>
+            </div>
+
+            <div class="donation-amount">৳ ৫০০</div>
+
+            <button
+              type="button"
+              data-donation-title="Quran Distribution"
+              data-donation-amount="500"
+              data-donation-target="Koran distribution"
+            >
+              <span data-bn="এটি বেছে নিন" data-en="Choose this">এটি বেছে নিন</span>
+            </button>
+          </article>
+
+          <article class="donation-card">
+            <div>
+              <h3 data-bn="হিফজ শিক্ষার্থী সমর্থন" data-en="Hifz Student Support">হিফজ শিক্ষার্থী সমর্থন</h3>
+              <p
+                data-bn="দরিদ্র ও প্রতিশ্রুতিশীল শিক্ষার্থীদের পাঠ্য ও শিক্ষা সহায়তার জন্য।"
+                data-en="For supporting needy and promising Hifz students with educational resources."
+              >
+                দরিদ্র ও প্রতিশ্রুতিশীল শিক্ষার্থীদের পাঠ্য ও শিক্ষা সহায়তার জন্য।
+              </p>
+            </div>
+
+            <div class="donation-amount">৳ ১,০০০</div>
+
+            <button
+              type="button"
+              data-donation-title="Hifz Student Support"
+              data-donation-amount="1000"
+              data-donation-target="Hifz education support"
+            >
+              <span data-bn="এটি বেছে নিন" data-en="Choose this">এটি বেছে নিন</span>
+            </button>
+          </article>
+
+          <article class="donation-card">
+            <div>
+              <h3 data-bn="মুদ্রণ ও প্রস্তুতি" data-en="Printing and Preparation">মুদ্রণ ও প্রস্তুতি</h3>
+              <p
+                data-bn="মুদ্রণ, কাগজ, বাঁধাই, মান নিশ্চিতকরণ ও প্রাক-প্রস্তুতির জন্য।"
+                data-en="For printing, paper, binding, quality checks, and preparation work."
+              >
+                মুদ্রণ, কাগজ, বাঁধাই, মান নিশ্চিতকরণ ও প্রাক-প্রস্তুতির জন্য।
+              </p>
+            </div>
+
+            <div class="donation-amount">৳ ২,০০০</div>
+
+            <button
+              type="button"
+              data-donation-title="Printing and Preparation"
+              data-donation-amount="2000"
+              data-donation-target="Printing and preparation"
+            >
+              <span data-bn="এটি বেছে নিন" data-en="Choose this">এটি বেছে নিন</span>
+            </button>
+          </article>
+
+          <article class="donation-card">
+            <div>
+              <h3 data-bn="প্রকল্প ও উদ্যোগ" data-en="Project and Initiative">প্রকল্প ও উদ্যোগ</h3>
+              <p
+                data-bn="কোরআন-ভিত্তিক প্রয়োগ, গবেষণা, প্রতিলিপি ও সামাজিক কাজের জন্য।"
+                data-en="For project development, research, replication, and social impact work."
+              >
+                কোরআন-ভিত্তিক প্রয়োগ, গবেষণা, প্রতিলিপি ও সামাজিক কাজের জন্য।
+              </p>
+            </div>
+
+            <div class="donation-amount">৳ ৫,০০০</div>
+
+            <button
+              type="button"
+              data-donation-title="Project and Initiative"
+              data-donation-amount="5000"
+              data-donation-target="Project and initiative support"
+            >
+              <span data-bn="এটি বেছে নিন" data-en="Choose this">এটি বেছে নিন</span>
+            </button>
+          </article>
+
+          <article class="donation-card">
+            <div>
+              <h3 data-bn="সামগ্রিক সহায়তা" data-en="General Support">সামগ্রিক সহায়তা</h3>
+              <p
+                data-bn="সামগ্রিক সেবা ও অগ্রাধিকারভিত্তিক সামান্য বা বেশি অনুদান।"
+                data-en="General support for flexible, priority-based service and operations."
+              >
+                সামগ্রিক সেবা ও অগ্রাধিকারভিত্তিক সামান্য বা বেশি অনুদান।
+              </p>
+            </div>
+
+            <div class="donation-amount">৳ ১০,০০০</div>
+
+            <button
+              type="button"
+              data-donation-title="General Support"
+              data-donation-amount="10000"
+              data-donation-target="General support"
+            >
+              <span data-bn="এটি বেছে নিন" data-en="Choose this">এটি বেছে নিন</span>
+            </button>
+          </article>
+
+          <article class="donation-card custom">
+            <div>
+              <h3 data-bn="নিজের পরিমাণ" data-en="Custom Amount">নিজের পরিমাণ</h3>
+
+              <p
+                data-bn="আপনি নিজের পছন্দ অনুযায়ী অনুদান দিতে পারেন।"
+                data-en="You may donate any amount of your choice."
+              >
+                আপনি নিজের পছন্দ অনুযায়ী অনুদান দিতে পারেন।
+              </p>
+            </div>
+
+            <input
+              class="custom-input"
+              id="customAmount"
+              type="number"
+              min="100"
+              step="100"
+              placeholder="৳ ১০০"
+              data-bn-placeholder="৳ ১০০"
+              data-en-placeholder="৳ 100"
+            >
+
+            <button
+              type="button"
+              id="customDonateBtn"
+            >
+              <span data-bn="নিজের পরিমাণ বেছে নিন" data-en="Select custom amount">
+                নিজের পরিমাণ বেছে নিন
+              </span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="content-grid">
+          <article class="info-card">
+            <h3
+              data-bn="সম্মানিত অনুদানদাতার জন্য"
+              data-en="For valued donors"
+            >
+              সম্মানিত অনুদানদাতার জন্য
+            </h3>
+
+            <p
+              data-bn="আপনার অনুদান কেবল অর্থ নয়; এটি কোরআনের সেবা, মানুষের স্বপ্ন, ও ভবিষ্যৎ প্রজন্মের দ্বীনি চেতনার অংশ।"
+              data-en="Your donation is more than money; it becomes part of Quranic service, human hope, and future generations' faith-based vision."
+            >
+              আপনার অনুদান কেবল অর্থ নয়; এটি কোরআনের সেবা, মানুষের স্বপ্ন, ও ভবিষ্যৎ প্রজন্মের
+              দ্বীনি চেতনার অংশ।
+            </p>
+
+            <ul class="payment-list">
+              <li data-bn="সেবা-ভিত্তিক প্রায়োগিক পরিকল্পনা" data-en="Service-based practical planning">সেবা-ভিত্তিক প্রায়োগিক পরিকল্পনা</li>
+              <li data-bn="স্বচ্ছ স্থানীয় ও নৈতিক পদ্ধতি" data-en="Clear local and ethical process">স্বচ্ছ স্থানীয় ও নৈতিক পদ্ধতি</li>
+              <li data-bn="অনুদানের নথিভুক্ত রেকর্ড" data-en="Documented donation records">অনুদানের নথিভুক্ত রেকর্ড</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3
+              data-bn="অনুমোদিত পেমেন্ট ব্যবস্থা"
+              data-en="Approved payment methods"
+            >
+              অনুমোদিত পেমেন্ট ব্যবস্থা
+            </h3>
+
+            <p
+              data-bn="পেমেন্টের আগে নির্ভরযোগ্য channel নির্বাচন করুন।"
+              data-en="Choose the trusted channel before making the payment."
+            >
+              পেমেন্টের আগে নির্ভরযোগ্য channel নির্বাচন করুন।
+            </p>
+
+            <ul class="payment-list">
+              <li
+                data-bn="ব্যাংক ট্রান্সফার"
+                data-en="Bank transfer"
+              >
+                ব্যাংক ট্রান্সফার
+              </li>
+
+              <li
+                data-bn="BKash Merchant"
+                data-en="BKash Merchant"
+              >
+                BKash Merchant
+              </li>
+
+              <li
+                data-bn="Nagad"
+                data-en="Nagad"
+              >
+                Nagad
+              </li>
+            </ul>
+
+            <p>
+              <a href="/qf/account/index.html" style="color:var(--emerald); font-weight:700; text-decoration:none;">
+                <span data-bn="হিসাব তালিকা দেখুন" data-en="View account list">হিসাব তালিকা দেখুন</span>
+              </a>
+            </p>
+          </article>
+        </div>
+
+        <div class="security-box">
+          <h2
+            data-bn="নিরাপত্তা সতর্কতা"
+            data-en="Security notice"
+          >
+            নিরাপত্তা সতর্কতা
+          </h2>
+
+          <p
+            data-bn="কখনোই আপনার PIN, OTP, passcode, CVV, bank login বা card detail কারও সঙ্গে শেয়ার করবেন না।"
+            data-en="Never share your PIN, OTP, passcode, CVV, bank login, or card details with anyone."
+          >
+            কখনোই আপনার PIN, OTP, passcode, CVV, bank login বা card detail কারও সঙ্গে শেয়ার
+            করবেন না।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="অনুদান নিশ্চিতকরণ"
+            data-en="Donation confirmation"
+          >
+            অনুদান নিশ্চিতকরণ
+          </h2>
+
+          <p
+            data-bn="পেমেন্ট করার পর নিচের ফরমে আপনার তথ্য পাঠিয়ে নিশ্চিত করুন।"
+            data-en="After payment, send your information through the form below to confirm the donation."
+          >
+            পেমেন্ট করার পর নিচের ফরমে আপনার তথ্য পাঠিয়ে নিশ্চিত করুন।
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h3
+            data-bn="কনফার্মেশন ফর্ম"
+            data-en="Confirmation form"
+          >
+            কনফার্মেশন ফর্ম
+          </h3>
+
+          <form id="donationForm" action="mailto:quranerfariwala@gmail.com" method="post" enctype="text/plain">
+            <div class="row">
+              <div class="field">
+                <label for="donorName">
+                  <span data-bn="আপনার নাম" data-en="Your name">আপনার নাম</span>
+                </label>
+
+                <input
+                  id="donorName"
+                  name="Donor Name"
+                  type="text"
+                  required
+                  placeholder="মুহাম্মদ রহমান"
+                  data-bn-placeholder="মুহাম্মদ রহমান"
+                  data-en-placeholder="Muhammad Rahman"
+                >
+              </div>
+
+              <div class="field">
+                <label for="donorEmail">
+                  <span data-bn="ইমেইল" data-en="Email">ইমেইল</span>
+                </label>
+
+                <input
+                  id="donorEmail"
+                  name="Email"
+                  type="email"
+                  required
+                  placeholder="example@email.com"
+                  data-bn-placeholder="example@email.com"
+                  data-en-placeholder="example@email.com"
+                >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="donorPhone">
+                  <span data-bn="ফোন নম্বর" data-en="Phone Number">ফোন নম্বর</span>
+                </label>
+
+                <input
+                  id="donorPhone"
+                  name="Phone"
+                  type="tel"
+                  required
+                  placeholder="০১৭১২৩৪৫৬৭৮"
+                  data-bn-placeholder="০১৭১২৩৪৫৬৭৮"
+                  data-en-placeholder="+8801712345678"
+                >
+              </div>
+
+              <div class="field">
+                <label for="donationType">
+                  <span data-bn="অনুদানের খাত" data-en="Donation category">অনুদানের খাত</span>
+                </label>
+
+                <select id="donationType" name="Donation Category" required>
+                  <option value="">-- নির্বাচন করুন --</option>
+                  <option value="Quran Distribution">Quran Distribution / কোরআন বিতরণ</option>
+                  <option value="Hifz Student Support">Hifz Student Support / হিফজ শিক্ষার্থী সমর্থন</option>
+                  <option value="Printing and Preparation">Printing and Preparation / মুদ্রণ ও প্রস্তুতি</option>
+                  <option value="Project and Initiative">Project and Initiative / প্রকল্প ও উদ্যোগ</option>
+                  <option value="General Support">General Support / সামগ্রিক সহায়তা</option>
+                  <option value="Custom Amount">Custom Amount / নিজের পরিমাণ</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="donationAmount">
+                  <span data-bn="অনুদানের পরিমাণ" data-en="Donation amount">অনুদানের পরিমাণ</span>
+                </label>
+
+                <input
+                  id="donationAmount"
+                  name="Donation Amount"
+                  type="number"
+                  min="100"
+                  step="100"
+                  required
+                  placeholder="৳ ১০০০"
+                  data-bn-placeholder="৳ ১০০০"
+                  data-en-placeholder="৳ 1000"
+                >
+              </div>
+
+              <div class="field">
+                <label for="paymentMethod">
+                  <span data-bn="পেমেন্ট পদ্ধতি" data-en="Payment method">পেমেন্ট পদ্ধতি</span>
+                </label>
+
+                <select id="paymentMethod" name="Payment Method" required>
+                  <option value="">-- নির্বাচন করুন --</option>
+                  <option value="Bank Transfer">Bank Transfer / ব্যাংক ট্রান্সফার</option>
+                  <option value="BKash Merchant">BKash Merchant</option>
+                  <option value="Nagad">Nagad</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="transactionId">
+                  <span data-bn="Transaction ID / reference" data-en="Transaction ID / reference">Transaction ID / reference</span>
+                </label>
+
+                <input
+                  id="transactionId"
+                  name="Transaction ID / Reference"
+                  type="text"
+                  required
+                  placeholder="TXN-12345678"
+                  data-bn-placeholder="TXN-12345678"
+                  data-en-placeholder="TXN-12345678"
+                >
+              </div>
+
+              <div class="field">
+                <label for="paymentDate">
+                  <span data-bn="পেমেন্টের তারিখ" data-en="Payment date">পেমেন্টের তারিখ</span>
+                </label>
+
+                <input
+                  id="paymentDate"
+                  name="Payment Date"
+                  type="date"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">
+                <span data-bn="মন্তব্য (ঐচ্ছিক)" data-en="Notes (optional)">মন্তব্য (ঐচ্ছিক)</span>
+              </label>
+
+              <textarea
+                id="notes"
+                name="Notes"
+                placeholder="আপনার মন্তব্য লিখুন..."
+                data-bn-placeholder="আপনার মন্তব্য লিখুন..."
+                data-en-placeholder="Write your comments..."
+              ></textarea>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="consent" required>
+              <span
+                data-bn="আমি নিশ্চিত করছি যে আমি কোরআনের ফেরিওয়ালা কর্তৃক প্রকাশিত প্রাতিষ্ঠানিক হিসাব ব্যবহার করছি এবং আমার পেমেন্টের তথ্য সঠিকভাবে দিচ্ছি।"
+                data-en="I confirm that I am using the institution-approved account and that the information I provide is accurate."
+              >
+                আমি নিশ্চিত করছি যে আমি কোরআনের ফেরিওয়ালা কর্তৃক প্রকাশিত প্রাতিষ্ঠানিক হিসাব ব্যবহার করছি এবং আমার পেমেন্টের তথ্য সঠিকভাবে দিচ্ছি।
+              </span>
+            </label>
+
+            <button
+              class="submit-btn"
+              type="submit"
+            >
+              <span data-bn="কনফার্মেশন পাঠান" data-en="Send confirmation">কনফার্মেশন পাঠান</span>
+            </button>
+
+            <div
+              id="formStatus"
+              class="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+          >
+            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="অনুদান" data-en="Donation">অনুদান</h2>
+
+          <a href="/qf/donate/index.html">
+            <span data-bn="অনুদান পেজ" data-en="Donation Page">অনুদান পেজ</span>
+          </a>
+
+          <a href="/qf/account/index.html">
+            <span data-bn="হিসাব তালিকা" data-en="Account List">হিসাব তালিকা</span>
+          </a>
+
+          <a href="/qf/contact.html">
+            <span data-bn="কনফার্মেশন" data-en="Confirmation">কনফার্মেশন</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/ds.html">
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          —
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          </a>
+        </div>
+      </div>
     </div>
-    <div style="flex:1;text-align:right">
-      <button id="checkout" class="btn" style="padding:0.5rem 0.8rem">Checkout</button>
-    </div>
-  </div>
-</div>
+  </footer>
 
-
-<!-- Toast container -->
-<div id="qf-toast" aria-hidden="true"></div>
-
-<!-- Contact/Issues Section -->
-<section class="issues-section" style="padding:1.5rem;text-align:center;">
-  <p style="max-width:800px;margin:0 auto;font-size:0.95rem;line-height:1.5;">
-    If you encounter any issues or have complaints regarding payments, or notice discrepancies in field activities, please contact:
-    <a href="mailto:mjahmad2024@outlook.com" style="color:var(--primary);font-weight:600;text-decoration:none;margin-left:0.35rem;">
-      mjahmad2024@outlook.com
-    </a>
-  </p>
-</section>
-
-
-<footer class="site-footer" role="contentinfo" style="border-top:1px solid var(--border);padding:1rem 0;margin-top:1.5rem;background:transparent;color:var(--muted);">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1rem;display:flex;flex-direction:column;gap:0.5rem;align-items:center;text-align:center;">
-    <div style="font-size:0.98rem;color:var(--fg);font-weight:600;">
-      © <span id="site-year"></span> <b>QuranerFariwala</b> — All rights reserved.
-    </div>
-<div style="font-size:0.95rem;color:var(--muted);">
-  This project is open source and available under the 
-  <a href="/qf/mit" style="color:var(--primary);text-decoration:none;font-weight:600;">
-    MIT License
-  </a>.
-</div>
-
-<div style="margin-top:0.25rem;font-size:0.95rem;color:var(--fg);font-weight:600">
-  With a vision for tomorrow’s leaders — by 
-  <a href="https://mj-ahmad.github.io/mj-ahmad/" style="color:var(--accent);text-decoration:none;">
-    MJ‑AHMAD
-  </a>
-</div>
-
-
-    <nav aria-label="Footer links" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
-      <a href="/qf/terms" style="color:var(--muted);text-decoration:none;font-weight:600">Terms</a>
-      <a href="/qf/privacy" style="color:var(--muted);text-decoration:none;font-weight:600">Privacy</a>
-      <a href="https://mj-ahmad.github.io/mj-ahmad/" style="color:var(--muted);text-decoration:none;font-weight:600">Docs</a>
-      <a href="/qf/faq" style="color:var(--muted);text-decoration:none;font-weight:600">FAQ</a>
-    </nav>
-  </div>
-
-  <script>
-    (function(){
-      try { document.getElementById('site-year').textContent = new Date().getFullYear(); } catch(e){}
-    })();
-  </script>
-</footer>
-
-
-
-
-  <!-- Inline script: mobile menu + cart logic -->
   <script>
     (function () {
-      'use strict';
+      const defaultLanguage = 'bn';
 
-      /* ---------- Helpers ---------- */
-      const $ = (sel, root = document) => root.querySelector(sel);
-      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-      const CART_KEY = 'qf_cart_v1';
-
-      function parsePrice(v) {
-        const n = Number(String(v).replace(/[^0-9.]/g, ''));
-        return Number.isFinite(n) ? n : 0;
-      }
-      function formatCurrency(n) {
-        return '$' + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      }
-
-      /* ---------- Toast ---------- */
-      function showToast(msg, ms = 2000) {
-        const container = document.getElementById('qf-toast');
-        const el = document.createElement('div');
-        el.textContent = msg;
-        el.style.background = 'rgba(255,255,255,0.06)';
-        el.style.color = 'var(--fg)';
-        el.style.padding = '0.6rem 0.9rem';
-        el.style.borderRadius = '8px';
-        el.style.boxShadow = '0 8px 24px rgba(2,6,23,0.6)';
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(-6px)';
-        el.style.transition = 'opacity 180ms ease, transform 180ms ease';
-        container.appendChild(el);
-        requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
-        setTimeout(() => {
-          el.style.opacity = '0'; el.style.transform = 'translateY(-6px)';
-          setTimeout(() => el.remove(), 220);
-        }, ms);
-      }
-
-      /* ---------- Cart storage ---------- */
-      function loadCart() {
+      function getStoredLanguage() {
         try {
-          const raw = localStorage.getItem(CART_KEY);
-          return raw ? JSON.parse(raw) : [];
-        } catch (e) {
-          return [];
+          const saved = localStorage.getItem('qf-lang');
+          return saved === 'en' || saved === 'bn'
+            ? saved
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
         }
       }
-      function saveCart(cart) {
-        try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {}
+
+      function setLanguage(language) {
+        const current = language === 'en' ? 'en' : 'bn';
+
+        document.querySelectorAll('[data-bn][data-en]').forEach(function (el) {
+          const text = current === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-bn');
+          if (text !== null) el.textContent = text;
+        });
+
+        document.querySelectorAll('[data-bn-placeholder][data-en-placeholder]').forEach(function (el) {
+          const text = current === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-bn-placeholder');
+          if (text !== null) el.setAttribute('placeholder', text);
+        });
+
+        document.documentElement.lang = current;
+        document.documentElement.dataset.lang = current;
+
+        document.querySelectorAll('[data-lang-button]').forEach(function (button) {
+          const isActive = button.getAttribute('data-lang-button') === current;
+          button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        try {
+          localStorage.setItem('qf-lang', current);
+        } catch (error) {}
       }
 
-      /* ---------- Cart UI ---------- */
-      const cartFab = document.getElementById('cart-fab');
-      const cartCountEl = document.getElementById('cart-count');
-      const cartModal = document.getElementById('cart-modal');
-      const cartItemsEl = document.getElementById('cart-items');
-      const cartTotalEl = document.getElementById('cart-total');
-      const cartClearBtn = document.getElementById('cart-clear');
-      const checkoutBtn = document.getElementById('checkout');
+      function showStatus(message, type) {
+        const statusEl = document.getElementById('formStatus');
 
-      function renderCart() {
-        const cart = loadCart();
-        cartItemsEl.innerHTML = '';
-        if (!cart.length) {
-          cartItemsEl.innerHTML = '<div class="small" style="padding:0.6rem 0">Your cart is empty.</div>';
-        } else {
-          cart.forEach((it, idx) => {
-            const row = document.createElement('div');
-            row.className = 'cart-item';
-            const meta = document.createElement('div');
-            meta.className = 'meta';
-            meta.innerHTML = '<div style="font-weight:700">' + escapeHtml(it.title) + '</div><div class="small">' + (it.custom ? 'Custom donation' : '') + '</div>';
-            const right = document.createElement('div');
-            right.style.textAlign = 'right';
-            right.innerHTML = '<div style="font-weight:800">' + formatCurrency(it.price) + '</div><div style="margin-top:6px"><button data-idx="' + idx + '" class="small remove-item" style="background:transparent;border:0;color:var(--muted);cursor:pointer">Remove</button></div>';
-            row.appendChild(meta);
-            row.appendChild(right);
-            cartItemsEl.appendChild(row);
-          });
-        }
-        const total = cart.reduce((s, i) => s + Number(i.price || 0), 0);
-        cartTotalEl.textContent = formatCurrency(total);
-        cartCountEl.textContent = String(cart.length);
+        if (!statusEl) return;
+
+        statusEl.textContent = message;
+        statusEl.className = 'status show ' + type;
       }
 
-      function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; }); }
+      function addDonationSelection() {
+        document.querySelectorAll('[data-donation-title]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            const title = button.getAttribute('data-donation-title');
+            const amount = button.getAttribute('data-donation-amount');
+            const target = button.getAttribute('data-donation-target');
 
-      cartFab.addEventListener('click', () => {
-        cartModal.classList.toggle('open');
-      });
+            const donationType = document.getElementById('donationType');
+            const donationAmount = document.getElementById('donationAmount');
 
-      cartClearBtn.addEventListener('click', () => {
-        if (!confirm('Clear all items from cart?')) return;
-        saveCart([]);
-        renderCart();
-        showToast('Cart cleared');
-      });
+            if (donationType) donationType.value = title;
+            if (donationAmount) donationAmount.value = amount;
 
-      cartItemsEl.addEventListener('click', (e) => {
-        const btn = e.target.closest('button.remove-item');
-        if (!btn) return;
-        const idx = Number(btn.getAttribute('data-idx'));
-        const cart = loadCart();
-        if (idx >= 0 && idx < cart.length) {
-          cart.splice(idx, 1);
-          saveCart(cart);
-          renderCart();
-          showToast('Item removed');
-        }
-      });
+            const message = document.documentElement.lang === 'en'
+              ? 'Selected: ' + title + ' — ৳ ' + Number(amount).toLocaleString()
+              : 'নির্বাচিত: ' + title + ' — ৳ ' + Number(amount).toLocaleString();
 
-      checkoutBtn.addEventListener('click', () => {
-        const cart = loadCart();
-        if (!cart.length) { showToast('Your cart is empty'); return; }
-        // For demo: just show a toast and clear cart
-        showToast('Thank you — checkout simulated');
-        saveCart([]);
-        renderCart();
-      });
-
-      /* ---------- Add to cart bindings ---------- */
-      function bindAddButtons() {
-        const addBtns = Array.from(document.querySelectorAll('.add-to-cart'));
-        addBtns.forEach(btn => {
-          if (btn.dataset.bound === 'true') return;
-          btn.dataset.bound = 'true';
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const title = btn.getAttribute('data-title') || btn.closest('.card')?.querySelector('h3')?.textContent?.trim() || 'Support item';
-            const price = parsePrice(btn.getAttribute('data-price') || btn.closest('.card')?.querySelector('.price')?.textContent || '0');
-            const item = { title: title, price: Number(price), addedAt: new Date().toISOString() };
-            const cart = loadCart();
-            cart.push(item);
-            saveCart(cart);
-            renderCart();
-            showToast('Added to cart: ' + title);
+            showStatus(message, 'success');
           });
         });
       }
 
-      /* ---------- Custom donation ---------- */
-      const customInput = document.getElementById('custom-amount');
-      const customAdd = document.getElementById('custom-add');
-      if (customInput && customAdd) {
-        customInput.addEventListener('input', () => {
-          const v = Number(customInput.value);
-          if (Number.isFinite(v) && v >= 1) {
-            customAdd.disabled = false;
-            customAdd.removeAttribute('aria-disabled');
-          } else {
-            customAdd.disabled = true;
-            customAdd.setAttribute('aria-disabled', 'true');
+      function handleCustomDonation() {
+        const input = document.getElementById('customAmount');
+        const btn = document.getElementById('customDonateBtn');
+
+        if (!input || !btn) return;
+
+        btn.addEventListener('click', function () {
+          const value = Number(input.value);
+          if (!Number.isFinite(value) || value < 100) {
+            showStatus(
+              document.documentElement.lang === 'en'
+                ? 'Please enter at least ৳ 100.'
+                : 'অনুগ্রহ করে কমপক্ষে ৳ ১০০ লিখুন।',
+              'error'
+            );
+            return;
           }
-        });
-        customAdd.addEventListener('click', (e) => {
-          e.preventDefault();
-          const v = Number(customInput.value);
-          if (!Number.isFinite(v) || v < 1) { showToast('Enter a valid amount (minimum $1)'); return; }
-          const item = { title: 'Custom Donation', price: Number(v), custom: true, addedAt: new Date().toISOString() };
-          const cart = loadCart();
-          cart.push(item);
-          saveCart(cart);
-          renderCart();
-          showToast('Custom donation added');
-          customInput.value = '';
-          customAdd.disabled = true;
+
+          document.getElementById('donationType').value = 'Custom Amount';
+          document.getElementById('donationAmount').value = value;
+
+          showStatus(
+            document.documentElement.lang === 'en'
+              ? 'Custom amount selected: ৳ ' + value.toLocaleString()
+              : 'নিজের পরিমাণ নির্বাচন হয়েছে: ৳ ' + value.toLocaleString(),
+            'success'
+          );
         });
       }
 
-      /* ---------- Mobile menu toggle ---------- */
-      const mobileToggle = document.getElementById('mobile-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', (e) => {
-          e.preventDefault();
-          const open = mobileToggle.getAttribute('aria-expanded') === 'true';
-          if (open) {
-            mobileMenu.style.display = 'none';
-            mobileToggle.setAttribute('aria-expanded', 'false');
-          } else {
-            mobileMenu.style.display = 'block';
-            mobileToggle.setAttribute('aria-expanded', 'true');
+      function handleFormSubmit() {
+        const form = document.getElementById('donationForm');
+
+        if (!form) return;
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const donationType = document.getElementById('donationType').value.trim();
+          const donationAmount = document.getElementById('donationAmount').value.trim();
+          const donorName = document.getElementById('donorName').value.trim();
+          const donorEmail = document.getElementById('donorEmail').value.trim();
+          const donorPhone = document.getElementById('donorPhone').value.trim();
+          const paymentMethod = document.getElementById('paymentMethod').value.trim();
+          const transactionId = document.getElementById('transactionId').value.trim();
+          const paymentDate = document.getElementById('paymentDate').value.trim();
+          const consent = document.getElementById('consent').checked;
+
+          if (!donorName || !donorEmail || !donorPhone || !donationType || !donationAmount || !paymentMethod || !transactionId || !paymentDate || !consent) {
+            showStatus(
+              document.documentElement.lang === 'en'
+                ? 'Please complete all required fields and confirm your consent.'
+                : 'অনুগ্রহ করে সব প্রয়োজনীয় তথ্য পূরণ করুন এবং সম্মতি দিন।',
+              'error'
+            );
+            return;
           }
-        });
-        // Close on outside click
-        document.addEventListener('click', (ev) => {
-          if (!mobileMenu.contains(ev.target) && !mobileToggle.contains(ev.target)) {
-            mobileMenu.style.display = 'none';
-            mobileToggle.setAttribute('aria-expanded', 'false');
-          }
+
+          const subject = encodeURIComponent('Donation Confirmation — QuranerFariwala');
+          const body = encodeURIComponent(
+            [
+              'Donor Name: ' + donorName,
+              'Email: ' + donorEmail,
+              'Phone: ' + donorPhone,
+              'Donation Category: ' + donationType,
+              'Donation Amount: ৳ ' + Number(donationAmount).toLocaleString(),
+              'Payment Method: ' + paymentMethod,
+              'Transaction ID / Reference: ' + transactionId,
+              'Payment Date: ' + paymentDate,
+              'Notes: ' + (document.getElementById('notes').value || 'N/A'),
+              '',
+              'Sender confirmation: Yes',
+            ].join('\n')
+          );
+
+          window.location.href = 'mailto:quranerfariwala@gmail.com?subject=' + subject + '&body=' + body;
+
+          showStatus(
+            document.documentElement.lang === 'en'
+              ? 'Your donation confirmation is being prepared by email.'
+              : 'আপনার অনুদান নিশ্চিতকরণ ইমেইলে প্রস্তুত হচ্ছে।',
+            'success'
+          );
         });
       }
 
-      /* ---------- Init ---------- */
-      function init() {
-        renderCart();
-        bindAddButtons();
+      function initMobileNav() {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', function () {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
       }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
+      document.addEventListener('DOMContentLoaded', function () {
+        setLanguage(getStoredLanguage());
+
+        document.querySelectorAll('[data-lang-button]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            setLanguage(button.getAttribute('data-lang-button'));
+          });
+        });
+
+        addDonationSelection();
+        handleCustomDonation();
+        handleFormSubmit();
+        initMobileNav();
+
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+      });
     })();
   </script>
 </body>
