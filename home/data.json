@@ -1,0 +1,87 @@
+{
+  "_readme": "এই ফাইল qf/index.html (পাবলিক হোমপেজ) চালায়। soon:true যুক্ত লিংকগুলো এখনো তৈরি হয়নি বলে ধূসর দেখাবে; পাতাটি তৈরি হলে soon মুছে link ঠিক করে দিন।",
+
+  "site": {
+    "title": { "bn": "কোরআনের ফেরিওয়ালা — QuranerFariwala", "en": "QuranerFariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" }
+  },
+
+  "nav": {
+    "research": { "bn": "গবেষণা", "en": "Research" },
+    "printing": { "bn": "মুদ্রণ", "en": "Printing" },
+    "distribution": { "bn": "বিতরণ", "en": "Distribution" },
+    "portal": { "bn": "পোর্টাল", "en": "Portal" }
+  },
+
+  "ui": { "learnMore": { "bn": "বিস্তারিত", "en": "Learn more" } },
+
+  "hero": {
+    "epigraph": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
+    "epigraphRef": { "bn": "সূরা আল-আলাক, আয়াত ১", "en": "Surah Al-'Alaq, Verse 1" },
+    "title": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "lead": { "bn": "গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে বাংলাদেশের প্রতিটি প্রান্তে পবিত্র কোরআন পৌঁছে দেওয়ার একটি নিরবচ্ছিন্ন যাত্রা।", "en": "An unbroken journey to bring the Holy Quran to every corner of Bangladesh — through research, printing, and distribution." },
+    "cta": { "bn": "পোর্টালে প্রবেশ", "en": "Enter Portal" }
+  },
+
+  "ledger": [
+    { "value": "৫০,০০০+", "valueEn": "50,000+", "label": { "bn": "বিতরণকৃত কোরআন", "en": "Copies distributed" } },
+    { "value": "১২,০০০+", "valueEn": "12,000+", "label": { "bn": "হিফজ শিক্ষার্থী", "en": "Hifz students" } },
+    { "value": "৩০০+", "valueEn": "300+", "label": { "bn": "অংশগ্রহণকারী মাদ্রাসা", "en": "Partner madrasas" } },
+    { "value": "৬৪", "valueEn": "64", "label": { "bn": "জেলায় উপস্থিতি", "en": "Districts reached" } }
+  ],
+
+  "chaptersHead": { "bn": "আমাদের কার্যক্রম", "en": "What we do" },
+  "chapters": [
+    { "icon": "research", "title": { "bn": "গবেষণা", "en": "Research" }, "text": { "bn": "কোরআনের গভীরতা অনুধাবনে প্রাচীন জ্ঞান ও আধুনিক বিশ্লেষণের মেলবন্ধন — শুধু তিলাওয়াত নয়, অর্থবোধ ও প্রজ্ঞার চর্চা।", "en": "Bridging classical scholarship with modern analysis — beyond recitation, into meaning and wisdom." } },
+    { "icon": "printing", "title": { "bn": "মুদ্রণ", "en": "Printing" }, "text": { "bn": "প্রি-প্রেস থেকে বাঁধাই পর্যন্ত প্রতিটি ধাপে নিখুঁততা — যাতে প্রতিটি কপি যথাযথ মর্যাদায় পাঠকের হাতে পৌঁছায়।", "en": "Precision at every stage, from pre-press to binding — so each copy reaches its reader with dignity." } },
+    { "icon": "distribution", "title": { "bn": "বিতরণ", "en": "Distribution" }, "text": { "bn": "মাদ্রাসা, এতিমখানা ও শরণার্থী শিবির পর্যন্ত — দেশের প্রতিটি বিভাগে পৌঁছে দেওয়া হয়েছে হাজারো কোরআন মাজিদ।", "en": "From madrasas to orphanages to refugee camps — thousands of copies delivered across every division." } }
+  ],
+
+  "supportHead": { "bn": "সহযোগিতার খাত", "en": "Ways to support" },
+  "supportLead": { "bn": "অনুদান, বিনিয়োগ বা ঋণ — যেভাবেই সহায়তা করতে চান", "en": "Donate, invest, or lend — however you'd like to help" },
+  "ledgerEntries": [
+    { "title": { "bn": "অনুদান", "en": "Donate" }, "note": { "bn": "বিনামূল্যে কোরআন বিতরণ তহবিলে সরাসরি সহায়তা", "en": "Support the free Quran distribution fund directly" } },
+    { "title": { "bn": "বিনিয়োগ", "en": "Invest" }, "note": { "bn": "স্বল্প বা দীর্ঘমেয়াদী শর্তে মুদ্রণ প্রকল্পে অংশগ্রহণ", "en": "Join the printing project on short or long-term terms" } },
+    { "title": { "bn": "ঋণ প্রদান", "en": "Lend" }, "note": { "bn": "নির্দিষ্ট মেয়াদে ঋণের মাধ্যমে কার্যক্রম সচল রাখুন", "en": "Keep operations running with a fixed-term loan" } }
+  ],
+
+  "portal": {
+    "title": { "bn": "হিফজ ব্যবস্থাপনা পোর্টাল", "en": "Hifz Management Portal" },
+    "desc": { "bn": "কেন্দ্রীয় পর্যায় থেকে মাদ্রাসা পর্যন্ত — শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য রোল-ভিত্তিক ড্যাশবোর্ড।", "en": "From the central office to the madrasa level — role-based dashboards for students, teachers, and directors." },
+    "cta": { "bn": "পোর্টালে যান", "en": "Go to Portal" }
+  },
+
+  "footer": {
+    "columns": [
+      { "heading": { "bn": "প্রতিষ্ঠান", "en": "Institution" }, "links": [
+        { "label": { "bn": "গবেষণা", "en": "Research" }, "link": "#research" },
+        { "label": { "bn": "মুদ্রণ", "en": "Printing" }, "link": "#printing" },
+        { "label": { "bn": "বিতরণ", "en": "Distribution" }, "link": "#distribution" },
+        { "label": { "bn": "পোর্টাল লগইন", "en": "Portal Login" }, "link": "portal/" }
+      ]},
+      { "heading": { "bn": "কোরআন পড়ুন ও শুনুন", "en": "Read & Listen" }, "links": [
+        { "label": { "bn": "পারা ভিত্তিক পড়ুন", "en": "Read by Para" }, "soon": true },
+        { "label": { "bn": "সূরা ভিত্তিক পড়ুন", "en": "Read by Surah" }, "soon": true },
+        { "label": { "bn": "তিলাওয়াত শুনুন", "en": "Listen — Audio/Video" }, "soon": true }
+      ]},
+      { "heading": { "bn": "শিক্ষা সহায়িকা", "en": "Learning" }, "links": [
+        { "label": { "bn": "মুকাদ্দামাতুল জাযারিয়্যাহ", "en": "Muqaddimatul Jazariyyah" }, "soon": true },
+        { "label": { "bn": "তাজবিদ", "en": "Tajweed" }, "soon": true },
+        { "label": { "bn": "রেওয়ায়েত ও কিরাআত", "en": "Riwayat & Qira'at" }, "soon": true }
+      ]},
+      { "heading": { "bn": "সহযোগিতা", "en": "Support" }, "links": [
+        { "label": { "bn": "অনুদান", "en": "Donate" }, "soon": true },
+        { "label": { "bn": "বিনিয়োগ", "en": "Invest" }, "soon": true },
+        { "label": { "bn": "যোগাযোগ", "en": "Contact" }, "soon": true }
+      ]}
+    ],
+    "legal": [
+      { "label": { "bn": "গোপনীয়তা", "en": "Privacy" } },
+      { "label": { "bn": "শর্তাবলী", "en": "Terms" } }
+    ],
+    "note": { "bn": "গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে কোরআনের সেবা।", "en": "Serving the Quran through research, printing, and distribution." },
+    "soonLabel": { "bn": "শীঘ্রই", "en": "Soon" },
+    "credit": "MJ-Ahmad"
+  }
+}
