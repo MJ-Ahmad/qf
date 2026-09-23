@@ -1,100 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>কোরআনের ফেরিওয়ালা — QuranerFariwala</title>
-<meta name="description" content="গবেষণা • মুদ্রণ • বিতরণ — পবিত্র কোরআনের সেবায় বাংলাদেশের একটি প্রতিষ্ঠান" />
-<meta property="og:title" content="Quraner Fariwala" />
-<meta property="og:image" content="https://mj-ahmad.github.io/qf/assets/logo.png" />
-<link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>হিফজ খানা</title>
+<meta http-equiv="refresh" content="2.6; url=home/index.html">
+<link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{
+  background:#0a0a0a;
+  display:grid;place-items:center;overflow:hidden;
+}
+.logo{
+  width:120px;height:120px;object-fit:contain;
+  opacity:0;transform:scale(.72);
+  animation:boot 1.15s cubic-bezier(.22,.8,.32,1) forwards, hold 1s ease-in-out .95s forwards;
+}
+@keyframes boot{
+  0%{opacity:0;transform:scale(.72)}
+  55%{opacity:1;transform:scale(1.045)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes hold{
+  0%{filter:brightness(1)}
+  50%{filter:brightness(1.18)}
+  100%{filter:brightness(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .logo{animation:none;opacity:1;transform:scale(1)}
+}
+</style>
 </head>
 <body>
-
-<header>
-  <div class="wrap head-row">
-    <a class="brand" href="/qf">
-      <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="QuranerFariwala" width="36" height="36" />
-      <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
-    </a>
-
-    <nav id="mainNav">
-      <a href="/qf/edu" data-i18n data-i18n-bn="গবেষণা" data-i18n-en="Research">গবেষণা</a>
-      <a href="/qf/pr" data-i18n data-i18n-bn="মুদ্রণ" data-i18n-en="Printing">মুদ্রণ</a>
-      <a href="/qf/ds" data-i18n data-i18n-bn="বিতরণ" data-i18n-en="Distribution">বিতরণ</a>
-      <a href="/qf/portal/login" data-i18n data-i18n-bn="পোর্টাল" data-i18n-en="Portal">পোর্টাল</a>
-    </nav>
-
-    <div style="display:flex;align-items:center;gap:.8rem">
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
-        <button id="langEn" type="button" aria-pressed="false">EN</button>
-      </div>
-      <button class="nav-mobile-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle menu">
-        <span></span>
-      </button>
-    </div>
-  </div>
-</header>
-<hr class="rule-double" />
-
-<main>
-  <section class="hero wrap" id="hero">
-    <div class="hero-mark">
-      <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="QuranerFariwala logo" width="60" height="60" />
-    </div>
-    <p class="epigraph" id="epigraph"></p>
-    <p class="epigraph-ref" id="epigraphRef"></p>
-    <h1 id="heroTitle"></h1>
-    <p class="hero-lead" id="heroLead"></p>
-    <a class="btn" id="heroCta" href="#"></a>
-  </section>
-
-  <hr class="rule" />
-  <section class="ledger-strip">
-    <div class="wrap" id="ledgerStrip"></div>
-  </section>
-  <hr class="rule" />
-
-  <section class="chapters wrap">
-    <div class="section-head">
-      <h2 id="chaptersHeadBn"></h2>
-    </div>
-    <div id="chapters"></div>
-  </section>
-
-  <section class="support">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="supportHead"></h2>
-        <span class="en" id="supportLead" style="color:var(--ink-soft);font-size:.9rem;margin-top:.5rem"></span>
-      </div>
-      <div class="support-grid" id="supportGrid"></div>
-    </div>
-  </section>
-
-  <section class="portal wrap">
-    <div class="portal-box">
-      <h2 id="portalTitle"></h2>
-      <span class="en" id="portalTitleEn"></span>
-      <p id="portalDesc"></p>
-      <a class="btn btn-gold" id="portalCta" href="#"></a>
-    </div>
-  </section>
-</main>
-
-<hr class="rule" />
-<footer>
-  <div class="wrap">
-    <div id="footerNote"></div>
-    <div class="footer-links" id="footerLinks"></div>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
+<img class="logo" src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="হিফজ খানা">
+<noscript><meta http-equiv="refresh" content="0; url=home/index.html"></noscript>
+<script>
+setTimeout(function(){ window.location.replace('home/index.html'); }, 2600);
+</script>
 </body>
 </html>
