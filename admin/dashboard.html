@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Distribution Dashboard — QuranerFariwala</title>
+  <meta name="description" content="Distribution dashboard for institution records, location hierarchy, and verification status.">
+  <meta name="theme-color" content="#0a3a31">
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --bg: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --danger: #8e2f2f;
+      --danger-bg: #fff2f0;
+      --success: #176b4d;
+      --success-bg: #edf8f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--night);
+      color: #fff;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #dfeae2;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .page {
+      padding: 2rem 0 3rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    .stat small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--night);
+      line-height: 1.1;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    .panel h3 {
+      margin: 0 0 0.9rem;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .toolbar label {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .toolbar select {
+      min-height: 40px;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 0.75rem 0.5rem;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 700;
+      background: #fafcf9;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge.verified {
+      background: rgba(23, 107, 77, 0.12);
+      color: var(--success);
+    }
+
+    .badge.pending {
+      background: rgba(184, 137, 45, 0.12);
+      color: #85641d;
+    }
+
+    .badge.rejected {
+      background: rgba(142, 47, 47, 0.12);
+      color: var(--danger);
+    }
+
+    .summary-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .summary-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(19, 107, 85, 0.018);
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 0.8rem;
+    }
+
+    .actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      background: var(--emerald);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.secondary {
+      background: var(--gold);
+      color: #1b1204;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 1rem 0;
+    }
+
+    .status-error {
+      color: var(--danger);
+      background: var(--danger-bg);
+      border: 1px solid rgba(142, 47, 47, 0.22);
+      border-radius: 8px;
+      padding: 0.8rem 0.9rem;
+      margin-top: 0.8rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">QuranerFariwala • Distribution Dashboard</div>
+
+      <nav class="nav">
+        <a href="/qf/distribution/index.html">Distribution</a>
+        <a href="/qf/distribution/request.html">Request</a>
+        <a href="/qf/distribution/track.html">Track</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="stats">
+        <div class="stat">
+          <small>Total Institutions</small>
+          <strong id="totalInstitutions">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>Verified</small>
+          <strong id="verifiedCount">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>Pending</small>
+          <strong id="pendingCount">0</strong>
+        </div>
+
+        <div class="stat">
+          <small>Distinct Divisions</small>
+          <strong id="divisionCount">0</strong>
+        </div>
+      </section>
+
+      <section class="layout">
+        <div class="panel">
+          <h3>Institutions</h3>
+
+          <div class="toolbar">
+            <label for="typeFilter">Filter by institution type:</label>
+            <select id="typeFilter">
+              <option value="all">All</option>
+            </select>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="institutionsTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h3>Division Summary</h3>
+          <ul class="summary-list" id="divisionSummary"></ul>
+
+          <div class="small-note">
+            Summary is calculated from institution records and locations.
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="/qf/distribution/request.html">New Request</a>
+            <a class="btn secondary" href="/qf/distribution/index.html">Distribution Network</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    async function loadJSON(url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch " + url);
+      }
+      return response.json();
+    }
+
+    function getDivisionNameFromLocationId(locations, id) {
+      const item = (locations || []).find(loc => loc.id === id);
+
+      if (!item) return "Unknown";
+
+      const division = item.division || {};
+      return division.en || division.bn || "Unknown";
+    }
+
+    function getStatusClass(status) {
+      const normalized = (status || "").toLowerCase();
+
+      if (normalized === "verified") return "verified";
+      if (normalized === "pending") return "pending";
+      if (normalized === "rejected") return "rejected";
+
+      return "pending";
+    }
+
+    function formatStatus(status) {
+      const normalized = (status || "").toLowerCase();
+      if (normalized === "verified") return "Verified";
+      if (normalized === "pending") return "Pending";
+      if (normalized === "rejected") return "Rejected";
+      return "Pending";
+    }
+
+    async function initDashboard() {
+      try {
+        const [locationsData, institutionsData] = await Promise.all([
+          loadJSON("../data/locations.json"),
+          loadJSON("../data/institutions.json")
+        ]);
+
+        const locations = Array.isArray(locationsData)
+          ? locationsData
+          : (locationsData.locations || []);
+
+        const institutions = Array.isArray(institutionsData)
+          ? institutionsData
+          : [];
+
+        const totalInstitutions = institutions.length;
+        const verifiedCount = institutions.filter(
+          item => String(item.verificationStatus || "").toLowerCase() === "verified"
+        ).length;
+
+        const pendingCount = institutions.filter(
+          item => String(item.verificationStatus || "").toLowerCase() === "pending"
+        ).length;
+
+        const allDivisions = new Set();
+        institutions.forEach(inst => {
+          const locationId = inst.locationId;
+          const divisionName = getDivisionNameFromLocationId(locations, locationId);
+          allDivisions.add(divisionName);
+        });
+
+        document.getElementById("totalInstitutions").textContent = totalInstitutions;
+        document.getElementById("verifiedCount").textContent = verifiedCount;
+        document.getElementById("pendingCount").textContent = pendingCount;
+        document.getElementById("divisionCount").textContent = allDivisions.size;
+
+        const typeSet = new Set(institutions.map(item => item.institutionType || "other"));
+        const typeFilter = document.getElementById("typeFilter");
+
+        typeSet.forEach(type => {
+          const option = document.createElement("option");
+          option.value = type;
+          option.textContent = type;
+          typeFilter.appendChild(option);
+        });
+
+        const divisionSummary = document.getElementById("divisionSummary");
+        const summaryMap = new Map();
+
+        institutions.forEach(inst => {
+          const divisionName = getDivisionNameFromLocationId(locations, inst.locationId);
+          summaryMap.set(divisionName, (summaryMap.get(divisionName) || 0) + 1);
+        });
+
+        const summaryEntries = Array.from(summaryMap.entries()).sort((a, b) => b[1] - a[1]);
+
+        if (!summaryEntries.length) {
+          const li = document.createElement("li");
+          li.innerHTML = "<span>No data</span><strong>0</strong>";
+          divisionSummary.appendChild(li);
+        } else {
+          summaryEntries.forEach(([name, count]) => {
+            const li = document.createElement("li");
+            li.innerHTML = `<span>${name}</span><strong>${count}</strong>`;
+            divisionSummary.appendChild(li);
+          });
+        }
+
+        function renderTable(filterType = "all") {
+          const tbody = document.getElementById("institutionsTableBody");
+          tbody.innerHTML = "";
+
+          const filtered = filterType === "all"
+            ? institutions
+            : institutions.filter(item => (item.institutionType || "other") === filterType);
+
+          if (!filtered.length) {
+            tbody.innerHTML = `<tr><td colspan="4" class="empty">No institutions found for the selected type.</td></tr>`;
+            return;
+          }
+
+          filtered.forEach(inst => {
+            const tr = document.createElement("tr");
+
+            const locationId = inst.locationId || "N/A";
+            const divisionName = getDivisionNameFromLocationId(locations, locationId);
+
+            tr.innerHTML = `
+              <td>
+                <strong>${inst.nameBn || inst.nameEn || "Unknown"}</strong><br>
+                <small style="color: var(--muted);">${inst.contactPerson || ""}</small>
+              </td>
+              <td>${inst.institutionType || "other"}</td>
+              <td>${divisionName}</td>
+              <td>
+                <span class="badge ${getStatusClass(inst.verificationStatus)}">
+                  ${formatStatus(inst.verificationStatus)}
+                </span>
+              </td>
+            `;
+
+            tbody.appendChild(tr);
+          });
+        }
+
+        typeFilter.addEventListener("change", function () {
+          renderTable(this.value);
+        });
+
+        renderTable("all");
+      } catch (error) {
+        console.error(error);
+
+        const tbody = document.getElementById("institutionsTableBody");
+        tbody.innerHTML = `<tr><td colspan="4" class="empty">Unable to load dashboard data. Check JSON files.</td></tr>`;
+
+        const panel = document.createElement("div");
+        panel.className = "status-error";
+        panel.textContent = "Failed to load data. Please ensure /qf/data/locations.json and /qf/data/institutions.json exist and are valid JSON.";
+        document.querySelector(".page .container").appendChild(panel);
+      }
+    }
+
+    initDashboard();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1832 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা — বাংলাদেশের শহর, গ্রাম, মাদ্রাসা, হিফজখানা, মসজিদ ও শিক্ষার্থীদের মধ্যে কোরআন বিতরণ নেটওয়ার্ক।"
+  >
+
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="কোরআন বিতরণ নেটওয়ার্ক — কোরআনের ফেরিওয়ালা"
+    data-en="Quran Distribution Network — QuranerFariwala"
+  >
+    কোরআন বিতরণ নেটওয়ার্ক — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link rel="icon" href="/qf/assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --danger: #8e2f2f;
+      --danger-bg: #fff2f0;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+        --danger-bg: #321b18;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--night);
+      background: var(--card);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.74),
+          rgba(6, 37, 31, 0.92)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      margin-bottom: 0.9rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(234, 217, 166, 0.4);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font: 400 clamp(2.2rem, 5vw, 3.8rem)/1.22 var(--serif);
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 0 1.5rem;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.7rem 1.35rem;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .button.secondary {
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .network-visual {
+      padding: 1.5rem;
+      border: 1px solid rgba(234, 217, 166, 0.35);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(2, 35, 27, 0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .network-visual img {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 1rem;
+      padding: 0.55rem;
+      border-radius: 18px;
+      background: #ffffff;
+    }
+
+    .network-visual h2 {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      font: 400 1.65rem/1.4 var(--serif);
+      text-align: center;
+    }
+
+    .network-visual p {
+      margin: 0;
+      color: #dbe9e1;
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: rem, 4vw, 2.5rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice {
+      max-width: 940px;
+      margin: 0 auto 1.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--gold);
+      border-radius: 11px;
+      background: rgba(234, 217, 166, 0.2);
+    }
+
+    .notice strong {
+      color: var(--night);
+    }
+
+    .notice p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hierarchy {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.55rem;
+      align-items: stretch;
+    }
+
+    .hierarchy-item {
+      position: relative;
+      padding: 1rem 0.55rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(2, 35, 27, 0.04);
+    }
+
+    .hierarchy-item::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -0.65rem;
+      z-index: 2;
+      color: var(--gold);
+      transform: translateY(-50%);
+      font-weight: 700;
+    }
+
+    .hierarchy-item:last-child::after {
+      display: none;
+    }
+
+    .hierarchy-number {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 0.45rem;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .hierarchy-item h3 {
+      margin: 0;
+      color: var(--night);
+      0.9rem;
+    }
+
+    .hierarchy-item p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .coverage-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+ 0.04);
+    }
+
+    .coverage-icon {
+      display: grid;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.75rem;
+      place-items: center;
+      border-radius: 11px;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 1.35rem;
+    }
+
+    .coverage-card h3 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font-size: 1.15rem;
+    }
+
+    .coverage-card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .coverage-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .coverage-card li {
+      margin: 0.25rem 0;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: 1.3rem;
+      border-radius: 15px;
+      color: #ffffff;
+      background: var(--night);
+    }
+
+    .metric {
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--gold-soft);
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .metric span {
+      color: #dbe9e1;
+      font-size: 0.86rem;
+    }
+
+    .request-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .request-card,
+    .tracking-card {
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.04);
+    }
+
+    .request-card h3,
+    .tracking-card h3 {
+      margin: 0 0 0.6rem;
+      color: var(--night);
+      font-size: 1.35rem;
+    }
+
+    .request-card p,
+    .tracking-card p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .form {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .field label {
+      color: var(--night);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 44px;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--card);
+      font: inherit;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(19, 107, 85, 0.12);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .form-status {
+      min-height: 24px;
+      color: var(--success);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .tracking-box {
+      padding: 1rem;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      background: rgba(19, 107, 85, 0.03);
+    }
+
+    .tracking-box code {
+      display: inline-block;
+      padding: 0.25rem 0.45rem;
+      border-radius: 5px;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .security-box {
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+      padding: 1.4rem;
+      border: 1px solid var(--danger);
+      border-radius: 12px;
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .security-box h2 {
+      margin: 0 0 0.45rem;
+      font-size: 1.15rem;
+    }
+
+    .security-box p {
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    .toast {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      max-width: 320px;
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--night);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.25);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1000px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hierarchy {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .hierarchy-item:nth-child(4)::after {
+        display: none;
+      }
+
+      .request-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hierarchy {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hierarchy-item::after {
+        display: none;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .hierarchy,
+      .metrics,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .header-links {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38 <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
+
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
+
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
+
+          aria-current="page"
+        >
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
+
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/portal/index.html">
+          <span data-bn="হিফজ প >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div
+            class="hero-badge"
+            data-bn="কেন্দ্র থেকে গ্রাম পর্যন্ত"
+            data-en="From central office to every community"
+          >
+            কেন্দ্র থেকে গ্রাম পর্যন্ত
+          </div>
+
+          <h1
+           াসা, হিফজখানা, মসজিদ, এতিমখানা ও প্রয়োজনীয় মানুষের কাছে কোরআন মাজিদ পৌঁছে দেওয়ার জন্য একটি সুসংগঠিত ও যাচাইযোগ্য নেটওয়ার্ক।"
+            data-en="An organized and verifiable network to deliver the Quran Majid to madrasas, Hifz centers, mosques, orphanages, and people in need."
+          >
+            মাদ্রাসা, হিফজখানা, মসজিদ, এতিমখানা ও প্রয়োজনীয় মানুষের কাছে কোরআন
+            মাজিদ পৌঁছে দেওয়ার জন্য একটি সুসংগঠিত ও যাচাইযোগ্য নেটওয়ার্ক।
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#request">
+              <span data-bn="বিতরণের জন্য আবেদন" data-en="Request Distribution">
+                বিতরণের জন্য আবেদন
+              </span>
+            </a>
+
+            <a class="button secondary" href="/qf/donate/index.html">
+              <span data-bn="অনুদান করুন" data-en="Donate">
+                অনুদান করুন
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="network-visual">
+          <img
+            src="/qf/assets/logo.png"
+            alt="কোরআন বিতরণ নেটওয়ার্ক"
+            width="88"
+            height="88"
+          >
+
+          <h2
+            data-bn="প্রয়োজন • যাচাই • বিতরণ"
+            data-en="Need • Verify • Deliver"
+          >
+            প্রয়োজন • যাচাই • বিতরণ
+          </h2>
+
+          <p
+            data-bn="প্রতিটি আবেদন ও বিতরণ রেকর্ডকে একটি নির্দিষ্ট অবস্থান, প্রতিষ্ঠান ও কার্যক্রমের সঙ্গে যুক্ত করার লক্ষ্য।"
+            data-en="Our goal is to link every request and delivery record to a verified location, institution, and activity."
+          >
+            প্রতিটি আবেদন ও বিতরণ রেকর্ডকে একটি নির্দিষ্ট অবস্থান, প্রতিষ্ঠান ও
+            কার্যক্রমের সঙ্গে যুক্ত করার লক্ষ্য।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice">
+          <strong
+            data-bn="ডেটা উন্নয়ন পর্যায়"
+            data-en="Data development phase"
+          >
+            ডেটা উন্নয়ন পর্যায়
+          </strong>
+
+          <p
+            data-bn="পূর্বের বিতরণ তথ্য ধাপে ধাপে যাচাই করে এই নেটওয়ার্কে যুক্ত করা হবে। যাচাই না হওয়া কোনো তথ্যকে চূড়ান্ত পরিসংখ্যান হিসেবে প্রকাশ করা হবে না।"
+            data-en="Historical distribution records will be reviewed and added gradually. Unverified information will not be published as final statistics."
+          >
+            পূর্বের বিতরণ তথ্য ধাপে ধাপে যাচাই করে এই নেটওয়ার্কে যুক্ত করা হবে।
+            যাচাই না হওয়া কোনো তথ্যকে চূড়ান্ত পরিসংখ্যান হিসেবে প্রকাশ করা হবে না।
+          </p>
+        </div>
+
+        <div class="section-heading">
+          <h2
+            data-bn="বিতরণ নেটওয়ার্কের স্তর"
+            data-en="Distribution Network Levels"
+          >
+            বিতরণ নেটওয়ার্কের স্তর
+          </h2>
+
+          <p
+            data-bn="প্রতিটি অনুরোধ ও বিতরণকে বাংলাদেশের প্রশাসনিক ও স্থানীয় কাঠামোর সঙ্গে যুক্ত করা হবে।"
+            data-en="Each request and delivery will be connected to Bangladesh's administrative and local structure."
+          >
+            প্রতিটি অনুরোধ ও বিতরণকে বাংলাদেশের প্রশাসনিক ওেন্দ্র</h3>
+            <p data-bn="Central Office" data-en="Central Office">Central Office</p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">২</div>
+            <h3 data-bn="বিভাগ" data-en="Division">বিভাগ</h3>
+            <p data-bn="Division" data-en="Division">Division</p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">৩</div>
+            <h3 data-bn="জেলা" data-en="District">জেলা</h3>
+            <p data-bn="District" data-en="District">District</p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">৪</div>
+            <h3 data-bn="উপজেলা / সিটি" data-en="Upazila / City">উপজেলা / সিটি</h3>
+            <p data-bn="Upazila / City Corporation" data-en="Upazila / City Corporation">
+              Upazila / City Corporation
+            </p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">৫</div>
+            <h3 data-bn="ইউনিয়ন / পৌরসভা" data-en="Union / Municipality">
+              ইউনিয়ন / পৌরসভা
+            </h3>
+            <p data-bn="Local administration" data-en="Local administration">
+              Local administration
+            </p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">৬</div>
+            <h3 data-bn="ওয়ার্ড" data-en="Ward">ওয়ার্ড</h3>
+            <p data-bn="Ward" data-en="Ward">Ward</p>
+          </article>
+
+          <article class="hierarchy-item">
+            <div class="hierarchy-number">৭</div>
+            <h3 data-bn="গ্রাম / মহল্লা" data-en="Village / Area">
+              গ্রাম / মহল্লা
+            </h3>
+            <p data-bn="Post code based record" data-en="Post code based record">
+              Post code based record
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="কারা এই নেটওয়ার্কে যুক্ত হতে পারেন?"
+            data-en="Who Can Join the Network?"
+          >
+            কারা এই নেটওয়ার্কে যুক্ত হতে পারেন?
+          </h2>
+
+          <p
+            data-bn="বিতরণ কার্যক্রমকে কার্যকর ও যাচাইযোগ্য করতে বিভিন্ন প্রতিষ্ঠান ও ব্যক্তি যুক্ত হতে পারেন।"
+            data-en="Different institutions and individuals can join to make distribution effective and verifiable."
+          >
+            বিতরণ কার্যক্রমকে কার্যকর ও যাচাইযোগ্য করতে বিভিন্ন প্রতিষ্ঠান ও ব্যক্তি
+            যুক্ত হতে পারেন।
+          </p>
+        </div>
+
+        <div class="coverage-grid">
+          <article class="coverage-card">
+            <div class="coverage-icon">▣</div>
+
+            <h3
+              data-bn="মাদ্রাসা ও হিফজখানা"
+              data-en="Madrasas and Hifz Centers"
+            >
+              মাদ্রাসা ও হিফজখানা
+            </h3>
+
+            <p
+              data-bn="হিফজ শিক্ষার্থীদের জন্য প্রয়োজনীয় কোরআন কপির আবেদন ও গ্রহণ রেকর্ড।"
+              data-en="Requests and receipt records for Quran copies needed by Hifz students."
+            >
+              হিফজ শিক্ষার্থীদের জন্য প্রয়োজনীয় </h3>
+
+            <p
+              data-bn="মসজিদ, ইমাম ও পরিচালনা কমিটির মাধ্যমে কোরআন বিতরণ ও সংরক্ষণ।"
+              data-en="Distribution and preservation of Quran copies through mosques, imams, and committees."
+            >
+              মসজিদ, ইমাম ও পরিচালনা কমিটির মাধ্যমে কোরআন বিতরণ ও সংরক্ষণ।
+            </p>
+
+            <ul>
+              <li data-bn="মসজিদের অবস্থান" data-en="Mosque location">
+                মসজিদের অবস্থান
+              </li>
+              < ব্যক্তি" data-en="Recipient">
+                গ্রহণকারী ব্যক্তি
+              </li>
+              <li data-bn="বিতরণের রেকর্ড" data-en="Delivery record">
+                বিতরণের রেকর্ড
+              </li>
+            </ul>
+          </article>
+
+          <article class="coverage-card">
+            <div class="coverage-icon">♧</div>
+
+            <h3
+              data-bn="এতিমখানা ও সেবাকেন্দ্র"
+              data-en="Orphanages and Service Centers"
+            >
+              এতিমখানা ও সেবাকেন্দ্র
+            </h3>
+
+            <p
+              data-bn="প্রয়োজনীয় শিক্ষার্থী ও সেবাগ্রহীতাদের মধ্যে কোরআন পৌঁছে দেওয়ার ব্যবস্থা।"
+              data-en="A system for delivering Quran copies to students and beneficiaries in need."
+            >
+              প্রয়োজনীয় শিক্ষার্থী ও সেবাগ্রহীতাদের মধ্যে কোরআন পৌঁছে দেওয়ার ব্যবস্থা।
+            </p>
+
+            <ul>
+              <li data-bn="প্রতিষ্ঠান যাচাই" data-en="Institution verification">
+                প্রতিষ্ঠান যাচাই
+              </li>
+              <li data-bn="প্রয়োজন নির্ধারণ" data-en="Needs assessment">
+                প্রয়োজন নির্ধারণ
+              </li>
+              <li data-bn="প্রাপ্তি স্বীকৃতি" data-en="Receipt acknowledgement">
+                প্রাপ্তি স্বীকৃতি
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <strong data-bn="৭" data-en="7">৭</strong>
+            <span data-bn="স্থানীয় স্তর" data-en="Location levels">
+              স্থানীয় স্তর
+            </span>
+          </div>
+
+          <div class="metric">
+            <strong data-bn="৩" data-en="3">৩</strong>
+            <span data-bn="প্রধান গ্রহীতা শ্রেণি" data-en="Recipient groups">
+              প্রধান গ্রহীতা শ্রেণি
+            </span>
+          </div>
+
+          <div class="metric">
+            <strong data-bn="১" data-en="1">১</strong>
+            <span data-bn="কেন্দ্রীয় রেকর্ড" data-en="Central record">
+              কেন্দ্রীয় রেকর্ড
+            </span>
+          </div>
+
+          <div class="metric">
+            <strong data-bn="∞" data-en="∞">∞</strong>
+            <span data-bn="ভবিষ্যৎ সম্প্রসারণ" data-en="Future expansion">
+              ভবিষ্যৎ সম্প্রসারণ
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="বিতরণের জন্য আবেদন করুন"
+            data-en="Request Quran Distribution"
+          >
+            বিতরণের জন্য আবেদন করুন
+          </h2>
+
+          <p
+            data-bn="মাদ্রাসা, হিফজখানা, মসজিদ, এতিমখানা বা সেবাকেন্দ্রের পক্ষ থেকে তথ্য পাঠান।"
+            data-en="Submit details on behalf of a madrasa, Hifz center, mosque, orphanage, or service center."
+          >
+            মাদ্রাসা, হিফজখানা, মসজিদ, এতিমখানা বা সেবাকেন্দ্রের পক্ষ থেকে তথ্য পাঠান।
+          </p>
+        </div>
+
+        <div class="request-layout">
+          <article class="request-card">
+            <h3
+              data-bn="নতুন আবেদন"
+              data-en="New Request"
+            >
+              নতুন আবেদন
+            </h3>
+
+            <p
+              data-bn="এই ফর্মটি প্রাথমিক তথ্য সংগ্রহের জন্য। তথ্য যাচাইয়ের পর আবেদন গ্রহণ বা পরবর্তী যোগাযোগ করা হবে।"
+              data-en="This form collects initial information. The request will be reviewed before approval or follow-up."
+            >
+              এই ফর্মটি প্রাথমিক তথ্য সংগ্রহের জন্য। তথ্য যাচাইয়ের পর আবেদন
+              গ্রহণ বা পরবর্তী যোগাযোগ করা হবে।
+            </p>
+
+            <form
+              id="distributionForm"
+              class="form"
+              action="mailto:quranerfariwala@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="field">
+                <label for="institutionName">
+                  <span data-bn="প্রতিষ্ঠানের নাম" data-en="Institution name">
+                    প্রতিষ্ঠানের নাম
+                  </span>
+                </label>
+
+                <input
+                  id="institutionName"
+                  name="Institution Name"
+                  type="text"
+                  required
+                  placeholder="প্রতিষ্ঠানের নাম"
+                  data-bn-placeholder="প্রতিষ্ঠানের নাম"
+                  data-en-placeholder="Institution name"
+                >
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="institutionType">
+                    <span data-bn="প্রতিষ্ঠানের ধরন" data-en="Institution type">
+                      প্রতিষ্ঠানের ধরন
+                    </span>
+                  </label>
+
+                  <select id="institutionType" name="Institution Type" required>
+                    <option value="">-- নির্বাচন করুন --</option>
+                    <option value="Madrasa">মাদ্রাসা / Madrasa</option>
+                    <option value="Hifz Center">হিফজখানা / Hifz Center</option>
+                    <option value="Mosque">মসজিদ / Mosque</option>
+                    <option value="Orphanage">এতিমখানা / Orphanage</option>
+                    <option value="Other">অন্যান্য / Other</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="requestedCopies">
+                    <span data-bn="প্রয়োজনীয় কপি" data-en="Required copies">
+                      প্রয়োজনীয় কপি
+                    </span>
+                  </label>
+
+                  <input
+                    id="requestedCopies"
+                    name="Requested Copies"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="যেমন: ৫০"
+                    data-bn-placeholder="যেমন: ৫০"
+                    data-en-placeholder="For example: 50"
+                  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="division">
+                    <span data-bn="বিভাগ" data-en="Division">
+                      বিভাগ
+                    </span>
+                  </label>
+
+                  <input
+                    id="division"
+                    name="Division"
+                    type="text"
+                    required
+                    placeholder="বিভাগ"
+                    data-bn-placeholder="বিভাগ"
+                    data-en-placeholder="Division"
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="district">
+                    <span data-bn="জেলা" data-en="District">
+                      জেলা
+                    </span>
+                  </label>
+
+                  <input
+                    id="district"
+                    name="District"
+                    type="text"
+                    required
+                    placeholder="জেলা"
+                    data-bn-placeholder="জেলা"
+                    data-en-placeholder="District"
+                  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="upazila">
+                    <span data-bn="উপজেলা / সিটি" data-en="Upazila / City">
+                      উপজেলা / সিটি
+                    </span>
+                  </label>
+
+                  <input
+                    id="upazila"
+                    name="Upazila or City Corporation"
+                    type="text"
+                    required
+                    placeholder="উপজেলা / সিটি কর্পোরেশন"
+                    data-bn-placeholder="উপজেলা / সিটি কর্পোরেশন"
+                    data-en-placeholder="Upazila / City Corporation"
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="union">
+                    <span data-bn="ইউনিয়ন / পৌরসভা" data-en="Union / Municipality">
+                      ইউনিয়ন / পৌরসভা
+                    </span>
+                  </label>
+
+                  <input
+                    id="union"
+                    name="Union or Municipality"
+                    type="text"
+                    placeholder="ইউনিয়ন / পৌরসভা"
+                    data-bn-placeholder="ইউনিয়ন / পৌরসভা"
+                    data-en-placeholder="Union / Municipality"
+                  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="village">
+                    <span data-bn="গ্রাম / মহল্লা" data-en="Village / Area">
+                      গ্রাম / মহল্লা
+                    </span>
+                  </label>
+
+                  <input
+                    id="village"
+                    name="Village or Area"
+                    type="text"
+                    required
+                    placeholder="গ্রাম / মহল্লা"
+                    data-bn-placeholder="গ্রাম / মহল্লা"
+                    data-en-placeholder="Village / Area"
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="postalCode">
+                    <span data-bn="পোস্ট কোড" data-en="Postal code">
+                      পোস্ট কোড
+                    </span>
+                  </label>
+
+                  <input
+                    id="postalCode"
+                    name="Postal Code"
+                    type="text"
+                    inputmode="numeric"
+                    placeholder="পোস্ট কোড"
+                    data-bn-placeholder="পোস্ট কোড"
+                    data-en-placeholder="Postal code"
+                  >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="contactPerson">
+                    <span data-bn="যোগাযোগের ব্যক্তি" data-en="Contact person">
+                      যোগাযোগের ব্যক্তি
+                    </span>
+                  </label>
+
+                  <input
+                    id="contactPerson"
+                    name="Contact Person"
+                    type="text"
+                    required
+                    placeholder="যোগাযোগের ব্যক্তির নাম"
+                    data-bn-placeholder="যোগাযোগের ব্যক্তির নাম"
+                    data-en-placeholder="Contact person's name"
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="contactPhone">
+                    <span data-bn="ফোন নম্বর" data-en="Phone number">
+                      ফোন নম্বর
+                    </span>
+                  </label>
+
+                  <input
+                    id="contactPhone"
+                    name="Contact Phone"
+                    type="tel"
+                    required
+                    placeholder="০১৭১২৩৪৫৬৭৮"
+                    data-bn-placeholder="০১৭১২৩৪৫৬৭৮"
+                    data-en-placeholder="+8801712345678"
+                  >
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="requestEmail">
+                  <span data-bn="ইমেইল" data-en="Email">
+                    ইমেইল
+                  </span>
+                </label>
+
+                <input
+                  id="requestEmail"
+                  name="Email"
+                  type="email"
+                  placeholder="example@email.com"
+                  data-bn-placeholder="example@email.com"
+                  data-en-placeholder="example@email.com"
+                >
+              </div>
+
+              <div class="field">
+                <label for="requestPurpose">
+                  <span data-bn="বিতরণের উদ্দেশ্য" data-en="Purpose">
+                    বিতরণের উদ্দেশ্য
+                  </span>
+                </label>
+
+                <select id="requestPurpose" name="Purpose" required>
+                  <option value="">-- নির্বাচন করুন --</option>
+                  <option value="Hifz Students">হিফজ শিক্ষার্থী / Hifz Students</option>
+                  <option value="Mosque">মসজিদ / Mosque</option>
+                  <option value="Madrasa Library">মাদ্রাসা লাইব্রেরি / Madrasa Library</option>
+                  <option value="Orphanage">এতিমখানা / Orphanage</option>
+                  <option value="Paid Order">অর্ডার / Paid Order</option>
+                  <option value="Other">অন্যান্য / Other</option>
+                </select>
+              </div>
+
+              <button class="button" type="submit">
+                <span data-bn="আবেদন পাঠান" data-en="Send Request">
+                  আবেদন পাঠান
+                </span>
+              </button>
+
+              <div
+                id="formStatus"
+                class="form-status"
+                aria-live="polite"
+              ></div>
+            </form>
+          </article>
+
+          <aside class="tracking-card">
+            <h3
+              data-bn="রেকর্ড ও ট্র্যাকিং"
+              data-en="Records and Tracking"
+            >
+              রেকর্ড ও ট্র্যাকিং
+            </h3>
+
+            <p
+              data-bn="প্রাথমিক পর্যায়ে প্রতিটি আবেদন যাচাইয়ের পর একটি request reference তৈরি করা হবে। ভবিষ্যৎ সিস্টেমে এর সঙ্গে প্রতিষ্ঠান, অবস্থান, অর্ডার, অনুদান ও বিতরণ তথ্য যুক্ত করা যাবে।"
+              data-en="At the initial stage, each request will receive a reference after review. In the future, institution, location, order, donation, and delivery data can be linked to it."
+            >
+              প্রাথমিক পর্যায়ে প্রতিটি আবেদন যাচাইয়ের পর একটি request reference
+              তৈরি করা হবে। ভবিষ্যৎ সিস্টেমে এর সঙ্গে প্রতিষ্ঠান, অবস্থান, অর্ডার,
+              অনুদান ও বিতরণ তথ্য যুক্ত করা যাবে।
+            </p>
+
+            <div class="tracking-box">
+              <p
+                data-bn="উদাহরণ request reference:"
+                data-en="Example request reference:"
+              >
+                উদাহরণ request reference:
+              </p>
+
+              <code>REQ-2026-DHK-000001</code>
+            </div>
+
+            <p style="margin-top:1rem;">
+              <a
+                class="button"
+                href="/qf/contact.html"
+              >
+                <span data-bn="সহায়তা নিন" data-en="Get Support">
+                  সহায়তা নিন
+                </span>
+              </a>
+            </p>
+          </aside>
+        </div>
+
+        <div class="security-box">
+          <h2
+            data-bn="গোপনীয়তা ও নিরাপত্তা"
+            data-en="Privacy and Security"
+          >
+            গোপনীয়তা ও নিরাপত্তা
+          </h2>
+
+          <p
+            data-bn="শিক্ষার্থী, শিশু, অভিভাবক ও প্রতিষ্ঠানের ব্যক্তিগত তথ্য প্রকাশ্যে দেখানো হবে না। IP address দিয়ে নির্দিষ্ট গ্রাম বা বাড়ির অবস্থান নির্ধারণ করা হয় না; location তথ্য আবেদনকারীর দেওয়া তথ্য ও যাচাইয়ের মাধ্যমে সংরক্ষণ করা হবে।"
+            data-en="Private information about students, children, guardians, and institutions will not be publicly displayed. IP addresses will not be used to determine an exact village or home location; location data will be based on submitted and verified information."
+          >
+            শিক্ষার্থী, শিশু, অভিভাবক ও প্রতিষ্ঠানের ব্যক্তিগত তথ্য প্রকাশ্যে দেখানো
+            হবে না। IP address দিয়ে নির্দিষ্ট গ্রাম বা বাড়ির অবস্থান নির্ধারণ করা
+            হয় না; location তথ্য আবেদনকারীর দেওয়া তথ্য ও যাচাইয়ের মাধ্যমে
+            সংরক্ষণ করা হবে।
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+          >
+            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="প্রকল্প" data-en="Project">
+            প্রকল্প
+          </h2>
+
+          <a href="/qf/edu.html">
+            <span data-bn="গবেষণা" data-en="Research">
+              গবেষণা
+            </span>
+          </a>
+
+          <a href="/qf/pr.html">
+            <span data-bn="মুদ্রণ" data-en="Printing">
+              মুদ্রণ
+            </span>
+          </a>
+
+          <a href="/qf/distribution/index.html">
+            <span data-bn="বিতরণ" data-en="Distribution">
+              বিতরণ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="ডেটা ও আবেদন" data-en="Data and Requests">
+            ডেটা ও আবেদন
+          </h2>
+
+          <a href="/qf/distribution/index.html#request">
+            <span data-bn="বিতরণ আবেদন" data-en="Distribution Request">
+              বিতরণ আবেদন
+            </span>
+          </a>
+
+          <a href="/qf/account/index.html">
+            <span data-bn="প্রাতিষ্ঠানিক হিসাব" data-en="Institutional Accounts">
+              প্রাতিষ্ঠানিক হিসাব
+            </span>
+          </a>
+
+          <a href="/qf/donate/index.html">
+            <span data-bn="অনুদান" data-en="Donate">
+              অনুদান
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">
+            সহায়তা
+          </h2>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+
+          <a href="/qf/faq.html">
+            <span data-bn="জিজ্ঞাসা" data-en="FAQ">
+              জিজ্ঞাসা
+            </span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
+              সাইটম্যাপ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">
+            আইনি
+          </h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div
+    id="copyToast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+  <script>
+    (function () {
+      const defaultLanguage = 'bn';
+
+      function getLanguage() {
+        try {
+          const saved = localStorage.getItem('qf-lang');
+
+          return saved === 'en' || saved === 'bn'
+            ? saved
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
+        }
+      }
+
+      function setLanguage(language) {
+        const current =
+          language === 'en' ? 'en' : 'bn';
+
+        document
+          .querySelectorAll('[data-bn][data-en]')
+          .forEach(function (element) {
+            const translatedText =
+              current === 'en'
+                ? element.getAttribute('data-en')
+                : element.getAttribute('data-bn');
+
+            if (translatedText !== null) {
+              element.textContent = translatedText;
+            }
+          });
+
+        document.documentElement.lang = current;
+        document.documentElement.dataset.lang = current;
+
+        document
+          .querySelectorAll('[data-lang-button]')
+          .forEach(function (button) {
+            button.setAttribute(
+              'aria-pressed',
+              String(
+                button.getAttribute('data-lang-button') === current
+              )
+            );
+          });
+
+        try {
+          localStorage.setItem('qf-lang', current);
+        } catch (error) {}
+      }
+
+      function showToast(message) {
+        const toast =
+          document.getElementById('copyToast');
+
+        if (!toast) return;
+
+        toast.textContent = message;
+        toast.classList.add('show');
+
+        clearTimeout(showToast.timer);
+
+        showToast.timer = setTimeout(function () {
+          toast.classList.remove('show');
+        }, 2200);
+      }
+
+      async function copyText(text) {
+        try {
+          await navigator.clipboard.writeText(text);
+
+          showToast(
+            document.documentElement.lang === 'en'
+              ? 'Account details copied.'
+              : 'হিসাবের তথ্য কপি হয়েছে।'
+          );
+        } catch (error) {
+          const textarea =
+            document.createElement('textarea');
+
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+
+          const copied =
+            document.execCommand('copy');
+
+          textarea.remove();
+
+          showToast(
+            copied
+              ? document.documentElement.lang === 'en'
+                ? 'Account details copied.'
+                : 'হিসাবের তথ্য কপি হয়েছে।'
+              : document.documentElement.lang === 'en'
+                ? 'Copy failed. Please copy manually.'
+                : 'কপি করা যায়নি। অনুগ্রহ করে নিজে কপি করুন।'
+          );
+        }
+      }
+
+      function initializeMenu() {
+        const toggle =
+          document.querySelector('.menu-toggle');
+
+        const nav =
+          document.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', function () {
+          const isOpen =
+            nav.classList.toggle('open');
+
+          toggle.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+          );
+        });
+      }
+
+      document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+          setLanguage(getLanguage());
+
+          document
+            .querySelectorAll('[data-lang-button]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  setLanguage(
+                    button.getAttribute('data-lang-button')
+                  );
+                }
+              );
+            });
+
+          document
+            .querySelectorAll('[data-copy]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  copyText(
+                    button.getAttribute('data-copy')
+                  );
+                }
+              );
+            });
+
+          initializeMenu();
+
+          const footerYear =
+            document.getElementById('footerYear');
+
+          if (footerYear) {
+            footerYear.textContent =
+              new Date().getFullYear();
+          }
+        }
+      );
+    })();
+  </script>
+</body>
+</html>
+
+  

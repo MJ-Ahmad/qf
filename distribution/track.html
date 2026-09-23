@@ -1,0 +1,1428 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালা বিতরণ ট্র্যাকিং — request, order এবং Quran copy delivery reference যাচাই করুন।"
+  >
+
+  <meta name="author" content="MJ-Ahmad">
+  <meta name="theme-color" content="#0a3a31">
+
+  <title
+    data-bn="বিতরণ ট্র্যাকিং — কোরআনের ফেরিওয়ালা"
+    data-en="Distribution Tracking — QuranerFariwala"
+  >
+    বিতরণ ট্র্যাকিং — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link rel="icon" href="/qf/assets/logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --danger: #8e2f2f;
+      --danger-bg: #fff2f0;
+      --success: #176b4d;
+      --success-bg: #edf8f2;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+        --danger-bg: #321b18;
+        --success-bg: #123c2d;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--night);
+      background: var(--card);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 4.5rem 1rem 3.5rem;
+      color: #ffffff;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.74),
+          rgba(6, 37, 31, 0.92)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 1rem;
+      padding: 0.5rem;
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.45rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.1rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.05rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .track-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .track-card,
+    .info-card,
+    .result-card {
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.05);
+    }
+
+    .track-card h2,
+    .info-card h2,
+    .result-card h2 {
+      margin: 0 0 0.55rem;
+      color: var(--night);
+      font: 400 1.55rem/1.4 var(--serif);
+    }
+
+    .track-card p,
+    .info-card p {
+      margin: 0 0 1.1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tracking-form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .tracking-form label {
+      color: var(--night);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .tracking-form input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--card);
+      text-transform: uppercase;
+    }
+
+    .tracking-form input:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(19, 107, 85, 0.12);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 0.7rem 1.25rem;
+      border: 0;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .button.secondary {
+      color: #ffffff;
+      background: var(--emerald);
+    }
+
+    .status {
+      min-height: 25px;
+      display: none;
+      padding: 0.6rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.error {
+      color: var(--danger);
+      background: var(--danger-bg);
+      border: 1px solid rgba(142, 47, 47, 0.22);
+    }
+
+    .status.success {
+      color: var(--success);
+      background: var(--success-bg);
+      border: 1px solid rgba(23, 107, 77, 0.18);
+    }
+
+    .info-list {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .info-list li {
+      margin: 0.35rem 0;
+    }
+
+    .reference-examples {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      background: rgba(19, 107, 85, 0.03);
+    }
+
+    .reference-examples p {
+      margin: 0 0 0.45rem;
+    }
+
+    code {
+      display: inline-block;
+      margin: 0.2rem 0.25rem 0.2rem 0;
+      padding: 0.25rem 0.45rem;
+      border-radius: 5px;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .result-card {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .result-card.show {
+      display: block;
+    }
+
+    .result-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .result-item {
+      padding: 0.8rem;
+      border-radius: 9px;
+      background: rgba(19, 107, 85, 0.05);
+    }
+
+    .result-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .result-item strong {
+      display: block;
+      color: var(--night);
+      font-size: 0.96rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      left: 0.45rem;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 0.35rem;
+      left: -1.35rem;
+      width: 11px;
+      height: 11px;
+      border: 3px solid var(--card);
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+
+    .timeline-item strong {
+      display: block;
+      color: var(--night);
+    }
+
+    .timeline-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .security-box {
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+      padding: 1.3rem;
+      border: 1px solid var(--danger);
+      border-radius: 12px;
+      color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .security-box h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+    }
+
+    .security-box p {
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 1000px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .track-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+ }
+    }
+
+    @media (max-width: 720px) {
+      .result-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span data-bn="হোম" data-en="Home">হোম</span>
+        </a>
+
+        <a href="/qf/edu.html">
+          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+        </a>
+
+        <a href="/qf/pr.html">
+          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/distribution/index.html"
+          aria-current="page"
+        >
+          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+        </a>
+
+        <a href="/qf/faq.html">
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/contact.html">
+          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/portal/index.html">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+            হিফজ পোর্টাল
+          </span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="/qf/assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="76"
+        height="76"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="স্বচ্ছ বিতরণ ব্যবস্থা"
+        data-en="Transparent distribution system"
+      >
+        স্বচ্ছ বিতরণ ব্যবস্থা
+      </p>
+
+      <h1
+        data-bn="আপনার বিতরণ রেফারেন্স অনুসন্ধান করুন"
+        data-en="Track your distribution reference"
+      >
+        আপনার বিতরণ রেফারেন্স অনুসন্ধান করুন
+      </h1>
+
+      <p
+        data-bn="Request ID, Order ID, Distribution ID অথবা Quran Copy ID ব্যবহার করে ভবিষ্যৎ ব্যবস্থায় আপনার রেকর্ড যাচাই করা যাবে।"
+        data-en="In the future system, you will be able to verify your record using a Request ID, Order ID, Distribution ID, or Quran Copy ID."
+      >
+        Request ID, Order ID, Distribution ID অথবা Quran Copy ID ব্যবহার করে
+        ভবিষ্যৎ ব্যবস্থায় আপনার রেকর্ড যাচাই করা যাবে।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="track-layout">
+          <section class="track-card">
+            <h2
+              data-bn="রেফারেন্স দিয়ে অনুসন্ধান"
+              data-en="Search by reference"
+            >
+              রেফারেন্স দিয়ে অনুসন্ধান
+            </h2>
+
+            <p
+              data-bn="আপনার আবেদন বা বিতরণ সংক্রান্ত reference number লিখে অনুসন্ধান করুন।"
+              data-en="Enter your request or distribution reference number to search."
+            >
+              আপনার আবেদন বা বিতরণ সংক্রান্ত reference number লিখে অনুসন্ধান করুন।
+            </p>
+
+            <form
+              id="trackingForm"
+              class="tracking-form"
+            >
+              <label for="referenceInput">
+                <span
+                  data-bn="Reference number"
+                  data-en="Reference number"
+                >
+                  Reference number
+                </span>
+              </label>
+
+              <input
+                id="referenceInput"
+                name="reference"
+                type="text"
+                required
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="যেমন: REQ-2026-DHK-000001"
+                data-bn-placeholder="যেমন: REQ-2026-DHK-000001"
+                data-en-placeholder="Example: REQ-2026-DHK-000001"
+              >
+
+              <button
+                class="button"
+                type="submit"
+              >
+                <span
+                  data-bn="অনুসন্ধান করুন"
+                  data-en="Search"
+                >
+                  অনুসন্ধান করুন
+                </span>
+              </button>
+
+              <div
+                id="trackingStatus"
+                class="status"
+                aria-live="polite"
+              ></div>
+            </form>
+
+            <div class="reference-examples">
+              <p
+                data-bn="সম্ভাব্য reference format:"
+                data-en="Possible reference formats:"
+              >
+                সম্ভাব্য reference format:
+              </p>
+
+              <code>REQ-2026-DHK-000001</code>
+              <code>ORD-2026-000001</code>
+              <code>DIST-2026-000001</code>
+              <code>COPY-2026-000001</code>
+            </div>
+          </section>
+
+          <aside class="info-card">
+            <h2
+              data-bn="ট্র্যাকিং কীভাবে কাজ করবে?"
+              data-en="How will tracking work?"
+            >
+              ট্র্যাকিং কীভাবে কাজ করবে?
+            </h2>
+
+            <p
+              data-bn="Backend চালু হলে প্রতিটি request, order, distribution event ও Quran copy একটি নির্দিষ্ট reference-এর সঙ্গে যুক্ত থাকবে।"
+              data-en="When the backend is available, every request, order, distribution event, and Quran copy will be linked to a unique reference."
+            >
+              Backend চালু হলে প্রতিটি request, order, distribution event ও Quran
+              copy একটি নির্দিষ্ট reference-এর সঙ্গে যুক্ত থাকবে।
+            </p>
+
+            <ul class="info-list">
+              <li
+                data-bn="আবেদন গ্রহণ"
+                data-en="Request received"
+              >
+                আবেদন গ্রহণ
+              </li>
+
+              <li
+                data-bn="তথ্য যাচাই"
+                data-en="Information verified"
+              >
+                তথ্য যাচাই
+              </li>
+
+              <li
+                data-bn="স্টক বরাদ্দ"
+                data-en="Stock allocated"
+              >
+                স্টক বরাদ্দ
+              </li>
+
+              <li
+                data-bn="প্রেরণ"
+                data-en="Dispatched"
+              >
+                প্রেরণ
+              </li>
+
+              <li
+                data-bn="প্রাপ্তি নিশ্চিত"
+                data-en="Delivery confirmed"
+              >
+                প্রাপ্তি নিশ্চিত
+              </li>
+            </ul>
+
+            <p style="margin-top:1rem;">
+              <a
+                class="button secondary"
+                href="/qf/distribution/request.html"
+              >
+                <span
+                  data-bn="নতুন আবেদন করুন"
+                  data-en="Submit a new request"
+                >
+                  নতুন আবেদন করুন
+                </span>
+              </a>
+            </p>
+          </aside>
+        </div>
+
+        <article
+          id="resultCard"
+          class="result-card"
+          aria-live="polite"
+        >
+          <h2
+            data-bn="অনুসন্ধান ফলাফল"
+            data-en="Search result"
+          >
+            অনুসন্ধান ফলাফল
+          </h2>
+
+          <div class="result-meta">
+            <div class="result-item">
+              <span
+                data-bn="Reference"
+                data-en="Reference"
+              >
+                Reference
+              </span>
+
+              <strong id="resultReference">—</strong>
+            </div>
+
+            <div class="result-item">
+              <span
+                data-bn="Status"
+                data-en="Status"
+              >
+                Status
+              </span>
+
+              <strong id="resultStatus">—</strong>
+            </div>
+
+            <div class="result-item">
+              <span
+                data-bn="Last updated"
+                data-en="Last updated"
+              >
+                Last updated
+              </span>
+
+              <strong id="resultDate">—</strong>
+            </div>
+
+            <div class="result-item">
+              <span
+                data-bn="Destination"
+                data-en="Destination"
+              >
+                Destination
+              </span>
+
+              <strong id="resultDestination">—</strong>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong
+                data-bn="রেকর্ড তৈরি"
+                data-en="Record created"
+              >
+                রেকর্ড তৈরি
+              </strong>
+
+              <span
+                data-bn="Backend সংযুক্ত হলে তারিখ ও সময় দেখা যাবে।"
+                data-en="Date and time will appear after the backend is connected."
+              >
+                Backend সংযুক্ত হলে তারিখ ও সময় দেখা যাবে।
+              </span>
+            </div>
+
+            <div class="timeline-item">
+              <strong
+                data-bn="যাচাই প্রক্রিয়া"
+                data-en="Verification process"
+              >
+                যাচাই প্রক্রিয়া
+              </strong>
+
+              <span
+                data-bn="প্রতিষ্ঠান ও অবস্থানের তথ্য যাচাই করা হবে।"
+                data-en="Institution and location information will be verified."
+              >
+                প্রতিষ্ঠান ও অবস্থানের তথ্য যাচাই করা হবে।
+              </span>
+            </div>
+
+            <div class="timeline-item">
+              <strong
+                data-bn="বিতরণ সম্পন্ন"
+                data-en="Distribution completed"
+              >
+                বিতরণ সম্পন্ন
+              </strong>
+
+              <span
+                data-bn="প্রাপ্তি নিশ্চিত হলে final delivery status যুক্ত হবে।"
+                data-en="A final delivery status will be added after receipt confirmation."
+              >
+                প্রাপ্তি নিশ্চিত হলে final delivery status যুক্ত হবে।
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <div class="security-box">
+          <h2
+            data-bn="গোপনীয়তা ও নিরাপত্তা"
+            data-en="Privacy and security"
+          >
+            গোপনীয়তা ও নিরাপত্তা
+          </h2>
+
+          <p
+            data-bn="এই পেজে donor-এর ব্যক্তিগত তথ্য, শিক্ষার্থীর নাম, ফোন নম্বর, পূর্ণ ঠিকানা বা payment information প্রকাশ করা হবে না। Public tracking-এ শুধু প্রয়োজনীয় status ও সাধারণ location দেখানো উচিত।"
+            data-en="This page should not expose donor details, student names, phone numbers, full addresses, or payment information. Public tracking should show only necessary status and general location information."
+          >
+            এই পেজে donor-এর ব্যক্তিগত তথ্য, শিক্ষার্থীর নাম, ফোন নম্বর, পূর্ণ ঠিকানা
+            বা payment information প্রকাশ করা হবে না। Public tracking-এ শুধু
+            প্রয়োজনীয় status ও সাধারণ location দেখানো উচিত।
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+          >
+            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="বিতরণ" data-en="Distribution">
+            বিতরণ
+          </h2>
+
+          <a href="/qf/distribution/index.html">
+            <span data-bn="বিতরণ নেটওয়ার্ক" data-en="Distribution Network">
+              বিতরণ নেটওয়ার্ক
+            </span>
+          </a>
+
+          <a href="/qf/distribution/request.html">
+            <span data-bn="বিতরণ আবেদন" data-en="Distribution Request">
+              বিতরণ আবেদন
+            </span>
+          </a>
+
+          <a href="/qf/distribution/track.html">
+            <span data-bn="ট্র্যাকিং" data-en="Tracking">
+              ট্র্যাকিং
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="অনুদান" data-en="Donation">
+            অনুদান
+          </h2>
+
+          <a href="/qf/donate/index.html">
+            <span data-bn="অনুদান পেজ" data-en="Donation Page">
+              অনুদান পেজ
+            </span>
+          </a>
+
+          <a href="/qf/account/index.html">
+            <span data-bn="প্রাতিষ্ঠানিক হিসাব" data-en="Institutional Accounts">
+              প্রাতিষ্ঠানিক হিসাব
+            </span>
+          </a>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">
+            সহায়তা
+          </h2>
+
+          <a href="/qf/faq.html">
+            <span data-bn="জিজ্ঞাসা" data-en="FAQ">
+              জিজ্ঞাসা
+            </span>
+          </a>
+
+          <a href="/qf/sitemap.html">
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
+              সাইটম্যাপ
+            </span>
+          </a>
+
+          <a href="/qf/home/index.html">
+            <span data-bn="হোম" data-en="Home">
+              হোম
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="আইনি" data-en="Legal">
+            আইনি
+          </h2>
+
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/MJ-Ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
+              উন্মুক্ত উৎস
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/privacy.html">
+            <span data-bn="গোপনীয়তা" data-en="Privacy">
+              গোপনীয়তা
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/terms.html">
+            <span data-bn="শর্তাবলী" data-en="Terms">
+              শর্তাবলী
+            </span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/contact.html">
+            <span data-bn="যোগাযোগ" data-en="Contact">
+              যোগাযোগ
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+ <script>
+    (function () {
+      const defaultLanguage = 'bn';
+
+      function getLanguage() {
+        try {
+          const saved = localStorage.getItem('qf-lang');
+
+          return saved === 'en' || saved === 'bn'
+            ? saved
+            : defaultLanguage;
+        } catch (error) {
+          return defaultLanguage;
+        }
+      }
+
+      function setLanguage(language) {
+        const current =
+          language === 'en' ? 'en' : 'bn';
+
+        document
+          .querySelectorAll('[data-bn][data-en]')
+          .forEach(function (element) {
+            const text =
+              current === 'en'
+                ? element.getAttribute('data-en')
+                : element.getAttribute('data-bn');
+
+            if (text !== null) {
+              element.textContent = text;
+            }
+          });
+
+        document
+          .querySelectorAll(
+            '[data-bn-placeholder][data-en-placeholder]'
+          )
+          .forEach(function (element) {
+            const text =
+              current === 'en'
+                ? element.getAttribute('data-en-placeholder')
+                : element.getAttribute('data-bn-placeholder');
+
+            if (text !== null) {
+              element.setAttribute('placeholder', text);
+            }
+          });
+
+        document.documentElement.lang = current;
+        document.documentElement.dataset.lang = current;
+
+        document
+          .querySelectorAll('[data-lang-button]')
+          .forEach(function (button) {
+            button.setAttribute(
+              'aria-pressed',
+              String(
+                button.getAttribute('data-lang-button') === current
+              )
+            );
+          });
+
+        try {
+          localStorage.setItem('qf-lang', current);
+        } catch (error) {}
+      }
+
+      function showStatus(message, type) {
+        const status =
+          document.getElementById('trackingStatus');
+
+        if (!status) return;
+
+        status.textContent = message;
+        status.className = 'status show ' + type;
+      }
+
+      function normalizeReference(value) {
+        return value
+          .trim()
+          .toUpperCase()
+          .replace(/\s+/g, '');
+      }
+
+      function showResult(reference) {
+        const resultCard =
+          document.getElementById('resultCard');
+
+        const resultReference =
+          document.getElementById('resultReference');
+
+        const resultStatus =
+          document.getElementById('resultStatus');
+
+        const resultDate =
+          document.getElementById('resultDate');
+
+        const resultDestination =
+          document.getElementById('resultDestination');
+
+        resultReference.textContent = reference;
+
+        resultStatus.textContent =
+          document.documentElement.lang === 'en'
+            ? 'Awaiting backend verification'
+            : 'Backend যাচাইয়ের অপেক্ষায়';
+
+        resultDate.textContent =
+          document.documentElement.lang === 'en'
+            ? 'Not available yet'
+            : 'এখনও পাওয়া যায়নি';
+
+        resultDestination.textContent =
+          document.documentElement.lang === 'en'
+            ? 'Not available yet'
+            : 'এখনও পাওয়া যায়নি';
+
+        resultCard.classList.add('show');
+
+        resultCard.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+
+      function initializeTracking() {
+        const form =
+          document.getElementById('trackingForm');
+
+        const input =
+          document.getElementById('referenceInput');
+
+        if (!form || !input) return;
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const reference =
+            normalizeReference(input.value);
+
+          if (!reference) {
+            showStatus(
+              document.documentElement.lang === 'en'
+                ? 'Please enter a reference number.'
+                : 'অনুগ্রহ করে একটি reference number লিখুন।',
+              'error'
+            );
+
+            return;
+          }
+
+          const validPrefix =
+            /^(REQ|ORD|DIST|COPY)-[A-Z0-9-]+$/;
+
+          if (!validPrefix.test(reference)) {
+            showStatus(
+              document.documentElement.lang === 'en'
+                ? 'Use a valid reference format such as REQ-2026-DHK-000001.'
+                : 'REQ-2026-DHK-000001-এর মতো সঠিক reference format ব্যবহার করুন।',
+              'error'
+            );
+
+            return;
+          }
+
+          showStatus(
+            document.documentElement.lang === 'en'
+              ? 'Reference received. Live tracking will be available after the backend is connected.'
+              : 'Reference গ্রহণ করা হয়েছে। Backend সংযুক্ত হলে live tracking চালু হবে।',
+            'success'
+          );
+
+          showResult(reference);
+        });
+      }
+
+      function initializeMenu() {
+        const toggle =
+          document.querySelector('.menu-toggle');
+
+        const nav =
+          document.querySelector('.main-nav');
+
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', function () {
+          const isOpen =
+            nav.classList.toggle('open');
+
+          toggle.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+          );
+        });
+      }
+
+      document.addEventListener(
+        'DOMContentLoaded',
+        function () {
+          setLanguage(getLanguage());
+
+          document
+            .querySelectorAll('[data-lang-button]')
+            .forEach(function (button) {
+              button.addEventListener(
+                'click',
+                function () {
+                  setLanguage(
+                    button.getAttribute('data-lang-button')
+                  );
+                }
+              );
+            });
+
+          initializeTracking();
+          initializeMenu();
+
+          const footerYear =
+            document.getElementById('footerYear');
+
+          if (footerYear) {
+            footerYear.textContent =
+              new Date().getFullYear();
+          }
+        }
+      );
+    })();
+  </script>
+</body>
+</html>
+ 

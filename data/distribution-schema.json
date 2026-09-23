@@ -1,0 +1,673 @@
+{
+  "schemaVersion": "1.0",
+  "dataset": "qf-distribution",
+  "country": {
+    "bn": "বাংলাদেশ",
+    "en": "Bangladesh"
+  },
+  "description": {
+    "bn": "কোরআনের ফেরিওয়ালা বিতরণ, অনুদান, অর্ডার, কপি ও কার্যক্রমের ডেটা মডেল",
+    "en": "Data model for QuranerFariwala distribution, donation, order, copy, and activity tracking"
+  },
+  "entities": {
+    "locations": {
+      "description": {
+        "bn": "বাংলাদেশের বিভাগ, জেলা, উপজেলা, শহর/পৌরসভা, ইউনিয়ন, ওয়ার্ড, গ্রাম/মহল্লা ও পোস্টাল তথ্য",
+        "en": "Bangladesh division, district, upazila, city/municipality, union, ward, village/area, and postal information"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "LOC-DHA-DHK-SAV-001"
+        },
+        {
+          "name": "level",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["division", "district", "upazila", "city", "municipality", "union", "ward", "village", "area"]
+        },
+        {
+          "name": "country",
+          "type": "object",
+          "required": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "divisionId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "districtId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "upazilaId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "division",
+          "type": "object",
+          "required": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "district",
+          "type": "object",
+          "required": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "upazila",
+          "type": "object",
+          "required": false,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "cityCorporation",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "municipality",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "union",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "ward",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "village",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "postOffice",
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "structure": {
+            "bn": "string",
+            "en": "string"
+          }
+        },
+        {
+          "name": "postalCode",
+          "type": "string",
+          "required": false,
+          "nullable": true
+        },
+        {
+          "name": "latitude",
+          "type": "string",
+          "required": false,
+          "nullable": true
+        },
+        {
+          "name": "longitude",
+          "type": "string",
+          "required": false,
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["active", "inactive", "archived"]
+        },
+        {
+          "name": "source",
+          "type": "object",
+          "required": true,
+          "structure": {
+            "name": "string",
+            "url": "string",
+            "retrievedOn": "string"
+          }
+        }
+      ]
+    },
+
+    "institutions": {
+      "description": {
+        "bn": "মাদ্রাসা, হিফজখানা, মসজিদ, এতিমখানা, সেবাকেন্দ্র প্রভৃতি প্রতিষ্ঠানের রেকর্ড",
+        "en": "Records for madrasas, Hifz centers, mosques, orphanages, service centers, and similar institutions"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "INST-000001"
+        },
+        {
+          "name": "institutionType",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["madrasa", "hifz_center", "mosque", "orphanage", "service_center", "education_center", "other"]
+        },
+        {
+          "name": "nameBn",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "nameEn",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "contactPerson",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "locationId",
+          "type": "string",
+          "required": true,
+          "description": "References a location record in locations.json"
+        },
+        {
+          "name": "fullAddress",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "latitude",
+          "type": "string",
+          "required": false,
+          "nullable": true
+        },
+        {
+          "name": "longitude",
+          "type": "string",
+          "required": false,
+          "nullable": true
+        },
+        {
+          "name": "verificationStatus",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["verified", "pending", "rejected"]
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "format": "ISO-8601"
+        }
+      ]
+    },
+
+    "donors": {
+      "description": {
+        "bn": "অনুদানদাতা ও তাদের পরিচিতি",
+        "en": "Donors and their contact information"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "DON-000001"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "donorType",
+          "type": "string",
+          "required": false,
+          "allowedValues": ["individual", "institution", "organization"]
+        },
+        {
+          "name": "consentStatus",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["active", "withdrawn"]
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "format": "ISO-8601"
+        }
+      ]
+    },
+
+    "donations": {
+      "description": {
+        "bn": "অনুদান রেকর্ড",
+        "en": "Donation records"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "DONAT-2026-000001"
+        },
+        {
+          "name": "donorId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "donationCategory",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["quran_distribution", "hifz_student_support", "printing", "madrasa_support", "general_support", "project_support"]
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true,
+          "default": "BDT"
+        },
+        {
+          "name": "paymentMethod",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["bank_transfer", "bkash", "nagad", "cash"]
+        },
+        {
+          "name": "transactionReference",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "paymentDate",
+          "type": "string",
+          "required": false,
+          "format": "ISO-8601"
+        },
+        {
+          "name": "verificationStatus",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["pending", "received", "verified", "rejected"]
+        },
+        {
+          "name": "verifiedBy",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "verifiedAt",
+          "type": "string",
+          "required": false,
+          "format": "ISO-8601"
+        },
+        {
+          "name": "notes",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+
+    "orders": {
+      "description": {
+        "bn": "কোরআন অর্ডার ও বিতরণ অনুরোধ",
+        "en": "Quran order and distribution requests"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "ORD-2026-000001"
+        },
+        {
+          "name": "orderNumber",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "requesterId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "institutionId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "quantity",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "purpose",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "fundingType",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["paid_order", "donated_distribution", "sponsored_order", "institutional_request"]
+        },
+        {
+          "name": "deliveryLocationId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["draft", "submitted", "approved", "in_production", "ready", "dispatched", "delivered", "cancelled"]
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "format": "ISO-8601"
+        }
+      ]
+    },
+
+    "quranCopies": {
+      "description": {
+        "bn": "প্রতিটি কোরআন কপির ট্র্যাকিং রেকর্ড",
+        "en": "Tracking record for each Quran copy"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "COPY-2026-000001"
+        },
+        {
+          "name": "copyCode",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "batchId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "edition",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "printDate",
+          "type": "string",
+          "required": false,
+          "format": "ISO-8601"
+        },
+        {
+          "name": "qualityStatus",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["approved", "rejected", "review"]
+        },
+        {
+          "name": "currentStatus",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["printed", "quality_checked", "in_stock", "allocated", "packed", "dispatched", "delivered", "damaged", "returned"]
+        },
+        {
+          "name": "currentLocationId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "orderId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "donationId",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+
+    "distributionEvents": {
+      "description": {
+        "bn": "একটি বিতরণ ইভেন্ট বা shipment",
+        "en": "A distribution event or shipment"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "example": "DIST-2026-000001"
+        },
+        {
+          "name": "eventNumber",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sourceLocationId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "destinationLocationId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "institutionId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "recipientId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "orderId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "donationId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "transportMethod",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["van", "pickup", "courier", "personal_delivery", "hand_carry"]
+        },
+        {
+          "name": "dispatchedAt",
+          "type": "string",
+          "required": false,
+          "format": "ISO-8601"
+        },
+        {
+          "name": "deliveredAt",
+          "type": "string",
+          "required": false,
+          "format": "ISO-8601"
+        },
+        {
+          "name": "receivedBy",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "proofUrl",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["pending", "in_transit", "delivered", "failed"]
+        }
+      ]
+    },
+
+    "auditLogs": {
+      "description": {
+        "bn": "সব পরিবর্তন, অনুমোদন ও লগ-ইভেন্টের রেকর্ড",
+        "en": "Audit trail for all changes and approvals"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "userId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "required": true,
+          "allowedValues": ["create", "update", "approve", "reject", "dispatch", "deliver", "archive", "delete"]
+        },
+        {
+          "name": "entityType",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "entityId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "oldValue",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "newValue",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "ipHash",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "format": "ISO-8601"
+        }
+      ]
+    }
+  },
+
+  "relationships": {
+    "locationsToInstitutions": {
+      "description": "One location can have many institutions",
+      "type": "one-to-many"
+    },
+    "donorsToDonations": {
+      "description": "One donor can have many donation records",
+      "type": "one-to-many"
+    },
+    "donationsToOrders": {
+      "description": "One donation can lead to one or many orders",
+      "type": "one-to-many"
+    },
+    "ordersToCopies": {
+      "description": "One order can allocate many Quran copies",
+      "type": "one-to-many"
+    },
+    "ordersToDistributionEvents": {
+      "description": "One order may have multiple delivery events",
+      "type": "one-to-many"
+    }
+  }
+}
