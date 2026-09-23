@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>হিফজ খানা - Card Float</title>
+<meta http-equiv="refresh" content="4; url=home/index.html">
+<style>
+body{margin:0;height:100%;display:grid;place-items:center;background:#0a0a0a}
+.card{padding:20px;border-radius:16px;background:#111;
+  box-shadow:0 8px 24px rgba(0,0,0,.6);text-align:center}
+.logo{width:120px;height:120px;animation:floaty 4s ease-in-out infinite}
+@keyframes floaty{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <img class="logo" src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="হিফজ খানা">
+  <p style="color:#fff;font-family:sans-serif">লোড হচ্ছে...</p>
+</div>
+</body>
+</html>

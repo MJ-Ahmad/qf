@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>হিফজ খানা - Glamorous Tilt</title>
+<meta http-equiv="refresh" content="3.5; url=home/index.html">
+<style>
+body{margin:0;height:100%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#0a0a0a,#1a1a1a)}
+.logo{width:150px;height:150px;opacity:0;
+  animation:tiltReveal 2.6s cubic-bezier(.22,.8,.32,1) forwards}
+@keyframes tiltReveal{
+  0%{opacity:0;transform:rotateY(-90deg) scale(.8)}
+  100%{opacity:1;transform:rotateY(0) scale(1)}
+}
+.logo{filter:drop-shadow(0 0 18px #00e6c3)}
+</style>
+</head>
+<body>
+<img class="logo" src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="হিফজ খানা">
+</body>
+</html>
