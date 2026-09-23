@@ -1,201 +1,280 @@
 <!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QuranerFariwala</title>
-  <meta name="description" content="Research • Printing • Distribution of Holy Quran" />
-  <link rel="author" href="https://MJ-Ahmad.github.io/mj-ahmad"/>
-  <meta name="author" content="MJ-Ahmad"/>
-  <meta property="og:title" content="Quraner Fariwala"/>
-  <meta property="og:description" content="Research • Printing • Distribution of Holy Quran"/>
-  <meta property="og:url" content="https://mj-ahmad.github.io/qf"/>
-  <meta property="og:image" content="assets/logo.png"/>
-  <link rel="shortcut icon" href="assets/logo.png"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>কোরআনের ফেরিওয়ালা — QuranerFariwala</title>
+<meta name="description" content="গবেষণা • মুদ্রণ • বিতরণ — পবিত্র কোরআনের সেবায় বাংলাদেশের একটি প্রতিষ্ঠান" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16241E;
+    --paper:#EDE7D3;
+    --paper-deep:#E2D9BE;
+    --brass:#A9812F;
+    --maroon:#7A2E2E;
+    --moss:#3F6B52;
+    --rule: rgba(22,36,30,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans Bengali', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Noto Serif Bengali', serif;
+    font-weight:700;
+    margin:0;
+    color:var(--ink);
+  }
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+  .rule{border:none;border-top:1px solid var(--rule);margin:0}
+  .rule-double{height:5px;background:
+    linear-gradient(var(--rule),var(--rule)) top/100% 1px no-repeat,
+    linear-gradient(var(--rule),var(--rule)) bottom/100% 1px no-repeat;
+    margin:0 auto;max-width:760px}
 
-  <link rel="stylesheet" href="css/header/style.css">
-  <link rel="stylesheet" href="css/footer/style.css">
-  <link rel="stylesheet" href="css/body/style.css">
-  <link rel="stylesheet" href="css/section/style.css">
-  <link rel="stylesheet" href="css/mission/style.css">
-  <link rel="stylesheet" href="css/edu/style.css">
-  <style>
-    /* Fallback minimal styles for the new data-driven blocks — safe if section/style.css already defines equivalents */
-    .stats-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;max-width:1100px;margin:0 auto;padding:2rem 1rem}
-    .stat-box{text-align:center;padding:1.25rem 1rem;border-radius:12px;background:#f8fafc}
-    .stat-box .num{font-size:1.8rem;font-weight:800;color:var(--primary,#065f46)}
-    .stat-box .lbl{font-size:.85rem;color:var(--muted,#64748b)}
-    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:1200px;margin:0 auto;padding:0 1rem}
-    .prog-card{border:1px solid #e2e8f0;border-radius:14px;padding:1.5rem;background:#fff}
-    .prog-card .badge{display:inline-block;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;background:#ecfdf5;color:#065f46;margin-bottom:.6rem}
-    .prog-card h3{margin:0 0 .5rem;font-size:1.1rem}
-    .prog-card p{color:var(--muted,#64748b);font-size:.92rem;line-height:1.5;margin-bottom:1rem}
-    .support-card{border-radius:14px;padding:1.5rem;color:#fff}
-    .support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;max-width:1100px;margin:0 auto;padding:0 1rem}
-    .portal-cta{max-width:900px;margin:2rem auto;padding:2rem;border-radius:16px;background:#0f172a;color:#fff;text-align:center}
-    .portal-cta a{display:inline-block;margin-top:1rem;padding:.7rem 1.4rem;border-radius:8px;background:#10b981;color:#fff;font-weight:700;text-decoration:none}
-    section.py-16{padding:3rem 0}
-    #dataLoading{text-align:center;padding:2rem;color:var(--muted,#64748b)}
-  </style>
+  /* Header */
+  header{padding:1.25rem 0}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .seal{
+    width:34px;height:34px;border-radius:50%;
+    border:1.5px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif Bengali',serif;font-weight:700;color:var(--brass);font-size:.95rem;
+    flex:none;
+  }
+  .brand-name{font-family:'Noto Serif Bengali',serif;font-weight:600;font-size:1.05rem}
+  nav{display:flex;gap:1.4rem;font-size:.92rem}
+  nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+  nav a:hover{border-color:var(--brass)}
+  .nav-toggle{display:none}
+
+  /* Hero */
+  .hero{padding:3.5rem 0 3rem;text-align:center}
+  .seal-lg{
+    width:64px;height:64px;border-radius:50%;
+    border:1.5px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif Bengali',serif;font-weight:700;color:var(--brass);
+    margin:0 auto 1.4rem;
+  }
+  .epigraph{
+    font-family:'Amiri', serif;
+    font-size:1.5rem;
+    color:var(--moss);
+    direction:rtl;
+    margin-bottom:.4rem;
+  }
+  .epigraph-ref{font-size:.82rem;color:var(--ink);opacity:.6;margin-bottom:2rem}
+  .hero h1{font-size:2.1rem;line-height:1.3;margin-bottom:1rem}
+  .hero p{max-width:520px;margin:0 auto 1.8rem;opacity:.85}
+  .btn{
+    display:inline-block;
+    font-family:'Noto Serif Bengali',serif;
+    font-weight:600;
+    padding:.75rem 1.7rem;
+    background:var(--ink);
+    color:var(--paper);
+    text-decoration:none;
+    border-radius:2px;
+    letter-spacing:.02em;
+  }
+  .btn:hover{background:var(--moss)}
+
+  /* Ledger stats */
+  .ledger-strip{padding:2rem 0}
+  .ledger-strip .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+  .ledger-item{flex:1 1 140px;text-align:center;border-left:1px solid var(--rule);padding-left:1.2rem}
+  .ledger-item:first-child{border-left:none;padding-left:0}
+  .ledger-item .val{font-family:'Noto Serif Bengali',serif;font-size:1.5rem;font-weight:700;color:var(--moss)}
+  .ledger-item .lbl{font-size:.82rem;opacity:.7;margin-top:.2rem}
+
+  /* Chapters */
+  .chapters{padding:3rem 0}
+  .chapter{
+    display:flex;gap:1.4rem;padding:1.8rem 0;
+    border-top:1px solid var(--rule);
+  }
+  .chapter:last-child{border-bottom:1px solid var(--rule)}
+  .mark{
+    font-family:'Noto Serif Bengali',serif;
+    font-size:2.6rem;font-weight:700;color:var(--brass);
+    line-height:1;flex:none;width:2.5rem;
+  }
+  .chapter-body h3{font-size:1.2rem;margin-bottom:.1rem}
+  .chapter-body .en{font-size:.78rem;letter-spacing:.03em;opacity:.55;margin-bottom:.5rem;display:block}
+  .chapter-body p{margin:0 0 .7rem;opacity:.85;font-size:.96rem}
+  .chapter-body a{font-size:.88rem;font-weight:600;color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss)}
+
+  /* Ledger entries: support */
+  .support{padding:3rem 0}
+  .support h2{text-align:center;font-size:1.5rem;margin-bottom:.4rem}
+  .support > .wrap > p.lead{text-align:center;opacity:.75;font-size:.94rem;margin:0 0 2rem}
+  table.entries{width:100%;border-collapse:collapse;font-size:.95rem}
+  table.entries th{
+    text-align:left;font-weight:600;font-size:.78rem;opacity:.6;
+    padding:.5rem 0;border-bottom:1px solid var(--ink);text-transform:none;
+  }
+  table.entries td{padding:1rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  table.entries td.name{font-family:'Noto Serif Bengali',serif;font-weight:600;white-space:nowrap;padding-right:1rem}
+  table.entries td.note{opacity:.8}
+  table.entries td.go a{white-space:nowrap;text-decoration:none;font-weight:600;color:var(--maroon);border-bottom:1px solid var(--maroon)}
+
+  /* Portal */
+  .portal{padding:3rem 0 4rem;text-align:center}
+  .portal-box{
+    background:var(--ink);color:var(--paper);
+    padding:2.4rem 1.8rem;border-radius:3px;
+  }
+  .portal-box h2{color:var(--paper);font-size:1.35rem;margin-bottom:.6rem}
+  .portal-box p{opacity:.8;max-width:440px;margin:0 auto 1.4rem;font-size:.94rem}
+  .portal-box .btn{background:var(--brass);color:var(--ink)}
+  .portal-box .btn:hover{background:#c49a3d}
+
+  /* Footer */
+  footer{padding:2rem 0 3rem;font-size:.85rem;opacity:.7;text-align:center}
+  footer a{color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss)}
+
+  @media (max-width:640px){
+    nav{display:none}
+    .hero h1{font-size:1.7rem}
+    .ledger-strip .wrap{gap:1rem 0}
+    .ledger-item{flex:1 1 45%;border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:.8rem}
+    .ledger-item:first-child{border-top:none;padding-top:0}
+    table.entries{display:block}
+    table.entries thead{display:none}
+    table.entries tbody, table.entries tr{display:block}
+    table.entries td{display:block;border-bottom:none;padding:.15rem 0}
+    table.entries tr{padding:1rem 0;border-bottom:1px solid var(--rule)}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero{animation:rise .6s ease-out}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  }
+</style>
 </head>
-<body class="__className_c32586">
-  <script>
-    ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];
-      function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{
-        let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;
-        c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)
-      }),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}
-      if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}
-    })("class","theme","system",null,["light","dark"],null,true,true)
-  </script>
+<body>
 
-  <header class="site-header" role="banner" aria-label="Site header">
-    <div class="container">
-      <div class="flex header-row items-center justify-between gap-4">
-        <div class="brand_h">
-          <a href="/qf" aria-label="QuranerFariwala home">QuranerFariwala</a>
-          <span class="badge_h" aria-hidden="true">A Journey of Light</span>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="headerNav" aria-label="Toggle navigation">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
-        </button>
-        <nav id="headerNav" class="header-nav" role="navigation" aria-label="Primary navigation">
-          <a href="/qf" class="btn"><span>Home</span></a>
-          <a href="/qf/edu" class="btn ghost"><span>Research</span></a>
-          <a href="/qf/pr" class="btn ghost"><span>Printing</span></a>
-          <a href="/qf/ds" class="btn ghost"><span>Distribution</span></a>
-          <a href="/qf/portal/login" class="btn ghost"><span>Portal Login</span></a>
-        </nav>
-      </div>
+<header>
+  <div class="wrap head-row">
+    <a class="brand" href="/qf">
+      <span class="seal">ফ</span>
+      <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
+    </a>
+    <nav>
+      <a href="/qf/edu">গবেষণা</a>
+      <a href="/qf/pr">মুদ্রণ</a>
+      <a href="/qf/ds">বিতরণ</a>
+      <a href="/qf/portal/login">পোর্টাল</a>
+    </nav>
+  </div>
+</header>
+<hr class="rule-double" />
+
+<main>
+  <section class="hero wrap" id="hero">
+    <div class="seal-lg">QF</div>
+    <p class="epigraph" id="epigraph"></p>
+    <p class="epigraph-ref" id="epigraphRef"></p>
+    <h1 id="heroTitle"></h1>
+    <p id="heroLead"></p>
+    <a class="btn" id="heroCta" href="#">পোর্টালে প্রবেশ</a>
+  </section>
+
+  <hr class="rule" />
+  <section class="ledger-strip">
+    <div class="wrap" id="ledgerStrip"></div>
+  </section>
+  <hr class="rule" />
+
+  <section class="chapters wrap" id="chapters"></section>
+
+  <section class="support">
+    <div class="wrap">
+      <h2>খাতার পাতা</h2>
+      <p class="lead">অনুদান, বিনিয়োগ বা ঋণ — যেভাবেই সহায়তা করতে চান</p>
+      <table class="entries">
+        <thead><tr><th>ধরন</th><th>বিবরণ</th><th></th></tr></thead>
+        <tbody id="entriesBody"></tbody>
+      </table>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero1" aria-labelledby="hero-heading">
-      <div class="hero__overlay"></div>
-      <div class="hero__content container">
-        <div class="eyebrow" id="heroEyebrow"><span>Empowering of Hifz students</span></div>
-        <h1 id="hero-heading" class="hero__title" data-json-loading>লোড হচ্ছে…</h1>
-        <p class="hero__lead" id="heroLead"></p>
-      </div>
-    </section>
-
-    <section class="py-16">
-      <div class="stats-strip" id="statsStrip">
-        <div id="dataLoading">পরিসংখ্যান লোড হচ্ছে…</div>
-      </div>
-    </section>
-
-    <section class="section-quran py-16" aria-labelledby="programs-title">
-      <div class="container">
-        <div class="text-center mb-12">
-          <h2 id="programs-title" style="font-size:1.8rem;margin-bottom:.5rem">আমাদের কার্যক্রম</h2>
-        </div>
-        <div class="cards-grid" id="programsGrid"></div>
-      </div>
-    </section>
-
-    <section class="py-16" aria-labelledby="support-title">
-      <div class="container">
-        <div class="text-center mb-12">
-          <h2 id="support-title" style="font-size:1.8rem;margin-bottom:.5rem">সহযোগিতা করুন</h2>
-          <p class="muted">অনুদান, বিনিয়োগ অথবা ঋণ প্রদানের মাধ্যমে হিফজ শিক্ষার্থীদের পাশে দাঁড়ান</p>
-        </div>
-        <div class="support-grid" id="supportGrid"></div>
-      </div>
-    </section>
-
-    <section class="py-16">
-      <div class="portal-cta" id="portalCta"></div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-bottom">
-        <div class="brand">
-          <div class="brand-badge" aria-hidden="true">QF</div>
-          <p class="copyright">
-            © 2026 <b>QuranerFariwala</b> - All rights reserved. Open source under the
-            <a href="/qf/mit" style="color:var(--accent-blue,#3b82f6); font-weight:600; margin-left:.35rem;">MIT License</a>.
-          </p>
-        </div>
-        <div class="footer-links">
-          <a href="/qf/privacy">Privacy</a>
-          <a href="/qf/terms">Terms</a>
-          <a href="/qf/sitemap">Sitemap</a>
-        </div>
-      </div>
+  <section class="portal wrap">
+    <div class="portal-box">
+      <h2>হিফজ ব্যবস্থাপনা পোর্টাল</h2>
+      <p>কেন্দ্রীয় পর্যায় থেকে মাদ্রাসা পর্যন্ত — শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য রোল-ভিত্তিক ড্যাশবোর্ড।</p>
+      <a class="btn" href="/qf/portal/login">পোর্টালে যান</a>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="js/header/script.js"></script>
-  <script src="js/section/script.js"></script>
-  <script src="js/body/script.js"></script>
-  <script src="js/footer/script.js"></script>
-  <script src="js/mission/script.js"></script>
+<hr class="rule" />
+<footer>
+  <div class="wrap" id="footerNote"></div>
+</footer>
 
-  <!-- Data-driven content loader -->
-  <script>
-  (function () {
-    fetch('data.json')
-      .then(function (r) { if (!r.ok) throw new Error('data.json not found'); return r.json(); })
-      .then(renderAll)
-      .catch(function (err) {
-        console.error('Failed to load data.json:', err);
-        document.getElementById('statsStrip').innerHTML =
-          '<p style="color:#b91c1c">কনটেন্ট লোড করা যায়নি। data.json ফাইলটি একই ফোল্ডারে আছে কিনা যাচাই করুন।</p>';
-      });
+<script>
+(function(){
+  fetch('data.json')
+    .then(function(r){ if(!r.ok) throw new Error('missing data.json'); return r.json(); })
+    .then(render)
+    .catch(function(e){
+      console.error(e);
+      document.getElementById('hero').innerHTML =
+        '<p style="color:#7A2E2E">data.json লোড করা যায়নি — ফাইলটি একই ফোল্ডারে আছে কিনা যাচাই করুন।</p>';
+    });
 
-    function renderAll(data) {
-      // Hero
-      var h1 = document.querySelector('[data-json-loading]');
-      h1.removeAttribute('data-json-loading');
-      h1.innerHTML = esc(data.site.hero.title) +
-        ' <span class="gradient-text">' + esc(data.site.hero.titleAccent) + '</span>';
-      document.getElementById('heroEyebrow').querySelector('span').textContent = data.site.hero.eyebrow;
-      document.getElementById('heroLead').textContent = data.site.hero.lead;
+  function esc(s){ var d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }
 
-      // Stats
-      var statsEl = document.getElementById('statsStrip');
-      statsEl.innerHTML = data.stats.map(function (s) {
-        return '<div class="stat-box"><div class="num">' + esc(s.value) + '</div>' +
-          '<div class="lbl">' + esc(s.label) + '</div></div>';
-      }).join('');
+  function render(data){
+    var h = data.hero;
+    document.getElementById('epigraph').textContent = h.epigraph;
+    document.getElementById('epigraphRef').textContent = h.epigraphRef;
+    document.getElementById('heroTitle').textContent = h.title;
+    document.getElementById('heroLead').textContent = h.lead;
+    var cta = document.getElementById('heroCta');
+    cta.textContent = h.cta.label;
+    cta.href = h.cta.link;
 
-      // Programs
-      document.getElementById('programsGrid').innerHTML = data.programs.map(function (p) {
-        return '<div class="prog-card">' +
-          '<span class="badge">' + esc(p.badge) + '</span>' +
-          '<h3>' + esc(p.title) + ' <small style="color:#94a3b8">(' + esc(p.titleBn) + ')</small></h3>' +
-          '<p>' + esc(p.desc) + '</p>' +
-          '<a class="btn btn--primary" href="' + esc(p.link) + '">' + esc(p.titleBn) + ' দেখুন</a>' +
-          '</div>';
-      }).join('');
+    document.getElementById('ledgerStrip').innerHTML = data.ledger.map(function(l){
+      return '<div class="ledger-item"><div class="val">'+esc(l.value)+'</div><div class="lbl">'+esc(l.label)+'</div></div>';
+    }).join('');
 
-      // Support (donate/invest/lend)
-      document.getElementById('supportGrid').innerHTML = data.support.map(function (s) {
-        return '<div class="support-card" style="background:' + esc(s.color) + '">' +
-          '<h3 style="margin:0 0 .5rem">' + esc(s.title) + ' <small style="opacity:.85">(' + esc(s.titleEn) + ')</small></h3>' +
-          '<p style="opacity:.92;font-size:.92rem;margin-bottom:1rem">' + esc(s.desc) + '</p>' +
-          '<a href="' + esc(s.link) + '" style="color:#fff;font-weight:700;text-decoration:underline">' + esc(s.titleEn) + ' →</a>' +
-          '</div>';
-      }).join('');
+    document.getElementById('chapters').innerHTML = data.chapters.map(function(c){
+      return '<div class="chapter">'+
+        '<div class="mark">'+esc(c.mark)+'</div>'+
+        '<div class="chapter-body">'+
+          '<h3>'+esc(c.title)+'</h3>'+
+          '<span class="en">'+esc(c.titleEn)+'</span>'+
+          '<p>'+esc(c.text)+'</p>'+
+          '<a href="'+esc(c.link)+'">বিস্তারিত পড়ুন</a>'+
+        '</div></div>';
+    }).join('');
 
-      // Portal CTA
-      var pc = data.portal;
-      document.getElementById('portalCta').innerHTML =
-        '<h2 style="margin:0 0 .5rem">' + esc(pc.title) + ' <small style="opacity:.7">(' + esc(pc.titleEn) + ')</small></h2>' +
-        '<p style="opacity:.85;max-width:600px;margin:0 auto">' + esc(pc.desc) + '</p>' +
-        '<a href="' + esc(pc.link) + '">পোর্টালে প্রবেশ করুন</a>';
-    }
+    document.getElementById('entriesBody').innerHTML = data.ledgerEntries.map(function(e){
+      return '<tr>'+
+        '<td class="name">'+esc(e.title)+' <span style="opacity:.5;font-weight:400;font-size:.85em">('+esc(e.titleEn)+')</span></td>'+
+        '<td class="note">'+esc(e.note)+'</td>'+
+        '<td class="go"><a href="'+esc(e.link)+'">'+esc(e.titleEn)+' →</a></td>'+
+        '</tr>';
+    }).join('');
 
-    function esc(str) {
-      var d = document.createElement('div');
-      d.textContent = String(str == null ? '' : str);
-      return d.innerHTML;
-    }
-  })();
-  </script>
+    var f = data.footer;
+    document.getElementById('footerNote').innerHTML =
+      esc(f.note)+' — <a href="'+esc(f.creditLink)+'">'+esc(f.credit)+'</a>';
+  }
+})();
+</script>
 </body>
 </html>
