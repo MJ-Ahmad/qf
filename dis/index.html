@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>কোরআন বিতরণ নেটওয়ার্ক</title>
+<style>
+:root{--bg:#f4f7f5;--card:#fff;--tx:#14231c;--mu:#5b6b63;--ac:#0f6b4b;--ac2:#e6f3ed;--bd:#dbe5df;--wa:#b45309}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1512;--card:#16211c;--tx:#e8f1ec;--mu:#93a69c;--ac:#3ecf9a;--ac2:#173328;--bd:#26362f;--wa:#f5a524}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans Bengali","Hind Siliguri","Kalpurush",system-ui,sans-serif;line-height:1.6}
+header{background:var(--ac);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:5}
+header h1{margin:0;font-size:18px}
+header small{opacity:.85}
+.wrap{max-width:1000px;margin:0 auto;padding:14px}
+#q{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;margin-top:8px}
+.bc{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0;font-size:14px}
+.bc a{color:var(--ac);cursor:pointer;text-decoration:none}
+.bc span{color:var(--mu)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.tag{display:inline-block;background:var(--ac2);color:var(--ac);padding:1px 10px;border-radius:99px;font-size:12px}
+h2{margin:6px 0 2px;font-size:22px}
+.sub{color:var(--mu);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:12px}
+.st{background:var(--ac2);border-radius:10px;padding:8px 10px}
+.st b{display:block;font-size:20px;color:var(--ac)}
+.st i{font-style:normal;font-size:12px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.it{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 12px;cursor:pointer;transition:.15s}
+.it:hover{border-color:var(--ac);transform:translateY(-1px)}
+.it b{display:block}
+.it span{font-size:12px;color:var(--mu)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+button{font:inherit;background:var(--ac);color:#fff;border:0;border-radius:10px;padding:8px 14px;cursor:pointer}
+button.o{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+.res{padding:8px 4px;border-bottom:1px solid var(--bd);cursor:pointer}
+.res:hover{background:var(--ac2)}
+dialog{border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);max-width:420px;width:92%}
+dialog input{width:100%;padding:9px;margin:4px 0 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.note{background:var(--ac2);border-left:4px solid var(--wa);padding:10px 12px;border-radius:8px;font-size:14px}
+.empty{color:var(--mu);text-align:center;padding:24px 8px}
+</style>
+</head>
+<body>
+<header><h1>কোরআন বিতরণ ও প্রভাব ব্যবস্থাপনা নেটওয়ার্ক</h1><small id="hs">ডাটা লোড হচ্ছে…</small></header>
+<div class="wrap">
+<input id="q" placeholder="বিভাগ, জেলা, উপজেলা বা এলাকা খুঁজুন…" autocomplete="off">
+<div id="app"></div>
+</div>
+
+<dialog id="dlg">
+<form method="dialog" id="fm">
+<h3 style="margin:0 0 8px" id="dt">নতুন এলাকা যোগ</h3>
+<label>নাম (বাংলা) *<input id="nb" required></label>
+<label>নাম (ইংরেজি)<input id="ne"></label>
+<label>পোস্টকোড<input id="pc" inputmode="numeric"></label>
+<div class="row"><button type="button" class="o" onclick="dlg.close()">বাতিল</button><button type="submit">যোগ করুন</button></div>
+</form>
+</dialog>
+
+<script>
+let D,N={},K={},cur="CEN-001",added=0;
+const $=s=>document.querySelector(s),app=$('#app'),dlg=$('#dlg');
+const bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+const PFX={1:"DIV",2:"DIS",3:"UPA",4:"UNI",5:"VIL",6:"PAR",7:"MOH",8:"USR"};
+
+async function load(){
+  try{const r=await fetch('data.json');if(!r.ok)throw 0;D=await r.json();init()}
+  catch(e){app.innerHTML=`<div class="card note">data.json লোড করা যায়নি। ফাইলটি index.html এর পাশে রাখুন এবং লোকাল সার্ভার দিয়ে চালান (যেমন <code>python3 -m http.server</code>), অথবা নিচ থেকে ফাইলটি বেছে নিন।<br><br><input type="file" accept=".json" id="pf"></div>`;
+  $('#pf').onchange=async e=>{D=JSON.parse(await e.target.files[0].text());init()}}
+}
+function index(){N={};K={};D.geo_nodes.forEach(n=>{N[n.id]=n;(K[n.parent_id]=K[n.parent_id]||[]).push(n.id)})}
+const lvl=l=>(D.levels.find(x=>x.level===l)||{bn:"স্তর "+l}).bn;
+const path=id=>{const p=[];while(id&&N[id]){p.unshift(N[id]);id=N[id].parent_id}return p};
+function desc(id,o={}){(K[id]||[]).forEach(c=>{o[N[c].level]=(o[N[c].level]||0)+1;desc(c,o)});return o}
+function roll(id){
+  const inside=g=>g&&path(g).some(n=>n.id===id);
+  const c=(a,f)=>(D[a]||[]).filter(f).length;
+  return{
+    inst:c('institutions',x=>inside(x.geo_node_id)),
+    per:c('persons',x=>inside(x.geo_node_id)),
+    ord:c('orders',x=>inside(x.target_geo_node_id)),
+    dst:c('distributions',x=>inside(x.geo_node_id))}
+}
+function go(id){location.hash=id}
+function render(){
+  const n=N[cur];if(!n){cur="CEN-001";return render()}
+  const ds=desc(cur),r=roll(cur),ch=(K[cur]||[]).map(i=>N[i]);
+  const bc=path(cur).map((p,i,a)=>i<a.length-1?`<a onclick="go('${p.id}')">${p.name_bn}</a><span>›</span>`:`<b>${p.name_bn}</b>`).join('');
+  const st=Object.keys(ds).sort().map(l=>`<div class="st"><b>${bn(ds[l])}</b><i>${lvl(+l)}</i></div>`).join('');
+  const nl=n.level+1,canAdd=nl<=8;
+  app.innerHTML=`<div class="bc">${bc}</div>
+  <div class="card"><span class="tag">${lvl(n.level)}</span><h2>${n.name_bn}</h2>
+  <div class="sub">${n.name_en||''} ${n.postcode?'· পোস্টকোড '+bn(n.postcode):''} · ${n.id}</div>
+  <div class="stats">${st}
+  <div class="st"><b>${bn(r.inst)}</b><i>মসজিদ/মাদ্রাসা</i></div>
+  <div class="st"><b>${bn(r.per)}</b><i>ব্যক্তি</i></div>
+  <div class="st"><b>${bn(r.ord)}</b><i>অর্ডার</i></div>
+  <div class="st"><b>${bn(r.dst)}</b><i>বিতরিত কপি</i></div></div></div>
+  <div class="row" style="margin:14px 0 8px"><b>${ch.length?lvl(nl)+' ('+bn(ch.length)+')':''}</b>
+  <span>${canAdd?`<button onclick="openAdd()">＋ ${lvl(nl)} যোগ</button> `:''}<button class="o" onclick="exportJ()">data.json ডাউনলোড</button></span></div>
+  ${ch.length?`<div class="grid">${ch.map(c=>{const k=(K[c.id]||[]).length;return`<div class="it" onclick="go('${c.id}')"><b>${c.name_bn}</b><span>${c.name_en||''}${k?' · '+bn(k)+' টি নিচে':''}</span></div>`}).join('')}</div>`
+  :`<div class="card empty">এই স্তরের নিচে এখনো কিছু যোগ করা হয়নি।${canAdd?'<br>উপরের বাটন দিয়ে '+lvl(nl)+' যোগ করুন।':''}</div>`}`;
+  scrollTo(0,0);
+}
+function init(){
+  index();const m=D.meta.geo_summary||{};
+  $('#hs').textContent=`${bn(D.geo_nodes.length)} টি এলাকা নোড লোড হয়েছে`;
+  cur=location.hash.slice(1)||"CEN-001";render();
+}
+addEventListener('hashchange',()=>{if(!D)return;cur=location.hash.slice(1)||"CEN-001";$('#q').value='';render()});
+$('#q').oninput=e=>{
+  if(!D)return;const v=e.target.value.trim().toLowerCase();
+  if(!v){render();return}
+  const r=D.geo_nodes.filter(n=>n.id!=="CEN-001"&&((n.name_bn||'').includes(v)||(n.name_en||'').toLowerCase().includes(v)||(n.postcode||'')===v)).slice(0,60);
+  app.innerHTML=`<div class="card"><b>${bn(r.length)} টি ফলাফল</b>${r.map(n=>`<div class="res" onclick="go('${n.id}')"><b>${n.name_bn}</b> <span class="tag">${lvl(n.level)}</span><div class="sub">${path(n.id).slice(1,-1).map(p=>p.name_bn).join(' › ')}</div></div>`).join('')||'<div class="empty">কিছু পাওয়া যায়নি</div>'}</div>`;
+};
+function openAdd(){$('#dt').textContent=lvl(N[cur].level+1)+" যোগ — "+N[cur].name_bn;$('#fm').reset();dlg.showModal()}
+$('#fm').onsubmit=()=>{
+  const l=N[cur].level+1,p=PFX[l];
+  const mx=Math.max(0,...D.geo_nodes.filter(n=>n.id.startsWith(p+'-')).map(n=>+n.id.split('-').pop()||0));
+  D.geo_nodes.push({id:`${p}-${String(mx+1).padStart(l>=4?5:3,'0')}`,level:l,type:D.levels[l].key,name_bn:$('#nb').value.trim(),name_en:$('#ne').value.trim(),parent_id:cur,postcode:$('#pc').value.trim()||null,manager_person_id:null,status:"active"});
+  added++;index();render();
+};
+function exportJ(){
+  D.meta.updated_at=new Date().toISOString().slice(0,10);
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(D,null,1)],{type:'application/json'}));a.download='data.json';a.click();
+}
+load();
+</script>
+</body>
+</html>

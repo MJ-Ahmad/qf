@@ -1,0 +1,6039 @@
+{
+ "meta": {
+  "system": "Quran Distribution & Impact Management System",
+  "version": "1.0",
+  "country": "BD",
+  "updated_at": "2026-09-24",
+  "guide": [
+   "১. সব রেকর্ডে unique id; সম্পর্ক parent_id / *_id দিয়ে।",
+   "২. geo_nodes এ এখন কেন্দ্রীয়, বিভাগ, জেলা, উপজেলা আছে। ইউনিয়ন থেকে নিচের স্তর index.html থেকে যোগ করে data.json এক্সপোর্ট করতে পারবেন।",
+   "৩. উপজেলার আইডি ক্রমিক (UPA-001…), সরকারি BBS কোড নয়; চাইলে bbs_code ফিল্ড যোগ করুন।",
+   "৪. _examples এ অন্যান্য রেকর্ডের নমুনা আছে; আসল ডাটা সংশ্লিষ্ট খালি অ্যারেতে বসান।",
+   "৫. পুরোনো ডাটার জন্য source=\"legacy\" ও legacy_ref ব্যবহার করুন।"
+  ],
+  "geo_summary": {
+   "divisions": 8,
+   "districts": 64,
+   "upazilas": 494
+  }
+ },
+ "levels": [
+  {
+   "level": 0,
+   "key": "central",
+   "bn": "কেন্দ্রীয়"
+  },
+  {
+   "level": 1,
+   "key": "division",
+   "bn": "বিভাগ"
+  },
+  {
+   "level": 2,
+   "key": "district",
+   "bn": "জেলা"
+  },
+  {
+   "level": 3,
+   "key": "upazila",
+   "bn": "উপজেলা"
+  },
+  {
+   "level": 4,
+   "key": "union",
+   "bn": "ইউনিয়ন"
+  },
+  {
+   "level": 5,
+   "key": "village",
+   "bn": "গ্রাম"
+  },
+  {
+   "level": 6,
+   "key": "para",
+   "bn": "পাড়া"
+  },
+  {
+   "level": 7,
+   "key": "mohalla",
+   "bn": "মহল্লা"
+  },
+  {
+   "level": 8,
+   "key": "user",
+   "bn": "ব্যবহারকারী"
+  }
+ ],
+ "geo_nodes": [
+  {
+   "id": "CEN-001",
+   "level": 0,
+   "type": "central",
+   "name_bn": "কেন্দ্রীয় অফিস",
+   "name_en": "Central HQ",
+   "parent_id": null,
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-01",
+   "level": 1,
+   "type": "division",
+   "name_bn": "বরিশাল",
+   "name_en": "Barishal",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-01",
+   "level": 2,
+   "type": "district",
+   "name_bn": "বরগুনা",
+   "name_en": "Barguna",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-001",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আমতলী",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-002",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বামনা",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-003",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বরগুনা সদর",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-004",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেতাগী",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-005",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাথরঘাটা",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-006",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তালতলী",
+   "name_en": "",
+   "parent_id": "DIS-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-02",
+   "level": 2,
+   "type": "district",
+   "name_bn": "বরিশাল",
+   "name_en": "Barishal",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-007",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আগৈলঝাড়া",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-008",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাবুগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-009",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাকেরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-010",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বানারীপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-011",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গৌরনদী",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-012",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হিজলা",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-013",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বরিশাল সদর",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-014",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুলাদী",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-015",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মেহেন্দিগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-016",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "উজিরপুর",
+   "name_en": "",
+   "parent_id": "DIS-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-03",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ভোলা",
+   "name_en": "Bhola",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-017",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভোলা সদর",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-018",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বোরহানউদ্দিন",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-019",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চরফ্যাশন",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-020",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দৌলতখান",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-021",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লালমোহন",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-022",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মনপুরা",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-023",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তজুমদ্দিন",
+   "name_en": "",
+   "parent_id": "DIS-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-04",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ঝালকাঠি",
+   "name_en": "Jhalokati",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-024",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঝালকাঠি সদর",
+   "name_en": "",
+   "parent_id": "DIS-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-025",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাঁঠালিয়া",
+   "name_en": "",
+   "parent_id": "DIS-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-026",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নলছিটি",
+   "name_en": "",
+   "parent_id": "DIS-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-027",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজাপুর",
+   "name_en": "",
+   "parent_id": "DIS-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-05",
+   "level": 2,
+   "type": "district",
+   "name_bn": "পটুয়াখালী",
+   "name_en": "Patuakhali",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-028",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাউফল",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-029",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দশমিনা",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-030",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দুমকি",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-031",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গলাচিপা",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-032",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কলাপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-033",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মির্জাগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-034",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পটুয়াখালী সদর",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-035",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাঙ্গাবালী",
+   "name_en": "",
+   "parent_id": "DIS-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-06",
+   "level": 2,
+   "type": "district",
+   "name_bn": "পিরোজপুর",
+   "name_en": "Pirojpur",
+   "parent_id": "DIV-01",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-036",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভান্ডারিয়া",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-037",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাউখালী",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-038",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মঠবাড়িয়া",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-039",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাজিরপুর",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-040",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নেছারাবাদ",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-041",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পিরোজপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-042",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জিয়ানগর",
+   "name_en": "",
+   "parent_id": "DIS-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-02",
+   "level": 1,
+   "type": "division",
+   "name_bn": "চট্টগ্রাম",
+   "name_en": "Chattogram",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-07",
+   "level": 2,
+   "type": "district",
+   "name_bn": "বান্দরবান",
+   "name_en": "Bandarban",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-043",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আলীকদম",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-044",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বান্দরবান সদর",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-045",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লামা",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-046",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাইক্ষ্যংছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-047",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রোয়াংছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-048",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রুমা",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-049",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "থানচি",
+   "name_en": "",
+   "parent_id": "DIS-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-08",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ব্রাহ্মণবাড়িয়া",
+   "name_en": "Brahmanbaria",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-050",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আখাউড়া",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-051",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আশুগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-052",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাঞ্ছারামপুর",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-053",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিজয়নগর",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-054",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ব্রাহ্মণবাড়িয়া সদর",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-055",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কসবা",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-056",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নবীনগর",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-057",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাসিরনগর",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-058",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সরাইল",
+   "name_en": "",
+   "parent_id": "DIS-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-09",
+   "level": 2,
+   "type": "district",
+   "name_bn": "চাঁদপুর",
+   "name_en": "Chandpur",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-059",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চাঁদপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-060",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফরিদগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-061",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাইমচর",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-062",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাজীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-063",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কচুয়া",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-064",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মতলব দক্ষিণ",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-065",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মতলব উত্তর",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-066",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শাহরাস্তি",
+   "name_en": "",
+   "parent_id": "DIS-09",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-10",
+   "level": 2,
+   "type": "district",
+   "name_bn": "চট্টগ্রাম",
+   "name_en": "Chattogram",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-067",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আনোয়ারা",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-068",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাঁশখালী",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-069",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বোয়ালখালী",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-070",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চন্দনাইশ",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-071",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফটিকছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-072",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাটহাজারী",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-073",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লোহাগাড়া",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-074",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মিরসরাই",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-075",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পটিয়া",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-076",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাঙ্গুনিয়া",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-077",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাউজান",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-078",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সন্দ্বীপ",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-079",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সীতাকুণ্ড",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-080",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাতকানিয়া",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-081",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কর্ণফুলী",
+   "name_en": "",
+   "parent_id": "DIS-10",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-11",
+   "level": 2,
+   "type": "district",
+   "name_bn": "কুমিল্লা",
+   "name_en": "Cumilla",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-082",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বরুড়া",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-083",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ব্রাহ্মণপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-084",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বুড়িচং",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-085",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চান্দিনা",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-086",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চৌদ্দগ্রাম",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-087",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দাউদকান্দি",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-088",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দেবিদ্বার",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-089",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হোমনা",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-090",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুমিল্লা আদর্শ সদর",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-091",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুমিল্লা সদর দক্ষিণ",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-092",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লাকসাম",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-093",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লালমাই",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-094",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মেঘনা",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-095",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মনোহরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-096",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুরাদনগর",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-097",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাঙ্গলকোট",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-098",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তিতাস",
+   "name_en": "",
+   "parent_id": "DIS-11",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-12",
+   "level": 2,
+   "type": "district",
+   "name_bn": "কক্সবাজার",
+   "name_en": "Cox's Bazar",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-099",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চকরিয়া",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-100",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কক্সবাজার সদর",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-101",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুতুবদিয়া",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-102",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মহেশখালী",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-103",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পেকুয়া",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-104",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রামু",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-105",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "টেকনাফ",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-106",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "উখিয়া",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-107",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঈদগাঁও",
+   "name_en": "",
+   "parent_id": "DIS-12",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-13",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ফেনী",
+   "name_en": "Feni",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-108",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ছাগলনাইয়া",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-109",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দাগনভূঁইয়া",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-110",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফেনী সদর",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-111",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলগাজী",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-112",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পরশুরাম",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-113",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সোনাগাজী",
+   "name_en": "",
+   "parent_id": "DIS-13",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-14",
+   "level": 2,
+   "type": "district",
+   "name_bn": "খাগড়াছড়ি",
+   "name_en": "Khagrachhari",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-114",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দীঘিনালা",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-115",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "খাগড়াছড়ি সদর",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-116",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লক্ষ্মীছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-117",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মহালছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-118",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মানিকছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-119",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মাটিরাঙ্গা",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-120",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পানছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-121",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রামগড়",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-122",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গুইমারা",
+   "name_en": "",
+   "parent_id": "DIS-14",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-15",
+   "level": 2,
+   "type": "district",
+   "name_bn": "লক্ষ্মীপুর",
+   "name_en": "Lakshmipur",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-123",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কমলনগর",
+   "name_en": "",
+   "parent_id": "DIS-15",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-124",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লক্ষ্মীপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-15",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-125",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রামগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-15",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-126",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রামগতি",
+   "name_en": "",
+   "parent_id": "DIS-15",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-127",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রায়পুর",
+   "name_en": "",
+   "parent_id": "DIS-15",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-16",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নোয়াখালী",
+   "name_en": "Noakhali",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-128",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেগমগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-129",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চাটখিল",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-130",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কোম্পানীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-131",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাতিয়া",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-132",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কবিরহাট",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-133",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নোয়াখালী সদর",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-134",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সেনবাগ",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-135",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সোনাইমুড়ী",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-136",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সুবর্ণচর",
+   "name_en": "",
+   "parent_id": "DIS-16",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-17",
+   "level": 2,
+   "type": "district",
+   "name_bn": "রাঙ্গামাটি",
+   "name_en": "Rangamati",
+   "parent_id": "DIV-02",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-137",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাঘাইছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-138",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বরকল",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-139",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেলাইছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-140",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জুরাছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-141",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাপ্তাই",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-142",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাউখালী",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-143",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লংগদু",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-144",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নানিয়ারচর",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-145",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজস্থলী",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-146",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাঙ্গামাটি সদর",
+   "name_en": "",
+   "parent_id": "DIS-17",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-03",
+   "level": 1,
+   "type": "division",
+   "name_bn": "ঢাকা",
+   "name_en": "Dhaka",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-18",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ফরিদপুর",
+   "name_en": "Faridpur",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-147",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আলফাডাঙ্গা",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-148",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভাঙ্গা",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-149",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বোয়ালমারী",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-150",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চরভদ্রাসন",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-151",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফরিদপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-152",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মধুখালী",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-153",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নগরকান্দা",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-154",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সদরপুর",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-155",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সালথা",
+   "name_en": "",
+   "parent_id": "DIS-18",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-19",
+   "level": 2,
+   "type": "district",
+   "name_bn": "গাজীপুর",
+   "name_en": "Gazipur",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-156",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গাজীপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-19",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-157",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালিয়াকৈর",
+   "name_en": "",
+   "parent_id": "DIS-19",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-158",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-19",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-159",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাপাসিয়া",
+   "name_en": "",
+   "parent_id": "DIS-19",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-160",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্রীপুর",
+   "name_en": "",
+   "parent_id": "DIS-19",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-20",
+   "level": 2,
+   "type": "district",
+   "name_bn": "গোপালগঞ্জ",
+   "name_en": "Gopalganj",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-161",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোপালগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-20",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-162",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাশিয়ানী",
+   "name_en": "",
+   "parent_id": "DIS-20",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-163",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কোটালীপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-20",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-164",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুকসুদপুর",
+   "name_en": "",
+   "parent_id": "DIS-20",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-165",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "টুঙ্গিপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-20",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-21",
+   "level": 2,
+   "type": "district",
+   "name_bn": "কিশোরগঞ্জ",
+   "name_en": "Kishoreganj",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-166",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "অষ্টগ্রাম",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-167",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাজিতপুর",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-168",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভৈরব",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-169",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হোসেনপুর",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-170",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ইটনা",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-171",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "করিমগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-172",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কটিয়াদী",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-173",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কিশোরগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-174",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুলিয়ারচর",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-175",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মিঠামইন",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-176",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নিকলী",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-177",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাকুন্দিয়া",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-178",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তাড়াইল",
+   "name_en": "",
+   "parent_id": "DIS-21",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-22",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মাদারীপুর",
+   "name_en": "Madaripur",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-179",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালকিনি",
+   "name_en": "",
+   "parent_id": "DIS-22",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-180",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মাদারীপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-22",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-181",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজৈর",
+   "name_en": "",
+   "parent_id": "DIS-22",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-182",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শিবচর",
+   "name_en": "",
+   "parent_id": "DIS-22",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-183",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ডাসার",
+   "name_en": "",
+   "parent_id": "DIS-22",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-23",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মানিকগঞ্জ",
+   "name_en": "Manikganj",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-184",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দৌলতপুর",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-185",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঘিওর",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-186",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হরিরামপুর",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-187",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মানিকগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-188",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাটুরিয়া",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-189",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শিবালয়",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-190",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সিংগাইর",
+   "name_en": "",
+   "parent_id": "DIS-23",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-24",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মুন্সিগঞ্জ",
+   "name_en": "Munshiganj",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-191",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গজারিয়া",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-192",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লৌহজং",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-193",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুন্সিগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-194",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সিরাজদিখান",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-195",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্রীনগর",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-196",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "টঙ্গীবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-24",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-25",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নারায়ণগঞ্জ",
+   "name_en": "Narayanganj",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-197",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আড়াইহাজার",
+   "name_en": "",
+   "parent_id": "DIS-25",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-198",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বন্দর",
+   "name_en": "",
+   "parent_id": "DIS-25",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-199",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নারায়ণগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-25",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-200",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রূপগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-25",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-201",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সোনারগাঁ",
+   "name_en": "",
+   "parent_id": "DIS-25",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-26",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নরসিংদী",
+   "name_en": "Narsingdi",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-202",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেলাব",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-203",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মনোহরদী",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-204",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নরসিংদী সদর",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-205",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পলাশ",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-206",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রায়পুরা",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-207",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শিবপুর",
+   "name_en": "",
+   "parent_id": "DIS-26",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-27",
+   "level": 2,
+   "type": "district",
+   "name_bn": "রাজবাড়ী",
+   "name_en": "Rajbari",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-208",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বালিয়াকান্দি",
+   "name_en": "",
+   "parent_id": "DIS-27",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-209",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোয়ালন্দ",
+   "name_en": "",
+   "parent_id": "DIS-27",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-210",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালুখালী",
+   "name_en": "",
+   "parent_id": "DIS-27",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-211",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাংশা",
+   "name_en": "",
+   "parent_id": "DIS-27",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-212",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজবাড়ী সদর",
+   "name_en": "",
+   "parent_id": "DIS-27",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-28",
+   "level": 2,
+   "type": "district",
+   "name_bn": "শরীয়তপুর",
+   "name_en": "Shariatpur",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-213",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভেদরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-214",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ডামুড্যা",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-215",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোসাইরহাট",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-216",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নড়িয়া",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-217",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শরীয়তপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-218",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জাজিরা",
+   "name_en": "",
+   "parent_id": "DIS-28",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-29",
+   "level": 2,
+   "type": "district",
+   "name_bn": "টাঙ্গাইল",
+   "name_en": "Tangail",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-219",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাসাইল",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-220",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভূঞাপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-221",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দেলদুয়ার",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-222",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধনবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-223",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঘাটাইল",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-224",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোপালপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-225",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালিহাতী",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-226",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মধুপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-227",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মির্জাপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-228",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাগরপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-229",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সখিপুর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-230",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "টাঙ্গাইল সদর",
+   "name_en": "",
+   "parent_id": "DIS-29",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-30",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ঢাকা",
+   "name_en": "Dhaka",
+   "parent_id": "DIV-03",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-231",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধামরাই",
+   "name_en": "",
+   "parent_id": "DIS-30",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-232",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দোহার",
+   "name_en": "",
+   "parent_id": "DIS-30",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-233",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কেরানীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-30",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-234",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নবাবগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-30",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-235",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাভার",
+   "name_en": "",
+   "parent_id": "DIS-30",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-04",
+   "level": 1,
+   "type": "division",
+   "name_bn": "খুলনা",
+   "name_en": "Khulna",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-31",
+   "level": 2,
+   "type": "district",
+   "name_bn": "বাগেরহাট",
+   "name_en": "Bagerhat",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-236",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাগেরহাট সদর",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-237",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চিতলমারী",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-238",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফকিরহাট",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-239",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কচুয়া",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-240",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মোল্লাহাট",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-241",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মোংলা",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-242",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মোড়েলগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-243",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রামপাল",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-244",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শরণখোলা",
+   "name_en": "",
+   "parent_id": "DIS-31",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-32",
+   "level": 2,
+   "type": "district",
+   "name_bn": "চুয়াডাঙ্গা",
+   "name_en": "Chuadanga",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-245",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আলমডাঙ্গা",
+   "name_en": "",
+   "parent_id": "DIS-32",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-246",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চুয়াডাঙ্গা সদর",
+   "name_en": "",
+   "parent_id": "DIS-32",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-247",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দামুড়হুদা",
+   "name_en": "",
+   "parent_id": "DIS-32",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-248",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জীবননগর",
+   "name_en": "",
+   "parent_id": "DIS-32",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-33",
+   "level": 2,
+   "type": "district",
+   "name_bn": "যশোর",
+   "name_en": "Jashore",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-249",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "অভয়নগর",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-250",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাঘারপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-251",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চৌগাছা",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-252",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঝিকরগাছা",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-253",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কেশবপুর",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-254",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "যশোর সদর",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-255",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মণিরামপুর",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-256",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শার্শা",
+   "name_en": "",
+   "parent_id": "DIS-33",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-34",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ঝিনাইদহ",
+   "name_en": "Jhenaidah",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-257",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঝিনাইদহ সদর",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-258",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হরিণাকুন্ডু",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-259",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-260",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কোটচাঁদপুর",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-261",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মহেশপুর",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-262",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শৈলকুপা",
+   "name_en": "",
+   "parent_id": "DIS-34",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-35",
+   "level": 2,
+   "type": "district",
+   "name_bn": "খুলনা",
+   "name_en": "Khulna",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-263",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বটিয়াঘাটা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-264",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দাকোপ",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-265",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ডুমুরিয়া",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-266",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দিঘলিয়া",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-267",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কয়রা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-268",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাইকগাছা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-269",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলতলা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-270",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রূপসা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-271",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তেরখাদা",
+   "name_en": "",
+   "parent_id": "DIS-35",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-36",
+   "level": 2,
+   "type": "district",
+   "name_bn": "কুষ্টিয়া",
+   "name_en": "Kushtia",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-272",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভেড়ামারা",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-273",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দৌলতপুর",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-274",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "খোকসা",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-275",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুমারখালী",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-276",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুষ্টিয়া সদর",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-277",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মিরপুর",
+   "name_en": "",
+   "parent_id": "DIS-36",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-37",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মাগুরা",
+   "name_en": "Magura",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-278",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মাগুরা সদর",
+   "name_en": "",
+   "parent_id": "DIS-37",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-279",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মহম্মদপুর",
+   "name_en": "",
+   "parent_id": "DIS-37",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-280",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শালিখা",
+   "name_en": "",
+   "parent_id": "DIS-37",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-281",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্রীপুর",
+   "name_en": "",
+   "parent_id": "DIS-37",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-38",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মেহেরপুর",
+   "name_en": "Meherpur",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-282",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গাংনী",
+   "name_en": "",
+   "parent_id": "DIS-38",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-283",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মেহেরপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-38",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-284",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুজিবনগর",
+   "name_en": "",
+   "parent_id": "DIS-38",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-39",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নড়াইল",
+   "name_en": "Narail",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-285",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালিয়া",
+   "name_en": "",
+   "parent_id": "DIS-39",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-286",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লোহাগড়া",
+   "name_en": "",
+   "parent_id": "DIS-39",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-287",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নড়াইল সদর",
+   "name_en": "",
+   "parent_id": "DIS-39",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-288",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নড়াগাতি",
+   "name_en": "",
+   "parent_id": "DIS-39",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-40",
+   "level": 2,
+   "type": "district",
+   "name_bn": "সাতক্ষীরা",
+   "name_en": "Satkhira",
+   "parent_id": "DIV-04",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-289",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আশাশুনি",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-290",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দেবহাটা",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-291",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কলারোয়া",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-292",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-293",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাতক্ষীরা সদর",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-294",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্যামনগর",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-295",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তালা",
+   "name_en": "",
+   "parent_id": "DIS-40",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-05",
+   "level": 1,
+   "type": "division",
+   "name_bn": "ময়মনসিংহ",
+   "name_en": "Mymensingh",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-41",
+   "level": 2,
+   "type": "district",
+   "name_bn": "জামালপুর",
+   "name_en": "Jamalpur",
+   "parent_id": "DIV-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-296",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বকশীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-297",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দেওয়ানগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-298",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ইসলামপুর",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-299",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জামালপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-300",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মাদারগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-301",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মেলান্দহ",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-302",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সরিষাবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-41",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-42",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ময়মনসিংহ",
+   "name_en": "Mymensingh",
+   "parent_id": "DIV-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-303",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভালুকা",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-304",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধোবাউড়া",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-305",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলবাড়িয়া",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-306",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গফরগাঁও",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-307",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গৌরীপুর",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-308",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হালুয়াঘাট",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-309",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঈশ্বরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-310",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মুক্তাগাছা",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-311",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ময়মনসিংহ সদর",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-312",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নান্দাইল",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-313",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলপুর",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-314",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ত্রিশাল",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-315",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তারাকান্দা",
+   "name_en": "",
+   "parent_id": "DIS-42",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-43",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নেত্রকোণা",
+   "name_en": "Netrokona",
+   "parent_id": "DIV-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-316",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আটপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-317",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বারহাট্টা",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-318",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দুর্গাপুর",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-319",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কলমাকান্দা",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-320",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কেন্দুয়া",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-321",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "খালিয়াজুরী",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-322",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মদন",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-323",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মোহনগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-324",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নেত্রকোণা সদর",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-325",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পূর্বধলা",
+   "name_en": "",
+   "parent_id": "DIS-43",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-44",
+   "level": 2,
+   "type": "district",
+   "name_bn": "শেরপুর",
+   "name_en": "Sherpur",
+   "parent_id": "DIV-05",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-326",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঝিনাইগাতী",
+   "name_en": "",
+   "parent_id": "DIS-44",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-327",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নকলা",
+   "name_en": "",
+   "parent_id": "DIS-44",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-328",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নালিতাবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-44",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-329",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শেরপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-44",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-330",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্রীবরদী",
+   "name_en": "",
+   "parent_id": "DIS-44",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-06",
+   "level": 1,
+   "type": "division",
+   "name_bn": "রাজশাহী",
+   "name_en": "Rajshahi",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-45",
+   "level": 2,
+   "type": "district",
+   "name_bn": "বগুড়া",
+   "name_en": "Bogura",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-331",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আদমদিঘী",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-332",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বগুড়া সদর",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-333",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধুনট",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-334",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দুপচাঁচিয়া",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-335",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গাবতলী",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-336",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাহালু",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-337",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নন্দীগ্রাম",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-338",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শাজাহানপুর",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-339",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শেরপুর",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-340",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শিবগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-341",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সোনাতলা",
+   "name_en": "",
+   "parent_id": "DIS-45",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-46",
+   "level": 2,
+   "type": "district",
+   "name_bn": "জয়পুরহাট",
+   "name_en": "Joypurhat",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-342",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আক্কেলপুর",
+   "name_en": "",
+   "parent_id": "DIS-46",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-343",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জয়পুরহাট সদর",
+   "name_en": "",
+   "parent_id": "DIS-46",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-344",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালাই",
+   "name_en": "",
+   "parent_id": "DIS-46",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-345",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ক্ষেতলাল",
+   "name_en": "",
+   "parent_id": "DIS-46",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-346",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাঁচবিবি",
+   "name_en": "",
+   "parent_id": "DIS-46",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-47",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নওগাঁ",
+   "name_en": "Naogaon",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-347",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আত্রাই",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-348",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বদলগাছী",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-349",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধামইরহাট",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-350",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মান্দা",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-351",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মহাদেবপুর",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-352",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নওগাঁ সদর",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-353",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নিয়ামতপুর",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-354",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পত্নীতলা",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-355",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পোরশা",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-356",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাণীনগর",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-357",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাপাহার",
+   "name_en": "",
+   "parent_id": "DIS-47",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-48",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নাটোর",
+   "name_en": "Natore",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-358",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাগাতিপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-359",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বড়াইগ্রাম",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-360",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গুরুদাসপুর",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-361",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লালপুর",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-362",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাটোর সদর",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-363",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সিংড়া",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-364",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নলডাঙ্গা",
+   "name_en": "",
+   "parent_id": "DIS-48",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-49",
+   "level": 2,
+   "type": "district",
+   "name_bn": "চাঁপাইনবাবগঞ্জ",
+   "name_en": "Chapainawabganj",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-365",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভোলাহাট",
+   "name_en": "",
+   "parent_id": "DIS-49",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-366",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোমস্তাপুর",
+   "name_en": "",
+   "parent_id": "DIS-49",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-367",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাচোল",
+   "name_en": "",
+   "parent_id": "DIS-49",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-368",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চাঁপাইনবাবগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-49",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-369",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শিবগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-49",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-50",
+   "level": 2,
+   "type": "district",
+   "name_bn": "পাবনা",
+   "name_en": "Pabna",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-370",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আটঘরিয়া",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-371",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেড়া",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-372",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভাঙ্গুড়া",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-373",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চাটমোহর",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-374",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফরিদপুর",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-375",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঈশ্বরদী",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-376",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাবনা সদর",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-377",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাঁথিয়া",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-378",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সুজানগর",
+   "name_en": "",
+   "parent_id": "DIS-50",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-51",
+   "level": 2,
+   "type": "district",
+   "name_bn": "রাজশাহী",
+   "name_en": "Rajshahi",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-379",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাঘা",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-380",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাগমারা",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-381",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চারঘাট",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-382",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দুর্গাপুর",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-383",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোদাগাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-384",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মোহনপুর",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-385",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পবা",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-386",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পুঠিয়া",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-387",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তানোর",
+   "name_en": "",
+   "parent_id": "DIS-51",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-52",
+   "level": 2,
+   "type": "district",
+   "name_bn": "সিরাজগঞ্জ",
+   "name_en": "Sirajganj",
+   "parent_id": "DIV-06",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-388",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বেলকুচি",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-389",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চৌহালী",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-390",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কামারখন্দ",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-391",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাজীপুর",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-392",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রায়গঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-393",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শাহজাদপুর",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-394",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সিরাজগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-395",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তাড়াশ",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-396",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "উল্লাপাড়া",
+   "name_en": "",
+   "parent_id": "DIS-52",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-07",
+   "level": 1,
+   "type": "division",
+   "name_bn": "রংপুর",
+   "name_en": "Rangpur",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-53",
+   "level": 2,
+   "type": "district",
+   "name_bn": "দিনাজপুর",
+   "name_en": "Dinajpur",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-397",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিরল",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-398",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিরামপুর",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-399",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বীরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-400",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বোচাগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-401",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চিরিরবন্দর",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-402",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-403",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঘোড়াঘাট",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-404",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাকিমপুর",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-405",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাহারোল",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-406",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "খানসামা",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-407",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দিনাজপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-408",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নবাবগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-409",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পার্বতীপুর",
+   "name_en": "",
+   "parent_id": "DIS-53",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-54",
+   "level": 2,
+   "type": "district",
+   "name_bn": "গাইবান্ধা",
+   "name_en": "Gaibandha",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-410",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলছড়ি",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-411",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গাইবান্ধা সদর",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-412",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোবিন্দগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-413",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পলাশবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-414",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাদুল্লাপুর",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-415",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সাঘাটা",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-416",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সুন্দরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-54",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-55",
+   "level": 2,
+   "type": "district",
+   "name_bn": "কুড়িগ্রাম",
+   "name_en": "Kurigram",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-417",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ভুরুঙ্গামারী",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-418",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চররাজিবপুর",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-419",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চিলমারী",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-420",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফুলবাড়ী",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-421",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুড়িগ্রাম সদর",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-422",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নাগেশ্বরী",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-423",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজারহাট",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-424",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রৌমারী",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-425",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "উলিপুর",
+   "name_en": "",
+   "parent_id": "DIS-55",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-56",
+   "level": 2,
+   "type": "district",
+   "name_bn": "লালমনিরহাট",
+   "name_en": "Lalmonirhat",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-426",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আদিতমারী",
+   "name_en": "",
+   "parent_id": "DIS-56",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-427",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হাতীবান্ধা",
+   "name_en": "",
+   "parent_id": "DIS-56",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-428",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কালীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-56",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-429",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লালমনিরহাট সদর",
+   "name_en": "",
+   "parent_id": "DIS-56",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-430",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পাটগ্রাম",
+   "name_en": "",
+   "parent_id": "DIS-56",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-57",
+   "level": 2,
+   "type": "district",
+   "name_bn": "নীলফামারী",
+   "name_en": "Nilphamari",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-431",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ডিমলা",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-432",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ডোমার",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-433",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জলঢাকা",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-434",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কিশোরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-435",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নীলফামারী সদর",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-436",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সৈয়দপুর",
+   "name_en": "",
+   "parent_id": "DIS-57",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-58",
+   "level": 2,
+   "type": "district",
+   "name_bn": "পঞ্চগড়",
+   "name_en": "Panchagarh",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-437",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আটোয়ারী",
+   "name_en": "",
+   "parent_id": "DIS-58",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-438",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বোদা",
+   "name_en": "",
+   "parent_id": "DIS-58",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-439",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দেবীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-58",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-440",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পঞ্চগড় সদর",
+   "name_en": "",
+   "parent_id": "DIS-58",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-441",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তেঁতুলিয়া",
+   "name_en": "",
+   "parent_id": "DIS-58",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-59",
+   "level": 2,
+   "type": "district",
+   "name_bn": "রংপুর",
+   "name_en": "Rangpur",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-442",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বদরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-443",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গঙ্গাচড়া",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-444",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কাউনিয়া",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-445",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মিঠাপুকুর",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-446",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পীরগাছা",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-447",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পীরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-448",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রংপুর সদর",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-449",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তারাগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-59",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-60",
+   "level": 2,
+   "type": "district",
+   "name_bn": "ঠাকুরগাঁও",
+   "name_en": "Thakurgaon",
+   "parent_id": "DIV-07",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-450",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বালিয়াডাঙ্গী",
+   "name_en": "",
+   "parent_id": "DIS-60",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-451",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হরিপুর",
+   "name_en": "",
+   "parent_id": "DIS-60",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-452",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "পীরগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-60",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-453",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রানীশংকৈল",
+   "name_en": "",
+   "parent_id": "DIS-60",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-454",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ঠাকুরগাঁও সদর",
+   "name_en": "",
+   "parent_id": "DIS-60",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIV-08",
+   "level": 1,
+   "type": "division",
+   "name_bn": "সিলেট",
+   "name_en": "Sylhet",
+   "parent_id": "CEN-001",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-61",
+   "level": 2,
+   "type": "district",
+   "name_bn": "হবিগঞ্জ",
+   "name_en": "Habiganj",
+   "parent_id": "DIV-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-455",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "আজমিরীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-456",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বাহুবল",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-457",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বানিয়াচং",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-458",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "চুনারুঘাট",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-459",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "হবিগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-460",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "লাখাই",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-461",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মাধবপুর",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-462",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "নবীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-463",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শায়েস্তাগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-61",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-62",
+   "level": 2,
+   "type": "district",
+   "name_bn": "মৌলভীবাজার",
+   "name_en": "Moulvibazar",
+   "parent_id": "DIV-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-464",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বড়লেখা",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-465",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জুড়ী",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-466",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কমলগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-467",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কুলাউড়া",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-468",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "মৌলভীবাজার সদর",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-469",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "রাজনগর",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-470",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শ্রীমঙ্গল",
+   "name_en": "",
+   "parent_id": "DIS-62",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-63",
+   "level": 2,
+   "type": "district",
+   "name_bn": "সুনামগঞ্জ",
+   "name_en": "Sunamganj",
+   "parent_id": "DIV-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-471",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিশ্বম্ভরপুর",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-472",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ছাতক",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-473",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দক্ষিণ সুনামগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-474",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দিরাই",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-475",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ধর্মপাশা",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-476",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দোয়ারাবাজার",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-477",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জগন্নাথপুর",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-478",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জামালগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-479",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "শাল্লা",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-480",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সুনামগঞ্জ সদর",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-481",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "তাহিরপুর",
+   "name_en": "",
+   "parent_id": "DIS-63",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "DIS-64",
+   "level": 2,
+   "type": "district",
+   "name_bn": "সিলেট",
+   "name_en": "Sylhet",
+   "parent_id": "DIV-08",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-482",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বালাগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-483",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিয়ানীবাজার",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-484",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "বিশ্বনাথ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-485",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কোম্পানীগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-486",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "দক্ষিণ সুরমা",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-487",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ফেঞ্চুগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-488",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোলাপগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-489",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "গোয়াইনঘাট",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-490",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জৈন্তাপুর",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-491",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "কানাইঘাট",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-492",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "সিলেট সদর",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-493",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "জকিগঞ্জ",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  },
+  {
+   "id": "UPA-494",
+   "level": 3,
+   "type": "upazila",
+   "name_bn": "ওসমানীনগর",
+   "name_en": "",
+   "parent_id": "DIS-64",
+   "manager_person_id": null,
+   "status": "active"
+  }
+ ],
+ "institutions": [],
+ "persons": [],
+ "roles": [
+  {
+   "key": "central_head",
+   "bn": "কেন্দ্রীয় প্রধান"
+  },
+  {
+   "key": "division_manager",
+   "bn": "বিভাগীয় দায়িত্বশীল"
+  },
+  {
+   "key": "district_manager",
+   "bn": "জেলা দায়িত্বশীল"
+  },
+  {
+   "key": "upazila_manager",
+   "bn": "উপজেলা দায়িত্বশীল"
+  },
+  {
+   "key": "union_manager",
+   "bn": "ইউনিয়ন দায়িত্বশীল"
+  },
+  {
+   "key": "local_volunteer",
+   "bn": "স্থানীয় স্বেচ্ছাসেবক"
+  },
+  {
+   "key": "mosque_contact",
+   "bn": "মসজিদ প্রতিনিধি"
+  },
+  {
+   "key": "madrasa_head",
+   "bn": "মাদ্রাসা প্রধান"
+  },
+  {
+   "key": "hifz_teacher",
+   "bn": "হিফজ শিক্ষক"
+  },
+  {
+   "key": "hifz_student",
+   "bn": "হিফজ শিক্ষার্থী"
+  },
+  {
+   "key": "orderer",
+   "bn": "অর্ডারকারী"
+  },
+  {
+   "key": "donor",
+   "bn": "দাতা"
+  },
+  {
+   "key": "driver",
+   "bn": "পরিবহন চালক"
+  }
+ ],
+ "products": [
+  {
+   "id": "PRD-001",
+   "name_bn": "আল কোরআনুল মাজিদ",
+   "edition": "",
+   "size": "",
+   "unit_cost": 0,
+   "unit_price": 0,
+   "publisher_source": "কোরআনের ফেরিওয়ালা"
+  }
+ ],
+ "orders": [],
+ "donations": [],
+ "copies": [],
+ "shipments": [],
+ "distributions": [],
+ "impact_reports": [],
+ "legacy_imports": [
+  {
+   "id": "LEG-0001",
+   "source_name": "পুরোনো খাতা/এক্সেল/ফাইলের নাম",
+   "imported_at": null,
+   "records_count": 0,
+   "notes": ""
+  }
+ ],
+ "_examples": {
+  "institutions": [
+   {
+    "id": "INS-0001",
+    "type": "mosque",
+    "name_bn": "উদাহরণ জামে মসজিদ",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "address": "গ্রাম/পাড়া/মহল্লা, ইউনিয়ন, উপজেলা, জেলা",
+    "postcode": "0000",
+    "contact": {
+     "person_id": "P-0002",
+     "phone": ""
+    },
+    "capacity_note": "",
+    "status": "active"
+   },
+   {
+    "id": "INS-0002",
+    "type": "madrasa",
+    "name_bn": "উদাহরণ মাদ্রাসা",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "address": "",
+    "postcode": "0000",
+    "contact": {
+     "person_id": "P-0003",
+     "phone": ""
+    },
+    "departments": [
+     {
+      "id": "DEP-0001",
+      "type": "hifz",
+      "name_bn": "হিফজ বিভাগ",
+      "student_count": 0,
+      "teacher_count": 0
+     }
+    ],
+    "status": "active"
+   }
+  ],
+  "persons": [
+   {
+    "id": "P-0001",
+    "name_bn": "উদাহরণ কেন্দ্রীয় প্রধান",
+    "roles": [
+     "central_head"
+    ],
+    "phone": "",
+    "geo_node_id": "CEN-001",
+    "institution_id": null,
+    "status": "active"
+   },
+   {
+    "id": "P-0002",
+    "name_bn": "উদাহরণ ইমাম/মুতাওয়াল্লি",
+    "roles": [
+     "mosque_contact"
+    ],
+    "phone": "",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "institution_id": "INS-0001",
+    "status": "active"
+   },
+   {
+    "id": "P-0003",
+    "name_bn": "উদাহরণ মুহতামিম",
+    "roles": [
+     "madrasa_head"
+    ],
+    "phone": "",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "institution_id": "INS-0002",
+    "status": "active"
+   },
+   {
+    "id": "P-0004",
+    "name_bn": "উদাহরণ হিফজ শিক্ষার্থী",
+    "roles": [
+     "hifz_student"
+    ],
+    "phone": "",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "institution_id": "INS-0002",
+    "department_id": "DEP-0001",
+    "status": "active"
+   },
+   {
+    "id": "P-0005",
+    "name_bn": "উদাহরণ সাধারণ নাগরিক (অর্ডারকারী/দাতা)",
+    "roles": [
+     "orderer",
+     "donor"
+    ],
+    "phone": "",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "institution_id": null,
+    "status": "active"
+   }
+  ],
+  "orders": [
+   {
+    "id": "ORD-0001",
+    "source": "new",
+    "legacy_ref": null,
+    "orderer_person_id": "P-0005",
+    "product_id": "PRD-001",
+    "quantity": 1,
+    "purpose": "free_distribution",
+    "target_institution_id": "INS-0002",
+    "target_geo_node_id": "MOH-EXAMPLE-01",
+    "order_date": "2026-09-24",
+    "payment": {
+     "status": "paid",
+     "amount": 0,
+     "method": "",
+     "ref": ""
+    },
+    "status": "ordered"
+   }
+  ],
+  "donations": [
+   {
+    "id": "DON-0001",
+    "source": "new",
+    "legacy_ref": null,
+    "donor_person_id": "P-0005",
+    "amount": 0,
+    "currency": "BDT",
+    "copies_funded": 1,
+    "earmark": {
+     "institution_id": "INS-0002",
+     "geo_node_id": null,
+     "hifz_student_person_id": null
+    },
+    "linked_order_id": "ORD-0001",
+    "date": "2026-09-24",
+    "anonymous": false,
+    "status": "received"
+   }
+  ],
+  "copies": [
+   {
+    "copy_id": "CPY-000001",
+    "product_id": "PRD-001",
+    "batch_no": "B-001",
+    "origin": {
+     "order_id": "ORD-0001",
+     "donation_id": "DON-0001"
+    },
+    "current_status": "printed",
+    "current_location": {
+     "type": "central",
+     "id": "CEN-001"
+    },
+    "recipient": {
+     "person_id": null,
+     "institution_id": null
+    },
+    "history": [
+     {
+      "date": "2026-09-24",
+      "event": "printed",
+      "ref_id": "B-001"
+     }
+    ]
+   }
+  ],
+  "shipments": [
+   {
+    "id": "SHP-0001",
+    "from_geo_node_id": "CEN-001",
+    "to_geo_node_id": "MOH-EXAMPLE-01",
+    "to_institution_id": "INS-0002",
+    "copy_ids": [
+     "CPY-000001"
+    ],
+    "quantity": 1,
+    "transport": {
+     "mode": "courier",
+     "vehicle_or_service": "",
+     "driver_person_id": null,
+     "cost": 0,
+     "tracking_no": ""
+    },
+    "dispatch_date": "2026-09-25",
+    "delivery_date": null,
+    "status": "in_transit"
+   }
+  ],
+  "distributions": [
+   {
+    "id": "DST-0001",
+    "source": "new",
+    "legacy_ref": null,
+    "copy_id": "CPY-000001",
+    "shipment_id": "SHP-0001",
+    "recipient_type": "hifz_student",
+    "recipient_person_id": "P-0004",
+    "recipient_institution_id": "INS-0002",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "handed_by_person_id": "P-0003",
+    "date": "2026-09-30",
+    "receipt_note": "",
+    "photo_ref": "",
+    "status": "delivered"
+   }
+  ],
+  "impact_reports": [
+   {
+    "id": "IMP-0001",
+    "geo_node_id": "MOH-EXAMPLE-01",
+    "period": "2026-09",
+    "copies_distributed": 0,
+    "hifz_students_reached": 0,
+    "mosques_reached": 0,
+    "notes": ""
+   }
+  ]
+ }
+}
