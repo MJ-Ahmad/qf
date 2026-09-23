@@ -1,0 +1,220 @@
+/* ============================================================
+   QuranerFariwala — style.css
+   Manuscript / ledger inspired design system, bilingual-ready
+   ============================================================ */
+
+:root{
+  --ink:#16241E;
+  --ink-soft: rgba(22,36,30,.72);
+  --paper:#EDE7D3;
+  --paper-deep:#E2D9BE;
+  --paper-card:#F4EFDE;
+  --brass:#A9812F;
+  --brass-bright:#C49A3D;
+  --maroon:#7A2E2E;
+  --moss:#3F6B52;
+  --rule: rgba(22,36,30,.16);
+  --rule-strong: rgba(22,36,30,.35);
+  --shadow: 0 10px 30px -12px rgba(22,36,30,.25);
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --font-serif: 'Noto Serif Bengali','Amiri', serif;
+  --font-sans: 'Noto Sans Bengali', sans-serif;
+  --container: 780px;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(rgba(22,36,30,.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+  color:var(--ink);
+  font-family:var(--font-sans);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  transition:opacity .25s ease;
+}
+h1,h2,h3{
+  font-family:var(--font-serif);
+  font-weight:700;
+  margin:0;
+  color:var(--ink);
+  letter-spacing:.005em;
+}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 1.5rem}
+.rule{border:none;border-top:1px solid var(--rule);margin:0}
+.rule-double{
+  height:6px;margin:0 auto;max-width:var(--container);
+  background:
+    linear-gradient(var(--rule-strong),var(--rule-strong)) top/100% 1px no-repeat,
+    linear-gradient(var(--rule),var(--rule)) bottom/100% 1px no-repeat;
+}
+
+/* ---------- Header ---------- */
+header{padding:1.1rem 0}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand img{width:36px;height:36px;object-fit:contain;flex:none}
+.brand-name{font-family:var(--font-serif);font-weight:600;font-size:1.05rem}
+
+nav{display:flex;align-items:center;gap:1.6rem;font-size:.93rem}
+nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s ease,color .2s ease}
+nav a:hover{border-color:var(--brass)}
+
+.lang-toggle{
+  display:inline-flex;align-items:center;border:1px solid var(--rule-strong);
+  border-radius:999px;overflow:hidden;font-size:.78rem;font-weight:600;
+  font-family:var(--font-serif);
+}
+.lang-toggle button{
+  border:none;background:transparent;color:var(--ink-soft);
+  padding:.35rem .8rem;cursor:pointer;font:inherit;
+  transition:background .2s ease,color .2s ease;
+}
+.lang-toggle button.active{background:var(--ink);color:var(--paper)}
+
+.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.nav-mobile-toggle span,.nav-mobile-toggle span::before,.nav-mobile-toggle span::after{
+  display:block;width:20px;height:1.5px;background:var(--ink);position:relative;
+}
+.nav-mobile-toggle span::before,.nav-mobile-toggle span::after{content:'';position:absolute;left:0}
+.nav-mobile-toggle span::before{top:-6px}
+.nav-mobile-toggle span::after{top:6px}
+
+/* ---------- Hero ---------- */
+.hero{padding:4rem 0 3.2rem;text-align:center;opacity:0;animation:rise .7s ease-out .1s forwards}
+.hero-mark{width:72px;height:72px;margin:0 auto 1.5rem;border-radius:50%;
+  border:1.5px solid var(--brass);padding:6px;background:var(--paper-card);box-shadow:var(--shadow)}
+.hero-mark img{border-radius:50%}
+.epigraph{font-family:'Amiri', serif;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--moss);direction:rtl;margin-bottom:.4rem}
+.epigraph-ref{font-size:.8rem;color:var(--ink-soft);margin-bottom:2.2rem;letter-spacing:.02em}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.5rem);line-height:1.28;margin-bottom:1.1rem}
+.hero-lead{max-width:520px;margin:0 auto 2rem;color:var(--ink-soft);font-size:1.02rem}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--font-serif);font-weight:600;font-size:.96rem;
+  padding:.8rem 1.9rem;background:var(--ink);color:var(--paper);
+  text-decoration:none;border-radius:var(--radius-sm);letter-spacing:.02em;
+  box-shadow:0 6px 18px -8px rgba(22,36,30,.5);
+  transition:transform .18s ease,background .2s ease,box-shadow .2s ease;
+}
+.btn:hover{background:var(--moss);transform:translateY(-2px);box-shadow:0 10px 22px -8px rgba(22,36,30,.55)}
+.btn-gold{background:var(--brass);color:var(--ink)}
+.btn-gold:hover{background:var(--brass-bright)}
+
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- Ledger stats ---------- */
+.ledger-strip{padding:2.2rem 0}
+.ledger-strip .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.6rem 0}
+.ledger-item{flex:1 1 150px;text-align:center;border-left:1px solid var(--rule);padding-left:1.3rem}
+.ledger-item:first-child{border-left:none;padding-left:0}
+.ledger-item .val{font-family:var(--font-serif);font-size:1.65rem;font-weight:700;color:var(--moss)}
+.ledger-item .lbl{font-size:.82rem;color:var(--ink-soft);margin-top:.25rem}
+
+/* ---------- Chapters ---------- */
+.chapters{padding:3.4rem 0}
+.section-head{text-align:center;margin-bottom:2.2rem}
+.section-head h2{font-size:clamp(1.35rem,3vw,1.65rem)}
+.section-head .en{display:block;font-size:.78rem;color:var(--brass);letter-spacing:.06em;margin-top:.3rem}
+
+.chapter{
+  display:flex;gap:1.6rem;padding:2rem 0;border-top:1px solid var(--rule);
+  align-items:flex-start;
+}
+.chapter:last-child{border-bottom:1px solid var(--rule)}
+.medallion{
+  flex:none;width:64px;height:64px;border-radius:50%;
+  border:1.5px solid var(--brass);position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 50% 40%, var(--paper-card), var(--paper-deep));
+  box-shadow: inset 0 0 0 3px var(--paper), 0 4px 14px -6px rgba(22,36,30,.35);
+}
+.medallion span{
+  font-family:var(--font-serif);font-weight:700;color:var(--brass);
+  font-size:1.35rem;
+}
+.chapter-body{padding-top:.35rem}
+.chapter-body h3{font-size:1.2rem;margin-bottom:.1rem}
+.chapter-body .en{font-size:.76rem;letter-spacing:.05em;color:var(--brass);margin-bottom:.55rem;display:block}
+.chapter-body p{margin:0 0 .8rem;color:var(--ink-soft);font-size:.97rem;max-width:56ch}
+.chapter-body a{
+  font-size:.88rem;font-weight:600;color:var(--moss);text-decoration:none;
+  border-bottom:1px solid var(--moss);padding-bottom:1px;
+}
+.chapter-body a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ---------- Support / contribution ---------- */
+.support{padding:3.4rem 0}
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.support-card{
+  background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius-md);
+  padding:1.5rem 1.3rem;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.support-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brass)}
+.support-card .icon{
+  width:38px;height:38px;border-radius:50%;border:1.3px solid var(--maroon);
+  display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;
+}
+.support-card .icon svg{width:18px;height:18px;stroke:var(--maroon)}
+.support-card h3{font-size:1.05rem;margin-bottom:.15rem}
+.support-card .en{display:block;font-size:.74rem;color:var(--ink-soft);margin-bottom:.6rem}
+.support-card p{font-size:.9rem;color:var(--ink-soft);margin-bottom:1rem}
+.support-card a{
+  font-size:.86rem;font-weight:600;color:var(--maroon);text-decoration:none;
+  border-bottom:1px solid var(--maroon);
+}
+
+/* ---------- Portal CTA ---------- */
+.portal{padding:3.4rem 0 4.5rem}
+.portal-box{
+  background:var(--ink);color:var(--paper);text-align:center;
+  padding:2.6rem 1.8rem;border-radius:var(--radius-md);
+  background-image: radial-gradient(circle at 15% 20%, rgba(169,129,47,.18), transparent 45%);
+}
+.portal-box h2{color:var(--paper);font-size:1.4rem;margin-bottom:.6rem}
+.portal-box .en{display:block;font-size:.78rem;color:var(--brass-bright);letter-spacing:.05em;margin-bottom:.8rem}
+.portal-box p{color:rgba(237,231,211,.8);max-width:460px;margin:0 auto 1.5rem;font-size:.95rem}
+
+/* ---------- Footer ---------- */
+footer{padding:2.2rem 0 3rem;font-size:.85rem;color:var(--ink-soft);text-align:center}
+footer a{color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss)}
+.footer-links{display:flex;justify-content:center;gap:1.2rem;margin-top:.7rem;font-size:.82rem}
+
+/* ---------- Responsive ---------- */
+@media (max-width:760px){
+  .support-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  nav{position:fixed;inset:0 0 auto 0;top:64px;background:var(--paper);
+    flex-direction:column;align-items:flex-start;gap:0;
+    box-shadow:0 10px 20px -10px rgba(22,36,30,.3);
+    padding:.5rem 1.5rem 1rem;transform:translateY(-8px);opacity:0;pointer-events:none;
+    transition:transform .2s ease,opacity .2s ease;
+  }
+  nav.open{transform:none;opacity:1;pointer-events:auto}
+  nav a{padding:.7rem 0;width:100%;border-bottom:1px solid var(--rule)}
+  .nav-mobile-toggle{display:block}
+  .ledger-item{flex:1 1 45%;border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:.9rem}
+  .ledger-item:first-child{border-top:none;padding-top:0}
+  .chapter{flex-direction:column;gap:.9rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero{animation:none;opacity:1}
+  .btn,.support-card{transition:none}
+}

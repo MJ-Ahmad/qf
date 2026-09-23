@@ -1,63 +1,94 @@
 {
   "hero": {
     "epigraph": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
-    "epigraphRef": "সূরা আল-আলাক, আয়াত ১",
-    "title": "কোরআনের ফেরিওয়ালা",
-    "lead": "গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে বাংলাদেশের প্রতিটি প্রান্তে পবিত্র কোরআন পৌঁছে দেওয়ার একটি নিরবচ্ছিন্ন যাত্রা।",
-    "cta": { "label": "পোর্টালে প্রবেশ", "link": "/qf/portal/login" }
+    "epigraphRef": { "bn": "সূরা আল-আলাক, আয়াত ১", "en": "Surah Al-'Alaq, Verse 1" },
+    "title": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "lead": {
+      "bn": "গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে বাংলাদেশের প্রতিটি প্রান্তে পবিত্র কোরআন পৌঁছে দেওয়ার একটি নিরবচ্ছিন্ন যাত্রা।",
+      "en": "An unbroken journey to bring the Holy Quran to every corner of Bangladesh — through research, printing, and distribution."
+    },
+    "cta": { "bn": "পোর্টালে প্রবেশ", "en": "Enter Portal", "link": "/qf/portal/login" }
   },
   "ledger": [
-    { "value": "৫০,০০০+", "label": "বিতরণকৃত কোরআন" },
-    { "value": "১২,০০০+", "label": "হিফজ শিক্ষার্থী" },
-    { "value": "৩০০+", "label": "অংশগ্রহণকারী মাদ্রাসা" },
-    { "value": "৬৪", "label": "জেলায় উপস্থিতি" }
+    { "value": "৫০,০০০+", "valueEn": "50,000+", "label": { "bn": "বিতরণকৃত কোরআন", "en": "Copies distributed" } },
+    { "value": "১২,০০০+", "valueEn": "12,000+", "label": { "bn": "হিফজ শিক্ষার্থী", "en": "Hifz students" } },
+    { "value": "৩০০+", "valueEn": "300+", "label": { "bn": "অংশগ্রহণকারী মাদ্রাসা", "en": "Partner madrasas" } },
+    { "value": "৬৪", "valueEn": "64", "label": { "bn": "জেলায় উপস্থিতি", "en": "Districts reached" } }
   ],
+  "chaptersHead": { "bn": "আমাদের কার্যক্রম", "en": "What we do" },
   "chapters": [
     {
-      "mark": "গ",
-      "title": "গবেষণা",
-      "titleEn": "Research",
-      "text": "কোরআনের গভীরতা অনুধাবনে প্রাচীন জ্ঞান ও আধুনিক বিশ্লেষণের মেলবন্ধন — শুধু তিলাওয়াত নয়, অর্থবোধ ও প্রজ্ঞার চর্চা।",
+      "markBn": "গ", "markEn": "R",
+      "title": { "bn": "গবেষণা", "en": "Research" },
+      "text": {
+        "bn": "কোরআনের গভীরতা অনুধাবনে প্রাচীন জ্ঞান ও আধুনিক বিশ্লেষণের মেলবন্ধন — শুধু তিলাওয়াত নয়, অর্থবোধ ও প্রজ্ঞার চর্চা।",
+        "en": "Bridging classical scholarship with modern analysis to understand the Quran in depth — beyond recitation, into meaning and wisdom."
+      },
       "link": "/qf/edu"
     },
     {
-      "mark": "মু",
-      "title": "মুদ্রণ",
-      "titleEn": "Printing",
-      "text": "প্রি-প্রেস থেকে বাঁধাই পর্যন্ত প্রতিটি ধাপে নিখুঁততা — যাতে প্রতিটি কপি যথাযথ মর্যাদায় পাঠকের হাতে পৌঁছায়।",
+      "markBn": "মু", "markEn": "P",
+      "title": { "bn": "মুদ্রণ", "en": "Printing" },
+      "text": {
+        "bn": "প্রি-প্রেস থেকে বাঁধাই পর্যন্ত প্রতিটি ধাপে নিখুঁততা — যাতে প্রতিটি কপি যথাযথ মর্যাদায় পাঠকের হাতে পৌঁছায়।",
+        "en": "Precision at every stage, from pre-press to binding — so each copy reaches its reader with the dignity it deserves."
+      },
       "link": "/qf/pr"
     },
     {
-      "mark": "বি",
-      "title": "বিতরণ",
-      "titleEn": "Distribution",
-      "text": "মাদ্রাসা, এতিমখানা ও শরণার্থী শিবির পর্যন্ত — দেশের প্রতিটি বিভাগে পৌঁছে দেওয়া হয়েছে হাজারো কোরআন মাজিদ।",
+      "markBn": "বি", "markEn": "D",
+      "title": { "bn": "বিতরণ", "en": "Distribution" },
+      "text": {
+        "bn": "মাদ্রাসা, এতিমখানা ও শরণার্থী শিবির পর্যন্ত — দেশের প্রতিটি বিভাগে পৌঁছে দেওয়া হয়েছে হাজারো কোরআন মাজিদ।",
+        "en": "From madrasas to orphanages to refugee camps — thousands of copies delivered across every division of the country."
+      },
       "link": "/qf/ds"
     }
   ],
+  "supportHead": { "bn": "সহযোগিতার খাত", "en": "Ways to support" },
+  "supportLead": { "bn": "অনুদান, বিনিয়োগ বা ঋণ — যেভাবেই সহায়তা করতে চান", "en": "Donate, invest, or lend — however you'd like to help" },
   "ledgerEntries": [
     {
-      "title": "অনুদান",
-      "titleEn": "Donate",
-      "note": "বিনামূল্যে কোরআন বিতরণ তহবিলে সরাসরি সহায়তা",
+      "icon": "gift",
+      "title": { "bn": "অনুদান", "en": "Donate" },
+      "note": { "bn": "বিনামূল্যে কোরআন বিতরণ তহবিলে সরাসরি সহায়তা", "en": "Support the free Quran distribution fund directly" },
       "link": "/qf/donate"
     },
     {
-      "title": "বিনিয়োগ",
-      "titleEn": "Invest",
-      "note": "স্বল্প বা দীর্ঘমেয়াদী শর্তে মুদ্রণ প্রকল্পে অংশগ্রহণ",
+      "icon": "sprout",
+      "title": { "bn": "বিনিয়োগ", "en": "Invest" },
+      "note": { "bn": "স্বল্প বা দীর্ঘমেয়াদী শর্তে মুদ্রণ প্রকল্পে অংশগ্রহণ", "en": "Join the printing project on short or long-term terms" },
       "link": "/qf/invest"
     },
     {
-      "title": "ঋণ প্রদান",
-      "titleEn": "Lend",
-      "note": "নির্দিষ্ট মেয়াদে ঋণের মাধ্যমে কার্যক্রম সচল রাখুন",
+      "icon": "handshake",
+      "title": { "bn": "ঋণ প্রদান", "en": "Lend" },
+      "note": { "bn": "নির্দিষ্ট মেয়াদে ঋণের মাধ্যমে কার্যক্রম সচল রাখুন", "en": "Keep operations running with a fixed-term loan" },
       "link": "/qf/lend"
     }
   ],
+  "portal": {
+    "title": { "bn": "হিফজ ব্যবস্থাপনা পোর্টাল", "en": "Hifz Management Portal" },
+    "desc": {
+      "bn": "কেন্দ্রীয় পর্যায় থেকে মাদ্রাসা পর্যন্ত — শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য রোল-ভিত্তিক ড্যাশবোর্ড।",
+      "en": "From the central office to the madrasa level — role-based dashboards for students, teachers, and directors."
+    },
+    "cta": { "bn": "পোর্টালে যান", "en": "Go to Portal", "link": "/qf/portal/login" }
+  },
+  "nav": {
+    "research": { "bn": "গবেষণা", "en": "Research" },
+    "printing": { "bn": "মুদ্রণ", "en": "Printing" },
+    "distribution": { "bn": "বিতরণ", "en": "Distribution" },
+    "portal": { "bn": "পোর্টাল", "en": "Portal" }
+  },
   "footer": {
-    "note": "এই প্রকল্প উন্মুক্ত-উৎস এবং MIT লাইসেন্সের অধীনে পরিচালিত।",
+    "note": { "bn": "এই প্রকল্প উন্মুক্ত-উৎস এবং MIT লাইসেন্সের অধীনে পরিচালিত।", "en": "This project is open source, released under the MIT License." },
     "credit": "MJ-Ahmad",
-    "creditLink": "https://MJ-Ahmad.github.io/mj-ahmad"
+    "creditLink": "https://MJ-Ahmad.github.io/mj-ahmad",
+    "links": [
+      { "label": { "bn": "গোপনীয়তা", "en": "Privacy" }, "link": "/qf/privacy" },
+      { "label": { "bn": "শর্তাবলী", "en": "Terms" }, "link": "/qf/terms" },
+      { "label": { "bn": "সাইটম্যাপ", "en": "Sitemap" }, "link": "/qf/sitemap" }
+    ]
   }
 }

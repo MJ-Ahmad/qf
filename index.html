@@ -5,190 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>কোরআনের ফেরিওয়ালা — QuranerFariwala</title>
 <meta name="description" content="গবেষণা • মুদ্রণ • বিতরণ — পবিত্র কোরআনের সেবায় বাংলাদেশের একটি প্রতিষ্ঠান" />
+<meta property="og:title" content="Quraner Fariwala" />
+<meta property="og:image" content="https://mj-ahmad.github.io/qf/assets/logo.png" />
+<link rel="icon" href="https://mj-ahmad.github.io/qf/assets/logo.png" sizes="any" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#16241E;
-    --paper:#EDE7D3;
-    --paper-deep:#E2D9BE;
-    --brass:#A9812F;
-    --maroon:#7A2E2E;
-    --moss:#3F6B52;
-    --rule: rgba(22,36,30,.18);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Noto Sans Bengali', sans-serif;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Noto Serif Bengali', serif;
-    font-weight:700;
-    margin:0;
-    color:var(--ink);
-  }
-  a{color:inherit}
-  .wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-  .rule{border:none;border-top:1px solid var(--rule);margin:0}
-  .rule-double{height:5px;background:
-    linear-gradient(var(--rule),var(--rule)) top/100% 1px no-repeat,
-    linear-gradient(var(--rule),var(--rule)) bottom/100% 1px no-repeat;
-    margin:0 auto;max-width:760px}
-
-  /* Header */
-  header{padding:1.25rem 0}
-  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-  .seal{
-    width:34px;height:34px;border-radius:50%;
-    border:1.5px solid var(--brass);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Noto Serif Bengali',serif;font-weight:700;color:var(--brass);font-size:.95rem;
-    flex:none;
-  }
-  .brand-name{font-family:'Noto Serif Bengali',serif;font-weight:600;font-size:1.05rem}
-  nav{display:flex;gap:1.4rem;font-size:.92rem}
-  nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
-  nav a:hover{border-color:var(--brass)}
-  .nav-toggle{display:none}
-
-  /* Hero */
-  .hero{padding:3.5rem 0 3rem;text-align:center}
-  .seal-lg{
-    width:64px;height:64px;border-radius:50%;
-    border:1.5px solid var(--brass);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Noto Serif Bengali',serif;font-weight:700;color:var(--brass);
-    margin:0 auto 1.4rem;
-  }
-  .epigraph{
-    font-family:'Amiri', serif;
-    font-size:1.5rem;
-    color:var(--moss);
-    direction:rtl;
-    margin-bottom:.4rem;
-  }
-  .epigraph-ref{font-size:.82rem;color:var(--ink);opacity:.6;margin-bottom:2rem}
-  .hero h1{font-size:2.1rem;line-height:1.3;margin-bottom:1rem}
-  .hero p{max-width:520px;margin:0 auto 1.8rem;opacity:.85}
-  .btn{
-    display:inline-block;
-    font-family:'Noto Serif Bengali',serif;
-    font-weight:600;
-    padding:.75rem 1.7rem;
-    background:var(--ink);
-    color:var(--paper);
-    text-decoration:none;
-    border-radius:2px;
-    letter-spacing:.02em;
-  }
-  .btn:hover{background:var(--moss)}
-
-  /* Ledger stats */
-  .ledger-strip{padding:2rem 0}
-  .ledger-strip .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-  .ledger-item{flex:1 1 140px;text-align:center;border-left:1px solid var(--rule);padding-left:1.2rem}
-  .ledger-item:first-child{border-left:none;padding-left:0}
-  .ledger-item .val{font-family:'Noto Serif Bengali',serif;font-size:1.5rem;font-weight:700;color:var(--moss)}
-  .ledger-item .lbl{font-size:.82rem;opacity:.7;margin-top:.2rem}
-
-  /* Chapters */
-  .chapters{padding:3rem 0}
-  .chapter{
-    display:flex;gap:1.4rem;padding:1.8rem 0;
-    border-top:1px solid var(--rule);
-  }
-  .chapter:last-child{border-bottom:1px solid var(--rule)}
-  .mark{
-    font-family:'Noto Serif Bengali',serif;
-    font-size:2.6rem;font-weight:700;color:var(--brass);
-    line-height:1;flex:none;width:2.5rem;
-  }
-  .chapter-body h3{font-size:1.2rem;margin-bottom:.1rem}
-  .chapter-body .en{font-size:.78rem;letter-spacing:.03em;opacity:.55;margin-bottom:.5rem;display:block}
-  .chapter-body p{margin:0 0 .7rem;opacity:.85;font-size:.96rem}
-  .chapter-body a{font-size:.88rem;font-weight:600;color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss)}
-
-  /* Ledger entries: support */
-  .support{padding:3rem 0}
-  .support h2{text-align:center;font-size:1.5rem;margin-bottom:.4rem}
-  .support > .wrap > p.lead{text-align:center;opacity:.75;font-size:.94rem;margin:0 0 2rem}
-  table.entries{width:100%;border-collapse:collapse;font-size:.95rem}
-  table.entries th{
-    text-align:left;font-weight:600;font-size:.78rem;opacity:.6;
-    padding:.5rem 0;border-bottom:1px solid var(--ink);text-transform:none;
-  }
-  table.entries td{padding:1rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
-  table.entries td.name{font-family:'Noto Serif Bengali',serif;font-weight:600;white-space:nowrap;padding-right:1rem}
-  table.entries td.note{opacity:.8}
-  table.entries td.go a{white-space:nowrap;text-decoration:none;font-weight:600;color:var(--maroon);border-bottom:1px solid var(--maroon)}
-
-  /* Portal */
-  .portal{padding:3rem 0 4rem;text-align:center}
-  .portal-box{
-    background:var(--ink);color:var(--paper);
-    padding:2.4rem 1.8rem;border-radius:3px;
-  }
-  .portal-box h2{color:var(--paper);font-size:1.35rem;margin-bottom:.6rem}
-  .portal-box p{opacity:.8;max-width:440px;margin:0 auto 1.4rem;font-size:.94rem}
-  .portal-box .btn{background:var(--brass);color:var(--ink)}
-  .portal-box .btn:hover{background:#c49a3d}
-
-  /* Footer */
-  footer{padding:2rem 0 3rem;font-size:.85rem;opacity:.7;text-align:center}
-  footer a{color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss)}
-
-  @media (max-width:640px){
-    nav{display:none}
-    .hero h1{font-size:1.7rem}
-    .ledger-strip .wrap{gap:1rem 0}
-    .ledger-item{flex:1 1 45%;border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:.8rem}
-    .ledger-item:first-child{border-top:none;padding-top:0}
-    table.entries{display:block}
-    table.entries thead{display:none}
-    table.entries tbody, table.entries tr{display:block}
-    table.entries td{display:block;border-bottom:none;padding:.15rem 0}
-    table.entries tr{padding:1rem 0;border-bottom:1px solid var(--rule)}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .hero{animation:rise .6s ease-out}
-    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
   <div class="wrap head-row">
     <a class="brand" href="/qf">
-      <span class="seal">ফ</span>
+      <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="QuranerFariwala" width="36" height="36" />
       <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
     </a>
-    <nav>
-      <a href="/qf/edu">গবেষণা</a>
-      <a href="/qf/pr">মুদ্রণ</a>
-      <a href="/qf/ds">বিতরণ</a>
-      <a href="/qf/portal/login">পোর্টাল</a>
+
+    <nav id="mainNav">
+      <a href="/qf/edu" data-i18n data-i18n-bn="গবেষণা" data-i18n-en="Research">গবেষণা</a>
+      <a href="/qf/pr" data-i18n data-i18n-bn="মুদ্রণ" data-i18n-en="Printing">মুদ্রণ</a>
+      <a href="/qf/ds" data-i18n data-i18n-bn="বিতরণ" data-i18n-en="Distribution">বিতরণ</a>
+      <a href="/qf/portal/login" data-i18n data-i18n-bn="পোর্টাল" data-i18n-en="Portal">পোর্টাল</a>
     </nav>
+
+    <div style="display:flex;align-items:center;gap:.8rem">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="langBn" type="button" aria-pressed="true">বাংলা</button>
+        <button id="langEn" type="button" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-mobile-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle menu">
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 <hr class="rule-double" />
 
 <main>
   <section class="hero wrap" id="hero">
-    <div class="seal-lg">QF</div>
+    <div class="hero-mark">
+      <img src="https://mj-ahmad.github.io/qf/assets/logo.png" alt="QuranerFariwala logo" width="60" height="60" />
+    </div>
     <p class="epigraph" id="epigraph"></p>
     <p class="epigraph-ref" id="epigraphRef"></p>
     <h1 id="heroTitle"></h1>
-    <p id="heroLead"></p>
-    <a class="btn" id="heroCta" href="#">পোর্টালে প্রবেশ</a>
+    <p class="hero-lead" id="heroLead"></p>
+    <a class="btn" id="heroCta" href="#"></a>
   </section>
 
   <hr class="rule" />
@@ -197,84 +60,41 @@
   </section>
   <hr class="rule" />
 
-  <section class="chapters wrap" id="chapters"></section>
+  <section class="chapters wrap">
+    <div class="section-head">
+      <h2 id="chaptersHeadBn"></h2>
+    </div>
+    <div id="chapters"></div>
+  </section>
 
   <section class="support">
     <div class="wrap">
-      <h2>খাতার পাতা</h2>
-      <p class="lead">অনুদান, বিনিয়োগ বা ঋণ — যেভাবেই সহায়তা করতে চান</p>
-      <table class="entries">
-        <thead><tr><th>ধরন</th><th>বিবরণ</th><th></th></tr></thead>
-        <tbody id="entriesBody"></tbody>
-      </table>
+      <div class="section-head">
+        <h2 id="supportHead"></h2>
+        <span class="en" id="supportLead" style="color:var(--ink-soft);font-size:.9rem;margin-top:.5rem"></span>
+      </div>
+      <div class="support-grid" id="supportGrid"></div>
     </div>
   </section>
 
   <section class="portal wrap">
     <div class="portal-box">
-      <h2>হিফজ ব্যবস্থাপনা পোর্টাল</h2>
-      <p>কেন্দ্রীয় পর্যায় থেকে মাদ্রাসা পর্যন্ত — শিক্ষার্থী, শিক্ষক ও পরিচালকদের জন্য রোল-ভিত্তিক ড্যাশবোর্ড।</p>
-      <a class="btn" href="/qf/portal/login">পোর্টালে যান</a>
+      <h2 id="portalTitle"></h2>
+      <span class="en" id="portalTitleEn"></span>
+      <p id="portalDesc"></p>
+      <a class="btn btn-gold" id="portalCta" href="#"></a>
     </div>
   </section>
 </main>
 
 <hr class="rule" />
 <footer>
-  <div class="wrap" id="footerNote"></div>
+  <div class="wrap">
+    <div id="footerNote"></div>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
 </footer>
 
-<script>
-(function(){
-  fetch('data.json')
-    .then(function(r){ if(!r.ok) throw new Error('missing data.json'); return r.json(); })
-    .then(render)
-    .catch(function(e){
-      console.error(e);
-      document.getElementById('hero').innerHTML =
-        '<p style="color:#7A2E2E">data.json লোড করা যায়নি — ফাইলটি একই ফোল্ডারে আছে কিনা যাচাই করুন।</p>';
-    });
-
-  function esc(s){ var d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }
-
-  function render(data){
-    var h = data.hero;
-    document.getElementById('epigraph').textContent = h.epigraph;
-    document.getElementById('epigraphRef').textContent = h.epigraphRef;
-    document.getElementById('heroTitle').textContent = h.title;
-    document.getElementById('heroLead').textContent = h.lead;
-    var cta = document.getElementById('heroCta');
-    cta.textContent = h.cta.label;
-    cta.href = h.cta.link;
-
-    document.getElementById('ledgerStrip').innerHTML = data.ledger.map(function(l){
-      return '<div class="ledger-item"><div class="val">'+esc(l.value)+'</div><div class="lbl">'+esc(l.label)+'</div></div>';
-    }).join('');
-
-    document.getElementById('chapters').innerHTML = data.chapters.map(function(c){
-      return '<div class="chapter">'+
-        '<div class="mark">'+esc(c.mark)+'</div>'+
-        '<div class="chapter-body">'+
-          '<h3>'+esc(c.title)+'</h3>'+
-          '<span class="en">'+esc(c.titleEn)+'</span>'+
-          '<p>'+esc(c.text)+'</p>'+
-          '<a href="'+esc(c.link)+'">বিস্তারিত পড়ুন</a>'+
-        '</div></div>';
-    }).join('');
-
-    document.getElementById('entriesBody').innerHTML = data.ledgerEntries.map(function(e){
-      return '<tr>'+
-        '<td class="name">'+esc(e.title)+' <span style="opacity:.5;font-weight:400;font-size:.85em">('+esc(e.titleEn)+')</span></td>'+
-        '<td class="note">'+esc(e.note)+'</td>'+
-        '<td class="go"><a href="'+esc(e.link)+'">'+esc(e.titleEn)+' →</a></td>'+
-        '</tr>';
-    }).join('');
-
-    var f = data.footer;
-    document.getElementById('footerNote').innerHTML =
-      esc(f.note)+' — <a href="'+esc(f.creditLink)+'">'+esc(f.credit)+'</a>';
-  }
-})();
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
