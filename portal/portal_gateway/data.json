@@ -1,0 +1,131 @@
+{
+  "_readme": "এই ফাইল portal_gateway/index.html চালায় — হোমপেজের যেকোনো পোর্টাল-লিংকে (হিফজ পোর্টাল, ডোনার পোর্টাল, সাপোর্টার, বিনিয়োগকারী পোর্টাল, বিতরণ ব্যবস্থাপনা) ক্লিক করলে সবাই এই একই গেটওয়েতে আসবে, ?role=xxx থাকলে সরাসরি সেই রোলের লগইন খুলবে। কোনো ডেমো ইউজারনেম/পাসওয়ার্ড বা 'শীঘ্রই আসছে' ব্যাজ নেই — প্রতিটি roles[] আইটেমের users[] এ শুধু প্রকৃত (real) অ্যাকাউন্ট যুক্ত করুন। প্রতিটি রোলের নিজস্ব folder আছে (ব্যতিক্রম নেই — 'responsible' রোলও একই প্যাটার্নে, আলাদা করে সরাসরি হিফজ-সিস্টেমে লিংক করা হয় না)। নতুন অ্যাকাউন্ট যোগ করার ধাপ: (১) hash-generator.html দিয়ে পাসওয়ার্ডের SHA-256 হ্যাশ তৈরি করুন। (২) সংশ্লিষ্ট role এর users[] এ { username, passwordSha256, displayName } যোগ করুন। (৩) সেই role এর ফোল্ডারের ভেতরে '{folder}/{username}/' ফোল্ডার তৈরি করুন — {folder}/_template/ কপি করে শুরু করা সবচেয়ে সহজ। সঠিক লগইনের পর ব্যবহারকারী সরাসরি সেই ফোল্ডারে চলে যাবে। ⚠️ বর্তমান অবস্থা: প্রমাণীকরণ (auth) আপাতত সম্পূর্ণ স্ট্যাটিক — এই data.json পাবলিকলি fetch করা যায় বলে passwordSha256 প্রকৃত সার্ভার-সাইড নিরাপত্তা দেয় না, এটি শুধু একটি প্রাথমিক UI-স্তরের প্রবেশদ্বার। একটি প্রকৃত ব্যাকএন্ড (MJ-Node) পরবর্তীতে যুক্ত করার পরিকল্পনা আছে — তখন এই ফাইলের passwordSha256 ভিত্তিক লজিক সরিয়ে MJ-Node এর API দিয়ে যাচাই করাতে হবে। যতক্ষণ তা না হচ্ছে, ততক্ষণ এখানে কোনো ব্যবহারকারীকে এমন কিছু বলা হবে না যা সত্য নয়।",
+
+  "site": {
+    "title": { "bn": "পোর্টাল প্রবেশদ্বার — কোরআনের ফেরিওয়ালা", "en": "Portal Gateway — Quraner Fariwala" },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "homeUrl": "/qf/home/index.html",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka"
+  },
+
+  "hero": {
+    "kicker": { "bn": "পোর্টাল প্রবেশদ্বার", "en": "Portal gateway" }
+  },
+
+  "ui": {
+    "back": { "bn": "হোমপেজে ফিরুন", "en": "Back to homepage" },
+    "loginBack": { "bn": "অন্য পোর্টাল বেছে নিন", "en": "Choose a different portal" },
+    "loginHeading": { "bn": "{role} — প্রবেশ করুন", "en": "{role} — Sign in" },
+    "usernameLabel": { "bn": "ইউজারনেম", "en": "Username" },
+    "passwordLabel": { "bn": "পাসওয়ার্ড", "en": "Password" },
+    "loginBtn": { "bn": "প্রবেশ করুন", "en": "Sign in" },
+    "loggingIn": { "bn": "প্রবেশ করা হচ্ছে…", "en": "Signing in…" },
+    "wrongCreds": { "bn": "ইউজারনেম অথবা পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।", "en": "Incorrect username or password. Please try again." },
+    "supportLabel": { "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:", "en": "For a password change or any question, contact:" },
+    "footer": { "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।", "en": "© 2026 Quraner Fariwala. All rights reserved." },
+    "loadError": { "bn": "তথ্য ফাইল লোড করা যায়নি।", "en": "Could not load the data file." },
+    "footHome": { "bn": "হোম", "en": "Home" },
+    "footContact": { "bn": "যোগাযোগ", "en": "Contact" },
+    "footPrivacy": { "bn": "গোপনীয়তা", "en": "Privacy" },
+    "footTerms": { "bn": "শর্তাবলী", "en": "Terms" }
+  },
+
+  "support": { "email": "quranerfariwala@gmail.com" },
+
+  "links": {
+    "home": "/qf/home/index.html",
+    "contact": "/qf/contact.html",
+    "privacy": "/qf/privacy.html",
+    "terms": "/qf/terms.html"
+  },
+
+  "roles": [
+    {
+      "id": "responsible",
+      "folder": "responsible",
+      "mono": { "bn": "দা", "en": "R" },
+      "title": { "bn": "দায়িত্বশীল ব্যবস্থাপনা", "en": "Responsible-Person Management" },
+      "audience": { "bn": "কেন্দ্রীয় থেকে গ্রাম পর্যন্ত দায়িত্বশীল কাঠামোর জন্য", "en": "For the central-to-village responsible-person structure" },
+      "users": []
+    },
+    {
+      "id": "investor",
+      "folder": "investor",
+      "mono": { "bn": "বি", "en": "I" },
+      "title": { "bn": "বিনিয়োগকারী পোর্টাল", "en": "Investor Portal" },
+      "audience": { "bn": "যারা মুদ্রণ প্রকল্পে বিনিয়োগ করেছেন তাদের জন্য", "en": "For those who have invested in the printing project" },
+      "users": [
+        { "username": "alamin", "passwordSha256": "b446ac390294fae2f8a54c5f111769d84cf2755b1de5486338a92aa37dd8f1bf", "displayName": { "bn": "হাফেজ আল আমিন", "en": "Hafez Al Amin" } }
+      ]
+    },
+    {
+      "id": "donor",
+      "folder": "donor",
+      "mono": { "bn": "ডো", "en": "D" },
+      "title": { "bn": "ডোনার পোর্টাল", "en": "Donor Portal" },
+      "audience": { "bn": "যারা অনুদান দিয়ে সহায়তা করেছেন তাদের জন্য", "en": "For those who support through donations" },
+      "users": []
+    },
+    {
+      "id": "supporter",
+      "folder": "supporter",
+      "mono": { "bn": "সা", "en": "S" },
+      "title": { "bn": "সাপোর্টার", "en": "Supporter" },
+      "audience": { "bn": "যারা কোনো শর্ত ছাড়াই পাশে থেকে সহায়তা করেছেন তাদের জন্য", "en": "For those who have supported us without any conditions" },
+      "users": []
+    },
+    {
+      "id": "distribution",
+      "folder": "distribution",
+      "mono": { "bn": "বি", "en": "D" },
+      "title": { "bn": "বিতরণ ব্যবস্থাপনা", "en": "Distribution Management" },
+      "audience": { "bn": "সারা দেশে বিতরণকৃত কোরআনের নেটওয়ার্ক ও রেকর্ড ব্যবস্থাপনার জন্য", "en": "For managing the nationwide network and records of distributed copies" },
+      "users": []
+    },
+    {
+      "id": "admin",
+      "folder": "admin",
+      "mono": { "bn": "এ", "en": "A" },
+      "title": { "bn": "এডমিন ড্যাশবোর্ড", "en": "Admin Dashboard" },
+      "audience": { "bn": "সিস্টেম ও ব্যবহারকারী নিয়ন্ত্রণের জন্য", "en": "For system and user administration" },
+      "users": []
+    },
+    {
+      "id": "tracker",
+      "folder": "hifz_tracker",
+      "mono": { "bn": "ট্র্যা", "en": "T" },
+      "title": { "bn": "হিফজ ট্র্যাকার ড্যাশবোর্ড", "en": "Hifz Tracker Dashboard" },
+      "audience": { "bn": "প্রতিটি শিক্ষার্থীর হিফজ অগ্রগতি ট্র্যাক করার জন্য", "en": "To track each student's Hifz progress" },
+      "users": []
+    },
+    {
+      "id": "teacher",
+      "folder": "hifz_teacher",
+      "mono": { "bn": "উস্তা", "en": "U" },
+      "title": { "bn": "হিফজ শিক্ষক প্যানেল", "en": "Hifz Teacher Panel" },
+      "audience": { "bn": "হিফজ উস্তাদদের দৈনিক সবক-সবকি এন্ট্রির জন্য", "en": "For ustads' daily sabak/sabki entries" },
+      "users": []
+    },
+    {
+      "id": "student",
+      "folder": "hifz_student",
+      "mono": { "bn": "শি", "en": "S" },
+      "title": { "bn": "হিফজ শিক্ষার্থী ড্যাশবোর্ড", "en": "Hifz Student Dashboard" },
+      "audience": { "bn": "শিক্ষার্থীরা নিজের অগ্রগতি দেখার জন্য", "en": "For students to view their own progress" },
+      "users": []
+    },
+    {
+      "id": "competition",
+      "folder": "hifz_competition",
+      "mono": { "bn": "প্র", "en": "C" },
+      "title": { "bn": "হিফজুল কোরআন প্রতিযোগিতা ব্যবস্থাপনা", "en": "Hifzul Quran Competition Management" },
+      "audience": { "bn": "প্রতিযোগিতা আয়োজন, নিবন্ধন ও ফলাফলের জন্য", "en": "For organizing competitions, registration, and results" },
+      "users": []
+    }
+  ],
+
+  "footerNote": { "bn": "আরও নতুন অ্যাকাউন্ট ও ড্যাশবোর্ড পর্যায়ক্রমে যুক্ত হবে।", "en": "More accounts and dashboards will be added over time." }
+}

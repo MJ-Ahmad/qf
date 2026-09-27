@@ -1,0 +1,184 @@
+{
+  "_readme": "মোসাঃ রফিকা সুলতানার প্রকৃত প্রোফাইল। security.passwordSha256 এখনো ফাঁকা — hash-generator.html দিয়ে একটি পাসওয়ার্ড ঠিক করে হ্যাশ বসান, তারপর gateway এর data.json এ supporter role এর users[] এ username যোগ করুন।",
+  "site": {
+    "title": {
+      "bn": "মোসাঃ রফিকা সুলতানার সহায়তা প্রোফাইল",
+      "en": "Support profile of Mosammat Rafika Sultana"
+    },
+    "brand": {
+      "bn": "কোরআনের ফেরিওয়ালা",
+      "en": "Quraner Fariwala"
+    },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": {
+      "bn": "কোরআনের ফেরিওয়ালার লোগো",
+      "en": "Quraner Fariwala logo"
+    },
+    "homeUrl": "/qf/home/index.html",
+    "gatewayUrl": "../../",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka",
+    "currencySymbol": "৳",
+    "currencyWord": {
+      "bn": "টাকা",
+      "en": "Tk."
+    }
+  },
+  "security": {
+    "passwordSha256": ""
+  },
+  "lockScreen": {
+    "greeting": {
+      "bn": "আসসালামু আলাইকুম",
+      "en": "As-salamu alaykum"
+    },
+    "title": {
+      "bn": "পাসওয়ার্ড প্রয়োজন",
+      "en": "Password required"
+    },
+    "profileFor": {
+      "bn": "মোসাঃ রফিকা সুলতানার ব্যক্তিগত সহায়তা প্রোফাইল",
+      "en": "Personal support profile of Mosammat Rafika Sultana"
+    },
+    "subtitle": {
+      "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।",
+      "en": "This page is protected. Enter the correct password to view it."
+    },
+    "passwordLabel": {
+      "bn": "পাসওয়ার্ড",
+      "en": "Password"
+    },
+    "placeholder": {
+      "bn": "পাসওয়ার্ড লিখুন",
+      "en": "Enter password"
+    },
+    "button": {
+      "bn": "খুলুন",
+      "en": "Unlock"
+    },
+    "wrongPassword": {
+      "bn": "পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।",
+      "en": "Incorrect password. Please try again."
+    },
+    "contactNote": {
+      "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:",
+      "en": "To change the password or for any questions, contact:"
+    },
+    "contactEmail": "quranerfariwala@gmail.com"
+  },
+  "person": {
+    "photo": "",
+    "monogram": {
+      "bn": "র",
+      "en": "R"
+    },
+    "name": {
+      "bn": "মোসাঃ রফিকা সুলতানা",
+      "en": "Mosammat Rafika Sultana"
+    },
+    "role": {
+      "bn": "সাপোর্টার",
+      "en": "Supporter"
+    }
+  },
+  "contributions": {
+    "entries": [
+      {
+        "type": "support",
+        "dateLabel": {
+          "bn": "গত মাসে",
+          "en": "Last month"
+        },
+        "title": {
+          "bn": "সহায়তা",
+          "en": "Support"
+        },
+        "note": {
+          "bn": "কোনো শর্ত ছাড়াই দেওয়া সহায়তা",
+          "en": "Support given without any condition"
+        },
+        "amount": 2000
+      }
+    ]
+  },
+  "distribution": {
+    "mode": "",
+    "note": {
+      "bn": "",
+      "en": ""
+    },
+    "entries": []
+  },
+  "ui": {
+    "summaryTitle": {
+      "bn": "সহায়তার সারসংক্ষেপ",
+      "en": "Support summary"
+    },
+    "tiles": {
+      "taka": {
+        "bn": "মোট সহায়তা (টাকা)",
+        "en": "Total support (Tk.)"
+      },
+      "copies": {
+        "bn": "মোট কোরআন (কপি)",
+        "en": "Total Quran copies"
+      },
+      "copiesShort": {
+        "bn": "কপি",
+        "en": "copies"
+      }
+    },
+    "ledgerTitle": {
+      "bn": "সহায়তার ধারাবাহিকতা",
+      "en": "Support timeline"
+    },
+    "noEntries": {
+      "bn": "এখনো কোনো এন্ট্রি যুক্ত করা হয়নি।",
+      "en": "No entries have been added yet."
+    },
+    "distTitle": {
+      "bn": "বিতরণের হিসাব",
+      "en": "Distribution record"
+    },
+    "distModes": {
+      "organization": {
+        "bn": "প্রতিষ্ঠানের মাধ্যমে বিতরণ",
+        "en": "Distributed by the organization"
+      },
+      "self": {
+        "bn": "নিজ হাতে বিতরণ করেছেন",
+        "en": "Distributed personally by the donor"
+      },
+      "mixed": {
+        "bn": "প্রতিষ্ঠান ও নিজে — উভয়ভাবে বিতরণ",
+        "en": "Distributed both by the organization and personally"
+      }
+    },
+    "thanksTitle": {
+      "bn": "কৃতজ্ঞতা",
+      "en": "With gratitude"
+    },
+    "thanksText": {
+      "bn": "কোনো শর্ত বা প্রতিদানের প্রত্যাশা ছাড়াই আপনি পাশে থেকেছেন — এই আন্তরিকতা আমাদের সবচেয়ে বড় শক্তি। আল্লাহ আপনাকে উত্তম প্রতিদান দিন।",
+      "en": "You stood beside us without any condition or expectation of return — that sincerity is our greatest strength. May Allah reward you well."
+    },
+    "recordNote": {
+      "bn": "এই পাতার তথ্য সহায়তার রেকর্ড হিসেবে সংরক্ষিত। কোনো তথ্যে ভুল বা আপত্তি থাকলে জানান: {email}",
+      "en": "The information on this page is kept as a record of the support given. If you find a mistake or have an objection, write to: {email}"
+    },
+    "switchGateway": {
+      "bn": "অন্য পোর্টাল বেছে নিন",
+      "en": "Choose a different portal"
+    }
+  },
+  "footer": {
+    "copyright": {
+      "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।",
+      "en": "© 2026 Quraner Fariwala. All rights reserved."
+    },
+    "tagline": {
+      "bn": "পবিত্র কোরআনের গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে সমাজকে এগিয়ে নেওয়া, এমজে আহমদ",
+      "en": "Empowering communities through Research, Printing & Distribution of Holy Quran, by MJ-Ahmad"
+    }
+  }
+}

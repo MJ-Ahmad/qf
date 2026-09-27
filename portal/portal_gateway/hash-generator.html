@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>পাসওয়ার্ড হ্যাশ তৈরি — শুধুমাত্র এডমিনের জন্য</title>
+<style>
+:root{--night:#16241E;--em:#3F6B52;--gold:#A9812F;--bg:#EDE7D3;--card:#F4EFDE;--ink:#16241E;--muted:rgba(22,36,30,.68);--line:rgba(22,36,30,.18);--sans:'Noto Sans Bengali',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans);padding:40px 16px}
+.card{max-width:460px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:26px 22px}
+h1{font-size:1.2rem;margin:0 0 6px}
+p.note{color:var(--muted);font-size:.88rem;margin:0 0 20px}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input{width:100%;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);margin-bottom:14px}
+button{width:100%;padding:12px;border:0;border-radius:4px;background:var(--em);color:#fff;font:600 1rem var(--sans);cursor:pointer}
+.out{margin-top:16px;word-break:break-all;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:12px;font-family:monospace;font-size:.85rem;min-height:1.5em}
+.warn{margin-top:18px;font-size:.82rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>পাসওয়ার্ড হ্যাশ (SHA-256) তৈরি করুন</h1>
+  <p class="note">এই পাতাটি কোথাও পাবলিশ/লিংক করবেন না — শুধু নিজে ব্যবহার করে নতুন অ্যাকাউন্টের হ্যাশ তৈরি করে data.json এ বসান। পাসওয়ার্ড এখান থেকে কোথাও পাঠানো হয় না, সম্পূর্ণ প্রক্রিয়া আপনার ব্রাউজারেই ঘটে।</p>
+  <label for="pw">নতুন পাসওয়ার্ড লিখুন</label>
+  <input id="pw" type="text" autocomplete="off" placeholder="যেমন: MyStrongPass@2026">
+  <button id="go" type="button">হ্যাশ তৈরি করুন</button>
+  <div class="out" id="out"></div>
+  <p class="warn">এই ফাইলটি নিজের কম্পিউটারে রাখুন বা সাইট থেকে মুছে দিন যখন কাজ শেষ হয়ে যাবে। SHA-256 হ্যাশটি নিরাপদে data.json এর passwordSha256 ফিল্ডে বসবে; আসল পাসওয়ার্ড কোথাও লিখে রাখবেন না।</p>
+</div>
+<script>
+async function sha256Hex(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+document.getElementById('go').onclick=async()=>{
+  const v=document.getElementById('pw').value;
+  document.getElementById('out').textContent=v?await sha256Hex(v):'পাসওয়ার্ড লিখুন';
+};
+</script>
+</body>
+</html>

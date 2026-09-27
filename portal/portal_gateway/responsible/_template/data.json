@@ -1,0 +1,38 @@
+{
+  "_readme": "এই ফাইলটি টেমপ্লেট। নতুন ব্যবহারকারীর ফোল্ডার তৈরি করার সময় (যেমন portal_gateway/hifz_student/karim123/) এই পুরো _template_user ফোল্ডারটি কপি করে সেই নামে রাখুন, তারপর নিচের সবগুলো ফিল্ডে প্রকৃত তথ্য বসান।",
+
+  "site": {
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "gatewayUrl": "../../",
+    "homeUrl": "/qf/home/index.html",
+    "defaultLang": "bn"
+  },
+
+  "user": {
+    "username": "",
+    "name": { "bn": "", "en": "" },
+    "role": { "bn": "", "en": "" },
+    "joined": ""
+  },
+
+  "notices": [],
+
+  "sections": [],
+
+  "support": { "email": "quranerfariwala@gmail.com" },
+
+  "ui": {
+    "welcome": { "bn": "স্বাগতম, {name}", "en": "Welcome, {name}" },
+    "roleLabel": { "bn": "ভূমিকা", "en": "Role" },
+    "joinedLabel": { "bn": "যুক্ত হয়েছেন", "en": "Joined" },
+    "noticesHeading": { "bn": "নোটিশ", "en": "Notices" },
+    "noNotices": { "bn": "এখনো কোনো নোটিশ নেই।", "en": "No notices yet." },
+    "sectionsHeading": { "bn": "আপনার তথ্য", "en": "Your information" },
+    "noSections": { "bn": "শীঘ্রই এখানে আরও তথ্য যুক্ত করা হবে।", "en": "More information will be added here soon." },
+    "supportLabel": { "bn": "পাসওয়ার্ড পরিবর্তন বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন:", "en": "For a password change or any question, contact:" },
+    "backGateway": { "bn": "পোর্টাল প্রবেশদ্বারে ফিরুন", "en": "Back to portal gateway" },
+    "backHome": { "bn": "হোমপেজে ফিরুন", "en": "Back to homepage" },
+    "loadError": { "bn": "তথ্য ফাইল লোড করা যায়নি।", "en": "Could not load the data file." }
+  }
+}
