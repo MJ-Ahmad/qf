@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0a3a31">
+<title>Portal — Quraner Fariwala</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#16241E;--em:#3F6B52;--gold:#A9812F;--gsoft:#E4D6A8;--bg:#EDE7D3;--card:#F4EFDE;--ink:#16241E;--muted:rgba(22,36,30,.68);--line:rgba(22,36,30,.18);--warn:#7A2E2E;--serif:'Noto Serif Bengali',Georgia,serif;--sans:'Noto Sans Bengali',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#141d19;--card:#1c2822;--ink:#EDE7D3;--muted:#a8b3ac;--line:#31413a;--warn:#e3a89f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 var(--sans)}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+a{color:inherit}
+.langbar{position:fixed;top:12px;right:12px;z-index:90;display:flex;gap:2px;padding:3px;background:rgba(10,58,49,.92);border:1px solid rgba(234,217,166,.5);border-radius:999px}
+.langbar button{border:0;background:none;color:var(--gsoft);border-radius:999px;padding:3px 12px;font:.9rem var(--sans);cursor:pointer}
+.langbar button[aria-pressed="true"]{background:var(--gsoft);color:var(--night);font-weight:600}
+.hero{background:radial-gradient(120% 90% at 50% 0,#12604e,var(--night) 68%);color:#fff;padding:56px 18px 40px;text-align:center}
+.hero .wrap{max-width:760px;margin:0 auto}
+.hero .top{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:22px}
+.hero .top img{width:36px;height:36px;border-radius:8px;background:#fff;padding:3px}
+.hero .top span{font:600 1.05rem var(--sans);color:var(--gsoft)}
+.kicker{display:inline-block;color:var(--gsoft);border:1px solid rgba(234,217,166,.5);border-radius:999px;padding:2px 14px;font-size:.85rem;margin-bottom:14px}
+.hero h1{margin:0 0 12px;font:400 clamp(1.7rem,5vw,2.5rem)/1.35 var(--serif)}
+.hero p{margin:0;color:#e8f1ec;font-size:1.02rem;max-width:560px;margin:0 auto}
+main{max-width:920px;margin:-20px auto 0;padding:0 18px 56px;position:relative}
+.panel{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:26px 22px;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+.rc{text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:16px;cursor:pointer;font:inherit;color:var(--ink);display:flex;gap:12px;align-items:flex-start;transition:border-color .15s,transform .15s}
+.rc:hover{border-color:var(--gold);transform:translateY(-1px)}
+.mono{flex:none;width:44px;height:44px;border-radius:50%;background:var(--em);color:#fff;display:grid;place-items:center;font:400 1.15rem var(--serif)}
+.rc.active .mono{background:var(--gold);color:var(--night)}
+.rc h3{margin:0 0 4px;font:600 1.02rem var(--sans)}
+.rc p{margin:0 0 8px;color:var(--muted);font-size:.88rem;line-height:1.5}
+.badge{display:inline-block;font-size:.74rem;border-radius:999px;padding:1px 10px}
+.badge.live{background:rgba(63,107,82,.15);color:var(--em);border:1px solid var(--em)}
+.badge.soon{background:rgba(22,36,30,.08);color:var(--muted);border:1px solid var(--line)}
+.backlink{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--em);font:600 .92rem var(--sans);cursor:pointer;padding:0;margin-bottom:16px}
+.lform{max-width:380px;margin:0 auto;text-align:center}
+.lform .mono{width:56px;height:56px;font-size:1.4rem;margin:0 auto 10px}
+.lform h2{margin:0 0 4px;font:400 1.35rem/1.35 var(--serif);color:var(--em)}
+.lform .aud{margin:0 0 18px;color:var(--muted);font-size:.9rem}
+.field{text-align:left;margin-top:14px}
+.field label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.field input{width:100%;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+.btn{width:100%;margin-top:18px;padding:12px;border:0;border-radius:4px;background:var(--em);color:#fff;font:600 1.05rem var(--sans);cursor:pointer}
+.btn:disabled{opacity:.65;cursor:default}
+#msg{min-height:1.6em;margin-top:10px;color:var(--warn);font-size:.9rem}
+.demo{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--muted)}
+.demo b{color:var(--ink);font-weight:600}
+.cs{text-align:center;max-width:440px;margin:0 auto}
+.cs .mono{width:56px;height:56px;font-size:1.4rem;margin:0 auto 12px;background:var(--gold);color:var(--night)}
+.cs h2{margin:0 0 8px;font:400 1.3rem/1.4 var(--serif);color:var(--em)}
+.cs p{margin:0 0 20px;color:var(--muted);font-size:.94rem}
+.cs .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cs .row a,.cs .row button{font:600 .92rem var(--sans);padding:9px 18px;border-radius:999px;text-decoration:none;cursor:pointer;border:1px solid var(--em);color:var(--em);background:none}
+.cs .row a.primary,.cs .row button.primary{background:var(--em);color:#fff}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 32px}
+#err{max-width:420px;margin:60px auto;background:var(--card);border-top:4px solid var(--warn);padding:20px;color:var(--warn);border-radius:6px}
+.footnote{text-align:center;color:var(--muted);font-size:.85rem;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="langbar" role="group" aria-label="Language">
+  <button id="lBn" type="button" aria-pressed="true">বাংলা</button>
+  <button id="lEn" type="button" aria-pressed="false">EN</button>
+</div>
+
+<header class="hero"><div class="wrap">
+  <div class="top"><img id="hLogo" alt=""><span id="brand"></span></div>
+  <span class="kicker" id="kicker"></span>
+  <h1 id="hTitle"></h1>
+  <p id="hLead"></p>
+</div></header>
+
+<main>
+  <div id="err" class="hidden" role="alert"></div>
+
+  <section class="panel" id="stepRoles">
+    <div class="grid" id="roleGrid"></div>
+    <p class="footnote" id="footNote"></p>
+  </section>
+
+  <section class="panel hidden" id="stepLogin">
+    <button class="backlink" id="toRoles" type="button">← <span id="backLbl"></span></button>
+    <div class="lform">
+      <div class="mono" id="lMono"></div>
+      <h2 id="lHeading"></h2>
+      <p class="aud" id="lAud"></p>
+      <div class="field"><label id="uLabel" for="uname"></label><input id="uname" type="text" autocomplete="username"></div>
+      <div class="field"><label id="pLabel" for="pword"></label><input id="pword" type="password" autocomplete="current-password"></div>
+      <button class="btn" id="goBtn" type="button"></button>
+      <div id="msg" role="alert"></div>
+      <div class="demo" id="demoHint"></div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="stepSoon">
+    <div class="cs">
+      <div class="mono" id="csMono"></div>
+      <h2 id="csTitle"></h2>
+      <p id="csBody"></p>
+      <div class="row">
+        <button class="primary" id="csBack" type="button"></button>
+        <a id="csHome" href="../"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</main>
+
+<script>
+let D=null,lang='bn',role=null,step='roles';
+const $=id=>document.getElementById(id);
+const T=v=>v==null?'':typeof v==='object'?(v[lang]??v.bn??''):v;
+const fill=(s,o)=>T(s).replace(/\{(\w+)\}/g,(m,k)=>o[k]);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function renderRoles(){
+  $('roleGrid').innerHTML=D.roles.map(r=>`
+    <button class="rc ${r.status==='active'?'active':''}" data-id="${r.id}" type="button">
+      <div class="mono">${esc(T(r.mono))}</div>
+      <div>
+        <h3>${esc(T(r.title))}</h3>
+        <p>${esc(T(r.audience))}</p>
+        <span class="badge ${r.status==='active'?'live':'soon'}">${r.status==='active'?T(D.ui.activeBadge):T(D.ui.soonBadge)}</span>
+      </div>
+    </button>`).join('');
+  document.querySelectorAll('.rc').forEach(b=>b.onclick=()=>openLogin(b.dataset.id));
+}
+
+function openLogin(id){
+  role=D.roles.find(r=>r.id===id);
+  if(!role)return;
+  $('msg').textContent='';$('uname').value='';$('pword').value='';
+  $('lMono').textContent=T(role.mono);
+  $('lHeading').textContent=fill(D.ui.loginHeading,{role:T(role.title)});
+  $('lAud').textContent=T(role.audience);
+  $('demoHint').innerHTML=`<b>${T(D.ui.demoHintLabel)}</b><br>${esc(fill(D.ui.demoHintLine,{u:role.demo.username,p:role.demo.passwordHint}))}`;
+  show('login');
+  $('uname').focus();
+}
+
+async function sha256Hex(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+
+async function tryLogin(){
+  if(!role)return;
+  $('msg').textContent='';
+  const u=$('uname').value.trim(),p=$('pword').value;
+  $('goBtn').disabled=true;$('goBtn').textContent=T(D.ui.loggingIn);
+  let ok=false;
+  try{ ok = u.toLowerCase()===String(role.demo.username).toLowerCase() && (await sha256Hex(p))===String(role.demo.passwordSha256).toLowerCase(); }catch(e){}
+  $('goBtn').disabled=false;$('goBtn').textContent=T(D.ui.loginBtn);
+  if(!ok){ $('msg').textContent=T(D.ui.wrongCreds); $('pword').select(); return; }
+  if(role.status==='active' && role.link){ window.location.href=role.link; return; }
+  $('csMono').textContent=T(role.mono);
+  $('csTitle').textContent=T(D.ui.comingSoonTitle);
+  $('csBody').textContent=fill(D.ui.comingSoonBody,{role:T(role.title)});
+  show('soon');
+}
+
+function show(s){
+  step=s;
+  $('stepRoles').classList.toggle('hidden',s!=='roles');
+  $('stepLogin').classList.toggle('hidden',s!=='login');
+  $('stepSoon').classList.toggle('hidden',s!=='soon');
+  window.scrollTo(0,0);
+}
+
+function labels(){
+  const S=D.site,U=D.ui,H=D.hero;
+  document.documentElement.lang=lang;document.title=T(S.title);
+  $('lBn').setAttribute('aria-pressed',lang==='bn');$('lEn').setAttribute('aria-pressed',lang==='en');
+  $('hLogo').src=S.logo;$('hLogo').alt=T(S.logoAlt);
+  $('brand').textContent=T(S.brand);
+  $('kicker').textContent=T(H.kicker);
+  $('hTitle').textContent=T(H.title);
+  $('hLead').textContent=T(H.lead);
+  $('backLbl').textContent=T(U.loginBack);
+  $('uLabel').textContent=T(U.usernameLabel);$('uname').placeholder=T(U.usernameLabel);
+  $('pLabel').textContent=T(U.passwordLabel);$('pword').placeholder=T(U.passwordLabel);
+  $('goBtn').textContent=T(U.loginBtn);
+  $('csBack').textContent=T(U.comingSoonBack);
+  $('csHome').textContent=T(U.comingSoonHome);
+  $('foot').textContent=T(U.footer);
+  $('footNote').textContent=T(D.footerNote);
+  renderRoles();
+  if(role){
+    $('lHeading').textContent=fill(U.loginHeading,{role:T(role.title)});
+    $('lAud').textContent=T(role.audience);
+    $('demoHint').innerHTML=`<b>${T(U.demoHintLabel)}</b><br>${esc(fill(U.demoHintLine,{u:role.demo.username,p:role.demo.passwordHint}))}`;
+  }
+}
+
+function setLang(l){lang=l;try{localStorage.setItem('qfPortalLang',l)}catch(e){}labels()}
+
+async function init(){
+  let saved=null;try{saved=localStorage.getItem('qfPortalLang')}catch(e){}
+  try{ const r=await fetch('data.json',{cache:'no-store'}); if(!r.ok)throw 0; D=await r.json(); }
+  catch(e){ $('err').textContent='তথ্য ফাইল লোড করা যায়নি / Could not load data.json.'; $('err').classList.remove('hidden'); return; }
+  lang=saved==='en'||saved==='bn'?saved:(D.site.defaultLang||'bn');
+  labels();
+  show('roles');
+}
+$('lBn').onclick=()=>setLang('bn');$('lEn').onclick=()=>setLang('en');
+$('toRoles').onclick=()=>{role=null;show('roles')};
+$('goBtn').onclick=tryLogin;
+$('pword').onkeydown=e=>{if(e.key==='Enter')tryLogin()};
+$('csBack').onclick=()=>{role=null;show('roles')};
+init();
+</script>
+</body>
+</html>

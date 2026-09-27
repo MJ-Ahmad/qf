@@ -1,0 +1,118 @@
+{
+  "_readme": "এই ফাইল portal/index.html চালায় — এটি হোমপেজ থেকে 'পোর্টাল' এ ক্লিক করলে প্রথমে দেখা যাবে এমন একটি রোল-বাছাই + লগইন পাতা। প্রতিটি roles[] আইটেম একটি ড্যাশবোর্ডের প্রতিনিধিত্ব করে। status:'active' ও link দেওয়া থাকলে সঠিক ডেমো লগইনের পর সরাসরি সেই ঠিকানায় নিয়ে যাবে; status:'soon' হলে লগইন সফল হলেও 'নির্মাণাধীন' বার্তা দেখাবে, যাতে বোঝা যায় লগইন-প্রবাহ কাজ করছে কিন্তু আসল পাতা এখনো তৈরি হয়নি। নতুন ড্যাশবোর্ড তৈরি হলে সেই roles আইটেমের status 'active' করে link-এ প্রকৃত ঠিকানা বসান। প্রতিটি রোলের demo.username প্লেইন টেক্সট এবং demo.passwordSha256 হলো ডেমো পাসওয়ার্ডের SHA-256 হ্যাশ (demo.passwordHint এ প্লেইন পাসওয়ার্ড শুধু পরীক্ষার সুবিধার জন্য দেখানো, প্রোডাকশনে এই হিন্ট মুছে ফেলুন এবং আসল ব্যবহারকারী/পাসওয়ার্ড ব্যাকএন্ডে যাচাই করান)। ⚠️ সতর্কতা: hifz/data.json এর মতোই — এই data.json পাবলিকলি fetch করা যায়, তাই এখানে রাখা 'পাসওয়ার্ড' প্রকৃত নিরাপত্তা দেয় না, এটি শুধু ইউআই-স্তরের একটি প্রাথমিক প্রবেশদ্বার। প্রকৃত ব্যবহারকারী/পাসওয়ার্ড যাচাই অবশ্যই সার্ভার-সাইড ব্যাকএন্ড দিয়ে করাতে হবে।",
+
+  "site": {
+    "title": { "bn": "পোর্টাল — কোরআনের ফেরিওয়ালা", "en": "Portal — Quraner Fariwala" },
+    "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
+    "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
+    "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
+    "homeUrl": "../",
+    "defaultLang": "bn",
+    "timezone": "Asia/Dhaka"
+  },
+
+  "hero": {
+    "kicker": { "bn": "পোর্টাল প্রবেশদ্বার", "en": "Portal gateway" },
+    "title": { "bn": "কোন ড্যাশবোর্ডে প্রবেশ করবেন?", "en": "Which dashboard would you like to enter?" },
+    "lead": { "bn": "নিচের তালিকা থেকে আপনার ভূমিকা বেছে নিন, এরপর ইউজারনেম ও পাসওয়ার্ড দিয়ে প্রবেশ করুন।", "en": "Choose your role from the list below, then sign in with your username and password." }
+  },
+
+  "ui": {
+    "back": { "bn": "হোমপেজে ফিরুন", "en": "Back to homepage" },
+    "selectBtn": { "bn": "নির্বাচন করুন", "en": "Select" },
+    "activeBadge": { "bn": "চালু আছে", "en": "Live" },
+    "soonBadge": { "bn": "শীঘ্রই আসছে", "en": "Coming soon" },
+    "loginBack": { "bn": "অন্য পোর্টাল বেছে নিন", "en": "Choose a different portal" },
+    "loginHeading": { "bn": "{role} — প্রবেশ করুন", "en": "{role} — Sign in" },
+    "usernameLabel": { "bn": "ইউজারনেম", "en": "Username" },
+    "passwordLabel": { "bn": "পাসওয়ার্ড", "en": "Password" },
+    "loginBtn": { "bn": "প্রবেশ করুন", "en": "Sign in" },
+    "loggingIn": { "bn": "প্রবেশ করা হচ্ছে…", "en": "Signing in…" },
+    "wrongCreds": { "bn": "ইউজারনেম অথবা পাসওয়ার্ড ভুল হয়েছে। আবার চেষ্টা করুন।", "en": "Incorrect username or password. Please try again." },
+    "demoHintLabel": { "bn": "ডেমো তথ্য (পরীক্ষার জন্য)", "en": "Demo credentials (for testing)" },
+    "demoHintLine": { "bn": "ইউজারনেম: {u} · পাসওয়ার্ড: {p}", "en": "Username: {u} · Password: {p}" },
+    "comingSoonTitle": { "bn": "লগইন সফল — তবে এই ড্যাশবোর্ড এখনো নির্মাণাধীন", "en": "Signed in — but this dashboard is still under construction" },
+    "comingSoonBody": { "bn": "{role} এর প্রকৃত পাতা এখনো তৈরি হয়নি। কাজ শেষ হলে এই বাটনের সাথে সংযুক্ত করে দেওয়া হবে।", "en": "The actual page for {role} hasn't been built yet. Once it's ready, it will be connected here." },
+    "comingSoonBack": { "bn": "অন্য পোর্টাল বেছে নিন", "en": "Choose a different portal" },
+    "comingSoonHome": { "bn": "হোমপেজে ফিরুন", "en": "Back to homepage" },
+    "footer": { "bn": "© ২০২৬ কোরআনের ফেরিওয়ালা। সর্বস্বত্ব সংরক্ষিত।", "en": "© 2026 Quraner Fariwala. All rights reserved." },
+    "loadError": { "bn": "তথ্য ফাইল লোড করা যায়নি।", "en": "Could not load the data file." }
+  },
+
+  "roles": [
+    {
+      "id": "responsible",
+      "mono": { "bn": "দা", "en": "R" },
+      "title": { "bn": "দায়িত্বশীল ব্যবস্থাপনা", "en": "Responsible-Person Management" },
+      "audience": { "bn": "কেন্দ্রীয় থেকে গ্রাম পর্যন্ত দায়িত্বশীল কাঠামোর জন্য", "en": "For the central-to-village responsible-person structure" },
+      "status": "active",
+      "link": "../hifz/",
+      "demo": { "username": "central", "passwordSha256": "c1cf91d26bc48410cffa579f68647d61a213f439802f72e562c56df1c0cd44c5", "passwordHint": "Central@123" }
+    },
+    {
+      "id": "investor",
+      "mono": { "bn": "বি", "en": "I" },
+      "title": { "bn": "বিনিয়োগকারী ড্যাশবোর্ড", "en": "Investor Dashboard" },
+      "audience": { "bn": "যারা মুদ্রণ প্রকল্পে বিনিয়োগ করেছেন তাদের জন্য", "en": "For those who have invested in the printing project" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "investor", "passwordSha256": "a11bb28a2964489e087984527679dafa094b19af33e6412114c011dccbeb4200", "passwordHint": "Invest@123" }
+    },
+    {
+      "id": "donor",
+      "mono": { "bn": "ডো", "en": "D" },
+      "title": { "bn": "ডোনার ড্যাশবোর্ড", "en": "Donor Dashboard" },
+      "audience": { "bn": "যারা অনুদান দিয়ে সহায়তা করেছেন তাদের জন্য", "en": "For those who support through donations" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "donor", "passwordSha256": "bfcf2bbe9b087cada0c88fa2976ea6cacc4604e5b5e8dc27e10c12c6cfb435f5", "passwordHint": "Donor@123" }
+    },
+    {
+      "id": "admin",
+      "mono": { "bn": "এ", "en": "A" },
+      "title": { "bn": "এডমিন ড্যাশবোর্ড", "en": "Admin Dashboard" },
+      "audience": { "bn": "সিস্টেম ও ব্যবহারকারী নিয়ন্ত্রণের জন্য", "en": "For system and user administration" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "admin", "passwordSha256": "e86f78a8a3caf0b60d8e74e5942aa6d86dc150cd3c03338aef25b7d2d7e3acc7", "passwordHint": "Admin@123" }
+    },
+    {
+      "id": "tracker",
+      "mono": { "bn": "ট্র্যা", "en": "T" },
+      "title": { "bn": "হিফজ ট্র্যাকার ড্যাশবোর্ড", "en": "Hifz Tracker Dashboard" },
+      "audience": { "bn": "প্রতিটি শিক্ষার্থীর হিফজ অগ্রগতি ট্র্যাক করার জন্য", "en": "To track each student's Hifz progress" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "tracker", "passwordSha256": "d367566f091d88ee57f7b53f37c0cdabfbedc303d89e144b48f8048cdbc40b24", "passwordHint": "Tracker@123" }
+    },
+    {
+      "id": "teacher",
+      "mono": { "bn": "উস্তা", "en": "U" },
+      "title": { "bn": "হিফজ শিক্ষক প্যানেল", "en": "Hifz Teacher Panel" },
+      "audience": { "bn": "হিফজ উস্তাদদের দৈনিক সবক-সবকি এন্ট্রির জন্য", "en": "For ustads' daily sabak/sabki entries" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "teacher", "passwordSha256": "d041c3d3ca4ed64c5b54c5d807bd9a0bd2d6ae3609ecd2d06ac383db449360e1", "passwordHint": "Teacher@123" }
+    },
+    {
+      "id": "student",
+      "mono": { "bn": "শি", "en": "S" },
+      "title": { "bn": "শিক্ষার্থী ড্যাশবোর্ড", "en": "Student Dashboard" },
+      "audience": { "bn": "শিক্ষার্থীরা নিজের অগ্রগতি দেখার জন্য", "en": "For students to view their own progress" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "student", "passwordSha256": "b2a1f4fd0a460606b34c8913e2981dac8d2e283d778aba586c416ee2629bfa54", "passwordHint": "Student@123" }
+    },
+    {
+      "id": "competition",
+      "mono": { "bn": "প্র", "en": "C" },
+      "title": { "bn": "হিফজুল কোরআন প্রতিযোগিতা ব্যবস্থাপনা", "en": "Hifzul Quran Competition Management" },
+      "audience": { "bn": "প্রতিযোগিতা আয়োজন, নিবন্ধন ও ফলাফলের জন্য", "en": "For organizing competitions, registration, and results" },
+      "status": "soon",
+      "link": null,
+      "demo": { "username": "competition", "passwordSha256": "5291f57088161817b97def952b8a48ade38764f6a9191ff86f1a5c3a42bd6ed2", "passwordHint": "Comp@123" }
+    }
+  ],
+
+  "footerNote": { "bn": "আরও নতুন ড্যাশবোর্ড পর্যায়ক্রমে যুক্ত হবে।", "en": "More dashboards will be added over time." }
+}
