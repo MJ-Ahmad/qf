@@ -2,9 +2,9 @@
   "_readme": "শুধু মান বদলান, কাঠামো নয়। divisions এর districtsAssigned ঘরে যতগুলো জেলায় দায়িত্বশীল ও ড্যাশবোর্ড চালু হয়েছে তার সংখ্যা বসান; districtsTotal বাংলাদেশের প্রকৃত জেলা সংখ্যা, পরিবর্তন করবেন না। link ঘরে সেই বিভাগের সক্রিয় জেলা ড্যাশবোর্ডের ঠিকানা দিন, না থাকলে টেমপ্লেট ঠিকানা রাখুন। schedule ও kpi অংশ hifz/data.json এর মতোই কাজ করে। পাসওয়ার্ড বদলাতে নতুন পাসওয়ার্ডের SHA-256 হ্যাশ বসান security.passwordSha256 ঘরে। ⚠️ সতর্কতা: এই লক-স্ক্রিন কেবল সাধারণ দর্শকদের আটকানোর একটি UI স্তর — data.json ফাইলটি এমনিতেই পাবলিকলি fetch করা যায় (পাসওয়ার্ড না দিয়েও), তাই এখানে প্রকৃত ব্যক্তিগত/আর্থিক তথ্য রাখা উচিত নয়। প্রকৃত নিরাপত্তার জন্য ব্যাকএন্ড + সার্ভার-সাইড অথেনটিকেশন প্রয়োজন (SYSTEM-DESIGN.md এর Phase ৩ দেখুন)।",
 
   "site": {
-    "title": { "bn": "হিফজ ব্যবস্থাপনা — কেন্দ্রীয় দপ্তর", "en": "Hifz Management — Central Office" },
+    "title": { "bn": "হিফজ ব্যবস্থাপনা", "en": "Hifz Management" },
     "brand": { "bn": "কোরআনের ফেরিওয়ালা", "en": "Quraner Fariwala" },
-    "department": { "bn": "হিফজুল কোরআন বিভাগ, কেন্দ্রীয় দপ্তর", "en": "Hifzul Quran Department, Central Office" },
+    "department": { "bn": "হিফজুল কোরআন বিভাগ", "en": "Hifzul Quran Department" },
     "logo": "https://mj-ahmad.github.io/qf/assets/logo.png",
     "logoAlt": { "bn": "কোরআনের ফেরিওয়ালার লোগো", "en": "Quraner Fariwala logo" },
     "profileUrl": "../../",
@@ -16,8 +16,8 @@
 
   "lockScreen": {
     "greeting": { "bn": "আসসালামু আলাইকুম", "en": "As-salamu alaykum" },
-    "title": { "bn": "হিফজ ব্যবস্থাপনা — কেন্দ্রীয় দপ্তর", "en": "Hifz Management — Central Office" },
-    "profileFor": { "bn": "কেন্দ্রীয় প্রধান দায়িত্বশীলের ড্যাশবোর্ড", "en": "Dashboard of the Central Head" },
+    "title": { "bn": "হিফজ ব্যবস্থাপনা", "en": "Hifz Management" },
+    "profileFor": { "bn": "দায়িত্বশীল ড্যাশবোর্ড", "en": "Dashboard of the Responsible" },
     "subtitle": { "bn": "এই পাতাটি সুরক্ষিত। দেখতে সঠিক পাসওয়ার্ড দিন।", "en": "This page is protected. Enter the correct password to view it." },
     "placeholder": { "bn": "পাসওয়ার্ড লিখুন", "en": "Enter password" },
     "button": { "bn": "খুলুন", "en": "Unlock" },
