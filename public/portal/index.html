@@ -744,7 +744,7 @@
           <div class="hero-actions">
             <a
               class="button"
-              href="/qf/public/coming-soon.html"
+              href="/qf/public/under-development/?page=login"
             >
               <span
                 data-bn="পোর্টালে প্রবেশ করুন"
@@ -1147,7 +1147,7 @@
 
           <a
             class="button"
-            href="/qf/portal/login/"
+            href="/qf/public/under-development/?page=login"
           >
             <span
               data-bn="লগইন পেজে যান"
@@ -1195,19 +1195,19 @@
             প্রকল্প
           </h2>
 
-          <a href="/qf/edu.html">
+          <a href="/qf/public/education/">
             <span data-bn="গবেষণা" data-en="Research">
               গবেষণা
             </span>
           </a>
 
-          <a href="/qf/pr.html">
+          <a href="/qf/public/print/">
             <span data-bn="মুদ্রণ" data-en="Printing">
               মুদ্রণ
             </span>
           </a>
 
-          <a href="/qf/ds.html">
+          <a href="/qf/public/distribution/">
             <span data-bn="বিতরণ" data-en="Distribution">
               বিতরণ
             </span>
@@ -1219,19 +1219,19 @@
             হিফজ শিক্ষা
           </h2>
 
-          <a href="/qf/portal/index.html">
+          <a href="/qf/public/portal/">
             <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
               হিফজ পোর্টাল
             </span>
           </a>
 
-          <a href="/qf/portal/login/">
+          <a href="/qf/public/under-development/?page=login">
             <span data-bn="লগইন" data-en="Login">
               লগইন
             </span>
           </a>
 
-          <a href="/qf/faq.html">
+          <a href="/qf/public/faq/">
             <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">
               সাধারণ জিজ্ঞাসা
             </span>
@@ -1243,13 +1243,13 @@
             সহায়তা
           </h2>
 
-          <a href="/qf/contact.html">
+          <a href="/qf/public/contact/">
             <span data-bn="যোগাযোগ" data-en="Contact">
               যোগাযোগ
             </span>
           </a>
 
-          <a href="/qf/sitemap.html">
+          <a href="/qf/public/sitemap/">
             <span data-bn="সাইটম্যাপ" data-en="Sitemap">
               সাইটম্যাপ
             </span>
@@ -1267,13 +1267,13 @@
             আইনি
           </h2>
 
-          <a href="/qf/privacy.html">
+          <a href="/qf/public/privacy/">
             <span data-bn="গোপনীয়তা" data-en="Privacy">
               গোপনীয়তা
             </span>
           </a>
 
-          <a href="/qf/terms.html">
+          <a href="/qf/public/terms/">
             <span data-bn="শর্তাবলী" data-en="Terms">
               শর্তাবলী
             </span>
@@ -1310,7 +1310,7 @@
         </p>
 
         <div class="footer-legal">
-          <a href="/qf/privacy.html">
+          <a href="/qf/public/privacy/">
             <span data-bn="গোপনীয়তা" data-en="Privacy">
               গোপনীয়তা
             </span>
@@ -1318,7 +1318,7 @@
 
           <span aria-hidden="true"> · </span>
 
-          <a href="/qf/terms.html">
+          <a href="/qf/public/terms/">
             <span data-bn="শর্তাবলী" data-en="Terms">
               শর্তাবলী
             </span>
@@ -1326,7 +1326,7 @@
 
           <span aria-hidden="true"> · </span>
 
-          <a href="/qf/contact.html">
+          <a href="/qf/public/contact/">
             <span data-bn="যোগাযোগ" data-en="Contact">
               যোগাযোগ
             </span>
@@ -1439,7 +1439,7 @@
         );
       }
 
-EventListener(
+      document.addEventListener(
         'DOMContentLoaded',
         function () {
           applyLanguage(getStoredLanguage());
