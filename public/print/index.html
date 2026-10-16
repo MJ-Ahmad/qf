@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালার মুদ্রণ প্রক্রিয়া—প্রি-প্রেস, টাইপসেটিং, মুদ্রণ, বাঁধাই, মান নিয়ন্ত্রণ ও সরবরাহ।"
+  >
+
+  <meta
+    name="author"
+    content="MJ-Ahmad"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0a3a31"
+  >
+
+  <title
+    data-bn="মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা"
+    data-en="Printing Process — QuranerFariwala"
+  >
+    মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link
+    rel="icon"
+    href="/qf/assets/logo.png"
+    type="image/png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.72),
+          rgba(6, 37, 31, 0.88)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      padding: 0.45rem;
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.25rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.35rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(2, 35, 27, 0.05);
+    }
+
+    .process-card.reverse .process-image {
+      order: -1;
+    }
+
+    .process-content {
+      padding: 0.6rem;
+    }
+
+    .process-content h2 {
+      margin: 0 0 0.7rem;
+      color: var(--night);
+      font-size: 1.45rem;
+    }
+
+    .process-content p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .process-content ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .process-content li {
+      margin: 0.25rem 0;
+    }
+
+    .process-image {
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #dfe8e1;
+    }
+
+    .process-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .standards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .standard-card {
+      padding: 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      text-align: center;
+    }
+
+    .standard-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: var(--night);
+      font-size: 1.1rem;
+    }
+
+    .standard-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .cta {
+      padding: 3.5rem 1rem;
+      color: var(--white);
+      text-align: center;
+      background: var(--night);
+    }
+
+    .cta h2 {
+      margin: 0 0 0.5rem;
+      font: 400 1.85rem/1.4 var(--serif);
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
+      color: #dbe9e1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 900px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .process-card {
+        grid-template-columns: 1fr;
+      }
+
+      .process-card.reverse .process-image {
+        order: 0;
+      }
+
+      .standards {
+        grid-template-columns: 1fr;
+      }
+
+      .process-image,
+      .process-image img {
+        min-height: 220px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span
+            data-bn="হোম"
+            data-en="Home"
+          >হোম</span>
+        </a>
+
+        <a href="/qf/public/education/">
+          <span
+            data-bn="গবেষণা"
+            data-en="Research"
+          >গবেষণা</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/public/print/"
+          aria-current="page"
+        >
+          <span
+            data-bn="মুদ্রণ"
+            data-en="Printing"
+          >মুদ্রণ</span>
+        </a>
+
+        <a href="/qf/public/distribution/">
+          <span
+            data-bn="বিতরণ"
+            data-en="Distribution"
+          >বিতরণ</span>
+        </a>
+
+        <a href="/qf/public/faq/">
+          <span
+            data-bn="জিজ্ঞাসা"
+            data-en="FAQ"
+          >জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/public/contact/">
+          <span
+            data-bn="যোগাযোগ"
+            data-en="Contact"
+          >যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/public/portal/">
+          <span
+            data-bn="হিফজ পোর্টাল"
+            data-en="Hifz Portal"
+          >হিফজ পোর্টাল</span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="/qf/assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="72"
+        height="72"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="সংরক্ষণ · প্রকাশনা · বিতরণ"
+        data-en="Preserve · Publish · Distribute"
+      >
+        সংরক্ষণ · প্রকাশনা · বিতরণ
+      </p>
+
+      <h1
+        data-bn="আমাদের মুদ্রণ প্রক্রিয়া"
+        data-en="Our Printing Process"
+      >
+        আমাদের মুদ্রণ প্রক্রিয়া
+      </h1>
+
+      <p
+        data-bn="নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান, পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।"
+        data-en="From careful typesetting to final delivery, every stage is designed around quality, readability, durability, and respect."
+      >
+        নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান,
+        পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="প্রি-প্রেস ও নকশা"
+            data-en="Pre-Press and Design"
+          >
+            প্রি-প্রেস ও নকশা
+          </h2>
+
+          <p
+            data-bn="মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।"
+            data-en="Before printing, page imposition, Arabic typography, pagination, and memorization-friendly layouts are carefully reviewed."
+          >
+            মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং
+            হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।
+          </p>
+        </div>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="প্রি-প্রেস ও ডিজাইন"
+              data-en="Pre-Press and Design"
+            >
+              প্রি-প্রেস ও ডিজাইন
+            </h2>
+
+            <p
+              data-bn="প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা যাচাই করে প্রস্তুত করা হয়।"
+              data-en="Each page is prepared after reviewing layout, text continuity, and print readiness."
+            >
+              প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা
+              যাচাই করে প্রস্তুত করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস"
+                data-en="Arabic typography and page imposition"
+              >
+                আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস
+              </li>
+
+              <li
+                data-bn="মাল্টি-স্টেজ প্রুফরিডিং"
+                data-en="Multi-stage proofreading"
+              >
+                মাল্টি-স্টেজ প্রুফরিডিং
+              </li>
+
+              <li
+                data-bn="হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস"
+                data-en="Memorization-friendly page layout"
+              >
+                হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf/111.jpg"
+              alt="মুদ্রণের আগে কোরআনের পৃষ্ঠা প্রস্তুত করা হচ্ছে"
+              data-bn-alt="মুদ্রণের আগে কোরআনের পৃষ্ঠা প্রস্তুত করা হচ্ছে"
+              data-en-alt="Quran pages being prepared before printing"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="অফসেট মুদ্রণ"
+              data-en="Offset Printing"
+            >
+              অফসেট মুদ্রণ
+            </h2>
+
+            <p
+              data-bn="পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।"
+              data-en="Clear text, consistent ink density, and durable paper are used to produce readable and lasting copies."
+            >
+              পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে
+              পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="উন্নত অফসেট মুদ্রণ প্রযুক্তি"
+                data-en="Modern offset printing technology"
+              >
+                উন্নত অফসেট মুদ্রণ প্রযুক্তি
+              </li>
+
+              <li
+                data-bn="উচ্চমানের archival-grade কাগজ"
+                data-en="High-quality archival-grade paper"
+              >
+                উচ্চমানের archival-grade কাগজ
+              </li>
+
+              <li
+                data-bn="সমান ও পরিষ্কার ink reproduction"
+                data-en="Consistent and clear ink reproduction"
+              >
+                সমান ও পরিষ্কার ink reproduction
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/01.jpg"
+              alt="কোরআনের পৃষ্ঠা মুদ্রণ"
+              data-bn-alt="কোরআনের পৃষ্ঠা মুদ্রণ"
+              data-en-alt="Printing Quran pages"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস"
+              data-en="Signature Folding and Gathering"
+            >
+              স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস
+            </h2>
+
+            <p
+              data-bn="মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে পৃষ্ঠা বিন্যাস সঠিক থাকে।"
+              data-en="Printed sheets are folded and gathered in sequence to preserve correct pagination."
+            >
+              মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে
+              পৃষ্ঠা বিন্যাস সঠিক থাকে।
+            </p>
+
+            <ul>
+              <li
+                data-bn="পৃষ্ঠা ক্রম যাচাই"
+                data-en="Page-order verification"
+              >
+                পৃষ্ঠা ক্রম যাচাই
+              </li>
+
+              <li
+                data-bn="ভাঁজের সঠিকতা পরীক্ষা"
+                data-en="Folding accuracy checks"
+              >
+                ভাঁজের সঠিকতা পরীক্ষা
+              </li>
+
+              <li
+                data-bn="বাঁধাইয়ের আগে পুনরায় পরিদর্শন"
+                data-en="Final review before binding"
+              >
+                বাঁধাইয়ের আগে পুনরায় পরিদর্শন
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/2.jpg"
+              alt="মুদ্রিত পৃষ্ঠা ভাঁজ ও সাজানো হচ্ছে"
+              data-bn-alt="মুদ্রিত পৃষ্ঠা ভাঁজ ও সাজানো হচ্ছে"
+              data-en-alt="Printed pages being folded and gathered"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="মান নিয়ন্ত্রণ"
+              data-en="Quality Control"
+            >
+              মান নিয়ন্ত্রণ
+            </h2>
+
+            <p
+              data-bn="প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত finish পরীক্ষা করা হয়।"
+              data-en="Every copy is checked for print clarity, page order, binding integrity, and final finish."
+            >
+              প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত
+              finish পরীক্ষা করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="মুদ্রণ স্বচ্ছতা যাচাই"
+                data-en="Print clarity verification"
+              >
+                মুদ্রণ স্বচ্ছতা যাচাই
+              </li>
+
+              <li
+                data-bn="পৃষ্ঠা alignment পরীক্ষা"
+                data-en="Page alignment checks"
+              >
+                পৃষ্ঠা alignment পরীক্ষা
+              </li>
+
+              <li
+                data-bn="বাঁধাইয়ের স্থায়িত্ব পরীক্ষা"
+                data-en="Binding integrity testing"
+              >
+                বাঁধাইয়ের স্থায়িত্ব পরীক্ষা
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/03.jpg"
+              alt="কোরআনের কপির মান নিয়ন্ত্রণ"
+              data-bn-alt="কোরআনের কপির মান নিয়ন্ত্রণ"
+              data-en-alt="Quality inspection of Quran copies"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="মলাট নকশা ও মুদ্রণ"
+              data-en="Cover Design and Printing"
+            >
+              মলাট নকশা ও মুদ্রণ
+            </h2>
+
+            <p
+              data-bn="ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত করা হয়।"
+              data-en="Covers are prepared by combining traditional ornamentation with modern durability standards."
+            >
+              ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত
+              করা হয়।
+            </p>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/04.jpg"
+              alt="কোরআনের মলাট প্রস্তুত করা হচ্ছে"
+              data-bn-alt="কোরআনের মলাট প্রস্তুত করা হচ্ছে"
+              data-en-alt="Quran covers being prepared"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="বাঁধাই ও casing"
+              data-en="Casing In and Binding"
+            >
+              বাঁধাই ও casing
+            </h2>
+
+            <p
+              data-bn="ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়, যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।"
+              data-en="Folded signatures are sewn or glued and then placed into printed covers for long-term use."
+            >
+              ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়,
+              যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।
+            </p>
+
+            <ul>
+              <li
+                data-bn="মজবুত বাঁধাই পদ্ধতি"
+                data-en="Durable binding methods"
+              >
+                মজবুত বাঁধাই পদ্ধতি
+              </li>
+
+              <li
+                data-bn="পৃষ্ঠা ক্রম সংরক্ষণ"
+                data-en="Preservation of page order"
+              >
+                পৃষ্ঠা ক্রম সংরক্ষণ
+              </li>
+
+              <li
+                data-bn="সহজে খোলার উপযোগী binding"
+                data-en="Easy-opening binding"
+              >
+                সহজে খোলার উপযোগী binding
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/05.jpg"
+              alt="কোরআনের কপি বাঁধাই করা হচ্ছে"
+              data-bn-alt="কোরআনের কপি বাঁধাই করা হচ্ছে"
+              data-en-alt="Quran copies being bound"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card">
+          <div class="process-content">
+            <h2
+              data-bn="শুকানো ও চূড়ান্ত পরিদর্শন"
+              data-en="Drying and Final Inspection"
+            >
+              শুকানো ও চূড়ান্ত পরিদর্শন
+            </h2>
+
+            <p
+              data-bn="আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি চূড়ান্তভাবে পরিদর্শন করা হয়।"
+              data-en="After adhesives and binding have stabilized, every copy receives a final inspection."
+            >
+              আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি
+              চূড়ান্তভাবে পরিদর্শন করা হয়।
+            </p>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/06.jpg"
+              alt="বাঁধাইয়ের পর কোরআনের কপি শুকানো হচ্ছে"
+              data-bn-alt="বাঁধাইয়ের পর কোরআনের কপি শুকানো হচ্ছে"
+              data-en-alt="Quran copies drying after binding"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="process-card reverse">
+          <div class="process-content">
+            <h2
+              data-bn="প্যাকেজিং ও সংরক্ষণ"
+              data-en="Packaging and Storage"
+            >
+              প্যাকেজিং ও সংরক্ষণ
+            </h2>
+
+            <p
+              data-bn="পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয় এবং যথাযথভাবে সংরক্ষণ করা হয়।"
+              data-en="Each copy is carefully packaged for safe transport and stored appropriately before distribution."
+            >
+              পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয়
+              এবং যথাযথভাবে সংরক্ষণ করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="সুরক্ষামূলক প্যাকেজিং"
+                data-en="Protective packaging"
+              >
+                সুরক্ষামূলক প্যাকেজিং
+              </li>
+
+              <li
+                data-bn="ব্যাচভিত্তিক সংরক্ষণ"
+                data-en="Batch-based storage"
+              >
+                ব্যাচভিত্তিক সংরক্ষণ
+              </li>
+
+              <li
+                data-bn="সরবরাহের আগে inventory যাচাই"
+                data-en="Inventory verification before delivery"
+              >
+                সরবরাহের আগে inventory যাচাই
+              </li>
+            </ul>
+          </div>
+
+          <div class="process-image">
+            <img
+              src="/qf/assets/qf_copy/07.jpg"
+              alt="সম্পূর্ণ কোরআনের কপি সংরক্ষণ করা হয়েছে"
+              data-bn-alt="সম্পূর্ণ কোরআনের কপি সংরক্ষণ করা হয়েছে"
+              data-en-alt="Finished Quran copies in storage"
+              loading="lazy"
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="আমাদের মানের অগ্রাধিকার"
+            data-en="Our Quality Priorities"
+          >
+            আমাদের মানের অগ্রাধিকার
+          </h2>
+
+          <p
+            data-bn="প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার চেষ্টা করা হয়।"
+            data-en="At every stage, we work to maintain accuracy, readability, and long-term durability."
+          >
+            প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার
+            চেষ্টা করা হয়।
+          </p>
+        </div>
+
+        <div class="standards">
+          <article class="standard-card">
+            <strong
+              data-bn="নির্ভুলতা"
+              data-en="Accuracy"
+            >
+              নির্ভুলতা
+            </strong>
+
+            <p
+              data-bn="পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।"
+              data-en="Page order, text continuity, and layout verification."
+            >
+              পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।
+            </p>
+          </article>
+
+          <article class="standard-card">
+            <strong
+              data-bn="পাঠযোগ্যতা"
+              data-en="Readability"
+            >
+              পাঠযোগ্যতা
+            </strong>
+
+            <p
+              data-bn="পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।"
+              data-en="Clear text, consistent ink density, and user-friendly design."
+            >
+              পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।
+            </p>
+          </article>
+
+          <article class="standard-card">
+            <strong
+              data-bn="স্থায়িত্ব"
+              data-en="Durability"
+            >
+              স্থায়িত্ব
+            </strong>
+
+            <p
+              data-bn="দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।"
+              data-en="Binding designed for daily use and long-term preservation."
+            >
+              দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2
+          data-bn="কোরআন বিতরণ উদ্যোগে যুক্ত হোন"
+          data-en="Join the Quran Distribution Initiative"
+        >
+          কোরআন বিতরণ উদ্যোগে যুক্ত হোন
+        </h2>
+
+        <p
+          data-bn="মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে যোগাযোগ করুন।"
+          data-en="Contact us to learn about printing, distribution, donations, or partnership opportunities."
+        >
+          মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে
+          যোগাযোগ করুন।
+        </p>
+
+        <a
+          class="button"
+          href="/qf/public/contact/"
+        >
+          <span
+            data-bn="যোগাযোগ করুন"
+            data-en="Contact Us"
+          >
+            যোগাযোগ করুন
+          </span>
+          &nbsp; →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="প্রকল্প"
+            data-en="Project"
+          >
+            প্রকল্প
+          </h3>
+
+          <a href="/qf/public/education/">
+            <span
+              data-bn="গবেষণা"
+              data-en="Research"
+            >গবেষণা</span>
+          </a>
+
+          <a href="/qf/public/print/">
+            <span
+              data-bn="মুদ্রণ"
+              data-en="Printing"
+            >মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/public/distribution/">
+            <span
+              data-bn="বিতরণ"
+              data-en="Distribution"
+            >বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="হিফজ শিক্ষা"
+            data-en="Hifz Education"
+          >
+            হিফজ শিক্ষা
+          </h3>
+
+          <a href="/qf/public/portal/">
+            <span
+              data-bn="হিফজ পোর্টাল"
+              data-en="Hifz Portal"
+            >হিফজ পোর্টাল</span>
+          </a>
+
+          <a href="/qf/public/portal/">
+            <span
+              data-bn="শিক্ষার্থী ব্যবস্থাপনা"
+              data-en="Student Management"
+            >শিক্ষার্থী ব্যবস্থাপনা</span>
+          </a>
+
+          <a href="/qf/public/faq/">
+            <span
+              data-bn="সাধারণ জিজ্ঞাসা"
+              data-en="FAQ"
+            >সাধারণ জিজ্ঞাসা</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="সহায়তা"
+            data-en="Support"
+          >
+            সহায়তা
+          </h3>
+
+          <a href="/qf/public/contact/">
+            <span
+              data-bn="যোগাযোগ"
+              data-en="Contact"
+            >যোগাযোগ</span>
+          </a>
+
+          <a href="/qf/donate/">
+            <span
+              data-bn="অনুদান"
+              data-en="Donate"
+            >অনুদান</span>
+          </a>
+
+          <a href="/qf/public/sitemap/">
+            <span
+              data-bn="সাইটম্যাপ"
+              data-en="Sitemap"
+            >সাইটম্যাপ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="আইনি"
+            data-en="Legal"
+          >
+            আইনি
+          </h3>
+
+          <a href="/qf/public/privacy/">
+            <span
+              data-bn="গোপনীয়তা"
+              data-en="Privacy"
+            >গোপনীয়তা</span>
+          </a>
+
+          <a href="/qf/public/terms/">
+            <span
+              data-bn="শর্তাবলী"
+              data-en="Terms"
+            >শর্তাবলী</span>
+          </a>
+
+          <a href="https://github.com/MJ-Ahmad">
+            <span
+              data-bn="উন্মুক্ত উৎস"
+              data-en="Open Source"
+            >উন্মুক্ত উৎস</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <div class="footer-legal">
+          <a href="/qf/public/privacy/">
+            <span
+              data-bn="গোপনীয়তা"
+              data-en="Privacy"
+            >গোপনীয়তা</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/public/terms/">
+            <span
+              data-bn="শর্তাবলী"
+              data-en="Terms"
+            >শর্তাবলী</span>
+          </a>
+
+          <span aria-hidden="true"> · </span>
+
+          <a href="/qf/public/contact/">
+            <span
+              data-bn="যোগাযোগ"
+              data-en="Contact"
+            >যোগাযোগ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent =
+      new Date().getFullYear();
+  </script>
+
+  <script src="/qf/js/i18n.js"></script>
+</body>
+</html>

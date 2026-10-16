@@ -1,0 +1,1482 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="কোরআনের ফেরিওয়ালার বিতরণ কার্যক্রম—মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা ও সুবিধাবঞ্চিত জনগোষ্ঠীর কাছে কোরআন পৌঁছে দেওয়ার উদ্যোগ।"
+  >
+
+  <meta
+    name="author"
+    content="MJ-Ahmad"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0a3a31"
+  >
+
+  <title
+    data-bn="বিতরণ কার্যক্রম — কোরআনের ফেরিওয়ালা"
+    data-en="Distribution — QuranerFariwala"
+  >
+    বিতরণ কার্যক্রম — কোরআনের ফেরিওয়ালা
+  </title>
+
+  <link
+    rel="icon"
+    href="/qf/assets/logo.png"
+    type="image/png"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --night: #0a3a31;
+      --night-deep: #06251f;
+      --emerald: #136b55;
+      --gold: #b8892d;
+      --gold-soft: #ead9a6;
+      --background: #f1f5f0;
+      --card: #ffffff;
+      --ink: #15221d;
+      --muted: #586a62;
+      --line: #d5ddd3;
+      --white: #ffffff;
+      --serif: "Tiro Bangla", Georgia, serif;
+      --sans: "Hind Siliguri", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0c1a16;
+        --card: #12261f;
+        --ink: #e6efe9;
+        --muted: #9db1a7;
+        --line: #244036;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font: 16px/1.75 var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(
+        in srgb,
+        var(--card) 94%,
+        transparent
+      );
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-row {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      color: var(--night);
+      background: var(--background);
+    }
+
+    .main-nav a.active {
+      color: var(--gold-soft);
+      background: var(--night);
+    }
+
+    .langbar {
+      display: inline-flex;
+      gap: 0.2rem;
+      padding: 0.22rem;
+      border-radius: 999px;
+      background: var(--night);
+    }
+
+    .langbar button {
+      min-width: 48px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.28rem 0.6rem;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font: 600 0.82rem var(--sans);
+    }
+
+    .langbar button[aria-pressed="true"] {
+      color: var(--night);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 5rem 1rem 4rem;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 37, 31, 0.68),
+          rgba(6, 37, 31, 0.88)
+        ),
+        url("/qf/assets/header_resized/01.jpg")
+        center / cover no-repeat;
+    }
+
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      padding: 0.45rem;
+      border-radius: 15px;
+      background: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font: 400 clamp(2rem, 5vw, 3.25rem)/1.35 var(--serif);
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #e8f1ec;
+      font-size: 1.06rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section--soft {
+      border-block: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.5rem;
+      color: var(--night);
+      font: 400 clamp(1.65rem, 4vw, 2.35rem)/1.4 var(--serif);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .intro-card {
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 11px;
+      background: var(--card);
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(2, 35, 27, 0.05);
+    }
+
+    .intro-card .number {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--gold);
+      font: 400 2rem/1.25 var(--serif);
+    }
+
+    .intro-card h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.12rem;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(2, 35, 27, 0.05);
+    }
+
+    .story-card.reverse .story-image {
+      order: -1;
+    }
+
+    .story-content {
+      padding: 0.6rem;
+    }
+
+    .story-content h2 {
+      margin: 0 0 0.65rem;
+      color: var(--night);
+      font-size: 1.45rem;
+    }
+
+    .story-content p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .story-content ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .story-content li {
+      margin: 0.25rem 0;
+    }
+
+    .story-image {
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #dfe8e1;
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .regions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .region-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--card);
+      box-shadow: 0 10px 25px rgba(2, 35, 27, 0.05);
+    }
+
+    .region-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .region-content {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+
+    .region-content h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+
+    .region-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      counter-reset: process;
+    }
+
+    .process-item {
+      position: relative;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .process-item::before {
+      counter-increment: process;
+      content: counter(process);
+      display: grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.7rem;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--night);
+      background: var(--gold-soft);
+      font-weight: 700;
+    }
+
+    .process-item h3 {
+      margin: 0 0 0.4rem;
+      color: var(--night);
+      font-size: 1.05rem;
+    }
+
+    .process-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .request-box {
+      max-width: 820px;
+      margin: auto;
+      padding: 2.2rem 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      color: var(--white);
+      background: var(--night);
+      text-align: center;
+    }
+
+    .request-box h2 {
+      margin: 0 0 0.55rem;
+      color: var(--gold-soft);
+      font: 400 1.8rem/1.4 var(--serif);
+    }
+
+    .request-box p {
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
+      color: #dbe9e1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      color: #1b1204;
+      background: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      filter: brightness(1.08);
+    }
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+
+    @media (max-width: 950px) {
+      .header-row {
+        padding-block: 0.65rem;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .process-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .intro-grid,
+      .regions {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card.reverse .story-image {
+        order: 0;
+      }
+
+      .story-image,
+      .story-image img {
+        min-height: 220px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, 560px);
+      }
+
+      .footer-grid,
+      .process-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .main-nav a {
+        padding-inline: 0.45rem;
+        font-size: 0.84rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a
+        class="brand"
+        href="/qf/home/index.html"
+        aria-label="কোরআনের ফেরিওয়ালা হোম"
+      >
+        <img
+          src="/qf/assets/logo.png"
+          alt="কোরআনের ফেরিওয়ালার লোগো"
+          width="38"
+          height="38"
+        >
+
+        <span class="brand-name">
+          কোরআনের ফেরিওয়ালা
+        </span>
+      </a>
+
+      <nav
+        class="main-nav"
+        aria-label="প্রধান নেভিগেশন"
+      >
+        <a href="/qf/home/index.html">
+          <span
+            data-bn="হোম"
+            data-en="Home"
+          >হোম</span>
+        </a>
+
+        <a href="/qf/public/education/">
+          <span
+            data-bn="গবেষণা"
+            data-en="Research"
+          >গবেষণা</span>
+        </a>
+
+        <a href="/qf/public/print/">
+          <span
+            data-bn="মুদ্রণ"
+            data-en="Printing"
+          >মুদ্রণ</span>
+        </a>
+
+        <a
+          class="active"
+          href="/qf/public/distribution/"
+          aria-current="page"
+        >
+          <span
+            data-bn="বিতরণ"
+            data-en="Distribution"
+          >বিতরণ</span>
+        </a>
+
+        <a href="/qf/public/faq/">
+          <span
+            data-bn="জিজ্ঞাসা"
+            data-en="FAQ"
+          >জিজ্ঞাসা</span>
+        </a>
+
+        <a href="/qf/public/contact/">
+          <span
+            data-bn="যোগাযোগ"
+            data-en="Contact"
+          >যোগাযোগ</span>
+        </a>
+
+        <a href="/qf/public/portal/">
+          <span
+            data-bn="হিফজ পোর্টাল"
+            data-en="Hifz Portal"
+          >হিফজ পোর্টাল</span>
+        </a>
+      </nav>
+
+      <div
+        class="langbar"
+        role="group"
+        aria-label="Language selection"
+      >
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+
+        <button
+          type="button"
+          data-lang-button="en"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img
+        class="hero-logo"
+        src="/qf/assets/logo.png"
+        alt="কোরআনের ফেরিওয়ালার লোগো"
+        width="72"
+        height="72"
+      >
+
+      <p
+        class="eyebrow"
+        data-bn="যত্ন · দায়িত্ব · স্বচ্ছতা"
+        data-en="Care · Responsibility · Transparency"
+      >
+        যত্ন · দায়িত্ব · স্বচ্ছতা
+      </p>
+
+      <h1
+        data-bn="আমাদের বিতরণ কার্যক্রম"
+        data-en="Our Distribution Network"
+      >
+        আমাদের বিতরণ কার্যক্রম
+      </h1>
+
+      <p
+        data-bn="মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত জনগোষ্ঠীর কাছে পবিত্র কোরআন পৌঁছে দেওয়ার জন্য একটি দায়িত্বশীল ও সমন্বিত বিতরণ উদ্যোগ।"
+        data-en="A responsible and coordinated initiative to deliver the Holy Quran to madrasas, Hifz students, orphanages, mosques, and underserved communities."
+      >
+        মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত জনগোষ্ঠীর
+        কাছে পবিত্র কোরআন পৌঁছে দেওয়ার জন্য একটি দায়িত্বশীল ও সমন্বিত
+        বিতরণ উদ্যোগ।
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="বিতরণের মূল লক্ষ্য"
+            data-en="Our Distribution Priorities"
+          >
+            বিতরণের মূল লক্ষ্য
+          </h2>
+
+          <p
+            data-bn="প্রয়োজনের ভিত্তিতে সঠিক স্থানে, সঠিক মানুষের কাছে এবং মর্যাদার সঙ্গে কোরআন পৌঁছে দেওয়া।"
+            data-en="To deliver the Quran to the right places and people, based on need and with dignity."
+          >
+            প্রয়োজনের ভিত্তিতে সঠিক স্থানে, সঠিক মানুষের কাছে এবং মর্যাদার
+            সঙ্গে কোরআন পৌঁছে দেওয়া।
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <article class="intro-card">
+            <span class="number">০১</span>
+
+            <h3
+              data-bn="প্রয়োজন নির্ধারণ"
+              data-en="Needs Assessment"
+            >
+              প্রয়োজন নির্ধারণ
+            </h3>
+
+            <p
+              data-bn="প্রতিষ্ঠান, শিক্ষার্থী সংখ্যা ও বাস্তব প্রয়োজন যাচাই করে বিতরণ পরিকল্পনা করা হয়।"
+              data-en="Distribution plans are prepared after reviewing institutions, student numbers, and actual needs."
+            >
+              প্রতিষ্ঠান, শিক্ষার্থী সংখ্যা ও বাস্তব প্রয়োজন যাচাই করে
+              বিতরণ পরিকল্পনা করা হয়।
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <span class="number">০২</span>
+
+            <h3
+              data-bn="স্থানীয় সমন্বয়"
+              data-en="Local Coordination"
+            >
+              স্থানীয় সমন্বয়
+            </h3>
+
+            <p
+              data-bn="স্থানীয় শিক্ষক, মাদ্রাসা পরিচালক ও সহযোগী সংগঠনের সঙ্গে সমন্বয় করে বিতরণ সম্পন্ন করা হয়।"
+              data-en="Distribution is coordinated with local teachers, madrasa directors, and partner organizations."
+            >
+              স্থানীয় শিক্ষক, মাদ্রাসা পরিচালক ও সহযোগী সংগঠনের সঙ্গে সমন্বয়
+              করে বিতরণ সম্পন্ন করা হয়।
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <span class="number">০৩</span>
+
+            <h3
+              data-bn="রেকর্ড সংরক্ষণ"
+              data-en="Record Keeping"
+            >
+              রেকর্ড সংরক্ষণ
+            </h3>
+
+            <p
+              data-bn="গ্রহীতা প্রতিষ্ঠান, কপির সংখ্যা ও বিতরণের প্রমাণ সংরক্ষণ করা হয়।"
+              data-en="Recipient institutions, copy counts, and delivery evidence are recorded for accountability."
+            >
+              গ্রহীতা প্রতিষ্ঠান, কপির সংখ্যা ও বিতরণের প্রমাণ সংরক্ষণ করা হয়।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="বিতরণের কিছু উদ্যোগ"
+            data-en="Selected Distribution Initiatives"
+          >
+            বিতরণের কিছু উদ্যোগ
+          </h2>
+
+          <p
+            data-bn="দেশের বিভিন্ন অঞ্চলে হিফজ শিক্ষার্থী ও প্রয়োজনীয় প্রতিষ্ঠানের কাছে কোরআন পৌঁছে দেওয়ার ধারাবাহিক কার্যক্রম।"
+            data-en="Ongoing efforts to deliver Quran copies to Hifz students and institutions in different parts of the country."
+          >
+            দেশের বিভিন্ন অঞ্চলে হিফজ শিক্ষার্থী ও প্রয়োজনীয় প্রতিষ্ঠানের কাছে
+            কোরআন পৌঁছে দেওয়ার ধারাবাহিক কার্যক্রম।
+          </p>
+        </div>
+
+        <article class="story-card">
+          <div class="story-content">
+            <h2
+              data-bn="রংপুরের হিফজ শিক্ষার্থী"
+              data-en="Hifz Students in Rangpur"
+            >
+              রংপুরের হিফজ শিক্ষার্থী
+            </h2>
+
+            <p
+              data-bn="রংপুর অঞ্চলের শিক্ষার্থীদের জন্য বিনামূল্যে কোরআন মাজীদ পৌঁছে দেওয়ার একটি উদ্যোগ। স্থানীয় সহযোগীদের মাধ্যমে প্রয়োজনীয় শিক্ষার্থীদের তালিকা ও বিতরণ সমন্বয় করা হয়।"
+              data-en="An initiative to provide free Quran Majid copies to students in Rangpur. Local partners help coordinate the student list and delivery process."
+            >
+              রংপুর অঞ্চলের শিক্ষার্থীদের জন্য বিনামূল্যে কোরআন মাজীদ পৌঁছে
+              দেওয়ার একটি উদ্যোগ। স্থানীয় সহযোগীদের মাধ্যমে প্রয়োজনীয়
+              শিক্ষার্থীদের তালিকা ও বিতরণ সমন্বয় করা হয়।
+            </p>
+
+            <ul>
+              <li
+                data-bn="হিফজ শিক্ষার্থীদের অগ্রাধিকার"
+                data-en="Priority for Hifz students"
+              >
+                হিফজ শিক্ষার্থীদের অগ্রাধিকার
+              </li>
+
+              <li
+                data-bn="স্থানীয় প্রতিষ্ঠানের সঙ্গে সমন্বয়"
+                data-en="Coordination with local institutions"
+              >
+                স্থানীয় প্রতিষ্ঠানের সঙ্গে সমন্বয়
+              </li>
+
+              <li
+                data-bn="বিতরণ রেকর্ড সংরক্ষণ"
+                data-en="Distribution record keeping"
+              >
+                বিতরণ রেকর্ড সংরক্ষণ
+              </li>
+            </ul>
+          </div>
+
+          <div class="story-image">
+            <img
+              src="/qf/assets/rongpur_resized/01.jpg"
+              alt="রংপুরে কোরআন বিতরণ"
+              data-bn-alt="রংপুরে কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Rangpur"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="story-card reverse">
+          <div class="story-content">
+            <h2
+              data-bn="ঠাকুরগাঁওয়ের শিক্ষার্থী"
+              data-en="Students in Thakurgaon"
+            >
+              ঠাকুরগাঁওয়ের শিক্ষার্থী
+            </h2>
+
+            <p
+              data-bn="স্থানীয় দায়িত্বশীল ও সহযোগী সংগঠনের মাধ্যমে দরিদ্র ও প্রয়োজনীয় শিক্ষার্থীদের মধ্যে কোরআন বিতরণের উদ্যোগ।"
+              data-en="An initiative to distribute Quran copies among students in need through local coordinators and partner organizations."
+            >
+              স্থানীয় দায়িত্বশীল ও সহযোগী সংগঠনের মাধ্যমে দরিদ্র ও প্রয়োজনীয়
+              শিক্ষার্থীদের মধ্যে কোরআন বিতরণের উদ্যোগ।
+            </p>
+
+            <ul>
+              <li
+                data-bn="দরিদ্র শিক্ষার্থীদের সহায়তা"
+                data-en="Support for students in need"
+              >
+                দরিদ্র শিক্ষার্থীদের সহায়তা
+              </li>
+
+              <li
+                data-bn="স্থানীয় পর্যায়ে যাচাই"
+                data-en="Local-level verification"
+              >
+                স্থানীয় পর্যায়ে যাচাই
+              </li>
+
+              <li
+                data-bn="সম্মানজনকভাবে বিতরণ"
+                data-en="Dignified distribution"
+              >
+                সম্মানজনকভাবে বিতরণ
+              </li>
+            </ul>
+          </div>
+
+          <div class="story-image">
+            <img
+              src="/qf/assets/section_resized/01.jpg"
+              alt="ঠাকুরগাঁওয়ে কোরআন বিতরণ"
+              data-bn-alt="ঠাকুরগাঁওয়ে কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Thakurgaon"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="story-card">
+          <div class="story-content">
+            <h2
+              data-bn="রোহিঙ্গা হিফজ শিক্ষার্থী"
+              data-en="Rohingya Hifz Students"
+            >
+              রোহিঙ্গা হিফজ শিক্ষার্থী
+            </h2>
+
+            <p
+              data-bn="কক্সবাজারের টেকনাফ অঞ্চলের রোহিঙ্গা শরণার্থী শিবিরে হিফজ শিক্ষার্থীদের কাছে পবিত্র কোরআন পৌঁছে দেওয়ার উদ্যোগ।"
+              data-en="An initiative to deliver copies of the Holy Quran to Hifz students in Rohingya refugee camps in the Teknaf area of Cox’s Bazar."
+            >
+              কক্সবাজারের টেকনাফ অঞ্চলের রোহিঙ্গা শরণার্থী শিবিরে হিফজ
+              শিক্ষার্থীদের কাছে পবিত্র কোরআন পৌঁছে দেওয়ার উদ্যোগ।
+            </p>
+
+            <ul>
+              <li
+                data-bn="শরণার্থী শিক্ষার্থীদের সহায়তা"
+                data-en="Support for refugee students"
+              >
+                শরণার্থী শিক্ষার্থীদের সহায়তা
+              </li>
+
+              <li
+                data-bn="স্থানীয় অংশীদারদের মাধ্যমে বিতরণ"
+                data-en="Delivery through local partners"
+              >
+                স্থানীয় অংশীদারদের মাধ্যমে বিতরণ
+              </li>
+
+              <li
+                data-bn="প্রয়োজনভিত্তিক কপি সরবরাহ"
+                data-en="Need-based copy allocation"
+              >
+                প্রয়োজনভিত্তিক কপি সরবরাহ
+              </li>
+            </ul>
+          </div>
+
+          <div class="story-image">
+            <img
+              src="/qf/assets/rohinga_resized/11.jpg"
+              alt="রোহিঙ্গা শিক্ষার্থীদের মধ্যে কোরআন বিতরণ"
+              data-bn-alt="রোহিঙ্গা শিক্ষার্থীদের মধ্যে কোরআন বিতরণ"
+              data-en-alt="Quran distribution among Rohingya students"
+              loading="lazy"
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="অঞ্চলভিত্তিক কার্যক্রম"
+            data-en="Regional Activities"
+          >
+            অঞ্চলভিত্তিক কার্যক্রম
+          </h2>
+
+          <p
+            data-bn="বিভিন্ন জেলা ও অঞ্চলের বিতরণ কার্যক্রমের ছবি ও সংক্ষিপ্ত বিবরণ।"
+            data-en="Selected photos and brief descriptions from distribution activities in different regions."
+          >
+            বিভিন্ন জেলা ও অঞ্চলের বিতরণ কার্যক্রমের ছবি ও সংক্ষিপ্ত বিবরণ।
+          </p>
+        </div>
+
+        <div class="regions">
+          <article class="region-card">
+            <img
+              src="/qf/assets/cgt_resized/01.jpg"
+              alt="চট্টগ্রামে কোরআন বিতরণ"
+              data-bn-alt="চট্টগ্রামে কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Chittagong"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="চট্টগ্রাম"
+                data-en="Chittagong"
+              >
+                চট্টগ্রাম
+              </h3>
+
+              <p
+                data-bn="স্থানীয় শিক্ষার্থী ও প্রতিষ্ঠানের জন্য কোরআন সরবরাহ ও বিতরণ কার্যক্রম।"
+                data-en="Quran supply and distribution activities for local students and institutions."
+              >
+                স্থানীয় শিক্ষার্থী ও প্রতিষ্ঠানের জন্য কোরআন সরবরাহ ও বিতরণ
+                কার্যক্রম।
+              </p>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <img
+              src="/qf/assets/cox_resized/01.jpg"
+              alt="কক্সবাজারে কোরআন বিতরণ"
+              data-bn-alt="কক্সবাজারে কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Cox’s Bazar"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="কক্সবাজার"
+                data-en="Cox’s Bazar"
+              >
+                কক্সবাজার
+              </h3>
+
+              <p
+                data-bn="হিফজ শিক্ষার্থী, শরণার্থী শিবির ও সুবিধাবঞ্চিত জনগোষ্ঠীর জন্য বিতরণ উদ্যোগ।"
+                data-en="Distribution efforts for Hifz students, refugee camps, and underserved communities."
+              >
+                হিফজ শিক্ষার্থী, শরণার্থী শিবির ও সুবিধাবঞ্চিত জনগোষ্ঠীর জন্য
+                বিতরণ উদ্যোগ।
+              </p>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <img
+              src="/qf/assets/khulna_resized/01.jpg"
+              alt="খুলনায় কোরআন বিতরণ"
+              data-bn-alt="খুলনায় কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Khulna"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="খুলনা"
+                data-en="Khulna"
+              >
+                খুলনা
+              </h3>
+
+              <p
+                data-bn="স্থানীয় মাদ্রাসা ও শিক্ষার্থীদের কাছে কোরআন পৌঁছে দেওয়ার কার্যক্রম।"
+                data-en="Activities to deliver Quran copies to local madrasas and students."
+              >
+                স্থানীয় মাদ্রাসা ও শিক্ষার্থীদের কাছে কোরআন পৌঁছে দেওয়ার
+                কার্যক্রম।
+              </p>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <img
+              src="/qf/assets/dhaka_resized/01.jpg"
+              alt="ঢাকায় কোরআন বিতরণ"
+              data-bn-alt="ঢাকায় কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Dhaka"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="ঢাকা"
+                data-en="Dhaka"
+              >
+                ঢাকা
+              </h3>
+
+              <p
+                data-bn="কেন্দ্রীয় সমন্বয়, প্রতিষ্ঠানভিত্তিক সরবরাহ ও বিতরণ ব্যবস্থাপনা।"
+                data-en="Central coordination, institution-based supply, and distribution management."
+              >
+                কেন্দ্রীয় সমন্বয়, প্রতিষ্ঠানভিত্তিক সরবরাহ ও বিতরণ ব্যবস্থাপনা।
+              </p>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <img
+              src="/qf/assets/rongpur_resized/01.jpg"
+              alt="রংপুরে কোরআন বিতরণ"
+              data-bn-alt="রংপুরে কোরআন বিতরণ"
+              data-en-alt="Quran distribution in Rangpur"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="রংপুর"
+                data-en="Rangpur"
+              >
+                রংপুর
+              </h3>
+
+              <p
+                data-bn="হিফজ শিক্ষার্থী ও প্রয়োজনীয় মাদ্রাসার জন্য কোরআন বিতরণ কার্যক্রম।"
+                data-en="Quran distribution activities for Hifz students and madrasas in need."
+              >
+                হিফজ শিক্ষার্থী ও প্রয়োজনীয় মাদ্রাসার জন্য কোরআন বিতরণ
+                কার্যক্রম।
+              </p>
+            </div>
+          </article>
+
+          <article class="region-card">
+            <img
+              src="/qf/assets/rohinga_resized/01.jpg"
+              alt="রোহিঙ্গা শিক্ষার্থীদের মধ্যে কোরআন বিতরণ"
+              data-bn-alt="রোহিঙ্গা শিক্ষার্থীদের মধ্যে কোরআন বিতরণ"
+              data-en-alt="Quran distribution among Rohingya students"
+              loading="lazy"
+            >
+
+            <div class="region-content">
+              <h3
+                data-bn="রোহিঙ্গা শরণার্থী অঞ্চল"
+                data-en="Rohingya Refugee Area"
+              >
+                রোহিঙ্গা শরণার্থী অঞ্চল
+              </h3>
+
+              <p
+                data-bn="শরণার্থী শিবিরের হিফজ শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য বিশেষ সহায়তা।"
+                data-en="Special support for Hifz students and educational institutions in refugee camps."
+              >
+                শরণার্থী শিবিরের হিফজ শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য
+                বিশেষ সহায়তা।
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-heading">
+          <h2
+            data-bn="বিতরণ প্রক্রিয়া"
+            data-en="Distribution Process"
+          >
+            বিতরণ প্রক্রিয়া
+          </h2>
+
+          <p
+            data-bn="একটি সুশৃঙ্খল ও যাচাইযোগ্য প্রক্রিয়ার মাধ্যমে কোরআন বিতরণ করা হয়।"
+            data-en="Quran copies are distributed through an organized and verifiable process."
+          >
+            একটি সুশৃঙ্খল ও যাচাইযোগ্য প্রক্রিয়ার মাধ্যমে কোরআন বিতরণ করা হয়।
+          </p>
+        </div>
+
+        <div class="process-list">
+          <article class="process-item">
+            <h3
+              data-bn="আবেদন ও তথ্য সংগ্রহ"
+              data-en="Request and Information"
+            >
+              আবেদন ও তথ্য সংগ্রহ
+            </h3>
+
+            <p
+              data-bn="প্রতিষ্ঠান, এলাকা, শিক্ষার্থী সংখ্যা এবং প্রয়োজনীয় কপির তথ্য সংগ্রহ করা হয়।"
+              data-en="Institution, location, student numbers, and requested copy details are collected."
+            >
+              প্রতিষ্ঠান, এলাকা, শিক্ষার্থী সংখ্যা এবং প্রয়োজনীয় কপির তথ্য
+              সংগ্রহ করা হয়।
+            </p>
+          </article>
+
+          <article class="process-item">
+            <h3
+              data-bn="যাচাই ও অগ্রাধিকার"
+              data-en="Verification and Priority"
+            >
+              যাচাই ও অগ্রাধিকার
+            </h3>
+
+            <p
+              data-bn="প্রয়োজনের মাত্রা, শিক্ষার্থীর সংখ্যা ও স্থানীয় বাস্তবতা বিবেচনা করা হয়।"
+              data-en="Need level, student numbers, and local circumstances are considered."
+            >
+              প্রয়োজনের মাত্রা, শিক্ষার্থীর সংখ্যা ও স্থানীয় বাস্তবতা বিবেচনা
+              করা হয়।
+            </p>
+          </article>
+
+          <article class="process-item">
+            <h3
+              data-bn="সরবরাহ ও বিতরণ"
+              data-en="Supply and Delivery"
+            >
+              সরবরাহ ও বিতরণ
+            </h3>
+
+            <p
+              data-bn="প্রস্তুত কপি স্থানীয় সমন্বয়কারীর মাধ্যমে নির্ধারিত প্রতিষ্ঠানে পৌঁছে দেওয়া হয়।"
+              data-en="Prepared copies are delivered to selected institutions through local coordinators."
+            >
+              প্রস্তুত কপি স্থানীয় সমন্বয়কারীর মাধ্যমে নির্ধারিত প্রতিষ্ঠানে
+              পৌঁছে দেওয়া হয়।
+            </p>
+          </article>
+
+          <article class="process-item">
+            <h3
+              data-bn="রেকর্ড ও অনুসরণ"
+              data-en="Records and Follow-up"
+            >
+              রেকর্ড ও অনুসরণ
+            </h3>
+
+            <p
+              data-bn="গ্রহণের তথ্য, কপির সংখ্যা ও প্রয়োজনীয় follow-up রেকর্ড করা হয়।"
+              data-en="Receipt information, copy counts, and necessary follow-up are recorded."
+            >
+              গ্রহণের তথ্য, কপির সংখ্যা ও প্রয়োজনীয় follow-up রেকর্ড করা হয়।
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="request-box">
+          <h2
+            data-bn="আপনার প্রতিষ্ঠানের জন্য কোরআন প্রয়োজন?"
+            data-en="Does Your Institution Need Quran Copies?"
+          >
+            আপনার প্রতিষ্ঠানের জন্য কোরআন প্রয়োজন?
+          </h2>
+
+          <p
+            data-bn="মাদ্রাসা, হিফজখানা, এতিমখানা বা শিক্ষাপ্রতিষ্ঠানের তথ্য পাঠাতে আমাদের সঙ্গে যোগাযোগ করুন।"
+            data-en="Contact us to share details about your madrasa, Hifz school, orphanage, or educational institution."
+          >
+            মাদ্রাসা, হিফজখানা, এতিমখানা বা শিক্ষাপ্রতিষ্ঠানের তথ্য পাঠাতে
+            আমাদের সঙ্গে যোগাযোগ করুন।
+          </p>
+
+          <a
+            class="button"
+            href="/qf/public/contact/"
+          >
+            <span
+              data-bn="যোগাযোগ করুন"
+              data-en="Contact Us"
+            >
+              যোগাযোগ করুন
+            </span>
+            &nbsp; →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a
+            class="brand"
+            href="/qf/home/index.html"
+            style="color:#ffffff"
+          >
+            <img
+              src="/qf/assets/logo.png"
+              alt="কোরআনের ফেরিওয়ালার লোগো"
+              width="38"
+              height="38"
+            >
+
+            <span class="brand-name">
+              কোরআনের ফেরিওয়ালা
+            </span>
+          </a>
+
+          <p
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
+          >
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="প্রকল্প"
+            data-en="Project"
+          >
+            প্রকল্প
+          </h3>
+
+          <a href="/qf/public/education/">
+            <span
+              data-bn="গবেষণা"
+              data-en="Research"
+            >গবেষণা</span>
+          </a>
+
+          <a href="/qf/public/print/">
+            <span
+              data-bn="মুদ্রণ"
+              data-en="Printing"
+            >মুদ্রণ</span>
+          </a>
+
+          <a href="/qf/public/distribution/">
+            <span
+              data-bn="বিতরণ"
+              data-en="Distribution"
+            >বিতরণ</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="হিফজ শিক্ষা"
+            data-en="Hifz Education"
+          >
+            হিফজ শিক্ষা
+          </h3>
+
+          <a href="/qf/public/portal/">
+            <span
+              data-bn="হিফজ পোর্টাল"
+              data-en="Hifz Portal"
+            >হিফজ পোর্টাল</span>
+          </a>
+
+          <a href="/qf/public/portal/">
+            <span
+              data-bn="শিক্ষার্থী ব্যবস্থাপনা"
+              data-en="Student Management"
+            >শিক্ষার্থী ব্যবস্থাপনা</span>
+          </a>
+
+          <a href="/qf/public/faq/">
+            <span
+              data-bn="সাধারণ জিজ্ঞাসা"
+              data-en="FAQ"
+            >সাধারণ জিজ্ঞাসা</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            data-bn="সহায়তা"
+            data-en="Support"
+          >
+            সহায়তা
+          </h3>
+
+          <a href="/qf/public/contact/">
+            <span
+              data-bn="যোগাযোগ"
+              data-en="Contact"
+            >যোগাযোগ="/qf/public/privacy/">
+            <span
+              data-bn="গোপনীয়তা"
+              data-en="Privacy"
+            >গোপনীয়তা</span>
+          </a>
+
+          <a href="/qf/public/terms/">
+            <span
+              data-bn="শর্তাবলী"
+              data-en="Terms"
+            >শর্তাবলী</span>
+          </a>
+
+          <a href="https://github.com/MJ-Ahmad">
+            <span
+              data-bn="উন্মুক্ত উৎস"
+              data-en="Open Source"
+            >উন্মুক্ত উৎস</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          <span
+            data-bn="কোরআনের ফেরিওয়ালা"
+            data-en="QuranerFariwala"
+          >
+            কোরআনের ফেরিওয়ালা
+          </span>
+          —
+          <span
+            data-bn="সর্বস্বত্ব সংরক্ষিত"
+            data-en="All rights reserved"
+          >
+            সর্বস্বত্ব সংরক্ষিত
+          </span>
+        </p>
+
+        <"
+            >যোগাযোগ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent =
+      new Date().getFullYear();
+  </script>
+
+  <script src="/qf/js/i18n.js"></script>
+</body>
+</html>
