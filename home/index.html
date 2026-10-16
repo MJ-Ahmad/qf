@@ -722,6 +722,141 @@
         width: 100%;
       }
     }
+  
+    /* QF: synced homepage footer */
+
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+
+    .footer-legal {
+      text-align: right;
+    }
+
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+@media (max-width: 950px) {
+
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+}
+@media (max-width: 720px) {
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+
+      .footer-legal {
+        text-align: left;
+      }
+}
+@media (max-width: 480px) {
+
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .footer-brand {
+        grid-column: auto;
+      }
+}
   </style>
 </head>
 
@@ -759,16 +894,16 @@
         <a href="/qf/public/portal/">
           <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
         </a>
-        <a href="/qf/public/portal/portal_gateway/?role=donor">
+        <a href="/qf/public/under-development/?page=donor">
           <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
         </a>
-        <a href="/qf/public/portal/portal_gateway/?role=supporter">
+        <a href="/qf/public/under-development/?page=supporter">
           <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
         </a>
-        <a href="/qf/public/portal/portal_gateway/?role=investor">
+        <a href="/qf/public/under-development/?page=investor">
           <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
         </a>
-        <a href="/qf/public/portal/portal_gateway/?role=distribution">
+        <a href="/qf/public/under-development/?page=distribution">
           <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
         </a>
       </nav>
@@ -1114,7 +1249,7 @@
             <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
           </a>
 
-          <a href="/qf/public/portal/">
+          <a href="/qf/public/under-development/?page=student-management">
             <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
@@ -1126,19 +1261,19 @@
         <div class="footer-col">
           <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
 
-          <a href="/qf/public/portal/portal_gateway/?role=donor">
+          <a href="/qf/public/under-development/?page=donor">
             <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
           </a>
 
-          <a href="/qf/public/portal/portal_gateway/?role=supporter">
+          <a href="/qf/public/under-development/?page=supporter">
             <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
           </a>
 
-          <a href="/qf/public/portal/portal_gateway/?role=investor">
+          <a href="/qf/public/under-development/?page=investor">
             <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
-          <a href="/qf/public/portal/portal_gateway/?role=distribution">
+          <a href="/qf/public/under-development/?page=distribution">
             <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
@@ -1150,10 +1285,10 @@
             <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
           </a>
 
-          <a href="/qf/donate/">
+          <a href="/qf/public/under-development/?page=donate">
             <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
           </a>
-<a href="/qf/account/">
+<a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
     data-en="Payment Accounts"

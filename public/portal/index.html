@@ -619,6 +619,141 @@
         width: 100%;
       }
     }
+  
+    /* QF: synced homepage footer */
+
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--night);
+      text-decoration: none;
+    }
+
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+
+    .site-footer {
+      padding: 3rem 0 1.2rem;
+      color: #cfe0d8;
+      background: var(--night-deep);
+    }
+
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+
+    .footer-brand p {
+      margin: 0.8rem 0 0;
+      color: #9fb6ac;
+      font-size: 0.9rem;
+    }
+
+
+    .footer-col h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+      font-size: 0.96rem;
+    }
+
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: #cfe0d8;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(234, 217, 166, 0.15);
+      color: #9fb6ac;
+      font-size: 0.84rem;
+    }
+
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+
+    .footer-bottom a {
+      color: var(--gold-soft);
+      text-decoration: none;
+    }
+
+
+    .footer-legal {
+      text-align: right;
+    }
+
+
+    .footer-legal a {
+      color: #cfe0d8;
+    }
+@media (max-width: 950px) {
+
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+}
+@media (max-width: 720px) {
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+
+      .footer-legal {
+        text-align: left;
+      }
+}
+@media (max-width: 480px) {
+
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .footer-brand {
+        grid-column: auto;
+      }
+}
   </style>
 </head>
 
@@ -1165,128 +1300,110 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a
-            class="brand"
-            href="/qf/home/index.html"
-            style="color:#ffffff"
-          >
-            <img
-              src="/qf/assets/logo.png"
-              alt="কোরআনের ফেরিওয়ালার লোগো"
-              width="38"
-              height="38"
-            >
-
-            <span class="brand-name">
-              কোরআনের ফেরিওয়ালা
-            </span>
+          <a class="brand" href="/qf/home/index.html" style="color:#ffffff;">
+            <img src="/qf/assets/logo.png" alt="কোরআনের ফেরিওয়ালার লোগো" width="38" height="38">
+            <span class="brand-name">কোরআনের ফেরিওয়ালা</span>
           </a>
 
           <p
-            data-bn="গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, distribution, and Hifz education."
+            data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
+            data-en="Serving the Holy Quran through research, printing, and distribution."
           >
-            গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষার মাধ্যমে পবিত্র কোরআনের সেবা।
+            গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">
-            প্রকল্প
-          </h2>
+          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">
-              গবেষণা
-            </span>
+            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">
-              মুদ্রণ
-            </span>
+            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">
-              বিতরণ
-            </span>
+            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">
-            হিফজ শিক্ষা
-          </h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
-              হিফজ পোর্টাল
-            </span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
           </a>
 
-          <a href="/qf/public/under-development/?page=login">
-            <span data-bn="লগইন" data-en="Login">
-              লগইন
-            </span>
+          <a href="/qf/public/under-development/?page=student-management">
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">
-              সাধারণ জিজ্ঞাসা
-            </span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">
-            সহায়তা
-          </h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+
+          <a href="/qf/public/under-development/?page=donor">
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+          </a>
+
+          <a href="/qf/public/under-development/?page=supporter">
+            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+          </a>
+
+          <a href="/qf/public/under-development/?page=investor">
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+          </a>
+
+          <a href="/qf/public/under-development/?page=distribution">
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">
-              যোগাযোগ
-            </span>
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
           </a>
+
+          <a href="/qf/public/under-development/?page=donate">
+            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+          </a>
+<a href="/qf/public/under-development/?page=payment-accounts">
+  <span
+    data-bn="পেমেন্ট হিসাব"
+    data-en="Payment Accounts"
+  >
+    পেমেন্ট হিসাব
+  </span>
+</a>
+
+         
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">
-              সাইটম্যাপ
-            </span>
-          </a>
-
-          <a href="/qf/home/index.html">
-            <span data-bn="হোম পেজ" data-en="Home">
-              হোম পেজ
-            </span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">
-            আইনি
-          </h2>
+          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">
-              গোপনীয়তা
-            </span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">
-              শর্তাবলী
-            </span>
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
           </a>
 
-          <a
-            href="https://github.com/MJ-Ahmad"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">
-              উন্মুক্ত উৎস
-            </span>
+          <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1294,42 +1411,26 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span
-            data-bn="কোরআনের ফেরিওয়ালা"
-            data-en="QuranerFariwala"
-          >
-            কোরআনের ফেরিওয়ালা
-          </span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span
-            data-bn="সর্বস্বত্ব সংরক্ষিত"
-            data-en="All rights reserved"
-          >
-            সর্বস্বত্ব সংরক্ষিত
-          </span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">
-              গোপনীয়তা
-            </span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">
-              শর্তাবলী
-            </span>
+            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">
-              যোগাযোগ
-            </span>
+            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
           </a>
         </div>
       </div>

@@ -1,258 +1,103 @@
+/*
+ * QuranerFariwala — shared EN | BN language toggle
+ *
+ * Works on any page that uses:
+ *   - text:         data-bn="..." data-en="..."
+ *   - placeholders: data-bn-placeholder="..." data-en-placeholder="..."
+ *   - buttons:      <button data-lang-button="bn"> / <button data-lang-button="en">
+ *   - footer year:  <span id="footerYear"></span> (optional)
+ *
+ * The chosen language is stored in localStorage under "qf-lang" so every
+ * page remembers it. Loaded as a classic <script>, so it can be included
+ * at the end of <body> on any page.
+ */
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'qfLang';
-  const DEFAULT_LANGUAGE = 'bn';
-  const SUPPORTED_LANGUAGES = ['bn', 'en'];
+  // Guard against double initialisation if the script is included twice.
+  if (window.qfI18n) return;
 
-  let currentLanguage = DEFAULT_LANGUAGE;
+  var STORAGE_KEY = 'qf-lang';
+  var DEFAULT_LANG = 'bn';
 
-  function getSavedLanguage() {
+  function normalise(lang) {
+    return lang === 'en' ? 'en' : 'bn';
+  }
+
+  function getStoredLang() {
     try {
-      const savedLanguage = localStorage.getItem(STORAGE_KEY);
+      return normalise(localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG);
+    } catch (e) {
+      return DEFAULT_LANG;
+    }
+  }
 
-      if (SUPPORTED_LANGUAGES.includes(savedLanguage)) {
-        return savedLanguage;
+  function saveLang(lang) {
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {
+      /* storage unavailable (private mode etc.) — language still applies for this page */
+    }
+  }
+
+  // Replace an element's text without destroying child elements (icons, links, spans).
+  function setElementText(el, text) {
+    if (el.children.length === 0) {
+      el.textContent = text;
+      return;
+    }
+    // Element has child tags: update only its first direct, non-empty text node.
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var node = el.childNodes[i];
+      if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+        node.nodeValue = text;
+        return;
       }
-    } catch (error) {
-      console.warn('Language preference could not be read.', error);
-    }
-
-    return DEFAULT_LANGUAGE;
-  }
-
-  function saveLanguage(language) {
-    try {
-      localStorage.setItem(STORAGE_KEY, language);
-    } catch (error) {
-      console.warn('Language preference could not be saved.', error);
     }
   }
 
-  function getText(element, language) {
-    const value = element.getAttribute(`data-${language}`);
+  function applyLang(lang) {
+    lang = normalise(lang);
 
-    return value !== null ? value : '';
+    document.querySelectorAll('[data-bn][data-en]').forEach(function (el) {
+      var text = el.getAttribute(lang === 'en' ? 'data-en' : 'data-bn');
+      if (text !== null) setElementText(el, text);
+    });
+
+    document.querySelectorAll('[data-bn-placeholder][data-en-placeholder]').forEach(function (el) {
+      var ph = el.getAttribute(lang === 'en' ? 'data-en-placeholder' : 'data-bn-placeholder');
+      if (ph !== null) el.setAttribute('placeholder', ph);
+    });
+
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-lang', lang);
+
+    document.querySelectorAll('[data-lang-button]').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang-button') === lang));
+    });
+
+    saveLang(lang);
   }
 
-  function applyTextTranslations(language) {
-    document
-      .querySelectorAll('[data-bn][data-en]')
-      .forEach(function (element) {
-        element.textContent = getText(element, language);
+  function init() {
+    applyLang(getStoredLang());
+
+    document.querySelectorAll('[data-lang-button]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-lang-button'));
       });
+    });
+
+    var year = document.getElementById('footerYear');
+    if (year) year.textContent = new Date().getFullYear();
   }
 
-  function applyHtmlTranslations(language) {
-    document
-      .querySelectorAll('[data-bn-html][data-en-html]')
-      .forEach(function (element) {
-        const attributeName =
-          language === 'en'
-            ? 'data-en-html'
-            : 'data-bn-html';
-
-        element.innerHTML =
-          element.getAttribute(attributeName) || '';
-      });
-  }
-
-  function applyAttributeTranslations(language) {
-    document
-      .querySelectorAll('[data-bn-placeholder][data-en-placeholder]')
-      .forEach(function (element) {
-        const attributeName =
-          language === 'en'
-            ? 'data-en-placeholder'
-            : 'data-bn-placeholder';
-
-        element.setAttribute(
-          'placeholder',
-          element.getAttribute(attributeName) || ''
-        );
-      });
-
-    document
-      .querySelectorAll('[data-bn-title][data-en-title]')
-      .forEach(function (element) {
-        const attributeName =
-          language === 'en'
-            ? 'data-en-title'
-            : 'data-bn-title';
-
-        element.setAttribute(
-          'title',
-          element.getAttribute(attributeName) || ''
-        );
-      });
-
-    document
-      .querySelectorAll('[data-bn-aria-label][data-en-aria-label]')
-      .forEach(function (element) {
-        const attributeName =
-          language === 'en'
-            ? 'data-en-aria-label'
-            : 'data-bn-aria-label';
-
-        element.setAttribute(
-          'aria-label',
-          element.getAttribute(attributeName) || ''
-        );
-      });
-
-    document
-      .querySelectorAll('[data-bn-alt][data-en-alt]')
-      .forEach(function (element) {
-        const attributeName =
-          language === 'en'
-            ? 'data-en-alt'
-            : 'data-bn-alt';
-
-        element.setAttribute(
-          'alt',
-          element.getAttribute(attributeName) || ''
-        );
-      });
-  }
-
-  function applyDocumentLanguage(language) {
-    document.documentElement.lang = language;
-
-    if (language === 'bn') {
-      document.documentElement.dir = 'ltr';
-    } else {
-      document.documentElement.dir = 'ltr';
-    }
-  }
-
-  function applyLanguageButtons(language) {
-    document
-      .querySelectorAll('[data-lang-button]')
-      .forEach(function (button) {
-        const buttonLanguage =
-          button.getAttribute('data-lang-button');
-
-        const isActive = buttonLanguage === language;
-
-        button.setAttribute(
-          'aria-pressed',
-          String(isActive)
-        );
-
-        button.classList.toggle('active', isActive);
-      });
-  }
-
-  function applyPageTitle(language) {
-    const titleElement = document.querySelector('title');
-
-    if (!titleElement) return;
-
-    const translatedTitle =
-      language === 'en'
-        ? titleElement.getAttribute('data-en')
-        : titleElement.getAttribute('data-bn');
-
-    if (translatedTitle) {
-      document.title = translatedTitle;
-    }
-  }
-
-  function applyLanguage(language) {
-    if (!SUPPORTED_LANGUAGES.includes(language)) {
-      language = DEFAULT_LANGUAGE;
-    }
-
-    currentLanguage = language;
-
-    applyDocumentLanguage(language);
-    applyTextTranslations(language);
-    applyHtmlTranslations(language);
-    applyAttributeTranslations(language);
-    applyLanguageButtons(language);
-    applyPageTitle(language);
-
-    document.dispatchEvent(
-      new CustomEvent('qf:languagechange', {
-        detail: {
-          language: currentLanguage
-        }
-      })
-    );
-  }
-
-  function setLanguage(language) {
-    if (!SUPPORTED_LANGUAGES.includes(language)) {
-      language = DEFAULT_LANGUAGE;
-    }
-
-    saveLanguage(language);
-    applyLanguage(language);
-  }
-
-  function setupLanguageButtons() {
-    document
-      .querySelectorAll('[data-lang-button]')
-      .forEach(function (button) {
-        button.addEventListener('click', function () {
-          const language =
-            button.getAttribute('data-lang-button');
-
-          setLanguage(language);
-        });
-      });
-  }
-
-  function setupAutomaticLanguageLinks() {
-    document
-      .querySelectorAll('[data-lang-href-bn][data-lang-href-en]')
-      .forEach(function (element) {
-        const language =
-          currentLanguage === 'en' ? 'en' : 'bn';
-
-        const attributeName =
-          language === 'en'
-            ? 'data-lang-href-en'
-            : 'data-lang-href-bn';
-
-        const href = element.getAttribute(attributeName);
-
-        if (href) {
-          element.setAttribute('href', href);
-        }
-      });
-  }
-
-  function initialize() {
-    currentLanguage = getSavedLanguage();
-
-    setupLanguageButtons();
-    applyLanguage(currentLanguage);
-    setupAutomaticLanguageLinks();
-  }
-
-  window.qfI18n = {
-    getLanguage: function () {
-      return currentLanguage;
-    },
-
-    setLanguage: function (language) {
-      setLanguage(language);
-      setupAutomaticLanguageLinks();
-    },
-
-    refresh: function () {
-      applyLanguage(currentLanguage);
-      setupAutomaticLanguageLinks();
-    }
-  };
-
+  // Works whether this script loads before or after the DOM is parsed.
   if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      initialize
-    );
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initialize();
+    init();
   }
+
+  window.qfI18n = { setLang: applyLang, getLang: getStoredLang };
 })();
