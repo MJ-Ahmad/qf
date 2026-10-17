@@ -13,7 +13,7 @@
 
   <title
     data-bn="গোপনীয়তা নীতি — কোরআনের ফেরিওয়ালা"
-    data-en="Privacy Policy — QuranerFariwala"
+    data-en="Privacy Policy — QuranerFariwala" data-ar="سياسة الخصوصية — QuranerFariwala"
   >
     গোপনীয়তা নীতি — কোরআনের ফেরিওয়ালা
   </title>
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -535,6 +535,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .policy-box ul {
+  padding-right: 1.2rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -563,31 +594,31 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a href="/qf/public/education/">
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -600,19 +631,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -630,21 +665,21 @@
       <p
         class="eyebrow"
         data-bn="গোপনীয়তা ও নিরাপত্তা"
-        data-en="Privacy and Security"
+        data-en="Privacy and Security" data-ar="الخصوصية والأمان"
       >
         গোপনীয়তা ও নিরাপত্তা
       </p>
 
       <h1
         data-bn="গোপনীয়তা নীতি"
-        data-en="Privacy Policy"
+        data-en="Privacy Policy" data-ar="سياسة الخصوصية"
       >
         গোপনীয়তা নীতি
       </h1>
 
       <p
         data-bn="আমাদের ওয়েবসাইটে ব্যবহারকারীর তথ্যের সংগ্রহ, প্রক্রিয়াকরণ, সুরক্ষা ও ব্যবহার সম্পর্কে স্পষ্ট নীতি।"
-        data-en="A clear policy about how we collect, process, protect, and use user information on our website."
+        data-en="A clear policy about how we collect, process, protect, and use user information on our website." data-ar="سياسة واضحة توضح كيف نجمع معلومات المستخدمين على موقعنا ونعالجها ونحميها ونستخدمها."
       >
         আমাদের ওয়েবসাইটে ব্যবহারকারীর তথ্যের সংগ্রহ, প্রক্রিয়াকরণ, সুরক্ষা
         ও ব্যবহার সম্পর্কে স্পষ্ট নীতি।
@@ -656,14 +691,14 @@
         <div class="section-heading">
           <h2
             data-bn="আমাদের গোপনীয়তা নীতি"
-            data-en="Our Privacy Policy"
+            data-en="Our Privacy Policy" data-ar="سياسة الخصوصية لدينا"
           >
             আমাদের গোপনীয়তা নীতি
           </h2>
 
           <p
             data-bn="আপনার ডেটা কীভাবে সংগ্রহ, ব্যবহার, সুরক্ষিত ও শেয়ার করা হয়, তা বুঝতে পারা গুরুত্বপূর্ণ।"
-            data-en="It is important to understand how your data is collected, used, protected, and shared."
+            data-en="It is important to understand how your data is collected, used, protected, and shared." data-ar="من المهم أن تفهم كيفية جمع بياناتك واستخدامها وحمايتها ومشاركتها."
           >
             আপনার ডেটা কীভাবে সংগ্রহ, ব্যবহার, সুরক্ষিত ও শেয়ার করা হয়, তা
             বুঝতে পারা গুরুত্বপূর্ণ।
@@ -673,14 +708,14 @@
         <div class="policy-box">
           <h2
             data-bn="১. আমাদের উদ্দেশ্য"
-            data-en="1. Our Purpose"
+            data-en="1. Our Purpose" data-ar="١. هدفنا"
           >
             ১. আমাদের উদ্দেশ্য
           </h2>
 
           <p
             data-bn="আমরা আমাদের ওয়েবসাইটের মাধ্যমে কোরআন গবেষণা, মুদ্রণ, বিতরণ, হিফজ শিক্ষা, অনুদান ও সহযোগিতার তথ্য প্রদান করি। কোনো ব্যক্তিগত তথ্য ভিজিটরদের কাছ থেকে সংগ্রহ করা হয়, শুধুমাত্র সেবা প্রদান, যোগাযোগ ও নিরাপত্তার উদ্দেশ্যে।"
-            data-en="We provide information about Quranic research, printing, distribution, Hifz education, donations, and partnership opportunities through our website. We collect personal information only to the extent necessary to provide services, communicate with users, and maintain security."
+            data-en="We provide information about Quranic research, printing, distribution, Hifz education, donations, and partnership opportunities through our website. We collect personal information only to the extent necessary to provide services, communicate with users, and maintain security." data-ar="نقدم عبر موقعنا معلومات عن البحث القرآني والطباعة والتوزيع وتعليم الحفظ والتبرعات وفرص الشراكة. ونجمع المعلومات الشخصية بالقدر الضروري فقط لتقديم الخدمات والتواصل مع المستخدمين والحفاظ على الأمان."
           >
             আমরা আমাদের ওয়েবসাইটের মাধ্যমে কোরআন গবেষণা, মুদ্রণ, বিতরণ, হিফজ
             শিক্ষা, অনুদান ও সহযোগিতার তথ্য প্রদান করি। কোনো ব্যক্তিগত তথ্য
@@ -690,14 +725,14 @@
 
           <h3
             data-bn="২. তথ্য সংগ্রহ"
-            data-en="2. Information Collection"
+            data-en="2. Information Collection" data-ar="٢. جمع المعلومات"
           >
             ২. তথ্য সংগ্রহ
           </h3>
 
           <p
             data-bn="আমরা তাই-ই ইনফরমেশন, ই-মেইল, ফোন নম্বর, নাম, মেসেজ, অনুদান সংক্রান্ত তথ্য, ইত্যাদি সংগ্রহ করতে পারি, যখন এগুলো সেবা প্রদান বা যোগাযোগের উদ্দেশ্যে পাঠানো হয়।"
-            data-en="We may collect names, email addresses, phone numbers, messages, donation-related information, and similar details when they are voluntarily provided for service delivery or communication."
+            data-en="We may collect names, email addresses, phone numbers, messages, donation-related information, and similar details when they are voluntarily provided for service delivery or communication." data-ar="قد نجمع الأسماء وعناوين البريد الإلكتروني وأرقام الهواتف والرسائل ومعلومات التبرع وتفاصيل مشابهة عندما تُقدَّم طوعاً لتقديم الخدمة أو التواصل."
           >
             আমরা তাই-ই ইনফরমেশন, ই-মেইল, ফোন নম্বর, নাম, মেসেজ, অনুদান
             সংক্রান্ত তথ্য, ইত্যাদি সংগ্রহ করতে পারি, যখন এগুলো সেবা প্রদান বা
@@ -706,14 +741,14 @@
 
           <h3
             data-bn="৩. তথ্য ব্যবহার"
-            data-en="3. Information Use"
+            data-en="3. Information Use" data-ar="٣. استخدام المعلومات"
           >
             ৩. তথ্য ব্যবহার
           </h3>
 
           <p
             data-bn="আমরা সংগ্রহ করা তথ্য ব্যবহার করি: (ক) সেবার জন্য যোগাযোগ, (খ) কাজে লাগানো প্রয়োজনীয় তথ্য প্রদান, (গ) ব্যবহারকারীর অনুরোধ অনুযায়ী সহযোগিতা, (ঘ) নিরাপত্তা ও সেবার মান উন্নত করা।"
-            data-en="We use collected information to: (a) respond to service requests, (b) provide necessary information and follow-up, (c) support collaboration requests, and (d) maintain security and improve service quality."
+            data-en="We use collected information to: (a) respond to service requests, (b) provide necessary information and follow-up, (c) support collaboration requests, and (d) maintain security and improve service quality." data-ar="نستخدم المعلومات المجمعة من أجل: (أ) الرد على طلبات الخدمة، (ب) تقديم المعلومات والمتابعة اللازمة، (ج) دعم طلبات التعاون، (د) الحفاظ على الأمان وتحسين جودة الخدمة."
           >
             আমরা সংগ্রহ করা তথ্য ব্যবহার করি: (ক) সেবার জন্য যোগাযোগ, (খ) কাজে
             লাগানো প্রয়োজনীয় তথ্য প্রদান, (গ) ব্যবহারকারীর অনুরোধ অনুযায়ী
@@ -722,14 +757,14 @@
 
           <h3
             data-bn="৪. তথ্য শেয়ার"
-            data-en="4. Information Sharing"
+            data-en="4. Information Sharing" data-ar="٤. مشاركة المعلومات"
           >
             ৪. তথ্য শেয়ার
           </h3>
 
           <p
             data-bn="আমরা ব্যক্তি বা প্রতিষ্ঠানকে আপনার তথ্য বিক্রি বা ভাড়া দিই না। তবে, আমাদের সেবা পরিবেশন করতে বা আইনি বাধ্যবাধকতা পূরণ করতে প্রয়োজন হলে কিছু তথ্য তৃতীয় পক্ষের কাছে যেতে পারে।"
-            data-en="We do not sell or rent personal information to any person or organization. However, some information may be shared with third parties when required to provide the service or to comply with legal obligations."
+            data-en="We do not sell or rent personal information to any person or organization. However, some information may be shared with third parties when required to provide the service or to comply with legal obligations." data-ar="لا نبيع المعلومات الشخصية ولا نؤجرها لأي شخص أو جهة. غير أنه قد تُشارك بعض المعلومات مع أطراف ثالثة عند الحاجة لتقديم الخدمة أو للامتثال للالتزامات القانونية."
           >
             আমরা ব্যক্তি বা প্রতিষ্ঠানকে আপনার তথ্য বিক্রি বা ভাড়া দিই না। তবে,
             আমাদের সেবা পরিবেশন করতে বা আইনি বাধ্যবাধকতা পূরণ করতে প্রয়োজন হলে
@@ -738,14 +773,14 @@
 
           <h3
             data-bn="৫. কুকি ও অনুরূপ প্রযুক্তি"
-            data-en="5. Cookies and Similar Technologies"
+            data-en="5. Cookies and Similar Technologies" data-ar="٥. ملفات تعريف الارتباط والتقنيات المشابهة"
           >
             ৫. কুকি ও অনুরূপ প্রযুক্তি
           </h3>
 
           <p
             data-bn="আমাদের ওয়েবসাইটে কুকি ব্যবহার হতে পারে, যাতে ভাষা পছন্দ, সেশন তথ্য ও ব্যবহারকারীর অভিজ্ঞতা উন্নত হয়। আপনি চাইলে ব্রাউজারের সেটিংস থেকে কুকি অস্বীকার করতে পারেন।"
-            data-en="Our website may use cookies to improve language preferences, session information, and overall user experience. You may disable cookies through your browser settings if desired."
+            data-en="Our website may use cookies to improve language preferences, session information, and overall user experience. You may disable cookies through your browser settings if desired." data-ar="قد يستخدم موقعنا ملفات تعريف الارتباط لتحسين تفضيلات اللغة ومعلومات الجلسة وتجربة المستخدم بشكل عام. يمكنك تعطيل ملفات تعريف الارتباط من إعدادات متصفحك إذا رغبت."
           >
             আমাদের ওয়েবসাইটে কুকি ব্যবহার হতে পারে, যাতে ভাষা পছন্দ, সেশন
             তথ্য ও ব্যবহারকারীর অভিজ্ঞতা উন্নত হয়। আপনি চাইলে ব্রাউজারের সেটিংস
@@ -754,14 +789,14 @@
 
           <h3
             data-bn="৬. সুরক্ষা ব্যবস্থা"
-            data-en="6. Security Measures"
+            data-en="6. Security Measures" data-ar="٦. إجراءات الأمان"
           >
             ৬. সুরক্ষা ব্যবস্থা
           </h3>
 
           <p
             data-bn="আমরা যথাসাধ্য চেষ্টা করি ডেটা সুরক্ষিত রাখতে। তবে, ইন্টারনেটে তথ্য আদান-প্রদান সবসময় সম্পূর্ণ নিরাপদ নয়। তাই, তথ্য পাঠানোর সময় ব্যবহারকারীর নিজস্ব ঝুঁকি বিবেচনা করা উচিত।"
-            data-en="We take reasonable steps to protect data, but internet-based data transmission is not always completely secure. Users should therefore consider their own risk when sending information online."
+            data-en="We take reasonable steps to protect data, but internet-based data transmission is not always completely secure. Users should therefore consider their own risk when sending information online." data-ar="نتخذ خطوات معقولة لحماية البيانات، إلا أن نقل البيانات عبر الإنترنت ليس آمناً بالكامل دائماً. لذلك على المستخدمين مراعاة مخاطرهم عند إرسال المعلومات عبر الإنترنت."
           >
             আমরা যথাসাধ্য চেষ্টা করি ডেটা সুরক্ষিত রাখতে। তবে, ইন্টারনেটে তথ্য
             আদান-প্রদান সবসময় সম্পূর্ণ নিরাপদ নয়। তাই, তথ্য পাঠানোর সময়
@@ -770,14 +805,14 @@
 
           <h3
             data-bn="৭. আপনার অধিকার"
-            data-en="7. Your Rights"
+            data-en="7. Your Rights" data-ar="٧. حقوقك"
           >
             ৭. আপনার অধিকার
           </h3>
 
           <p
             data-bn="আপনি চাইলে আমাদের কাছে আপনার ব্যক্তিগত তথ্য সংশোধন, আপডেট, সরিয়ে দেওয়া বা প্রশ্ন করার অধিকার রাখেন। আপনি আমাদের যোগাযোগের মাধ্যমে এই অধিকার প্রয়োগ করতে পারেন।"
-            data-en="You may request to access, update, correct, or delete your personal information. You can exercise these rights through our contact channel."
+            data-en="You may request to access, update, correct, or delete your personal information. You can exercise these rights through our contact channel." data-ar="يحق لك طلب الاطلاع على معلوماتك الشخصية أو تحديثها أو تصحيحها أو حذفها. ويمكنك ممارسة هذه الحقوق عبر قناة التواصل معنا."
           >
             আপনি চাইলে আমাদের কাছে আপনার ব্যক্তিগত তথ্য সংশোধন, আপডেট,
             সরিয়ে দেওয়া বা প্রশ্ন করার অধিকার রাখেন। আপনি আমাদের যোগাযোগের
@@ -786,14 +821,14 @@
 
           <h3
             data-bn="৮. নীতি পরিবর্তন"
-            data-en="8. Policy Changes"
+            data-en="8. Policy Changes" data-ar="٨. تغييرات السياسة"
           >
             ৮. নীতি পরিবর্তন
           </h3>
 
           <p
             data-bn="আমাদের এই নীতি সময়ে সময়ে পরিবর্তন হতে পারে। নতুন নীতি প্রকাশিত হলে তা কার্যকর হবে।"
-            data-en="This policy may be updated from time to time. Any updated policy will become effective when published."
+            data-en="This policy may be updated from time to time. Any updated policy will become effective when published." data-ar="قد تُحدَّث هذه السياسة من وقت لآخر. وتسري أي سياسة محدّثة عند نشرها."
           >
             আমাদের এই নীতি সময়ে সময়ে পরিবর্তন হতে পারে। নতুন নীতি প্রকাশিত হলে
             তা কার্যকর হবে।
@@ -801,14 +836,14 @@
 
           <h3
             data-bn="৯. আমাদের সঙ্গে যোগাযোগ"
-            data-en="9. Contact Us"
+            data-en="9. Contact Us" data-ar="٩. اتصل بنا"
           >
             ৯. আমাদের সঙ্গে যোগাযোগ
           </h3>
 
           <p
             data-bn="আপনি যদি এই নীতির বিষয়ে কোনো প্রশ্ন বা concern-এ থাকেন, তাহলে আমাদের যোগাযোগ পৃষ্ঠায় লিখে পাঠিয়ে দিন।"
-            data-en="If you have any questions or concerns about this policy, please contact us through our contact page."
+            data-en="If you have any questions or concerns about this policy, please contact us through our contact page." data-ar="إذا كانت لديك أي أسئلة أو استفسارات حول هذه السياسة، فيرجى التواصل معنا عبر صفحة التواصل."
           >
             আপনি যদি এই নীতির বিষয়ে কোনো প্রশ্ন বা concern-এ থাকেন, তাহলে আমাদের
             যোগাযোগ পৃষ্ঠায় লিখে পাঠিয়ে দিন।
@@ -829,78 +864,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -909,23 +944,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -933,26 +968,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -964,6 +1003,7 @@
       new Date().getFullYear();
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

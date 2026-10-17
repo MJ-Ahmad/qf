@@ -25,7 +25,7 @@
 
   <title
     data-bn="বিতরণ কার্যক্রম — কোরআনের ফেরিওয়ালা"
-    data-en="Distribution — QuranerFariwala"
+    data-en="Distribution — QuranerFariwala" data-ar="التوزيع — QuranerFariwala"
   >
     বিতরণ কার্যক্রম — কোরআনের ফেরিওয়ালা
   </title>
@@ -48,7 +48,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -753,6 +753,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .story-content ul {
+  padding-right: 1.25rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -783,21 +814,21 @@
         <a href="/qf/home/index.html">
           <span
             data-bn="হোম"
-            data-en="Home"
+            data-en="Home" data-ar="الرئيسية"
           >হোম</span>
         </a>
 
         <a href="/qf/public/education/">
           <span
             data-bn="গবেষণা"
-            data-en="Research"
+            data-en="Research" data-ar="البحث"
           >গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
           <span
             data-bn="মুদ্রণ"
-            data-en="Printing"
+            data-en="Printing" data-ar="الطباعة"
           >মুদ্রণ</span>
         </a>
 
@@ -808,28 +839,28 @@
         >
           <span
             data-bn="বিতরণ"
-            data-en="Distribution"
+            data-en="Distribution" data-ar="التوزيع"
           >বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
           <span
             data-bn="জিজ্ঞাসা"
-            data-en="FAQ"
+            data-en="FAQ" data-ar="الأسئلة الشائعة"
           >জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
           <span
             data-bn="যোগাযোগ"
-            data-en="Contact"
+            data-en="Contact" data-ar="التواصل"
           >যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
           <span
             data-bn="হিফজ পোর্টাল"
-            data-en="Hifz Portal"
+            data-en="Hifz Portal" data-ar="بوابة الحفظ"
           >হিফজ পোর্টাল</span>
         </a>
       </nav>
@@ -841,19 +872,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -871,21 +906,21 @@
       <p
         class="eyebrow"
         data-bn="যত্ন · দায়িত্ব · স্বচ্ছতা"
-        data-en="Care · Responsibility · Transparency"
+        data-en="Care · Responsibility · Transparency" data-ar="عناية · مسؤولية · شفافية"
       >
         যত্ন · দায়িত্ব · স্বচ্ছতা
       </p>
 
       <h1
         data-bn="আমাদের বিতরণ কার্যক্রম"
-        data-en="Our Distribution Network"
+        data-en="Our Distribution Network" data-ar="شبكة التوزيع لدينا"
       >
         আমাদের বিতরণ কার্যক্রম
       </h1>
 
       <p
         data-bn="মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত জনগোষ্ঠীর কাছে পবিত্র কোরআন পৌঁছে দেওয়ার জন্য একটি দায়িত্বশীল ও সমন্বিত বিতরণ উদ্যোগ।"
-        data-en="A responsible and coordinated initiative to deliver the Holy Quran to madrasas, Hifz students, orphanages, mosques, and underserved communities."
+        data-en="A responsible and coordinated initiative to deliver the Holy Quran to madrasas, Hifz students, orphanages, mosques, and underserved communities." data-ar="مبادرة مسؤولة ومنسقة لإيصال القرآن الكريم إلى المدارس وطلاب الحفظ ودور الأيتام والمساجد والمجتمعات المحرومة."
       >
         মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত জনগোষ্ঠীর
         কাছে পবিত্র কোরআন পৌঁছে দেওয়ার জন্য একটি দায়িত্বশীল ও সমন্বিত
@@ -898,14 +933,14 @@
         <div class="section-heading">
           <h2
             data-bn="বিতরণের মূল লক্ষ্য"
-            data-en="Our Distribution Priorities"
+            data-en="Our Distribution Priorities" data-ar="أولويات التوزيع لدينا"
           >
             বিতরণের মূল লক্ষ্য
           </h2>
 
           <p
             data-bn="প্রয়োজনের ভিত্তিতে সঠিক স্থানে, সঠিক মানুষের কাছে এবং মর্যাদার সঙ্গে কোরআন পৌঁছে দেওয়া।"
-            data-en="To deliver the Quran to the right places and people, based on need and with dignity."
+            data-en="To deliver the Quran to the right places and people, based on need and with dignity." data-ar="إيصال القرآن الكريم إلى الأماكن والناس المناسبين، حسب الحاجة وبكرامة."
           >
             প্রয়োজনের ভিত্তিতে সঠিক স্থানে, সঠিক মানুষের কাছে এবং মর্যাদার
             সঙ্গে কোরআন পৌঁছে দেওয়া।
@@ -918,14 +953,14 @@
 
             <h3
               data-bn="প্রয়োজন নির্ধারণ"
-              data-en="Needs Assessment"
+              data-en="Needs Assessment" data-ar="تقييم الاحتياجات"
             >
               প্রয়োজন নির্ধারণ
             </h3>
 
             <p
               data-bn="প্রতিষ্ঠান, শিক্ষার্থী সংখ্যা ও বাস্তব প্রয়োজন যাচাই করে বিতরণ পরিকল্পনা করা হয়।"
-              data-en="Distribution plans are prepared after reviewing institutions, student numbers, and actual needs."
+              data-en="Distribution plans are prepared after reviewing institutions, student numbers, and actual needs." data-ar="تُعد خطط التوزيع بعد مراجعة المؤسسات وأعداد الطلاب والاحتياجات الفعلية."
             >
               প্রতিষ্ঠান, শিক্ষার্থী সংখ্যা ও বাস্তব প্রয়োজন যাচাই করে
               বিতরণ পরিকল্পনা করা হয়।
@@ -937,14 +972,14 @@
 
             <h3
               data-bn="স্থানীয় সমন্বয়"
-              data-en="Local Coordination"
+              data-en="Local Coordination" data-ar="التنسيق المحلي"
             >
               স্থানীয় সমন্বয়
             </h3>
 
             <p
               data-bn="স্থানীয় শিক্ষক, মাদ্রাসা পরিচালক ও সহযোগী সংগঠনের সঙ্গে সমন্বয় করে বিতরণ সম্পন্ন করা হয়।"
-              data-en="Distribution is coordinated with local teachers, madrasa directors, and partner organizations."
+              data-en="Distribution is coordinated with local teachers, madrasa directors, and partner organizations." data-ar="يتم التنسيق للتوزيع مع المعلمين المحليين ومديري المدارس والمنظمات الشريكة."
             >
               স্থানীয় শিক্ষক, মাদ্রাসা পরিচালক ও সহযোগী সংগঠনের সঙ্গে সমন্বয়
               করে বিতরণ সম্পন্ন করা হয়।
@@ -956,14 +991,14 @@
 
             <h3
               data-bn="রেকর্ড সংরক্ষণ"
-              data-en="Record Keeping"
+              data-en="Record Keeping" data-ar="حفظ السجلات"
             >
               রেকর্ড সংরক্ষণ
             </h3>
 
             <p
               data-bn="গ্রহীতা প্রতিষ্ঠান, কপির সংখ্যা ও বিতরণের প্রমাণ সংরক্ষণ করা হয়।"
-              data-en="Recipient institutions, copy counts, and delivery evidence are recorded for accountability."
+              data-en="Recipient institutions, copy counts, and delivery evidence are recorded for accountability." data-ar="تُسجَّل المؤسسات المستفيدة وأعداد النسخ وإثباتات التسليم للمساءلة."
             >
               গ্রহীতা প্রতিষ্ঠান, কপির সংখ্যা ও বিতরণের প্রমাণ সংরক্ষণ করা হয়।
             </p>
@@ -977,14 +1012,14 @@
         <div class="section-heading">
           <h2
             data-bn="বিতরণের কিছু উদ্যোগ"
-            data-en="Selected Distribution Initiatives"
+            data-en="Selected Distribution Initiatives" data-ar="مبادرات توزيع مختارة"
           >
             বিতরণের কিছু উদ্যোগ
           </h2>
 
           <p
             data-bn="দেশের বিভিন্ন অঞ্চলে হিফজ শিক্ষার্থী ও প্রয়োজনীয় প্রতিষ্ঠানের কাছে কোরআন পৌঁছে দেওয়ার ধারাবাহিক কার্যক্রম।"
-            data-en="Ongoing efforts to deliver Quran copies to Hifz students and institutions in different parts of the country."
+            data-en="Ongoing efforts to deliver Quran copies to Hifz students and institutions in different parts of the country." data-ar="جهود متواصلة لإيصال نسخ القرآن الكريم إلى طلاب الحفظ والمؤسسات في مختلف أنحاء البلاد."
           >
             দেশের বিভিন্ন অঞ্চলে হিফজ শিক্ষার্থী ও প্রয়োজনীয় প্রতিষ্ঠানের কাছে
             কোরআন পৌঁছে দেওয়ার ধারাবাহিক কার্যক্রম।
@@ -995,14 +1030,14 @@
           <div class="story-content">
             <h2
               data-bn="রংপুরের হিফজ শিক্ষার্থী"
-              data-en="Hifz Students in Rangpur"
+              data-en="Hifz Students in Rangpur" data-ar="طلاب الحفظ في رانغبور"
             >
               রংপুরের হিফজ শিক্ষার্থী
             </h2>
 
             <p
               data-bn="রংপুর অঞ্চলের শিক্ষার্থীদের জন্য বিনামূল্যে কোরআন মাজীদ পৌঁছে দেওয়ার একটি উদ্যোগ। স্থানীয় সহযোগীদের মাধ্যমে প্রয়োজনীয় শিক্ষার্থীদের তালিকা ও বিতরণ সমন্বয় করা হয়।"
-              data-en="An initiative to provide free Quran Majid copies to students in Rangpur. Local partners help coordinate the student list and delivery process."
+              data-en="An initiative to provide free Quran Majid copies to students in Rangpur. Local partners help coordinate the student list and delivery process." data-ar="مبادرة لتوفير نسخ مجانية من مصحف مجيد للطلاب في رانغبور. يساعد الشركاء المحليون في تنسيق قائمة الطلاب وعملية التوصيل."
             >
               রংপুর অঞ্চলের শিক্ষার্থীদের জন্য বিনামূল্যে কোরআন মাজীদ পৌঁছে
               দেওয়ার একটি উদ্যোগ। স্থানীয় সহযোগীদের মাধ্যমে প্রয়োজনীয়
@@ -1012,21 +1047,21 @@
             <ul>
               <li
                 data-bn="হিফজ শিক্ষার্থীদের অগ্রাধিকার"
-                data-en="Priority for Hifz students"
+                data-en="Priority for Hifz students" data-ar="الأولوية لطلاب الحفظ"
               >
                 হিফজ শিক্ষার্থীদের অগ্রাধিকার
               </li>
 
               <li
                 data-bn="স্থানীয় প্রতিষ্ঠানের সঙ্গে সমন্বয়"
-                data-en="Coordination with local institutions"
+                data-en="Coordination with local institutions" data-ar="التنسيق مع المؤسسات المحلية"
               >
                 স্থানীয় প্রতিষ্ঠানের সঙ্গে সমন্বয়
               </li>
 
               <li
                 data-bn="বিতরণ রেকর্ড সংরক্ষণ"
-                data-en="Distribution record keeping"
+                data-en="Distribution record keeping" data-ar="حفظ سجلات التوزيع"
               >
                 বিতরণ রেকর্ড সংরক্ষণ
               </li>
@@ -1048,14 +1083,14 @@
           <div class="story-content">
             <h2
               data-bn="ঠাকুরগাঁওয়ের শিক্ষার্থী"
-              data-en="Students in Thakurgaon"
+              data-en="Students in Thakurgaon" data-ar="الطلاب في ثاكورغاون"
             >
               ঠাকুরগাঁওয়ের শিক্ষার্থী
             </h2>
 
             <p
               data-bn="স্থানীয় দায়িত্বশীল ও সহযোগী সংগঠনের মাধ্যমে দরিদ্র ও প্রয়োজনীয় শিক্ষার্থীদের মধ্যে কোরআন বিতরণের উদ্যোগ।"
-              data-en="An initiative to distribute Quran copies among students in need through local coordinators and partner organizations."
+              data-en="An initiative to distribute Quran copies among students in need through local coordinators and partner organizations." data-ar="مبادرة لتوزيع نسخ القرآن الكريم على الطلاب المحتاجين من خلال المنسقين المحليين والمنظمات الشريكة."
             >
               স্থানীয় দায়িত্বশীল ও সহযোগী সংগঠনের মাধ্যমে দরিদ্র ও প্রয়োজনীয়
               শিক্ষার্থীদের মধ্যে কোরআন বিতরণের উদ্যোগ।
@@ -1064,21 +1099,21 @@
             <ul>
               <li
                 data-bn="দরিদ্র শিক্ষার্থীদের সহায়তা"
-                data-en="Support for students in need"
+                data-en="Support for students in need" data-ar="الدعم للطلاب المحتاجين"
               >
                 দরিদ্র শিক্ষার্থীদের সহায়তা
               </li>
 
               <li
                 data-bn="স্থানীয় পর্যায়ে যাচাই"
-                data-en="Local-level verification"
+                data-en="Local-level verification" data-ar="التحقق على المستوى المحلي"
               >
                 স্থানীয় পর্যায়ে যাচাই
               </li>
 
               <li
                 data-bn="সম্মানজনকভাবে বিতরণ"
-                data-en="Dignified distribution"
+                data-en="Dignified distribution" data-ar="توزيع يحفظ الكرامة"
               >
                 সম্মানজনকভাবে বিতরণ
               </li>
@@ -1100,14 +1135,14 @@
           <div class="story-content">
             <h2
               data-bn="রোহিঙ্গা হিফজ শিক্ষার্থী"
-              data-en="Rohingya Hifz Students"
+              data-en="Rohingya Hifz Students" data-ar="طلاب الحفظ الروهينغا"
             >
               রোহিঙ্গা হিফজ শিক্ষার্থী
             </h2>
 
             <p
               data-bn="কক্সবাজারের টেকনাফ অঞ্চলের রোহিঙ্গা শরণার্থী শিবিরে হিফজ শিক্ষার্থীদের কাছে পবিত্র কোরআন পৌঁছে দেওয়ার উদ্যোগ।"
-              data-en="An initiative to deliver copies of the Holy Quran to Hifz students in Rohingya refugee camps in the Teknaf area of Cox’s Bazar."
+              data-en="An initiative to deliver copies of the Holy Quran to Hifz students in Rohingya refugee camps in the Teknaf area of Cox’s Bazar." data-ar="مبادرة لإيصال نسخ من القرآن الكريم إلى طلاب الحفظ في مخيمات اللاجئين الروهينغا بمنطقة تكناف في كوكس بازار."
             >
               কক্সবাজারের টেকনাফ অঞ্চলের রোহিঙ্গা শরণার্থী শিবিরে হিফজ
               শিক্ষার্থীদের কাছে পবিত্র কোরআন পৌঁছে দেওয়ার উদ্যোগ।
@@ -1116,21 +1151,21 @@
             <ul>
               <li
                 data-bn="শরণার্থী শিক্ষার্থীদের সহায়তা"
-                data-en="Support for refugee students"
+                data-en="Support for refugee students" data-ar="الدعم لطلاب اللاجئين"
               >
                 শরণার্থী শিক্ষার্থীদের সহায়তা
               </li>
 
               <li
                 data-bn="স্থানীয় অংশীদারদের মাধ্যমে বিতরণ"
-                data-en="Delivery through local partners"
+                data-en="Delivery through local partners" data-ar="التوصيل عبر الشركاء المحليين"
               >
                 স্থানীয় অংশীদারদের মাধ্যমে বিতরণ
               </li>
 
               <li
                 data-bn="প্রয়োজনভিত্তিক কপি সরবরাহ"
-                data-en="Need-based copy allocation"
+                data-en="Need-based copy allocation" data-ar="توزيع النسخ حسب الحاجة"
               >
                 প্রয়োজনভিত্তিক কপি সরবরাহ
               </li>
@@ -1155,14 +1190,14 @@
         <div class="section-heading">
           <h2
             data-bn="অঞ্চলভিত্তিক কার্যক্রম"
-            data-en="Regional Activities"
+            data-en="Regional Activities" data-ar="الأنشطة الإقليمية"
           >
             অঞ্চলভিত্তিক কার্যক্রম
           </h2>
 
           <p
             data-bn="বিভিন্ন জেলা ও অঞ্চলের বিতরণ কার্যক্রমের ছবি ও সংক্ষিপ্ত বিবরণ।"
-            data-en="Selected photos and brief descriptions from distribution activities in different regions."
+            data-en="Selected photos and brief descriptions from distribution activities in different regions." data-ar="صور مختارة ووصف موجز لأنشطة التوزيع في مختلف المناطق."
           >
             বিভিন্ন জেলা ও অঞ্চলের বিতরণ কার্যক্রমের ছবি ও সংক্ষিপ্ত বিবরণ।
           </p>
@@ -1181,14 +1216,14 @@
             <div class="region-content">
               <h3
                 data-bn="চট্টগ্রাম"
-                data-en="Chittagong"
+                data-en="Chittagong" data-ar="شيتاغونغ"
               >
                 চট্টগ্রাম
               </h3>
 
               <p
                 data-bn="স্থানীয় শিক্ষার্থী ও প্রতিষ্ঠানের জন্য কোরআন সরবরাহ ও বিতরণ কার্যক্রম।"
-                data-en="Quran supply and distribution activities for local students and institutions."
+                data-en="Quran supply and distribution activities for local students and institutions." data-ar="أنشطة توفير القرآن الكريم وتوزيعه للطلاب والمؤسسات المحلية."
               >
                 স্থানীয় শিক্ষার্থী ও প্রতিষ্ঠানের জন্য কোরআন সরবরাহ ও বিতরণ
                 কার্যক্রম।
@@ -1208,14 +1243,14 @@
             <div class="region-content">
               <h3
                 data-bn="কক্সবাজার"
-                data-en="Cox’s Bazar"
+                data-en="Cox’s Bazar" data-ar="كوكس بازار"
               >
                 কক্সবাজার
               </h3>
 
               <p
                 data-bn="হিফজ শিক্ষার্থী, শরণার্থী শিবির ও সুবিধাবঞ্চিত জনগোষ্ঠীর জন্য বিতরণ উদ্যোগ।"
-                data-en="Distribution efforts for Hifz students, refugee camps, and underserved communities."
+                data-en="Distribution efforts for Hifz students, refugee camps, and underserved communities." data-ar="جهود التوزيع لطلاب الحفظ ومخيمات اللاجئين والمجتمعات المحرومة."
               >
                 হিফজ শিক্ষার্থী, শরণার্থী শিবির ও সুবিধাবঞ্চিত জনগোষ্ঠীর জন্য
                 বিতরণ উদ্যোগ।
@@ -1235,14 +1270,14 @@
             <div class="region-content">
               <h3
                 data-bn="খুলনা"
-                data-en="Khulna"
+                data-en="Khulna" data-ar="خلنا"
               >
                 খুলনা
               </h3>
 
               <p
                 data-bn="স্থানীয় মাদ্রাসা ও শিক্ষার্থীদের কাছে কোরআন পৌঁছে দেওয়ার কার্যক্রম।"
-                data-en="Activities to deliver Quran copies to local madrasas and students."
+                data-en="Activities to deliver Quran copies to local madrasas and students." data-ar="أنشطة إيصال نسخ القرآن الكريم إلى المدارس والطلاب المحليين."
               >
                 স্থানীয় মাদ্রাসা ও শিক্ষার্থীদের কাছে কোরআন পৌঁছে দেওয়ার
                 কার্যক্রম।
@@ -1262,14 +1297,14 @@
             <div class="region-content">
               <h3
                 data-bn="ঢাকা"
-                data-en="Dhaka"
+                data-en="Dhaka" data-ar="دكا"
               >
                 ঢাকা
               </h3>
 
               <p
                 data-bn="কেন্দ্রীয় সমন্বয়, প্রতিষ্ঠানভিত্তিক সরবরাহ ও বিতরণ ব্যবস্থাপনা।"
-                data-en="Central coordination, institution-based supply, and distribution management."
+                data-en="Central coordination, institution-based supply, and distribution management." data-ar="التنسيق المركزي وتوريد المؤسسات وإدارة التوزيع."
               >
                 কেন্দ্রীয় সমন্বয়, প্রতিষ্ঠানভিত্তিক সরবরাহ ও বিতরণ ব্যবস্থাপনা।
               </p>
@@ -1288,14 +1323,14 @@
             <div class="region-content">
               <h3
                 data-bn="রংপুর"
-                data-en="Rangpur"
+                data-en="Rangpur" data-ar="رانغبور"
               >
                 রংপুর
               </h3>
 
               <p
                 data-bn="হিফজ শিক্ষার্থী ও প্রয়োজনীয় মাদ্রাসার জন্য কোরআন বিতরণ কার্যক্রম।"
-                data-en="Quran distribution activities for Hifz students and madrasas in need."
+                data-en="Quran distribution activities for Hifz students and madrasas in need." data-ar="أنشطة توزيع القرآن الكريم لطلاب الحفظ والمدارس المحتاجة."
               >
                 হিফজ শিক্ষার্থী ও প্রয়োজনীয় মাদ্রাসার জন্য কোরআন বিতরণ
                 কার্যক্রম।
@@ -1315,14 +1350,14 @@
             <div class="region-content">
               <h3
                 data-bn="রোহিঙ্গা শরণার্থী অঞ্চল"
-                data-en="Rohingya Refugee Area"
+                data-en="Rohingya Refugee Area" data-ar="منطقة لاجئي الروهينغا"
               >
                 রোহিঙ্গা শরণার্থী অঞ্চল
               </h3>
 
               <p
                 data-bn="শরণার্থী শিবিরের হিফজ শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য বিশেষ সহায়তা।"
-                data-en="Special support for Hifz students and educational institutions in refugee camps."
+                data-en="Special support for Hifz students and educational institutions in refugee camps." data-ar="دعم خاص لطلاب الحفظ والمؤسسات التعليمية في مخيمات اللاجئين."
               >
                 শরণার্থী শিবিরের হিফজ শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য
                 বিশেষ সহায়তা।
@@ -1338,14 +1373,14 @@
         <div class="section-heading">
           <h2
             data-bn="বিতরণ প্রক্রিয়া"
-            data-en="Distribution Process"
+            data-en="Distribution Process" data-ar="عملية التوزيع"
           >
             বিতরণ প্রক্রিয়া
           </h2>
 
           <p
             data-bn="একটি সুশৃঙ্খল ও যাচাইযোগ্য প্রক্রিয়ার মাধ্যমে কোরআন বিতরণ করা হয়।"
-            data-en="Quran copies are distributed through an organized and verifiable process."
+            data-en="Quran copies are distributed through an organized and verifiable process." data-ar="يُوزَّع القرآن الكريم عبر عملية منظمة وقابلة للتحقق."
           >
             একটি সুশৃঙ্খল ও যাচাইযোগ্য প্রক্রিয়ার মাধ্যমে কোরআন বিতরণ করা হয়।
           </p>
@@ -1355,14 +1390,14 @@
           <article class="process-item">
             <h3
               data-bn="আবেদন ও তথ্য সংগ্রহ"
-              data-en="Request and Information"
+              data-en="Request and Information" data-ar="الطلب والمعلومات"
             >
               আবেদন ও তথ্য সংগ্রহ
             </h3>
 
             <p
               data-bn="প্রতিষ্ঠান, এলাকা, শিক্ষার্থী সংখ্যা এবং প্রয়োজনীয় কপির তথ্য সংগ্রহ করা হয়।"
-              data-en="Institution, location, student numbers, and requested copy details are collected."
+              data-en="Institution, location, student numbers, and requested copy details are collected." data-ar="يتم جمع بيانات المؤسسة والموقع وأعداد الطلاب وتفاصيل النسخ المطلوبة."
             >
               প্রতিষ্ঠান, এলাকা, শিক্ষার্থী সংখ্যা এবং প্রয়োজনীয় কপির তথ্য
               সংগ্রহ করা হয়।
@@ -1372,14 +1407,14 @@
           <article class="process-item">
             <h3
               data-bn="যাচাই ও অগ্রাধিকার"
-              data-en="Verification and Priority"
+              data-en="Verification and Priority" data-ar="التحقق والأولوية"
             >
               যাচাই ও অগ্রাধিকার
             </h3>
 
             <p
               data-bn="প্রয়োজনের মাত্রা, শিক্ষার্থীর সংখ্যা ও স্থানীয় বাস্তবতা বিবেচনা করা হয়।"
-              data-en="Need level, student numbers, and local circumstances are considered."
+              data-en="Need level, student numbers, and local circumstances are considered." data-ar="يُراعى مستوى الحاجة وأعداد الطلاب والظروف المحلية."
             >
               প্রয়োজনের মাত্রা, শিক্ষার্থীর সংখ্যা ও স্থানীয় বাস্তবতা বিবেচনা
               করা হয়।
@@ -1389,14 +1424,14 @@
           <article class="process-item">
             <h3
               data-bn="সরবরাহ ও বিতরণ"
-              data-en="Supply and Delivery"
+              data-en="Supply and Delivery" data-ar="التوريد والتسليم"
             >
               সরবরাহ ও বিতরণ
             </h3>
 
             <p
               data-bn="প্রস্তুত কপি স্থানীয় সমন্বয়কারীর মাধ্যমে নির্ধারিত প্রতিষ্ঠানে পৌঁছে দেওয়া হয়।"
-              data-en="Prepared copies are delivered to selected institutions through local coordinators."
+              data-en="Prepared copies are delivered to selected institutions through local coordinators." data-ar="تُسلَّم النسخ المُعدّة إلى المؤسسات المختارة عبر المنسقين المحليين."
             >
               প্রস্তুত কপি স্থানীয় সমন্বয়কারীর মাধ্যমে নির্ধারিত প্রতিষ্ঠানে
               পৌঁছে দেওয়া হয়।
@@ -1406,14 +1441,14 @@
           <article class="process-item">
             <h3
               data-bn="রেকর্ড ও অনুসরণ"
-              data-en="Records and Follow-up"
+              data-en="Records and Follow-up" data-ar="السجلات والمتابعة"
             >
               রেকর্ড ও অনুসরণ
             </h3>
 
             <p
               data-bn="গ্রহণের তথ্য, কপির সংখ্যা ও প্রয়োজনীয় follow-up রেকর্ড করা হয়।"
-              data-en="Receipt information, copy counts, and necessary follow-up are recorded."
+              data-en="Receipt information, copy counts, and necessary follow-up are recorded." data-ar="تُسجَّل معلومات الاستلام وأعداد النسخ والمتابعة اللازمة."
             >
               গ্রহণের তথ্য, কপির সংখ্যা ও প্রয়োজনীয় follow-up রেকর্ড করা হয়।
             </p>
@@ -1427,14 +1462,14 @@
         <div class="request-box">
           <h2
             data-bn="আপনার প্রতিষ্ঠানের জন্য কোরআন প্রয়োজন?"
-            data-en="Does Your Institution Need Quran Copies?"
+            data-en="Does Your Institution Need Quran Copies?" data-ar="هل تحتاج مؤسستكم إلى نسخ من القرآن الكريم؟"
           >
             আপনার প্রতিষ্ঠানের জন্য কোরআন প্রয়োজন?
           </h2>
 
           <p
             data-bn="মাদ্রাসা, হিফজখানা, এতিমখানা বা শিক্ষাপ্রতিষ্ঠানের তথ্য পাঠাতে আমাদের সঙ্গে যোগাযোগ করুন।"
-            data-en="Contact us to share details about your madrasa, Hifz school, orphanage, or educational institution."
+            data-en="Contact us to share details about your madrasa, Hifz school, orphanage, or educational institution." data-ar="تواصل معنا لمشاركة تفاصيل مدرستك أو مدرسة الحفظ أو دار الأيتام أو مؤسستك التعليمية."
           >
             মাদ্রাসা, হিফজখানা, এতিমখানা বা শিক্ষাপ্রতিষ্ঠানের তথ্য পাঠাতে
             আমাদের সঙ্গে যোগাযোগ করুন।
@@ -1446,7 +1481,7 @@
           >
             <span
               data-bn="যোগাযোগ করুন"
-              data-en="Contact Us"
+              data-en="Contact Us" data-ar="اتصل بنا"
             >
               যোগাযোগ করুন
             </span>
@@ -1468,78 +1503,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1548,23 +1583,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1572,26 +1607,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1603,6 +1642,7 @@
       new Date().getFullYear();
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

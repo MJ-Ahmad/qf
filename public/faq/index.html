@@ -11,9 +11,10 @@
   <meta name="author" content="MJ-Ahmad">
   <meta name="theme-color" content="#0a3a31">
 
+  <!-- edit 2 -->
   <title
     data-bn="প্রায়শই জিজ্ঞাসিত প্রশ্ন — কোরআনের ফেরিওয়ালা"
-    data-en="FAQ — QuranerFariwala"
+    data-en="FAQ — QuranerFariwala" data-ar="الأسئلة الشائعة — QuranerFariwala"
   >
     প্রায়শই জিজ্ঞাসিত প্রশ্ন — কোরআনের ফেরিওয়ালা
   </title>
@@ -23,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -612,6 +613,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .faq-answer ul {
+  padding-right: 1.2rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -640,19 +672,19 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a href="/qf/public/education/">
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a
@@ -660,15 +692,15 @@
           href="/qf/public/faq/"
           aria-current="page"
         >
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -681,19 +713,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -711,21 +747,21 @@
       <p
         class="eyebrow"
         data-bn="সচরাচর জিজ্ঞাসা"
-        data-en="Frequently Asked Questions"
+        data-en="Frequently Asked Questions" data-ar="الأسئلة المتكررة"
       >
         সচরাচর জিজ্ঞাসা
       </p>
 
       <h1
         data-bn="প্রায়শই জিজ্ঞাসিত প্রশ্ন"
-        data-en="Frequently Asked Questions"
+        data-en="Frequently Asked Questions" data-ar="الأسئلة المتكررة"
       >
         প্রায়শই জিজ্ঞাসিত প্রশ্ন
       </h1>
 
       <p
         data-bn="আমাদের প্রকল্প, হিফজ শিক্ষা, অনুদান, মুদ্রণ, বিতরণ ও যোগাযোগ নিয়ে সাধারণ প্রশ্নের উত্তর এখানে দেওয়া আছে।"
-        data-en="Common questions about our project, Hifz education, donations, printing, distribution, and contact."
+        data-en="Common questions about our project, Hifz education, donations, printing, distribution, and contact." data-ar="أسئلة شائعة حول مشروعنا وتعليم الحفظ والتبرعات والطباعة والتوزيع والتواصل."
       >
         আমাদের প্রকল্প, হিফজ শিক্ষা, অনুদান, মুদ্রণ, বিতরণ ও যোগাযোগ নিয়ে
         সাধারণ প্রশ্নের উত্তর এখানে দেওয়া আছে।
@@ -737,14 +773,14 @@
         <div class="section-heading">
           <h2
             data-bn="সচরাচর জিজ্ঞাসা"
-            data-en="Frequently Asked Questions"
+            data-en="Frequently Asked Questions" data-ar="الأسئلة المتكررة"
           >
             সচরাচর জিজ্ঞাসা
           </h2>
 
           <p
             data-bn="আপনার প্রায় সব প্রশ্নের উত্তর এক জায়গায়।"
-            data-en="All the answers you need in one place."
+            data-en="All the answers you need in one place." data-ar="جميع الإجابات التي تحتاجها في مكان واحد."
           >
             আপনার প্রায় সব প্রশ্নের উত্তর এক জায়গায়।
           </p>
@@ -755,7 +791,7 @@
             <details open>
               <summary
                 data-bn="কোরআনের ফেরিওয়ালা কী?"
-                data-en="What is QuranerFariwala?"
+                data-en="What is QuranerFariwala?" data-ar="ما هو QuranerFariwala؟"
               >
                 কোরআনের ফেরিওয়ালা কী?
               </summary>
@@ -763,7 +799,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="কোরআনের ফেরিওয়ালা একটি কোরআন গবেষণা, মুদ্রণ, বিতরণ ও হিফজ শিক্ষা-সংক্রান্ত উদ্যোগ। আমাদের লক্ষ্য হলো কোরআনের সঠিক পাঠ, ভাষা, অর্থ ও প্রয়োগভিত্তিক জ্ঞানকে সমাজের কাছে পৌঁছে দেওয়া।"
-                  data-en="QuranerFariwala is an initiative focused on Quranic research, printing, distribution, and Hifz education. Our goal is to bring the correct recitation, language, meaning, and practical understanding of the Quran to society."
+                  data-en="QuranerFariwala is an initiative focused on Quranic research, printing, distribution, and Hifz education. Our goal is to bring the correct recitation, language, meaning, and practical understanding of the Quran to society." data-ar="QuranerFariwala مبادرة تركز على البحث القرآني والطباعة والتوزيع وتعليم الحفظ. هدفنا إيصال التلاوة الصحيحة ولغة القرآن الكريم ومعانيه والفهم العملي له إلى المجتمع."
                 >
                   কোরআনের ফেরিওয়ালা একটি কোরআন গবেষণা, মুদ্রণ, বিতরণ ও হিফজ
                   শিক্ষা-সংক্রান্ত উদ্যোগ। আমাদের লক্ষ্য হলো কোরআনের সঠিক পাঠ,
@@ -775,7 +811,7 @@
             <details>
               <summary
                 data-bn="কীভাবে কোরআন বিতরণ করা হয়?"
-                data-en="How is the Quran distributed?"
+                data-en="How is the Quran distributed?" data-ar="كيف يُوزَّع القرآن الكريم؟"
               >
                 কীভাবে কোরআন বিতরণ করা হয়?
               </summary>
@@ -783,7 +819,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="আমরা প্রয়োজন-ভিত্তিক পরিকল্পনা অনুযায়ী কোরআন মুদ্রণ করে তা মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত জনগোষ্ঠীর কাছে পৌঁছে দিই। বিতরণ প্রক্রিয়ায় স্থানীয় সহযোগী, প্রমাণ রেকর্ড ও সঠিক বিতরণ ব্যবস্থা রাখা হয়।"
-                  data-en="We print the Quran based on need and distribute it to madrasas, Hifz students, orphanages, mosques, and underserved communities. The process includes local coordination, record-keeping, and a proper delivery system."
+                  data-en="We print the Quran based on need and distribute it to madrasas, Hifz students, orphanages, mosques, and underserved communities. The process includes local coordination, record-keeping, and a proper delivery system." data-ar="نطبع القرآن الكريم حسب الحاجة ونوزعه على المدارس وطلاب الحفظ ودور الأيتام والمساجد والمجتمعات المحرومة. وتشمل العملية التنسيق المحلي وحفظ السجلات ونظام تسليم مناسب."
                 >
                   আমরা প্রয়োজন-ভিত্তিক পরিকল্পনা অনুযায়ী কোরআন মুদ্রণ করে তা
                   মাদ্রাসা, হিফজ শিক্ষার্থী, এতিমখানা, মসজিদ ও সুবিধাবঞ্চিত
@@ -796,7 +832,7 @@
             <details>
               <summary
                 data-bn="কোরআন মুদ্রণ কতটা মানসম্পন্ন হয়?"
-                data-en="How is the Quran printing process ensured to be high-quality?"
+                data-en="How is the Quran printing process ensured to be high-quality?" data-ar="كيف تُضمن جودة عملية طباعة القرآن الكريم؟"
               >
                 কোরআন মুদ্রণ কতটা মানসম্পন্ন হয়?
               </summary>
@@ -804,7 +840,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="আমাদের মুদ্রণ প্রক্রিয়ায় প্রি-প্রেস ডিজাইন, টাইপসেটিং, পাঠ যাচাই, কাগজের মান, ইনক স্ট্যান্ডার্ড, বাঁধাই ও চূড়ান্ত মান নিয়ন্ত্রণ থাকে। প্রতিটি কপির মান আমরা সাবধানে যাচাই করি।"
-                  data-en="Our printing process includes pre-press design, typesetting, text verification, paper quality, ink standards, binding, and final quality control. We carefully check each copy before it is distributed."
+                  data-en="Our printing process includes pre-press design, typesetting, text verification, paper quality, ink standards, binding, and final quality control. We carefully check each copy before it is distributed." data-ar="تشمل عملية الطباعة لدينا التصميم قبل الطباعة والتنضيد والتحقق من النص وجودة الورق ومعايير الحبر والتجليد والمراقبة النهائية للجودة. نفحص كل نسخة بعناية قبل توزيعها."
                 >
                   আমাদের মুদ্রণ প্রক্রিয়ায় প্রি-প্রেস ডিজাইন, টাইপসেটিং, পাঠ
                   যাচাই, কাগজের মান, ইনক স্ট্যান্ডার্ড, বাঁধাই ও চূড়ান্ত মান
@@ -816,7 +852,7 @@
             <details>
               <summary
                 data-bn="হিফজ শিক্ষা কীভাবে পরিচালিত হয়?"
-                data-en="How is Hifz education managed?"
+                data-en="How is Hifz education managed?" data-ar="كيف تُدار تعليم الحفظ؟"
               >
                 হিফজ শিক্ষা কীভাবে পরিচালিত হয়?
               </summary>
@@ -824,7 +860,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="হিফজ শিক্ষা আমাদের একটি পদ্ধতিগত ব্যবস্থাপনায় পরিচালিত হয়, যেখানে মুখস্থের অগ্রগতি, সাবাক, সবকি, তাজবিদ, রিভিশন ও অর্থভিত্তিক বোঝার উপর জোর দেওয়া হয়।"
-                  data-en="Hifz education is managed through a systematic approach that emphasizes memorization progress, sabaq, sabqi, revision, tajweed, and meaning-based understanding."
+                  data-en="Hifz education is managed through a systematic approach that emphasizes memorization progress, sabaq, sabqi, revision, tajweed, and meaning-based understanding." data-ar="يُدار تعليم الحفظ بمنهج منظم يركز على تقدم الحفظ والسبق والسبقي والمراجعة والتجويد والفهم القائم على المعنى."
                 >
                   হিফজ শিক্ষা আমাদের একটি পদ্ধতিগত ব্যবস্থাপনায় পরিচালিত হয়,
                   যেখানে মুখস্থের অগ্রগতি, সাবাক, সবকি, তাজবিদ, রিভিশন ও
@@ -836,7 +872,7 @@
             <details>
               <summary
                 data-bn="আমরা কীভাবে সহযোগিতা করতে পারি?"
-                data-en="How can we collaborate?"
+                data-en="How can we collaborate?" data-ar="كيف يمكننا التعاون؟"
               >
                 আমরা কীভাবে সহযোগিতা করতে পারি?
               </summary>
@@ -844,7 +880,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="আপনি অনুদান, বিনিয়োগ, ঋণ, ভলান্টিয়ারস, প্রাকৃতিক/সামাজিক সহযোগিতা, অথবা মাদ্রাসা ও প্রতিষ্ঠানের সঙ্গে অংশীদারিত্বের মাধ্যমে আমাদের সঙ্গে জড়িত হতে পারেন।"
-                  data-en="You can collaborate with us through donations, investment, lending, volunteering, institutional partnerships, or social support."
+                  data-en="You can collaborate with us through donations, investment, lending, volunteering, institutional partnerships, or social support." data-ar="يمكنك التعاون معنا من خلال التبرعات أو الاستثمار أو الإقراض أو التطوع أو الشراكات المؤسسية أو الدعم الاجتماعي."
                 >
                   আপনি অনুদান, বিনিয়োগ, ঋণ, ভলান্টিয়ারস, প্রাকৃতিক/সামাজিক
                   সহযোগিতা, অথবা মাদ্রাসা ও প্রতিষ্ঠানের সঙ্গে অংশীদারিত্বের মাধ্যমে
@@ -856,7 +892,7 @@
             <details>
               <summary
                 data-bn="কীভাবে অনুদান দেওয়া যাবে?"
-                data-en="How can I donate?"
+                data-en="How can I donate?" data-ar="كيف يمكنني التبرع؟"
               >
                 কীভাবে অনুদান দেওয়া যাবে?
               </summary>
@@ -864,7 +900,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="আপনি আমাদের যোগাযোগ পৃষ্ঠায় আপনার প্রয়োজন ও অনুদান সংক্রান্ত তথ্য পাঠাতে পারেন। যোগাযোগের পর আমাদের টিম আপনার জন্য সঠিক ব্যাখ্যা ও দিকনির্দেশনা দেবে।"
-                  data-en="You can contact us through the contact page and share your request or donation details. Our team will guide you with the appropriate information and next steps."
+                  data-en="You can contact us through the contact page and share your request or donation details. Our team will guide you with the appropriate information and next steps." data-ar="يمكنك التواصل معنا عبر صفحة التواصل ومشاركة طلبك أو تفاصيل تبرعك. وسيرشدك فريقنا بالمعلومات المناسبة والخطوات التالية."
                 >
                   আপনি আমাদের যোগাযোগ পৃষ্ঠায় আপনার প্রয়োজন ও অনুদান সংক্রান্ত তথ্য
                   পাঠাতে পারেন। যোগাযোগের পর আমাদের টিম আপনার জন্য সঠিক ব্যাখ্যা
@@ -876,7 +912,7 @@
             <details>
               <summary
                 data-bn="আমাদের কী ধরনের তথ্য দরকার?"
-                data-en="What information do we need?"
+                data-en="What information do we need?" data-ar="ما المعلومات التي نحتاجها؟"
               >
                 আমাদের কী ধরনের তথ্য দরকার?
               </summary>
@@ -884,7 +920,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="স্টেকহোল্ডার, প্রতিষ্ঠান, জেলা, শিক্ষার্থী/ভুক্তির সংখ্যা, প্রয়োজনীয় কপির সংখ্যা ও যোগাযোগের তথ্য আমাদের দেওয়া হলে আমরা দ্রুত কাজ শুরু করতে পারি।"
-                  data-en="If you provide stakeholder details, institutional information, district or area, number of students, required copy volume, and contact information, we can begin work more quickly."
+                  data-en="If you provide stakeholder details, institutional information, district or area, number of students, required copy volume, and contact information, we can begin work more quickly." data-ar="إذا زودتنا بتفاصيل الجهة المعنية ومعلومات المؤسسة والمنطقة أو الحي وعدد الطلاب وعدد النسخ المطلوبة ومعلومات التواصل، يمكننا البدء بالعمل بسرعة أكبر."
                 >
                   স্টেকহোল্ডার, প্রতিষ্ঠান, জেলা, শিক্ষার্থী/ভুক্তির সংখ্যা,
                   প্রয়োজনীয় কপির সংখ্যা ও যোগাযোগের তথ্য আমাদের দেওয়া হলে আমরা
@@ -896,7 +932,7 @@
             <details>
               <summary
                 data-bn="আপনি কি হিফজ শিক্ষার্থীকে সম্পূর্ণ কোরআন দান করেন?"
-                data-en="Do you provide complete Quran copies to Hifz students?"
+                data-en="Do you provide complete Quran copies to Hifz students?" data-ar="هل توفرون نسخاً كاملة من القرآن الكريم لطلاب الحفظ؟"
               >
                 আপনি কি হিফজ শিক্ষার্থীকে সম্পূর্ণ কোরআন দান করেন?
               </summary>
@@ -904,7 +940,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="হ্যাঁ, প্রয়োজনে আমরা হিফজ শিক্ষার্থীদের জন্য পূর্ণ কোরআন কপি, পাঠ্য উপকরণ ও সংশ্লিষ্ট শিক্ষা সহায়তা প্রদান করতে পারি।"
-                  data-en="Yes, when needed, we can provide complete Quran copies, study materials, and related educational support to Hifz students."
+                  data-en="Yes, when needed, we can provide complete Quran copies, study materials, and related educational support to Hifz students." data-ar="نعم، عند الحاجة يمكننا توفير نسخ كاملة من القرآن الكريم ومواد دراسية ودعم تعليمي ذي صلة لطلاب الحفظ."
                 >
                   হ্যাঁ, প্রয়োজনে আমরা হিফজ শিক্ষার্থীদের জন্য পূর্ণ কোরআন কপি,
                   পাঠ্য উপকরণ ও সংশ্লিষ্ট শিক্ষা সহায়তা প্রদান করতে পারি।
@@ -915,7 +951,7 @@
             <details>
               <summary
                 data-bn="আপনি কি কোরআন গবেষণা ও ভাষাতত্ত্বে কাজ করেন?"
-                data-en="Do you work on Quranic research and linguistics?"
+                data-en="Do you work on Quranic research and linguistics?" data-ar="هل تعملون في البحث القرآني واللغويات؟"
               >
                 আপনি কি কোরআন গবেষণা ও ভাষাতত্ত্বে কাজ করেন?
               </summary>
@@ -923,7 +959,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="হ্যাঁ, আমরা কোরআন গবেষণা, ভাষাতত্ত্ব, তাফসির ও প্রেক্ষাপটের উপর গবেষণা ও জ্ঞানচর্চা করি।"
-                  data-en="Yes, we work on Quranic research, linguistics, tafsir, and context-based scholarship."
+                  data-en="Yes, we work on Quranic research, linguistics, tafsir, and context-based scholarship." data-ar="نعم، نعمل في البحث القرآني واللغويات والتفسير والعلم القائم على السياق."
                 >
                   হ্যাঁ, আমরা কোরআন গবেষণা, ভাষাতত্ত্ব, তাফসির ও প্রেক্ষাপটের উপর
                   গবেষণা ও জ্ঞানচর্চা করি।
@@ -934,7 +970,7 @@
             <details>
               <summary
                 data-bn="কীভাবে অন্য সংস্থার সাথে সহযোগিতা করব?"
-                data-en="How can I collaborate with another organization?"
+                data-en="How can I collaborate with another organization?" data-ar="كيف يمكنني التعاون مع مؤسسة أخرى؟"
               >
                 কীভাবে অন্য সংস্থার সাথে সহযোগিতা করব?
               </summary>
@@ -942,7 +978,7 @@
               <div class="faq-answer">
                 <p
                   data-bn="আপনি আমাদের যোগাযোগ পৃষ্ঠায় আপনার ধারণা, উদ্দেশ্য ও প্রস্তাব লিখে পাঠাতে পারেন। আমাদের টিম আপনার ধারণা মূল্যায়ন করবে ও সঠিকভাবে সহায়তা দেবে।"
-                  data-en="You can send your idea, objective, and proposal through our contact page. Our team will assess the proposal and guide you appropriately."
+                  data-en="You can send your idea, objective, and proposal through our contact page. Our team will assess the proposal and guide you appropriately." data-ar="يمكنك إرسال فكرتك وهدفك ومقترحك عبر صفحة التواصل. وسيقيّم فريقنا المقترح ويرشدك بالشكل المناسب."
                 >
                   আপনি আমাদের যোগাযোগ পৃষ্ঠায় আপনার ধারণা, উদ্দেশ্য ও প্রস্তাব
                   লিখে পাঠাতে পারেন। আমাদের টিম আপনার ধারণা মূল্যায়ন করবে ও
@@ -955,20 +991,20 @@
           <div class="cta-box">
             <h2
               data-bn="কোনো উত্তর খুঁজে না পেলে?"
-              data-en="Still have a question?"
+              data-en="Still have a question?" data-ar="ما زال لديك سؤال؟"
             >
               কোনো উত্তর খুঁজে না পেলে?
             </h2>
 
             <p
               data-bn="আমাদের সঙ্গে যোগাযোগ করুন — আমরা সাহায্য করব।"
-              data-en="Contact us and we will help you."
+              data-en="Contact us and we will help you." data-ar="تواصل معنا وسنساعدك."
             >
               আমাদের সঙ্গে যোগাযোগ করুন — আমরা সাহায্য করব।
             </p>
 
             <a class="button" href="/qf/public/contact/">
-              <span data-bn="যোগাযোগ করুন" data-en="Contact Us">
+              <span data-bn="যোগাযোগ করুন" data-en="Contact Us" data-ar="اتصل بنا">
                 যোগাযোগ করুন
               </span>
             </a>
@@ -989,78 +1025,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1069,23 +1105,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1093,26 +1129,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1124,6 +1164,7 @@
       new Date().getFullYear();
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

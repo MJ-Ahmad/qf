@@ -14,7 +14,7 @@
 
   <title
     data-bn="হিফজ ব্যবস্থাপনা পোর্টাল — কোরআনের ফেরিওয়ালা"
-    data-en="Hifz Management Portal — QuranerFariwala"
+    data-en="Hifz Management Portal — QuranerFariwala" data-ar="بوابة إدارة الحفظ — QuranerFariwala"
   >
     হিফজ ব্যবস্থাপনা পোর্টাল — কোরআনের ফেরিওয়ালা
   </title>
@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -754,6 +754,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .module-card ul {
+  padding-right: 1.1rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -791,27 +822,27 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a href="/qf/public/education/">
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a
@@ -819,7 +850,7 @@
           href="/qf/public/portal/index.html"
           aria-current="page"
         >
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -832,19 +863,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="true"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -856,21 +891,21 @@
           <div
             class="hero-badge"
             data-bn="হিফজ শিক্ষা ব্যবস্থাপনা"
-            data-en="Hifz Education Management"
+            data-en="Hifz Education Management" data-ar="إدارة تعليم الحفظ"
           >
             হিফজ শিক্ষা ব্যবস্থাপনা
           </div>
 
           <h1
             data-bn="হিফজ ব্যবস্থাপনা পোর্টাল"
-            data-en="Hifz Management Portal"
+            data-en="Hifz Management Portal" data-ar="بوابة إدارة الحفظ"
           >
             হিফজ ব্যবস্থাপনা পোর্টাল
           </h1>
 
           <p
             data-bn="শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য একটি সমন্বিত, স্বচ্ছ ও দায়িত্বশীল হিফজ শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।"
-            data-en="An integrated, transparent, and responsible Hifz education management platform for students, teachers, madrasa directors, and central administration."
+            data-en="An integrated, transparent, and responsible Hifz education management platform for students, teachers, madrasa directors, and central administration." data-ar="منصة متكاملة وشفافة ومسؤولة لإدارة تعليم الحفظ للطلاب والمعلمين ومديري المدارس والإدارة المركزية."
           >
             শিক্ষার্থী, শিক্ষক, মাদ্রাসা পরিচালক ও কেন্দ্রীয় ব্যবস্থাপনার জন্য
             একটি সমন্বিত, স্বচ্ছ ও দায়িত্বশীল হিফজ শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।
@@ -883,7 +918,7 @@
             >
               <span
                 data-bn="পোর্টালে প্রবেশ করুন"
-                data-en="Enter Portal"
+                data-en="Enter Portal" data-ar="الدخول إلى البوابة"
               >
                 পোর্টালে প্রবেশ করুন
               </span>
@@ -895,7 +930,7 @@
             >
               <span
                 data-bn="সহায়তা নিন"
-                data-en="Get Support"
+                data-en="Get Support" data-ar="احصل على الدعم"
               >
                 সহায়তা নিন
               </span>
@@ -914,14 +949,14 @@
 
             <h2
               data-bn="শিখুন • অনুশীলন করুন • অগ্রসর হোন"
-              data-en="Learn • Practice • Progress"
+              data-en="Learn • Practice • Progress" data-ar="تعلّم • تطبيق • تقدّم"
             >
               শিখুন • অনুশীলন করুন • অগ্রসর হোন
             </h2>
 
             <p
               data-bn="হিফজ শিক্ষার প্রতিটি ধাপকে পরিকল্পিত ও পরিমাপযোগ্য করার লক্ষ্য।"
-              data-en="Our goal is to make every stage of Hifz education structured and measurable."
+              data-en="Our goal is to make every stage of Hifz education structured and measurable." data-ar="هدفنا أن تكون كل مرحلة من تعليم الحفظ منظمة وقابلة للقياس."
             >
               হিফজ শিক্ষার প্রতিটি ধাপকে পরিকল্পিত ও পরিমাপযোগ্য করার লক্ষ্য।
             </p>
@@ -935,14 +970,14 @@
         <div class="section-heading">
           <h2
             data-bn="কারা এই পোর্টাল ব্যবহার করবেন?"
-            data-en="Who Uses This Portal?"
+            data-en="Who Uses This Portal?" data-ar="من يستخدم هذه البوابة؟"
           >
             কারা এই পোর্টাল ব্যবহার করবেন?
           </h2>
 
           <p
             data-bn="প্রতিটি ব্যবহারকারীর জন্য আলাদা ভূমিকা ও প্রয়োজন অনুযায়ী ব্যবস্থাপনা সুবিধা রাখা হয়েছে।"
-            data-en="The portal provides role-based access and management features for each type of user."
+            data-en="The portal provides role-based access and management features for each type of user." data-ar="تتيح البوابة وصولاً وميزات إدارة حسب الدور لكل نوع من المستخدمين."
           >
             প্রতিটি ব্যবহারকারীর জন্য আলাদা ভূমিকা ও প্রয়োজন অনুযায়ী
             ব্যবস্থাপনা সুবিধা রাখা হয়েছে।
@@ -955,14 +990,14 @@
 
             <h3
               data-bn="শিক্ষার্থী"
-              data-en="Student"
+              data-en="Student" data-ar="الطالب"
             >
               শিক্ষার্থী
             </h3>
 
             <p
               data-bn="নিজের সাবাক, সবকি, মানজিল, উপস্থিতি ও অগ্রগতি দেখতে পারবে।"
-              data-en="Students can view their sabaq, sabqi, manzil, attendance, and progress."
+              data-en="Students can view their sabaq, sabqi, manzil, attendance, and progress." data-ar="يمكن للطلاب الاطلاع على السبق والسبقي والمنزل والحضور والتقدم."
             >
               নিজের সাবাক, সবকি, মানজিল, উপস্থিতি ও অগ্রগতি দেখতে পারবে।
             </p>
@@ -973,14 +1008,14 @@
 
             <h3
               data-bn="শিক্ষক"
-              data-en="Teacher"
+              data-en="Teacher" data-ar="المعلم"
             >
               শিক্ষক
             </h3>
 
             <p
               data-bn="দৈনিক পাঠ, শুনানি, ভুল, রিভিশন ও শিক্ষার্থীর মূল্যায়ন পরিচালনা করতে পারবেন।"
-              data-en="Teachers can manage daily lessons, recitation checks, mistakes, revision, and student assessment."
+              data-en="Teachers can manage daily lessons, recitation checks, mistakes, revision, and student assessment." data-ar="يمكن للمعلمين إدارة الدروس اليومية وفحوصات التلاوة والأخطاء والمراجعة وتقييم الطلاب."
             >
               দৈনিক পাঠ, শুনানি, ভুল, রিভিশন ও শিক্ষার্থীর মূল্যায়ন পরিচালনা করতে পারবেন।
             </p>
@@ -991,14 +1026,14 @@
 
             <h3
               data-bn="মাদ্রাসা পরিচালক"
-              data-en="Madrasa Director"
+              data-en="Madrasa Director" data-ar="مدير المدرسة"
             >
               মাদ্রাসা পরিচালক
             </h3>
 
             <p
               data-bn="মাদ্রাসা, শিক্ষক, শিক্ষার্থী, ব্যাচ ও সামগ্রিক অগ্রগতি পর্যবেক্ষণ করতে পারবেন।"
-              data-en="Directors can oversee madrasas, teachers, students, batches, and overall progress."
+              data-en="Directors can oversee madrasas, teachers, students, batches, and overall progress." data-ar="يمكن للمديرين متابعة المدارس والمعلمين والطلاب والدفعات والتقدم العام."
             >
               মাদ্রাসা, শিক্ষক, শিক্ষার্থী, ব্যাচ ও সামগ্রিক অগ্রগতি পর্যবেক্ষণ করতে পারবেন।
             </p>
@@ -1009,14 +1044,14 @@
 
             <h3
               data-bn="কেন্দ্রীয় ব্যবস্থাপনা"
-              data-en="Central Administration"
+              data-en="Central Administration" data-ar="الإدارة المركزية"
             >
               কেন্দ্রীয় ব্যবস্থাপনা
             </h3>
 
             <p
               data-bn="জেলা, মাদ্রাসা, ব্যবহারকারী, রিপোর্ট ও সামগ্রিক সিস্টেম পরিচালনা করতে পারবে।"
-              data-en="Central administrators can manage districts, madrasas, users, reports, and the overall system."
+              data-en="Central administrators can manage districts, madrasas, users, reports, and the overall system." data-ar="يمكن للمسؤولين المركزيين إدارة المناطق والمدارس والمستخدمين والتقارير والنظام بشكل عام."
             >
               জেলা, মাদ্রাসা, ব্যবহারকারী, রিপোর্ট ও সামগ্রিক সিস্টেম পরিচালনা করতে পারবে।
             </p>
@@ -1030,14 +1065,14 @@
         <div class="section-heading">
           <h2
             data-bn="প্রধান ব্যবস্থাপনা মডিউল"
-            data-en="Core Management Modules"
+            data-en="Core Management Modules" data-ar="وحدات الإدارة الأساسية"
           >
             প্রধান ব্যবস্থাপনা মডিউল
           </h2>
 
           <p
             data-bn="হিফজ শিক্ষার দৈনিক কার্যক্রম ও দীর্ঘমেয়াদি অগ্রগতি একটি কাঠামোর মধ্যে আনার জন্য এই মডিউলগুলো পরিকল্পিত।"
-            data-en="These modules are designed to organize daily activities and long-term progress within one structured system."
+            data-en="These modules are designed to organize daily activities and long-term progress within one structured system." data-ar="صُمم هذه الوحدات لتنظيم الأنشطة اليومية والتقدم طويل المدى ضمن نظام واحد منظم."
           >
             হিফজ শিক্ষার দৈনিক কার্যক্রম ও দীর্ঘমেয়াদি অগ্রগতি একটি কাঠামোর মধ্যে
             আনার জন্য এই মডিউলগুলো পরিকল্পিত।
@@ -1048,132 +1083,132 @@
           <article class="module-card">
             <h3
               data-bn="শিক্ষার্থী নিবন্ধন"
-              data-en="Student Registration"
+              data-en="Student Registration" data-ar="تسجيل الطلاب"
             >
               শিক্ষার্থী নিবন্ধন
             </h3>
 
             <p
               data-bn="শিক্ষার্থীর মৌলিক তথ্য, অভিভাবক, ভর্তি তারিখ ও শিক্ষাগত অবস্থার রেকর্ড।"
-              data-en="Records for student details, guardians, admission dates, and educational status."
+              data-en="Records for student details, guardians, admission dates, and educational status." data-ar="سجلات بيانات الطالب وأولياء الأمور وتواريخ القبول والحالة التعليمية."
             >
               শিক্ষার্থীর মৌলিক তথ্য, অভিভাবক, ভর্তি তারিখ ও শিক্ষাগত অবস্থার রেকর্ড।
             </p>
 
             <ul>
-              <li data-bn="প্রোফাইল" data-en="Profile">প্রোফাইল</li>
-              <li data-bn="অভিভাবক তথ্য" data-en="Guardian information">অভিভাবক তথ্য</li>
-              <li data-bn="ভর্তি ইতিহাস" data-en="Admission history">ভর্তি ইতিহাস</li>
+              <li data-bn="প্রোফাইল" data-en="Profile" data-ar="الملف الشخصي">প্রোফাইল</li>
+              <li data-bn="অভিভাবক তথ্য" data-en="Guardian information" data-ar="معلومات ولي الأمر">অভিভাবক তথ্য</li>
+              <li data-bn="ভর্তি ইতিহাস" data-en="Admission history" data-ar="سجل القبول">ভর্তি ইতিহাস</li>
             </ul>
           </article>
 
           <article class="module-card">
             <h3
               data-bn="দৈনিক হিফজ রেকর্ড"
-              data-en="Daily Hifz Record"
+              data-en="Daily Hifz Record" data-ar="سجل الحفظ اليومي"
             >
               দৈনিক হিফজ রেকর্ড
             </h3>
 
             <p
               data-bn="সাবাক, সবকি, মানজিল, শুনানি ও দৈনিক শিক্ষার ফলাফল সংরক্ষণ।"
-              data-en="Records for sabaq, sabqi, manzil, recitation checks, and daily learning outcomes."
+              data-en="Records for sabaq, sabqi, manzil, recitation checks, and daily learning outcomes." data-ar="سجلات السبق والسبقي والمنزل وفحوصات التلاوة ونتائج التعلم اليومية."
             >
               সাবাক, সবকি, মানজিল, শুনানি ও দৈনিক শিক্ষার ফলাফল সংরক্ষণ।
             </p>
 
             <ul>
-              <li data-bn="আজকের পাঠ" data-en="Today's lesson">আজকের পাঠ</li>
-              <li data-bn="ভুলের তালিকা" data-en="Mistake list">ভুলের তালিকা</li>
-              <li data-bn="শিক্ষকের মন্তব্য" data-en="Teacher notes">শিক্ষকের মন্তব্য</li>
+              <li data-bn="আজকের পাঠ" data-en="Today's lesson" data-ar="درس اليوم">আজকের পাঠ</li>
+              <li data-bn="ভুলের তালিকা" data-en="Mistake list" data-ar="قائمة الأخطاء">ভুলের তালিকা</li>
+              <li data-bn="শিক্ষকের মন্তব্য" data-en="Teacher notes" data-ar="ملاحظات المعلم">শিক্ষকের মন্তব্য</li>
             </ul>
           </article>
 
           <article class="module-card">
             <h3
               data-bn="অগ্রগতি ও রিপোর্ট"
-              data-en="Progress and Reports"
+              data-en="Progress and Reports" data-ar="التقدم والتقارير"
             >
               অগ্রগতি ও রিপোর্ট
             </h3>
 
             <p
               data-bn="শিক্ষার্থী, ব্যাচ, মাদ্রাসা ও জেলা পর্যায়ে অগ্রগতি পর্যালোচনার সুবিধা।"
-              data-en="Progress review across students, batches, madrasas, and districts."
+              data-en="Progress review across students, batches, madrasas, and districts." data-ar="مراجعة التقدم عبر الطلاب والدفعات والمدارس والمناطق."
             >
               শিক্ষার্থী, ব্যাচ, মাদ্রাসা ও জেলা পর্যায়ে অগ্রগতি পর্যালোচনার সুবিধা।
             </p>
 
             <ul>
-              <li data-bn="সাপ্তাহিক রিপোর্ট" data-en="Weekly reports">সাপ্তাহিক রিপোর্ট</li>
-              <li data-bn="মাসিক রিপোর্ট" data-en="Monthly reports">মাসিক রিপোর্ট</li>
-              <li data-bn="অগ্রগতি তুলনা" data-en="Progress comparison">অগ্রগতি তুলনা</li>
+              <li data-bn="সাপ্তাহিক রিপোর্ট" data-en="Weekly reports" data-ar="التقارير الأسبوعية">সাপ্তাহিক রিপোর্ট</li>
+              <li data-bn="মাসিক রিপোর্ট" data-en="Monthly reports" data-ar="التقارير الشهرية">মাসিক রিপোর্ট</li>
+              <li data-bn="অগ্রগতি তুলনা" data-en="Progress comparison" data-ar="مقارنة التقدم">অগ্রগতি তুলনা</li>
             </ul>
           </article>
 
           <article class="module-card">
             <h3
               data-bn="উপস্থিতি ব্যবস্থাপনা"
-              data-en="Attendance Management"
+              data-en="Attendance Management" data-ar="إدارة الحضور"
             >
               উপস্থিতি ব্যবস্থাপনা
             </h3>
 
             <p
               data-bn="দৈনিক উপস্থিতি, অনুপস্থিতি, ছুটি ও নিয়মিততার রেকর্ড রাখা।"
-              data-en="Records for daily attendance, absence, leave, and regularity."
+              data-en="Records for daily attendance, absence, leave, and regularity." data-ar="سجلات الحضور اليومي والغياب والإجازات والانتظام."
             >
               দৈনিক উপস্থিতি, অনুপস্থিতি, ছুটি ও নিয়মিততার রেকর্ড রাখা।
             </p>
 
             <ul>
-              <li data-bn="দৈনিক উপস্থিতি" data-en="Daily attendance">দৈনিক উপস্থিতি</li>
-              <li data-bn="ছুটির রেকর্ড" data-en="Leave records">ছুটির রেকর্ড</li>
-              <li data-bn="নিয়মিততা বিশ্লেষণ" data-en="Regularity analysis">নিয়মিততা বিশ্লেষণ</li>
+              <li data-bn="দৈনিক উপস্থিতি" data-en="Daily attendance" data-ar="الحضور اليومي">দৈনিক উপস্থিতি</li>
+              <li data-bn="ছুটির রেকর্ড" data-en="Leave records" data-ar="تسجيل الإجازات">ছুটির রেকর্ড</li>
+              <li data-bn="নিয়মিততা বিশ্লেষণ" data-en="Regularity analysis" data-ar="تحليل الانتظام">নিয়মিততা বিশ্লেষণ</li>
             </ul>
           </article>
 
           <article class="module-card">
             <h3
               data-bn="পরীক্ষা ও মূল্যায়ন"
-              data-en="Exams and Assessment"
+              data-en="Exams and Assessment" data-ar="الامتحانات والتقييم"
             >
               পরীক্ষা ও মূল্যায়ন
             </h3>
 
             <p
               data-bn="মৌখিক পরীক্ষা, তাজবিদ, স্মরণশক্তি ও সামগ্রিক মূল্যায়নের রেকর্ড।"
-              data-en="Records for oral exams, tajweed, retention, and overall assessment."
+              data-en="Records for oral exams, tajweed, retention, and overall assessment." data-ar="سجلات الامتحانات الشفهية والتجويد والاستظهار والتقييم العام."
             >
               মৌখিক পরীক্ষা, তাজবিদ, স্মরণশক্তি ও সামগ্রিক মূল্যায়নের রেকর্ড।
             </p>
 
             <ul>
-              <li data-bn="পরীক্ষার ফলাফল" data-en="Exam results">পরীক্ষার ফলাফল</li>
-              <li data-bn="শিক্ষকের মূল্যায়ন" data-en="Teacher assessment">শিক্ষকের মূল্যায়ন</li>
-              <li data-bn="উন্নয়ন পরিকল্পনা" data-en="Improvement plan">উন্নয়ন পরিকল্পনা</li>
+              <li data-bn="পরীক্ষার ফলাফল" data-en="Exam results" data-ar="نتائج الامتحانات">পরীক্ষার ফলাফল</li>
+              <li data-bn="শিক্ষকের মূল্যায়ন" data-en="Teacher assessment" data-ar="تقييم المعلمين">শিক্ষকের মূল্যায়ন</li>
+              <li data-bn="উন্নয়ন পরিকল্পনা" data-en="Improvement plan" data-ar="خطة التحسين">উন্নয়ন পরিকল্পনা</li>
             </ul>
           </article>
 
           <article class="module-card">
             <h3
               data-bn="নোটিশ ও যোগাযোগ"
-              data-en="Notices and Communication"
+              data-en="Notices and Communication" data-ar="الإشعارات والتواصل"
             >
               নোটিশ ও যোগাযোগ
             </h3>
 
             <p
               data-bn="মাদ্রাসা, শিক্ষক, শিক্ষার্থী ও অভিভাবকদের জন্য গুরুত্বপূর্ণ নোটিশ ও বার্তা।"
-              data-en="Important notices and messages for madrasas, teachers, students, and guardians."
+              data-en="Important notices and messages for madrasas, teachers, students, and guardians." data-ar="إشعارات ورسائل مهمة للمدارس والمعلمين والطلاب وأولياء الأمور."
             >
               মাদ্রাসা, শিক্ষক, শিক্ষার্থী ও অভিভাবকদের জন্য গুরুত্বপূর্ণ নোটিশ ও বার্তা।
             </p>
 
             <ul>
-              <li data-bn="সাধারণ নোটিশ" data-en="General notices">সাধারণ নোটিশ</li>
-              <li data-bn="শ্রেণি বার্তা" data-en="Class messages">শ্রেণি বার্তা</li>
-              <li data-bn="জরুরি ঘোষণা" data-en="Urgent announcements">জরুরি ঘোষণা</li>
+              <li data-bn="সাধারণ নোটিশ" data-en="General notices" data-ar="إشعارات عامة">সাধারণ নোটিশ</li>
+              <li data-bn="শ্রেণি বার্তা" data-en="Class messages" data-ar="رسائل الفصل">শ্রেণি বার্তা</li>
+              <li data-bn="জরুরি ঘোষণা" data-en="Urgent announcements" data-ar="الإعلانات العاجلة">জরুরি ঘোষণা</li>
             </ul>
           </article>
         </div>
@@ -1185,14 +1220,14 @@
         <div class="section-heading">
           <h2
             data-bn="ব্যবহার শুরু করার ধাপ"
-            data-en="How to Get Started"
+            data-en="How to Get Started" data-ar="كيف تبدأ"
           >
             ব্যবহার শুরু করার ধাপ
           </h2>
 
           <p
             data-bn="পোর্টাল ব্যবহারের প্রাথমিক ধাপগুলো সহজ ও কাঠামোবদ্ধ।"
-            data-en="The initial steps for using the portal are simple and structured."
+            data-en="The initial steps for using the portal are simple and structured." data-ar="خطوات البدء في استخدام البوابة بسيطة ومنظمة."
           >
             পোর্টাল ব্যবহারের প্রাথমিক ধাপগুলো সহজ ও কাঠামোবদ্ধ।
           </p>
@@ -1202,14 +1237,14 @@
           <article class="step">
             <h3
               data-bn="অ্যাকাউন্ট গ্রহণ"
-              data-en="Get an Account"
+              data-en="Get an Account" data-ar="أنشئ حساباً"
             >
               অ্যাকাউন্ট গ্রহণ
             </h3>
 
             <p
               data-bn="প্রতিষ্ঠানের দায়িত্বশীল ব্যক্তির মাধ্যমে ব্যবহারকারী অ্যাকাউন্ট তৈরি করা হবে।"
-              data-en="A user account will be created through the responsible person of the institution."
+              data-en="A user account will be created through the responsible person of the institution." data-ar="سيتم إنشاء حساب للمستخدم من خلال المسؤول عن المؤسسة."
             >
               প্রতিষ্ঠানের দায়িত্বশীল ব্যক্তির মাধ্যমে ব্যবহারকারী অ্যাকাউন্ট তৈরি করা হবে।
             </p>
@@ -1218,14 +1253,14 @@
           <article class="step">
             <h3
               data-bn="ভূমিকা নির্বাচন"
-              data-en="Choose a Role"
+              data-en="Choose a Role" data-ar="اختر دورك"
             >
               ভূমিকা নির্বাচন
             </h3>
 
             <p
               data-bn="শিক্ষার্থী, শিক্ষক, পরিচালক বা কেন্দ্রীয় প্রশাসনের উপযুক্ত ভূমিকা নির্ধারণ করা হবে।"
-              data-en="The appropriate role will be assigned: student, teacher, director, or central administrator."
+              data-en="The appropriate role will be assigned: student, teacher, director, or central administrator." data-ar="سيُمنح الدور المناسب: طالب أو معلم أو مدير أو مسؤول مركزي."
             >
               শিক্ষার্থী, শিক্ষক, পরিচালক বা কেন্দ্রীয় প্রশাসনের উপযুক্ত ভূমিকা নির্ধারণ করা হবে।
             </p>
@@ -1234,14 +1269,14 @@
           <article class="step">
             <h3
               data-bn="তথ্য সংযুক্তি"
-              data-en="Add Records"
+              data-en="Add Records" data-ar="إضافة السجلات"
             >
               তথ্য সংযুক্তি
             </h3>
 
             <p
               data-bn="শিক্ষার্থী, শিক্ষক, মাদ্রাসা ও দৈনিক পাঠের তথ্য সংযুক্ত করা হবে।"
-              data-en="Student, teacher, madrasa, and daily lesson records will be added."
+              data-en="Student, teacher, madrasa, and daily lesson records will be added." data-ar="ستُضاف سجلات الطلاب والمعلمين والمدارس والدروس اليومية."
             >
               শিক্ষার্থী, শিক্ষক, মাদ্রাসা ও দৈনিক পাঠের তথ্য সংযুক্ত করা হবে।
             </p>
@@ -1250,14 +1285,14 @@
           <article class="step">
             <h3
               data-bn="পর্যবেক্ষণ"
-              data-en="Monitor Progress"
+              data-en="Monitor Progress" data-ar="متابعة التقدم"
             >
               পর্যবেক্ষণ
             </h3>
 
             <p
               data-bn="রিপোর্ট, মন্তব্য ও অগ্রগতির তথ্য নিয়মিত পর্যবেক্ষণ করা হবে।"
-              data-en="Reports, notes, and progress information will be reviewed regularly."
+              data-en="Reports, notes, and progress information will be reviewed regularly." data-ar="ستُراجع التقارير والملاحظات ومعلومات التقدم بانتظام."
             >
               রিপোর্ট, মন্তব্য ও অগ্রগতির তথ্য নিয়মিত পর্যবেক্ষণ করা হবে।
             </p>
@@ -1267,14 +1302,14 @@
         <div class="notice">
           <h2
             data-bn="পোর্টালে প্রবেশের জন্য প্রস্তুত?"
-            data-en="Ready to enter the portal?"
+            data-en="Ready to enter the portal?" data-ar="هل أنت مستعد للدخول إلى البوابة؟"
           >
             পোর্টালে প্রবেশের জন্য প্রস্তুত?
           </h2>
 
           <p
             data-bn="আপনার অনুমোদিত অ্যাকাউন্ট থাকলে লগইন পেজে প্রবেশ করুন। অ্যাকাউন্ট বা সহায়তা প্রয়োজন হলে আমাদের সঙ্গে যোগাযোগ করুন।"
-            data-en="If you have an approved account, continue to the login page. Contact us if you need an account or support."
+            data-en="If you have an approved account, continue to the login page. Contact us if you need an account or support." data-ar="إذا كان لديك حساب معتمد، فتابع إلى صفحة تسجيل الدخول. تواصل معنا إذا احتجت إلى حساب أو دعم."
           >
             আপনার অনুমোদিত অ্যাকাউন্ট থাকলে লগইন পেজে প্রবেশ করুন। অ্যাকাউন্ট বা
             সহায়তা প্রয়োজন হলে আমাদের সঙ্গে যোগাযোগ করুন।
@@ -1286,7 +1321,7 @@
           >
             <span
               data-bn="লগইন পেজে যান"
-              data-en="Go to Login"
+              data-en="Go to Login" data-ar="الذهاب إلى تسجيل الدخول"
             >
               লগইন পেজে যান
             </span>
@@ -1307,78 +1342,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1387,23 +1422,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1411,26 +1446,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1439,146 +1478,24 @@
 
   <script>
     (function () {
-      const defaultLanguage = 'bn';
-
       const menuToggle = document.querySelector('.menu-toggle');
       const mainNav = document.querySelector('.main-nav');
 
-      function getStoredLanguage() {
-        try {
-          const storedLanguage = localStorage.getItem('qf-lang');
-
-          return storedLanguage === 'en' ||
-            storedLanguage === 'bn'
-            ? storedLanguage
-            : defaultLanguage;
-        } catch (error) {
-          return defaultLanguage;
-        }
-      }
-
-      function saveLanguage(language) {
-        try {
-          localStorage.setItem('qf-lang', language);
-        } catch (error) {
-          console.warn(
-            'Language preference could not be saved.',
-            error
-          );
-        }
-      }
-
-      function applyLanguage(language) {
-        const selectedLanguage =
-          language === 'en' ? 'en' : 'bn';
-
-        document
-          .querySelectorAll('[data-bn][data-en]')
-          .forEach(function (element) {
-            const translatedText =
-              selectedLanguage === 'en'
-                ? element.getAttribute('data-en')
-                : element.getAttribute('data-bn');
-
-            if (translatedText !== null) {
-              element.textContent = translatedText;
-            }
-          });
-
-        document
-          .querySelectorAll(
-            '[data-bn-placeholder][data-en-placeholder]'
-          )
-          .forEach(function (element) {
-            const placeholder =
-              selectedLanguage === 'en'
-                ? element.getAttribute('data-en-placeholder')
-                : element.getAttribute('data-bn-placeholder');
-
-            if (placeholder !== null) {
-              element.setAttribute(
-                'placeholder',
-                placeholder
-              );
-            }
-          });
-
-        document.documentElement.lang =
-          selectedLanguage;
-
-        document.documentElement.dataset.lang =
-          selectedLanguage;
-
-        document
-          .querySelectorAll('[data-lang-button]')
-          .forEach(function (button) {
-            const isActive =
-              button.getAttribute('data-lang-button') ===
-              selectedLanguage;
-
-            button.setAttribute(
-              'aria-pressed',
-              String(isActive)
-            );
-          });
-
-        saveLanguage(selectedLanguage);
-      }
-
       if (menuToggle && mainNav) {
-        menuToggle.addEventListener(
-          'click',
-          function () {
-            const isOpen =
-              mainNav.classList.toggle('open');
-
-            menuToggle.setAttribute(
-              'aria-expanded',
-              String(isOpen)
-            );
-          }
-        );
+        menuToggle.addEventListener('click', function () {
+          const isOpen = mainNav.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
       }
 
-      document.addEventListener(
-        'DOMContentLoaded',
-        function () {
-          applyLanguage(getStoredLanguage());
-
-          document
-            .querySelectorAll('[data-lang-button]')
-            .forEach(function (button) {
-              button.addEventListener(
-                'click',
-                function () {
-                  applyLanguage(
-                    button.getAttribute(
-                      'data-lang-button'
-                    )
-                  );
-                }
-              );
-            });
-
-          const footerYear =
-            document.getElementById('footerYear');
-
-          if (footerYear) {
-            footerYear.textContent =
-              new Date().getFullYear();
-          }
-
-          if (
-            window.matchMedia &&
-            window.matchMedia
-          ) {
-            document.documentElement.style.scrollBehavior =
-              'auto';
-          }
-        }
-      );
+      document.addEventListener('DOMContentLoaded', function () {
+        const footerYear = document.getElementById('footerYear');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+      });
     })();
   </script>
+  <script src="/qf/js/site-meta.js"></script>
+  <script src="/qf/js/i18n.js"></script>
 </body>
 </html>
 

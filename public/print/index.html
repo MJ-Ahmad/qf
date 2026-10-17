@@ -25,7 +25,7 @@
 
   <title
     data-bn="মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা"
-    data-en="Printing Process — QuranerFariwala"
+    data-en="Printing Process — QuranerFariwala" data-ar="عملية الطباعة — QuranerFariwala"
   >
     মুদ্রণ প্রক্রিয়া — কোরআনের ফেরিওয়ালা
   </title>
@@ -48,7 +48,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -658,6 +658,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .process-content ul {
+  padding-right: 1.25rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -688,14 +719,14 @@
         <a href="/qf/home/index.html">
           <span
             data-bn="হোম"
-            data-en="Home"
+            data-en="Home" data-ar="الرئيسية"
           >হোম</span>
         </a>
 
         <a href="/qf/public/education/">
           <span
             data-bn="গবেষণা"
-            data-en="Research"
+            data-en="Research" data-ar="البحث"
           >গবেষণা</span>
         </a>
 
@@ -706,35 +737,35 @@
         >
           <span
             data-bn="মুদ্রণ"
-            data-en="Printing"
+            data-en="Printing" data-ar="الطباعة"
           >মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
           <span
             data-bn="বিতরণ"
-            data-en="Distribution"
+            data-en="Distribution" data-ar="التوزيع"
           >বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
           <span
             data-bn="জিজ্ঞাসা"
-            data-en="FAQ"
+            data-en="FAQ" data-ar="الأسئلة الشائعة"
           >জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
           <span
             data-bn="যোগাযোগ"
-            data-en="Contact"
+            data-en="Contact" data-ar="التواصل"
           >যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
           <span
             data-bn="হিফজ পোর্টাল"
-            data-en="Hifz Portal"
+            data-en="Hifz Portal" data-ar="بوابة الحفظ"
           >হিফজ পোর্টাল</span>
         </a>
       </nav>
@@ -746,19 +777,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -776,21 +811,21 @@
       <p
         class="eyebrow"
         data-bn="সংরক্ষণ · প্রকাশনা · বিতরণ"
-        data-en="Preserve · Publish · Distribute"
+        data-en="Preserve · Publish · Distribute" data-ar="حفظ · نشر · توزيع"
       >
         সংরক্ষণ · প্রকাশনা · বিতরণ
       </p>
 
       <h1
         data-bn="আমাদের মুদ্রণ প্রক্রিয়া"
-        data-en="Our Printing Process"
+        data-en="Our Printing Process" data-ar="عملية الطباعة لدينا"
       >
         আমাদের মুদ্রণ প্রক্রিয়া
       </h1>
 
       <p
         data-bn="নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান, পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।"
-        data-en="From careful typesetting to final delivery, every stage is designed around quality, readability, durability, and respect."
+        data-en="From careful typesetting to final delivery, every stage is designed around quality, readability, durability, and respect." data-ar="من التنضيد الدقيق حتى التسليم النهائي، صُممت كل مرحلة وفق معايير الجودة وسهولة القراءة والمتانة والاحترام."
       >
         নির্ভুল টাইপসেটিং থেকে চূড়ান্ত সরবরাহ পর্যন্ত প্রতিটি ধাপে মান,
         পাঠযোগ্যতা, স্থায়িত্ব ও মর্যাদাকে গুরুত্ব দেওয়া হয়।
@@ -802,14 +837,14 @@
         <div class="section-heading">
           <h2
             data-bn="প্রি-প্রেস ও নকশা"
-            data-en="Pre-Press and Design"
+            data-en="Pre-Press and Design" data-ar="ما قبل الطباعة والتصميم"
           >
             প্রি-প্রেস ও নকশা
           </h2>
 
           <p
             data-bn="মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।"
-            data-en="Before printing, page imposition, Arabic typography, pagination, and memorization-friendly layouts are carefully reviewed."
+            data-en="Before printing, page imposition, Arabic typography, pagination, and memorization-friendly layouts are carefully reviewed." data-ar="قبل الطباعة تُراجع بعناية ترتيب الصفحات والطباعة العربية وترقيم الصفحات والتخطيطات المناسبة للحفظ."
           >
             মুদ্রণের আগে পৃষ্ঠা বিন্যাস, আরবি টাইপোগ্রাফি, পৃষ্ঠা নম্বর এবং
             হিফজ শিক্ষার্থীদের উপযোগী layout যাচাই করা হয়।
@@ -820,14 +855,14 @@
           <div class="process-content">
             <h2
               data-bn="প্রি-প্রেস ও ডিজাইন"
-              data-en="Pre-Press and Design"
+              data-en="Pre-Press and Design" data-ar="ما قبل الطباعة والتصميم"
             >
               প্রি-প্রেস ও ডিজাইন
             </h2>
 
             <p
               data-bn="প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা যাচাই করে প্রস্তুত করা হয়।"
-              data-en="Each page is prepared after reviewing layout, text continuity, and print readiness."
+              data-en="Each page is prepared after reviewing layout, text continuity, and print readiness." data-ar="يُعد كل صفحة بعد مراجعة التخطيط واستمرارية النص وجاهزية الطباعة."
             >
               প্রতিটি পৃষ্ঠার বিন্যাস, পাঠের ধারাবাহিকতা ও মুদ্রণযোগ্যতা
               যাচাই করে প্রস্তুত করা হয়।
@@ -836,21 +871,21 @@
             <ul>
               <li
                 data-bn="আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস"
-                data-en="Arabic typography and page imposition"
+                data-en="Arabic typography and page imposition" data-ar="الطباعة العربية وترتيب الصفحات"
               >
                 আরবি টাইপোগ্রাফি ও পৃষ্ঠা বিন্যাস
               </li>
 
               <li
                 data-bn="মাল্টি-স্টেজ প্রুফরিডিং"
-                data-en="Multi-stage proofreading"
+                data-en="Multi-stage proofreading" data-ar="التدقيق اللغوي متعدد المراحل"
               >
                 মাল্টি-স্টেজ প্রুফরিডিং
               </li>
 
               <li
                 data-bn="হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস"
-                data-en="Memorization-friendly page layout"
+                data-en="Memorization-friendly page layout" data-ar="تخطيط صفحات مناسب للحفظ"
               >
                 হিফজ শিক্ষার্থীদের উপযোগী পৃষ্ঠা বিন্যাস
               </li>
@@ -872,14 +907,14 @@
           <div class="process-content">
             <h2
               data-bn="অফসেট মুদ্রণ"
-              data-en="Offset Printing"
+              data-en="Offset Printing" data-ar="الطباعة الأوفست"
             >
               অফসেট মুদ্রণ
             </h2>
 
             <p
               data-bn="পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।"
-              data-en="Clear text, consistent ink density, and durable paper are used to produce readable and lasting copies."
+              data-en="Clear text, consistent ink density, and durable paper are used to produce readable and lasting copies." data-ar="يُستخدم نص واضح وكثافة حبر متناسقة وورق متين لإنتاج نسخ سهلة القراءة ودائمة."
             >
               পরিষ্কার অক্ষর, সমান ink density এবং দীর্ঘস্থায়ী কাগজের মাধ্যমে
               পাঠযোগ্য ও টেকসই কপি তৈরি করা হয়।
@@ -888,21 +923,21 @@
             <ul>
               <li
                 data-bn="উন্নত অফসেট মুদ্রণ প্রযুক্তি"
-                data-en="Modern offset printing technology"
+                data-en="Modern offset printing technology" data-ar="تقنية الطباعة الأوفست الحديثة"
               >
                 উন্নত অফসেট মুদ্রণ প্রযুক্তি
               </li>
 
               <li
                 data-bn="উচ্চমানের archival-grade কাগজ"
-                data-en="High-quality archival-grade paper"
+                data-en="High-quality archival-grade paper" data-ar="ورق عالي الجودة بمستوى الأرشفة"
               >
                 উচ্চমানের archival-grade কাগজ
               </li>
 
               <li
                 data-bn="সমান ও পরিষ্কার ink reproduction"
-                data-en="Consistent and clear ink reproduction"
+                data-en="Consistent and clear ink reproduction" data-ar="إعادة إنتاج حبر متناسقة وواضحة"
               >
                 সমান ও পরিষ্কার ink reproduction
               </li>
@@ -924,14 +959,14 @@
           <div class="process-content">
             <h2
               data-bn="স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস"
-              data-en="Signature Folding and Gathering"
+              data-en="Signature Folding and Gathering" data-ar="طي الكراريس وجمعها"
             >
               স্বাক্ষর ভাঁজ ও ক্রম বিন্যাস
             </h2>
 
             <p
               data-bn="মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে পৃষ্ঠা বিন্যাস সঠিক থাকে।"
-              data-en="Printed sheets are folded and gathered in sequence to preserve correct pagination."
+              data-en="Printed sheets are folded and gathered in sequence to preserve correct pagination." data-ar="تُطوى الأوراق المطبوعة وتُجمع بالتسلسل للحفاظ على ترقيم الصفحات الصحيح."
             >
               মুদ্রিত sheet নির্দিষ্ট ক্রমে ভাঁজ করে একত্র করা হয়, যাতে
               পৃষ্ঠা বিন্যাস সঠিক থাকে।
@@ -940,21 +975,21 @@
             <ul>
               <li
                 data-bn="পৃষ্ঠা ক্রম যাচাই"
-                data-en="Page-order verification"
+                data-en="Page-order verification" data-ar="التحقق من ترتيب الصفحات"
               >
                 পৃষ্ঠা ক্রম যাচাই
               </li>
 
               <li
                 data-bn="ভাঁজের সঠিকতা পরীক্ষা"
-                data-en="Folding accuracy checks"
+                data-en="Folding accuracy checks" data-ar="فحوصات دقة الطي"
               >
                 ভাঁজের সঠিকতা পরীক্ষা
               </li>
 
               <li
                 data-bn="বাঁধাইয়ের আগে পুনরায় পরিদর্শন"
-                data-en="Final review before binding"
+                data-en="Final review before binding" data-ar="المراجعة النهائية قبل التجليد"
               >
                 বাঁধাইয়ের আগে পুনরায় পরিদর্শন
               </li>
@@ -976,14 +1011,14 @@
           <div class="process-content">
             <h2
               data-bn="মান নিয়ন্ত্রণ"
-              data-en="Quality Control"
+              data-en="Quality Control" data-ar="مراقبة الجودة"
             >
               মান নিয়ন্ত্রণ
             </h2>
 
             <p
               data-bn="প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত finish পরীক্ষা করা হয়।"
-              data-en="Every copy is checked for print clarity, page order, binding integrity, and final finish."
+              data-en="Every copy is checked for print clarity, page order, binding integrity, and final finish." data-ar="تُفحص كل نسخة من حيث وضوح الطباعة وترتيب الصفحات وسلامة التجليد والتشطيب النهائي."
             >
               প্রতিটি কপির মুদ্রণ স্বচ্ছতা, পৃষ্ঠা বিন্যাস, বাঁধাই ও চূড়ান্ত
               finish পরীক্ষা করা হয়।
@@ -992,21 +1027,21 @@
             <ul>
               <li
                 data-bn="মুদ্রণ স্বচ্ছতা যাচাই"
-                data-en="Print clarity verification"
+                data-en="Print clarity verification" data-ar="التحقق من وضوح الطباعة"
               >
                 মুদ্রণ স্বচ্ছতা যাচাই
               </li>
 
               <li
                 data-bn="পৃষ্ঠা alignment পরীক্ষা"
-                data-en="Page alignment checks"
+                data-en="Page alignment checks" data-ar="فحوصات محاذاة الصفحات"
               >
                 পৃষ্ঠা alignment পরীক্ষা
               </li>
 
               <li
                 data-bn="বাঁধাইয়ের স্থায়িত্ব পরীক্ষা"
-                data-en="Binding integrity testing"
+                data-en="Binding integrity testing" data-ar="اختبار سلامة التجليد"
               >
                 বাঁধাইয়ের স্থায়িত্ব পরীক্ষা
               </li>
@@ -1028,14 +1063,14 @@
           <div class="process-content">
             <h2
               data-bn="মলাট নকশা ও মুদ্রণ"
-              data-en="Cover Design and Printing"
+              data-en="Cover Design and Printing" data-ar="تصميم الأغلفة وطباعتها"
             >
               মলাট নকশা ও মুদ্রণ
             </h2>
 
             <p
               data-bn="ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত করা হয়।"
-              data-en="Covers are prepared by combining traditional ornamentation with modern durability standards."
+              data-en="Covers are prepared by combining traditional ornamentation with modern durability standards." data-ar="تُعد الأغلفة بالجمع بين الزخرفة التقليدية ومعايير المتانة الحديثة."
             >
               ঐতিহ্যবাহী অলংকরণ ও আধুনিক স্থায়িত্বের সমন্বয়ে মলাট প্রস্তুত
               করা হয়।
@@ -1057,14 +1092,14 @@
           <div class="process-content">
             <h2
               data-bn="বাঁধাই ও casing"
-              data-en="Casing In and Binding"
+              data-en="Casing In and Binding" data-ar="تغليف الأغلفة والتجليد"
             >
               বাঁধাই ও casing
             </h2>
 
             <p
               data-bn="ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়, যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।"
-              data-en="Folded signatures are sewn or glued and then placed into printed covers for long-term use."
+              data-en="Folded signatures are sewn or glued and then placed into printed covers for long-term use." data-ar="تُخاط الكراريس المطوية أو تُلصق ثم تُوضع في أغلفة مطبوعة للاستخدام طويل الأمد."
             >
               ভাঁজ করা sheet সেলাই বা glue করে মুদ্রিত মলাটে স্থাপন করা হয়,
               যাতে কপি দীর্ঘদিন ব্যবহারযোগ্য থাকে।
@@ -1073,21 +1108,21 @@
             <ul>
               <li
                 data-bn="মজবুত বাঁধাই পদ্ধতি"
-                data-en="Durable binding methods"
+                data-en="Durable binding methods" data-ar="طرق تجليد متينة"
               >
                 মজবুত বাঁধাই পদ্ধতি
               </li>
 
               <li
                 data-bn="পৃষ্ঠা ক্রম সংরক্ষণ"
-                data-en="Preservation of page order"
+                data-en="Preservation of page order" data-ar="الحفاظ على ترتيب الصفحات"
               >
                 পৃষ্ঠা ক্রম সংরক্ষণ
               </li>
 
               <li
                 data-bn="সহজে খোলার উপযোগী binding"
-                data-en="Easy-opening binding"
+                data-en="Easy-opening binding" data-ar="تجليد سهل الفتح"
               >
                 সহজে খোলার উপযোগী binding
               </li>
@@ -1109,14 +1144,14 @@
           <div class="process-content">
             <h2
               data-bn="শুকানো ও চূড়ান্ত পরিদর্শন"
-              data-en="Drying and Final Inspection"
+              data-en="Drying and Final Inspection" data-ar="التجفيف والفحص النهائي"
             >
               শুকানো ও চূড়ান্ত পরিদর্শন
             </h2>
 
             <p
               data-bn="আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি চূড়ান্তভাবে পরিদর্শন করা হয়।"
-              data-en="After adhesives and binding have stabilized, every copy receives a final inspection."
+              data-en="After adhesives and binding have stabilized, every copy receives a final inspection." data-ar="بعد ثبات المواد اللاصقة والتجليد، تخضع كل نسخة لفحص نهائي."
             >
               আঠা ও binding সম্পূর্ণ স্থিতিশীল হওয়ার পর প্রতিটি কপি
               চূড়ান্তভাবে পরিদর্শন করা হয়।
@@ -1138,14 +1173,14 @@
           <div class="process-content">
             <h2
               data-bn="প্যাকেজিং ও সংরক্ষণ"
-              data-en="Packaging and Storage"
+              data-en="Packaging and Storage" data-ar="التغليف والتخزين"
             >
               প্যাকেজিং ও সংরক্ষণ
             </h2>
 
             <p
               data-bn="পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয় এবং যথাযথভাবে সংরক্ষণ করা হয়।"
-              data-en="Each copy is carefully packaged for safe transport and stored appropriately before distribution."
+              data-en="Each copy is carefully packaged for safe transport and stored appropriately before distribution." data-ar="تُعبأ كل نسخة بعناية لضمان النقل الآمن، وتُخزَّن بشكل مناسب قبل التوزيع."
             >
               পরিবহনের সময় সুরক্ষার জন্য প্রতিটি কপি যত্নসহকারে প্যাক করা হয়
               এবং যথাযথভাবে সংরক্ষণ করা হয়।
@@ -1154,21 +1189,21 @@
             <ul>
               <li
                 data-bn="সুরক্ষামূলক প্যাকেজিং"
-                data-en="Protective packaging"
+                data-en="Protective packaging" data-ar="تغليف واقٍ"
               >
                 সুরক্ষামূলক প্যাকেজিং
               </li>
 
               <li
                 data-bn="ব্যাচভিত্তিক সংরক্ষণ"
-                data-en="Batch-based storage"
+                data-en="Batch-based storage" data-ar="التخزين حسب الدفعات"
               >
                 ব্যাচভিত্তিক সংরক্ষণ
               </li>
 
               <li
                 data-bn="সরবরাহের আগে inventory যাচাই"
-                data-en="Inventory verification before delivery"
+                data-en="Inventory verification before delivery" data-ar="التحقق من المخزون قبل التسليم"
               >
                 সরবরাহের আগে inventory যাচাই
               </li>
@@ -1193,14 +1228,14 @@
         <div class="section-heading">
           <h2
             data-bn="আমাদের মানের অগ্রাধিকার"
-            data-en="Our Quality Priorities"
+            data-en="Our Quality Priorities" data-ar="أولويات الجودة لدينا"
           >
             আমাদের মানের অগ্রাধিকার
           </h2>
 
           <p
             data-bn="প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার চেষ্টা করা হয়।"
-            data-en="At every stage, we work to maintain accuracy, readability, and long-term durability."
+            data-en="At every stage, we work to maintain accuracy, readability, and long-term durability." data-ar="في كل مرحلة نعمل على الحفاظ على الدقة وسهولة القراءة والمتانة طويلة الأمد."
           >
             প্রতিটি ধাপে নির্ভুলতা, পাঠযোগ্যতা ও দীর্ঘস্থায়িত্ব নিশ্চিত করার
             চেষ্টা করা হয়।
@@ -1211,14 +1246,14 @@
           <article class="standard-card">
             <strong
               data-bn="নির্ভুলতা"
-              data-en="Accuracy"
+              data-en="Accuracy" data-ar="الدقة"
             >
               নির্ভুলতা
             </strong>
 
             <p
               data-bn="পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।"
-              data-en="Page order, text continuity, and layout verification."
+              data-en="Page order, text continuity, and layout verification." data-ar="التحقق من ترتيب الصفحات واستمرارية النص والتخطيط."
             >
               পৃষ্ঠা ক্রম, পাঠের ধারাবাহিকতা ও layout যাচাই।
             </p>
@@ -1227,14 +1262,14 @@
           <article class="standard-card">
             <strong
               data-bn="পাঠযোগ্যতা"
-              data-en="Readability"
+              data-en="Readability" data-ar="سهولة القراءة"
             >
               পাঠযোগ্যতা
             </strong>
 
             <p
               data-bn="পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।"
-              data-en="Clear text, consistent ink density, and user-friendly design."
+              data-en="Clear text, consistent ink density, and user-friendly design." data-ar="نص واضح وكثافة حبر متناسقة وتصميم سهل الاستخدام."
             >
               পরিষ্কার অক্ষর, সমান ink density এবং ব্যবহারবান্ধব নকশা।
             </p>
@@ -1243,14 +1278,14 @@
           <article class="standard-card">
             <strong
               data-bn="স্থায়িত্ব"
-              data-en="Durability"
+              data-en="Durability" data-ar="المتانة"
             >
               স্থায়িত্ব
             </strong>
 
             <p
               data-bn="দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।"
-              data-en="Binding designed for daily use and long-term preservation."
+              data-en="Binding designed for daily use and long-term preservation." data-ar="تجليد مصمم للاستخدام اليومي والحفظ طويل الأمد."
             >
               দৈনন্দিন ব্যবহার ও দীর্ঘমেয়াদি সংরক্ষণের উপযোগী binding।
             </p>
@@ -1263,14 +1298,14 @@
       <div class="container">
         <h2
           data-bn="কোরআন বিতরণ উদ্যোগে যুক্ত হোন"
-          data-en="Join the Quran Distribution Initiative"
+          data-en="Join the Quran Distribution Initiative" data-ar="انضم إلى مبادرة توزيع القرآن الكريم"
         >
           কোরআন বিতরণ উদ্যোগে যুক্ত হোন
         </h2>
 
         <p
           data-bn="মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে যোগাযোগ করুন।"
-          data-en="Contact us to learn about printing, distribution, donations, or partnership opportunities."
+          data-en="Contact us to learn about printing, distribution, donations, or partnership opportunities." data-ar="تواصل معنا لمعرفة فرص الطباعة والتوزيع والتبرعات أو الشراكة."
         >
           মুদ্রণ, বিতরণ, অনুদান অথবা সহযোগিতার বিষয়ে জানতে আমাদের সঙ্গে
           যোগাযোগ করুন।
@@ -1282,7 +1317,7 @@
         >
           <span
             data-bn="যোগাযোগ করুন"
-            data-en="Contact Us"
+            data-en="Contact Us" data-ar="اتصل بنا"
           >
             যোগাযোগ করুন
           </span>
@@ -1303,78 +1338,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1383,23 +1418,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1407,26 +1442,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1438,6 +1477,7 @@
       new Date().getFullYear();
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

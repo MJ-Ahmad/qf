@@ -13,7 +13,7 @@
 
   <title
     data-bn="যোগাযোগ — কোরআনের ফেরিওয়ালা"
-    data-en="Contact — QuranerFariwala"
+    data-en="Contact — QuranerFariwala" data-ar="التواصل — QuranerFariwala"
   >
     যোগাযোগ — কোরআনের ফেরিওয়ালা
   </title>
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -684,6 +684,34 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -712,23 +740,23 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a href="/qf/public/education/">
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a
@@ -736,11 +764,11 @@
           href="/qf/public/contact/"
           aria-current="page"
         >
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -753,19 +781,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -783,21 +815,21 @@
       <p
         class="eyebrow"
         data-bn="সহযোগিতা · সংযোগ · সহায়তা"
-        data-en="Partnership · Connection · Support"
+        data-en="Partnership · Connection · Support" data-ar="شراكة · تواصل · دعم"
       >
         সহযোগিতা · সংযোগ · সহায়তা
       </p>
 
       <h1
         data-bn="যোগাযোগ করুন"
-        data-en="Contact Us"
+        data-en="Contact Us" data-ar="اتصل بنا"
       >
         যোগাযোগ করুন
       </h1>
 
       <p
         data-bn="আপনার প্রশ্ন, সহযোগিতার প্রস্তাব, অনুদান বা হিফজ শিক্ষা সম্পর্কিত কোন প্রয়োজন থাকলে আমাদের সঙ্গে যোগাযোগ করুন।"
-        data-en="If you have a question, a partnership proposal, a donation request, or a need related to Hifz education, please contact us."
+        data-en="If you have a question, a partnership proposal, a donation request, or a need related to Hifz education, please contact us." data-ar="إذا كان لديك سؤال أو مقترح شراكة أو طلب تبرع أو حاجة تتعلق بتعليم الحفظ، فيرجى التواصل معنا."
       >
         আপনার প্রশ্ন, সহযোগিতার প্রস্তাব, অনুদান বা হিফজ শিক্ষা সম্পর্কিত
         কোন প্রয়োজন থাকলে আমাদের সঙ্গে যোগাযোগ করুন।
@@ -809,14 +841,14 @@
         <div class="section-heading">
           <h2
             data-bn="আমাদের সাথে যোগাযোগের উপায়"
-            data-en="Ways to Reach Us"
+            data-en="Ways to Reach Us" data-ar="طرق التواصل معنا"
           >
             আমাদের সাথে যোগাযোগের উপায়
           </h2>
 
           <p
             data-bn="আমরা আপনার নোট, অনুপ্রেরণা, প্রস্তাব ও সহযোগিতার জন্য সর্বদা প্রস্তুত।"
-            data-en="We are always ready to hear your notes, ideas, proposals, and opportunities for collaboration."
+            data-en="We are always ready to hear your notes, ideas, proposals, and opportunities for collaboration." data-ar="نحن دائماً مستعدون لسماع ملاحظاتكم وأفكاركم ومقترحاتكم وفرص التعاون."
           >
             আমরা আপনার নোট, অনুপ্রেরণা, প্রস্তাব ও সহযোগিতার জন্য সর্বদা প্রস্তুত।
           </p>
@@ -826,7 +858,7 @@
           <div class="info-panel">
             <h2
               data-bn="যোগাযোগের তথ্য"
-              data-en="Contact Information"
+              data-en="Contact Information" data-ar="معلومات التواصل"
             >
               যোগাযোগের তথ্য
             </h2>
@@ -838,7 +870,7 @@
                 <div>
                   <h3
                     data-bn="ইমেইল"
-                    data-en="Email"
+                    data-en="Email" data-ar="البريد الإلكتروني"
                   >
                     ইমেইল
                   </h3>
@@ -855,7 +887,7 @@
                 <div>
                   <h3
                     data-bn="ফোন"
-                    data-en="Phone"
+                    data-en="Phone" data-ar="الهاتف"
                   >
                     ফোন
                   </h3>
@@ -872,14 +904,14 @@
                 <div>
                   <h3
                     data-bn="ঠিকানা"
-                    data-en="Address"
+                    data-en="Address" data-ar="العنوان"
                   >
                     ঠিকানা
                   </h3>
 
                   <p
                     data-bn="অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ"
-                    data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh"
+                    data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh" data-ar="مركز آزاد، بورانا بالتان، دكا 1000، بنغلاديش"
                   >
                     অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ
                   </p>
@@ -892,14 +924,14 @@
                 <div>
                   <h3
                     data-bn="চাকরির সময়"
-                    data-en="Working Hours"
+                    data-en="Working Hours" data-ar="ساعات العمل"
                   >
                     কর্মঘণ্টা
                   </h3>
 
                   <p
                     data-bn="রবিবার–বৃহস্পতিবার, সকাল ৯:০০–সকাল ১২:০০"
-                    data-en="Sunday–Thursday, 9:00 AM–12:00 PM"
+                    data-en="Sunday–Thursday, 9:00 AM–12:00 PM" data-ar="الأحد – الخميس، 9:00 صباحاً – 12:00 ظهراً"
                   >
                     রবিবার–বৃহস্পতিবার, সকাল ৯:০০–সকাল ১২:০০
                   </p>
@@ -911,14 +943,14 @@
               <div class="quick-card">
                 <strong
                   data-bn="৩"
-                  data-en="3"
+                  data-en="3" data-ar="3"
                 >
                   ৩
                 </strong>
 
                 <span
                   data-bn="প্রথম স্তরের ফ্যাক্ট ফিল্ড"
-                  data-en="Primary response window"
+                  data-en="Primary response window" data-ar="نافذة الرد الأولية"
                 >
                   প্রথম স্তরের ফ্যাক্ট ফিল্ড
                 </span>
@@ -927,14 +959,14 @@
               <div class="quick-card">
                 <strong
                   data-bn="২৪"
-                  data-en="24"
+                  data-en="24" data-ar="24"
                 >
                   ২৪
                 </strong>
 
                 <span
                   data-bn="ইমেইল রেসপন্স"
-                  data-en="Email response"
+                  data-en="Email response" data-ar="الرد عبر البريد الإلكتروني"
                 >
                   ইমেইল রেসপন্স
                 </span>
@@ -943,14 +975,14 @@
               <div class="quick-card">
                 <strong
                   data-bn="৭"
-                  data-en="7"
+                  data-en="7" data-ar="7"
                 >
                   ৭
                 </strong>
 
                 <span
                   data-bn="দৈনিক কাজের দিন"
-                  data-en="Working days"
+                  data-en="Working days" data-ar="أيام العمل"
                 >
                   দৈনিক কাজের দিন
                 </span>
@@ -961,7 +993,7 @@
           <div class="form-panel">
             <h2
               data-bn="মেসেজ পাঠান"
-              data-en="Send a Message"
+              data-en="Send a Message" data-ar="أرسل رسالة"
             >
               মেসেজ পাঠান
             </h2>
@@ -970,7 +1002,7 @@
               <label>
                 <span
                   data-bn="আপনার নাম"
-                  data-en="Your Name"
+                  data-en="Your Name" data-ar="اسمك"
                 >
                   আপনার নাম
                 </span>
@@ -980,7 +1012,7 @@
                   name="name"
                   placeholder="আপনার নাম"
                   data-bn-placeholder="আপনার নাম"
-                  data-en-placeholder="Your Name"
+                  data-en-placeholder="Your Name" data-ar-placeholder="اسمك"
                   required
                 >
               </label>
@@ -988,7 +1020,7 @@
               <label>
                 <span
                   data-bn="ইমেইল ঠিকানা"
-                  data-en="Email Address"
+                  data-en="Email Address" data-ar="عنوان البريد الإلكتروني"
                 >
                   ইমেইল ঠিকানা
                 </span>
@@ -998,7 +1030,7 @@
                   name="email"
                   placeholder="ইমেইল ঠিকানা"
                   data-bn-placeholder="ইমেইল ঠিকানা"
-                  data-en-placeholder="Email Address"
+                  data-en-placeholder="Email Address" data-ar-placeholder="عنوان البريد الإلكتروني"
                   required
                 >
               </label>
@@ -1006,7 +1038,7 @@
               <label>
                 <span
                   data-bn="ফোন নম্বর"
-                  data-en="Phone Number"
+                  data-en="Phone Number" data-ar="رقم الهاتف"
                 >
                   ফোন নম্বর
                 </span>
@@ -1016,14 +1048,14 @@
                   name="phone"
                   placeholder="ফোন নম্বর"
                   data-bn-placeholder="ফোন নম্বর"
-                  data-en-placeholder="Phone Number"
+                  data-en-placeholder="Phone Number" data-ar-placeholder="رقم الهاتف"
                 >
               </label>
 
               <label>
                 <span
                   data-bn="বিষয়"
-                  data-en="Subject"
+                  data-en="Subject" data-ar="الموضوع"
                 >
                   বিষয়
                 </span>
@@ -1031,12 +1063,12 @@
                 <select
                   name="subject"
                   data-bn-placeholder="বিষয়"
-                  data-en-placeholder="Subject"
+                  data-en-placeholder="Subject" data-ar-placeholder="الموضوع"
                 >
                   <option
                     value="donation"
                     data-bn="দান"
-                    data-en="Donation"
+                    data-en="Donation" data-ar="التبرع"
                   >
                     দান
                   </option>
@@ -1044,7 +1076,7 @@
                   <option
                     value="partnership"
                     data-bn="সহযোগিতা"
-                    data-en="Partnership"
+                    data-en="Partnership" data-ar="الشراكة"
                   >
                     সহযোগিতা
                   </option>
@@ -1052,7 +1084,7 @@
                   <option
                     value="support"
                     data-bn="সহায়তা"
-                    data-en="Support"
+                    data-en="Support" data-ar="الدعم"
                   >
                     সহায়তা
                   </option>
@@ -1060,7 +1092,7 @@
                   <option
                     value="hifz"
                     data-bn="হিফজ শিক্ষা"
-                    data-en="Hifz Education"
+                    data-en="Hifz Education" data-ar="تعليم الحفظ"
                   >
                     হিফজ শিক্ষা
                   </option>
@@ -1068,7 +1100,7 @@
                   <option
                     value="general"
                     data-bn="সাধারণ inquiry"
-                    data-en="General Inquiry"
+                    data-en="General Inquiry" data-ar="استفسار عام"
                   >
                     সাধারণ inquiry
                   </option>
@@ -1078,7 +1110,7 @@
               <label>
                 <span
                   data-bn="আপনার বার্তা"
-                  data-en="Message"
+                  data-en="Message" data-ar="الرسالة"
                 >
                   আপনার বার্তা
                 </span>
@@ -1087,7 +1119,7 @@
                   name="message"
                   placeholder="আপনার বার্তা লিখুন"
                   data-bn-placeholder="আপনার বার্তা লিখুন"
-                  data-en-placeholder="Write your message"
+                  data-en-placeholder="Write your message" data-ar-placeholder="اكتب رسالتك"
                   required
                 ></textarea>
               </label>
@@ -1098,7 +1130,7 @@
               >
                 <span
                   data-bn="মেসেজ পাঠান"
-                  data-en="Send Message"
+                  data-en="Send Message" data-ar="إرسال الرسالة"
                 >
                   মেসেজ পাঠান
                 </span>
@@ -1116,14 +1148,14 @@
         <div class="map-card">
           <h3
             data-bn="আমাদের অবস্থান"
-            data-en="Our Location"
+            data-en="Our Location" data-ar="موقعنا"
           >
             আমাদের অবস্থান
           </h3>
 
           <p
             data-bn="অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ"
-            data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh"
+            data-en="Azad Center, Purana Paltan, Dhaka 1000, Bangladesh" data-ar="مركز آزاد، بورانا بالتان، دكا 1000، بنغلاديش"
           >
             অ্যাজাদ সেন্টার, পুরান পল্টন, ঢাকা ১০০০, বাংলাদেশ
           </p>
@@ -1143,78 +1175,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1223,23 +1255,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1247,26 +1279,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1280,6 +1316,26 @@
     const form = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
 
+    const FORM_MESSAGES = {
+      bn: {
+        required: 'দয়া করে প্রয়োজনীয় সব ক্ষেত্র পূরণ করুন।',
+        sent: 'আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সঙ্গে যোগাযোগ করব।'
+      },
+      en: {
+        required: 'Please fill in all required fields.',
+        sent: 'Your message has been sent successfully. We will get back to you soon.'
+      },
+      ar: {
+        required: 'يرجى تعبئة جميع الحقول المطلوبة.',
+        sent: 'تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.'
+      }
+    };
+
+    function currentLang() {
+      const lang = document.documentElement.lang;
+      return FORM_MESSAGES[lang] ? lang : 'bn';
+    }
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -1288,20 +1344,17 @@
       const message = form.querySelector('textarea[name="message"]').value.trim();
 
       if (!name || !email || !message) {
-        formStatus.textContent = document.documentElement.lang === 'en'
-          ? 'Please fill in all required fields.'
-          : 'দয়া করে প্রয়োজনীয় সব ক্ষেত্র পূরণ করুন।';
+        formStatus.textContent = FORM_MESSAGES[currentLang()].required;
         return;
       }
 
-      formStatus.textContent = document.documentElement.lang === 'en'
-        ? 'Your message has been sent successfully. We will get back to you soon.'
-        : 'আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সঙ্গে যোগাযোগ করব।';
+      formStatus.textContent = FORM_MESSAGES[currentLang()].sent;
 
       form.reset();
     });
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

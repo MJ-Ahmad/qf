@@ -13,7 +13,7 @@
 
   <title
     data-bn="কোরআন গবেষণা — কোরআনের ফেরিওয়ালা"
-    data-en="Quranic Research — QuranerFariwala"
+    data-en="Quranic Research — QuranerFariwala" data-ar="البحث القرآني — QuranerFariwala"
   >
     কোরআন গবেষণা — কোরআনের ফেরিওয়ালা
   </title>
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -717,6 +717,40 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .checks li {
+  padding-right: 1.4rem;
+}
+html[dir="rtl"] .checks li::before {
+  right: 0;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 760px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 
@@ -745,7 +779,7 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a
@@ -753,27 +787,27 @@
           href="/qf/public/education/"
           aria-current="page"
         >
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a href="/qf/public/contact/">
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -786,19 +820,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -816,21 +854,21 @@
       <p
         class="eyebrow"
         data-bn="জ্ঞান · অনুধাবন · প্রয়োগ"
-        data-en="Knowledge · Understanding · Practice"
+        data-en="Knowledge · Understanding · Practice" data-ar="علم · فهم · عمل"
       >
         জ্ঞান · অনুধাবন · প্রয়োগ
       </p>
 
       <h1
         data-bn="কোরআন গবেষণা ও জ্ঞানচর্চা"
-        data-en="Quranic Research and Scholarship"
+        data-en="Quranic Research and Scholarship" data-ar="البحث العلمي القرآني"
       >
         কোরআন গবেষণা ও জ্ঞানচর্চা
       </h1>
 
       <p
         data-bn="কোরআনের ভাষা, বিষয়বস্তু, তাফসির, ইতিহাস ও মানবজীবনে প্রয়োগ নিয়ে দায়িত্বশীল ও পদ্ধতিগত জ্ঞানচর্চার একটি উদ্যোগ।"
-        data-en="A responsible and methodical initiative focused on Quranic language, themes, tafsir, history, and practical guidance for human life."
+        data-en="A responsible and methodical initiative focused on Quranic language, themes, tafsir, history, and practical guidance for human life." data-ar="مبادرة مسؤولة ومنهجية تركز على لغة القرآن وموضوعاته وتفسيره وتاريخه وإرشاده العملي لحياة الإنسان."
       >
         কোরআনের ভাষা, বিষয়বস্তু, তাফসির, ইতিহাস ও মানবজীবনে প্রয়োগ নিয়ে
         দায়িত্বশীল ও পদ্ধতিগত জ্ঞানচর্চার একটি উদ্যোগ।
@@ -842,14 +880,14 @@
         <div class="section-heading">
           <h2
             data-bn="কোরআন বোঝার একটি সমন্বিত পথ"
-            data-en="A Comprehensive Path to Understanding the Quran"
+            data-en="A Comprehensive Path to Understanding the Quran" data-ar="طريق شامل لفهم القرآن الكريم"
           >
             কোরআন বোঝার একটি সমন্বিত পথ
           </h2>
 
           <p
             data-bn="পাঠ, ভাষা, প্রেক্ষাপট, তাফসির ও বাস্তব প্রয়োগ—এই সবগুলোকে সমন্বিত করে জ্ঞানচর্চা করা হয়।"
-            data-en="We bring together recitation, language, context, tafsir, and practical application."
+            data-en="We bring together recitation, language, context, tafsir, and practical application." data-ar="نجمع بين التلاوة واللغة والسياق والتفسير والتطبيق العملي."
           >
             পাঠ, ভাষা, প্রেক্ষাপট, তাফসির ও বাস্তব প্রয়োগ—এই সবগুলোকে
             সমন্বিত করে জ্ঞানচর্চা করা হয়।
@@ -868,14 +906,14 @@
             <div class="image-overlay">
               <h2
                 data-bn="কোরআনের জ্ঞানভাণ্ডার অন্বেষণ"
-                data-en="Exploring the Depths of Quranic Knowledge"
+                data-en="Exploring the Depths of Quranic Knowledge" data-ar="استكشاف أعماق العلوم القرآنية"
               >
                 কোরআনের জ্ঞানভাণ্ডার অন্বেষণ
               </h2>
 
               <p
                 data-bn="গভীর পাঠ, বিনয়ী অনুসন্ধান ও যাচাইযোগ্য জ্ঞানচর্চার মাধ্যমে কোরআনের বার্তা অনুধাবনের চেষ্টা।"
-                data-en="Seeking to understand the Quran through deep reading, humble inquiry, and verifiable scholarship."
+                data-en="Seeking to understand the Quran through deep reading, humble inquiry, and verifiable scholarship." data-ar="السعي لفهم القرآن الكريم من خلال القراءة العميقة والبحث المتواضع والعلم القابل للتحقق."
               >
                 গভীর পাঠ, বিনয়ী অনুসন্ধান ও যাচাইযোগ্য জ্ঞানচর্চার মাধ্যমে
                 কোরআনের বার্তা অনুধাবনের চেষ্টা।
@@ -886,14 +924,14 @@
           <div class="main-content">
             <h2
               data-bn="কেন কোরআন গবেষণা গুরুত্বপূর্ণ"
-              data-en="Why Quranic Research Matters"
+              data-en="Why Quranic Research Matters" data-ar="لماذا يهم البحث القرآني"
             >
               কেন কোরআন গবেষণা গুরুত্বপূর্ণ
             </h2>
 
             <p
               data-bn="পবিত্র কোরআন মুসলিম জীবনের বিশ্বাস, নৈতিকতা, জ্ঞান ও আচরণের প্রধান উৎস। কোরআন বোঝার জন্য কেবল অনুবাদ পড়াই যথেষ্ট নয়; ভাষা, আয়াতের প্রেক্ষাপট, তাফসিরের নীতিমালা এবং বাস্তব জীবনের প্রয়োগও বিবেচনা করা প্রয়োজন।"
-              data-en="The Holy Quran is a central source of faith, ethics, knowledge, and conduct in Muslim life. Understanding it requires more than reading a translation; language, context, principles of tafsir, and practical application must also be considered."
+              data-en="The Holy Quran is a central source of faith, ethics, knowledge, and conduct in Muslim life. Understanding it requires more than reading a translation; language, context, principles of tafsir, and practical application must also be considered." data-ar="القرآن الكريم مصدر أصيل للعقيدة والأخلاق والعلم والسلوك في حياة المسلم. ولا يكفي لفهمه قراءة الترجمة، بل يجب مراعاة اللغة والسياق وأصول التفسير والتطبيق العملي."
             >
               পবিত্র কোরআন মুসলিম জীবনের বিশ্বাস, নৈতিকতা, জ্ঞান ও আচরণের প্রধান
               উৎস। কোরআন বোঝার জন্য কেবল অনুবাদ পড়াই যথেষ্ট নয়; ভাষা, আয়াতের
@@ -903,7 +941,7 @@
 
             <p
               data-bn="আমাদের লক্ষ্য হলো কোরআন শিক্ষাকে কেবল আবৃত্তি বা মুখস্থের মধ্যে সীমাবদ্ধ না রেখে অর্থ, চিন্তা, চরিত্র ও কর্মের সঙ্গে যুক্ত করা।"
-              data-en="Our goal is to connect Quranic learning not only with recitation and memorization, but also with meaning, reflection, character, and action."
+              data-en="Our goal is to connect Quranic learning not only with recitation and memorization, but also with meaning, reflection, character, and action." data-ar="هدفنا ربط تعلم القرآن ليس بالتلاوة والحفظ فحسب، بل بالمعنى والتدبر والأخلاق والعمل."
             >
               আমাদের লক্ষ্য হলো কোরআন শিক্ষাকে কেবল আবৃত্তি বা মুখস্থের মধ্যে
               সীমাবদ্ধ না রেখে অর্থ, চিন্তা, চরিত্র ও কর্মের সঙ্গে যুক্ত করা।
@@ -918,14 +956,14 @@
         <div class="section-heading">
           <h2
             data-bn="গবেষণার প্রধান ক্ষেত্র"
-            data-en="Core Research Areas"
+            data-en="Core Research Areas" data-ar="مجالات البحث الأساسية"
           >
             গবেষণার প্রধান ক্ষেত্র
           </h2>
 
           <p
             data-bn="কোরআন বোঝার জন্য বিভিন্ন জ্ঞানক্ষেত্রকে দায়িত্বশীলভাবে সমন্বয় করা হয়।"
-            data-en="Different fields of knowledge are responsibly integrated to support Quranic understanding."
+            data-en="Different fields of knowledge are responsibly integrated to support Quranic understanding." data-ar="تُدمج مجالات المعرفة المختلفة بمسؤولية لدعم فهم القرآن الكريم."
           >
             কোরআন বোঝার জন্য বিভিন্ন জ্ঞানক্ষেত্রকে দায়িত্বশীলভাবে সমন্বয় করা হয়।
           </p>
@@ -937,14 +975,14 @@
 
             <h2
               data-bn="ভাষা ও শব্দতত্ত্ব"
-              data-en="Language and Word Studies"
+              data-en="Language and Word Studies" data-ar="دراسات اللغة والمفردات"
             >
               ভাষা ও শব্দতত্ত্ব
             </h2>
 
             <p
               data-bn="আরবি শব্দের মূল, ব্যবহার, ব্যাকরণ ও বাক্যগঠন বিশ্লেষণের মাধ্যমে আয়াতের অর্থ অনুধাবন।"
-              data-en="Understanding verses through Arabic roots, usage, grammar, and sentence structure."
+              data-en="Understanding verses through Arabic roots, usage, grammar, and sentence structure." data-ar="فهم الآيات من خلال جذور الكلمات العربية واستعمالها ونحوها وتركيب الجملة."
             >
               আরবি শব্দের মূল, ব্যবহার, ব্যাকরণ ও বাক্যগঠন বিশ্লেষণের মাধ্যমে
               আয়াতের অর্থ অনুধাবন।
@@ -953,21 +991,21 @@
             <ul class="checks">
               <li
                 data-bn="শব্দের মূল ও প্রয়োগ"
-                data-en="Roots and usage of words"
+                data-en="Roots and usage of words" data-ar="جذور الكلمات واستعمالها"
               >
                 শব্দের মূল ও প্রয়োগ
               </li>
 
               <li
                 data-bn="বাক্যগঠন ও ভাষাগত বৈশিষ্ট্য"
-                data-en="Syntax and linguistic features"
+                data-en="Syntax and linguistic features" data-ar="التركيب والخصائص اللغوية"
               >
                 বাক্যগঠন ও ভাষাগত বৈশিষ্ট্য
               </li>
 
               <li
                 data-bn="অনুবাদের সীমাবদ্ধতা বোঝা"
-                data-en="Understanding translation limitations"
+                data-en="Understanding translation limitations" data-ar="فهم حدود الترجمة"
               >
                 অনুবাদের সীমাবদ্ধতা বোঝা
               </li>
@@ -979,14 +1017,14 @@
 
             <h2
               data-bn="তাফসির ও প্রেক্ষাপট"
-              data-en="Tafsir and Context"
+              data-en="Tafsir and Context" data-ar="التفسير والسياق"
             >
               তাফসির ও প্রেক্ষাপট
             </h2>
 
             <p
               data-bn="আয়াতের বিষয়, অবতরণের প্রেক্ষাপট এবং গ্রহণযোগ্য তাফসিরের আলোকে পাঠের ব্যাখ্যা।"
-              data-en="Interpreting verses through their themes, historical context, and established tafsir traditions."
+              data-en="Interpreting verses through their themes, historical context, and established tafsir traditions." data-ar="تفسير الآيات من خلال موضوعاتها وسياقها التاريخي ومنهج التفسير المعتمد."
             >
               আয়াতের বিষয়, অবতরণের প্রেক্ষাপট এবং গ্রহণযোগ্য তাফসিরের আলোকে
               পাঠের ব্যাখ্যা।
@@ -995,21 +1033,21 @@
             <ul class="checks">
               <li
                 data-bn="আয়াতের বিষয়ভিত্তিক পাঠ"
-                data-en="Thematic reading of verses"
+                data-en="Thematic reading of verses" data-ar="القراءة الموضوعية للآيات"
               >
                 আয়াতের বিষয়ভিত্তিক পাঠ
               </li>
 
               <li
                 data-bn="ঐতিহাসিক ও নাজিলের প্রেক্ষাপট"
-                data-en="Historical and revelation context"
+                data-en="Historical and revelation context" data-ar="السياق التاريخي وأسباب النزول"
               >
                 ঐতিহাসিক ও নাজিলের প্রেক্ষাপট
               </li>
 
               <li
                 data-bn="তাফসিরের নীতিমালা"
-                data-en="Principles of tafsir"
+                data-en="Principles of tafsir" data-ar="أصول التفسير"
               >
                 তাফসিরের নীতিমালা
               </li>
@@ -1021,14 +1059,14 @@
 
             <h2
               data-bn="কোরআন ও হিফজ শিক্ষা"
-              data-en="Quran and Hifz Education"
+              data-en="Quran and Hifz Education" data-ar="القرآن الكريم وتعليم الحفظ"
             >
               কোরআন ও হিফজ শিক্ষা
             </h2>
 
             <p
               data-bn="মুখস্থ, পুনরাবৃত্তি, তাজবিদ, তিলাওয়াত ও অর্থ বোঝার সমন্বিত শিক্ষাপদ্ধতি নিয়ে কাজ করা।"
-              data-en="Exploring integrated approaches to memorization, revision, tajweed, recitation, and understanding."
+              data-en="Exploring integrated approaches to memorization, revision, tajweed, recitation, and understanding." data-ar="استكشاف مناهج متكاملة للحفظ والمراجعة والتجويد والتلاوة والفهم."
             >
               মুখস্থ, পুনরাবৃত্তি, তাজবিদ, তিলাওয়াত ও অর্থ বোঝার সমন্বিত
               শিক্ষাপদ্ধতি নিয়ে কাজ করা।
@@ -1037,21 +1075,21 @@
             <ul class="checks">
               <li
                 data-bn="সাবাক, সবকি ও মানজিল"
-                data-en="Sabaq, Sabqi, and Manzil"
+                data-en="Sabaq, Sabqi, and Manzil" data-ar="السبق والسبقي والمنزل"
               >
                 সাবাক, সবকি ও মানজিল
               </li>
 
               <li
                 data-bn="তাজবিদ ও সঠিক উচ্চারণ"
-                data-en="Tajweed and correct pronunciation"
+                data-en="Tajweed and correct pronunciation" data-ar="التجويد والنطق الصحيح"
               >
                 তাজবিদ ও সঠিক উচ্চারণ
               </li>
 
               <li
                 data-bn="অর্থভিত্তিক পুনরাবৃত্তি"
-                data-en="Meaning-based revision"
+                data-en="Meaning-based revision" data-ar="المراجعة القائمة على المعنى"
               >
                 অর্থভিত্তিক পুনরাবৃত্তি
               </li>
@@ -1061,7 +1099,7 @@
           <article class="feature">
             <p
               data-bn="কোরআনের নৈতিকতা, ন্যায়, দয়া, দায়িত্ব ও সামাজিক মূল্যবোধকে বাস্তব জীবনের সঙ্গে যুক্ত করা।"
-              data-en="Connecting Quranic ethics, justice, mercy, responsibility, and social values with everyday life."
+              data-en="Connecting Quranic ethics, justice, mercy, responsibility, and social values with everyday life." data-ar="ربط الأخلاق القرآنية والعدل والرحمة والمسؤولية والقيم الاجتماعية بالحياة اليومية."
             >
               কোরআনের নৈতিকতা, ন্যায়, দয়া, দায়িত্ব ও সামাজিক মূল্যবোধকে
               বাস্তব জীবনের সঙ্গে যুক্ত করা।
@@ -1070,21 +1108,21 @@
             <ul class="checks">
               <li
                 data-bn="চরিত্র গঠন"
-                data-en="Character development"
+                data-en="Character development" data-ar="بناء الشخصية"
               >
                 চরিত্র গঠন
               </li>
 
               <li
                 data-bn="সামাজিক দায়িত্ব"
-                data-en="Social responsibility"
+                data-en="Social responsibility" data-ar="المسؤولية الاجتماعية"
               >
                 সামাজিক দায়িত্ব
               </li>
 
               <li
                 data-bn="জ্ঞান থেকে কর্মে রূপান্তর"
-                data-en="Turning knowledge into action"
+                data-en="Turning knowledge into action" data-ar="تحويل العلم إلى عمل"
               >
                 জ্ঞান থেকে কর্মে রূপান্তর
               </li>
@@ -1099,14 +1137,14 @@
         <div class="section-heading">
           <h2
             data-bn="আমাদের গবেষণা পদ্ধতি"
-            data-en="Our Research Approach"
+            data-en="Our Research Approach" data-ar="منهجنا في البحث"
           >
             আমাদের গবেষণা পদ্ধতি
           </h2>
 
           <p
             data-bn="গবেষণায় শ্রদ্ধা, সততা, যাচাই ও প্রাসঙ্গিকতার নীতিকে গুরুত্ব দেওয়া হয়।"
-            data-en="Our research values respect, honesty, verification, and relevance."
+            data-en="Our research values respect, honesty, verification, and relevance." data-ar="تقوم قيمنا البحثية على الاحترام والأمانة والتحقق والصلة بالموضوع."
           >
             গবেষণায় শ্রদ্ধা, সততা, যাচাই ও প্রাসঙ্গিকতার নীতিকে গুরুত্ব দেওয়া হয়।
           </p>
@@ -1118,14 +1156,14 @@
 
             <h2
               data-bn="প্রাথমিক পাঠ"
-              data-en="Primary Reading"
+              data-en="Primary Reading" data-ar="القراءة الأساسية"
             >
               প্রাথমিক পাঠ
             </h2>
 
             <p
               data-bn="আয়াত, সূরা ও সংশ্লিষ্ট বিষয় মনোযোগ দিয়ে পড়া।"
-              data-en="Careful reading of verses, surahs, and related themes."
+              data-en="Careful reading of verses, surahs, and related themes." data-ar="قراءة متأنية للآيات والسور والموضوعات ذات الصلة."
             >
               আয়াত, সূরা ও সংশ্লিষ্ট বিষয় মনোযোগ দিয়ে পড়া।
             </p>
@@ -1136,14 +1174,14 @@
 
             <h2
               data-bn="উৎস যাচাই"
-              data-en="Source Verification"
+              data-en="Source Verification" data-ar="التحقق من المصادر"
             >
               উৎস যাচাই
             </h2>
 
             <p
               data-bn="ভাষা, তাফসির ও ঐতিহাসিক তথ্যের নির্ভরযোগ্য উৎস যাচাই করা।"
-              data-en="Verifying reliable linguistic, tafsir, and historical sources."
+              data-en="Verifying reliable linguistic, tafsir, and historical sources." data-ar="التحقق من المصادر اللغوية والتفسيرية والتاريخية الموثوقة."
             >
               ভাষা, তাফসির ও ঐতিহাসিক তথ্যের নির্ভরযোগ্য উৎস যাচাই করা।
             </p>
@@ -1154,14 +1192,14 @@
 
             <h2
               data-bn="তুলনামূলক বিশ্লেষণ"
-              data-en="Comparative Analysis"
+              data-en="Comparative Analysis" data-ar="التحليل المقارن"
             >
               তুলনামূলক বিশ্লেষণ
             </h2>
 
             <p
               data-bn="বিভিন্ন ব্যাখ্যা ও মতামত ভারসাম্যপূর্ণভাবে পর্যালোচনা করা।"
-              data-en=" with balance."
+              data-en=" with balance." data-ar="مع الرصيد."
             >
               বিভিন্ন ব্যাখ্যা ও মতামত ভারসাম্যপূর্ণভাবে পর্যালোচনা করা।
             </p>
@@ -1172,14 +1210,14 @@
 
             <h2
               data-bn="বাস্তব প্রয়োগ"
-              data-en="Practical Reflection"
+              data-en="Practical Reflection" data-ar="التأمل العملي"
             >
               বাস্তব প্রয়োগ
             </h2>
 
             <p
               data-bn="জ্ঞানকে চরিত্র, শিক্ষা ও সমাজের কল্যাণে প্রয়োগের দিক বিবেচনা করা।"
-              data-en="Connecting knowledge with character, education, and practical benefit to society."
+              data-en="Connecting knowledge with character, education, and practical benefit to society." data-ar="ربط العلم بالأخلاق والتعليم والنفع العملي للمجتمع."
             </p>
           </article>
         </div>
@@ -1191,14 +1229,14 @@
         <div class="callout">
           <h2
             data-bn="কোরআন বোঝার যাত্রায় যুক্ত হোন"
-            data-en="Begin Your Journey of Quranic Understanding"
+            data-en="Begin Your Journey of Quranic Understanding" data-ar="ابدأ رحلتك في فهم القرآن الكريم"
           >
             কোরআন বোঝার যাত্রায় যুক্ত হোন
           </h2>
 
           <p
             data-bn="কোরআন গবেষণা, হিফজ শিক্ষা, মুদ্রণ ও বিতরণ কার্যক্রম সম্পর্কে জানতে আমাদের সঙ্গে যোগাযোগ করুন।"
-            data-en="Contact us to learn more about Quranic research, Hifz education, printing, and distribution."
+            data-en="Contact us to learn more about Quranic research, Hifz education, printing, and distribution." data-ar="تواصل معنا لمعرفة المزيد عن البحث القرآني وتعليم الحفظ والطباعة والتوزيع."
           >
             কোরআন গবেষণা, হিফজ শিক্ষা, মুদ্রণ ও বিতরণ কার্যক্রম সম্পর্কে জানতে
             আমাদের সঙ্গে যোগাযোগ করুন।
@@ -1210,7 +1248,7 @@
           >
             <span
               data-bn="যোগাযোগ করুন"
-              data-en="Contact Us"
+              data-en="Contact Us" data-ar="اتصل بنا"
             >
               যোগাযোগ করুন
             </span>
@@ -1232,78 +1270,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1312,23 +1350,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1336,26 +1374,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1367,6 +1409,7 @@
       new Date().getFullYear();
   </script>
 
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>

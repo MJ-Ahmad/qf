@@ -13,7 +13,7 @@
 
   <title
     data-bn="উন্নয়নাধীন — কোরআনের ফেরিওয়ালা"
-    data-en="Under Development — QuranerFariwala"
+    data-en="Under Development — QuranerFariwala" data-ar="قيد التطوير — QuranerFariwala"
   >
     উন্নয়নাধীন — কোরআনের ফেরিওয়ালা
   </title>
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -757,6 +757,37 @@
         grid-column: auto;
       }
 }
+  
+    /* QF: Arabic typography + RTL layout (generated) */
+    html[lang="ar"] {
+      --sans: "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+      --serif: "Noto Naskh Arabic", "Traditional Arabic", Georgia, serif;
+    }
+    html[lang="ar"] body {
+      line-height: 1.9;
+    }
+
+    html[dir="rtl"] body { text-align: start; }
+    /* QF: generated RTL overrides */
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
+html[dir="rtl"] .feature-line strong {
+  margin-right: 0.3rem;
+}
+html[dir="rtl"] .footer-legal {
+  text-align: left;
+}
+@media (max-width: 720px) {
+html[dir="rtl"] .footer-legal {
+  text-align: right;
+}
+}
   </style>
 </head>
 <body>
@@ -784,23 +815,23 @@
         aria-label="প্রধান নেভিগেশন"
       >
         <a href="/qf/home/index.html">
-          <span data-bn="হোম" data-en="Home">হোম</span>
+          <span data-bn="হোম" data-en="Home" data-ar="الرئيسية">হোম</span>
         </a>
 
         <a href="/qf/public/education/">
-          <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+          <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
         </a>
 
         <a href="/qf/public/print/">
-          <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+          <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
         </a>
 
         <a href="/qf/public/distribution/">
-          <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+          <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
         </a>
 
         <a href="/qf/public/faq/">
-          <span data-bn="জিজ্ঞাসা" data-en="FAQ">জিজ্ঞাসা</span>
+          <span data-bn="জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">জিজ্ঞাসা</span>
         </a>
 
         <a
@@ -808,11 +839,11 @@
           href="/qf/public/contact/"
           aria-current="page"
         >
-          <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+          <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
         </a>
 
         <a href="/qf/public/portal/">
-          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">
+          <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">
             হিফজ পোর্টাল
           </span>
         </a>
@@ -825,19 +856,23 @@
       >
         <button
           type="button"
-          data-lang-button="bn"
-          aria-pressed="true"
-        >
-          বাংলা
-        </button>
-
-        <button
-          type="button"
           data-lang-button="en"
           aria-pressed="false"
         >
           EN
         </button>
+        <button
+          type="button"
+          data-lang-button="bn"
+          aria-pressed="true"
+        >
+          বাংলা
+        </button>
+        <button
+          type="button"
+          data-lang-button="ar"
+          aria-pressed="false"
+        >AR</button>
       </div>
     </div>
   </header>
@@ -854,21 +889,21 @@
       <p
         class="eyebrow"
         data-bn="উন্নয়নাধীন"
-        data-en="Under Development"
+        data-en="Under Development" data-ar="قيد التطوير"
       >
         উন্নয়নাধীন
       </p>
 
       <h1
         data-bn="এই পেইজটির কাজ চলছে"
-        data-en="This page is being built"
+        data-en="This page is being built" data-ar="هذه الصفحة قيد الإنشاء"
       >
         এই পেইজটির কাজ চলছে
       </h1>
 
       <p
         data-bn="এই অংশটি বর্তমানে নির্মাণাধীন। অতি দ্রুত এটি যথাযথভাবে প্রকাশ করা হবে। ইতিমধ্যে আমাদের অন্যান্য পেইজ ঘুরে দেখতে পারেন, অথবা যেকোনো প্রয়োজনে সরাসরি যোগাযোগ করতে পারেন।"
-        data-en="This section is currently being developed and will be published very soon. In the meantime, you are welcome to explore our other pages or contact us directly for any need."
+        data-en="This section is currently being developed and will be published very soon. In the meantime, you are welcome to explore our other pages or contact us directly for any need." data-ar="يجري حالياً تطوير هذا القسم وسينشر قريباً جداً. وفي الأثناء، يسعدنا أن تتصفح صفحاتنا الأخرى أو تتواصل معنا مباشرة لأي حاجة."
       >
         এই অংশটি বর্তমানে নির্মাণাধীন। অতি দ্রুত এটি যথাযথভাবে প্রকাশ করা হবে।
         ইতিমধ্যে আমাদের অন্যান্য পেইজ ঘুরে দেখতে পারেন, অথবা যেকোনো প্রয়োজনে
@@ -878,7 +913,7 @@
       <p id="feature-line" class="feature-line" hidden>
         <span
           data-bn="আপনি যে অংশটি খুঁজছেন:"
-          data-en="The section you were looking for:"
+          data-en="The section you were looking for:" data-ar="القسم الذي كنت تبحث عنه:"
         >আপনি যে অংশটি খুঁজছেন:</span>
         <strong id="feature-name"></strong>
       </p>
@@ -889,14 +924,14 @@
         <div class="section-heading">
           <h2
             data-bn="বর্তমান অগ্রগতি"
-            data-en="Current Progress"
+            data-en="Current Progress" data-ar="التقدم الحالي"
           >
             বর্তমান অগ্রগতি
           </h2>
 
           <p
             data-bn="পেইজটি যথাযথ মান ও নির্ভুলতার সঙ্গে প্রস্তুত করা হচ্ছে।"
-            data-en="This page is being prepared with proper quality and accuracy."
+            data-en="This page is being prepared with proper quality and accuracy." data-ar="يتم إعداد هذه الصفحة بالجودة والدقة اللازمتين."
           >
             পেইজটি যথাযথ মান ও নির্ভুলতার সঙ্গে প্রস্তুত করা হচ্ছে।
           </p>
@@ -905,42 +940,42 @@
         <div class="dev-grid">
           <article class="dev-card">
             <div class="num">১</div>
-            <h3 data-bn="কন্টেন্ট প্রস্তুতি" data-en="Content Preparation">কন্টেন্ট প্রস্তুতি</h3>
+            <h3 data-bn="কন্টেন্ট প্রস্তুতি" data-en="Content Preparation" data-ar="إعداد المحتوى">কন্টেন্ট প্রস্তুতি</h3>
             <p
               data-bn="তথ্য, লেখা ও প্রয়োজনীয় বিবরণ যাচাই ও সাজানো হচ্ছে।"
-              data-en="Information, text, and key details are being reviewed and organised."
+              data-en="Information, text, and key details are being reviewed and organised." data-ar="يجري مراجعة المعلومات والنصوص والتفاصيل الأساسية وتنظيمها."
             >তথ্য, লেখা ও প্রয়োজনীয় বিবরণ যাচাই ও সাজানো হচ্ছে।</p>
-            <span class="status" data-bn="চলমান" data-en="In progress">চলমান</span>
+            <span class="status" data-bn="চলমান" data-en="In progress" data-ar="قيد التنفيذ">চলমান</span>
           </article>
 
           <article class="dev-card">
             <div class="num">২</div>
-            <h3 data-bn="কার্যকারিতা উন্নয়ন" data-en="Feature Development">কার্যকারিতা উন্নয়ন</h3>
+            <h3 data-bn="কার্যকারিতা উন্নয়ন" data-en="Feature Development" data-ar="تطوير الميزات">কার্যকারিতা উন্নয়ন</h3>
             <p
               data-bn="পেইজের ফিচার, নকশা ও মোবাইল-উপযোগিতা উন্নয়ন করা হচ্ছে।"
-              data-en="Features, layout, and mobile responsiveness are being developed."
+              data-en="Features, layout, and mobile responsiveness are being developed." data-ar="يجري تطوير الميزات والتخطيط والتجاوب مع الأجهزة المحمولة."
             >পেইজের ফিচার, নকশা ও মোবাইল-উপযোগিতা উন্নয়ন করা হচ্ছে।</p>
-            <span class="status" data-bn="চলমান" data-en="In progress">চলমান</span>
+            <span class="status" data-bn="চলমান" data-en="In progress" data-ar="قيد التنفيذ">চলমান</span>
           </article>
 
           <article class="dev-card">
             <div class="num">৩</div>
-            <h3 data-bn="পর্যালোচনা ও প্রকাশ" data-en="Review & Publishing">পর্যালোচনা ও প্রকাশ</h3>
+            <h3 data-bn="পর্যালোচনা ও প্রকাশ" data-en="Review & Publishing" data-ar="المراجعة والنشر">পর্যালোচনা ও প্রকাশ</h3>
             <p
               data-bn="যাচাই-বাছাই শেষে পেইজটি যথাযথভাবে প্রকাশ করা হবে।"
-              data-en="After review and testing, the page will be published properly."
+              data-en="After review and testing, the page will be published properly." data-ar="بعد المراجعة والاختبار، ستُنشر الصفحة بالشكل الصحيح."
             >যাচাই-বাছাই শেষে পেইজটি যথাযথভাবে প্রকাশ করা হবে।</p>
-            <span class="status" data-bn="শীঘ্রই প্রকাশিত হবে" data-en="Publishing soon">শীঘ্রই প্রকাশিত হবে</span>
+            <span class="status" data-bn="শীঘ্রই প্রকাশিত হবে" data-en="Publishing soon" data-ar="النشر قريباً">শীঘ্রই প্রকাশিত হবে</span>
           </article>
         </div>
 
         <div class="dev-actions">
           <a class="button" href="/qf/home/index.html"
-            data-bn="হোম পেইজে ফিরুন" data-en="Back to Home">হোম পেইজে ফিরুন</a>
+            data-bn="হোম পেইজে ফিরুন" data-en="Back to Home" data-ar="العودة إلى الرئيسية">হোম পেইজে ফিরুন</a>
           <a class="button button-outline" href="/qf/public/contact/"
-            data-bn="যোগাযোগ করুন" data-en="Contact Us">যোগাযোগ করুন</a>
+            data-bn="যোগাযোগ করুন" data-en="Contact Us" data-ar="اتصل بنا">যোগাযোগ করুন</a>
           <a class="button button-outline" href="/qf/public/sitemap/"
-            data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</a>
+            data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</a>
         </div>
       </div>
     </section>
@@ -957,78 +992,78 @@
 
           <p
             data-bn="গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।"
-            data-en="Serving the Holy Quran through research, printing, and distribution."
+            data-en="Serving the Holy Quran through research, printing, and distribution." data-ar="خدمة القرآن الكريم من خلال البحث والطباعة والتوزيع."
           >
             গবেষণা, মুদ্রণ ও বিতরণের মাধ্যমে পবিত্র কোরআনের সেবা।
           </p>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="প্রকল্প" data-en="Project">প্রকল্প</h2>
+          <h2 data-bn="প্রকল্প" data-en="Project" data-ar="المشروع">প্রকল্প</h2>
 
           <a href="/qf/public/education/">
-            <span data-bn="গবেষণা" data-en="Research">গবেষণা</span>
+            <span data-bn="গবেষণা" data-en="Research" data-ar="البحث">গবেষণা</span>
           </a>
 
           <a href="/qf/public/print/">
-            <span data-bn="মুদ্রণ" data-en="Printing">মুদ্রণ</span>
+            <span data-bn="মুদ্রণ" data-en="Printing" data-ar="الطباعة">মুদ্রণ</span>
           </a>
 
           <a href="/qf/public/distribution/">
-            <span data-bn="বিতরণ" data-en="Distribution">বিতরণ</span>
+            <span data-bn="বিতরণ" data-en="Distribution" data-ar="التوزيع">বিতরণ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education">হিফজ শিক্ষা</h2>
+          <h2 data-bn="হিফজ শিক্ষা" data-en="Hifz Education" data-ar="تعليم الحفظ">হিফজ শিক্ষা</h2>
 
           <a href="/qf/public/portal/">
-            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal">হিফজ পোর্টাল</span>
+            <span data-bn="হিফজ পোর্টাল" data-en="Hifz Portal" data-ar="بوابة الحفظ">হিফজ পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=student-management">
-            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management">শিক্ষার্থী ব্যবস্থাপনা</span>
+            <span data-bn="শিক্ষার্থী ব্যবস্থাপনা" data-en="Student Management" data-ar="إدارة الطلاب">শিক্ষার্থী ব্যবস্থাপনা</span>
           </a>
 
           <a href="/qf/public/faq/">
-            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ">সাধারণ জিজ্ঞাসা</span>
+            <span data-bn="সাধারণ জিজ্ঞাসা" data-en="FAQ" data-ar="الأسئلة الشائعة">সাধারণ জিজ্ঞাসা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="পোর্টাল" data-en="Portals">পোর্টাল</h2>
+          <h2 data-bn="পোর্টাল" data-en="Portals" data-ar="البوابات">পোর্টাল</h2>
 
           <a href="/qf/public/under-development/?page=donor">
-            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal">ডোনার পোর্টাল</span>
+            <span data-bn="ডোনার পোর্টাল" data-en="Donor Portal" data-ar="بوابة المتبرعين">ডোনার পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=supporter">
-            <span data-bn="সাপোর্টার" data-en="Supporter">সাপোর্টার</span>
+            <span data-bn="সাপোর্টার" data-en="Supporter" data-ar="الداعم">সাপোর্টার</span>
           </a>
 
           <a href="/qf/public/under-development/?page=investor">
-            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal">বিনিয়োগকারী পোর্টাল</span>
+            <span data-bn="বিনিয়োগকারী পোর্টাল" data-en="Investor Portal" data-ar="بوابة المستثمرين">বিনিয়োগকারী পোর্টাল</span>
           </a>
 
           <a href="/qf/public/under-development/?page=distribution">
-            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management">বিতরণ ব্যবস্থাপনা</span>
+            <span data-bn="বিতরণ ব্যবস্থাপনা" data-en="Distribution Management" data-ar="إدارة التوزيع">বিতরণ ব্যবস্থাপনা</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="সহায়তা" data-en="Support">সহায়তা</h2>
+          <h2 data-bn="সহায়তা" data-en="Support" data-ar="الدعم">সহায়তা</h2>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
 
           <a href="/qf/public/under-development/?page=donate">
-            <span data-bn="অনুদান" data-en="Donate">অনুদান</span>
+            <span data-bn="অনুদান" data-en="Donate" data-ar="تبرّع">অনুদান</span>
           </a>
 <a href="/qf/public/under-development/?page=payment-accounts">
   <span
     data-bn="পেমেন্ট হিসাব"
-    data-en="Payment Accounts"
+    data-en="Payment Accounts" data-ar="حسابات الدفع"
   >
     পেমেন্ট হিসাব
   </span>
@@ -1037,23 +1072,23 @@
          
 
           <a href="/qf/public/sitemap/">
-            <span data-bn="সাইটম্যাপ" data-en="Sitemap">সাইটম্যাপ</span>
+            <span data-bn="সাইটম্যাপ" data-en="Sitemap" data-ar="خريطة الموقع">সাইটম্যাপ</span>
           </a>
         </div>
 
         <div class="footer-col">
-          <h2 data-bn="আইনি" data-en="Legal">আইনি</h2>
+          <h2 data-bn="আইনি" data-en="Legal" data-ar="القانونية">আইনি</h2>
 
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <a href="https://github.com/MJ-Ahmad" target="_blank" rel="noopener noreferrer">
-            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source">উন্মুক্ত উৎস</span>
+            <span data-bn="উন্মুক্ত উৎস" data-en="Open Source" data-ar="المصدر المفتوح">উন্মুক্ত উৎস</span>
           </a>
         </div>
       </div>
@@ -1061,26 +1096,30 @@
       <div class="footer-bottom">
         <p>
           © <span id="footerYear"></span>
-          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
+          <span data-bn="কোরআনের ফেরিওয়ালা" data-en="QuranerFariwala" data-ar="QuranerFariwala">কোরআনের ফেরিওয়ালা</span>
           —
-          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved">সর্বস্বত্ব সংরক্ষিত</span>
+          <span data-bn="সর্বস্বত্ব সংরক্ষিত" data-en="All rights reserved" data-ar="جميع الحقوق محفوظة">সর্বস্বত্ব সংরক্ষিত</span>
+          <span id="lastUpdatedLine" style="display:block;margin-top:0.3rem;font-size:0.8rem;color:#9fb6ac;">
+            <span data-bn="সর্বশেষ আপডেট" data-en="Last updated" data-ar="آخر تحديث">সর্বশেষ আপডেট</span>:
+            <span id="lastUpdated"></span>
+          </span>
         </p>
 
         <div class="footer-legal">
           <a href="/qf/public/privacy/">
-            <span data-bn="গোপনীয়তা" data-en="Privacy">গোপনীয়তা</span>
+            <span data-bn="গোপনীয়তা" data-en="Privacy" data-ar="الخصوصية">গোপনীয়তা</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/terms/">
-            <span data-bn="শর্তাবলী" data-en="Terms">শর্তাবলী</span>
+            <span data-bn="শর্তাবলী" data-en="Terms" data-ar="الشروط">শর্তাবলী</span>
           </a>
 
           <span aria-hidden="true"> · </span>
 
           <a href="/qf/public/contact/">
-            <span data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</span>
+            <span data-bn="যোগাযোগ" data-en="Contact" data-ar="التواصل">যোগাযোগ</span>
           </a>
         </div>
       </div>
@@ -1092,21 +1131,21 @@
     // Labels are set as data-bn/data-en so the EN|BN toggle also translates them.
     (function () {
       var labels = {
-        donate:       { bn: 'অনুদান', en: 'Donate' },
-        account:      { bn: 'আমার অ্যাকাউন্ট', en: 'My Account' },
-        funding:      { bn: 'বিনিয়োগ', en: 'Investment' },
-        fund:         { bn: 'ঋণ প্রদান', en: 'Lending' },
-        login:        { bn: 'পোর্টালে লগইন', en: 'Portal Login' },
-        donor:        { bn: 'ডোনার পোর্টাল', en: 'Donor Portal' },
-        supporter:    { bn: 'সাপোর্টার', en: 'Supporter' },
-        investor:     { bn: 'বিনিয়োগকারী পোর্টাল', en: 'Investor Portal' },
-        distribution: { bn: 'বিতরণ ব্যবস্থাপনা', en: 'Distribution Management' },
-        readme:       { bn: 'প্রকল্পের README', en: 'Project README' },
-        roadmap:      { bn: 'রোডম্যাপ', en: 'Roadmap' },
-        license:      { bn: 'লাইসেন্স', en: 'License' },
-        mit:          { bn: 'MIT লাইসেন্স', en: 'MIT License' },
-        'student-management': { bn: 'শিক্ষার্থী ব্যবস্থাপনা', en: 'Student Management' },
-        'payment-accounts':   { bn: 'পেমেন্ট হিসাব', en: 'Payment Accounts' }
+        donate:       { bn: 'অনুদান', en: 'Donate', ar: 'التبرع' },
+        account:      { bn: 'আমার অ্যাকাউন্ট', en: 'My Account', ar: 'حسابي' },
+        funding:      { bn: 'বিনিয়োগ', en: 'Investment', ar: 'الاستثمار' },
+        fund:         { bn: 'ঋণ প্রদান', en: 'Lending', ar: 'الإقراض' },
+        login:        { bn: 'পোর্টালে লগইন', en: 'Portal Login', ar: 'تسجيل الدخول إلى البوابة' },
+        donor:        { bn: 'ডোনার পোর্টাল', en: 'Donor Portal', ar: 'بوابة المتبرعين' },
+        supporter:    { bn: 'সাপোর্টার', en: 'Supporter', ar: 'الداعم' },
+        investor:     { bn: 'বিনিয়োগকারী পোর্টাল', en: 'Investor Portal', ar: 'بوابة المستثمرين' },
+        distribution: { bn: 'বিতরণ ব্যবস্থাপনা', en: 'Distribution Management', ar: 'إدارة التوزيع' },
+        readme:       { bn: 'প্রকল্পের README', en: 'Project README', ar: 'ملف README للمشروع' },
+        roadmap:      { bn: 'রোডম্যাপ', en: 'Roadmap', ar: 'خارطة الطريق' },
+        license:      { bn: 'লাইসেন্স', en: 'License', ar: 'الترخيص' },
+        mit:          { bn: 'MIT লাইসেন্স', en: 'MIT License', ar: 'رخصة MIT' },
+        'student-management': { bn: 'শিক্ষার্থী ব্যবস্থাপনা', en: 'Student Management', ar: 'إدارة الطلاب' },
+        'payment-accounts':   { bn: 'পেমেন্ট হিসাব', en: 'Payment Accounts', ar: 'حسابات الدفع' }
       };
       var key = new URLSearchParams(window.location.search).get('page');
       var item = key && Object.prototype.hasOwnProperty.call(labels, key) ? labels[key] : null;
@@ -1115,10 +1154,12 @@
       var name = document.getElementById('feature-name');
       name.setAttribute('data-bn', item.bn);
       name.setAttribute('data-en', item.en);
+      name.setAttribute('data-ar', item.ar);
       name.textContent = item.bn;
       line.hidden = false;
     })();
   </script>
+  <script src="/qf/js/site-meta.js"></script>
   <script src="/qf/js/i18n.js"></script>
 </body>
 </html>
